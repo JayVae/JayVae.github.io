@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="面试算法," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="大O表示法：平均情况，是正比，与前面的常数关系不大； #了解常用数据规模情况下的复杂度：如果想在1s内解决问题：O(N2)的算法可以处理大约10^4级别的数据；O(N)的算法可以处理大约10^8级别的数据；O(NlogN)的算法可以处理大约10^7级别的数据； 空间复杂度：递归调用是有空间代价的，递归的深度是多少，空间复杂度就是多少 复杂度试验：实验，观察趋势 递归的时间复杂度并不一定是O(Nlo">
+<meta name="description" content="大O表示法：平均情况，是正比，与前面的常数关系不大； 了解常用数据规模情况下的复杂度：如果想在1s内解决问题：O(N2)的算法可以处理大约10^4级别的数据；O(N)的算法可以处理大约10^8级别的数据；O(NlogN)的算法可以处理大约10^7级别的数据； 空间复杂度：递归调用是有空间代价的，递归的深度是多少，空间复杂度就是多少 复杂度试验：实验，观察趋势 递归的时间复杂度并不一定是O(Nlog">
+<meta name="keywords" content="面试算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试算法之时间复杂度">
 <meta property="og:url" content="http://yoursite.com/2018/07/12/面试算法之时间复杂度/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="大O表示法：平均情况，是正比，与前面的常数关系不大； #了解常用数据规模情况下的复杂度：如果想在1s内解决问题：O(N2)的算法可以处理大约10^4级别的数据；O(N)的算法可以处理大约10^8级别的数据；O(NlogN)的算法可以处理大约10^7级别的数据； 空间复杂度：递归调用是有空间代价的，递归的深度是多少，空间复杂度就是多少 复杂度试验：实验，观察趋势 递归的时间复杂度并不一定是O(Nlo">
+<meta property="og:description" content="大O表示法：平均情况，是正比，与前面的常数关系不大； 了解常用数据规模情况下的复杂度：如果想在1s内解决问题：O(N2)的算法可以处理大约10^4级别的数据；O(N)的算法可以处理大约10^8级别的数据；O(NlogN)的算法可以处理大约10^7级别的数据； 空间复杂度：递归调用是有空间代价的，递归的深度是多少，空间复杂度就是多少 复杂度试验：实验，观察趋势 递归的时间复杂度并不一定是O(Nlog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-13T13:00:39.329Z">
+<meta property="og:updated_time" content="2018-07-16T08:43:34.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试算法之时间复杂度">
-<meta name="twitter:description" content="大O表示法：平均情况，是正比，与前面的常数关系不大； #了解常用数据规模情况下的复杂度：如果想在1s内解决问题：O(N2)的算法可以处理大约10^4级别的数据；O(N)的算法可以处理大约10^8级别的数据；O(NlogN)的算法可以处理大约10^7级别的数据； 空间复杂度：递归调用是有空间代价的，递归的深度是多少，空间复杂度就是多少 复杂度试验：实验，观察趋势 递归的时间复杂度并不一定是O(Nlo">
+<meta name="twitter:description" content="大O表示法：平均情况，是正比，与前面的常数关系不大； 了解常用数据规模情况下的复杂度：如果想在1s内解决问题：O(N2)的算法可以处理大约10^4级别的数据；O(N)的算法可以处理大约10^8级别的数据；O(NlogN)的算法可以处理大约10^7级别的数据； 空间复杂度：递归调用是有空间代价的，递归的深度是多少，空间复杂度就是多少 复杂度试验：实验，观察趋势 递归的时间复杂度并不一定是O(Nlog">
 
 
 
@@ -267,7 +268,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/JayVae/pictures/blob/master/res/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -302,6 +303,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试算法/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -330,7 +353,7 @@
 
       
         <p>大O表示法：平均情况，是正比，与前面的常数关系不大；</p>
-<p>#了解常用数据规模情况下的复杂度：<br><strong>如果想在1s内解决问题：</strong><br>O(N2)的算法可以处理大约10^4级别的数据；<br>O(N)的算法可以处理大约10^8级别的数据；<br>O(NlogN)的算法可以处理大约10^7级别的数据；</p>
+<h1 id="了解常用数据规模情况下的复杂度："><a href="#了解常用数据规模情况下的复杂度：" class="headerlink" title="了解常用数据规模情况下的复杂度："></a>了解常用数据规模情况下的复杂度：</h1><p><strong>如果想在1s内解决问题：</strong><br>O(N2)的算法可以处理大约10^4级别的数据；<br>O(N)的算法可以处理大约10^8级别的数据；<br>O(NlogN)的算法可以处理大约10^7级别的数据；</p>
 <p>空间复杂度：递归调用是有空间代价的，递归的深度是多少，空间复杂度就是多少</p>
 <p>复杂度试验：实验，观察趋势</p>
 <p>递归的时间复杂度并不一定是O(NlogN)，与调用次数（递归深度）有关，画出递归树来分析。<br>通常，分治的复杂度是logN.</p>
@@ -350,6 +373,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试算法/" rel="tag"># 面试算法</a>
+          
+        </div>
       
 
       
@@ -424,13 +453,22 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="https://github.com/JayVae/pictures/blob/master/res/avatar.png"
+                src="/images/avatar.gif"
                 alt="Jay" />
             
               <p class="site-author-name" itemprop="name">Jay</p>
@@ -444,22 +482,31 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">2</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -504,6 +551,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#了解常用数据规模情况下的复杂度："><span class="nav-number">1.</span> <span class="nav-text">了解常用数据规模情况下的复杂度：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
