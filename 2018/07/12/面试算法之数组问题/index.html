@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="#如何写出正确的程序？（参照二分查找的代码）明确变量的含义；循环不变量；小数据量调试；大数据量测试。 #leetcode 283 movezeros定义：k，数组中，[0,k）的元素均为非0元素。 #leetcode 26 remove duplicated from sorted array #leetcode 75 sort colors没有思路时，可以先使用任意一种排序算法，以先解决问题为目">
+<meta name="description" content="如何写出正确的程序？（参照二分查找的代码）明确变量的含义；循环不变量；小数据量调试；大数据量测试。 leetcode 283 movezeros定义：k，数组中，[0,k）的元素均为非0元素。 leetcode 26 remove duplicated from sorted arrayleetcode 75 sort colors没有思路时，可以先使用任意一种排序算法，以先解决问题为目的计数排序">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试算法之数组问题">
 <meta property="og:url" content="http://yoursite.com/2018/07/12/面试算法之数组问题/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="#如何写出正确的程序？（参照二分查找的代码）明确变量的含义；循环不变量；小数据量调试；大数据量测试。 #leetcode 283 movezeros定义：k，数组中，[0,k）的元素均为非0元素。 #leetcode 26 remove duplicated from sorted array #leetcode 75 sort colors没有思路时，可以先使用任意一种排序算法，以先解决问题为目">
+<meta property="og:description" content="如何写出正确的程序？（参照二分查找的代码）明确变量的含义；循环不变量；小数据量调试；大数据量测试。 leetcode 283 movezeros定义：k，数组中，[0,k）的元素均为非0元素。 leetcode 26 remove duplicated from sorted arrayleetcode 75 sort colors没有思路时，可以先使用任意一种排序算法，以先解决问题为目的计数排序">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T07:43:59.429Z">
+<meta property="og:updated_time" content="2018-07-19T10:50:25.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试算法之数组问题">
-<meta name="twitter:description" content="#如何写出正确的程序？（参照二分查找的代码）明确变量的含义；循环不变量；小数据量调试；大数据量测试。 #leetcode 283 movezeros定义：k，数组中，[0,k）的元素均为非0元素。 #leetcode 26 remove duplicated from sorted array #leetcode 75 sort colors没有思路时，可以先使用任意一种排序算法，以先解决问题为目">
+<meta name="twitter:description" content="如何写出正确的程序？（参照二分查找的代码）明确变量的含义；循环不变量；小数据量调试；大数据量测试。 leetcode 283 movezeros定义：k，数组中，[0,k）的元素均为非0元素。 leetcode 26 remove duplicated from sorted arrayleetcode 75 sort colors没有思路时，可以先使用任意一种排序算法，以先解决问题为目的计数排序">
 
 
 
@@ -302,6 +303,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -329,13 +352,12 @@
       
 
       
-        <p>#如何写出正确的程序？（参照二分查找的代码）<br>明确变量的含义；<br>循环不变量；<br>小数据量调试；<br>大数据量测试。</p>
-<p>#leetcode 283 movezeros<br>定义：k，数组中，[0,k）的元素均为非0元素。</p>
-<p>#leetcode 26 remove duplicated from sorted array</p>
-<p>#leetcode 75 sort colors<br>没有思路时，可以先使用任意一种排序算法，以先解决问题为目的<br>计数排序：分别统计0.1.2的个数（适用于类别特别少的）<br>三向快速排序：定义清楚索引的意义</p>
-<p>#215 Kth largest element in an array<br>这个问题用快速排序解决很经典</p>
-<p>#167 two sum II<br>利用有序：二分查找<br>对撞指针：一前一后直至对撞</p>
-<p>##双索引技术：<br>对撞指针<br>滑动窗口（参考leetcode209，3，438,76）</p>
+        <h1 id="如何写出正确的程序？（参照二分查找的代码）"><a href="#如何写出正确的程序？（参照二分查找的代码）" class="headerlink" title="如何写出正确的程序？（参照二分查找的代码）"></a>如何写出正确的程序？（参照二分查找的代码）</h1><p>明确变量的含义；<br>循环不变量；<br>小数据量调试；<br>大数据量测试。</p>
+<h2 id="leetcode-283-movezeros"><a href="#leetcode-283-movezeros" class="headerlink" title="leetcode 283 movezeros"></a>leetcode 283 movezeros</h2><p>定义：k，数组中，[0,k）的元素均为非0元素。</p>
+<h2 id="leetcode-26-remove-duplicated-from-sorted-array"><a href="#leetcode-26-remove-duplicated-from-sorted-array" class="headerlink" title="leetcode 26 remove duplicated from sorted array"></a>leetcode 26 remove duplicated from sorted array</h2><h2 id="leetcode-75-sort-colors"><a href="#leetcode-75-sort-colors" class="headerlink" title="leetcode 75 sort colors"></a>leetcode 75 sort colors</h2><p>没有思路时，可以先使用任意一种排序算法，以先解决问题为目的<br>计数排序：分别统计0.1.2的个数（适用于类别特别少的）<br>三向快速排序：定义清楚索引的意义</p>
+<h2 id="215-Kth-largest-element-in-an-array"><a href="#215-Kth-largest-element-in-an-array" class="headerlink" title="215 Kth largest element in an array"></a>215 Kth largest element in an array</h2><p>这个问题用快速排序解决很经典</p>
+<h2 id="167-two-sum-II"><a href="#167-two-sum-II" class="headerlink" title="167 two sum II"></a>167 two sum II</h2><p>利用有序：二分查找<br>对撞指针：一前一后直至对撞</p>
+<h2 id="双索引技术："><a href="#双索引技术：" class="headerlink" title="双索引技术："></a>双索引技术：</h2><p>对撞指针<br>滑动窗口（参考leetcode209，3，438,76）</p>
 <p>** 子数组需要明确是连续的还是不连续</p>
 
       
@@ -351,6 +373,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
       
 
       
@@ -425,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,7 +493,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -467,7 +504,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -514,6 +551,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何写出正确的程序？（参照二分查找的代码）"><span class="nav-number">1.</span> <span class="nav-text">如何写出正确的程序？（参照二分查找的代码）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-283-movezeros"><span class="nav-number">1.1.</span> <span class="nav-text">leetcode 283 movezeros</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-26-remove-duplicated-from-sorted-array"><span class="nav-number">1.2.</span> <span class="nav-text">leetcode 26 remove duplicated from sorted array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-75-sort-colors"><span class="nav-number">1.3.</span> <span class="nav-text">leetcode 75 sort colors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#215-Kth-largest-element-in-an-array"><span class="nav-number">1.4.</span> <span class="nav-text">215 Kth largest element in an array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#167-two-sum-II"><span class="nav-number">1.5.</span> <span class="nav-text">167 two sum II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双索引技术："><span class="nav-number">1.6.</span> <span class="nav-text">双索引技术：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
