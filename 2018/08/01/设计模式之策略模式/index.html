@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。">
+<meta name="description" content="定义策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。 开发推荐的方式复合优先于继承多用组合，少用继承 设计原则：面向接口编程；将共同的；多用组合，少用继承。 实现： 通过分离变化得出的策略接口Strategy； Strategy的实现类； 客户程序（抽象）中有一个Strategy； 在客户程序（实现）中选择、">
 <meta name="keywords" content="java,设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式之策略模式">
 <meta property="og:url" content="http://yoursite.com/2018/08/01/设计模式之策略模式/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。">
+<meta property="og:description" content="定义策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。 开发推荐的方式复合优先于继承多用组合，少用继承 设计原则：面向接口编程；将共同的；多用组合，少用继承。 实现： 通过分离变化得出的策略接口Strategy； Strategy的实现类； 客户程序（抽象）中有一个Strategy； 在客户程序（实现）中选择、">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T06:27:03.588Z">
+<meta property="og:updated_time" content="2018-08-02T14:31:53.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之策略模式">
-<meta name="twitter:description" content="策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。">
+<meta name="twitter:description" content="定义策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。 开发推荐的方式复合优先于继承多用组合，少用继承 设计原则：面向接口编程；将共同的；多用组合，少用继承。 实现： 通过分离变化得出的策略接口Strategy； Strategy的实现类； 客户程序（抽象）中有一个Strategy； 在客户程序（实现）中选择、">
 
 
 
@@ -352,7 +352,20 @@
       
 
       
-        <p>策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。</p>
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。</p>
+<h2 id="开发推荐的方式"><a href="#开发推荐的方式" class="headerlink" title="开发推荐的方式"></a>开发推荐的方式</h2><p>复合优先于继承<br>多用组合，少用继承</p>
+<h2 id="设计原则："><a href="#设计原则：" class="headerlink" title="设计原则："></a>设计原则：</h2><p>面向接口编程；<br>将共同的；<br>多用组合，少用继承。</p>
+<h2 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h2><ol>
+<li>通过分离变化得出的策略接口Strategy；</li>
+<li>Strategy的实现类；</li>
+<li>客户程序（抽象）中有一个Strategy；</li>
+<li>在客户程序（实现）中选择、组装正确的strategy实现</li>
+</ol>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ol>
+<li>许多相关的类仅仅是行为差异</li>
+<li>运行时选取不同的算法变体</li>
+<li>通过条件语句在多个分支中选取</li>
+</ol>
 
       
     </div>
@@ -449,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -469,7 +491,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -538,6 +560,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发推荐的方式"><span class="nav-number">2.</span> <span class="nav-text">开发推荐的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计原则："><span class="nav-number">3.</span> <span class="nav-text">设计原则：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现："><span class="nav-number">4.</span> <span class="nav-text">实现：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用场景"><span class="nav-number">5.</span> <span class="nav-text">适用场景</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
