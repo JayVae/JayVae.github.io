@@ -476,11 +476,14 @@
           
             <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>在对象之间定义了一对多的依赖，这样一来，当一个对象改变状态，依赖它的对象会收到通知并自动更新。<br>其实就是发布订阅模式，发布者发布信息，订阅者获取信息，订阅了就能收到信息，没订阅就收不到信息。<br>Subject-Observer，更新方法建议为update。<br>触发通知的时机是发布者状态改变后。</p>
 <h2 id="实现的两种方式"><a href="#实现的两种方式" class="headerlink" title="实现的两种方式"></a>实现的两种方式</h2><ol>
-<li><p>推模型</p>
-</li>
-<li><p>拉模型</p>
-</li>
+<li>推模型<br>将所有信息传递给观察者</li>
+<li>拉模型<br>将观察者对象传过去，需要什么信息，观察者自己读</li>
 </ol>
+<h2 id="利用java实现观察者模式"><a href="#利用java实现观察者模式" class="headerlink" title="利用java实现观察者模式"></a>利用java实现观察者模式</h2><ol>
+<li>java.util.observable</li>
+<li>接口Oberserver，update方法</li>
+</ol>
+<h2 id="何时使用"><a href="#何时使用" class="headerlink" title="何时使用"></a>何时使用</h2><p>触发联动：观察者模式的本质</p>
 
           
         
