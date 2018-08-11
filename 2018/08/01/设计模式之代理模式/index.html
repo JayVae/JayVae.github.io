@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="定义： 为其他对象提供一种代理以控制对这个对象的访问； 静态代理实现：  继承实现； 聚合实现（更灵活）；  动态代理：  实现步骤：  使用被代理对象创建InvocationHandler对象实例 生成代理对象实例 生成proxy代理对象的字节码文件，并创建proxy的类对象 根据proxy的类对象使用反射创建proxy对象实例  在代理对象实例上调用目标方法（就是调用invoke的过程）JAV">
+<meta name="description" content="定义： 为其他对象提供一种代理以控制对这个对象的访问； 静态代理实现：  继承实现； 聚合实现（更灵活）；  动态代理（如何体现动态，就是当接口中又添加新功能时，代理中不用改变）：  实现步骤：  使用被代理对象创建InvocationHandler对象实例 生成代理对象实例 生成proxy代理对象的字节码文件，并创建proxy的类对象 根据proxy的类对象使用反射创建proxy对象实例  在代">
 <meta name="keywords" content="Java,设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式之代理模式">
 <meta property="og:url" content="http://yoursite.com/2018/08/01/设计模式之代理模式/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="定义： 为其他对象提供一种代理以控制对这个对象的访问； 静态代理实现：  继承实现； 聚合实现（更灵活）；  动态代理：  实现步骤：  使用被代理对象创建InvocationHandler对象实例 生成代理对象实例 生成proxy代理对象的字节码文件，并创建proxy的类对象 根据proxy的类对象使用反射创建proxy对象实例  在代理对象实例上调用目标方法（就是调用invoke的过程）JAV">
+<meta property="og:description" content="定义： 为其他对象提供一种代理以控制对这个对象的访问； 静态代理实现：  继承实现； 聚合实现（更灵活）；  动态代理（如何体现动态，就是当接口中又添加新功能时，代理中不用改变）：  实现步骤：  使用被代理对象创建InvocationHandler对象实例 生成代理对象实例 生成proxy代理对象的字节码文件，并创建proxy的类对象 根据proxy的类对象使用反射创建proxy对象实例  在代">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-05T10:07:48.500Z">
+<meta property="og:updated_time" content="2018-08-10T02:43:31.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之代理模式">
-<meta name="twitter:description" content="定义： 为其他对象提供一种代理以控制对这个对象的访问； 静态代理实现：  继承实现； 聚合实现（更灵活）；  动态代理：  实现步骤：  使用被代理对象创建InvocationHandler对象实例 生成代理对象实例 生成proxy代理对象的字节码文件，并创建proxy的类对象 根据proxy的类对象使用反射创建proxy对象实例  在代理对象实例上调用目标方法（就是调用invoke的过程）JAV">
+<meta name="twitter:description" content="定义： 为其他对象提供一种代理以控制对这个对象的访问； 静态代理实现：  继承实现； 聚合实现（更灵活）；  动态代理（如何体现动态，就是当接口中又添加新功能时，代理中不用改变）：  实现步骤：  使用被代理对象创建InvocationHandler对象实例 生成代理对象实例 生成proxy代理对象的字节码文件，并创建proxy的类对象 根据proxy的类对象使用反射创建proxy对象实例  在代">
 
 
 
@@ -358,7 +358,7 @@
 <li>继承实现；</li>
 <li>聚合实现（更灵活）；</li>
 </ol>
-<p>动态代理：</p>
+<p>动态代理（如何体现动态，就是当接口中又添加新功能时，代理中不用改变）：</p>
 <ol>
 <li><p>实现步骤：</p>
 <p> 使用被代理对象创建InvocationHandler对象实例<br> 生成代理对象实例</p>
@@ -366,7 +366,7 @@
 根据proxy的类对象使用反射创建proxy对象实例
 </code></pre><p> 在代理对象实例上调用目标方法（就是调用invoke的过程）<br><a href="https://blog.csdn.net/qq1004642027/article/details/52092730" target="_blank" rel="noopener">JAVA动态代理用法与实现过程</a></p>
 </li>
-<li><p>jdk动态代理与cglib动态代理</p>
+<li><p>jdk动态代理（基于接口代理）与cglib动态代理（基于继承代理）</p>
 </li>
 </ol>
 <p>上面是一个很简单的例子，可以看出，我们想对外开放某些功能，就可以将这些功能在代理类中被引用，如此一来，屏蔽了我们不想外露的功能，只将我们想开放的功能开放出来。亦即委托类中其实是可以有很多方法的，很多功能的，我们可以酌情对外开放，代理类犹如一道大门，将委托类与外部调用者隔绝开来，只将部分功能赋予这个大门，来代替委托类行使这个功能，哪怕最终还是要牵扯到自身（因为最终还是要调用委托类的对应方法实现）。</p>
@@ -495,7 +495,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

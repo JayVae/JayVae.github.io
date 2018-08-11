@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JayVae&#39;s Blog">
 <meta property="og:description" content="JDK5 自动装箱与拆箱： 枚举 静态导入，如：import staticjava.lang.System.out 可变参数（Varargs） 内省（Introspector），主要用于操作JavaBean中的属性，通过getXxx/setXxx。一般的做法是通过类Introspector来获取某个对象的BeanInfo信息，然后通过BeanInfo来获取属性的描述器（PropertyDescri">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-30T02:05:15.340Z">
+<meta property="og:updated_time" content="2018-08-08T11:36:11.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jdk各个版本比较">
 <meta name="twitter:description" content="JDK5 自动装箱与拆箱： 枚举 静态导入，如：import staticjava.lang.System.out 可变参数（Varargs） 内省（Introspector），主要用于操作JavaBean中的属性，通过getXxx/setXxx。一般的做法是通过类Introspector来获取某个对象的BeanInfo信息，然后通过BeanInfo来获取属性的描述器（PropertyDescri">
@@ -362,6 +362,7 @@
 <li>For-Each循环</li>
 <li>注解</li>
 <li>协变返回类型：实际返回类型可以是要求的返回类型的一个子类型</li>
+<li>jdk5.0一很重要的特性就是增加了并发包java.util.concurrent.*</li>
 </ol>
 <h2 id="JDK6"><a href="#JDK6" class="headerlink" title="JDK6"></a>JDK6</h2><ol>
 <li>AWT新增加了两个类:Desktop和SystemTray，其中前者用来通过系统默认程序来执行一个操作，如使用默认浏览器浏览指定的URL,用默认邮件客户端给指定的邮箱发邮件,用默认应用程序打开或编辑文件(比如,用记事本打开以txt为后缀名的文件),用系统默认的打印机打印文档等。后者可以用来在系统托盘区创建一个托盘程序。（开发中基本没用过）</li>
@@ -397,6 +398,8 @@
 <li>使用 :: 关键字来传递方法或者构造函数引用</li>
 <li>多重注解</li>
 <li>还增加了很多与函数式接口类似的接口以及与Map相关的API等……<br>参考<a href="https://www.cnblogs.com/figure9/archive/2014/10/24/4048421.html" target="_blank" rel="noopener">博客</a></li>
+<li>hashmap冲撞</li>
+<li>接口可以拥有方法体</li>
 </ol>
 <h2 id="JDK9"><a href="#JDK9" class="headerlink" title="JDK9"></a>JDK9</h2><ol>
 <li>Java平台模块化系统：引入了一种新的Java编程组件模块，它是一个命名的、自描述的代码和数据集合。</li>
@@ -533,7 +536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
