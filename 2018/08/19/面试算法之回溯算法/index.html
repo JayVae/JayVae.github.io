@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java,设计模式," />
+  <meta name="keywords" content="面试算法," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="定义在对象之间定义了一对多的依赖，这样一来，当一个对象改变状态，依赖它的对象会收到通知并自动更新。其实就是发布订阅模式，发布者发布信息，订阅者获取信息，订阅了就能收到信息，没订阅就收不到信息。Subject-Observer，更新方法建议为update。触发通知的时机是发布者状态改变后。 实现的两种方式 推模型将所有信息传递给观察者 拉模型将观察者对象传过去，需要什么信息，观察者自己读  利用ja">
-<meta name="keywords" content="Java,设计模式">
+<meta name="description" content="简单概述回溯法思路的简单描述是：把问题的解空间转化成了图或者树的结构表示，然后使用**深度优先搜索策略**进行遍历，遍历的过程中记录和寻找所有可行解或者最优解。 基本思想类同于：    • 图的深度优先搜索    • 二叉树的后序遍历      【         分支限界法：广度优先搜索         思想类同于：图的广度优先遍历">
+<meta name="keywords" content="面试算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式之观察者模式">
-<meta property="og:url" content="http://yoursite.com/2018/08/01/设计模式之观察者模式/index.html">
+<meta property="og:title" content="面试算法之回溯算法">
+<meta property="og:url" content="http://yoursite.com/2018/08/19/面试算法之回溯算法/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="定义在对象之间定义了一对多的依赖，这样一来，当一个对象改变状态，依赖它的对象会收到通知并自动更新。其实就是发布订阅模式，发布者发布信息，订阅者获取信息，订阅了就能收到信息，没订阅就收不到信息。Subject-Observer，更新方法建议为update。触发通知的时机是发布者状态改变后。 实现的两种方式 推模型将所有信息传递给观察者 拉模型将观察者对象传过去，需要什么信息，观察者自己读  利用ja">
+<meta property="og:description" content="简单概述回溯法思路的简单描述是：把问题的解空间转化成了图或者树的结构表示，然后使用**深度优先搜索策略**进行遍历，遍历的过程中记录和寻找所有可行解或者最优解。 基本思想类同于：    • 图的深度优先搜索    • 二叉树的后序遍历      【         分支限界法：广度优先搜索         思想类同于：图的广度优先遍历">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-05T10:08:01.040Z">
+<meta property="og:updated_time" content="2018-08-19T14:13:53.501Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式之观察者模式">
-<meta name="twitter:description" content="定义在对象之间定义了一对多的依赖，这样一来，当一个对象改变状态，依赖它的对象会收到通知并自动更新。其实就是发布订阅模式，发布者发布信息，订阅者获取信息，订阅了就能收到信息，没订阅就收不到信息。Subject-Observer，更新方法建议为update。触发通知的时机是发布者状态改变后。 实现的两种方式 推模型将所有信息传递给观察者 拉模型将观察者对象传过去，需要什么信息，观察者自己读  利用ja">
+<meta name="twitter:title" content="面试算法之回溯算法">
+<meta name="twitter:description" content="简单概述回溯法思路的简单描述是：把问题的解空间转化成了图或者树的结构表示，然后使用**深度优先搜索策略**进行遍历，遍历的过程中记录和寻找所有可行解或者最优解。 基本思想类同于：    • 图的深度优先搜索    • 二叉树的后序遍历      【         分支限界法：广度优先搜索         思想类同于：图的广度优先遍历">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/01/设计模式之观察者模式/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/19/面试算法之回溯算法/"/>
 
 
 
 
 
-  <title>设计模式之观察者模式 | JayVae's Blog</title>
+  <title>面试算法之回溯算法 | JayVae's Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/设计模式之观察者模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/面试算法之回溯算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式之观察者模式</h1>
+          <h1 class="post-title" itemprop="name headline">面试算法之回溯算法</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T16:49:42+08:00">
-                2018-08-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T19:17:44+08:00">
+                2018-08-19
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/面试算法/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
                   </a>
                 </span>
 
@@ -352,16 +352,27 @@
       
 
       
-        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>在对象之间定义了一对多的依赖，这样一来，当一个对象改变状态，依赖它的对象会收到通知并自动更新。<br>其实就是发布订阅模式，发布者发布信息，订阅者获取信息，订阅了就能收到信息，没订阅就收不到信息。<br>Subject-Observer，更新方法建议为update。<br>触发通知的时机是发布者状态改变后。</p>
-<h2 id="实现的两种方式"><a href="#实现的两种方式" class="headerlink" title="实现的两种方式"></a>实现的两种方式</h2><ol>
-<li>推模型<br>将所有信息传递给观察者</li>
-<li>拉模型<br>将观察者对象传过去，需要什么信息，观察者自己读</li>
+        <h1 id="简单概述"><a href="#简单概述" class="headerlink" title="简单概述"></a>简单概述</h1><pre><code>回溯法思路的简单描述是：把问题的解空间转化成了图或者树的结构表示，然后使用**深度优先搜索策略**进行遍历，遍历的过程中记录和寻找所有可行解或者最优解。
+</code></pre><p>基本思想类同于：<br>    • 图的深度优先搜索<br>    • 二叉树的后序遍历<br>      【<br>         分支限界法：广度优先搜索<br>         思想类同于：图的广度优先遍历<br>                                二叉树的层序遍历<br>      】</p>
+<h1 id="详细描述"><a href="#详细描述" class="headerlink" title="详细描述"></a>详细描述</h1><pre><code>详细的描述则为：
+回溯法按深度优先策略搜索问题的解空间树。首先从根节点出发搜索解空间树，当算法搜索至解空间树的某一节点时，先利用剪枝函数判断该节点是否可行（即能得到问题的解）。如果不可行，则跳过对该节点为根的子树的搜索，逐层向其祖先节点回溯；否则，进入该子树，继续按深度优先策略搜索。
+回溯法的基本行为是搜索，搜索过程使用剪枝函数来为了避免无效的搜索。剪枝函数包括两类：1. 使用约束函数，剪去不满足约束条件的路径；2.使用限界函数，剪去不能得到最优解的路径。
+问题的关键在于如何定义问题的解空间，转化成树（即解空间树）。
+
+解空间树分为两种：
+    **子集树和排列树**。两种在算法结构和思路上大体相同。
+</code></pre><h1 id="回溯法应用"><a href="#回溯法应用" class="headerlink" title="回溯法应用"></a>回溯法应用</h1><pre><code>当问题是要求满足某种性质（约束条件）的所有解或最优解时，往往使用回溯法。
+它有“通用解题法”之美誉。
+</code></pre><ol>
+<li>子集问题lc78，lc90</li>
+<li>排列问题lc46，lc47</li>
+<li>组合求和问题lc39，40</li>
+<li>分割回文串lc131</li>
 </ol>
-<h2 id="利用java实现观察者模式"><a href="#利用java实现观察者模式" class="headerlink" title="利用java实现观察者模式"></a>利用java实现观察者模式</h2><ol>
-<li>java.util.observable</li>
-<li>接口Oberserver，update方法</li>
+<h1 id="回溯法实现"><a href="#回溯法实现" class="headerlink" title="回溯法实现 -"></a>回溯法实现 -</h1><ol>
+<li>递归</li>
+<li>迭代（这个问题怎么做？）</li>
 </ol>
-<h2 id="何时使用"><a href="#何时使用" class="headerlink" title="何时使用"></a>何时使用</h2><p>触发联动：观察者模式的本质</p>
 
       
     </div>
@@ -379,9 +390,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+            <a href="/tags/面试算法/" rel="tag"># 面试算法</a>
           
         </div>
       
@@ -394,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/01/设计模式之策略模式/" rel="next" title="设计模式之策略模式">
-                <i class="fa fa-chevron-left"></i> 设计模式之策略模式
+              <a href="/2018/08/11/Java待补充问题/" rel="next" title="Java待补充问题">
+                <i class="fa fa-chevron-left"></i> Java待补充问题
               </a>
             
           </div>
@@ -403,10 +412,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/02/设计模式之生产者消费者模式/" rel="prev" title="设计模式之生产者消费者模式">
-                设计模式之生产者消费者模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现的两种方式"><span class="nav-number">2.</span> <span class="nav-text">实现的两种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用java实现观察者模式"><span class="nav-number">3.</span> <span class="nav-text">利用java实现观察者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#何时使用"><span class="nav-number">4.</span> <span class="nav-text">何时使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简单概述"><span class="nav-number">1.</span> <span class="nav-text">简单概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#详细描述"><span class="nav-number">2.</span> <span class="nav-text">详细描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回溯法应用"><span class="nav-number">3.</span> <span class="nav-text">回溯法应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回溯法实现"><span class="nav-number">4.</span> <span class="nav-text">回溯法实现 -</span></a></li></ol></div>
             
 
           </div>

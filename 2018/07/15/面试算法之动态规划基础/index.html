@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JayVae&#39;s Blog">
 <meta property="og:description" content="这是 H1面试中对动态规划的考查难度不是很难来源以斐波那契数列为例，单纯方式的递归会造成指数级的时间复杂度，因为其中有大量重复的计算过程；因此考虑将重复的数字用数组记录下来–记忆化搜索：自上向下的解决问题动态规划：自下向上的解决问题 关联递归问题—重叠子问题+最优子结构（针对最优解问题）—记忆化搜索：自上向下的解决问题                    |">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T08:51:45.842Z">
+<meta property="og:updated_time" content="2018-08-19T11:23:27.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试算法之动态规划基础">
 <meta name="twitter:description" content="这是 H1面试中对动态规划的考查难度不是很难来源以斐波那契数列为例，单纯方式的递归会造成指数级的时间复杂度，因为其中有大量重复的计算过程；因此考虑将重复的数字用数组记录下来–记忆化搜索：自上向下的解决问题动态规划：自下向上的解决问题 关联递归问题—重叠子问题+最优子结构（针对最优解问题）—记忆化搜索：自上向下的解决问题                    |">
@@ -353,10 +353,10 @@
 
       
         <h1 id="这是-H1"><a href="#这是-H1" class="headerlink" title="这是 H1"></a>这是 H1</h1><h1 id="面试中对动态规划的考查难度不是很难"><a href="#面试中对动态规划的考查难度不是很难" class="headerlink" title="面试中对动态规划的考查难度不是很难"></a>面试中对动态规划的考查难度不是很难</h1><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><p>以斐波那契数列为例，单纯方式的递归会造成指数级的时间复杂度，因为其中有大量重复的计算过程；<br>因此考虑将重复的数字用数组记录下来–记忆化搜索：自上向下的解决问题<br>动态规划：自下向上的解决问题</p>
-<h1 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h1><p>递归问题—重叠子问题+最优子结构（针对最优解问题）—记忆化搜索：自上向下的解决问题<br>                    |                     |<br>                    |—动态规划：自下向上的解决问题</p>
+<h1 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h1><p>递归问题—重叠子问题+最优子结构（针对最优解问题）—记忆化搜索：自上向下的解决问题<br>                    |                     |<br>                    |—动态规划：自下向上的解决问题（可以没有递归过程）</p>
 <p><strong>用自上向下的方式去思考，用自下而上的方式去实现。</strong><br><strong>最优子结构：通过子问题的最优解，可以得到这个问题的最优解</strong></p>
 <p>许多实际问题是斐波那契问题：<br>如爬楼梯，120,64</p>
-<p>以343为例：<br>首先这个问题用暴力搜索方法去思考，由于分割成多少是不知道的，因此不能用循环方式（O（n2）），因此使用递归的方式;<br>通过画图分析，发现有大量的重叠子问题，因此可以用记忆化搜索来实现。<br>【实际上，这个问题用暴力解法的话：回溯遍历将一个数做分割的所有可能性O(2^N)】</p>
+<p>以343为例：<br>首先这个问题用暴力搜索方法去思考，由于分割成多少是不知道的，因此不能用循环方式（O（n2）），因此使用递归的方式;<br>通过画图分析，发现有大量的重叠子问题，因此可以用记忆化搜索来实现。<br>lc343分别用记忆化搜索和动态规划的思路来实现了。（可以看出，记忆化搜索的方法比较容易想到）<br>【实际上，这个问题用暴力解法的话：回溯遍历将一个数做分割的所有可能性O(2^N)】</p>
 <p>279，91，62</p>
 <h1 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h1><ol>
 <li>注意对状态的定义（函数的定义）；【做什么】状态定义不同，则解决方式不同</li>
@@ -370,7 +370,7 @@
 <li>多维费用：考虑物品的体积和重量两个维度，变成三维数组</li>
 </ol>
 <p>背包例子：416，322，377，474，139，494</p>
-<h1 id="最长上升子序列问题LIS"><a href="#最长上升子序列问题LIS" class="headerlink" title="最长上升子序列问题LIS"></a>最长上升子序列问题LIS</h1><p><strong>注意状态的定义</strong><br>LIS(i)表示以第i个数字为结尾的最长上升子序列的长度；<br>LIS(i)表示[0…i]的范围内，选择数字nums[i]可以获得的最长上升子序列的长度。【注意是选择，不是考虑】<br>lc300的O（n^2）解法；<br>O(NlogN)解法。<a href="https://blog.csdn.net/u013178472/article/details/54926531" target="_blank" rel="noopener">链接</a></p>
+<h1 id="最长上升子序列问题LIS"><a href="#最长上升子序列问题LIS" class="headerlink" title="最长上升子序列问题LIS"></a>最长上升子序列问题LIS</h1><p><strong>注意状态的定义</strong><br>lc300的两种实现<br>LIS(i)表示以第i个数字为结尾的最长上升子序列的长度；<br>LIS(i)表示[0…i]的范围内，选择数字nums[i]可以获得的最长上升子序列的长度。【注意是选择，不是考虑】<br>lc300的O（n^2）解法；<br>O(NlogN)解法。<a href="https://blog.csdn.net/u013178472/article/details/54926531" target="_blank" rel="noopener">链接</a>（新开了数组进行存储有序的序列，并进行二分查找）</p>
 <h1 id="更多动态规划问题"><a href="#更多动态规划问题" class="headerlink" title="更多动态规划问题"></a>更多动态规划问题</h1><ol>
 <li>LCS:</li>
 </ol>
@@ -498,7 +498,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
