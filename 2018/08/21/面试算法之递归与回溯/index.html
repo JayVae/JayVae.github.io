@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="面试算法," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="最近拖延症太严重了啊！！！！ 抓紧时间准备找工作吧，把时间用在刷题上面，不要做这些无意义的事情了：  游戏 看游戏视频 看综艺 看微博  早睡早起，锻炼身体，早点躺下听听喜马拉雅也挺好啊 尤其是无意义的社交，拒绝自我麻木，自我高潮。 对自己狠一点吧，你的父母尚在苟且之中，你却在谈什么诗和远方。">
+<meta name="description" content="Just in progress">
+<meta name="keywords" content="面试算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拒绝无意义的事情，把时间浪费在美好事情上">
-<meta property="og:url" content="http://yoursite.com/2018/07/10/拒绝无意义的事情，把时间浪费在美好事情上/index.html">
+<meta property="og:title" content="面试算法之递归与回溯">
+<meta property="og:url" content="http://yoursite.com/2018/08/21/面试算法之递归与回溯/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="最近拖延症太严重了啊！！！！ 抓紧时间准备找工作吧，把时间用在刷题上面，不要做这些无意义的事情了：  游戏 看游戏视频 看综艺 看微博  早睡早起，锻炼身体，早点躺下听听喜马拉雅也挺好啊 尤其是无意义的社交，拒绝自我麻木，自我高潮。 对自己狠一点吧，你的父母尚在苟且之中，你却在谈什么诗和远方。">
+<meta property="og:description" content="Just in progress">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-07T00:42:57.856Z">
+<meta property="og:updated_time" content="2018-08-21T12:07:20.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拒绝无意义的事情，把时间浪费在美好事情上">
-<meta name="twitter:description" content="最近拖延症太严重了啊！！！！ 抓紧时间准备找工作吧，把时间用在刷题上面，不要做这些无意义的事情了：  游戏 看游戏视频 看综艺 看微博  早睡早起，锻炼身体，早点躺下听听喜马拉雅也挺好啊 尤其是无意义的社交，拒绝自我麻木，自我高潮。 对自己狠一点吧，你的父母尚在苟且之中，你却在谈什么诗和远方。">
+<meta name="twitter:title" content="面试算法之递归与回溯">
+<meta name="twitter:description" content="Just in progress">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/10/拒绝无意义的事情，把时间浪费在美好事情上/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/21/面试算法之递归与回溯/"/>
 
 
 
 
 
-  <title>拒绝无意义的事情，把时间浪费在美好事情上 | JayVae's Blog</title>
+  <title>面试算法之递归与回溯 | JayVae's Blog</title>
   
 
 
@@ -262,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/10/拒绝无意义的事情，把时间浪费在美好事情上/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/面试算法之递归与回溯/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay">
@@ -279,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">拒绝无意义的事情，把时间浪费在美好事情上</h1>
+          <h1 class="post-title" itemprop="name headline">面试算法之递归与回溯</h1>
         
 
         <div class="post-meta">
@@ -291,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T14:14:31+08:00">
-                2018-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T20:05:10+08:00">
+                2018-08-21
               </time>
             
 
@@ -301,6 +302,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试算法/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -329,18 +352,7 @@
       
 
       
-        <p>最近拖延症太严重了啊！！！！</p>
-<p>抓紧时间准备找工作吧，把时间用在刷题上面，不要做这些无意义的事情了：</p>
-<ul>
-<li>游戏</li>
-<li>看游戏视频</li>
-<li>看综艺</li>
-<li>看微博</li>
-</ul>
-<p><strong>早睡早起，锻炼身体，早点躺下听听喜马拉雅也挺好啊</strong></p>
-<p>尤其是无意义的社交，拒绝自我麻木，自我高潮。</p>
-<p>对自己狠一点吧，你的父母尚在苟且之中，你却在谈什么诗和远方。</p>
-
+        
       
     </div>
     
@@ -355,6 +367,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/面试算法/" rel="tag"># 面试算法</a>
+          
+        </div>
+      
 
       
       
@@ -364,8 +382,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/03/简历项目整理/" rel="next" title="简历项目整理">
-                <i class="fa fa-chevron-left"></i> 简历项目整理
+              <a href="/2018/08/19/面试算法之回溯算法/" rel="next" title="面试算法之回溯算法">
+                <i class="fa fa-chevron-left"></i> 面试算法之回溯算法
               </a>
             
           </div>
@@ -373,10 +391,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/11/算法面试/" rel="prev" title="算法面试">
-                算法面试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
