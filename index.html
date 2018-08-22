@@ -262,6 +262,313 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/双指针/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/22/双指针/" itemprop="url">双指针</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T15:56:59+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试算法/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="两个常用场景（数组中）"><a href="#两个常用场景（数组中）" class="headerlink" title="两个常用场景（数组中）"></a>两个常用场景（数组中）</h1><ol>
+<li>前后同时，从不同位置出发<br> 从两端向中间迭代数组。<br> 一个指针从始端开始，而另一个指针从末端开始。<br>值得注意的是，这种技巧经常在排序数组中使用。</li>
+</ol>
+<p>比如：反转字符串，数组拆分，两数和（有序数组）</p>
+<ol start="2">
+<li>两个不同步的指针（一个快指针一个慢指针），速度不同<br> 解决这类问题的关键是确定两个指针的移动策略。</li>
+</ol>
+<p>比如： 原地移除元素。最大连续1的个数，长度最小的子数组</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>你有时可能需要在使用双指针技巧之前对数组进行<strong>排序</strong>，也可能需要运用<strong>贪心想法</strong>来决定你的<strong>运动策略</strong>。</p>
+<h1 id="双指针在链表中的应用"><a href="#双指针在链表中的应用" class="headerlink" title="双指针在链表中的应用"></a>双指针在链表中的应用</h1><p><strong>双指针技术</strong><br>删除倒数第n个节点：19，61，143<br>判断有没有环lc141，lc142<br>回文链234</p>
+<h2 id="链表中双指针模板"><a href="#链表中双指针模板" class="headerlink" title="链表中双指针模板"></a>链表中双指针模板</h2><pre><code>// Initialize slow &amp; fast pointers
+ListNode slow = head;
+ListNode fast = head;
+/**
+ * Change this condition to fit specific problem.
+ * Attention: remember to avoid null-pointer error
+ **/
+while (slow != null &amp;&amp; fast != null &amp;&amp; fast.next != null) {
+    slow = slow.next;           // move slow pointer one step each time
+    fast = fast.next.next;      // move fast pointer two steps each time
+    if (slow == fast) {         // change this condition to fit specific problem
+        return true;
+    }
+}
+return false;   // change return value to fit specific problem
+</code></pre><h1 id="双指针在滑动窗口"><a href="#双指针在滑动窗口" class="headerlink" title="双指针在滑动窗口"></a>双指针在滑动窗口</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/面试算法之大数问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/22/面试算法之大数问题/" itemprop="url">面试算法之大数问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T15:34:10+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试算法/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/面试算法之递归与回溯/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -365,7 +672,9 @@
 <h2 id="floodfill问题，一类经典问题"><a href="#floodfill问题，一类经典问题" class="headerlink" title="floodfill问题，一类经典问题"></a>floodfill问题，一类经典问题</h2><p>本质是深度优先的遍历</p>
 <p>回溯法是经典人工智能的基础</p>
 <p>lc51</p>
-<p>N皇后问题</p>
+<p>N皇后问题：<br>    可以定义一个Try(x,y)函数判断棋盘(x,y)处是否可以放皇后：</p>
+<p>(1)不在同一列</p>
+<p>(2)不在对角线上，即有两棋子坐标分别为(X1,Y1),(X2,Y2)，则|X1-X2|!=|Y1-Y2|</p>
 
           
         
@@ -1422,332 +1731,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/设计模式之工厂模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/01/设计模式之工厂模式/" itemprop="url">设计模式之工厂模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T15:35:33+08:00">
-                2018-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><p>实例化对象，用工厂方法代替new操作；<br>包括工厂方法模式和抽象工厂模式；<br>抽象工厂模式是工厂方法模式的扩展。</p>
-<h2 id="意图："><a href="#意图：" class="headerlink" title="意图："></a>意图：</h2><p>定义一个接口来创建对象，但是让子类来决定哪些类需要被实例化；<br>工厂方法把实例化的工作推迟到子类中去实现。</p>
-<h2 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h2><p>有一组类似的对象需要创建；<br>扩展性</p>
-<h2 id="常见应用："><a href="#常见应用：" class="headerlink" title="常见应用："></a>常见应用：</h2><ol>
-<li>JDBC：</li>
-<li>spring beanfactory：作为spring基础的IoC容器，是spring的一个bean工厂。</li>
-<li>解析xml</li>
-</ol>
-<p>工厂模式用来创建一个产品的等级结构，而抽象工厂模式用来创建多个产品的等级结构；<br>工厂模式只有一个抽象产品类，而抽象工厂模式有多个抽象产品类。</p>
-<h2 id="工厂方法模式和抽象工厂模式区别"><a href="#工厂方法模式和抽象工厂模式区别" class="headerlink" title="工厂方法模式和抽象工厂模式区别"></a>工厂方法模式和抽象工厂模式区别</h2><p>工厂模式在一些设计模式的书中分为简单工厂模式，工厂方法模式和抽象工厂模式三类。<br>也有把工厂方法模式划分到抽象工厂模式的，认为工厂方法是抽象工厂模式的特例的一种，就是只有一个要实现的产品接口。</p>
-<p>简单工厂：工厂类中，根据条件决定一个接口由哪个具体产品类来实现。</p>
-<p>工厂方法：创建多个工厂类。各个工厂类中，都对应一个获得接口A实例的方法。用户决定使用哪个工厂。</p>
-<p>抽象工厂：对工厂方法进行扩展。各个工厂类中，再增加一个获得接口B实例的方法。</p>
-<p>提一下，多个工厂类都继承自同一个接口。</p>
-<pre><code>个人觉得这个区别在于产品，如果产品单一，最合适用工厂模式，但是如果有多个业务品种、业务分类时，通过抽象工厂模式产生需要的对象是一种非常好的解决方式。再通俗深化理解下：工厂模式针对的是一个产品等级结构 ，抽象工厂模式针对的是面向多个产品等级结构的。
-</code></pre><p>再来看看工厂方法模式与抽象工厂模式对比：</p>
-<p>工厂方法模式                抽象工厂模式<br>针对的是一个产品等级结构     针对的是面向多个产品等级结构<br>一个抽象产品类     多个抽象产品类<br>可以派生出多个具体产品类     每个抽象产品类可以派生出多个具体产品类<br>一个抽象工厂类，可以派生出多个具体工厂类     一个抽象工厂类，可以派生出多个具体工厂类<br>每个具体工厂类只能创建一个具体产品类的实例     每个具体工厂类可以创建多个具体产品类的实例</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/设计模式之代理模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/01/设计模式之代理模式/" itemprop="url">设计模式之代理模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T14:50:12+08:00">
-                2018-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>定义： 为其他对象提供一种代理以控制对这个对象的访问；</p>
-<p>静态代理实现：</p>
-<ol>
-<li>继承实现；</li>
-<li>聚合实现（更灵活）；</li>
-</ol>
-<p>动态代理（如何体现动态，就是当接口中又添加新功能时，代理中不用改变）：</p>
-<ol>
-<li><p>实现步骤：</p>
-<p> 使用被代理对象创建InvocationHandler对象实例<br> 生成代理对象实例</p>
-<pre><code>生成proxy代理对象的字节码文件，并创建proxy的类对象
-根据proxy的类对象使用反射创建proxy对象实例
-</code></pre><p> 在代理对象实例上调用目标方法（就是调用invoke的过程）<br><a href="https://blog.csdn.net/qq1004642027/article/details/52092730" target="_blank" rel="noopener">JAVA动态代理用法与实现过程</a></p>
-</li>
-<li><p>jdk动态代理（基于接口代理）与cglib动态代理（基于继承代理）</p>
-</li>
-</ol>
-<p>上面是一个很简单的例子，可以看出，我们想对外开放某些功能，就可以将这些功能在代理类中被引用，如此一来，屏蔽了我们不想外露的功能，只将我们想开放的功能开放出来。亦即委托类中其实是可以有很多方法的，很多功能的，我们可以酌情对外开放，代理类犹如一道大门，将委托类与外部调用者隔绝开来，只将部分功能赋予这个大门，来代替委托类行使这个功能，哪怕最终还是要牵扯到自身（因为最终还是要调用委托类的对应方法实现）。</p>
-<p>代理模式很简单，只要记住以下关键点，简单易实现：</p>
-<p>　　　　（1）代理类与委托类实现同一接口</p>
-<p>　　　　（2）在委托类中实现功能，在代理类的方法中中引用委托类的同名方法</p>
-<p>　　　　（3）外部类调用委托类某个方法时，直接以接口指向代理类的实例，这正是代理的意义所在：屏蔽。</p>
-<p>　　代理模式场景描述：</p>
-<p>　　　　（1）当我们想要隐藏某个类时，可以为其提供代理类</p>
-<p>　　　　（2）当一个类需要对不同的调用者提供不同的调用权限时，可以使用代理类来实现（代理类不一定只有一个，我们可以建立多个代理类来实现，也可以在一个代理类中金进行权限判断来进行不同权限的功能调用）</p>
-<p>　　　　（3）当我们要扩展某个类的某个功能时，可以使用代理模式，在代理类中进行简单扩展（只针对简单扩展，可在引用委托类的语句之前与之后进行）</p>
-<p>　　代理模式虽然实现了调用者与委托类之间的强耦合，但是却增加了代理类与委托类之间的强耦合（在代理类中显式调用委托类的方法），而且增加代理类之后明显会增加处理时间，拖慢处理时间。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1802,7 +1785,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

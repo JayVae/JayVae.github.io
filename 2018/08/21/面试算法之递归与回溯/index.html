@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JayVae&#39;s Blog">
 <meta property="og:description" content="树形问题lc17 递归调用的一个重要特征–要返回 回溯法回溯法 是依赖递归的（要保证回去，递归本身会回去，但有些状态需要手动回去，比如全排列问题中使用辅助空间used） 回溯法是暴力解法的一个主要实现手段动态规划就是在回溯法基础上实现的；还可以通过某些剪枝不用遍历完所有情况。 lc93，131 剪枝lc77 二维平面lc79 floodfill问题，一类经典问题本质是深度优先的遍历 回溯法是经典人">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-21T14:43:40.598Z">
+<meta property="og:updated_time" content="2018-08-22T06:25:53.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试算法之递归与回溯">
 <meta name="twitter:description" content="树形问题lc17 递归调用的一个重要特征–要返回 回溯法回溯法 是依赖递归的（要保证回去，递归本身会回去，但有些状态需要手动回去，比如全排列问题中使用辅助空间used） 回溯法是暴力解法的一个主要实现手段动态规划就是在回溯法基础上实现的；还可以通过某些剪枝不用遍历完所有情况。 lc93，131 剪枝lc77 二维平面lc79 floodfill问题，一类经典问题本质是深度优先的遍历 回溯法是经典人">
@@ -362,7 +362,9 @@
 <h2 id="floodfill问题，一类经典问题"><a href="#floodfill问题，一类经典问题" class="headerlink" title="floodfill问题，一类经典问题"></a>floodfill问题，一类经典问题</h2><p>本质是深度优先的遍历</p>
 <p>回溯法是经典人工智能的基础</p>
 <p>lc51</p>
-<p>N皇后问题</p>
+<p>N皇后问题：<br>    可以定义一个Try(x,y)函数判断棋盘(x,y)处是否可以放皇后：</p>
+<p>(1)不在同一列</p>
+<p>(2)不在对角线上，即有两棋子坐标分别为(X1,Y1),(X2,Y2)，则|X1-X2|!=|Y1-Y2|</p>
 
       
     </div>
@@ -402,6 +404,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/22/面试算法之大数问题/" rel="prev" title="面试算法之大数问题">
+                面试算法之大数问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -482,7 +488,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
