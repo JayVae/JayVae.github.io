@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TO BE CONTINUED   单例的7种写法？double check？  多线程中几种锁？  可见性  transient  volatile关键字  类加载顺序  大数相加、大数相乘">
+<meta name="description" content="TO BE CONTINUED   单例的7种写法？double check？  多线程中几种锁？  可见性  transient  volatile关键字  类加载顺序  大数相加、大数相乘  static synchronized  timewait次数太多   10。 hashmap9  atomicInteger  找中位数  不用随机数生成随机  UDP  可重入锁  如果TCP连接中">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java待补充问题">
 <meta property="og:url" content="http://yoursite.com/2018/08/11/Java待补充问题/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="TO BE CONTINUED   单例的7种写法？double check？  多线程中几种锁？  可见性  transient  volatile关键字  类加载顺序  大数相加、大数相乘">
+<meta property="og:description" content="TO BE CONTINUED   单例的7种写法？double check？  多线程中几种锁？  可见性  transient  volatile关键字  类加载顺序  大数相加、大数相乘  static synchronized  timewait次数太多   10。 hashmap9  atomicInteger  找中位数  不用随机数生成随机  UDP  可重入锁  如果TCP连接中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-11T02:26:26.211Z">
+<meta property="og:updated_time" content="2018-08-26T12:21:28.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java待补充问题">
-<meta name="twitter:description" content="TO BE CONTINUED   单例的7种写法？double check？  多线程中几种锁？  可见性  transient  volatile关键字  类加载顺序  大数相加、大数相乘">
+<meta name="twitter:description" content="TO BE CONTINUED   单例的7种写法？double check？  多线程中几种锁？  可见性  transient  volatile关键字  类加载顺序  大数相加、大数相乘  static synchronized  timewait次数太多   10。 hashmap9  atomicInteger  找中位数  不用随机数生成随机  UDP  可重入锁  如果TCP连接中">
 
 
 
@@ -369,6 +369,71 @@
 <li><p>类加载顺序</p>
 </li>
 <li><p>大数相加、大数相乘</p>
+</li>
+<li><p>static synchronized</p>
+</li>
+<li><p>timewait次数太多</p>
+</li>
+</ol>
+<p>10。 hashmap9</p>
+<ol start="11">
+<li><p>atomicInteger</p>
+</li>
+<li><p>找中位数</p>
+</li>
+<li><p>不用随机数生成随机</p>
+</li>
+<li><p>UDP</p>
+</li>
+<li><p>可重入锁</p>
+</li>
+<li><p>如果TCP连接中没收到怎么办</p>
+</li>
+<li><p>进程间通信：<br>这种存在共享内存区的进程间的冲突问题，解决方法的思路是统一的：当某个进程正在操作共享内存区时，其他进程不得操作共享内存区。<br>这个思路实现的关键点就是：令其他进程知道“有一个进程在操作共享内存区”，因此这类问题就被称为进程通信问题，<br>通信的“内容”就是：有没有其他进程在操作共享内存区。（讲解到信号量机制时进程通信将广义化，但依然不是进程间的“实际通信”，而是某些信号的共享）<br>IPC的方式通常有管道（包括无名管道和命名管道）、消息队列、信号量、共享存储、Socket、Streams等。其中 Socket和Streams支持不同主机上的两个进程IPC。</p>
+</li>
+<li><p>Mybatis（看）,事务实现</p>
+</li>
+<li><p>如何找出一列数中的两个重复元素</p>
+</li>
+<li><p>mysql中索引类型及实现</p>
+</li>
+<li><p>数据库中的锁</p>
+</li>
+<li><p>行锁</p>
+</li>
+<li><p>java锁的底层实现</p>
+</li>
+<li><p>数据库中mysql的事务<br>事务的隔离性是通过锁实现，而事务的原子性、一致性和持久性则是通过事务日志实现。说到事务日志，不得不说的就是redo和undo。<br>事务的实现是基于数据库的存储引擎。不同的存储引擎对事务的支持程度不一样。mysql中支持事务的存储引擎有innoDB和NDB。<br>innoDB是mysql默认的存储引擎，默认的隔离级别是RR，并且在RR的隔离级别下更进一步，<br>通过多版本并发控制（MVCC，Multiversion Concurrency Control ）解决不可重复读问题，<br>加上间隙锁（也就是并发控制）解决幻读问题。因此innoDB的RR隔离级别其实实现了串行化级别的效果，而且保留了比较好的并发性能。</p>
+</li>
+<li><p>mybatis事务管理机制</p>
+</li>
+<li><p>mysql中主键和唯一键的区别，唯一索引。<br>都是不允许重复</p>
+</li>
+<li>主键只有一个，唯一约束可以有多个；</li>
+<li>主键不能为null，唯一约束可以有多个；</li>
+<li>主键是不可能（或很难）更新，唯一约束只要唯一就可以更新． </li>
+</ol>
+<p>（2）.在创建唯一性约束和主键约束时可以创建聚集索引和非聚集索引，但在 默认情况下主键约束产生聚集索引，而唯一性约束产生非聚集索引<br>约束和索引， 前者是用来检查数据的正确性，后者用来实现数据查询的优化，目的不同。</p>
+<p>唯一性约束与唯一索引有所不同：<br>（1）.创建唯一约束会在Oracle中创建一个Constraint，同时也会创建一个该约束对应的唯一索引。<br>（2）.创建唯一索引只会创建一个唯一索引，不会创建Constraint。<br>也就是说其实唯一约束是通过创建唯一索引来实现的。</p>
+<p>在删除时这两者也有一定的区别：<br>删除唯一约束时可以只删除约束而不删除对应的索引，所以对应的列还是必须唯一的，<br>而删除了唯一索引的话就可以插入不唯一的值。</p>
+<ol start="26">
+<li><p>tcp连接中间的数据丢失</p>
+</li>
+<li><p>约瑟夫环</p>
+</li>
+<li><p>多线程通信</p>
+</li>
+<li><p>equals与hashcode为什么需要一致</p>
+</li>
+<li><p>信号量</p>
+</li>
+<li><p>tcp为什么比udp可靠<br>[1] 确认和重传机制<br>建立连接时三次握手同步双方的“序列号 + 确认号 + 窗口大小信息”，是确认重传、流控的基础<br>传输过程中，如果Checksum校验失败、丢包或延时，发送端重传<br>[2] 数据排序<br>TCP有专门的序列号SN字段，可提供数据re-order<br>[3] 流量控制<br>窗口和计时器的使用。TCP窗口中会指明双方能够发送接收的最大数据量<br>[4] 拥塞控制<br>TCP的拥塞控制由4个核心算法组成。</p>
+<p>“慢启动”（Slow Start）</p>
+<p>“拥塞避免”（Congestion avoidance）</p>
+<p>“快速重传 ”（Fast Retransmit）</p>
+<p>“快速恢复”（Fast Recovery）</p>
+</li>
+<li><p>索引<br>只有在where语句出现，mysql才会去使用索引<br>32.1 聚簇索引</p>
 </li>
 </ol>
 
