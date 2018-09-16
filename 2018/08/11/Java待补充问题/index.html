@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JayVae&#39;s Blog">
 <meta property="og:description" content="TO BE CONTINUED   单例的7种写法？double check？  多线程中几种锁？  可见性  transient类的有些属性需要序列化，而其他属性不需要被序列化，打个比方，如果一个用户有一些敏感信息（如密码，银行卡号等），为了安全起见，不希望在网络操作（主要涉及到序列化操作，本地序列化缓存也适用）中被传输，这些信息对应的变量就可以加上transient关键字。换句话说，这个字段">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-14T01:12:54.545Z">
+<meta property="og:updated_time" content="2018-09-16T07:38:32.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java待补充问题">
 <meta name="twitter:description" content="TO BE CONTINUED   单例的7种写法？double check？  多线程中几种锁？  可见性  transient类的有些属性需要序列化，而其他属性不需要被序列化，打个比方，如果一个用户有一些敏感信息（如密码，银行卡号等），为了安全起见，不希望在网络操作（主要涉及到序列化操作，本地序列化缓存也适用）中被传输，这些信息对应的变量就可以加上transient关键字。换句话说，这个字段">
@@ -451,6 +451,16 @@
 </ol>
 <p>　　①拦截器是基于java的反射机制的，而过滤器是基于函数回调。<br>　　②拦截器不依赖与servlet容器，过滤器依赖与servlet容器。<br>　　③拦截器只能对action请求起作用，而过滤器则可以对几乎所有的请求起作用。<br>　　④拦截器可以访问action上下文、值栈里的对象，而过滤器不能访问。<br>　　⑤在action的生命周期中，拦截器可以多次被调用，而过滤器只能在容器初始化时被调用一次。</p>
 <p>　　⑥拦截器可以获取IOC容器中的各个bean，而过滤器就不行，这点很重要，在拦截器里注入一个service，可以调用业务逻辑。</p>
+<ol start="38">
+<li>CAs</li>
+<li>孤儿进程，僵尸进程</li>
+<li>一致性hash</li>
+<li>数据库连接sleep</li>
+<li>内存溢出原因（不用调试工具）</li>
+<li>不可捕捉异常</li>
+<li>怎么检测锁消除</li>
+<li>多线程的优化</li>
+</ol>
 
       
     </div>
