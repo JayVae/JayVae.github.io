@@ -262,6 +262,131 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/面试算法之查找表的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/13/面试算法之查找表的问题/" itemprop="url">面试算法之查找表的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T19:25:37+08:00">
+                2018-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有序数组的二分查找；<br>set；（二分查找树[红黑树]实现和散列表[哈希]实现）<br>map；（二分查找树[红黑树]实现和散列表[哈希]实现）</p>
+<p>二分查找树实现查找用logN时间，保留了数据的顺序性，提供更多的功能，即java中的treemap，treeset；<br>散列表就是查找用常数时间，即java中的hashset。</p>
+<p>当键都是长字符串时，</p>
+<p>leetcode 1,15,18，16【16并不是查找表】，454，49，447，149</p>
+<h1 id="最关键的是："><a href="#最关键的是：" class="headerlink" title="最关键的是："></a>最关键的是：</h1><p><strong>到底应该查找什么？</strong></p>
+<p>滑动窗口+查找表<br>lc219，217，219</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/面试算法之数组问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1525,138 +1650,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/JZOffer之高质量的代码/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/26/JZOffer之高质量的代码/" itemprop="url">JZOffer之高质量的代码</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T15:35:15+08:00">
-                2018-05-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>规范性</strong><br>合理的变量和函数命名，保证可读性，最好用完整的英文单词组合。<br><strong>完整性</strong></p>
-<ol>
-<li>设计测试用例：<blockquote>
-<p>功能测试（除了常规输入之外，还有题目中的范围，比如大数问题，就需要用字符串或者数组来表示大的数字，以确保不会溢出）<br>边界测试（结束循环、递归的便捷条件是否正确）<br>负面测试（考虑错误输入）</p>
-</blockquote>
-</li>
-<li>错误处理：<blockquote>
-<p>返回值<br>返回全局变量<br>异常<br><strong>鲁棒性</strong><br>鲁棒性体现了容错性，表示当出现了与预期的条件不一样时的情况的处理。</p>
-</blockquote>
-</li>
-<li>输入参数检查<br>比如，指针是否为空，字符串是否为空，路径是否存在，超出范围怎么办？</li>
-<li>针对题目提问“如果不，那么”</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1711,7 +1704,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
