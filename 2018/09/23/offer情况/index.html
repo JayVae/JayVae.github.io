@@ -362,6 +362,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/23/offer情况/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/23/offer情况/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -468,8 +478,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/26/智能代理机器人/" rel="prev" title="智能代理机器人">
-                智能代理机器人 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/26/HEXO改进/" rel="prev" title="HEXO高级功能">
+                HEXO高级功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -500,6 +510,40 @@
           
 
   
+<div onclick="showGitment()" id="gitment_title" class="gitment_title">��ʾ Gitment ����</div>
+<div id="container" style="display:none"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+const myTheme = {
+render(state, instance) {
+const container = document.createElement('div');
+container.lang = "en-US";
+container.className = 'gitment-container gitment-root-container';
+container.appendChild(instance.renderHeader(state, instance));
+container.appendChild(instance.renderEditor(state, instance));
+container.appendChild(instance.renderComments(state, instance));
+container.appendChild(instance.renderFooter(state, instance));
+return container;
+}
+}
+function showGitment() {
+$("#gitment_title").attr("style", "display:none");
+$("#container").attr("style", "").addClass("gitment_container");
+var gitment = new Gitment({
+id: window.location.pathname,
+theme: myTheme,
+owner: '',
+repo: '',
+oauth: {
+client_id: '18c4c1a4b757582f350b',
+client_secret: '77dd90a675af1d70e71a63f31351268ddde641e0'
+}
+});
+gitment.render('container');
+}
+</script>
+
 
 
 
@@ -798,6 +842,43 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'JayVae',
+            repo: 'https://github.com/JayVae/gitment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '77dd90a675af1d70e71a63f31351268ddde641e0',
+            
+                client_id: '18c4c1a4b757582f350b'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
