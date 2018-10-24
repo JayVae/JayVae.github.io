@@ -471,40 +471,14 @@
           
 
   
-<div onclick="showGitment()" id="gitment_title" class="gitment_title">��ʾ Gitment ����</div>
-<div id="container" style="display:none"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-const myTheme = {
-render(state, instance) {
-const container = document.createElement('div');
-container.lang = "en-US";
-container.className = 'gitment-container gitment-root-container';
-container.appendChild(instance.renderHeader(state, instance));
-container.appendChild(instance.renderEditor(state, instance));
-container.appendChild(instance.renderComments(state, instance));
-container.appendChild(instance.renderFooter(state, instance));
-return container;
-}
-}
-function showGitment() {
-$("#gitment_title").attr("style", "display:none");
-$("#container").attr("style", "").addClass("gitment_container");
-var gitment = new Gitment({
-id: window.location.pathname,
-theme: myTheme,
-owner: '',
-repo: '',
-oauth: {
-client_id: '18c4c1a4b757582f350b',
-client_secret: '77dd90a675af1d70e71a63f31351268ddde641e0'
-}
-});
-gitment.render('container');
-}
-</script>
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
 
+  
 
 
 
