@@ -497,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/23/offer情况/" rel="next" title="offer情况">
-                <i class="fa fa-chevron-left"></i> offer情况
+              <a href="/2018/09/26/智能代理机器人/" rel="next" title="智能代理机器人">
+                <i class="fa fa-chevron-left"></i> 智能代理机器人
               </a>
             
           </div>
@@ -506,10 +506,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/26/智能代理机器人/" rel="prev" title="智能代理机器人">
-                智能代理机器人 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -929,7 +925,11 @@ gitment.render('container');
       }
 
       
-      renderGitment();
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
       
       </script>
     
