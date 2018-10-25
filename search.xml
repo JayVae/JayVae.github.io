@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[分布式事务]]></title>
+    <url>%2F2018%2F10%2F25%2F%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%2F</url>
+    <content type="text"><![CDATA[引用自https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html]]></content>
+      <categories>
+        <category>Java</category>
+        <category>分布式</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[分布式锁]]></title>
     <url>%2F2018%2F10%2F25%2F%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%2F</url>
     <content type="text"><![CDATA[引用自https://www.cnblogs.com/austinspark-jessylu/p/8043726.html 分布式的CAP理论 任何一个分布式系统都无法同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance），最多只能同时满足两项。”所以，很多系统在设计之初就要对这三者做出取舍。在互联网领域的绝大多数的场景中，都需要牺牲强一致性来换取系统的高可用性，系统往往只需要保证“最终一致性”，只要这个最终时间是在用户可以接受的范围内即可。 需要的分布式锁应该是怎么样的？ 可以保证在分布式部署的应用集群中，同一个方法在同一时间只能被一台机器上的一个线程执行。 这把锁要是一把可重入锁（避免死锁） 这把锁最好是一把阻塞锁（根据业务需求考虑要不要这条） 有高可用的获取锁和释放锁功能 获取锁和释放锁的性能要好 常用设计方案2.1 基于数据库实现分布式锁要实现分布式锁，最简单的方式可能就是直接创建一张锁表，然后通过操作该表中的数据来实现了。当我们要锁住某个方法或资源时，我们就在该表中增加一条记录，想要释放锁的时候就删除这条记录。2.2 基于缓存（redis，memcached，tair）实现分布式锁基于Tair的实现分布式锁其实和Redis类似，其中主要的实现方式是使用TairManager.put方法来实现。2.3 基于Zookeeper实现分布式锁基于zookeeper临时有序节点可以实现的分布式锁。大致思想即为：每个客户端对某个方法加锁时，在zookeeper上的与该方法对应的指定节点的目录下，生成一个唯一的瞬时有序节点。 判断是否获取锁的方式很简单，只需要判断有序节点中序号最小的一个。 当释放锁的时候，只需将这个瞬时节点删除即可。同时，其可以避免服务宕机导致的锁无法释放，而产生的死锁问题。]]></content>
@@ -13,17 +25,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[智能代理机器人]]></title>
-    <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
-    <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？]]></content>
-      <categories>
-        <category>课题</category>
-      </categories>
-      <tags>
-        <tag>课题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[HEXO高级功能]]></title>
     <url>%2F2018%2F09%2F26%2FHEXO%E6%94%B9%E8%BF%9B%2F</url>
     <content type="text"><![CDATA[如何改变皮肤？步骤如下： 前往 hexo网站 选择皮肤，并点击进入github页面； 将git库clone到themes文件夹下； 修改conf配置文件，改为对应的名字； 有的图片需要配置按照github的readme来写。 如何自定义博客结构？ 进入使用的themes下，修改layout中的相关文件（比如js这些） 文章的分类与标签 前往 hexo网站 查看相应的语法 如何让代码更美观 前往 hexo网站 查看相应的语法1[rectangle setX: 10 y: 10 width: 20 height: 20]; _.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] 并在对应的themes中修改相应的高亮代码块方案。 本地写作时图床的写作方案 图床七牛 ; 配置方法:快捷键+建个脚本（注意图床的链接的修改） 上传使用官方的上传组件即可，命令行辅助工具(qrsctl) 插件的安装 前往 hexo网站 字数统计插件 ： 不算字 next的字数统计见https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral, https://blog.csdn.net/u012195214/article/details/79204088 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能 博客 接入评论系统 disquz 来必力 畅言 gitment； https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/ 博客增加搜索功能 SwiftType 自定义site语法进行跳转 next方案在https://blog.csdn.net/u012195214/article/details/79204088 接入统计系统 cnzz 百度统计:https://blog.csdn.net/u013066244/article/details/71056745]]></content>
@@ -32,6 +33,17 @@
       </categories>
       <tags>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[智能代理机器人]]></title>
+    <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
+    <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？]]></content>
+      <categories>
+        <category>课题</category>
+      </categories>
+      <tags>
+        <tag>课题</tag>
       </tags>
   </entry>
   <entry>
@@ -488,7 +500,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#49;&#57;&#x34;&#x33;&#x33;&#x35;&#x32;&#52;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#x31;&#57;&#52;&#51;&#x33;&#53;&#50;&#x34;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
