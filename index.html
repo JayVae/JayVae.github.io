@@ -413,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  14 �� 
+                  14 字
                 </span>
               
 
@@ -429,7 +429,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 ���� 
+                  1 分钟
                 </span>
               
             </div>
@@ -610,7 +610,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  579 �� 
+                  579 字
                 </span>
               
 
@@ -626,7 +626,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 ���� 
+                  2 分钟
                 </span>
               
             </div>
@@ -659,239 +659,6 @@
 </li>
 <li><p>常用设计方案<br>2.1 基于数据库实现分布式锁<br>要实现分布式锁，最简单的方式可能就是直接创建一张锁表，然后通过操作该表中的数据来实现了。<br>当我们要锁住某个方法或资源时，我们就在该表中增加一条记录，想要释放锁的时候就删除这条记录。<br>2.2 基于缓存（redis，memcached，tair）实现分布式锁<br>基于Tair的实现分布式锁其实和Redis类似，其中主要的实现方式是使用TairManager.put方法来实现。<br>2.3 基于Zookeeper实现分布式锁<br>基于zookeeper临时有序节点可以实现的分布式锁。<br>大致思想即为：每个客户端对某个方法加锁时，在zookeeper上的与该方法对应的指定节点的目录下，生成一个唯一的瞬时有序节点。 判断是否获取锁的方式很简单，只需要判断有序节点中序号最小的一个。 当释放锁的时候，只需将这个瞬时节点删除即可。同时，其可以避免服务宕机导致的锁无法释放，而产生的死锁问题。</p>
 </li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/HEXO改进/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/26/HEXO改进/" itemprop="url">HEXO高级功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T16:44:56+08:00">
-                2018-09-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基本设置/" itemprop="url" rel="index">
-                    <span itemprop="name">基本设置</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/26/HEXO改进/" class="leancloud_visitors" data-flag-title="HEXO高级功能">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  459 �� 
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 ���� 
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="如何改变皮肤？"><a href="#如何改变皮肤？" class="headerlink" title="如何改变皮肤？"></a>如何改变皮肤？</h1><p>步骤如下：</p>
-<ol>
-<li>前往 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo网站</a> 选择皮肤，并点击进入github页面；</li>
-<li>将git库clone到themes文件夹下；</li>
-<li>修改conf配置文件，改为对应的名字；</li>
-<li>有的图片需要配置按照github的readme来写。</li>
-</ol>
-<h1 id="如何自定义博客结构？"><a href="#如何自定义博客结构？" class="headerlink" title="如何自定义博客结构？"></a>如何自定义博客结构？</h1><ol>
-<li>进入使用的themes下，修改layout中的相关文件（比如js这些）</li>
-</ol>
-<h1 id="文章的分类与标签"><a href="#文章的分类与标签" class="headerlink" title="文章的分类与标签"></a>文章的分类与标签</h1><ol>
-<li>前往 <a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">hexo网站</a> 查看相应的语法</li>
-</ol>
-<h1 id="如何让代码更美观"><a href="#如何让代码更美观" class="headerlink" title="如何让代码更美观"></a>如何让代码更美观</h1><ol>
-<li>前往 <a href="https://hexo.io/zh-cn/docs/tag-plugins#%E4%BB%A3%E7%A0%81%E5%9D%97" target="_blank" rel="noopener">hexo网站</a> 查看相应的语法<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>并在对应的themes中修改相应的高亮代码块方案。</li>
-</ol>
-<h1 id="本地写作时图床的写作方案"><a href="#本地写作时图床的写作方案" class="headerlink" title="本地写作时图床的写作方案"></a>本地写作时图床的写作方案</h1><ol>
-<li>图床<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛</a> ;</li>
-<li>配置方法:快捷键+建个脚本（注意图床的链接的修改）</li>
-<li>上传使用官方的上传组件即可，命令行辅助工具(qrsctl)</li>
-</ol>
-<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><ol>
-<li>前往 <a href="https://hexo.io/plugins" target="_blank" rel="noopener">hexo网站</a> </li>
-<li>字数统计插件 ： 不算字<br> next的字数统计见<a href="https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral</a>, <a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/79204088</a><br> 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save<br> 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能</li>
-</ol>
-<h1 id="博客-接入评论系统"><a href="#博客-接入评论系统" class="headerlink" title="博客 接入评论系统"></a>博客 接入评论系统</h1><ol>
-<li>disquz</li>
-<li>来必力</li>
-<li>畅言</li>
-<li>gitment； <a href="https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</a></li>
-</ol>
-<h1 id="博客增加搜索功能"><a href="#博客增加搜索功能" class="headerlink" title="博客增加搜索功能"></a>博客增加搜索功能</h1><ol>
-<li>SwiftType</li>
-<li>自定义site语法进行跳转</li>
-<li>next方案在<a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/79204088</a></li>
-</ol>
-<h1 id="接入统计系统"><a href="#接入统计系统" class="headerlink" title="接入统计系统"></a>接入统计系统</h1><ol>
-<li>cnzz</li>
-<li>百度统计:<a href="https://blog.csdn.net/u013066244/article/details/71056745" target="_blank" rel="noopener">https://blog.csdn.net/u013066244/article/details/71056745</a></li>
-</ol>
-<h1 id="阅读量统计"><a href="#阅读量统计" class="headerlink" title="阅读量统计"></a>阅读量统计</h1><ol>
-<li>注册<a href="https://leancloud.cn" target="_blank" rel="noopener">LeanCloud</a> .</li>
-<li>新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写</li>
-<li></li>
 </ol>
 
           
@@ -1037,7 +804,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  41 �� 
+                  41 字
                 </span>
               
 
@@ -1053,7 +820,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 ���� 
+                  1 分钟
                 </span>
               
             </div>
@@ -1085,6 +852,238 @@
 <li>工作计划</li>
 <li>第一步的任务</li>
 <li>写论文的创新点在哪？？？</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/HEXO改进/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/26/HEXO改进/" itemprop="url">HEXO高级功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T16:44:56+08:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基本设置/" itemprop="url" rel="index">
+                    <span itemprop="name">基本设置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/26/HEXO改进/" class="leancloud_visitors" data-flag-title="HEXO高级功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  517 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="如何改变皮肤？"><a href="#如何改变皮肤？" class="headerlink" title="如何改变皮肤？"></a>如何改变皮肤？</h1><p>步骤如下：</p>
+<ol>
+<li>前往 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo网站</a> 选择皮肤，并点击进入github页面；</li>
+<li>将git库clone到themes文件夹下；</li>
+<li>修改conf配置文件，改为对应的名字；</li>
+<li>有的图片需要配置按照github的readme来写。</li>
+</ol>
+<h1 id="如何自定义博客结构？"><a href="#如何自定义博客结构？" class="headerlink" title="如何自定义博客结构？"></a>如何自定义博客结构？</h1><ol>
+<li>进入使用的themes下，修改layout中的相关文件（比如js这些）</li>
+</ol>
+<h1 id="文章的分类与标签"><a href="#文章的分类与标签" class="headerlink" title="文章的分类与标签"></a>文章的分类与标签</h1><ol>
+<li>前往 <a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">hexo网站</a> 查看相应的语法</li>
+</ol>
+<h1 id="如何让代码更美观"><a href="#如何让代码更美观" class="headerlink" title="如何让代码更美观"></a>如何让代码更美观</h1><ol>
+<li>前往 <a href="https://hexo.io/zh-cn/docs/tag-plugins#%E4%BB%A3%E7%A0%81%E5%9D%97" target="_blank" rel="noopener">hexo网站</a> 查看相应的语法<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>并在对应的themes中修改相应的高亮代码块方案。</li>
+</ol>
+<h1 id="本地写作时图床的写作方案"><a href="#本地写作时图床的写作方案" class="headerlink" title="本地写作时图床的写作方案"></a>本地写作时图床的写作方案</h1><ol>
+<li>图床<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛</a> ;</li>
+<li>配置方法:快捷键+建个脚本（注意图床的链接的修改）</li>
+<li>上传使用官方的上传组件即可，命令行辅助工具(qrsctl)</li>
+</ol>
+<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><ol>
+<li>前往 <a href="https://hexo.io/plugins" target="_blank" rel="noopener">hexo网站</a> </li>
+<li>字数统计插件 ： 不算字<br> next的字数统计见<a href="https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral</a>, <a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/79204088</a><br> 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save<br> 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能</li>
+</ol>
+<h1 id="博客-接入评论系统"><a href="#博客-接入评论系统" class="headerlink" title="博客 接入评论系统"></a>博客 接入评论系统</h1><ol>
+<li>disquz</li>
+<li>来必力</li>
+<li>畅言</li>
+<li>gitment； <a href="https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</a></li>
+</ol>
+<h1 id="博客增加搜索功能"><a href="#博客增加搜索功能" class="headerlink" title="博客增加搜索功能"></a>博客增加搜索功能</h1><ol>
+<li>SwiftType</li>
+<li>自定义site语法进行跳转</li>
+<li>next方案在<a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/79204088</a></li>
+</ol>
+<h1 id="接入统计系统"><a href="#接入统计系统" class="headerlink" title="接入统计系统"></a>接入统计系统</h1><ol>
+<li>cnzz</li>
+<li>百度统计:<a href="https://blog.csdn.net/u013066244/article/details/71056745" target="_blank" rel="noopener">https://blog.csdn.net/u013066244/article/details/71056745</a></li>
+</ol>
+<h1 id="阅读量统计"><a href="#阅读量统计" class="headerlink" title="阅读量统计"></a>阅读量统计</h1><ol>
+<li>注册<a href="https://leancloud.cn" target="_blank" rel="noopener">LeanCloud</a> .</li>
+<li>新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写<br>参考自<a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud</a></li>
 </ol>
 
           
@@ -1230,7 +1229,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  47 �� 
+                  47 字
                 </span>
               
 
@@ -1246,7 +1245,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 ���� 
+                  1 分钟
                 </span>
               
             </div>
@@ -1422,7 +1421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  270 �� 
+                  270 字
                 </span>
               
 
@@ -1438,7 +1437,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 ���� 
+                  1 分钟
                 </span>
               
             </div>
@@ -1614,7 +1613,7 @@ a = a^b;
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  562 �� 
+                  562 字
                 </span>
               
 
@@ -1630,7 +1629,7 @@ a = a^b;
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 ���� 
+                  1 分钟
                 </span>
               
             </div>
@@ -1824,7 +1823,7 @@ a = a^b;
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k �� 
+                  1.2k 字
                 </span>
               
 
@@ -1840,7 +1839,7 @@ a = a^b;
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 ���� 
+                  4 分钟
                 </span>
               
             </div>
@@ -2032,7 +2031,7 @@ AVL树
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  332 �� 
+                  332 字
                 </span>
               
 
@@ -2048,7 +2047,7 @@ AVL树
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 ���� 
+                  1 分钟
                 </span>
               
             </div>
@@ -2240,7 +2239,7 @@ return false;   // change return value to fit specific problem
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 �� 
+                  0 字
                 </span>
               
 
@@ -2256,7 +2255,7 @@ return false;   // change return value to fit specific problem
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 ���� 
+                  1 分钟
                 </span>
               
             </div>
@@ -2465,7 +2464,7 @@ return false;   // change return value to fit specific problem
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.7k</span>
+    <span title="Site words total count">19.8k</span>
   
 </div>
 
