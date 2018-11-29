@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[接口与抽象类]]></title>
+    <url>%2F2018%2F11%2F29%2F%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[抽象类和接口的区别 语法层面上的区别 1）抽象类可以提供成员方法的实现细节，而接口中只能存在public abstract 方法； 2）抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是public static final类型的； 3）接口中不能含有静态代码块以及静态方法，而抽象类可以有静态代码块和静态方法； 4）一个类只能继承一个抽象类，而一个类却可以实现多个接口。 设计层面上的区别 1）抽象类是对一种事物的抽象，即对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。举个简单的例子，飞机和鸟是不同类的事物，但是它们都有一个共性，就是都会飞。那么在设计的时候，可以将飞机设计为一个类Airplane，将鸟设计为一个类Bird，但是不能将 飞行 这个特性也设计为类，因此它只是一个行为特性，并不是对一类事物的抽象描述。此时可以将 飞行 设计为一个接口Fly，包含方法fly( )，然后Airplane和Bird分别根据自己的需要实现Fly这个接口。然后至于有不同种类的飞机，比如战斗机、民用飞机等直接继承Airplane即可，对于鸟也是类似的，不同种类的鸟直接继承Bird类即可。从这里可以看出，继承是一个 “是不是”的关系，而 接口 实现则是 “有没有”的关系。如果一个类继承了某个抽象类，则子类必定是抽象类的种类，而接口实现则是有没有、具备不具备的关系，比如鸟是否能飞（或者是否具备飞行这个特点），能飞行则可以实现这个接口，不能飞行就不实现这个接口。 2）设计层面不同，抽象类作为很多子类的父类，它是一种模板式设计。而接口是一种行为规范，它是一种辐射式设计。什么是模板式设计？最简单例子，大家都用过ppt里面的模板，如果用模板A设计了ppt B和ppt C，ppt B和ppt C公共的部分就是模板A了，如果它们的公共部分需要改动，则只需要改动模板A就可以了，不需要重新对ppt B和ppt C进行改动。而辐射式设计，比如某个电梯都装了某种报警器，一旦要更新报警器，就必须全部更新。也就是说对于抽象类，如果需要添加新的方法，可以直接在抽象类中添加具体的实现，子类可以不进行变更；而对于接口则不行，如果接口进行了变更，则所有实现这个接口的类都必须进行相应的改动。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[与前端开发并行工作的两个工具]]></title>
     <url>%2F2018%2F11%2F15%2F%E4%B8%8E%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B9%B6%E8%A1%8C%E5%B7%A5%E4%BD%9C%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B7%A5%E5%85%B7%2F</url>
     <content type="text"><![CDATA[使用Swagger自动生成html文档 使用WireMock快速伪造RESTful服务 Swagger maven：springfox-swagger2和springfox-swagger-ui]]></content>
@@ -63,17 +74,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[HEXO高级功能]]></title>
-    <url>%2F2018%2F09%2F26%2FHEXO%E6%94%B9%E8%BF%9B%2F</url>
-    <content type="text"><![CDATA[如何改变皮肤？步骤如下： 前往 hexo网站 选择皮肤，并点击进入github页面； 将git库clone到themes文件夹下； 修改conf配置文件，改为对应的名字； 有的图片需要配置按照github的readme来写。 如何自定义博客结构？ 进入使用的themes下，修改layout中的相关文件（比如js这些） 文章的分类与标签 前往 hexo网站 查看相应的语法 如何让代码更美观 前往 hexo网站 查看相应的语法1[rectangle setX: 10 y: 10 width: 20 height: 20]; _.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] 并在对应的themes中修改相应的高亮代码块方案。 本地写作时图床的写作方案 图床七牛 ; 配置方法:快捷键+建个脚本（注意图床的链接的修改） 上传使用官方的上传组件即可，命令行辅助工具(qrsctl) 插件的安装 前往 hexo网站 字数统计插件 ： 不算字 next的字数统计见https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral, https://blog.csdn.net/u012195214/article/details/79204088 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能 博客 接入评论系统 disquz 来必力 畅言 gitment； https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/ 博客增加搜索功能 SwiftType 自定义site语法进行跳转 next方案在https://blog.csdn.net/u012195214/article/details/79204088 接入统计系统 cnzz 百度统计:https://blog.csdn.net/u013066244/article/details/71056745 阅读量统计 注册LeanCloud . 新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写参考自https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud 百度收录 参见https://albenw.github.io/posts/be8242cc/（未成功）]]></content>
-      <categories>
-        <category>基本设置</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[智能代理机器人]]></title>
     <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
     <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？ 画方案设计数据模型]]></content>
@@ -82,6 +82,17 @@
       </categories>
       <tags>
         <tag>课题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HEXO高级功能]]></title>
+    <url>%2F2018%2F09%2F26%2FHEXO%E6%94%B9%E8%BF%9B%2F</url>
+    <content type="text"><![CDATA[如何改变皮肤？步骤如下： 前往 hexo网站 选择皮肤，并点击进入github页面； 将git库clone到themes文件夹下； 修改conf配置文件，改为对应的名字； 有的图片需要配置按照github的readme来写。 如何自定义博客结构？ 进入使用的themes下，修改layout中的相关文件（比如js这些） 文章的分类与标签 前往 hexo网站 查看相应的语法 如何让代码更美观 前往 hexo网站 查看相应的语法1[rectangle setX: 10 y: 10 width: 20 height: 20]; _.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] 并在对应的themes中修改相应的高亮代码块方案。 本地写作时图床的写作方案 图床七牛 ; 配置方法:快捷键+建个脚本（注意图床的链接的修改） 上传使用官方的上传组件即可，命令行辅助工具(qrsctl) 插件的安装 前往 hexo网站 字数统计插件 ： 不算字 next的字数统计见https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral, https://blog.csdn.net/u012195214/article/details/79204088 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能 博客 接入评论系统 disquz 来必力 畅言 gitment； https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/ 博客增加搜索功能 SwiftType 自定义site语法进行跳转 next方案在https://blog.csdn.net/u012195214/article/details/79204088 接入统计系统 cnzz 百度统计:https://blog.csdn.net/u013066244/article/details/71056745 阅读量统计 注册LeanCloud . 新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写参考自https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud 百度收录 参见https://albenw.github.io/posts/be8242cc/（未成功）]]></content>
+      <categories>
+        <category>基本设置</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -538,7 +549,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#x31;&#x39;&#52;&#51;&#51;&#x35;&#50;&#52;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#49;&#57;&#x34;&#x33;&#x33;&#53;&#50;&#52;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
