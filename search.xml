@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JADE使用的一些问题记录]]></title>
+    <url>%2F2018%2F12%2F03%2FJADE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[怎么不用-gui启动jade？]]></content>
+      <categories>
+        <category>课题</category>
+      </categories>
+      <tags>
+        <tag>课题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[接口与抽象类]]></title>
     <url>%2F2018%2F11%2F29%2F%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
     <content type="text"><![CDATA[抽象类和接口的区别 语法层面上的区别 1）抽象类可以提供成员方法的实现细节，而接口中只能存在public abstract 方法； 2）抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是public static final类型的； 3）接口中不能含有静态代码块以及静态方法，而抽象类可以有静态代码块和静态方法； 4）一个类只能继承一个抽象类，而一个类却可以实现多个接口。 设计层面上的区别 1）抽象类是对一种事物的抽象，即对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。举个简单的例子，飞机和鸟是不同类的事物，但是它们都有一个共性，就是都会飞。那么在设计的时候，可以将飞机设计为一个类Airplane，将鸟设计为一个类Bird，但是不能将 飞行 这个特性也设计为类，因此它只是一个行为特性，并不是对一类事物的抽象描述。此时可以将 飞行 设计为一个接口Fly，包含方法fly( )，然后Airplane和Bird分别根据自己的需要实现Fly这个接口。然后至于有不同种类的飞机，比如战斗机、民用飞机等直接继承Airplane即可，对于鸟也是类似的，不同种类的鸟直接继承Bird类即可。从这里可以看出，继承是一个 “是不是”的关系，而 接口 实现则是 “有没有”的关系。如果一个类继承了某个抽象类，则子类必定是抽象类的种类，而接口实现则是有没有、具备不具备的关系，比如鸟是否能飞（或者是否具备飞行这个特点），能飞行则可以实现这个接口，不能飞行就不实现这个接口。 2）设计层面不同，抽象类作为很多子类的父类，它是一种模板式设计。而接口是一种行为规范，它是一种辐射式设计。什么是模板式设计？最简单例子，大家都用过ppt里面的模板，如果用模板A设计了ppt B和ppt C，ppt B和ppt C公共的部分就是模板A了，如果它们的公共部分需要改动，则只需要改动模板A就可以了，不需要重新对ppt B和ppt C进行改动。而辐射式设计，比如某个电梯都装了某种报警器，一旦要更新报警器，就必须全部更新。也就是说对于抽象类，如果需要添加新的方法，可以直接在抽象类中添加具体的实现，子类可以不进行变更；而对于接口则不行，如果接口进行了变更，则所有实现这个接口的类都必须进行相应的改动。]]></content>
@@ -549,7 +560,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#49;&#57;&#x34;&#x33;&#x33;&#53;&#50;&#52;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#x31;&#x39;&#52;&#51;&#x33;&#53;&#50;&#52;&#64;&#x71;&#113;&#46;&#99;&#111;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
