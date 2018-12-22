@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="课题," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Just in progress">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JayVae&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/10/index.html">
+<meta name="description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2； 得到成交电量对,其中成交电量为q_current = min{q1[0],q2[0]}； 更新p1">
+<meta name="keywords" content="课题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集中出清规则">
+<meta property="og:url" content="http://yoursite.com/2018/12/22/集中出清规则/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="Just in progress">
+<meta property="og:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2； 得到成交电量对,其中成交电量为q_current = min{q1[0],q2[0]}； 更新p1">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-22T09:27:26.235Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JayVae&#39;s Blog">
-<meta name="twitter:description" content="Just in progress">
+<meta name="twitter:title" content="集中出清规则">
+<meta name="twitter:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2； 得到成交电量对,其中成交电量为q_current = min{q1[0],q2[0]}； 更新p1">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/10/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/22/集中出清规则/"/>
 
 
 
 
 
-  <title>归档 | JayVae's Blog</title>
+  <title>集中出清规则 | JayVae's Blog</title>
   
 
 
@@ -153,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -301,110 +303,242 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-          
-        好! 目前共计 65 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/22/集中出清规则/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/25/分布式事务/" itemprop="url">
-              
-                <span itemprop="name">分布式事务</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">集中出清规则</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-25T11:58:45+08:00"
-              content="2018-10-25" >
-          10-25
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-22T14:20:00+08:00">
+                2018-12-22
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课题/" itemprop="url" rel="index">
+                    <span itemprop="name">课题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/22/集中出清规则/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/12/22/集中出清规则/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/12/22/集中出清规则/" class="leancloud_visitors" data-flag-title="集中出清规则">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  276 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/25/分布式锁/" itemprop="url">
-              
-                <span itemprop="name">分布式锁</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-25T10:58:45+08:00"
-              content="2018-10-25" >
-          10-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h2 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h2><pre><code>电厂报价报量`arr1[][]`,
+用户报价报量`arr2[][]`。
+不应该是数组，而应该是一个抽象的数据类型，存有
+</code></pre><h2 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h2><pre><code>出清价格：Price
+成交电量对（一个用户可以在多个成交对之中）ResultSet。
+</code></pre><h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><ol>
+<li>按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；</li>
+<li>得到成交电量对,其中成交电量为q_current = <code>min{q1[0],q2[0]}</code>；</li>
+<li>更新p1,p2以及q1,q2.<blockquote>
+<p>从对应的报量序列中减去当前成交的电量q_current，如果报量为0，则将其与对应的报价排序中的元素移除；</p>
+</blockquote>
+</li>
+<li>对更新后的序列执行步骤1，直至q1,q2中有一个为空，结束。</li>
+</ol>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>其中，不同步骤的数据模型是不一样的，最起码在这里的模型是没有那些成本信息的。<br>问题在于如何返送回去？<br>数据进行封装，通过id进行索引。</p>
+<ol>
+<li>基本数据模型：<br>：<br>抽象父类—–发电商顶级类  —<pre><code>|
+ ---电力用户顶级类---
+</code></pre></li>
+<li>代理类：</li>
+<li>封装类：</li>
+</ol>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/课题/" rel="tag"># 课题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/20/难点之电力市场业务/" rel="next" title="难点之电力市场业务">
+                <i class="fa fa-chevron-left"></i> 难点之电力市场业务
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -412,6 +546,18 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -432,8 +578,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,6 +676,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入："><span class="nav-number">1.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出："><span class="nav-number">2.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法流程："><span class="nav-number">3.</span> <span class="nav-text">算法流程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码"><span class="nav-number">4.</span> <span class="nav-text">编码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -670,6 +841,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -716,6 +891,34 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'JayVae',
+            repo: 'https://github.com/JayVae/gitment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '77dd90a675af1d70e71a63f31351268ddde641e0',
+            
+                client_id: '18c4c1a4b757582f350b'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
     
 
 
