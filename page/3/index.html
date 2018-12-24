@@ -316,6 +316,216 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/大数据算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/21/大数据算法/" itemprop="url">大数据算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-21T20:50:40+08:00">
+                2018-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试算法/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/21/大数据算法/" class="leancloud_visitors" data-flag-title="大数据算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  562 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="先导-–-哈希算法"><a href="#先导-–-哈希算法" class="headerlink" title="先导 – 哈希算法"></a>先导 – 哈希算法</h1><ul>
+<li>哈希函数，在于将输入映射到一定范围的输出，核心在于输出域的分布是否均匀。</li>
+<li>MD5,SHA都是经典的哈希函数算法实现</li>
+</ul>
+<h1 id="Map-Reduce"><a href="#Map-Reduce" class="headerlink" title="Map-Reduce"></a>Map-Reduce</h1><ul>
+<li>过程<ol>
+<li>Map阶段（hash）：把大任务划分为小人物</li>
+<li>Reduce阶段：把结果合并</li>
+</ol>
+</li>
+<li>注意点：<ol>
+<li>备份的考虑</li>
+<li>任务分配策略与任务进度跟踪</li>
+<li>多用户权限的控制</li>
+</ol>
+</li>
+</ul>
+<h1 id="常见海量处理题目解题关键"><a href="#常见海量处理题目解题关键" class="headerlink" title="常见海量处理题目解题关键"></a>常见海量处理题目解题关键</h1><ol>
+<li>分而治之：通过哈希函数将大任务分流到及其，或分流成小文件。</li>
+<li>常用的hashMap或bitMap<br>难点：通讯、时间和空间的估算</li>
+</ol>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol>
+<li>对10亿个IPV4的ip地址进行排序，每个ip只会出现一次。<br> IPV4的ip数量约为42亿<br> 申请长度为2^32的bit类型的数组，bitmap。<br> 如果整数1出现，就把bitmap对应的位置从0变到1，这个数组可以表示任意一个（注意是一个）32位无符号整数是否出现过，然后把10亿个ip地址全部转换成整数，相应的在bitmap中相应的位置描黑即可，最后只要从bitmap的零位一直遍历到最后，然后提取出对应为1的下标整数k，再转换成ip地址，就完成了从小到大的排序。空间复杂度很小，时间复杂度O（n）</li>
+<li>10亿个年龄进行排序—-桶排序<br> 建立0到200个桶表示年龄从0到200，然后将10亿数据入桶，再依次倒出</li>
+<li>有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数，内存限制为2g<br> 通过哈希函数不断分流，分流到16个文件中，对每个小文件用哈希表来进行处理，全部处理完成后，得到16个文件中各自的第一名，再选出16个中的第一名</li>
+</ol>
+<h1 id="一致性哈希算法"><a href="#一致性哈希算法" class="headerlink" title="一致性哈希算法"></a>一致性哈希算法</h1><p>通过哈希函数后的值首尾相连成一个圆，数据hash之后对应在圆上的一个位置，机器也处在这个圆上（根据机器id计算出哈希值），数据hash之后顺时针找离它的哈希值最近的机器</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/树的基本概念和高度平衡的二叉树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2115,203 +2325,6 @@ return false;   // change return value to fit specific problem
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/设计模式之策略模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/01/设计模式之策略模式/" itemprop="url">设计模式之策略模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T16:49:00+08:00">
-                2018-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/01/设计模式之策略模式/" class="leancloud_visitors" data-flag-title="设计模式之策略模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  208 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。</p>
-<h2 id="开发推荐的方式"><a href="#开发推荐的方式" class="headerlink" title="开发推荐的方式"></a>开发推荐的方式</h2><p>复合优先于继承<br>多用组合，少用继承</p>
-<h2 id="设计原则："><a href="#设计原则：" class="headerlink" title="设计原则："></a>设计原则：</h2><p>面向接口编程；<br>将共同的；<br>多用组合，少用继承。</p>
-<h2 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h2><ol>
-<li>通过分离变化得出的策略接口Strategy；</li>
-<li>Strategy的实现类；</li>
-<li>客户程序（抽象）中有一个Strategy；</li>
-<li>在客户程序（实现）中选择、组装正确的strategy实现</li>
-</ol>
-<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ol>
-<li>许多相关的类仅仅是行为差异</li>
-<li>运行时选取不同的算法变体</li>
-<li>通过条件语句在多个分支中选取</li>
-</ol>
-<h2 id="java中的comparator"><a href="#java中的comparator" class="headerlink" title="java中的comparator"></a>java中的comparator</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2366,7 +2379,7 @@ return false;   // change return value to fit specific problem
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2463,7 +2476,7 @@ return false;   // change return value to fit specific problem
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22k</span>
+    <span title="Site words total count">22.1k</span>
   
 </div>
 
