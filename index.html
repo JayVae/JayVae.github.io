@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  13 字
+                  24 字
                 </span>
               
 
@@ -452,7 +452,12 @@
         
           
             <ol>
-<li>集中交易时，有个总的市场电量</li>
+<li><p>集中交易时，有个总的市场电量</p>
+</li>
+<li><p>交易结果怎么存</p>
+</li>
+<li><p>交易流程</p>
+</li>
 </ol>
 
           
@@ -1560,7 +1565,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  305 字
+                  352 字
                 </span>
               
 
@@ -1604,8 +1609,9 @@
 不应该是数组，而应该是一个抽象的数据类型，存有
 </code></pre><h2 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h2><pre><code>出清价格：Price
 成交电量对（一个用户可以在多个成交对之中）ResultSet。
-</code></pre><h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><ol>
-<li>按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；</li>
+</code></pre><h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><ol start="0">
+<li>数据有效筛选（购方申报数据筛选和售方数据筛选不一样）</li>
+<li>按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行排列】</li>
 <li>得到成交电量对,其中成交电量为q_current = <code>min{q1[0],q2[0]}</code>；</li>
 <li>更新p1,p2以及q1,q2.<blockquote>
 <p>从对应的报量序列中减去当前成交的电量q_current，如果报量为0，则将其与对应的报价排序中的元素移除；</p>
@@ -2401,7 +2407,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22.5k</span>
+    <span title="Site words total count">22.6k</span>
   
 </div>
 

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2； 得到成交电量对,其中成交电量为q_current = min{q1[0],q2[0]}； 更新p1">
+<meta name="description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行">
 <meta name="keywords" content="课题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集中出清规则">
 <meta property="og:url" content="http://yoursite.com/2018/12/22/集中出清规则/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2； 得到成交电量对,其中成交电量为q_current = min{q1[0],q2[0]}； 更新p1">
+<meta property="og:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-26T12:08:40.022Z">
+<meta property="og:updated_time" content="2018-12-27T05:30:47.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集中出清规则">
-<meta name="twitter:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2； 得到成交电量对,其中成交电量为q_current = min{q1[0],q2[0]}； 更新p1">
+<meta name="twitter:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行">
 
 
 
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  305 字
+                  352 字
                 </span>
               
 
@@ -463,8 +463,9 @@
 不应该是数组，而应该是一个抽象的数据类型，存有
 </code></pre><h2 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h2><pre><code>出清价格：Price
 成交电量对（一个用户可以在多个成交对之中）ResultSet。
-</code></pre><h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><ol>
-<li>按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；</li>
+</code></pre><h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><ol start="0">
+<li>数据有效筛选（购方申报数据筛选和售方数据筛选不一样）</li>
+<li>按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行排列】</li>
 <li>得到成交电量对,其中成交电量为q_current = <code>min{q1[0],q2[0]}</code>；</li>
 <li>更新p1,p2以及q1,q2.<blockquote>
 <p>从对应的报量序列中减去当前成交的电量q_current，如果报量为0，则将其与对应的报价排序中的元素移除；</p>
@@ -725,7 +726,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22.5k</span>
+    <span title="Site words total count">22.6k</span>
   
 </div>
 
