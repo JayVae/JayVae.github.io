@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[一些待解决问题]]></title>
+    <url>%2F2019%2F01%2F02%2F%E4%B8%80%E4%BA%9B%E5%BE%85%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[SOA和微服务：如果一句话来谈SOA和微服务的区别，即微服务不再强调传统SOA架构里面比较重的ESB企业服务总线，同时SOA的思想进入到单个业务系统内部实现真正的组件化。 httpserverHTTP服务器本质上也是一种应用程序——它通常运行在服务器之上，绑定服务器的IP地址并监听某一个tcp端口来接收并处理HTTP请求，这样客户端（一般来说是IE, Firefox，Chrome这样的浏览器）就能够通过HTTP协议来获取服务器上的网页（HTML格式）、文档（PDF格式）、音频（MP4格式）、视频（MOV格式）等等资源。不仅仅是Apache HTTP Server和Nginx，绝大多数编程语言所包含的类库中也都实现了简单的HTTP服务器方便开发者使用 编译器 单元测试到底如何去做？ ant,maven,gradle但是ant有一个很致命的缺陷，那就是没办法管理依赖。我们一个工程，要使用很多第三方工具，不同的工具，不同的版本。每次打包都要自己手动去把正确的版本拷到lib下面去，不用说，这个工作既枯燥还特别容易出错。为了解决这个问题，maven闪亮登场。maven最核心的改进就在于提出仓库这个概念。我可以把所有依赖的包，都放到仓库里去，在我的工程管理文件里，标明我需要什么什么包，什么什么版本。在构建的时候，maven就自动帮我把这些包打到我的包里来了。我们再也不用操心着自己去管理几十上百个jar文件了。maven已经很好了，可以满足绝大多数工程的构建。那为什么我们还需要新的构建工具呢？第一，maven是使用xml进行配置的，语法不简洁。第二，最关键的，maven在约定优于配置这条路上走太远了。就是说，maven不鼓励你自己定义任务，它要求用户在maven的生命周期中使用插件的方式去工作。这有点像设计模式中的模板方法模式。说通俗一点，就是我使用maven的话，想灵活地定义自己的任务是不行的。基于这个原因，gradle做了很多改进。作者：海纳链接：https://zhuanlan.zhihu.com/p/24429133来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 计算机领域只要多分几层，没有解决不了的问题6.1 在应用程序和数据库之间增加一个抽象层–缓存。6.2 比如对于一门动态语言，直接做一个编译器讲这门语言和汇编链接到一起，难度太大（尤其是词法分析上），这个时候可以采取间接的定义一套中间码，讲源代码编译成为中间码，中间码通过另一个程序（执行引擎，一般是C/C++写的）执行这个中间码，这样效率不会损失太多但大大加快了开发效率。作者：DreamPiggy链接：https://www.zhihu.com/question/31695794/answer/53797548来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 编译型语言和解释型语言编译型语言是做好了菜再吃，解释型语言是吃火锅。一种高级编程语言，从源代码开始，一直到被执行生成相应的动作，大约经历了这几个步骤： 编译 执行源代码====&gt;（中间表示形式====&gt;）基本操作序列====&gt;生成最终动作编译型和解释型语言的不同指出只是在于，这些过程发生的时机不一样。编译型语言的代表是C，源代码被编译之后生成中间文件（.o和.obj），然后用连接器和汇编器生成机器码，也就是一系列基本操作的序列，机器码最后被执行生成最终动作。解释型的语言以Ruby为例，也经历了这些步骤，不同的是，C语言会把那些从源代码“变”来的基本操作序列（保存）起来，而Ruby直接将这些生成的基本操作序列（Ruby虚拟机）指令丢给Ruby虚拟机执行然后产生动作了。所以我们看到的现象是，编译型语言要先编译再运行，而解释性语言直接“运行”源代码。除了BASIC这样特别早期的解释型语言，是直接解释执行，现在的解释型语言都采取将代码编译为某种特定的虚拟机代码或者机器码的形式，然后再执行那些编译好的代码。BASIC这种直接解释的，我们可以将他的基本操作序列理解为直接执行基本操作的那些函数。作者：余天升链接：https://www.zhihu.com/question/21486706/answer/18422107来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 比如对于一门动态语言，直接做一个编译器讲这门语言和汇编链接到一起，难度太大（尤其是词法分析上），这个时候可以采取间接的定义一套中间码，讲源代码编译成为中间码，中间码通过另一个程序（执行引擎，一般是C/C++写的）执行这个中间码，这样效率不会损失太多但大大加快了开发效率。其实虚拟机执行引擎怎么执行传来的中间码，这也是一个编译/解释的区别，前者就是直接将中间码再次编译为更底层（汇编级别，机器码），并且保存到外存中，比如.NET的CLR；后者就是直接把这个中间码按照一条条的指令直接执行（执行也就是用C的等价代码来实现它），不会将新的代码保存在外存中。这也是一个最大的区别吧。 作者：DreamPiggy链接：https://www.zhihu.com/question/31695794/answer/53797548来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 java动态代理与java是静态语言有什么关系？【码农翻身P321】 x86一般说x86架构都是相对arm架构的.x86、x64都是指CPU指令集狭义的x86架构，指只支持32位的intel/AMD/VIA的CPU，并向下兼容16位（实模式）；狭义的x64架构，指的是支持32位和64位的intel/AMD CPU，指令集与x86兼容，并向下兼容16位（实模式），目前绝大多数民用CPU和服务器CPU都是这样的；]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[java8中的声明式风格]]></title>
+    <url>%2F2019%2F01%2F02%2Fjava8%E4%B8%AD%E7%9A%84%E5%A3%B0%E6%98%8E%E5%BC%8F%E9%A3%8E%E6%A0%BC%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[数据模型]]></title>
     <url>%2F2018%2F12%2F26%2F%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[集中交易时，有个总的市场电量 交易结果怎么存 交易流程]]></content>
@@ -211,17 +221,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[HEXO高级功能]]></title>
-    <url>%2F2018%2F09%2F26%2FHEXO%E6%94%B9%E8%BF%9B%2F</url>
-    <content type="text"><![CDATA[如何改变皮肤？步骤如下： 前往 hexo网站 选择皮肤，并点击进入github页面； 将git库clone到themes文件夹下； 修改conf配置文件，改为对应的名字； 有的图片需要配置按照github的readme来写。 如何自定义博客结构？ 进入使用的themes下，修改layout中的相关文件（比如js这些） 文章的分类与标签 前往 hexo网站 查看相应的语法 如何让代码更美观 前往 hexo网站 查看相应的语法1[rectangle setX: 10 y: 10 width: 20 height: 20]; _.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] 并在对应的themes中修改相应的高亮代码块方案。 本地写作时图床的写作方案 图床七牛 ; 配置方法:快捷键+建个脚本（注意图床的链接的修改） 上传使用官方的上传组件即可，命令行辅助工具(qrsctl) 插件的安装 前往 hexo网站 字数统计插件 ： 不算字 next的字数统计见https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral, https://blog.csdn.net/u012195214/article/details/79204088 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能 博客 接入评论系统 disquz 来必力 畅言 gitment； https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/ 博客增加搜索功能 SwiftType 自定义site语法进行跳转 next方案在https://blog.csdn.net/u012195214/article/details/79204088 接入统计系统 cnzz 百度统计:https://blog.csdn.net/u013066244/article/details/71056745 阅读量统计 注册LeanCloud . 新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写参考自https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud 百度收录 参见https://albenw.github.io/posts/be8242cc/（未成功）]]></content>
-      <categories>
-        <category>基本设置</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[智能代理机器人]]></title>
     <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
     <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？ 画方案设计数据模型]]></content>
@@ -230,6 +229,17 @@
       </categories>
       <tags>
         <tag>课题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HEXO高级功能]]></title>
+    <url>%2F2018%2F09%2F26%2FHEXO%E6%94%B9%E8%BF%9B%2F</url>
+    <content type="text"><![CDATA[如何改变皮肤？步骤如下： 前往 hexo网站 选择皮肤，并点击进入github页面； 将git库clone到themes文件夹下； 修改conf配置文件，改为对应的名字； 有的图片需要配置按照github的readme来写。 如何自定义博客结构？ 进入使用的themes下，修改layout中的相关文件（比如js这些） 文章的分类与标签 前往 hexo网站 查看相应的语法 如何让代码更美观 前往 hexo网站 查看相应的语法1[rectangle setX: 10 y: 10 width: 20 height: 20]; _.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] 并在对应的themes中修改相应的高亮代码块方案。 本地写作时图床的写作方案 图床七牛 ; 配置方法:快捷键+建个脚本（注意图床的链接的修改） 上传使用官方的上传组件即可，命令行辅助工具(qrsctl) 插件的安装 前往 hexo网站 字数统计插件 ： 不算字 next的字数统计见https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral, https://blog.csdn.net/u012195214/article/details/79204088 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能 博客 接入评论系统 disquz 来必力 畅言 gitment； https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/ 博客增加搜索功能 SwiftType 自定义site语法进行跳转 next方案在https://blog.csdn.net/u012195214/article/details/79204088 接入统计系统 cnzz 百度统计:https://blog.csdn.net/u013066244/article/details/71056745 阅读量统计 注册LeanCloud . 新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写参考自https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud 百度收录 参见https://albenw.github.io/posts/be8242cc/（未成功）]]></content>
+      <categories>
+        <category>基本设置</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -686,7 +696,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#x31;&#x39;&#x34;&#x33;&#51;&#x35;&#x32;&#52;&#x40;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#49;&#57;&#x34;&#x33;&#51;&#53;&#x32;&#52;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
