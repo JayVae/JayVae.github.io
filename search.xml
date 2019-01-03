@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[码农翻身杂记]]></title>
     <url>%2F2019%2F01%2F02%2F%E7%A0%81%E5%86%9C%E7%BF%BB%E8%BA%AB%E6%9D%82%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[JDBC的介绍一节体现了：面向接口、工厂方法、反射等； 分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中 消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开]]></content>
+    <content type="text"><![CDATA[JDBC的介绍一节体现了：面向接口、工厂方法、反射等； 分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中 消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开 Java 动态代理：声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。jdk代理是对接口进行代理。在调用方看来，是调用接口，并不会意识到是动态创建的代理类。需要添加的行为需要实现InvocationHandler接口，相当于在运行时进行拦截，从而创建新的类。Proxy.newProxyInstance,就是动态生成一个类。应用：Spring AOP 注解，也可以说meatdata就是描述数据的数据；元注解，就是注解的注解。基于注解和XML各有千秋，灵活应用。需要集中配置的用xml 泛型和继承ArrayList&lt;? extends Fruit&gt; 日志系统，现在一般用slf4j（抽象层，其下层可以用各种日志系统）+logback。loggerappenderformatter ComapareandSwap是一条硬件指令，操作系统和硬件能保证院子执行。Atomatic类AtomaticReference可能会有什么ABA问题 在使用AtomaticXXXX类实现非阻塞算法之前，先看看有没有提供现成的Concurrentxxx类。 Spring 装饰者模式，动态代理]]></content>
       <categories>
         <category>Java</category>
         <category>书</category>

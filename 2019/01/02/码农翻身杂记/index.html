@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="JDBC的介绍一节体现了：面向接口、工厂方法、反射等；  分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中  消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开">
+<meta name="description" content="JDBC的介绍一节体现了：面向接口、工厂方法、反射等；  分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中  消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开  Java 动态代理：声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。jd">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="码农翻身杂记">
 <meta property="og:url" content="http://yoursite.com/2019/01/02/码农翻身杂记/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="JDBC的介绍一节体现了：面向接口、工厂方法、反射等；  分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中  消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开">
+<meta property="og:description" content="JDBC的介绍一节体现了：面向接口、工厂方法、反射等；  分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中  消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开  Java 动态代理：声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。jd">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T13:29:44.161Z">
+<meta property="og:updated_time" content="2019-01-03T01:52:06.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="码农翻身杂记">
-<meta name="twitter:description" content="JDBC的介绍一节体现了：面向接口、工厂方法、反射等；  分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中  消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开">
+<meta name="twitter:description" content="JDBC的介绍一节体现了：面向接口、工厂方法、反射等；  分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中  消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开  Java 动态代理：声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。jd">
 
 
 
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  123 字
+                  394 字
                 </span>
               
 
@@ -475,6 +475,18 @@
 <li><p>分布式事务：<br>2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；<br>2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中</p>
 </li>
 <li><p>消息队列<br>应用系统间做异步<br>生产者-消息队列-消费者<br>订阅-发布<br>配置和代码分开</p>
+</li>
+<li><p>Java 动态代理：<br>声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。<br>jdk代理是对接口进行代理。<br>在调用方看来，是调用接口，并不会意识到是动态创建的代理类。需要添加的行为需要实现InvocationHandler接口，相当于在运行时进行拦截，从而创建新的类。<br>Proxy.newProxyInstance,就是动态生成一个类。<br>应用：Spring AOP</p>
+</li>
+<li>注解，也可以说meatdata就是描述数据的数据；元注解，就是注解的注解。<br>基于注解和XML各有千秋，灵活应用。<br>需要集中配置的用xml</li>
+<li>泛型和继承<br>ArrayList&lt;? extends Fruit&gt;</li>
+<li><p>日志系统，现在一般用slf4j（抽象层，其下层可以用各种日志系统）+logback。<br>logger<br>appender<br>formatter</p>
+</li>
+<li><p>ComapareandSwap是一条硬件指令，操作系统和硬件能保证院子执行。<br>Atomatic类<br>AtomaticReference可能会有什么ABA问题</p>
+</li>
+<li><p>在使用AtomaticXXXX类实现非阻塞算法之前，先看看有没有提供现成的Concurrentxxx类。</p>
+</li>
+<li><p>Spring 装饰者模式，动态代理</p>
 </li>
 </ol>
 
@@ -692,7 +704,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.5k</span>
+    <span title="Site words total count">24.8k</span>
   
 </div>
 
