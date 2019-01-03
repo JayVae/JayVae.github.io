@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[计算机网络自顶向下方法]]></title>
+    <url>%2F2019%2F01%2F03%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[在数据链路层，基础性问题是共享多路访问信道。]]></content>
+      <categories>
+        <category>书</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[时间的朋友2019]]></title>
     <url>%2F2019%2F01%2F03%2F%E6%97%B6%E9%97%B4%E7%9A%84%E6%9C%8B%E5%8F%8B2019%2F</url>
     <content type="text"><![CDATA[宏观是我们必须接受的，微观才是我们有所作为的。 世界上只有一种英雄主义，就是认清了现实，依然面对它。 世界不是大河模型，而是多米诺骨牌模型。 小趋势–影响趋势的趋势，带来改变的改变。 小趋势不会停止。没有一劳永逸，没有直通车，只有不断准备，不断努力。 等号，等于有些东西不重要？ 不抽象，就无法深入思考；不还原，就无法认识世界本来面目。 还原这个世界–多元思维模型 能同时抱有全然相反的两种观念还能正常行事是第一流智慧的标志。 扪心五问： 我能看到事实吗？–还原 你能感知到非共识吗–创新的本质就是非共识 你觉得时间够用吗？–没有看 力量从哪来？–除了人工智能，用人的体验丈量世界。推动信用飞轮，才能快速成长。不是用算法，而是用人的力量。 时间愿意和我做朋友吗？–长期主义。一旦中断，前功尽弃。长期主义是微弱信号的放大器。]]></content>
@@ -238,17 +246,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[智能代理机器人]]></title>
-    <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
-    <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？ 画方案设计数据模型]]></content>
-      <categories>
-        <category>课题</category>
-      </categories>
-      <tags>
-        <tag>课题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[HEXO高级功能]]></title>
     <url>%2F2018%2F09%2F26%2FHEXO%E6%94%B9%E8%BF%9B%2F</url>
     <content type="text"><![CDATA[如何改变皮肤？步骤如下： 前往 hexo网站 选择皮肤，并点击进入github页面； 将git库clone到themes文件夹下； 修改conf配置文件，改为对应的名字； 有的图片需要配置按照github的readme来写。 如何自定义博客结构？ 进入使用的themes下，修改layout中的相关文件（比如js这些） 文章的分类与标签 前往 hexo网站 查看相应的语法 如何让代码更美观 前往 hexo网站 查看相应的语法1[rectangle setX: 10 y: 10 width: 20 height: 20]; _.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] 并在对应的themes中修改相应的高亮代码块方案。 本地写作时图床的写作方案 图床七牛 ; 配置方法:快捷键+建个脚本（注意图床的链接的修改） 上传使用官方的上传组件即可，命令行辅助工具(qrsctl) 插件的安装 前往 hexo网站 字数统计插件 ： 不算字 next的字数统计见https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral, https://blog.csdn.net/u012195214/article/details/79204088 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能 博客 接入评论系统 disquz 来必力 畅言 gitment； https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/ 博客增加搜索功能 SwiftType 自定义site语法进行跳转 next方案在https://blog.csdn.net/u012195214/article/details/79204088 接入统计系统 cnzz 百度统计:https://blog.csdn.net/u013066244/article/details/71056745 阅读量统计 注册LeanCloud . 新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写参考自https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud 百度收录 参见https://albenw.github.io/posts/be8242cc/（未成功）]]></content>
@@ -257,6 +254,17 @@
       </categories>
       <tags>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[智能代理机器人]]></title>
+    <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
+    <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？ 画方案设计数据模型]]></content>
+      <categories>
+        <category>课题</category>
+      </categories>
+      <tags>
+        <tag>课题</tag>
       </tags>
   </entry>
   <entry>
@@ -713,7 +721,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#49;&#57;&#52;&#51;&#x33;&#53;&#50;&#x34;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#49;&#57;&#x34;&#x33;&#51;&#x35;&#50;&#52;&#64;&#x71;&#113;&#46;&#99;&#111;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
