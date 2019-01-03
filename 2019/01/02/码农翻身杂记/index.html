@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JayVae&#39;s Blog">
 <meta property="og:description" content="JDBC的介绍一节体现了：面向接口、工厂方法、反射等；  分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中  消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开  Java 动态代理：声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。jd">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-03T01:52:06.471Z">
+<meta property="og:updated_time" content="2019-01-03T09:30:14.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="码农翻身杂记">
 <meta name="twitter:description" content="JDBC的介绍一节体现了：面向接口、工厂方法、反射等；  分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中  消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开  Java 动态代理：声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。jd">
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  394 字
+                  694 字
                 </span>
               
 
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -488,6 +488,26 @@
 </li>
 <li><p>Spring 装饰者模式，动态代理</p>
 </li>
+<li><p>多个资源加锁要牢记，一定要从最大的开始加锁。</p>
+</li>
+<li><p>虚拟地址，物理地址</p>
+</li>
+<li><p>中断的方式其实是一种异步的、事件驱动的处理思想</p>
+</li>
+<li><p>DMA进行IO设备和内存之间的直接数据传输</p>
+</li>
+<li><p>内存只是一个个可以读写的格子，CPU简单到只能做4件事情–对寄存器读取数据，写入数据，数学运算和逻辑运算，根据条件进行跳转</p>
+</li>
+<li><p>检测和设置锁的操作是一个不可分割的原子操作</p>
+</li>
+<li><p>自旋锁虽然能实现互斥的访问，但是不能通信进入同一个函数（递归），简称不可重入。<br>增加计数器</p>
+</li>
+<li><p>信号量用来解决互斥锁在消费者生产者同步问题的互相等待问题<br>信号量就是一个整数，基于这个证书有两个操作，wait和signal。</p>
+</li>
+</ol>
+<p>对于生产者-消费者问题，可以直接使用BlockingQueue</p>
+<ol start="19">
+<li>尾递归：<br>当递归调用时函数体重最后执行的语句，并且它的返回值不属于表达式的一部分时，叫做尾递归。不会存在栈溢出的问题。</li>
 </ol>
 
       
@@ -708,7 +728,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">25k</span>
+    <span title="Site words total count">25.4k</span>
   
 </div>
 
