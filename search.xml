@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[码农翻身杂记]]></title>
     <url>%2F2019%2F01%2F02%2F%E7%A0%81%E5%86%9C%E7%BF%BB%E8%BA%AB%E6%9D%82%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[JDBC的介绍一节体现了：面向接口、工厂方法、反射等； 分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中]]></content>
+    <content type="text"><![CDATA[JDBC的介绍一节体现了：面向接口、工厂方法、反射等； 分布式事务：2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中 消息队列应用系统间做异步生产者-消息队列-消费者订阅-发布配置和代码分开]]></content>
       <categories>
         <category>Java</category>
         <category>书</category>
