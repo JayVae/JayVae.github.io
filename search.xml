@@ -93,7 +93,7 @@
   <entry>
     <title><![CDATA[电力交易业务之新的查询资料]]></title>
     <url>%2F2018%2F12%2F22%2F%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E4%B8%9A%E5%8A%A1%E4%B9%8B%E6%96%B0%E7%9A%84%E6%9F%A5%E8%AF%A2%E8%B5%84%E6%96%99%2F</url>
-    <content type="text"><![CDATA[参考【用电侧市场放开下的电力市场多主体博弈】 批发市场和零售市场新电改下的电力市场结构 市场博弈模型也可参考上文但是发电商的投标函数并没有体现。 这篇文章中也有强化学习 但是总体来说这篇文章重点在于售电公司，而且不够细致 参考【月度电量集中竞价市场规则的仿真实验分析】 智能代理算法RE JADE是怎么用的？ 利润函数是怎样的？ 其中的边际出清电价是什么？ 找数据源 参考【售电放开政策下电力交易多方主体利益分析模型研究】 电力交易模式：双边、集中 不同交易情景下发电商利益分析模型【ch6】 电商售电利益分析模型研究【ch8】 可以查一下这篇文章的两个作者的其他文章也可以通过邮件联系一下这篇文章的作者。暂无进展]]></content>
+    <content type="text"><![CDATA[参考【用电侧市场放开下的电力市场多主体博弈】 批发市场和零售市场新电改下的电力市场结构 市场博弈模型也可参考上文但是发电商的投标函数并没有体现。 这篇文章中也有强化学习 但是总体来说这篇文章重点在于售电公司，而且不够细致 参考【月度电量集中竞价市场规则的仿真实验分析】 智能代理算法RE JADE是怎么用的？ 利润函数是怎样的？ 其中的边际出清电价是什么？ 找数据源 邮件交流：1、功能类代理是在原有agent上开发的。月度市场中代理的行为比较简单，就是一个重复报价出清的过程，代码编写的工作量不大。强化学习策略代理的实现与普通代理的实现是相同的，不同之处在于这个代理的决策是按照算法进行决策输出，具体的算法可以参考常见的强化学习算法。jade是一个比较适合于学术研究的工具，它的demo中有很多经典的case。实际应用要比那些复杂，但是基本的组成比如行为、通信等是一样的2、代理的目标比较简单，一般市场中的经济目标都是差不多的。目标有不同的表述，比如社会福利最大、发电成本最小、获利最大等。发电侧的利润是其收益与成本的差，用户侧的利润是其效益与成本的差。但是实际中用户侧的效益是由具体生产的产品来决定的，因此没有精准的模型计算。常见的处理方式是将用户侧的获利描述为市场降价空间的大小，降得越多，用户侧获利越多 参考【售电放开政策下电力交易多方主体利益分析模型研究】 电力交易模式：双边、集中 不同交易情景下发电商利益分析模型【ch6】 电商售电利益分析模型研究【ch8】 可以查一下这篇文章的两个作者的其他文章也可以通过邮件联系一下这篇文章的作者。暂无进展 参考【基于售电侧放开的电力市场交易研究】电力交易机构的定位 参考【电力市场售电侧开放环境下售电公司购电策略研究】售电公司的利润]]></content>
       <categories>
         <category>课题</category>
       </categories>
@@ -104,7 +104,7 @@
   <entry>
     <title><![CDATA[集中出清规则]]></title>
     <url>%2F2018%2F12%2F22%2F%E9%9B%86%E4%B8%AD%E5%87%BA%E6%B8%85%E8%A7%84%E5%88%99%2F</url>
-    <content type="text"><![CDATA[输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行排列】 得到成交电量对,其中成交电量为q_current = min{q1[0],q2[0]}； 更新p1,p2以及q1,q2. 从对应的报量序列中减去当前成交的电量q_current，如果报量为0，则将其与对应的报价排序中的元素移除； 对更新后的序列执行步骤1，直至q1,q2中有一个为空，结束。 编码其中，不同步骤的数据模型是不一样的，最起码在这里的模型是没有那些成本信息的。问题在于如何返送回去？数据进行封装，通过id进行索引。 基本数据模型：：抽象父类—–发电商顶级类 —| ---电力用户顶级类--- 代理类： 封装类： 最终保存的结果【比如一个用户成交了几笔，关联交易表】在entity怎么保存。交易实体类]]></content>
+    <content type="text"><![CDATA[输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行排列】 得到成交电量对,其中成交电量为q_current = min{q1[0],q2[0]}； 更新p1,p2以及q1,q2. 从对应的报量序列中减去当前成交的电量q_current，如果报量为0，则将其与对应的报价排序中的元素移除； 对更新后的序列执行步骤1，直至q1,q2中有一个为空，结束。 可视化过程可视化？结果可视化：图片，表格 编码其中，不同步骤的数据模型是不一样的，最起码在这里的模型是没有那些成本信息的。问题在于如何返送回去？数据进行封装，通过id进行索引。 基本数据模型：：抽象父类—–发电商顶级类 —| ---电力用户顶级类--- 代理类： 封装类： 最终保存的结果【比如一个用户成交了几笔，关联交易表】在entity怎么保存。交易实体类]]></content>
       <categories>
         <category>课题</category>
       </categories>
@@ -164,7 +164,7 @@
   <entry>
     <title><![CDATA[JADE使用的一些问题记录]]></title>
     <url>%2F2018%2F12%2F03%2FJADE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[怎么不用-gui启动jade。 仿真调度流程 外部调用jade？ agent算法在这里怎么集成？也就是策略。 一个完整的图书交易流程是怎样的？行为是怎么添加的？ jade能分段仿真吗？ buyer中缺少一个输入的包装类 BookSeller中的PriceManager；BookBuyer中的PurchaseManager。 Bookinfo与book本体 本体 AMS（agent管理系统），mts（消息传输服务，主要指acl消息），df（目录服务器） 注意：多agent系统与智能代理是不一样的！]]></content>
+    <content type="text"><![CDATA[怎么不用-gui启动jade。 仿真调度流程 外部调用jade？ agent算法在这里怎么集成？也就是策略。 一个完整的图书交易流程是怎样的？行为是怎么添加的？ jade能分段仿真吗？ buyer中缺少一个输入的包装类 BookSeller中的PriceManager；BookBuyer中的PurchaseManager。 Bookinfo与book本体 本体 AMS（agent管理系统），mts（消息传输服务，主要指acl消息），df（目录服务器） 注意：多agent系统与智能代理是不一样的！ 是参考jade的思考设计，还是嵌入jade？（如何嵌入）]]></content>
       <categories>
         <category>课题</category>
       </categories>
@@ -246,17 +246,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[智能代理机器人]]></title>
-    <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
-    <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？ 画方案设计数据模型]]></content>
-      <categories>
-        <category>课题</category>
-      </categories>
-      <tags>
-        <tag>课题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[HEXO高级功能]]></title>
     <url>%2F2018%2F09%2F26%2FHEXO%E6%94%B9%E8%BF%9B%2F</url>
     <content type="text"><![CDATA[如何改变皮肤？步骤如下： 前往 hexo网站 选择皮肤，并点击进入github页面； 将git库clone到themes文件夹下； 修改conf配置文件，改为对应的名字； 有的图片需要配置按照github的readme来写。 如何自定义博客结构？ 进入使用的themes下，修改layout中的相关文件（比如js这些） 文章的分类与标签 前往 hexo网站 查看相应的语法 如何让代码更美观 前往 hexo网站 查看相应的语法1[rectangle setX: 10 y: 10 width: 20 height: 20]; _.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] 并在对应的themes中修改相应的高亮代码块方案。 本地写作时图床的写作方案 图床七牛 ; 配置方法:快捷键+建个脚本（注意图床的链接的修改） 上传使用官方的上传组件即可，命令行辅助工具(qrsctl) 插件的安装 前往 hexo网站 字数统计插件 ： 不算字 next的字数统计见https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral, https://blog.csdn.net/u012195214/article/details/79204088 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能 博客 接入评论系统 disquz 来必力 畅言 gitment； https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/ 博客增加搜索功能 SwiftType 自定义site语法进行跳转 next方案在https://blog.csdn.net/u012195214/article/details/79204088 接入统计系统 cnzz 百度统计:https://blog.csdn.net/u013066244/article/details/71056745 阅读量统计 注册LeanCloud . 新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写参考自https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud 百度收录 参见https://albenw.github.io/posts/be8242cc/（未成功）]]></content>
@@ -265,6 +254,17 @@
       </categories>
       <tags>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[智能代理机器人]]></title>
+    <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
+    <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？ 画方案设计数据模型]]></content>
+      <categories>
+        <category>课题</category>
+      </categories>
+      <tags>
+        <tag>课题</tag>
       </tags>
   </entry>
   <entry>
@@ -293,7 +293,7 @@
   <entry>
     <title><![CDATA[大数据算法]]></title>
     <url>%2F2018%2F09%2F21%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[先导 – 哈希算法 哈希函数，在于将输入映射到一定范围的输出，核心在于输出域的分布是否均匀。 MD5,SHA都是经典的哈希函数算法实现 Map-Reduce 过程 Map阶段（hash）：把大任务划分为小人物 Reduce阶段：把结果合并 注意点： 备份的考虑 任务分配策略与任务进度跟踪 多用户权限的控制 常见海量处理题目解题关键 分而治之：通过哈希函数将大任务分流到及其，或分流成小文件。 常用的hashMap或bitMap难点：通讯、时间和空间的估算 题目 对10亿个IPV4的ip地址进行排序，每个ip只会出现一次。 IPV4的ip数量约为42亿 申请长度为2^32的bit类型的数组，bitmap。 如果整数1出现，就把bitmap对应的位置从0变到1，这个数组可以表示任意一个（注意是一个）32位无符号整数是否出现过，然后把10亿个ip地址全部转换成整数，相应的在bitmap中相应的位置描黑即可，最后只要从bitmap的零位一直遍历到最后，然后提取出对应为1的下标整数k，再转换成ip地址，就完成了从小到大的排序。空间复杂度很小，时间复杂度O（n） 10亿个年龄进行排序—-桶排序 建立0到200个桶表示年龄从0到200，然后将10亿数据入桶，再依次倒出 有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数，内存限制为2g 通过哈希函数不断分流，分流到16个文件中，对每个小文件用哈希表来进行处理，全部处理完成后，得到16个文件中各自的第一名，再选出16个中的第一名 一致性哈希算法通过哈希函数后的值首尾相连成一个圆，数据hash之后对应在圆上的一个位置，机器也处在这个圆上（根据机器id计算出哈希值），数据hash之后顺时针找离它的哈希值最近的机器]]></content>
+    <content type="text"><![CDATA[先导 – 哈希算法 哈希函数，在于将输入映射到一定范围的输出，核心在于输出域的分布是否均匀。 MD5,SHA都是经典的哈希函数算法实现 Map-Reduce 过程 Map阶段（hash）：把大任务划分为小任务 Reduce阶段：把结果合并 注意点： 备份的考虑 任务分配策略与任务进度跟踪 多用户权限的控制 常见海量处理题目解题关键 分而治之：通过哈希函数将大任务分流到及其，或分流成小文件。 常用的hashMap或bitMap难点：通讯、时间和空间的估算 题目 对10亿个IPV4的ip地址进行排序，每个ip只会出现一次。 IPV4的ip数量约为42亿 申请长度为2^32的bit类型的数组，bitmap。 如果整数1出现，就把bitmap对应的位置从0变到1，这个数组可以表示任意一个（注意是一个）32位无符号整数是否出现过，然后把10亿个ip地址全部转换成整数，相应的在bitmap中相应的位置描黑即可，最后只要从bitmap的零位一直遍历到最后，然后提取出对应为1的下标整数k，再转换成ip地址，就完成了从小到大的排序。空间复杂度很小，时间复杂度O（n） 10亿个年龄进行排序—-桶排序 建立0到200个桶表示年龄从0到200，然后将10亿数据入桶，再依次倒出 有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数，内存限制为2g 通过哈希函数不断分流，分流到16个文件中，对每个小文件用哈希表来进行处理，全部处理完成后，得到16个文件中各自的第一名，再选出16个中的第一名 一致性哈希算法通过哈希函数后的值首尾相连成一个圆，数据hash之后对应在圆上的一个位置，机器也处在这个圆上（根据机器id计算出哈希值），数据hash之后顺时针找离它的哈希值最近的机器]]></content>
       <categories>
         <category>面试算法</category>
       </categories>
@@ -721,7 +721,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#x31;&#x39;&#x34;&#51;&#51;&#x35;&#50;&#x34;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#x31;&#57;&#52;&#51;&#x33;&#x35;&#x32;&#x34;&#x40;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
