@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么  通信传递的信息！！！【重点】  agent的重点在于行为5">
+<meta name="description" content="agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么  通信消息代表行为或者说通信行为CA；最常用的一些行为有通知">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jade不通过gui启动问题">
 <meta property="og:url" content="http://yoursite.com/2019/01/07/jade不通过gui启动问题/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么  通信传递的信息！！！【重点】  agent的重点在于行为5">
+<meta property="og:description" content="agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么  通信消息代表行为或者说通信行为CA；最常用的一些行为有通知">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-09T08:46:22.819Z">
+<meta property="og:updated_time" content="2019-01-10T09:27:31.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jade不通过gui启动问题">
-<meta name="twitter:description" content="agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么  通信传递的信息！！！【重点】  agent的重点在于行为5">
+<meta name="twitter:description" content="agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么  通信消息代表行为或者说通信行为CA；最常用的一些行为有通知">
 
 
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  274 字
+                  384 字
                 </span>
               
 
@@ -440,13 +440,17 @@
 <li>与外界的类是如何通信的myAgent.getO2AObject()<br>怎么向外系统传递消息？直接在里面修改后外面的也修改了。<br>但是要注意，seller启动需要 延时，不然的话写不进去</li>
 <li><p>dfagent注册的是什么</p>
 </li>
-<li><p>通信<br>传递的信息！！！【重点】</p>
+<li><p>通信<br>消息代表行为或者说通信行为CA；最常用的一些行为有通知、请求、统一、不理解和拒绝等。<br>传递的信息！！！【重点】<br>通信原语？<br>ContractNet协议 P69<br>在对话中扮演一个角色，无论是发起者或响应者的角色，都意味着执行某种任务，因此所有协议类（包括发起者和响应者）都是jade行为类。</p>
 </li>
 <li><p>agent的重点在于行为<br>5.1 行为的停止<br>TickerBehaviour行为通过stop停止；<br>一般的是done函数；</p>
 </li>
 <li><p>kill以后怎么办</p>
 </li>
 <li><p>代理 应该有个出清代理CA，所有的卖方和买方将价和量（包括初次的和每次迭代后的）发送给CA，CA在收到所有之后，进行出清，然后将结果发送给各自的agent。各自的agent收到后再次迭代。<br>在达到迭代次数或者结果不再改变时，停止。（需不需要一个控制agent?）–问题在于论文中停止条件是每个各自的还是总体利润？？？<br>对于各自代理，代理的行为就是强化学习？</p>
+</li>
+<li><p>Subscribe协议P72</p>
+</li>
+<li><p>本体到底是个啥吗。。。</p>
 </li>
 </ol>
 
@@ -565,7 +569,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -662,7 +666,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">27.5k</span>
+    <span title="Site words total count">27.6k</span>
   
 </div>
 

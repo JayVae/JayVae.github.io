@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019要看的书]]></title>
+    <url>%2F2019%2F01%2F10%2F2019%E8%A6%81%E7%9C%8B%E7%9A%84%E4%B9%A6%2F</url>
+    <content type="text"><![CDATA[计算机程序的构造和解释深入理解计算机系统]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[智能代理机器人web开发]]></title>
     <url>%2F2019%2F01%2F08%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BAweb%E5%BC%80%E5%8F%91%2F</url>
-    <content type="text"><![CDATA[前端 后台：2.1 前端接口2.2 功能：2.2.1 业务功能 仿真实验环境：仿真目的（包括检验市场以及其他因素影响）、仿真市场、周期、参与者（列举常用的，可以定义新的）、 仿真参数：实验盘、实验轮、终止条件 仿真代理设置：根据仿真实验环境设置的参与者联动，其中仿真成员中有各自的常用属性以及各自的模型，可以定义，代理选择和定义； 市场规则：出清方式、报价格式、分段分时、 结果展示：出清最终结果表、市场收敛曲线 安全校核？？？存疑2.2.2 管理功能]]></content>
+    <content type="text"><![CDATA[前端 后台：2.1 前端接口2.2 功能：2.2.1 业务功能 仿真实验环境：仿真目的（包括检验市场以及其他因素影响）、仿真市场、周期、参与者（列举常用的，可以定义新的）、 仿真参数：实验盘、实验轮、终止条件 仿真代理设置：根据仿真实验环境设置的参与者联动，其中仿真成员中有各自的常用属性以及各自的模型，可以定义，代理选择和定义； 市场规则：出清方式、报价格式、分段分时、 结果展示：出清最终结果表、市场收敛曲线 安全校核？？？存疑【画电力传输线，用webgis】2.2.2 管理功能登录权限]]></content>
   </entry>
   <entry>
     <title><![CDATA[jade不通过gui启动问题]]></title>
     <url>%2F2019%2F01%2F07%2Fjade%E4%B8%8D%E9%80%9A%E8%BF%87gui%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么 通信传递的信息！！！【重点】 agent的重点在于行为5.1 行为的停止TickerBehaviour行为通过stop停止；一般的是done函数； kill以后怎么办 代理 应该有个出清代理CA，所有的卖方和买方将价和量（包括初次的和每次迭代后的）发送给CA，CA在收到所有之后，进行出清，然后将结果发送给各自的agent。各自的agent收到后再次迭代。在达到迭代次数或者结果不再改变时，停止。（需不需要一个控制agent?）–问题在于论文中停止条件是每个各自的还是总体利润？？？对于各自代理，代理的行为就是强化学习？]]></content>
+    <content type="text"><![CDATA[agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么 通信消息代表行为或者说通信行为CA；最常用的一些行为有通知、请求、统一、不理解和拒绝等。传递的信息！！！【重点】通信原语？ContractNet协议 P69在对话中扮演一个角色，无论是发起者或响应者的角色，都意味着执行某种任务，因此所有协议类（包括发起者和响应者）都是jade行为类。 agent的重点在于行为5.1 行为的停止TickerBehaviour行为通过stop停止；一般的是done函数； kill以后怎么办 代理 应该有个出清代理CA，所有的卖方和买方将价和量（包括初次的和每次迭代后的）发送给CA，CA在收到所有之后，进行出清，然后将结果发送给各自的agent。各自的agent收到后再次迭代。在达到迭代次数或者结果不再改变时，停止。（需不需要一个控制agent?）–问题在于论文中停止条件是每个各自的还是总体利润？？？对于各自代理，代理的行为就是强化学习？ Subscribe协议P72 本体到底是个啥吗。。。]]></content>
   </entry>
   <entry>
     <title><![CDATA[计算机网络自顶向下方法]]></title>
@@ -256,17 +261,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[智能代理机器人]]></title>
-    <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
-    <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？ 画方案设计数据模型]]></content>
-      <categories>
-        <category>课题</category>
-      </categories>
-      <tags>
-        <tag>课题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[HEXO高级功能]]></title>
     <url>%2F2018%2F09%2F26%2FHEXO%E6%94%B9%E8%BF%9B%2F</url>
     <content type="text"><![CDATA[如何改变皮肤？步骤如下： 前往 hexo网站 选择皮肤，并点击进入github页面； 将git库clone到themes文件夹下； 修改conf配置文件，改为对应的名字； 有的图片需要配置按照github的readme来写。 如何自定义博客结构？ 进入使用的themes下，修改layout中的相关文件（比如js这些） 文章的分类与标签 前往 hexo网站 查看相应的语法 如何让代码更美观 前往 hexo网站 查看相应的语法1[rectangle setX: 10 y: 10 width: 20 height: 20]; _.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] 并在对应的themes中修改相应的高亮代码块方案。 本地写作时图床的写作方案 图床七牛 ; 配置方法:快捷键+建个脚本（注意图床的链接的修改） 上传使用官方的上传组件即可，命令行辅助工具(qrsctl) 插件的安装 前往 hexo网站 字数统计插件 ： 不算字 next的字数统计见https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral, https://blog.csdn.net/u012195214/article/details/79204088 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能 博客 接入评论系统 disquz 来必力 畅言 gitment； https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/ 博客增加搜索功能 SwiftType 自定义site语法进行跳转 next方案在https://blog.csdn.net/u012195214/article/details/79204088 接入统计系统 cnzz 百度统计:https://blog.csdn.net/u013066244/article/details/71056745 阅读量统计 注册LeanCloud . 新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写参考自https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud 百度收录 参见https://albenw.github.io/posts/be8242cc/（未成功）]]></content>
@@ -275,6 +269,17 @@
       </categories>
       <tags>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[智能代理机器人]]></title>
+    <url>%2F2018%2F09%2F26%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BA%2F</url>
+    <content type="text"><![CDATA[孤军奋战，加油~~ 方案可行性及实现：论证 确定开发流程 工作计划 第一步的任务 写论文的创新点在哪？？？ 画方案设计数据模型]]></content>
+      <categories>
+        <category>课题</category>
+      </categories>
+      <tags>
+        <tag>课题</tag>
       </tags>
   </entry>
   <entry>
@@ -731,7 +736,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#x31;&#57;&#x34;&#x33;&#x33;&#x35;&#50;&#x34;&#64;&#113;&#113;&#x2e;&#99;&#x6f;&#109;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#49;&#x39;&#x34;&#x33;&#x33;&#53;&#50;&#x34;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
