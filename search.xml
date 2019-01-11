@@ -11,9 +11,15 @@
     <content type="text"><![CDATA[前端 后台：2.1 前端接口2.2 功能：2.2.1 业务功能 仿真实验环境：仿真目的（包括检验市场以及其他因素影响）、仿真市场、周期、参与者（列举常用的，可以定义新的）、 仿真参数：实验盘、实验轮、终止条件 仿真代理设置：根据仿真实验环境设置的参与者联动，其中仿真成员中有各自的常用属性以及各自的模型，可以定义，代理选择和定义； 市场规则：出清方式、报价格式、分段分时、 结果展示：出清最终结果表、市场收敛曲线 安全校核？？？存疑【画电力传输线，用webgis】2.2.2 管理功能登录权限]]></content>
   </entry>
   <entry>
-    <title><![CDATA[jade不通过gui启动问题]]></title>
-    <url>%2F2019%2F01%2F07%2Fjade%E4%B8%8D%E9%80%9A%E8%BF%87gui%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么 通信消息代表行为或者说通信行为CA；最常用的一些行为有通知、请求、统一、不理解和拒绝等。传递的信息！！！【重点】通信原语？ContractNet协议 P69在对话中扮演一个角色，无论是发起者或响应者的角色，都意味着执行某种任务，因此所有协议类（包括发起者和响应者）都是jade行为类。 agent的重点在于行为5.1 行为的停止TickerBehaviour行为通过stop停止；一般的是done函数； kill以后怎么办 代理 应该有个出清代理CA，所有的卖方和买方将价和量（包括初次的和每次迭代后的）发送给CA，CA在收到所有之后，进行出清，然后将结果发送给各自的agent。各自的agent收到后再次迭代。在达到迭代次数或者结果不再改变时，停止。（需不需要一个控制agent?）–问题在于论文中停止条件是每个各自的还是总体利润？？？对于各自代理，代理的行为就是强化学习？ Subscribe协议P72 本体到底是个啥吗。。。]]></content>
+    <title><![CDATA[JADE使用的一些问题记录（二）]]></title>
+    <url>%2F2019%2F01%2F07%2FJADE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95%20(2)%2F</url>
+    <content type="text"><![CDATA[agent的start方法这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup； 与外界的类是如何通信的myAgent.getO2AObject()怎么向外系统传递消息？直接在里面修改后外面的也修改了。但是要注意，seller启动需要 延时，不然的话写不进去 dfagent注册的是什么 通信消息代表行为或者说通信行为CA；最常用的一些行为有通知、请求、统一、不理解和拒绝等。传递的信息！！！【重点】通信原语？ContractNet协议 P69在对话中扮演一个角色，无论是发起者或响应者的角色，都意味着执行某种任务，因此所有协议类（包括发起者和响应者）都是jade行为类。 agent的重点在于行为5.1 行为的停止TickerBehaviour行为通过stop停止；一般的是done函数； kill以后怎么办 代理 应该有个出清代理CA，所有的卖方和买方将价和量（包括初次的和每次迭代后的）发送给CA，CA在收到所有之后，进行出清，然后将结果发送给各自的agent。各自的agent收到后再次迭代。在达到迭代次数或者结果不再改变时，停止。（需不需要一个控制agent?）–问题在于论文中停止条件是每个各自的还是总体利润？？？对于各自代理，代理的行为就是强化学习？ Subscribe协议P72 本体到底是个啥吗。。。现在有一些已经存在的language来描述ontologies，如DAML+OIL和OWL，JADE并不直接支持这些ontologies，而是将ontologies编码为java类（比如protégé可以将本体直接导出为java类）。本体提供了Agent交互的语义支持，但必须与内容语言结合使用，后者是Agent交互的语法支持。JADE支持的三种内容语言包括：FIPA-SL类似lisp的语言族；Leap-encoding应用于嵌入式开发；JavaCodec，JADE特定的内容语言。ContentElementList和ACtion有啥区别agentaction和action DFAgent中注册的是？如何注册单个服务 消息处理中接收时如何接收的？在使用cotractNet之后和本体之后，content是怎么放进去的？fillContent中应该就是把内容封装成action，然后send。]]></content>
+      <categories>
+        <category>课题</category>
+      </categories>
+      <tags>
+        <tag>课题</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[计算机网络自顶向下方法]]></title>
@@ -139,8 +145,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[智能代理]]></title>
-    <url>%2F2018%2F12%2F19%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%2F</url>
+    <title><![CDATA[智能代理算法]]></title>
+    <url>%2F2018%2F12%2F19%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E7%AE%97%E6%B3%95%2F</url>
     <content type="text"><![CDATA[智能代理的流程 策略空间是啥]]></content>
       <categories>
         <category>课题</category>
@@ -736,7 +742,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#49;&#x39;&#x34;&#x33;&#x33;&#53;&#50;&#x34;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#x31;&#57;&#x34;&#x33;&#51;&#x35;&#x32;&#x34;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#109;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
