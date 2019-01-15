@@ -316,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/HEXO改进/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/分布式锁/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay">
@@ -335,7 +335,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/26/HEXO改进/" itemprop="url">HEXO高级功能</a></h1>
+                <a class="post-title-link" href="/2018/10/25/分布式锁/" itemprop="url">分布式锁</a></h1>
         
 
         <div class="post-meta">
@@ -347,8 +347,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T16:44:56+08:00">
-                2018-09-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T10:58:45+08:00">
+                2018-10-25
               </time>
             
 
@@ -370,8 +370,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基本设置/" itemprop="url" rel="index">
-                    <span itemprop="name">基本设置</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/分布式/" itemprop="url" rel="index">
+                    <span itemprop="name">分布式</span>
                   </a>
                 </span>
 
@@ -387,7 +398,7 @@
 
           
           
-             <span id="/2018/09/26/HEXO改进/" class="leancloud_visitors" data-flag-title="HEXO高级功能">
+             <span id="/2018/10/25/分布式锁/" class="leancloud_visitors" data-flag-title="分布式锁">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  532 字
+                  579 字
                 </span>
               
 
@@ -451,57 +462,16 @@
       
         
           
-            <h1 id="如何改变皮肤？"><a href="#如何改变皮肤？" class="headerlink" title="如何改变皮肤？"></a>如何改变皮肤？</h1><p>步骤如下：</p>
+            <hr>
+<p>引用自<a href="https://www.cnblogs.com/austinspark-jessylu/p/8043726.html" target="_blank" rel="noopener">https://www.cnblogs.com/austinspark-jessylu/p/8043726.html</a></p>
+<hr>
+<p><strong> 分布式的CAP理论 </strong><br>任何一个分布式系统都无法同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance），最多只能同时满足两项。”所以，很多系统在设计之初就要对这三者做出取舍。在互联网领域的绝大多数的场景中，都需要牺牲强一致性来换取系统的高可用性，系统往往只需要保证“最终一致性”，只要这个最终时间是在用户可以接受的范围内即可。</p>
 <ol>
-<li>前往 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo网站</a> 选择皮肤，并点击进入github页面；</li>
-<li>将git库clone到themes文件夹下；</li>
-<li>修改conf配置文件，改为对应的名字；</li>
-<li>有的图片需要配置按照github的readme来写。</li>
-</ol>
-<h1 id="如何自定义博客结构？"><a href="#如何自定义博客结构？" class="headerlink" title="如何自定义博客结构？"></a>如何自定义博客结构？</h1><ol>
-<li>进入使用的themes下，修改layout中的相关文件（比如js这些）</li>
-</ol>
-<h1 id="文章的分类与标签"><a href="#文章的分类与标签" class="headerlink" title="文章的分类与标签"></a>文章的分类与标签</h1><ol>
-<li>前往 <a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">hexo网站</a> 查看相应的语法</li>
-</ol>
-<h1 id="如何让代码更美观"><a href="#如何让代码更美观" class="headerlink" title="如何让代码更美观"></a>如何让代码更美观</h1><ol>
-<li>前往 <a href="https://hexo.io/zh-cn/docs/tag-plugins#%E4%BB%A3%E7%A0%81%E5%9D%97" target="_blank" rel="noopener">hexo网站</a> 查看相应的语法<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure>
+<li><p>需要的分布式锁应该是怎么样的？</p>
+<p> 可以保证在分布式部署的应用集群中，同一个方法在同一时间只能被一台机器上的一个线程执行。<br> 这把锁要是一把可重入锁（避免死锁）<br> 这把锁最好是一把阻塞锁（根据业务需求考虑要不要这条）<br> 有高可用的获取锁和释放锁功能<br> 获取锁和释放锁的性能要好</p>
 </li>
-</ol>
-<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>并在对应的themes中修改相应的高亮代码块方案。</li>
-</ol>
-<h1 id="本地写作时图床的写作方案"><a href="#本地写作时图床的写作方案" class="headerlink" title="本地写作时图床的写作方案"></a>本地写作时图床的写作方案</h1><ol>
-<li>图床<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛</a> ;</li>
-<li>配置方法:快捷键+建个脚本（注意图床的链接的修改）</li>
-<li>上传使用官方的上传组件即可，命令行辅助工具(qrsctl)</li>
-</ol>
-<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><ol>
-<li>前往 <a href="https://hexo.io/plugins" target="_blank" rel="noopener">hexo网站</a> </li>
-<li>字数统计插件 ： 不算字<br> next的字数统计见<a href="https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral</a>, <a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/79204088</a><br> 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save<br> 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能</li>
-</ol>
-<h1 id="博客-接入评论系统"><a href="#博客-接入评论系统" class="headerlink" title="博客 接入评论系统"></a>博客 接入评论系统</h1><ol>
-<li>disquz</li>
-<li>来必力</li>
-<li>畅言</li>
-<li>gitment； <a href="https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</a></li>
-</ol>
-<h1 id="博客增加搜索功能"><a href="#博客增加搜索功能" class="headerlink" title="博客增加搜索功能"></a>博客增加搜索功能</h1><ol>
-<li>SwiftType</li>
-<li>自定义site语法进行跳转</li>
-<li>next方案在<a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/79204088</a></li>
-</ol>
-<h1 id="接入统计系统"><a href="#接入统计系统" class="headerlink" title="接入统计系统"></a>接入统计系统</h1><ol>
-<li>cnzz</li>
-<li>百度统计:<a href="https://blog.csdn.net/u013066244/article/details/71056745" target="_blank" rel="noopener">https://blog.csdn.net/u013066244/article/details/71056745</a></li>
-</ol>
-<h1 id="阅读量统计"><a href="#阅读量统计" class="headerlink" title="阅读量统计"></a>阅读量统计</h1><ol>
-<li>注册<a href="https://leancloud.cn" target="_blank" rel="noopener">LeanCloud</a> .</li>
-<li>新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写<br>参考自<a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud</a></li>
-</ol>
-<h1 id="百度收录"><a href="#百度收录" class="headerlink" title="百度收录"></a>百度收录</h1><ol>
-<li>参见<a href="https://albenw.github.io/posts/be8242cc/（未成功）" target="_blank" rel="noopener">https://albenw.github.io/posts/be8242cc/（未成功）</a></li>
+<li><p>常用设计方案<br>2.1 基于数据库实现分布式锁<br>要实现分布式锁，最简单的方式可能就是直接创建一张锁表，然后通过操作该表中的数据来实现了。<br>当我们要锁住某个方法或资源时，我们就在该表中增加一条记录，想要释放锁的时候就删除这条记录。<br>2.2 基于缓存（redis，memcached，tair）实现分布式锁<br>基于Tair的实现分布式锁其实和Redis类似，其中主要的实现方式是使用TairManager.put方法来实现。<br>2.3 基于Zookeeper实现分布式锁<br>基于zookeeper临时有序节点可以实现的分布式锁。<br>大致思想即为：每个客户端对某个方法加锁时，在zookeeper上的与该方法对应的指定节点的目录下，生成一个唯一的瞬时有序节点。 判断是否获取锁的方式很简单，只需要判断有序节点中序号最小的一个。 当释放锁的时候，只需将这个瞬时节点删除即可。同时，其可以避免服务宕机导致的锁无法释放，而产生的死锁问题。</p>
+</li>
 </ol>
 
           
@@ -698,6 +668,241 @@
 </ol>
 <hr>
 <p>画方案<br>设计数据模型</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/HEXO改进/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/26/HEXO改进/" itemprop="url">HEXO高级功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T16:44:56+08:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基本设置/" itemprop="url" rel="index">
+                    <span itemprop="name">基本设置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/26/HEXO改进/" class="leancloud_visitors" data-flag-title="HEXO高级功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  532 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="如何改变皮肤？"><a href="#如何改变皮肤？" class="headerlink" title="如何改变皮肤？"></a>如何改变皮肤？</h1><p>步骤如下：</p>
+<ol>
+<li>前往 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo网站</a> 选择皮肤，并点击进入github页面；</li>
+<li>将git库clone到themes文件夹下；</li>
+<li>修改conf配置文件，改为对应的名字；</li>
+<li>有的图片需要配置按照github的readme来写。</li>
+</ol>
+<h1 id="如何自定义博客结构？"><a href="#如何自定义博客结构？" class="headerlink" title="如何自定义博客结构？"></a>如何自定义博客结构？</h1><ol>
+<li>进入使用的themes下，修改layout中的相关文件（比如js这些）</li>
+</ol>
+<h1 id="文章的分类与标签"><a href="#文章的分类与标签" class="headerlink" title="文章的分类与标签"></a>文章的分类与标签</h1><ol>
+<li>前往 <a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">hexo网站</a> 查看相应的语法</li>
+</ol>
+<h1 id="如何让代码更美观"><a href="#如何让代码更美观" class="headerlink" title="如何让代码更美观"></a>如何让代码更美观</h1><ol>
+<li>前往 <a href="https://hexo.io/zh-cn/docs/tag-plugins#%E4%BB%A3%E7%A0%81%E5%9D%97" target="_blank" rel="noopener">hexo网站</a> 查看相应的语法<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>并在对应的themes中修改相应的高亮代码块方案。</li>
+</ol>
+<h1 id="本地写作时图床的写作方案"><a href="#本地写作时图床的写作方案" class="headerlink" title="本地写作时图床的写作方案"></a>本地写作时图床的写作方案</h1><ol>
+<li>图床<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛</a> ;</li>
+<li>配置方法:快捷键+建个脚本（注意图床的链接的修改）</li>
+<li>上传使用官方的上传组件即可，命令行辅助工具(qrsctl)</li>
+</ol>
+<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><ol>
+<li>前往 <a href="https://hexo.io/plugins" target="_blank" rel="noopener">hexo网站</a> </li>
+<li>字数统计插件 ： 不算字<br> next的字数统计见<a href="https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral</a>, <a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/79204088</a><br> 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save<br> 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能</li>
+</ol>
+<h1 id="博客-接入评论系统"><a href="#博客-接入评论系统" class="headerlink" title="博客 接入评论系统"></a>博客 接入评论系统</h1><ol>
+<li>disquz</li>
+<li>来必力</li>
+<li>畅言</li>
+<li>gitment； <a href="https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</a></li>
+</ol>
+<h1 id="博客增加搜索功能"><a href="#博客增加搜索功能" class="headerlink" title="博客增加搜索功能"></a>博客增加搜索功能</h1><ol>
+<li>SwiftType</li>
+<li>自定义site语法进行跳转</li>
+<li>next方案在<a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/79204088</a></li>
+</ol>
+<h1 id="接入统计系统"><a href="#接入统计系统" class="headerlink" title="接入统计系统"></a>接入统计系统</h1><ol>
+<li>cnzz</li>
+<li>百度统计:<a href="https://blog.csdn.net/u013066244/article/details/71056745" target="_blank" rel="noopener">https://blog.csdn.net/u013066244/article/details/71056745</a></li>
+</ol>
+<h1 id="阅读量统计"><a href="#阅读量统计" class="headerlink" title="阅读量统计"></a>阅读量统计</h1><ol>
+<li>注册<a href="https://leancloud.cn" target="_blank" rel="noopener">LeanCloud</a> .</li>
+<li>新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写<br>参考自<a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud</a></li>
+</ol>
+<h1 id="百度收录"><a href="#百度收录" class="headerlink" title="百度收录"></a>百度收录</h1><ol>
+<li>参见<a href="https://albenw.github.io/posts/be8242cc/（未成功）" target="_blank" rel="noopener">https://albenw.github.io/posts/be8242cc/（未成功）</a></li>
+</ol>
 
           
         
@@ -2122,216 +2327,6 @@ return false;   // change return value to fit specific problem
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/面试算法之回溯算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/19/面试算法之回溯算法/" itemprop="url">面试算法之回溯算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T19:17:44+08:00">
-                2018-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试算法/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/19/面试算法之回溯算法/" class="leancloud_visitors" data-flag-title="面试算法之回溯算法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  540 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="简单概述"><a href="#简单概述" class="headerlink" title="简单概述"></a>简单概述</h1><pre><code>回溯法思路的简单描述是：把问题的解空间转化成了图或者树的结构表示，然后使用**深度优先搜索策略**进行遍历，遍历的过程中记录和寻找所有可行解或者最优解。
-</code></pre><p>基本思想类同于：<br>    • 图的深度优先搜索<br>    • 二叉树的后序遍历<br>      【<br>         分支限界法：广度优先搜索<br>         思想类同于：图的广度优先遍历<br>                                二叉树的层序遍历<br>      】</p>
-<h1 id="详细描述"><a href="#详细描述" class="headerlink" title="详细描述"></a>详细描述</h1><pre><code>详细的描述则为：
-回溯法按深度优先策略搜索问题的解空间树。首先从根节点出发搜索解空间树，当算法搜索至解空间树的某一节点时，先利用剪枝函数判断该节点是否可行（即能得到问题的解）。如果不可行，则跳过对该节点为根的子树的搜索，逐层向其祖先节点回溯；否则，进入该子树，继续按深度优先策略搜索。
-回溯法的基本行为是搜索，搜索过程使用剪枝函数来为了避免无效的搜索。剪枝函数包括两类：1. 使用约束函数，剪去不满足约束条件的路径；2.使用限界函数，剪去不能得到最优解的路径。
-问题的关键在于如何定义问题的解空间，转化成树（即解空间树）。
-
-解空间树分为两种：
-    **子集树和排列树**。两种在算法结构和思路上大体相同。
-</code></pre><h1 id="回溯法应用"><a href="#回溯法应用" class="headerlink" title="回溯法应用"></a>回溯法应用</h1><pre><code>当问题是要求满足某种性质（约束条件）的所有解或最优解时，往往使用回溯法。
-它有“通用解题法”之美誉。
-</code></pre><ol>
-<li>子集问题lc78，lc90</li>
-<li>排列问题lc46，lc47</li>
-<li>组合求和问题lc39，40，216</li>
-<li>分割回文串lc131</li>
-<li>阿里快递最短路alibaba（DFS）</li>
-<li>组合问题lc77【lc77中有对回溯法的优化，即剪枝】，lc401</li>
-<li>二维平面上使用回溯法 lc79</li>
-<li>floodfill lc200（岛屿的个数），130，417</li>
-<li>N皇后问题lc51</li>
-<li>数独问题lc37</li>
-</ol>
-<h1 id="回溯法实现"><a href="#回溯法实现" class="headerlink" title="回溯法实现 -"></a>回溯法实现 -</h1><ol>
-<li>递归</li>
-<li>迭代（这个问题怎么做？）</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2386,7 +2381,7 @@ return false;   // change return value to fit specific problem
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">81</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2483,7 +2478,7 @@ return false;   // change return value to fit specific problem
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">28k</span>
+    <span title="Site words total count">28.3k</span>
   
 </div>
 
