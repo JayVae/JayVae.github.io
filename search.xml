@@ -163,7 +163,7 @@
   <entry>
     <title><![CDATA[难点之电力市场业务]]></title>
     <url>%2F2018%2F12%2F20%2F%E9%9A%BE%E7%82%B9%E4%B9%8B%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E4%B8%9A%E5%8A%A1%2F</url>
-    <content type="text"><![CDATA[长期的集中撮合的成本函数以及报价函数，利润函数的制定？不是与出力有关，而是与电量有关。 电力用户的利润函数？ 边际成本？ 代理算法 如果用集中竞价交易，流程参考陕西省文件 定价不等于报价 按机组报价 分段报价 出清模型不一样啊~~~社会福利最大。写文章时，出清模型按照这样写，在这部分最后写本文采取的出清方法，按照陕西省通知来做。]]></content>
+    <content type="text"><![CDATA[长期的集中撮合的成本函数以及报价函数，利润函数的制定？不是与出力有关，而是与电量有关。 电力用户的利润函数？ 边际成本？ 代理算法 如果用集中竞价交易，流程参考陕西省文件 定价不等于报价：定价在《电力市场原理与实践》中有详细叙述 按机组报价 分段报价王锡凡分段竞价？ 出清模型不一样啊~~~社会福利最大。写文章时，出清模型按照这样写，在这部分最后写本文采取的出清方法，按照陕西省通知来做。]]></content>
       <categories>
         <category>课题</category>
       </categories>
@@ -769,7 +769,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#49;&#x39;&#52;&#51;&#x33;&#x35;&#50;&#52;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#x31;&#57;&#x34;&#51;&#x33;&#53;&#x32;&#x34;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#109;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
