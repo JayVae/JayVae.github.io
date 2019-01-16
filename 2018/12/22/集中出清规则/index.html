@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行">
+<meta name="description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程：0-. 按地区分组  数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机">
 <meta name="keywords" content="课题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集中出清规则">
 <meta property="og:url" content="http://yoursite.com/2018/12/22/集中出清规则/index.html">
 <meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行">
+<meta property="og:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程：0-. 按地区分组  数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-06T07:09:54.028Z">
+<meta property="og:updated_time" content="2019-01-16T02:10:57.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集中出清规则">
-<meta name="twitter:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程： 数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行">
+<meta name="twitter:description" content="输入：电厂报价报量`arr1[][]`, 用户报价报量`arr2[][]`。 不应该是数组，而应该是一个抽象的数据类型，存有 输出：出清价格：Price 成交电量对（一个用户可以在多个成交对之中）ResultSet。 算法流程：0-. 按地区分组  数据有效筛选（购方申报数据筛选和售方数据筛选不一样） 按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机">
 
 
 
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  374 字
+                  594 字
                 </span>
               
 
@@ -437,7 +437,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -463,7 +463,8 @@
 不应该是数组，而应该是一个抽象的数据类型，存有
 </code></pre><h2 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h2><pre><code>出清价格：Price
 成交电量对（一个用户可以在多个成交对之中）ResultSet。
-</code></pre><h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><ol start="0">
+</code></pre><h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><p>0-. 按地区分组</p>
+<ol start="0">
 <li>数据有效筛选（购方申报数据筛选和售方数据筛选不一样）</li>
 <li>按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行排列】</li>
 <li>得到成交电量对,其中成交电量为q_current = <code>min{q1[0],q2[0]}</code>；</li>
@@ -483,6 +484,8 @@
 <li>封装类：</li>
 </ol>
 <p>最终保存的结果【比如一个用户成交了几笔，关联交易表】在entity怎么保存。<br>交易实体类</p>
+<h2 id="广东省的出清"><a href="#广东省的出清" class="headerlink" title="广东省的出清"></a>广东省的出清</h2><p>在广东的规则中，对日前市场如何出清是这样描述的：</p>
+<p>　　“电力调度机构综合考虑发电侧电力报价曲线、用户侧电力需求价格曲线、非市场用户负荷预测、外送受电曲线、A 类机组出力曲线、发电机组检修计划、输变电设备检修计划、发电机组运行约束条件、电网安全运行约束条件等因素，以社会福利最大为优化目标，采用安全约束机组组合(SCUC)、安全约束经济调度(SCED)算法进行集中优化计算，出清得到运行日的机组开机组合以及分时发电出力曲线、售电公司与批发用户分时分节点的中标用电曲线、分时节点电价。”</p>
 
       
     </div>
@@ -614,7 +617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">83</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -693,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入："><span class="nav-number">1.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出："><span class="nav-number">2.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法流程："><span class="nav-number">3.</span> <span class="nav-text">算法流程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化"><span class="nav-number">4.</span> <span class="nav-text">可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码"><span class="nav-number">5.</span> <span class="nav-text">编码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入："><span class="nav-number">1.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出："><span class="nav-number">2.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法流程："><span class="nav-number">3.</span> <span class="nav-text">算法流程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化"><span class="nav-number">4.</span> <span class="nav-text">可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码"><span class="nav-number">5.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广东省的出清"><span class="nav-number">6.</span> <span class="nav-text">广东省的出清</span></a></li></ol></div>
             
 
           </div>
@@ -727,7 +730,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">28.3k</span>
+    <span title="Site words total count">29k</span>
   
 </div>
 
