@@ -185,7 +185,7 @@
   <entry>
     <title><![CDATA[智能代理算法]]></title>
     <url>%2F2018%2F12%2F19%2F%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E7%AE%97%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[智能代理的流程 策略空间是啥（策略集） 按容量报价？？？？【原理】 报价策略：按照成本报价、按照持留容量（《电力市场原理与实践》）又可以分为保守型（用电侧市场放开下的电力市场多主体博弈） 智能代理迭代的是什么?系数？]]></content>
+    <content type="text"><![CDATA[智能代理的流程 策略空间是啥（策略集） 按容量报价？？？？【原理】 报价策略：按照成本报价、按照持留容量（《电力市场原理与实践》）又可以分为保守型（用电侧市场放开下的电力市场多主体博弈） 智能代理迭代的是什么?系数？ 强化学习了解到什么程度？]]></content>
       <categories>
         <category>课题</category>
       </categories>
@@ -780,7 +780,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#x31;&#x39;&#x34;&#51;&#x33;&#x35;&#50;&#52;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#49;&#57;&#52;&#51;&#51;&#53;&#50;&#52;&#64;&#113;&#x71;&#46;&#x63;&#111;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
