@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JayVae&#39;s Blog">
 <meta property="og:description" content="智能代理的流程  策略空间是啥（策略集）   按容量报价？？？？【原理】 报价策略：按照成本报价、按照持留容量（《电力市场原理与实践》）又可以分为保守型（用电侧市场放开下的电力市场多主体博弈） 智能代理迭代的是什么?系数？ 强化学习了解到什么程度？ 在于策略空间和奖励函数。  强化学习中的概念最起码得对应起来：3.1 状态：（Q,P）状态空间，离散化【为什么要离散化】，在这里我觉得是对每个代理来">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-23T11:41:37.747Z">
+<meta property="og:updated_time" content="2019-01-24T02:20:39.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="智能代理算法">
 <meta name="twitter:description" content="智能代理的流程  策略空间是啥（策略集）   按容量报价？？？？【原理】 报价策略：按照成本报价、按照持留容量（《电力市场原理与实践》）又可以分为保守型（用电侧市场放开下的电力市场多主体博弈） 智能代理迭代的是什么?系数？ 强化学习了解到什么程度？ 在于策略空间和奖励函数。  强化学习中的概念最起码得对应起来：3.1 状态：（Q,P）状态空间，离散化【为什么要离散化】，在这里我觉得是对每个代理来">
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  680 字
+                  834 字
                 </span>
               
 
@@ -437,7 +437,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -470,10 +470,13 @@
 <p>强化学习了解到什么程度？</p>
 <p>在于策略空间和奖励函数。</p>
 <ol start="3">
-<li>强化学习中的概念最起码得对应起来：<br>3.1 状态：（Q,P）状态空间，离散化【为什么要离散化】，在这里我觉得是对每个代理来说是每次的出清结果，电价和电量。<br>3.2 动作（策略）：策略集合？调（Q,P），在原来基础上增加减少？还有一种是在原来的报价函数基础上进行调节系数。<br>3.3 回报（奖赏）：成本？<br>3.4 值函数（评价函数），即Q值。值函数很大程度上由奖赏函数给出的奖赏值确定，因此奖赏函数是强化学习方法中的一个重要的问题。<br>3.5 环境模型 ：不需要<br>3.6 关于策略：RL是从环境状态到动作的映射的学习，我们把这个映射称为策略。</li>
+<li>强化学习中的概念最起码得对应起来：<br>3.1 状态：（Q,P）状态空间，离散化【为什么要离散化】，在这里我觉得是对每个代理来说是每次的出清结果，电价和电量。<br>3.2 动作（策略）：策略集合？调（Q,P），在原来基础上增加减少？还有一种是在原来的报价函数基础上进行调节系数。<ul>
+<li>存疑 * 注意【发电商基于Q-Learning算法的日前市场竞价策略】这里的策略到状态是不确定的啊，状态如果是出清值的话，那么需要所有的进行出清才能得出。<br>【基于复杂系统多Agent建模的电力市场仿真技术研究_王海宁】中？<br>【电力市场仿真系统的开发及应用】<br>3.3 回报（奖赏）：成本？<br>3.4 值函数（评价函数），即Q值。值函数很大程度上由奖赏函数给出的奖赏值确定，因此奖赏函数是强化学习方法中的一个重要的问题。<br>3.5 环境模型 ：不需要<br>3.6 关于策略：RL是从环境状态到动作的映射的学习，我们把这个映射称为策略。</li>
+</ul>
+</li>
 <li>用的强化学习算法：<br>TD算法<br>SARA<br>Q-LEARNING</li>
 </ol>
-<p>常见的强化学习算法中TD算法和Q一学习算法属于典型的模型无关法，而Sarsa和Dyna Q算法属于基于模型法。</p>
+<p>常见的强化学习算法中TD算法和Q一学习算法属于典型的模型无关法，而Sarsa和Dyna Q算法属于基于模型法（？？？这个是不对的，见下）。</p>
 <ol start="5">
 <li><p>查一查强化学习在电力市场或其他领域的应用</p>
 </li>
@@ -482,6 +485,10 @@
 <li><p>基于价值（value-based）、基于策略（policy-based）以及基于模型（model-based）的方法<br>7.1 优化价值函数<br>一个状态下的函数值，是智能体可以预期的未来奖励积累总值，从当前状态开始算。智能体要用这个价值函数来决定，每一步要选择哪个行动。它会采取函数值 (就是Q值) 最大的那个行动。【不是概率？】<br>7.2 每种动作都可能被选中，根据概率来选</p>
 </li>
 <li><p>强化学习几种分类：（括号中的是具体的方法）<br>8.1 按照是否对环境进行建模可以分为：model-free（Q-learning、Sarsa、policy gradients）和model-based;<br>8.2 按照选择动作的依据可以分为基于概率（Policy-based，包括policy gradients）和基于价值（value-based，包括Q-learning、Sarsa）<br>8.3 按照更新可以分为回合更新（Monte-Carlo update，包括基础版policy gradients，monte-carlo learning）和单步更新（Temporal Difference,包括升级版的policy gradients，Q-learning，Sarsa）;<br>8.4 在线学习（on-policy）和离线学习（off-policy）：</p>
+</li>
+<li><p>关于Roth-Erev方法<br>在博士论文【王海宁】中有所提及</p>
+</li>
+<li><p>需要了解马尔科夫决策过程、动态规划、蒙特卡洛、时间差分这些吗？</p>
 </li>
 </ol>
 
@@ -703,7 +710,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">30.7k</span>
+    <span title="Site words total count">30.9k</span>
   
 </div>
 
