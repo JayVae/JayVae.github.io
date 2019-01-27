@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  968 字
+                  1.2k 字
                 </span>
               
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -463,9 +463,15 @@
 <p>强化学习了解到什么程度？</p>
 <p>在于策略空间和奖励函数。</p>
 <ol start="3">
-<li>强化学习中的概念最起码得对应起来：<br>3.1 状态：（Q,P）状态空间，离散化【为什么要离散化】，在这里我觉得是对每个代理来说是每次的出清结果，电价和电量。<br>3.2 动作（策略）：策略集合？调（Q,P），在原来基础上增加减少？还有一种是在原来的报价函数基础上进行调节系数。<ul>
-<li>存疑 * 注意【发电商基于Q-Learning算法的日前市场竞价策略】这里的策略到状态是不确定的啊，状态如果是出清值的话，那么需要所有的进行出清才能得出。<br>【基于复杂系统多Agent建模的电力市场仿真技术研究_王海宁】中：代理算法（RE算法、Q-learning算法、规则推理算法greedy、粒子群算法）和报价策略（中庸型）区别：<br>【电力市场仿真系统的开发及应用】<br>3.3 回报（奖赏）：成本？<br>3.4 值函数（评价函数），即Q值。值函数很大程度上由奖赏函数给出的奖赏值确定，因此奖赏函数是强化学习方法中的一个重要的问题。<br>3.5 环境模型 ：不需要<br>3.6 关于策略：RL是从环境状态到动作的映射的学习，我们把这个映射称为策略。</li>
+<li><p>强化学习中的概念最起码得对应起来：<br>3.1 状态：（Q,P）状态空间，离散化【为什么要离散化】，在这里我觉得是对每个代理来说是每次的出清结果，电价和电量。<br>3.2 动作（策略）：策略集合？调（Q,P），在原来基础上增加减少？还有一种是在原来的报价函数基础上进行调节系数。</p>
+<ul>
+<li>存疑 *<br>3.2.1 【发电商基于Q-Learning算法的日前市场竞价策略】<br>注意这里的策略到状态是不确定的啊，状态如果是出清值的话，那么需要所有的进行出清才能得出。<br>3.2.2 【基于复杂系统多Agent建模的电力市场仿真技术研究_王海宁】中：</li>
+<li>代理算法（RE算法、Q-learning算法、规则推理算法greedy、粒子群算法）和报价策略（中庸型）区别?</li>
+<li>其中策略空间中的Si是怎么计算的？</li>
+<li>可以说RE算法无关状态？</li>
+<li>其中的Q-learning环境：是选用竞价空间，代理收购约束情况与市场加权平均出清价格联合作为区分的标准。P44<br>将这三个变量关联考虑，可将环境分为种状态。在程序中运用了多维矩阵来表示这些状态。</li>
 </ul>
+<p>3.2.3 【电力市场仿真系统的开发及应用】<br>3.3 回报（奖赏）：成本？<br>3.4 值函数（评价函数），即Q值。值函数很大程度上由奖赏函数给出的奖赏值确定，因此奖赏函数是强化学习方法中的一个重要的问题。<br>3.5 环境模型 ：不需要<br>3.6 关于策略：RL是从环境状态到动作的映射的学习，我们把这个映射称为策略。</p>
 </li>
 <li>用的强化学习算法：<br>TD算法<br>SARA<br>Q-LEARNING</li>
 </ol>
@@ -486,6 +492,8 @@
 <li><p>电力市场交易中的量纲：<br>申报电量原则上以 10兆瓦时的整数倍，电量的量纲为兆瓦时。<br>申报电价最小单位为0.1元/兆瓦时，电价的量纲为元/兆瓦时。电力用户和发电企业应理性报价，保障本次交易工作的顺利开展。</p>
 </li>
 <li><p>强化学习中的多代理体</p>
+</li>
+<li><p>R-learning:<br>The average-reward formulation has been described for dynamic programming<br>(e.g., Puterman, 1994) and from the point of view of reinforcement learning (Ma-<br>hadevan, 1996; Tadepalli and Ok, 1994; Bertsekas and Tsitiklis, 1996; Tsitsiklis<br>and Van Roy, 1999). The algorithm described here is the on-policy analog of the<br>“R-learning” algorithm introduced by Schwartz (1993). The name R-learning was<br>probably meant to be the alphabetic successor to Q-learning, but we prefer to<br>think of it as a reference to the learning of differential or<br>relative<br>values. The<br>access-control queuing example was suggested by the work of Carlstr ̈om and<br>Nordstr ̈om (1997</p>
 </li>
 </ol>
 
@@ -2397,7 +2405,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">31.1k</span>
+    <span title="Site words total count">31.3k</span>
   
 </div>
 
