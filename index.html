@@ -316,6 +316,196 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/java前后端跨域问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/20/java前后端跨域问题/" itemprop="url">java前后端跨域问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-20T17:18:00+08:00">
+                2019-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/02/20/java前后端跨域问题/" class="leancloud_visitors" data-flag-title="java前后端跨域问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  438 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>java使用cors解决跨域问题，服务器端开发为语言为java</p>
+<p>前后端分离开发，各司其职，分工明确，加上现在大前端的发展的火热，所以分离开发必定是一个趋势，分离开发就一定会遇到跨域的问题。</p>
+<p>还是之前的意见，个人认为最好的解决方案是通过服务器的反向代理来解决。</p>
+<p>当然根据项目的具体，有些时候也会采取不同的解决方案，</p>
+<p>今天这里介绍一下cors解决，这里是站在服务端的角度，讲解需要做的工作，服务端语言为java</p>
+<p><filter><br>        <filter-name>CORS</filter-name><br>        <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class><br>        <init-param><br>            <param-name>cors.allowOrigin</param-name><br>            <param-value><em></em></param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportedMethods</param-name><br>            <param-value>GET, POST, HEAD, PUT, DELETE</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportedHeaders</param-name><br>            <param-value>Accept, Origin, X-Requested-With, Content-Type, Last-Modified</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.exposedHeaders</param-name><br>            <param-value>Set-Cookie</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportsCredentials</param-name><br>            <param-value>true</param-value><br>        </init-param><br></filter><br>    <filter-mapping><br>        <filter-name>CORS</filter-name><br>        <url-pattern>/</url-pattern><br>   </filter-mapping></p>
+<p>   参数讲解</p>
+<p>cors.allowOrigin指的可以通过的ip，<em>代表所有，可以使用指定的ip，多个的话可以用逗号分隔，默认为</em></p>
+<p>cors.supportedMethods指的是请求方式 默认为*</p>
+<p>cors.supportedHeaders请求支持的头信息，默认为*</p>
+<p>cors.exposedHeaders暴露的头信息，默认的empy list</p>
+<p>cors.supportsCredentials支持证书，默认为true</p>
+<p>cors.maxAge 最大过期时间，默认为-1</p>
+<p>cors.tagRequests 默认为false</p>
+<p>cors.allowSubdomains允许子域 默认为false</p>
+<p>回到web.xml里面配置的filter，使用的jar的依赖为：</p>
+<pre><code>&lt;!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.thetransactioncompany&lt;/groupId&gt;
+    &lt;artifactId&gt;cors-filter&lt;/artifactId&gt;
+    &lt;version&gt;2.5&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>也可以使用ebay提供，这个只有一个过滤器，资料还ting</p>
+<pre><code>&lt;!-- https://mvnrepository.com/artifact/org.ebaysf.web/cors-filter --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.ebaysf.web&lt;/groupId&gt;
+    &lt;artifactId&gt;cors-filter&lt;/artifactId&gt;
+    &lt;version&gt;1.0.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/陕西省电力交易模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1968,240 +2158,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/码农翻身杂记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/02/码农翻身杂记/" itemprop="url">码农翻身杂记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T20:52:11+08:00">
-                2019-01-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/书/" itemprop="url" rel="index">
-                    <span itemprop="name">书</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/02/码农翻身杂记/" class="leancloud_visitors" data-flag-title="码农翻身杂记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  694 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>JDBC的介绍一节体现了：面向接口、工厂方法、反射等；</p>
-</li>
-<li><p>分布式事务：<br>2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；<br>2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中</p>
-</li>
-<li><p>消息队列<br>应用系统间做异步<br>生产者-消息队列-消费者<br>订阅-发布<br>配置和代码分开</p>
-</li>
-<li><p>Java 动态代理：<br>声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。<br>jdk代理是对接口进行代理。<br>在调用方看来，是调用接口，并不会意识到是动态创建的代理类。需要添加的行为需要实现InvocationHandler接口，相当于在运行时进行拦截，从而创建新的类。<br>Proxy.newProxyInstance,就是动态生成一个类。<br>应用：Spring AOP</p>
-</li>
-<li>注解，也可以说meatdata就是描述数据的数据；元注解，就是注解的注解。<br>基于注解和XML各有千秋，灵活应用。<br>需要集中配置的用xml</li>
-<li>泛型和继承<br>ArrayList&lt;? extends Fruit&gt;</li>
-<li><p>日志系统，现在一般用slf4j（抽象层，其下层可以用各种日志系统）+logback。<br>logger<br>appender<br>formatter</p>
-</li>
-<li><p>ComapareandSwap是一条硬件指令，操作系统和硬件能保证院子执行。<br>Atomatic类<br>AtomaticReference可能会有什么ABA问题</p>
-</li>
-<li><p>在使用AtomaticXXXX类实现非阻塞算法之前，先看看有没有提供现成的Concurrentxxx类。</p>
-</li>
-<li><p>Spring 装饰者模式，动态代理</p>
-</li>
-<li><p>多个资源加锁要牢记，一定要从最大的开始加锁。</p>
-</li>
-<li><p>虚拟地址，物理地址</p>
-</li>
-<li><p>中断的方式其实是一种异步的、事件驱动的处理思想</p>
-</li>
-<li><p>DMA进行IO设备和内存之间的直接数据传输</p>
-</li>
-<li><p>内存只是一个个可以读写的格子，CPU简单到只能做4件事情–对寄存器读取数据，写入数据，数学运算和逻辑运算，根据条件进行跳转</p>
-</li>
-<li><p>检测和设置锁的操作是一个不可分割的原子操作</p>
-</li>
-<li><p>自旋锁虽然能实现互斥的访问，但是不能通信进入同一个函数（递归），简称不可重入。<br>增加计数器</p>
-</li>
-<li><p>信号量用来解决互斥锁在消费者生产者同步问题的互相等待问题<br>信号量就是一个整数，基于这个证书有两个操作，wait和signal。</p>
-</li>
-</ol>
-<p>对于生产者-消费者问题，可以直接使用BlockingQueue</p>
-<ol start="19">
-<li>尾递归：<br>当递归调用时函数体重最后执行的语句，并且它的返回值不属于表达式的一部分时，叫做尾递归。不会存在栈溢出的问题。</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2256,7 +2212,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2353,7 +2309,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">31.3k</span>
+    <span title="Site words total count">31.7k</span>
   
 </div>
 
