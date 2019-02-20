@@ -316,6 +316,214 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/双指针/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JayVae's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/22/双指针/" itemprop="url">双指针</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T15:56:59+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试算法/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/22/双指针/" class="leancloud_visitors" data-flag-title="双指针">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  332 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="两个常用场景（数组中）"><a href="#两个常用场景（数组中）" class="headerlink" title="两个常用场景（数组中）"></a>两个常用场景（数组中）</h1><ol>
+<li>前后同时，从不同位置出发<br> 从两端向中间迭代数组。<br> 一个指针从始端开始，而另一个指针从末端开始。<br>值得注意的是，这种技巧经常在排序数组中使用。</li>
+</ol>
+<p>比如：反转字符串，数组拆分，两数和（有序数组）</p>
+<ol start="2">
+<li>两个不同步的指针（一个快指针一个慢指针），速度不同<br> 解决这类问题的关键是确定两个指针的移动策略。</li>
+</ol>
+<p>比如： 原地移除元素。最大连续1的个数，长度最小的子数组</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>你有时可能需要在使用双指针技巧之前对数组进行<strong>排序</strong>，也可能需要运用<strong>贪心想法</strong>来决定你的<strong>运动策略</strong>。</p>
+<h1 id="双指针在链表中的应用"><a href="#双指针在链表中的应用" class="headerlink" title="双指针在链表中的应用"></a>双指针在链表中的应用</h1><p><strong>双指针技术</strong><br>删除倒数第n个节点：19，61，143<br>判断有没有环lc141，lc142<br>回文链234</p>
+<h2 id="链表中双指针模板"><a href="#链表中双指针模板" class="headerlink" title="链表中双指针模板"></a>链表中双指针模板</h2><pre><code>// Initialize slow &amp; fast pointers
+ListNode slow = head;
+ListNode fast = head;
+/**
+ * Change this condition to fit specific problem.
+ * Attention: remember to avoid null-pointer error
+ **/
+while (slow != null &amp;&amp; fast != null &amp;&amp; fast.next != null) {
+    slow = slow.next;           // move slow pointer one step each time
+    fast = fast.next.next;      // move fast pointer two steps each time
+    if (slow == fast) {         // change this condition to fit specific problem
+        return true;
+    }
+}
+return false;   // change return value to fit specific problem
+</code></pre><h1 id="双指针在滑动窗口"><a href="#双指针在滑动窗口" class="headerlink" title="双指针在滑动窗口"></a>双指针在滑动窗口</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/面试算法之大数问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2087,206 +2295,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/设计模式之工厂模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/01/设计模式之工厂模式/" itemprop="url">设计模式之工厂模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T15:35:33+08:00">
-                2018-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/01/设计模式之工厂模式/" class="leancloud_visitors" data-flag-title="设计模式之工厂模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  728 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><p>实例化对象，用工厂方法代替new操作；<br>包括工厂方法模式和抽象工厂模式；<br>抽象工厂模式是工厂方法模式的扩展。</p>
-<h2 id="意图："><a href="#意图：" class="headerlink" title="意图："></a>意图：</h2><p>定义一个接口来创建对象，但是让子类来决定哪些类需要被实例化；<br>工厂方法把实例化的工作推迟到子类中去实现。</p>
-<h2 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h2><p>有一组类似的对象需要创建；<br>扩展性</p>
-<h2 id="常见应用："><a href="#常见应用：" class="headerlink" title="常见应用："></a>常见应用：</h2><ol>
-<li>JDBC：</li>
-<li>spring beanfactory：作为spring基础的IoC容器，是spring的一个bean工厂。</li>
-<li>解析xml</li>
-</ol>
-<p>工厂模式用来创建一个产品的等级结构，而抽象工厂模式用来创建多个产品的等级结构；<br>工厂模式只有一个抽象产品类，而抽象工厂模式有多个抽象产品类。</p>
-<h2 id="工厂方法模式和抽象工厂模式区别"><a href="#工厂方法模式和抽象工厂模式区别" class="headerlink" title="工厂方法模式和抽象工厂模式区别"></a>工厂方法模式和抽象工厂模式区别</h2><p>工厂模式在一些设计模式的书中分为简单工厂模式，工厂方法模式和抽象工厂模式三类。<br>也有把工厂方法模式划分到抽象工厂模式的，认为工厂方法是抽象工厂模式的特例的一种，就是只有一个要实现的产品接口。</p>
-<p>简单工厂：工厂类中，根据条件决定一个接口由哪个具体产品类来实现。</p>
-<p>工厂方法：创建多个工厂类。各个工厂类中，都对应一个获得接口A实例的方法。用户决定使用哪个工厂。</p>
-<p>抽象工厂：对工厂方法进行扩展。各个工厂类中，再增加一个获得接口B实例的方法。</p>
-<p>提一下，多个工厂类都继承自同一个接口。</p>
-<pre><code>个人觉得这个区别在于产品，如果产品单一，最合适用工厂模式，但是如果有多个业务品种、业务分类时，通过抽象工厂模式产生需要的对象是一种非常好的解决方式。再通俗深化理解下：工厂模式针对的是一个产品等级结构 ，抽象工厂模式针对的是面向多个产品等级结构的。
-</code></pre><p>再来看看工厂方法模式与抽象工厂模式对比：</p>
-<p>工厂方法模式                抽象工厂模式<br>针对的是一个产品等级结构     针对的是面向多个产品等级结构<br>一个抽象产品类     多个抽象产品类<br>可以派生出多个具体产品类     每个抽象产品类可以派生出多个具体产品类<br>一个抽象工厂类，可以派生出多个具体工厂类     一个抽象工厂类，可以派生出多个具体工厂类<br>每个具体工厂类只能创建一个具体产品类的实例     每个具体工厂类可以创建多个具体产品类的实例</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2341,7 +2349,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2438,7 +2446,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">31.7k</span>
+    <span title="Site words total count">32.1k</span>
   
 </div>
 
