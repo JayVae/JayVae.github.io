@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[English Paper]]></title>
+    <url>%2F2019%2F02%2F26%2FEnglish-Paper%2F</url>
+    <content type="text"><![CDATA[�������ҵ����г��ο� wholesale markets retailter markets offer��bid�� �ο����ף� A Reinforcement learning algorithom for Agent-based Cpmputational Economics model of electricity markets �����˸Ľ���RL�㷨������SAQL��SIMulated annealing Q-learning����VREL��Variant Roth-ERev learning������3���������бȶԣ�1.1 һЩ���ʣ�wholesale marketsretailter marketsvesting contract1.2 ֻ��genco1.3 built with repast simphony1.4 bid stack engine clear the market ǿ��ѧϰ��������û���ἰ��state��action��reward; �����������г��л���ǿ��ѧϰ�Ĳ�������Ϊ�����о���Ӣ��Simulated Annealing �C Q learning��SA-QL�� ��Using Q-learning to model bidding behaviour in electricity market simulation��]]></content>
+      <categories>
+        <category>����</category>
+      </categories>
+      <tags>
+        <tag>����</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[fluent-terminal]]></title>
     <url>%2F2019%2F02%2F25%2Ffluent-terminal%2F</url>
     <content type="text"><![CDATA[fluent-terminal是windows下的一个终端，界面比较好看而已。]]></content>
@@ -34,7 +45,7 @@
   <entry>
     <title><![CDATA[论文后续]]></title>
     <url>%2F2019%2F01%2F15%2F%E8%AE%BA%E6%96%87%E5%90%8E%E7%BB%AD%2F</url>
-    <content type="text"><![CDATA[进一步地 考虑主市场、辅助服务市场 考虑电网约束和阻塞管理的电力市场出清模型 the DC-OPF solution is used to determine the active power units ateach node in thepower systemfor what 偏差考核 多个市场主体之间串谋的研究 市场规则探究 业务选型和方法选型开发多agent系统，采用强化学习作为其更新行为策略的一类重要方法。 参考的一些资料【新电改背景下的电力市场交易模式综述与研究】【基于多智能代理的供应链分布式仿真平台体系结构】【Agent-based modeling of electric power markets】important【电力市场仿真系统的开发及应用】【电力市场只能模拟中代理决策模块的实现】 软件设计参考的一些文章博士文章；硕士文章：基于MAS的发电侧电力市场竞价交易系统仿真研究写论文时候可以参考：电力市场与电力系统的动态交互仿真平台（一）（二）（三）]]></content>
+    <content type="text"><![CDATA[结果和算法的比较方向 有无智能代理 传统智能代理与强化学习算法 不同参数的智能代理 进一步地 考虑主市场、辅助服务市场 考虑电网约束和阻塞管理的电力市场出清模型 the DC-OPF solution is used to determine the active power units ateach node in thepower systemfor what 偏差考核 多个市场主体之间串谋的研究 市场规则探究 业务选型和方法选型开发多agent系统，采用强化学习作为其更新行为策略的一类重要方法。 参考的一些资料【新电改背景下的电力市场交易模式综述与研究】【基于多智能代理的供应链分布式仿真平台体系结构】【Agent-based modeling of electric power markets】important【电力市场仿真系统的开发及应用】【电力市场只能模拟中代理决策模块的实现】 软件设计参考的一些文章博士文章；硕士文章：基于MAS的发电侧电力市场竞价交易系统仿真研究写论文时候可以参考：电力市场与电力系统的动态交互仿真平台（一）（二）（三）]]></content>
       <categories>
         <category>课题</category>
       </categories>
@@ -117,7 +128,7 @@
   <entry>
     <title><![CDATA[数据模型]]></title>
     <url>%2F2018%2F12%2F26%2F%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%2F</url>
-    <content type="text"><![CDATA[集中交易时，有个总的市场电量 交易结果怎么存 交易流程 成本模型:包括固定成本和可变成本 建设成本 维修成本 运行成本 薪资成本 一些信息是公共信息，比如天气，煤价这些，放在仿真参数信息中，另外一些跟电厂或用户关系本身相关的，放在用户模型中，而且提一下可以对接现有平台，因为一些关键字段是一样的。机组信息（机组类型不同，需填写的参数信息也不同，参考用户手册，P9,P10） 按照电厂主要指标解释、小册子、可研报告中需要用到的参数来完善数据库。 是否按区域交易]]></content>
+    <content type="text"><![CDATA[集中交易时，有个总的市场电量 交易结果怎么存 交易流程 成本模型:包括固定成本和可变成本 建设成本 维修成本 运行成本 薪资成本 一些信息是公共信息，比如天气，煤价这些，放在仿真参数信息中，另外一些跟电厂或用户关系本身相关的，放在用户模型中，而且提一下可以对接现有平台，因为一些关键字段是一样的。机组信息（机组类型不同，需填写的参数信息也不同，参考用户手册，P9,P10） 按照电厂主要指标解释、小册子、可研报告中需要用到的参数来完善数据库。 是否按区域交易 存储仿真中间过程]]></content>
       <categories>
         <category>课题</category>
       </categories>
@@ -800,7 +811,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#x31;&#x39;&#x34;&#51;&#51;&#53;&#50;&#52;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#109;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#x31;&#x39;&#x34;&#51;&#x33;&#x35;&#x32;&#x34;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
