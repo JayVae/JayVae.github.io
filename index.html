@@ -1,2996 +1,559 @@
 <!DOCTYPE html>
+<html lang="zh-Hans">
 
 
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    JayVae&#39;s Blog
+  </title>
+  <meta name="description" content="Just in progress">
+  
+  <meta name="author" content="Jay">
 
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="Just in progress">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JayVae&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="Just in progress">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JayVae&#39;s Blog">
-<meta name="twitter:description" content="Just in progress">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+<script>
+  var _hmt = _hmt || [];
+  (function(){var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
+    var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>JayVae's Blog</title>
-  
-
-
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body id="replica-app">
 
-  
-  
-    
-  
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
 
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">JayVae's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Hello, I'm  newbie</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+      <ul class="navbar-nav float-left">
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
+        <li><a href="/archives">Archives</a></li>
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
+        <li><a href="/categories">Categories</a></li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
+        <li><a href="/tags">Tags</a></li>
         
-        <li class="menu-item menu-item-guestbook">
-          <a href="/guestbook" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
-            
-            留言
-          </a>
-        </li>
-      
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
         </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://avatars2.githubusercontent.com/u/5300359?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
     </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
 
+<div class="main-container">
+  
 
+<div class="container-lg">
+  
 
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
+<div class="blog-intro">
+  <div class="blog-intro-user">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/5300359?v=4&amp;s=460">
+    <div class="user-name">
+      <div class="blog-title">JayVae&#39;s Blog</div>
+      <div class="blog-author">Jay</div>
+        <ul class="user-detail mobile-only">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/电力市场与双边/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
+    <li>
+      <i class="fa fa-map-marker"></i>
+      XIan
+    </li>
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/17/电力市场与双边/" itemprop="url">电力市场与双边</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-17T16:06:06+08:00">
-                2019-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/03/17/电力市场与双边/" class="leancloud_visitors" data-flag-title="电力市场与双边">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  183 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
+    <li>
+      <i class="fa fa-envelope-o"></i>
+      <a href="mailto:919433524@qq.com">919433524@qq.com</a>
+    </li>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>【基于模糊理论的电力市场双边交易中购电商的竞价策略研究】<br>购电商在双边协商和双边竞价交易中的竞价侧率研究</p>
-</li>
-<li><p>【电力市场交易机制的实验研究】<br>RE算法<br>发电商单边竞争的日前电力市场<br>完成了电力市场仿真系统的整体结构设计和功能模块设计，该系统具备配置各种实验方案、修改实验参数、记录并处理实验结果数据等功能，可以提供基于实验经济学、和基于人工—代理混合的三种仿真方式，在国内外电力市场仿真系统设计中尚属首例。</p>
-</li>
-</ol>
-
-          
-        
-      
+    <li>
+      <i class="fa fa-link"></i>
+      <a href="http://yoursite.com">http://yoursite.com</a>
+    </li>
+  </ul>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/售电侧用电侧/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/15/售电侧用电侧/" itemprop="url">售电侧用电侧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-15T15:18:07+08:00">
-                2019-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/03/15/售电侧用电侧/" class="leancloud_visitors" data-flag-title="售电侧用电侧">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  490 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>【售电侧放开后电力市场交易面临的风险及对策研究】<br>发电企业、售电企业、电力用户为主体的电力市场风险。<br>1.1 电力市场改革的售电侧改革可以参考<br>综上所述，国内售电侧放开后电力交易试点：①国内各试点以大用户直购电为主，<br>各试点开展售电侧放开改革，都是以放开大用户直购电为第一步，符合实际。②各省有<br>序开放竞争性电量，比例不尽相同，目前己开展大用户直购电放开比例约在2％-5％之间。<br>⑧跨省区大范围的清洁能源消纳蓬勃发展。@2017年全国碳市场建立可再生能源强制配<br>额政策。⑤最新13省改革方案均将售电公司纳入市场主体，并且逐步放开门槛，售电<br>公司准入条件降低。<br>1.2 风险作为目标添加进电力市场交易主体的优化中<br>1.3 售电侧放开后竞争性电力市场交易机制的特点</p>
-</li>
-<li><p>【售电放开政策下电力交易多方主体利益分析模型研究】<br>确定利益模型，其中的风险</p>
-</li>
-<li><p>【面向大工业用户的售电公司购售电策略研究】<br>结合购电和售电这两方面，本文建立了售电公司的购售电综合策略模型。<br>3.1 在购电方面，考虑售电公司从中长期、日前和实时三个市场中购电，主要研究其购电成本，包含在各个市场中的购电量及相应价格。<br>3.2 售电方面，主要研究了销售电价的定价方法。<br>3.3 本文建立了一种随机价格模型，结合拉丁超立方抽样法来获得随机价格样本，可以模拟现货市场价格的不确定性。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/checkList/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/14/checkList/" itemprop="url">checkList</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T16:23:24+08:00">
-                2019-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/03/14/checkList/" class="leancloud_visitors" data-flag-title="checkList">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.4k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="目标："><a href="#目标：" class="headerlink" title="目标："></a>目标：</h1><ol>
-<li>确定变量</li>
-<li>理清之前的问题</li>
-<li>梳理框架</li>
-<li>Jade</li>
-<li>智能代理算法</li>
-</ol>
-<hr>
-<h2 id="确定变量"><a href="#确定变量" class="headerlink" title="确定变量"></a>确定变量</h2><p>1.0 电力市场成员的名称统一：</p>
-<ul>
-<li>购电方</li>
-<li>售电方</li>
-<li>输电方（也要定义代理）</li>
-<li>零售用户</li>
-<li>电力交易中心（）<br><strong>定义见陕西省文件</strong><br>1.1 报价规范：<br>详见纸。<br>1.2 本文考虑的问题和案例情况：</li>
-<li>考虑同一发电商会有不同的机组，不同机组不同的成本和报价曲线，因此重新定义收益；但案例中只会有一个发电商一个机组</li>
-<li>考虑双边+竞价+长期+日前+实时；但案例中只会有长期竞价和日前现货市场的问题；实时交易中会与调度机构产生很强的关联，比如会遇到爬坡率约束、启动成本、机组组合决策、阻塞</li>
-<li>考虑最大化自身利益为目标</li>
-<li>考虑电量和电价都在变化，但案例中购电侧报价策略只考虑价格变化，发电侧只考虑电量，因为报价函数跟随电量而变化；</li>
-<li>考虑不同仿真因素，负荷水平、网络约束、电厂约束、网损分析、</li>
-<li>通过发电侧、售电侧放开，实现在发电商之间、发电商与售电商之间、售电商之间形成有效竞争，形成“多买方多卖方”电力市场。【改】</li>
-<li>考虑的是中长期、日前和实时三个市场，实际案例中并不是。现货交易的国家通知<a href="http://www.sndrc.gov.cn/html/100183/1026582.html" target="_blank" rel="noopener">http://www.sndrc.gov.cn/html/100183/1026582.html</a></li>
-<li>体现有电网约束，因此需要进行安全校核；以及电网分区。</li>
-<li>报价中和强化学习会出现日前交易。<br>1.3 不同交易方式，比如实时交易过程中必须考虑合同分解电量，那联动问题<br>1.4 仿真建立过程：</li>
-</ul>
-<p>1.5 研究的电力交易主体：<br>发电商 + 电力大用户 + 售电公司 + 中小用户（弹性需求？？？）<br>不过预计案例这样组织：</p>
-<ul>
-<li>发电商 + 大用户；</li>
-<li>发电商 + 大用户 + 售电公司 + 中小用户；</li>
-<li>可再生能源</li>
-</ul>
-<p>1.6 电力市场规则：</p>
-<ul>
-<li>出清方式价格: PAB(双边协商),MCP（集中竞价交易）</li>
-<li>交易方式：双边协商、集中竞价（有无区域限制）</li>
-<li>交易商品类型：辅助服务交易、绿色证书交易、发电权交易、碳排放权交易</li>
-<li>交易周期：年、月度、日前、实时</li>
-<li>市场模式：发电商放开的单一购电批发竞争模式、售电侧放开、零售市场</li>
-<li>市场出清方式：</li>
-<li>市场：单一模式还是复合模式（包括交易方式和交易周期）</li>
-<li>结算电价规则：</li>
-<li>交易规模：</li>
-<li>输配电价方法：</li>
-</ul>
-<p>1.7 交易申报规则：</p>
-<ul>
-<li>交易申报方式: </li>
-<li>申报电价最小单位：</li>
-<li>申报电价量纲：</li>
-<li>申报电价限额：<ul>
-<li>购方申报电价限额：电力用户、售电公司</li>
-<li>售方申报电价限额：</li>
-</ul>
-</li>
-<li>申报电量限额：<ul>
-<li>购方申报电量限额：电力用户、售电公司</li>
-<li>售方申报电量限额：</li>
-</ul>
-</li>
-<li>申报电量最小单位：</li>
-<li>申报电量量纲：</li>
-</ul>
-<p>1.8 仿真设置：</p>
-<ul>
-<li>手动设置/自动关联长期合同以及上级电力市场；</li>
-<li>仿真时长：</li>
-<li>仿真轮数：</li>
-<li>仿真目标：报价推演、需求影响、智能代理算法参数</li>
-<li>智能代理算法选择及参数设置：</li>
-<li>智能代理的挂接与仿真参数设置：<br>1.9 电力市场主体的信息：<br>软件中的信息对应着电力市场中的模型</li>
-</ul>
-<p>1.10 案例的集中竞价流程：<br>见陕西省文件</p>
-<p>1.11 纳什均衡（黄书P124）</p>
-<p>1.12 两篇博士论文中的算法问题<br>以及Q学习中的问题</p>
-<p>1.13 目标：<br>成交量尽可能大，波动尽可能小</p>
-<hr>
-<h2 id="解决之前的问题"><a href="#解决之前的问题" class="headerlink" title="解决之前的问题"></a>解决之前的问题</h2><p>2.1 爬坡能力和爬坡率<br>爬坡率一般是按【每分钟调整出力最大值占额定容量的比例】计算的（单位是%/min），同一类机组的爬坡率都差不多<br>水电机组是最快的，可以达到50-100%/min；燃气机组也比较快，可以达到20%/min；联合循环和汽轮机的热效率高，但爬坡率较低，一般只有2-5%/min<br>2.2 王海宁论文的联动问题：P51<br>选择一个实验因素、每个实验因素分为若干个水平、每个水平可以分别进行几轮实验。<br>对每轮实验包括若干个实验场景，比如每轮包括两次年度竞价和12次月度竞价，对应14个场景。【我觉得她叙述得与它实际的不太一样】<br>每次实验包括若干轮，可以根据实验次数指定，也可以根据收敛情况决定；<br>2.3 分时/分段：<br>分段竞价得到的结果是每个小时一个出清结果吗？存疑<br>2.4 陕西省长期交易属于金融合同还是物理合同；<br>存疑<br>2.5 月度那篇文章的数据和RE算法</p>
-<hr>
-<h2 id="梳理框架"><a href="#梳理框架" class="headerlink" title="梳理框架"></a>梳理框架</h2><p>3.1 软件部分：<br>代码结构：强化学习包中的不同的选择策略、不同的方法，来做。</p>
-<hr>
-<h2 id="Jade"><a href="#Jade" class="headerlink" title="Jade"></a>Jade</h2><p>4.1 几个代理？</p>
-<h2 id="强化学习算法："><a href="#强化学习算法：" class="headerlink" title="强化学习算法："></a>强化学习算法：</h2><p>5.1 Q-learning中的参数<br>遗忘系数为0.03 ，经验参数为0.97 ，倾向系数 q 初始值为５０００</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/English-Paper/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/26/English-Paper/" itemprop="url">English Paper</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T14:58:45+08:00">
-                2019-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/02/26/English-Paper/" class="leancloud_visitors" data-flag-title="English Paper">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h2 id="其他国家电力市场参考"><a href="#其他国家电力市场参考" class="headerlink" title="其他国家电力市场参考"></a>其他国家电力市场参考</h2><ol>
-<li>wholesale markets</li>
-<li>retailter markets</li>
-<li>offer和bid？</li>
-</ol>
-<hr>
-<h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><ol>
-<li>【A Reinforcement learning algorithom for Agent-based Cpmputational Economics model of electricity markets】<br>1.0 运用了改进的RL算法，并与SAQL（SIMulated annealing Q-learning）和VREL（Variant Roth-ERev learning）【见3】方法进行比对，<br>1.1 一些名词：<br>wholesale markets<br>retailter markets<br>vesting contract<br>1.2 只有genco<br>1.3 built with repast simphony<br>1.4 bid stack engine clear the market</li>
-<li><p>强化学习参数：【没有提及】<br>state：<br>action：<br>reward;</p>
-</li>
-<li><p>【电力批发市场中基于强化学习的参与者行为特性研究】英文<br>Simulated Annealing – Q learning【SA-QL】 模拟退火</p>
-</li>
-<li><p>【Using Q-learning to model bidding behaviour in electricity market simulation】<br>3.1 single-sided market<br>3.2 marginal cost(<strong> 边际成本 </strong>)？？？<br>3.3 SA-Q-Learning<br>3.4 强化学习的参数定义：<br>state：(N-1)*(M-1)，（quantity，price）对<br>action：与状态的定义类似相同，只是具体的计算区间不一样action是根据发电机的投标价格和数量对确定相应的间隔<br>reward：immediate reward是收益<br>Action selection policy： 模拟退火<br>3.5 <strong> 爬坡率约束 </strong>Ramp rate constraint：<br>3.6 仿真流程：<br>3.7 <strong> 报价格式？？？ </strong></p>
-</li>
-<li><p>【Modeling methods for GenCo bidding strategy optimization in the liberalized electricity spot market–A state-of-the-art review】<br>摘要可以参考</p>
-</li>
-<li><p>【Reinforcement Learning Based Supplier-Agents for Electricity Markets】2005<br>5.1 分段线性函数作为报价；<br>出清价格PAB<br>action set：</p>
-</li>
-<li><p>【Agent-based Simulation Experiment for Monthly Centralized Bidding Market in China】<br>月度电量集中竞价市场规则的仿真实验分析】的英文版<br>Roth-Erev</p>
-</li>
-<li><p>【Agent-based modelling and simulation of smart electricity grids and markets – A literature review】<br>7.1 2.4中的综述与分类（四类），除了ABC还有The fourth stream<br>还提到了The physical transmission and distribution of electricity is not assumed to be a distinct group of ABMS research.<br>A  wholesale market 集中市场清算机制，而且是传统发电厂，【9-13】参考文献<br>B 电力产消行为，【31-35】<br>C 考虑分布式和智能电网<br>D 提供决策支持和市场演化【36-40】<br>7.2 2.3中提到了智能代理可以对以后的分布式能源以及电动汽车市场带来研究<br>7.3 2.2中提到了一般的流程<br>7.4 Page7 Table1中的：【14、51、52-54】、【67、68】，【14】见【10】<br>7.5 【53】对风和光伏进行了建模<br>7.6 【56】 该模型区分了三个层次，即需求-供应、市场和电力流。 还研究了行为<br>7.7 【58】仿真了新趋势，开源了GridLAB-D。见本页的【9】<br>7.8 section4最后一段写了难度</p>
-</li>
-</ol>
-<ol start="8">
-<li><p>【Double-sided auction mechanism design in electricity based on maximizing social welfare】</p>
-</li>
-<li><p>【GridLAB-D: An Agent-Based Simulation Framework forSmart Grids】<br>9.1 摘要：<br>智能电网技术的模拟需要一种全新的方法来对电力系统、能源市场、建筑技术以及其他资源和资产进行集成建模，这些资源和资产正成为现代电力生产、交付和消费系统的一部分。因此，美国能源部电力委员会办公室开发了一种新型电力系统仿真工具，称为gridlab-d，它使用基于代理的方法来模拟智能电网。本文介绍了GRIDLAB-D时间序列模拟的数值方法和方法，回顾了GRIDLAB-D在电力系统研究、市场设计、楼宇控制系统设计、智能电网中风力发电集成等方面的应用。<br>9.2 section3 第二段，其中一些写模块的可以参考，比如潮流分析模块，电力市场模块</p>
-</li>
-<li><p>【Understanding energy behaviours and transitions through the lens of a smart grid agent based model】<br>10.1 MODEL解释<br>基于代理的模型将通过模拟“产消者”、“聚合者”和环境来抽象电网中的关键参与者。<br>“产消者”是一个可能产生或消耗电力的代理人——应该注意到，这比产消者的其他讨论（例如Toffler，1981）中使用的含义要窄一些，但是这个术语仍然适合我们讨论一个既能生产又能消耗电力的代理人。在频谱的两端，产消者可能是纯发电机（例如今天的发电站），也可能是纯消费者（例如今天的大多数家庭）。然而，prosumer抽象允许代理的丰富异质性（如具有微型发电的家庭或社区级存储设施），这些代理可以生产、消费和存储不同规模的电。 聚合器将协调产消者的行为，并代表一组产消者（他们的客户）在批发市场上的利益。因此，聚合器的主要作用将是：决定向产消者发送什么信号，以便积极管理他们的需求。决定在批发市场上采用什么策略。<br>10.2 Behavioural representation</p>
-</li>
-</ol>
-<ol start="11">
-<li><p>【Agent-based modeling and simulation of competitive wholesale electricity markets】<br>智能代理在批发竞争市场的变化</p>
-</li>
-<li><p>【Agent-based retail electricity market: modeling and analysis】<br>中文文章</p>
-</li>
-<li><p>【AMIRIS -AN AGENT-BASED SIMULATION MODEL FOR THE ANALYSIS OFDIFFERENT SUPPORT SCHEMES AND THEIR EFFECTS ON ACTORSINVOLVED IN THE INTEGRATION OF RENEWABLE ENERGIES INTOENERGY MARKETS】</p>
-</li>
-<li><p>【Reinforcement learning for demand response: A review of algorithms and modeling techniques】</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/fluent-terminal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/25/fluent-terminal/" itemprop="url">fluent-terminal</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-25T14:42:57+08:00">
-                2019-02-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/02/25/fluent-terminal/" class="leancloud_visitors" data-flag-title="fluent-terminal">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  17 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>fluent-terminal是windows下的一个终端，界面比较好看而已。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/cookie-token-session/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/21/cookie-token-session/" itemprop="url">cookie,token,session</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T17:33:25+08:00">
-                2019-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/02/21/cookie-token-session/" class="leancloud_visitors" data-flag-title="cookie,token,session">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  14 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>cookie��������˱�����Ϣ�ģ�<br>session�Ǳ����ڷ������˵ģ�<br>token�ǲ��÷���˱���session����ʱ�任ȡ�ռ䡣</p>
-<p><a href="https://blog.csdn.net/a724888/article/details/79331905" target="_blank" rel="noopener">https://blog.csdn.net/a724888/article/details/79331905</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/关于Vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/20/关于Vue/" itemprop="url">关于Vue</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-20T19:30:35+08:00">
-                2019-02-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/02/20/关于Vue/" class="leancloud_visitors" data-flag-title="关于Vue">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  355 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>数据驱动DOM是Vue.js的核心理念，所以不到万不得已时不要主动操作DOM，只需要维护好数据，DOM的事Vue会优雅的处理。</p>
-</li>
-<li><p>数据与视图的双向绑定。</p>
-</li>
-<li><p>虚拟DOM：<br>Virtual DOM并不是真正意义上的DOM，而是一个轻量级的JavaScript对象，在状态变化时，virtual dom会进行diff运算，来更新只需要被替换的dom，而不是全部重绘。</p>
-</li>
-<li><p>vue-router，什么算是SPA呢？就是在前后端分离的基础上，加一层前端路由。前端路由，即由前端来维护一个路由规则。一种是利用锚点#，另一种就是HTML5的history模式，它使url看起来像普通网站那样，以“/”分割，但页面并没有跳转。</p>
-</li>
-<li><p>组件（Component）是Vue.js最核心的功能，也是整个框架设计最精彩的地方。<br>可以说没见过的自定义标签就是组件，每个标签代表一个组件，在任何使用Vue的地方都可以直接使用。</p>
-</li>
-<li><p>第三方js受欢迎很重要的一个原因是因为对DOM操作进行了优化甚至是隐藏。<br>JQuery号称是DOM操作的利器，将DOM封装成JQ对象并扩展了API，而MV框架取代JQuery的原因是因为在DOM操作这条路上做得更绝，直接屏蔽了底层操作，将数据映射到模板上。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/java前后端跨域问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/20/java前后端跨域问题/" itemprop="url">java前后端跨域问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-20T17:18:00+08:00">
-                2019-02-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/02/20/java前后端跨域问题/" class="leancloud_visitors" data-flag-title="java前后端跨域问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  462 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="java使用cors解决跨域问题，服务器端开发为语言为java"><a href="#java使用cors解决跨域问题，服务器端开发为语言为java" class="headerlink" title="java使用cors解决跨域问题，服务器端开发为语言为java"></a>java使用cors解决跨域问题，服务器端开发为语言为java</h2><p>前后端分离开发，各司其职，分工明确，加上现在大前端的发展的火热，所以分离开发必定是一个趋势，分离开发就一定会遇到跨域的问题。</p>
-<p>还是之前的意见，个人认为最好的解决方案是通过服务器的反向代理来解决。</p>
-<p>当然根据项目的具体，有些时候也会采取不同的解决方案，</p>
-<p>今天这里介绍一下cors解决，这里是站在服务端的角度，讲解需要做的工作，服务端语言为java</p>
-<p><filter><br>        <filter-name>CORS</filter-name><br>        <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class><br>        <init-param><br>            <param-name>cors.allowOrigin</param-name><br>            <param-value><em></em></param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportedMethods</param-name><br>            <param-value>GET, POST, HEAD, PUT, DELETE</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportedHeaders</param-name><br>            <param-value>Accept, Origin, X-Requested-With, Content-Type, Last-Modified</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.exposedHeaders</param-name><br>            <param-value>Set-Cookie</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportsCredentials</param-name><br>            <param-value>true</param-value><br>        </init-param><br></filter><br>    <filter-mapping><br>        <filter-name>CORS</filter-name><br>        <url-pattern>/</url-pattern><br>   </filter-mapping></p>
-<p>   参数讲解</p>
-<p>cors.allowOrigin指的可以通过的ip，<em>代表所有，可以使用指定的ip，多个的话可以用逗号分隔，默认为</em></p>
-<p>cors.supportedMethods指的是请求方式 默认为*</p>
-<p>cors.supportedHeaders请求支持的头信息，默认为*</p>
-<p>cors.exposedHeaders暴露的头信息，默认的empy list</p>
-<p>cors.supportsCredentials支持证书，默认为true</p>
-<p>cors.maxAge 最大过期时间，默认为-1</p>
-<p>cors.tagRequests 默认为false</p>
-<p>cors.allowSubdomains允许子域 默认为false</p>
-<p>回到web.xml里面配置的filter，使用的jar的依赖为：</p>
-<pre><code>&lt;!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;com.thetransactioncompany&lt;/groupId&gt;
-    &lt;artifactId&gt;cors-filter&lt;/artifactId&gt;
-    &lt;version&gt;2.5&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre><p>也可以使用ebay提供，这个只有一个过滤器，资料还ting</p>
-<pre><code>&lt;!-- https://mvnrepository.com/artifact/org.ebaysf.web/cors-filter --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;org.ebaysf.web&lt;/groupId&gt;
-    &lt;artifactId&gt;cors-filter&lt;/artifactId&gt;
-    &lt;version&gt;1.0.1&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre><h2 id="也有使用反向代理来解决的"><a href="#也有使用反向代理来解决的" class="headerlink" title="也有使用反向代理来解决的"></a>也有使用反向代理来解决的</h2><p>可以参考[<a href="https://www.cnblogs.com/gabrielchen/p/5066120.html]" target="_blank" rel="noopener">https://www.cnblogs.com/gabrielchen/p/5066120.html]</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/陕西省电力交易模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/16/陕西省电力交易模式/" itemprop="url">陕西省电力交易模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T10:22:05+08:00">
-                2019-01-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/16/陕西省电力交易模式/" class="leancloud_visitors" data-flag-title="陕西省电力交易模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  219 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>直接交易包括自主协商交易、集中竞价交易。详见[<a href="http://sndrc.shaanxi.gov.cn/newstyle/pub_newsshow.asp?id=1031764&amp;chid=100073]" target="_blank" rel="noopener">http://sndrc.shaanxi.gov.cn/newstyle/pub_newsshow.asp?id=1031764&amp;chid=100073]</a><br>自主协商模式电力直接交易,大用户只可自主选择一家发电企业或售电公司签订意向性协议，中小用户只可自主选择一家售电公司签订意向性协议，否则取消本次参与资格。[<a href="http://sndrc.shaanxi.gov.cn/newstyle/pub_newsshow.asp?id=1029054&amp;chid=100073]" target="_blank" rel="noopener">http://sndrc.shaanxi.gov.cn/newstyle/pub_newsshow.asp?id=1029054&amp;chid=100073]</a></p>
-</li>
-<li><p>电力改革下的陕西省，【售电侧放开后电力市场交易面临的风险及对策研究】，已开展大用户直购电。<br>国内售电侧放开后电力交易试点动态。<br>因此本文按照陕西省的实际情况，对大用户直接交易进行研究。包括双边协商交易方式和集中竞价交易方式。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/15/论文后续/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/15/论文后续/" itemprop="url">论文后续</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-15T16:52:38+08:00">
-                2019-01-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/15/论文后续/" class="leancloud_visitors" data-flag-title="论文后续">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  468 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="结果和算法的比较方向"><a href="#结果和算法的比较方向" class="headerlink" title="结果和算法的比较方向"></a>结果和算法的比较方向</h2><ol>
-<li>有无智能代理</li>
-<li>传统智能代理与强化学习算法</li>
-<li>不同参数的智能代理</li>
-</ol>
-<h2 id="进一步地"><a href="#进一步地" class="headerlink" title="进一步地"></a>进一步地</h2><ol>
-<li>考虑主市场、辅助服务市场</li>
-<li>考虑电网约束和阻塞管理的电力市场出清模型</li>
-<li>the DC-OPF solution is used to determine the active power units at<br>each node in the<br>power system</li>
-<li>smart grid 参考【Agent-based modelling and simulation of smart electricity grids and markets – A literature review】section4</li>
-<li>【GridLAB-D: An Agent-Based Simulation Framework forSmart Grids】section 4。</li>
-<li>物理网络约束，【电力市场经济学】P85<h2 id="for-what"><a href="#for-what" class="headerlink" title="for what"></a>for what</h2></li>
-<li>偏差考核</li>
-<li>多个市场主体之间串谋的研究</li>
-<li>市场规则探究</li>
-<li>售电侧放开</li>
-</ol>
-<h2 id="业务选型和方法选型"><a href="#业务选型和方法选型" class="headerlink" title="业务选型和方法选型"></a>业务选型和方法选型</h2><p>开发多agent系统，采用强化学习作为其更新行为策略的一类重要方法。</p>
-<h2 id="论文的难度"><a href="#论文的难度" class="headerlink" title="论文的难度"></a>论文的难度</h2><ol>
-<li>双边</li>
-<li>强化学习</li>
-<li>论文中的模型建模与算法、包括代码实现不详尽，而且难于验证。见【Agent-based modelling and simulation of smart electricity grids and markets – A literature review】section4最后一段。</li>
-<li>仿真引擎</li>
-<li>《电力市场经济学》P55，目前许多较小的发电商目前并不直接进入批发市场</li>
-<li>售电侧放开，用户侧响应是趋势</li>
-<li>市场力</li>
-<li></li>
-</ol>
-<h2 id="参考的一些资料"><a href="#参考的一些资料" class="headerlink" title="参考的一些资料"></a>参考的一些资料</h2><p>【新电改背景下的电力市场交易模式综述与研究】<br>【基于多智能代理的供应链分布式仿真平台体系结构】<br>【Agent-based modeling of electric power markets】<br>important【电力市场仿真系统的开发及应用】<br>【电力市场只能模拟中代理决策模块的实现】</p>
-<h2 id="软件设计参考的一些文章"><a href="#软件设计参考的一些文章" class="headerlink" title="软件设计参考的一些文章"></a>软件设计参考的一些文章</h2><p>博士文章；<br>硕士文章：基于MAS的发电侧电力市场竞价交易系统仿真研究<br>写论文时候可以参考：电力市场与电力系统的动态交互仿真平台（一）（二）（三）<br>JADE<br>REPAST<br>GridLAB-D </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    <div class="blog-description">
+      Just in progress
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <ul class="user-detail desktop-only">
     
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.gif"
-                alt="Jay" />
-            
-              <p class="site-author-name" itemprop="name">Jay</p>
-              <p class="site-description motion-element" itemprop="description">Just in progress</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">91</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/JayVae" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/shi-hai-jie-35" target="_blank" title="Zhihu">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="wechat" target="_blank" title="Wechat">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Wechat</a>
-                  </span>
-                
-            </div>
-          
-
-		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=554191378&auto=1&height=66"></iframe>
-		  
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Jay</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
+    <li>
+      <i class="fa fa-map-marker"></i>
+      XIan
+    </li>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
+    <li>
+      <i class="fa fa-envelope-o"></i>
+      <a href="mailto:919433524@qq.com">919433524@qq.com</a>
+    </li>
     
-    <span title="Site words total count">37.3k</span>
-  
+    <li>
+      <i class="fa fa-link"></i>
+      <a href="http://yoursite.com">http://yoursite.com</a>
+    </li>
+  </ul>
+
+  <div class="social-media desktop-only">
+    <h4>Social Media</h4>
+    <ul>
+      
+    </ul>
+  </div>
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="blog-detail">
+    
+<nav class="blog-detail-nav desktop-only">
+  <ul class="clearfix">
+    <li class="selected">
+      <a href="/">Overview</a></li>
+    <li class="">
+      <a href="/archives">Posts <span class="counter">91</span></a>
+    </li>
+    <li class="">
+      <a href="/categories">Categories <span
+                class="counter">10</span></a></li>
+    <li class="">
+      <a href="/tags">Tags <span class="counter">14</span></a></li>
+  </ul>
+</nav>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
+    <div class="body-secondary">
+      <p class="right-title">Recent post</p>
+      <ul class="recent-post clearfix">
         
-
-
-
-
-
-
-
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2019/03/17/电力市场与双边/">电力市场与双边</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               
+  【基于模糊理论的电力市场双边交易中购电商的竞价策略研究】 购电商在双边协商和双边竞价交易中的
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <i class="fa fa-folder-open"></i> Uncategorized
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 0 </span>
+            </p>
+          </div>
+        </li>
         
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2019/03/15/售电侧用电侧/">售电侧用电侧</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               
+  【售电侧放开后电力市场交易面临的风险及对策研究】 发电企业、售电企业、电力用户为主体的电力市
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <i class="fa fa-folder-open"></i> Uncategorized
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 0 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2019/03/14/checkList/">checkList</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+                 目标：  
+ 确定变量 
+ 理清之前的问题 
+ 梳理框架 
+ Jade 
+ 智能代理算法 
+ 
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2019/02/26/English-Paper/">English Paper</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               
+   其他国家电力市场参考  
+ wholesale markets 
+ retailter m
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2019/02/25/fluent-terminal/">fluent-terminal</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               fluent-terminal是windows下的一个终端，界面比较好看而已。 
+
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <i class="fa fa-folder-open"></i> Uncategorized
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 0 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2019/02/21/cookie-token-session/">cookie,token,session</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               cookie��������˱�����Ϣ�ģ� session�Ǳ����ڷ������˵ģ� 
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <i class="fa fa-folder-open"></i> Uncategorized
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 0 </span>
+            </p>
+          </div>
+        </li>
+        
+      </ul>
+      <div class="calendar-container" id="calendar">
+  <div class="calendar">
+    <h3>
+      {{posts.length}} contributions in the last year
+    </h3>
+    <div class="calendar-graph-container">
+      <div class="calendar-graph">
+        <svg width="676" height="104" @mouseout="mouseoverDate=null">
+          <g transform="translate(16, 20)">
+            <g v-for="week in calendar" :transform="week.transform">
+              <rect v-for="day in week.days"
+                    :x="day.x"
+                    :y="day.y"
+                    :fill="day.fill"
+                    @click="selectedDate=day.date"
+                    @mouseover="mouseoverDate=day.date"
+                    :class="{active:selectedDate===day.date}"
+                    data-count="{{day.posts.length}}"
+                    data-date="{{day.date}}"
+                    class="day" width="10" height="10"
+              ></rect>
+            </g>
+
+            <text v-for="month in monthLabels"
+                  :x="month.x"
+                  y="-5"
+                  class="month">{{month.text}}
+            </text>
+
+
+            <text text-anchor="start" class="wday" dx="-14" dy="8"
+                  style="display: none;">S
+            </text>
+            <text text-anchor="start" class="wday" dx="-14" dy="20">Mon</text>
+            <text text-anchor="start" class="wday" dx="-14" dy="32"
+                  style="display: none;">T
+            </text>
+            <text text-anchor="start" class="wday" dx="-14" dy="44">Wed</text>
+            <text text-anchor="start" class="wday" dx="-14" dy="57"
+                  style="display: none;">T
+            </text>
+            <text text-anchor="start" class="wday" dx="-14" dy="69">Fri</text>
+            <text text-anchor="start" class="wday" dx="-14" dy="81"
+                  style="display: none;">S
+            </text>
+          </g>
+        </svg>
+        <div class="svg-tip svg-tip-one-line"
+             v-bind:style="{ top: svgtip.top, left: svgtip.left, display: svgtip.display}">
+          <strong>{{svgtip.text}}</strong> on
+          {{moment(mouseoverDate).format('MMM DD, YYYY')}}
+        </div>
       </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
+      <div class="calendar-footer clearfix">
+      <span>
+        <a href="#">Learn how we count contributions.</a>
+      </span>
+        <div class="calendar-legend">
+          <span>Less</span>
+          <ul class="legend">
+            <li style="background-color: #eee"></li>
+            <li style="background-color: #d6e685"></li>
+            <li style="background-color: #8cc665"></li>
+            <li style="background-color: #44a340"></li>
+            <li style="background-color: #1e6823"></li>
+          </ul>
+          <span>More</span>
+        </div>
       </div>
-    
-
-    
-
+    </div>
   </div>
 
-  
+  <h3>Contribution activity</h3>
+  <div class="contribution-list">
+    <ul>
+      <li v-for="post in posts | filterBy selectedDate in 'date'">
+        <a href="{{post.url}}">{{post.title}}
+        </a>
+        <span>{{post.date}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+
+<script>
+  var posts = [{"date":"2018-04-23","title":"第一次","url":"http://yoursite.com/2018/04/23/hello-world/"},{"date":"2018-04-24","title":"mrakdown","url":"http://yoursite.com/2018/04/24/first/"},{"date":"2018-04-24","title":"每日计划","url":"http://yoursite.com/2018/04/24/plan/"},{"date":"2018-04-25","title":"CV规划","url":"http://yoursite.com/2018/04/25/CV规划/"},{"date":"2018-05-11","title":"剑指offer第一天","url":"http://yoursite.com/2018/05/11/剑指offer笔记/"},{"date":"2018-05-13","title":"链表","url":"http://yoursite.com/2018/05/13/JZOffer之链表/"},{"date":"2018-05-15","title":"java编程语言","url":"http://yoursite.com/2018/05/15/JZOffer之java编程语言/"},{"date":"2018-05-22","title":"工作啊工作","url":"http://yoursite.com/2018/05/22/工作啊工作/"},{"date":"2018-05-22","title":"基础知识的刷题顺序","url":"http://yoursite.com/2018/05/22/基础知识的刷题顺序/"},{"date":"2018-05-26","title":"JZOffer之高质量的代码","url":"http://yoursite.com/2018/05/26/JZOffer之高质量的代码/"},{"date":"2018-05-26","title":"JZOffer之解决面试题的思路","url":"http://yoursite.com/2018/05/26/JZOffer之解决面试题的思路/"},{"date":"2018-06-01","title":"神器网站","url":"http://yoursite.com/2018/06/01/神器网站/"},{"date":"2018-06-12","title":"近一周在忙中期","url":"http://yoursite.com/2018/06/12/近一周在忙中期/"},{"date":"2018-06-20","title":"桶排序","url":"http://yoursite.com/2018/06/20/桶排序/"},{"date":"2018-07-03","title":"简历项目整理","url":"http://yoursite.com/2018/07/03/简历项目整理/"},{"date":"2018-07-10","title":"拒绝无意义的事情，把时间浪费在美好事情上","url":"http://yoursite.com/2018/07/10/拒绝无意义的事情，把时间浪费在美好事情上/"},{"date":"2018-07-11","title":"算法面试","url":"http://yoursite.com/2018/07/11/算法面试/"},{"date":"2018-07-12","title":"面试算法之数组问题","url":"http://yoursite.com/2018/07/12/面试算法之数组问题/"},{"date":"2018-07-12","title":"面试算法之时间复杂度","url":"http://yoursite.com/2018/07/12/面试算法之时间复杂度/"},{"date":"2018-07-13","title":"面试算法之查找表的问题","url":"http://yoursite.com/2018/07/13/面试算法之查找表的问题/"},{"date":"2018-07-13","title":"面试算法之在链表中穿针引线","url":"http://yoursite.com/2018/07/13/面试算法之在链表中穿针引线/"},{"date":"2018-07-14","title":"面试算法之二叉树与递归","url":"http://yoursite.com/2018/07/14/面试算法之二叉树与递归/"},{"date":"2018-07-14","title":"面试算法之栈队列优先队列","url":"http://yoursite.com/2018/07/14/面试算法之栈队列优先队列/"},{"date":"2018-07-15","title":"面试算法之动态规划基础","url":"http://yoursite.com/2018/07/15/面试算法之动态规划基础/"},{"date":"2018-07-16","title":"面试算法之贪心算法","url":"http://yoursite.com/2018/07/16/面试算法之贪心算法/"},{"date":"2018-07-16","title":"简历制作之简历基本构成","url":"http://yoursite.com/2018/07/16/简历制作之简历基本构成/"},{"date":"2018-07-16","title":"简历制作","url":"http://yoursite.com/2018/07/16/简历制作/"},{"date":"2018-07-19","title":"简历之软件开发工程师（Java）","url":"http://yoursite.com/2018/07/19/简历之软件开发工程师（Java）/"},{"date":"2018-07-19","title":"简历之算法工程师的岗位描述和职责要求","url":"http://yoursite.com/2018/07/19/简历之算法工程师的岗位描述和职责要求/"},{"date":"2018-07-26","title":"jdk各个版本比较","url":"http://yoursite.com/2018/07/26/jdk各个版本比较/"},{"date":"2018-07-26","title":"有道云笔记汇总","url":"http://yoursite.com/2018/07/26/有道云笔记汇总/"},{"date":"2018-07-30","title":"Java反射","url":"http://yoursite.com/2018/07/30/Java反射/"},{"date":"2018-08-01","title":"设计模式之工厂模式","url":"http://yoursite.com/2018/08/01/设计模式之工厂模式/"},{"date":"2018-08-01","title":"设计模式之观察者模式","url":"http://yoursite.com/2018/08/01/设计模式之观察者模式/"},{"date":"2018-08-01","title":"设计模式之策略模式","url":"http://yoursite.com/2018/08/01/设计模式之策略模式/"},{"date":"2018-08-01","title":"‘设计模式之适配器模式","url":"http://yoursite.com/2018/08/01/‘设计模式之适配器模式/"},{"date":"2018-08-01","title":"设计模式之代理模式","url":"http://yoursite.com/2018/08/01/设计模式之代理模式/"},{"date":"2018-08-01","title":"设计模式之单例模式","url":"http://yoursite.com/2018/08/01/设计模式之单例模式/"},{"date":"2018-08-02","title":"设计模式之生产者消费者模式","url":"http://yoursite.com/2018/08/02/设计模式之生产者消费者模式/"},{"date":"2018-08-05","title":"spring中的设计模式","url":"http://yoursite.com/2018/08/05/spring中的设计模式/"},{"date":"2018-08-11","title":"Java待补充问题","url":"http://yoursite.com/2018/08/11/Java待补充问题/"},{"date":"2018-08-19","title":"面试算法之回溯算法","url":"http://yoursite.com/2018/08/19/面试算法之回溯算法/"},{"date":"2018-08-21","title":"面试算法之递归与回溯","url":"http://yoursite.com/2018/08/21/面试算法之递归与回溯/"},{"date":"2018-08-22","title":"双指针","url":"http://yoursite.com/2018/08/22/双指针/"},{"date":"2018-08-22","title":"面试算法之大数问题","url":"http://yoursite.com/2018/08/22/面试算法之大数问题/"},{"date":"2018-08-26","title":"树的基本概念和高度平衡的二叉树","url":"http://yoursite.com/2018/08/26/树的基本概念和高度平衡的二叉树/"},{"date":"2018-09-21","title":"大数据算法","url":"http://yoursite.com/2018/09/21/大数据算法/"},{"date":"2018-09-21","title":"算术运算和位运算","url":"http://yoursite.com/2018/09/21/算术运算和位运算/"},{"date":"2018-09-23","title":"offer情况","url":"http://yoursite.com/2018/09/23/offer情况/"},{"date":"2018-09-26","title":"HEXO高级功能","url":"http://yoursite.com/2018/09/26/HEXO改进/"},{"date":"2018-09-26","title":"智能代理机器人","url":"http://yoursite.com/2018/09/26/智能代理机器人/"},{"date":"2018-10-25","title":"分布式锁","url":"http://yoursite.com/2018/10/25/分布式锁/"},{"date":"2018-10-25","title":"分布式事务","url":"http://yoursite.com/2018/10/25/分布式事务/"},{"date":"2018-11-15","title":"Docker","url":"http://yoursite.com/2018/11/15/Docker/"},{"date":"2018-11-15","title":"与前端开发并行工作的两个工具","url":"http://yoursite.com/2018/11/15/与前端开发并行工作的两个工具/"},{"date":"2018-11-15","title":"Linux与Windows不同","url":"http://yoursite.com/2018/11/15/Linux与Windows不同/"},{"date":"2018-11-15","title":"shell基础","url":"http://yoursite.com/2018/11/15/shell基础/"},{"date":"2018-11-29","title":"接口与抽象类","url":"http://yoursite.com/2018/11/29/接口与抽象类/"},{"date":"2018-12-03","title":"JADE使用的一些问题记录","url":"http://yoursite.com/2018/12/03/JADE使用的一些问题记录/"},{"date":"2018-12-12","title":"仿真器","url":"http://yoursite.com/2018/12/12/仿真器/"},{"date":"2018-12-12","title":"代码设计之类","url":"http://yoursite.com/2018/12/12/代码设计之类/"},{"date":"2018-12-13","title":"电力市场业务","url":"http://yoursite.com/2018/12/13/电力市场业务/"},{"date":"2018-12-19","title":"智能代理算法","url":"http://yoursite.com/2018/12/19/智能代理算法/"},{"date":"2018-12-20","title":"难点之电力市场业务","url":"http://yoursite.com/2018/12/20/难点之电力市场业务/"},{"date":"2018-12-22","title":"电力交易业务之新的查询资料","url":"http://yoursite.com/2018/12/22/电力交易业务之新的查询资料/"},{"date":"2018-12-22","title":"集中出清规则","url":"http://yoursite.com/2018/12/22/集中出清规则/"},{"date":"2018-12-24","title":"REC：进展及计划记录","url":"http://yoursite.com/2018/12/24/REC：进展及计划记录/"},{"date":"2018-12-25","title":"算法之一些未解决的问题","url":"http://yoursite.com/2018/12/25/算法之一些未解决的问题/"},{"date":"2018-12-25","title":"算法之链表和数组思路","url":"http://yoursite.com/2018/12/25/算法之链表和数组思路/"},{"date":"2018-12-25","title":"算法之双索引技术","url":"http://yoursite.com/2018/12/25/算法之双索引技术/"},{"date":"2018-12-26","title":"数据模型","url":"http://yoursite.com/2018/12/26/数据模型/"},{"date":"2019-01-02","title":"一些待解决问题","url":"http://yoursite.com/2019/01/02/一些待解决问题/"},{"date":"2019-01-02","title":"码农翻身杂记","url":"http://yoursite.com/2019/01/02/码农翻身杂记/"},{"date":"2019-01-02","title":"java8中的声明式风格","url":"http://yoursite.com/2019/01/02/java8中的声明式风格/"},{"date":"2019-01-03","title":"时间的朋友2019","url":"http://yoursite.com/2019/01/03/时间的朋友2019/"},{"date":"2019-01-03","title":"计算机网络自顶向下方法","url":"http://yoursite.com/2019/01/03/计算机网络自顶向下方法/"},{"date":"2019-01-07","title":"JADE使用的一些问题记录（二）","url":"http://yoursite.com/2019/01/07/JADE使用的一些问题记录 (2)/"},{"date":"2019-01-08","title":"智能代理机器人web开发","url":"http://yoursite.com/2019/01/08/智能代理机器人web开发/"},{"date":"2019-01-10","title":"2019要看的书","url":"http://yoursite.com/2019/01/10/2019要看的书/"},{"date":"2019-01-12","title":"ellen情况","url":"http://yoursite.com/2019/01/12/ellen情况/"},{"date":"2019-01-12","title":"todo","url":"http://yoursite.com/2019/01/12/todo/"},{"date":"2019-01-15","title":"论文后续","url":"http://yoursite.com/2019/01/15/论文后续/"},{"date":"2019-01-16","title":"陕西省电力交易模式","url":"http://yoursite.com/2019/01/16/陕西省电力交易模式/"},{"date":"2019-02-20","title":"java前后端跨域问题","url":"http://yoursite.com/2019/02/20/java前后端跨域问题/"},{"date":"2019-02-20","title":"关于Vue","url":"http://yoursite.com/2019/02/20/关于Vue/"},{"date":"2019-02-21","title":"cookie,token,session","url":"http://yoursite.com/2019/02/21/cookie-token-session/"},{"date":"2019-02-25","title":"fluent-terminal","url":"http://yoursite.com/2019/02/25/fluent-terminal/"},{"date":"2019-02-26","title":"English Paper","url":"http://yoursite.com/2019/02/26/English-Paper/"},{"date":"2019-03-14","title":"checkList","url":"http://yoursite.com/2019/03/14/checkList/"},{"date":"2019-03-15","title":"售电侧用电侧","url":"http://yoursite.com/2019/03/15/售电侧用电侧/"},{"date":"2019-03-17","title":"电力市场与双边","url":"http://yoursite.com/2019/03/17/电力市场与双边/"}];
+  var today = moment().format('YYYY-MM-DD');
+  var oneYearAgo = moment(today).subtract(1, 'years');
+  posts = posts.filter(function(post) {
+    return new Date(post.date) > oneYearAgo;
+  });
+  var monthLabels = [];
+  var monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var calendar = getCalendar(posts);
+
+  var dateRange = {
+    start: moment(oneYearAgo).format('MMM D, YYYY'),
+    end: moment().format('MMM D, YYYY')
   }
+
+  var app = new Vue({
+    el: '#calendar',
+    data: {
+      posts: posts,
+      selectedDate: null,
+      calendar: calendar,
+      dateRange: dateRange,
+      mouseoverDate: null,
+      moment: moment,
+      monthLabels: monthLabels
+    },
+    created: function() {
+      this.selectedDate = 'none';
+    },
+    methods: {},
+    computed: {
+      svgtip: function() {
+        var date = this.mouseoverDate;
+        var display = date ? 'block' : 'none';
+        if (date) {
+          var coordinator = getIndexByDate(date);
+          var x = coordinator[0];
+          var y = coordinator[1];
+          var len = this.calendar[x].days[y].posts.length;
+          var text = len ? len + ' contributions' : 'No contributions';
+          var left = coordinator[0] * 12 - 37 + 'px';
+          coordinator[1] = coordinator[0] ? coordinator[1] : coordinator[1] + oneYearAgo.day();
+          var top = coordinator[1] * 12 + 12 - 32 + 'px';
+        }
+        return {
+          text: text,
+          left: left,
+          top: top,
+          display: display
+        }
+      }
+    }
+  });
+
+  function getCalendar(posts) {
+    // raw calendar
+    var maxCount = 0;
+    var tmr = new Date();
+    tmr.setDate(tmr.getDate() + 1);
+    var tmrStr = tmr.toISOString().slice(0, 10);
+    var date = new Date();
+    date.setYear(date.getFullYear() - 1); // start date is a year ago;
+    var calendar = [];
+    while (date.toISOString().slice(0, 10) !== tmrStr) {
+      var day = date.getDay();
+      if (day === 0 || calendar.length === 0) {
+        var x = calendar.length * 13;
+        calendar.push({
+          transform: 'translate(' + x + ',0)',
+          days: []
+        })
+      }
+
+      calendar[calendar.length - 1].days.push({
+        x: 14 - calendar.length,
+        y: day * 12,
+        date: date.toISOString().slice(0, 10),
+        posts: []
+      });
+
+      if (day === 0 && date.getDate() < 8) {
+        monthLabels.push({
+          x: 14 - calendar.length + x,
+          text: monthName[date.getMonth() - 1]
+        })
+      }
+
+      date.setDate(date.getDate() + 1);
+    }
+
+    // handle post info
+    posts.forEach(function(post) {
+      var x = getIndexByDate(post.date)[0];
+      var y = getIndexByDate(post.date)[1];
+
+      calendar[x].days[y].posts.push({
+        title: post.title,
+        url: post.url
+      });
+
+      var len = calendar[x].days[y].posts.length;
+      maxCount = Math.max(len, maxCount);
+    })
+
+    // handle fill color
+    calendar.forEach(function(week) {
+      week.days.forEach(function(day) {
+        day.fill = getColorByLength(day.posts.length, maxCount);
+      })
+    })
+
+    return calendar;
+  }
+
+  function getIndexByDate(date) {
+    date = moment(date);
+    var firstColumnLen = 7 - oneYearAgo.day();
+    var days = date.diff(oneYearAgo, 'days');
+
+    var x = days > firstColumnLen - 1 ? Math.ceil((days - firstColumnLen + 1) / 7) : 0;
+    var y = days > firstColumnLen - 1 ? date.day() : date.day() - oneYearAgo.day();
+    return [x, y];
+  }
+
+  function getColorByLength(len, max) {
+    var colors = ['#eee', '#d6e685', '#8cc665', '#44a340', '#1e6823'];
+    var colorsLen = colors.length - 1;
+    var color = len ? colors[0] : colors[1];
+    var interval = max / colorsLen;
+    if (max < colorsLen) {
+      color = colors[len];
+    } else {
+      color = colors[Math.ceil(len / interval)];
+    }
+    return color;
+  }
+
 </script>
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 Jay</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
     
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
+  </footer>
+</div>
 
 
 
 
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("SWULgkVHBjhFp99nBHCr8oHC-gzGzoHsz", "DQQN5XsGzlq3PIf1OSvGvoRR");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
+<script src="/js/main.js"></script>
 
 </body>
 </html>

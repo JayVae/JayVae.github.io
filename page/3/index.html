@@ -1,3181 +1,558 @@
 <!DOCTYPE html>
+<html lang="zh-Hans">
 
 
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    JayVae&#39;s Blog
+  </title>
+  <meta name="description" content="Just in progress">
+  
+  <meta name="author" content="Jay">
 
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="Just in progress">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JayVae&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
-<meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="Just in progress">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JayVae&#39;s Blog">
-<meta name="twitter:description" content="Just in progress">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+<script>
+  var _hmt = _hmt || [];
+  (function(){var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
+    var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/page/3/"/>
-
-
-
-
-
-  <title>JayVae's Blog</title>
-  
-
-
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body id="replica-app">
 
-  
-  
-    
-  
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
 
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">JayVae's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Hello, I'm  newbie</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+      <ul class="navbar-nav float-left">
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
+        <li><a href="/archives">Archives</a></li>
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
+        <li><a href="/categories">Categories</a></li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
+        <li><a href="/tags">Tags</a></li>
         
-        <li class="menu-item menu-item-guestbook">
-          <a href="/guestbook" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
-            
-            留言
-          </a>
-        </li>
-      
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
         </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://avatars2.githubusercontent.com/u/5300359?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
     </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
 
+<div class="main-container">
+  
 
+<div class="container-lg">
+  
 
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
+<div class="blog-intro">
+  <div class="blog-intro-user">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/5300359?v=4&amp;s=460">
+    <div class="user-name">
+      <div class="blog-title">JayVae&#39;s Blog</div>
+      <div class="blog-author">Jay</div>
+        <ul class="user-detail mobile-only">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/26/数据模型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
+    <li>
+      <i class="fa fa-map-marker"></i>
+      XIan
+    </li>
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/26/数据模型/" itemprop="url">数据模型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-26T18:59:19+08:00">
-                2018-12-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/26/数据模型/" class="leancloud_visitors" data-flag-title="数据模型">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  216 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
+    <li>
+      <i class="fa fa-envelope-o"></i>
+      <a href="mailto:919433524@qq.com">919433524@qq.com</a>
+    </li>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>集中交易时，有个总的市场电量</p>
-</li>
-<li><p>交易结果怎么存</p>
-</li>
-<li><p>交易流程</p>
-</li>
-<li><p>成本模型:包括<br>固定成本和可变成本【见《电力市场经济学》黄书 P98】</p>
-<table><br> <tr><br>     <td>建设成本</td><br> </tr><br> <tr><br>     <td>维修成本</td><br> </tr><br> <tr><br>     <td>运行成本</td><br> </tr><br> <tr><br>     <td>薪资成本</td><br> </tr><br></table>
-</li>
-<li><p>一些信息是公共信息，比如天气，煤价这些，放在仿真参数信息中，另外一些跟电厂或用户关系本身相关的，放在用户模型中，而且提一下可以对接现有平台，因为一些关键字段是一样的。机组信息（机组类型不同，需填写的参数信息也不同，参考用户手册，P9,P10）</p>
-</li>
-<li><p>按照电厂主要指标解释、小册子、可研报告中需要用到的参数来完善数据库。</p>
-</li>
-<li><p>是否按区域交易</p>
-</li>
-<li><p>存储仿真中间过程</p>
-</li>
-</ol>
-
-          
-        
-      
+    <li>
+      <i class="fa fa-link"></i>
+      <a href="http://yoursite.com">http://yoursite.com</a>
+    </li>
+  </ul>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/算法之一些未解决的问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/25/算法之一些未解决的问题/" itemprop="url">算法之一些未解决的问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T15:52:21+08:00">
-                2018-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试算法/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/25/算法之一些未解决的问题/" class="leancloud_visitors" data-flag-title="算法之一些未解决的问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  10 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>欧拉环<br>kmp<br>manacher算法<br>约瑟夫环</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/算法之链表和数组思路/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/25/算法之链表和数组思路/" itemprop="url">算法之链表和数组思路</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T15:21:00+08:00">
-                2018-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试算法/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/25/算法之链表和数组思路/" class="leancloud_visitors" data-flag-title="算法之链表和数组思路">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  102 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>链表的题目基本都是分三步走:<br>1.连过来。把想要的节点连到你需要的链表上<br>2.指针走。该节点处理完了,在原来的链表上要走一步.<br>3.断后路。当前链表不要和原来链表有连接<br>4.调状态。调整当前各指针的记录状态</p>
-<p>其他部分仅仅是为了保存状态的。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/算法之双索引技术/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/25/算法之双索引技术/" itemprop="url">算法之双索引技术</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T15:17:50+08:00">
-                2018-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试算法/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/25/算法之双索引技术/" class="leancloud_visitors" data-flag-title="算法之双索引技术">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  43 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>对撞指针；（例如有序数组中两个数之和）</li>
-<li>滑动窗口（leetcode209,3，438,76）</li>
-</ol>
-<p>遇到数据和链表，先尝试用双指针方法来解决。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/REC：进展及计划记录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/24/REC：进展及计划记录/" itemprop="url">REC：进展及计划记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-24T14:46:52+08:00">
-                2018-12-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/24/REC：进展及计划记录/" class="leancloud_visitors" data-flag-title="REC：进展及计划记录">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  820 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="2018-12-24"><a href="#2018-12-24" class="headerlink" title="2018-12-24"></a>2018-12-24</h2><p><strong>当前的任务是</strong><br>—将整个项目和论文的框架梳理下来，确定着重研究的方向和论文展示方向。<br>—在确定之后，需要将数据模型抽象出来（最主要的是报价、成本、利润模型需要的参数），本期需要用的数据库定义出来。<br>—展示的web界面初稿绘制出来。</p>
-<blockquote>
-<p>其实来说，当前最需要的一步是，做出最基本的集中交易出清并展示出来！！！</p>
-<blockquote>
-<p>先明确三个模型！【书上的模型要不要】<br>哪个市场，要不要风电</p>
-</blockquote>
-</blockquote>
-<h2 id="2019-01-19"><a href="#2019-01-19" class="headerlink" title="2019-01-19"></a>2019-01-19</h2><p>deadline是20190131！！！</p>
-<ol>
-<li>完成强化学习算法参数部分；</li>
-<li>完成成本模型的定义；</li>
-<li>完成数据库模型；</li>
-<li>基本功能页面的实现。<br>截止目前20190127 24:00之前完成前3项；<br>截止目前20190131 24:00之前完成最后一项；<br>任务艰巨啊。</li>
-</ol>
-<p>完成强化学习算法部分</p>
-<h2 id="2019-02-21"><a href="#2019-02-21" class="headerlink" title="2019-02-21"></a>2019-02-21</h2><ol>
-<li>完成强化学习的应用，即动作、策略、状态的化归；</li>
-<li>数据模型的完成；</li>
-<li>仿真过程需要的东西？</li>
-<li>直接交易？</li>
-<li>结算电价与交易电价（合同电价）</li>
-<li>全电量参与市场的电力用户？<br>全电量参与市场交易是相对于部分电量参与市场交易而言，用户全电量参与市场交易后，不再执行目录电价，由市场用户的电量来决定发电厂的发电量供给，再辅以偏差考核，电力商品向市场化推进的重要一步。在《广东电力市场交易基本规则》中提出，要求2017年准入的市场用户必须全电量参与市场交易。电力批发交易与电力零售交易是《广东电力市场交易基本规则》中提出的概念，在国家层面的《电力中长期基本交易规则》中并未提及。</li>
-<li>偏差考核、报价曲线、出清价格、出价和报价、价格范围【按照不一样的方式有不同的方式，比如现货】</li>
-<li>英文关键词是什么？看看有没有英文的最新文献：<br>集中竞价、双边、强化学习、智能代理</li>
-<li>与留学生讨论强化学习的应用</li>
-</ol>
-<h2 id="2019-03-01"><a href="#2019-03-01" class="headerlink" title="2019-03-01"></a>2019-03-01</h2><ol>
-<li>用户侧和发电商侧的目标函数，以及如何统一为一个系统</li>
-<li>数据源的问题？</li>
-<li>强化学习中没有优化量吗？</li>
-<li>主要放在仿真啊！仿真引擎到底是个什么东西？如果要做JADE的话，怎么用？先把流程跑起来？</li>
-<li>看学校的论文！</li>
-</ol>
-<h2 id="2019-03-06"><a href="#2019-03-06" class="headerlink" title="2019-03-06"></a>2019-03-06</h2><ol>
-<li>英文文献</li>
-<li>双边交易</li>
-<li>关键词： 购电商、双边交易</li>
-<li>确定必须参考的文献，安排论文的内容</li>
-<li>把各个部分的东西确定下来，然后就不用看那么多文献，越看越迷茫，这个时候完美主义是不对的。</li>
-<li>确定留学生需要提供和提供给留学生的东西。</li>
-</ol>
-<h2 id="2019-03-15"><a href="#2019-03-15" class="headerlink" title="2019-03-15"></a>2019-03-15</h2><p>现在最主要的是三个问题:</p>
-<ol>
-<li>Jade这个到底怎么用；</li>
-<li>Q-learning或者RE方法上哪去找；</li>
-</ol>
-<h2 id="2019-03-18"><a href="#2019-03-18" class="headerlink" title="2019-03-18"></a>2019-03-18</h2><ol>
-<li>完成强化学习参数的确定以及方法、案例的设计；</li>
-<li>完成软件模块和界面的绘制（草图）。</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/22/电力交易业务之新的查询资料/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/22/电力交易业务之新的查询资料/" itemprop="url">电力交易业务之新的查询资料</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-22T21:10:10+08:00">
-                2018-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/22/电力交易业务之新的查询资料/" class="leancloud_visitors" data-flag-title="电力交易业务之新的查询资料">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.7k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="参考【用电侧市场放开下的电力市场多主体博弈】"><a href="#参考【用电侧市场放开下的电力市场多主体博弈】" class="headerlink" title="参考【用电侧市场放开下的电力市场多主体博弈】"></a>参考【用电侧市场放开下的电力市场多主体博弈】</h2><ol>
-<li><p>批发市场和零售市场<br>新电改下的电力市场结构</p>
-</li>
-<li><p>市场博弈模型也可参考上文<br>但是发电商的投标函数并没有体现。</p>
-</li>
-<li><p>既有自主协商交易又有集中竞价交易；</p>
-</li>
-<li><p>这篇文章中也有强化学习</p>
-</li>
-<li><p>但是总体来说这篇文章重点在于售电公司，而且不够细致</p>
-</li>
-</ol>
-<h2 id="参考【月度电量集中竞价市场规则的仿真实验分析】"><a href="#参考【月度电量集中竞价市场规则的仿真实验分析】" class="headerlink" title="参考【月度电量集中竞价市场规则的仿真实验分析】"></a>参考【月度电量集中竞价市场规则的仿真实验分析】</h2><p>可以参考另一篇英文文章【Agent-based Simulation Experiment for Monthly Centralized Bidding Market in China】</p>
-<ol>
-<li><p>智能代理算法RE</p>
-</li>
-<li><p>JADE是怎么用的？</p>
-</li>
-<li><p>利润函数是怎样的？</p>
-</li>
-<li><p>其中的边际出清电价是什么？</p>
-</li>
-<li><p>找数据源</p>
-</li>
-<li><p>邮件交流：<br>6.1 功能类代理是在原有agent上开发的。月度市场中代理的行为比较简单，就是一个重复报价出清的过程，代码编写的工作量不大。强化学习策略代理的实现与普通代理的实现是相同的，不同之处在于这个代理的决策是按照算法进行决策输出，具体的算法可以参考常见的强化学习算法。jade是一个比较适合于学术研究的工具，它的demo中有很多经典的case。实际应用要比那些复杂，但是基本的组成比如行为、通信等是一样的<br>6.2 代理的目标比较简单，一般市场中的经济目标都是差不多的。目标有不同的表述，比如社会福利最大、发电成本最小、获利最大等。发电侧的利润是其收益与成本的差，用户侧的利润是其效益与成本的差。但是实际中用户侧的效益是由具体生产的产品来决定的，因此没有精准的模型计算。常见的处理方式是将用户侧的获利描述为市场降价空间的大小，降得越多，用户侧获利越多。</p>
-</li>
-<li><p>因此电力市场用户侧的报价策略是什么可以在论文中专门提出来，因为目前的大部分研究集中在研究发电侧的竞争。具体模型可以参考上6.2，以及自己定义利润函数，对于电力用户，按照满意度（偏差），售电公司按照满意度和服务费。<br>也因此可以在论文中提出售电公司参与的。</p>
-</li>
-</ol>
-<h2 id="参考【售电放开政策下电力交易多方主体利益分析模型研究】"><a href="#参考【售电放开政策下电力交易多方主体利益分析模型研究】" class="headerlink" title="参考【售电放开政策下电力交易多方主体利益分析模型研究】"></a>参考【售电放开政策下电力交易多方主体利益分析模型研究】</h2><ol>
-<li><p>电力交易模式：双边、集中</p>
-</li>
-<li><p>不同交易情景下发电商利益分析模型【ch6】</p>
-</li>
-<li><p>电商售电利益分析模型研究【ch8】</p>
-</li>
-<li><p>可以查一下这篇文章的两个作者的其他文章<br>也可以通过邮件联系一下这篇文章的作者。<br>暂无进展</p>
-</li>
-</ol>
-<h2 id="参考【基于售电侧放开的电力市场交易研究】"><a href="#参考【基于售电侧放开的电力市场交易研究】" class="headerlink" title="参考【基于售电侧放开的电力市场交易研究】"></a>参考【基于售电侧放开的电力市场交易研究】</h2><p>电力交易机构的定位</p>
-<h2 id="参考【电力市场售电侧开放环境下售电公司购电策略研究】"><a href="#参考【电力市场售电侧开放环境下售电公司购电策略研究】" class="headerlink" title="参考【电力市场售电侧开放环境下售电公司购电策略研究】"></a>参考【电力市场售电侧开放环境下售电公司购电策略研究】</h2><p>售电公司的利润</p>
-<h2 id="参考【电力市场原理与实践】书"><a href="#参考【电力市场原理与实践】书" class="headerlink" title="参考【电力市场原理与实践】书"></a>参考【电力市场原理与实践】书</h2><p>ch2<br>ch10</p>
-<h2 id="参考【基于代理的电力市场仿真的实验设计方法探讨】"><a href="#参考【基于代理的电力市场仿真的实验设计方法探讨】" class="headerlink" title="参考【基于代理的电力市场仿真的实验设计方法探讨】"></a>参考【基于代理的电力市场仿真的实验设计方法探讨】</h2><p>倾向系数与竞价策略的关系？<br>报价段数？<br>算例？？？<br>方法是Roth-Erev法</p>
-<h2 id="参考【考虑风储参与的电力市场联动博弈分析】"><a href="#参考【考虑风储参与的电力市场联动博弈分析】" class="headerlink" title="参考【考虑风储参与的电力市场联动博弈分析】"></a>参考【考虑风储参与的电力市场联动博弈分析】</h2><p>算例？？？</p>
-<h2 id="参考【强化学习算法在电力市场中的应用】"><a href="#参考【强化学习算法在电力市场中的应用】" class="headerlink" title="参考【强化学习算法在电力市场中的应用】"></a>参考【强化学习算法在电力市场中的应用】</h2><p>主要讲考虑发电厂商的强化学习竞价策略，其思想是发电厂商在考虑了市场中的各种因素后采取一个策略，在获得实际利润之前会有一个预期的期望利润，在第一时间段得到实际利润，然后比较实际利润和期望利润， 以得到强化信号。若得到正的强化信号就加强此次所选策略的概率值，反之，就减弱此次所选策略的概率值。 在演化过程中不断用此方法来逐步修改策略，以获得最大利润。<br>多部分报价<br>分段报价函数与线性报价函数</p>
-<h2 id="参考【发电商基于Q-Learning算法的日前市场竞价策略】"><a href="#参考【发电商基于Q-Learning算法的日前市场竞价策略】" class="headerlink" title="参考【发电商基于Q-Learning算法的日前市场竞价策略】"></a>参考【发电商基于Q-Learning算法的日前市场竞价策略】</h2><p>日前市场为发电侧市场，而且将每个机组按不同容量区间进行报价，同时假定输电网络不存在阻塞现象， 整个输电网络相当于一个单节点， 即网络结构不影响出清结果。<br>阶梯形报价曲线，容量价格对<br>定义系统状态、 策略和立即收益：<br>（1） 系统状态： 系统状态$由市场的出清价格表示。<br>（2） 策略： 由式(8)得到各个发电商机组的报价策略集。 各个机组的策略集组合就得到发电商的报价策略集。 例如某发电商有 2 台机组， 每台机组有 5种策略， 则发电商一共有 5×5 = 25 种报价策略。<br>（3） 立即收益： 本文中各个代理的立即收益取该轮交易发电商得到的利润， 即收入减去成本， 可由式(3)得出。<br>程序的具体算法如下：<br>第 1 步： 随机初始化各个发电商的最优策略，进行一次交易。得到的市场出清价格作为初始状态。<br>第 2 步： 在新一轮市场交易开始时， 发电商用上一轮次交易的 24 时段市场出清价格作为当前的状态。在得到各个时段的当前状态后， 发电商应用改进的!－greedy 策略选出一个策略作为本轮次的报价策略。<br>第 3 步： 更新”值， 计算本轮次的立即收益#$。并且由本轮次出清价格得到下一交易轮次的系统状态， 根据式 （11） 更新 lookup表中的”值。<br>第 4 步： 判断是否达到规定的轮次， 否则返回第 2 步。</p>
-<h2 id="参考【考虑风储参与的电力市场联动博弈分析】-1"><a href="#参考【考虑风储参与的电力市场联动博弈分析】-1" class="headerlink" title="参考【考虑风储参与的电力市场联动博弈分析】"></a>参考【考虑风储参与的电力市场联动博弈分析】</h2><p>发电商和供电商策略集合由一定范围内的上网电价和销售电价组成，对应策略利润为中标发电和销售电能产生的利润。</p>
-<h2 id="参考【基于改进Q学习算法的发电商竞价策略】"><a href="#参考【基于改进Q学习算法的发电商竞价策略】" class="headerlink" title="参考【基于改进Q学习算法的发电商竞价策略】"></a>参考【基于改进Q学习算法的发电商竞价策略】</h2><p>未看</p>
-<h2 id="参考【电力批发市场中基于强化学习的参与者行为特性研究】"><a href="#参考【电力批发市场中基于强化学习的参与者行为特性研究】" class="headerlink" title="参考【电力批发市场中基于强化学习的参与者行为特性研究】"></a>参考【电力批发市场中基于强化学习的参与者行为特性研究】</h2><p>未看，英文</p>
-<h2 id="参考【多Agent系统中强化学习的研究现状和发展趋势】"><a href="#参考【多Agent系统中强化学习的研究现状和发展趋势】" class="headerlink" title="参考【多Agent系统中强化学习的研究现状和发展趋势】"></a>参考【多Agent系统中强化学习的研究现状和发展趋势】</h2><p>强化学习作为多agent系统中更新行为策略</p>
-<h2 id="参考-【电力市场仿真系统的开发及应用】"><a href="#参考-【电力市场仿真系统的开发及应用】" class="headerlink" title="参考 【电力市场仿真系统的开发及应用】"></a>参考 【电力市场仿真系统的开发及应用】</h2><p>算例</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/22/集中出清规则/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/22/集中出清规则/" itemprop="url">集中出清规则</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-22T14:20:00+08:00">
-                2018-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/22/集中出清规则/" class="leancloud_visitors" data-flag-title="集中出清规则">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  594 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h2><pre><code>电厂报价报量`arr1[][]`,
-用户报价报量`arr2[][]`。
-不应该是数组，而应该是一个抽象的数据类型，存有
-</code></pre><h2 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h2><pre><code>出清价格：Price
-成交电量对（一个用户可以在多个成交对之中）ResultSet。
-</code></pre><h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><p>0-. 按地区分组</p>
-<ol start="0">
-<li>数据有效筛选（购方申报数据筛选和售方数据筛选不一样）</li>
-<li>按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行排列】</li>
-<li>得到成交电量对,其中成交电量为q_current = <code>min{q1[0],q2[0]}</code>；</li>
-<li>更新p1,p2以及q1,q2.<blockquote>
-<p>从对应的报量序列中减去当前成交的电量q_current，如果报量为0，则将其与对应的报价排序中的元素移除；</p>
-</blockquote>
-</li>
-<li>对更新后的序列执行步骤1，直至q1,q2中有一个为空，结束。</li>
-</ol>
-<h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p>过程可视化？<br>结果可视化：<br>图片，表格</p>
-<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>其中，不同步骤的数据模型是不一样的，最起码在这里的模型是没有那些成本信息的。<br>问题在于如何返送回去？<br>数据进行封装，通过id进行索引。</p>
-<ol>
-<li>基本数据模型：<br>：<br>抽象父类—–发电商顶级类  —<pre><code>|
- ---电力用户顶级类---
-</code></pre></li>
-<li>代理类：</li>
-<li>封装类：</li>
-</ol>
-<p>最终保存的结果【比如一个用户成交了几笔，关联交易表】在entity怎么保存。<br>交易实体类</p>
-<h2 id="广东省的出清"><a href="#广东省的出清" class="headerlink" title="广东省的出清"></a>广东省的出清</h2><p>在广东的规则中，对日前市场如何出清是这样描述的：</p>
-<p>　　“电力调度机构综合考虑发电侧电力报价曲线、用户侧电力需求价格曲线、非市场用户负荷预测、外送受电曲线、A 类机组出力曲线、发电机组检修计划、输变电设备检修计划、发电机组运行约束条件、电网安全运行约束条件等因素，以社会福利最大为优化目标，采用安全约束机组组合(SCUC)、安全约束经济调度(SCED)算法进行集中优化计算，出清得到运行日的机组开机组合以及分时发电出力曲线、售电公司与批发用户分时分节点的中标用电曲线、分时节点电价。”</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/20/难点之电力市场业务/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/20/难点之电力市场业务/" itemprop="url">难点之电力市场业务</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-20T13:24:52+08:00">
-                2018-12-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/20/难点之电力市场业务/" class="leancloud_visitors" data-flag-title="难点之电力市场业务">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  320 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>长期的集中撮合的成本函数以及报价函数，利润函数的制定？<br>不是与出力有关，而是与电量有关。</p>
-</li>
-<li><p>电力用户的利润函数？</p>
-</li>
-<li><p>边际成本？<br>边际运行成本和边际价格是不一样的，后者是出清时的概念。</p>
-</li>
-<li><p>代理算法</p>
-</li>
-<li><p>如果用集中竞价交易，流程参考陕西省文件</p>
-</li>
-<li><p>定价不等于报价：<br>定价在《电力市场原理与实践》中有详细叙述</p>
-</li>
-<li><p>按机组报价</p>
-</li>
-<li><p>分段报价<br>王锡凡分段竞价？<br>可以提出来有的会允许分块报价，本文按照陕西省电力交易规则采用一户一量一价。即“实行“一户一量一价”，不实行分月分段申报”</p>
-</li>
-<li><p>出清模型不一样啊~~~社会福利最大。<br>写文章时，出清模型按照这样写，在这部分最后写本文采取的出清方法，按照陕西省通知来做。</p>
-</li>
-<li><p>报价除了有报价函数外，还可以有发电侧电力报价曲线，用户侧电力需求价格曲线</p>
-</li>
-<li><p>陕西省2018年上半年集中竞价模式电力直接交易成交结果中关中陕南地区是按照是按照机组来的？？？</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/智能代理算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/19/智能代理算法/" itemprop="url">智能代理算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T09:47:26+08:00">
-                2018-12-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/19/智能代理算法/" class="leancloud_visitors" data-flag-title="智能代理算法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.3k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol start="0">
-<li><p>“强化学习部分的理论”按照西瓜书的内容消化了再写。</p>
-</li>
-<li><p>智能代理的流程</p>
-</li>
-<li><p>策略空间是啥（策略集）</p>
-</li>
-</ol>
-<p>按容量报价？？？？【原理】</p>
-<p>报价策略：按照成本报价、按照持留容量（《电力市场原理与实践》）<br>又可以分为保守型（用电侧市场放开下的电力市场多主体博弈）</p>
-<p>智能代理迭代的是什么?系数？</p>
-<p>强化学习了解到什么程度？</p>
-<p>在于策略空间和奖励函数。</p>
-<ol start="3">
-<li><p>强化学习中的概念最起码得对应起来：<br>3.1 状态：（Q,P）状态空间，离散化【为什么要离散化】，在这里我觉得是对每个代理来说是每次的出清结果，电价和电量。<br>3.2 动作（策略）：策略集合？调（Q,P），在原来基础上增加减少？还有一种是在原来的报价函数基础上进行调节系数。</p>
-<ul>
-<li>存疑 *<br>3.2.1 【发电商基于Q-Learning算法的日前市场竞价策略】<br>注意这里的策略到状态是不确定的啊，状态如果是出清值的话，那么需要所有的进行出清才能得出。<br>3.2.2 【基于复杂系统多Agent建模的电力市场仿真技术研究_王海宁】中：</li>
-<li>代理算法（RE算法、Q-learning算法、规则推理算法greedy、粒子群算法）和报价策略（中庸型）区别?</li>
-<li>其中策略空间中的Si是怎么计算的？</li>
-<li>可以说RE算法无关状态？</li>
-<li>其中的Q-learning环境：是选用竞价空间，代理收购约束情况与市场加权平均出清价格联合作为区分的标准。P44<br>将这三个变量关联考虑，可将环境分为种状态。在程序中运用了多维矩阵来表示这些状态。</li>
-</ul>
-<p>3.2.3 【电力市场仿真系统的开发及应用】<br>3.3 回报（奖赏）：成本？<br>3.4 值函数（评价函数），即Q值。值函数很大程度上由奖赏函数给出的奖赏值确定，因此奖赏函数是强化学习方法中的一个重要的问题。<br>3.5 环境模型 ：不需要<br>3.6 关于策略：RL是从环境状态到动作的映射的学习，我们把这个映射称为策略。</p>
-</li>
-<li>用的强化学习算法：<br>TD算法<br>SARA<br>Q-LEARNING</li>
-</ol>
-<p>常见的强化学习算法中TD算法和Q一学习算法属于典型的模型无关法，而Sarsa和Dyna Q算法属于基于模型法（？？？这个是不对的，见下）。</p>
-<ol start="5">
-<li><p>查一查强化学习在电力市场或其他领域的应用</p>
-</li>
-<li><p>强化学习的大体流程是什么样的？</p>
-</li>
-<li><p>基于价值（value-based）、基于策略（policy-based）以及基于模型（model-based）的方法<br>7.1 优化价值函数<br>一个状态下的函数值，是智能体可以预期的未来奖励积累总值，从当前状态开始算。智能体要用这个价值函数来决定，每一步要选择哪个行动。它会采取函数值 (就是Q值) 最大的那个行动。【不是概率？】<br>7.2 每种动作都可能被选中，根据概率来选</p>
-</li>
-<li><p>强化学习几种分类：（括号中的是具体的方法）<br>8.1 按照是否对环境进行建模可以分为：model-free（Q-learning、Sarsa、policy gradients）和model-based;<br>8.2 按照选择动作的依据可以分为基于概率（Policy-based，包括policy gradients）和基于价值（value-based，包括Q-learning、Sarsa）<br>8.3 按照更新可以分为回合更新（Monte-Carlo update，包括基础版policy gradients，monte-carlo learning）和单步更新（Temporal Difference,包括升级版的policy gradients，Q-learning，Sarsa）;<br>8.4 在线学习（on-policy）和离线学习（off-policy）：</p>
-</li>
-<li><p>关于Roth-Erev方法<br>在博士论文【王海宁】中有所提及<br>绿书中的？<br>【电力批发市场中基于强化学习的参与者行为特性研究】</p>
-</li>
-<li><p>需要了解马尔科夫决策过程、动态规划、蒙特卡洛、时间差分这些吗？</p>
-</li>
-<li><p>电力市场交易中的量纲：<br>申报电量原则上以 10兆瓦时的整数倍，电量的量纲为兆瓦时。<br>申报电价最小单位为0.1元/兆瓦时，电价的量纲为元/兆瓦时。电力用户和发电企业应理性报价，保障本次交易工作的顺利开展。</p>
-</li>
-<li><p>强化学习中的多代理体</p>
-</li>
-<li><p>R-learning:<br>The average-reward formulation has been described for dynamic programming<br>(e.g., Puterman, 1994) and from the point of view of reinforcement learning (Ma-<br>hadevan, 1996; Tadepalli and Ok, 1994; Bertsekas and Tsitiklis, 1996; Tsitsiklis<br>and Van Roy, 1999). The algorithm described here is the on-policy analog of the<br>“R-learning” algorithm introduced by Schwartz (1993). The name R-learning was<br>probably meant to be the alphabetic successor to Q-learning, but we prefer to<br>think of it as a reference to the learning of differential or<br>relative<br>values. The<br>access-control queuing example was suggested by the work of Carlstr ̈om and<br>Nordstr ̈om (1997</p>
-</li>
-<li><p>【电力批发市场中基于强化学习的参与者行为特性研究】英文</p>
-</li>
-<li><p>【基于智能代理模型的跨省集中交易平台仿真分析】<br>动作、报价集合</p>
-</li>
-<li><p>强化学习中的参数：<br>遗忘系数为0.03 ，经验参数为0.97 ，倾向系数 q 初始值为５０００【用电侧市场放开下的电力市场多主体博弈】</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/13/电力市场业务/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JayVae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/13/电力市场业务/" itemprop="url">电力市场业务</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-13T14:32:18+08:00">
-                2018-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/课题/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/12/13/电力市场业务/" class="leancloud_visitors" data-flag-title="电力市场业务">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>报价模型与成本模型</p>
-</li>
-<li><p>不同电厂的成本模型</p>
-</li>
-<li><p>出清算法</p>
-</li>
-<li><p>具体的出清过程是怎样的？</p>
-</li>
-</ol>
-<ol start="5">
-<li>集中交易参考陕西省<a href="https://pmos.sn.sgcc.com.cn/pmos/index/infoList.jsp?itemid=213000&amp;title=%E4%BA%A4%E6%98%93%E5%85%AC%E5%91%8A&amp;curpage=2#" target="_blank" rel="noopener">《关于开展陕西省2018年下半年集中竞价模式电力直接交易的通知》</a></li>
-</ol>
-<p>5.1 交易申报：<br>电力用户、售电公司和发电企业，申报内容包括购、售电量和直接交易电价。<br>5.2 竞价出清：<br>根据电力用户、售电公司和发电企业申报的有效数据进行<strong>排序</strong>，形成购方、售方电价排序队列。再按照<strong>集中竞价交易算法规则</strong>，采用<strong>边际定价法</strong>（统一出清电价Uniform Clearing Price,UCP和节点电价Locational Marginal Price,LMP,P30,from《电力市场原理与实践》）出清，得到无约束交易结果。<br>PAB（是pay as bid）</p>
-<ol start="6">
-<li><p>分时竞价？分段竞价？</p>
-</li>
-<li><p>要不要竞争对手的历史报价和其他信息。不要</p>
-</li>
-<li><p>其实仿真的是一个如何报价的过程</p>
-</li>
-<li><p>一些术语都是什么意思？<br>报价函数和成本函数<br>报价格式<br>边际成本曲线</p>
-</li>
-<li><p>成本函数中的是电量还是出力？月度中按照电量来处理，现货交易中是出力。</p>
-</li>
-<li><p>机组容量和装机容量？机组信息？<br>13.1 装机容量：电力系统的总装机容量是指该系统实际安装的发电机组额定有功功率的总和，以千瓦（KW）、兆瓦（MW）、吉瓦（GW）计（10的9次方进制）为单位 。一般标明在设备的铭牌上，亦称铭牌容量。装机容量为2*15万千瓦就是两台15万千瓦的发电机组。每台每小时的发电量为15万千瓦 。<br>13.2 机组容量：发电机组的容量，是指机组的额定发电功率，比如一个机组是1MW，一小时额定发电量就是1MWh（一小时额定发电量为1000度。）<br>13.3 一个电厂会有多个机组。</p>
-</li>
-<li><p><strong> 成本函数为什么是二次的形式？<br>报价函数用成本函数的导数？所谓的边际成本函数？ </strong></p>
-</li>
-</ol>
-<ol start="15">
-<li><p>基于成本分析的发电厂商报价策略作为初始报价？P179，绿书</p>
-</li>
-<li><p>国家发展和改革委员会近日透露，国家发展改革委和国家能源局日前发布了《关于开展电力现货市场建设试点工作的通知》 据了解，试点地区将围绕形成日内分时电价机制，在明确现货市场优化目标的基础上，建立安全约束下的现货市场出清机制和阻塞管理机制。组织市场主体开展日前、日内、实时电能量交易，实现调度运行和市场交易有机衔接，形成体现时间和位置特性的电能量商品价格，为市场主体提供反映市场供需和生产成本的价格信号。<a href="http://www.sndrc.gov.cn/html/100183/1026582.html" target="_blank" rel="noopener">http://www.sndrc.gov.cn/html/100183/1026582.html</a></p>
-</li>
-<li><p>跨区跨省交易：<br>一直以来，电力交易市场具有极强的区域壁垒性，全国电力交易市场划分为国网区域和南网区域，两区域内大都是以省/地区为单位内部独立组织电力交易，更有甚者，一个地区还要划分不同市县交易区域。所以，电力交易市场的玩法多以省内交易居多。如果你是广东售电公司，就是对北京售电红利再眼红，也鞭长莫及。</p>
-</li>
-</ol>
-<p>但各省/地区电力供需不均衡，省与省壁垒较高，无法解决资源流通与合理分配的问题，而跨省跨区电力交易的方式则能快速实现电力资源优化配置。所以，在2005年国家政府就开始布局跨省跨区交易了。</p>
-<p>跨省跨区中长期交易已有13年的发展历程，2018年之前，主要还停留在政策搭建阶段，个别省份虽有开展，但一直未成规模。且在新一轮售电改革开展，交易主体活跃度持续升级的大背景下，这种情况仍未改善，《2018年上半年全国电力市场交易情况》数据显示省间(含跨区)市场交易电量合计1485亿千瓦时，仅占全国市场交易电量的19.7%，省间交易比重过低，个别地区的省间壁垒依然存在。在此契机下，政府出台了《实施细则》，计划全面激活跨省跨区交易，标志着跨省跨区交易进入实质推行阶段，并于9月1日全面推行。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    <div class="blog-description">
+      Just in progress
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <ul class="user-detail desktop-only">
     
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.gif"
-                alt="Jay" />
-            
-              <p class="site-author-name" itemprop="name">Jay</p>
-              <p class="site-description motion-element" itemprop="description">Just in progress</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">91</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/JayVae" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/shi-hai-jie-35" target="_blank" title="Zhihu">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="wechat" target="_blank" title="Wechat">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Wechat</a>
-                  </span>
-                
-            </div>
-          
-
-		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=554191378&auto=1&height=66"></iframe>
-		  
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Jay</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
+    <li>
+      <i class="fa fa-map-marker"></i>
+      XIan
+    </li>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
+    <li>
+      <i class="fa fa-envelope-o"></i>
+      <a href="mailto:919433524@qq.com">919433524@qq.com</a>
+    </li>
     
-    <span title="Site words total count">37.3k</span>
-  
+    <li>
+      <i class="fa fa-link"></i>
+      <a href="http://yoursite.com">http://yoursite.com</a>
+    </li>
+  </ul>
+
+  <div class="social-media desktop-only">
+    <h4>Social Media</h4>
+    <ul>
+      
+    </ul>
+  </div>
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="blog-detail">
+    
+<nav class="blog-detail-nav desktop-only">
+  <ul class="clearfix">
+    <li class="selected">
+      <a href="/">Overview</a></li>
+    <li class="">
+      <a href="/archives">Posts <span class="counter">91</span></a>
+    </li>
+    <li class="">
+      <a href="/categories">Categories <span
+                class="counter">10</span></a></li>
+    <li class="">
+      <a href="/tags">Tags <span class="counter">14</span></a></li>
+  </ul>
+</nav>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
+    <div class="body-secondary">
+      <p class="right-title">Recent post</p>
+      <ul class="recent-post clearfix">
         
-
-
-
-
-
-
-
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2018/12/26/数据模型/">数据模型</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               
+  集中交易时，有个总的市场电量 
+ 
+  交易结果怎么存 
+ 
+  交易流程 
+ 
+  成本模
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
         
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2018/12/25/算法之一些未解决的问题/">算法之一些未解决的问题</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               欧拉环 kmp manacher算法 约瑟夫环 
+
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2018/12/25/算法之链表和数组思路/">算法之链表和数组思路</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               链表的题目基本都是分三步走: 1.连过来。把想要的节点连到你需要的链表上 2.指针走。该节点处理完
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2018/12/25/算法之双索引技术/">算法之双索引技术</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               
+ 对撞指针；（例如有序数组中两个数之和） 
+ 滑动窗口（leetcode209,3，438,76
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2018/12/24/REC：进展及计划记录/">REC：进展及计划记录</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+                 2018-12-24   当前的任务是  —将整个项目和论文的框架梳理下来，确定着重研究的方向
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2018/12/22/电力交易业务之新的查询资料/">电力交易业务之新的查询资料</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+                 参考【用电侧市场放开下的电力市场多主体博弈】  
+  批发市场和零售市场 新电改下的电力市场结
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
+        
+      </ul>
+      <div class="calendar-container" id="calendar">
+  <div class="calendar">
+    <h3>
+      {{posts.length}} contributions in the last year
+    </h3>
+    <div class="calendar-graph-container">
+      <div class="calendar-graph">
+        <svg width="676" height="104" @mouseout="mouseoverDate=null">
+          <g transform="translate(16, 20)">
+            <g v-for="week in calendar" :transform="week.transform">
+              <rect v-for="day in week.days"
+                    :x="day.x"
+                    :y="day.y"
+                    :fill="day.fill"
+                    @click="selectedDate=day.date"
+                    @mouseover="mouseoverDate=day.date"
+                    :class="{active:selectedDate===day.date}"
+                    data-count="{{day.posts.length}}"
+                    data-date="{{day.date}}"
+                    class="day" width="10" height="10"
+              ></rect>
+            </g>
+
+            <text v-for="month in monthLabels"
+                  :x="month.x"
+                  y="-5"
+                  class="month">{{month.text}}
+            </text>
+
+
+            <text text-anchor="start" class="wday" dx="-14" dy="8"
+                  style="display: none;">S
+            </text>
+            <text text-anchor="start" class="wday" dx="-14" dy="20">Mon</text>
+            <text text-anchor="start" class="wday" dx="-14" dy="32"
+                  style="display: none;">T
+            </text>
+            <text text-anchor="start" class="wday" dx="-14" dy="44">Wed</text>
+            <text text-anchor="start" class="wday" dx="-14" dy="57"
+                  style="display: none;">T
+            </text>
+            <text text-anchor="start" class="wday" dx="-14" dy="69">Fri</text>
+            <text text-anchor="start" class="wday" dx="-14" dy="81"
+                  style="display: none;">S
+            </text>
+          </g>
+        </svg>
+        <div class="svg-tip svg-tip-one-line"
+             v-bind:style="{ top: svgtip.top, left: svgtip.left, display: svgtip.display}">
+          <strong>{{svgtip.text}}</strong> on
+          {{moment(mouseoverDate).format('MMM DD, YYYY')}}
+        </div>
       </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
+      <div class="calendar-footer clearfix">
+      <span>
+        <a href="#">Learn how we count contributions.</a>
+      </span>
+        <div class="calendar-legend">
+          <span>Less</span>
+          <ul class="legend">
+            <li style="background-color: #eee"></li>
+            <li style="background-color: #d6e685"></li>
+            <li style="background-color: #8cc665"></li>
+            <li style="background-color: #44a340"></li>
+            <li style="background-color: #1e6823"></li>
+          </ul>
+          <span>More</span>
+        </div>
       </div>
-    
-
-    
-
+    </div>
   </div>
 
-  
+  <h3>Contribution activity</h3>
+  <div class="contribution-list">
+    <ul>
+      <li v-for="post in posts | filterBy selectedDate in 'date'">
+        <a href="{{post.url}}">{{post.title}}
+        </a>
+        <span>{{post.date}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+
+<script>
+  var posts = [{"date":"2018-04-23","title":"第一次","url":"http://yoursite.com/2018/04/23/hello-world/"},{"date":"2018-04-24","title":"mrakdown","url":"http://yoursite.com/2018/04/24/first/"},{"date":"2018-04-24","title":"每日计划","url":"http://yoursite.com/2018/04/24/plan/"},{"date":"2018-04-25","title":"CV规划","url":"http://yoursite.com/2018/04/25/CV规划/"},{"date":"2018-05-11","title":"剑指offer第一天","url":"http://yoursite.com/2018/05/11/剑指offer笔记/"},{"date":"2018-05-13","title":"链表","url":"http://yoursite.com/2018/05/13/JZOffer之链表/"},{"date":"2018-05-15","title":"java编程语言","url":"http://yoursite.com/2018/05/15/JZOffer之java编程语言/"},{"date":"2018-05-22","title":"工作啊工作","url":"http://yoursite.com/2018/05/22/工作啊工作/"},{"date":"2018-05-22","title":"基础知识的刷题顺序","url":"http://yoursite.com/2018/05/22/基础知识的刷题顺序/"},{"date":"2018-05-26","title":"JZOffer之高质量的代码","url":"http://yoursite.com/2018/05/26/JZOffer之高质量的代码/"},{"date":"2018-05-26","title":"JZOffer之解决面试题的思路","url":"http://yoursite.com/2018/05/26/JZOffer之解决面试题的思路/"},{"date":"2018-06-01","title":"神器网站","url":"http://yoursite.com/2018/06/01/神器网站/"},{"date":"2018-06-12","title":"近一周在忙中期","url":"http://yoursite.com/2018/06/12/近一周在忙中期/"},{"date":"2018-06-20","title":"桶排序","url":"http://yoursite.com/2018/06/20/桶排序/"},{"date":"2018-07-03","title":"简历项目整理","url":"http://yoursite.com/2018/07/03/简历项目整理/"},{"date":"2018-07-10","title":"拒绝无意义的事情，把时间浪费在美好事情上","url":"http://yoursite.com/2018/07/10/拒绝无意义的事情，把时间浪费在美好事情上/"},{"date":"2018-07-11","title":"算法面试","url":"http://yoursite.com/2018/07/11/算法面试/"},{"date":"2018-07-12","title":"面试算法之数组问题","url":"http://yoursite.com/2018/07/12/面试算法之数组问题/"},{"date":"2018-07-12","title":"面试算法之时间复杂度","url":"http://yoursite.com/2018/07/12/面试算法之时间复杂度/"},{"date":"2018-07-13","title":"面试算法之查找表的问题","url":"http://yoursite.com/2018/07/13/面试算法之查找表的问题/"},{"date":"2018-07-13","title":"面试算法之在链表中穿针引线","url":"http://yoursite.com/2018/07/13/面试算法之在链表中穿针引线/"},{"date":"2018-07-14","title":"面试算法之二叉树与递归","url":"http://yoursite.com/2018/07/14/面试算法之二叉树与递归/"},{"date":"2018-07-14","title":"面试算法之栈队列优先队列","url":"http://yoursite.com/2018/07/14/面试算法之栈队列优先队列/"},{"date":"2018-07-15","title":"面试算法之动态规划基础","url":"http://yoursite.com/2018/07/15/面试算法之动态规划基础/"},{"date":"2018-07-16","title":"面试算法之贪心算法","url":"http://yoursite.com/2018/07/16/面试算法之贪心算法/"},{"date":"2018-07-16","title":"简历制作之简历基本构成","url":"http://yoursite.com/2018/07/16/简历制作之简历基本构成/"},{"date":"2018-07-16","title":"简历制作","url":"http://yoursite.com/2018/07/16/简历制作/"},{"date":"2018-07-19","title":"简历之软件开发工程师（Java）","url":"http://yoursite.com/2018/07/19/简历之软件开发工程师（Java）/"},{"date":"2018-07-19","title":"简历之算法工程师的岗位描述和职责要求","url":"http://yoursite.com/2018/07/19/简历之算法工程师的岗位描述和职责要求/"},{"date":"2018-07-26","title":"jdk各个版本比较","url":"http://yoursite.com/2018/07/26/jdk各个版本比较/"},{"date":"2018-07-26","title":"有道云笔记汇总","url":"http://yoursite.com/2018/07/26/有道云笔记汇总/"},{"date":"2018-07-30","title":"Java反射","url":"http://yoursite.com/2018/07/30/Java反射/"},{"date":"2018-08-01","title":"设计模式之工厂模式","url":"http://yoursite.com/2018/08/01/设计模式之工厂模式/"},{"date":"2018-08-01","title":"设计模式之观察者模式","url":"http://yoursite.com/2018/08/01/设计模式之观察者模式/"},{"date":"2018-08-01","title":"设计模式之策略模式","url":"http://yoursite.com/2018/08/01/设计模式之策略模式/"},{"date":"2018-08-01","title":"‘设计模式之适配器模式","url":"http://yoursite.com/2018/08/01/‘设计模式之适配器模式/"},{"date":"2018-08-01","title":"设计模式之代理模式","url":"http://yoursite.com/2018/08/01/设计模式之代理模式/"},{"date":"2018-08-01","title":"设计模式之单例模式","url":"http://yoursite.com/2018/08/01/设计模式之单例模式/"},{"date":"2018-08-02","title":"设计模式之生产者消费者模式","url":"http://yoursite.com/2018/08/02/设计模式之生产者消费者模式/"},{"date":"2018-08-05","title":"spring中的设计模式","url":"http://yoursite.com/2018/08/05/spring中的设计模式/"},{"date":"2018-08-11","title":"Java待补充问题","url":"http://yoursite.com/2018/08/11/Java待补充问题/"},{"date":"2018-08-19","title":"面试算法之回溯算法","url":"http://yoursite.com/2018/08/19/面试算法之回溯算法/"},{"date":"2018-08-21","title":"面试算法之递归与回溯","url":"http://yoursite.com/2018/08/21/面试算法之递归与回溯/"},{"date":"2018-08-22","title":"双指针","url":"http://yoursite.com/2018/08/22/双指针/"},{"date":"2018-08-22","title":"面试算法之大数问题","url":"http://yoursite.com/2018/08/22/面试算法之大数问题/"},{"date":"2018-08-26","title":"树的基本概念和高度平衡的二叉树","url":"http://yoursite.com/2018/08/26/树的基本概念和高度平衡的二叉树/"},{"date":"2018-09-21","title":"大数据算法","url":"http://yoursite.com/2018/09/21/大数据算法/"},{"date":"2018-09-21","title":"算术运算和位运算","url":"http://yoursite.com/2018/09/21/算术运算和位运算/"},{"date":"2018-09-23","title":"offer情况","url":"http://yoursite.com/2018/09/23/offer情况/"},{"date":"2018-09-26","title":"HEXO高级功能","url":"http://yoursite.com/2018/09/26/HEXO改进/"},{"date":"2018-09-26","title":"智能代理机器人","url":"http://yoursite.com/2018/09/26/智能代理机器人/"},{"date":"2018-10-25","title":"分布式锁","url":"http://yoursite.com/2018/10/25/分布式锁/"},{"date":"2018-10-25","title":"分布式事务","url":"http://yoursite.com/2018/10/25/分布式事务/"},{"date":"2018-11-15","title":"Docker","url":"http://yoursite.com/2018/11/15/Docker/"},{"date":"2018-11-15","title":"与前端开发并行工作的两个工具","url":"http://yoursite.com/2018/11/15/与前端开发并行工作的两个工具/"},{"date":"2018-11-15","title":"Linux与Windows不同","url":"http://yoursite.com/2018/11/15/Linux与Windows不同/"},{"date":"2018-11-15","title":"shell基础","url":"http://yoursite.com/2018/11/15/shell基础/"},{"date":"2018-11-29","title":"接口与抽象类","url":"http://yoursite.com/2018/11/29/接口与抽象类/"},{"date":"2018-12-03","title":"JADE使用的一些问题记录","url":"http://yoursite.com/2018/12/03/JADE使用的一些问题记录/"},{"date":"2018-12-12","title":"仿真器","url":"http://yoursite.com/2018/12/12/仿真器/"},{"date":"2018-12-12","title":"代码设计之类","url":"http://yoursite.com/2018/12/12/代码设计之类/"},{"date":"2018-12-13","title":"电力市场业务","url":"http://yoursite.com/2018/12/13/电力市场业务/"},{"date":"2018-12-19","title":"智能代理算法","url":"http://yoursite.com/2018/12/19/智能代理算法/"},{"date":"2018-12-20","title":"难点之电力市场业务","url":"http://yoursite.com/2018/12/20/难点之电力市场业务/"},{"date":"2018-12-22","title":"电力交易业务之新的查询资料","url":"http://yoursite.com/2018/12/22/电力交易业务之新的查询资料/"},{"date":"2018-12-22","title":"集中出清规则","url":"http://yoursite.com/2018/12/22/集中出清规则/"},{"date":"2018-12-24","title":"REC：进展及计划记录","url":"http://yoursite.com/2018/12/24/REC：进展及计划记录/"},{"date":"2018-12-25","title":"算法之一些未解决的问题","url":"http://yoursite.com/2018/12/25/算法之一些未解决的问题/"},{"date":"2018-12-25","title":"算法之链表和数组思路","url":"http://yoursite.com/2018/12/25/算法之链表和数组思路/"},{"date":"2018-12-25","title":"算法之双索引技术","url":"http://yoursite.com/2018/12/25/算法之双索引技术/"},{"date":"2018-12-26","title":"数据模型","url":"http://yoursite.com/2018/12/26/数据模型/"},{"date":"2019-01-02","title":"一些待解决问题","url":"http://yoursite.com/2019/01/02/一些待解决问题/"},{"date":"2019-01-02","title":"码农翻身杂记","url":"http://yoursite.com/2019/01/02/码农翻身杂记/"},{"date":"2019-01-02","title":"java8中的声明式风格","url":"http://yoursite.com/2019/01/02/java8中的声明式风格/"},{"date":"2019-01-03","title":"时间的朋友2019","url":"http://yoursite.com/2019/01/03/时间的朋友2019/"},{"date":"2019-01-03","title":"计算机网络自顶向下方法","url":"http://yoursite.com/2019/01/03/计算机网络自顶向下方法/"},{"date":"2019-01-07","title":"JADE使用的一些问题记录（二）","url":"http://yoursite.com/2019/01/07/JADE使用的一些问题记录 (2)/"},{"date":"2019-01-08","title":"智能代理机器人web开发","url":"http://yoursite.com/2019/01/08/智能代理机器人web开发/"},{"date":"2019-01-10","title":"2019要看的书","url":"http://yoursite.com/2019/01/10/2019要看的书/"},{"date":"2019-01-12","title":"ellen情况","url":"http://yoursite.com/2019/01/12/ellen情况/"},{"date":"2019-01-12","title":"todo","url":"http://yoursite.com/2019/01/12/todo/"},{"date":"2019-01-15","title":"论文后续","url":"http://yoursite.com/2019/01/15/论文后续/"},{"date":"2019-01-16","title":"陕西省电力交易模式","url":"http://yoursite.com/2019/01/16/陕西省电力交易模式/"},{"date":"2019-02-20","title":"java前后端跨域问题","url":"http://yoursite.com/2019/02/20/java前后端跨域问题/"},{"date":"2019-02-20","title":"关于Vue","url":"http://yoursite.com/2019/02/20/关于Vue/"},{"date":"2019-02-21","title":"cookie,token,session","url":"http://yoursite.com/2019/02/21/cookie-token-session/"},{"date":"2019-02-25","title":"fluent-terminal","url":"http://yoursite.com/2019/02/25/fluent-terminal/"},{"date":"2019-02-26","title":"English Paper","url":"http://yoursite.com/2019/02/26/English-Paper/"},{"date":"2019-03-14","title":"checkList","url":"http://yoursite.com/2019/03/14/checkList/"},{"date":"2019-03-15","title":"售电侧用电侧","url":"http://yoursite.com/2019/03/15/售电侧用电侧/"},{"date":"2019-03-17","title":"电力市场与双边","url":"http://yoursite.com/2019/03/17/电力市场与双边/"}];
+  var today = moment().format('YYYY-MM-DD');
+  var oneYearAgo = moment(today).subtract(1, 'years');
+  posts = posts.filter(function(post) {
+    return new Date(post.date) > oneYearAgo;
+  });
+  var monthLabels = [];
+  var monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var calendar = getCalendar(posts);
+
+  var dateRange = {
+    start: moment(oneYearAgo).format('MMM D, YYYY'),
+    end: moment().format('MMM D, YYYY')
   }
+
+  var app = new Vue({
+    el: '#calendar',
+    data: {
+      posts: posts,
+      selectedDate: null,
+      calendar: calendar,
+      dateRange: dateRange,
+      mouseoverDate: null,
+      moment: moment,
+      monthLabels: monthLabels
+    },
+    created: function() {
+      this.selectedDate = 'none';
+    },
+    methods: {},
+    computed: {
+      svgtip: function() {
+        var date = this.mouseoverDate;
+        var display = date ? 'block' : 'none';
+        if (date) {
+          var coordinator = getIndexByDate(date);
+          var x = coordinator[0];
+          var y = coordinator[1];
+          var len = this.calendar[x].days[y].posts.length;
+          var text = len ? len + ' contributions' : 'No contributions';
+          var left = coordinator[0] * 12 - 37 + 'px';
+          coordinator[1] = coordinator[0] ? coordinator[1] : coordinator[1] + oneYearAgo.day();
+          var top = coordinator[1] * 12 + 12 - 32 + 'px';
+        }
+        return {
+          text: text,
+          left: left,
+          top: top,
+          display: display
+        }
+      }
+    }
+  });
+
+  function getCalendar(posts) {
+    // raw calendar
+    var maxCount = 0;
+    var tmr = new Date();
+    tmr.setDate(tmr.getDate() + 1);
+    var tmrStr = tmr.toISOString().slice(0, 10);
+    var date = new Date();
+    date.setYear(date.getFullYear() - 1); // start date is a year ago;
+    var calendar = [];
+    while (date.toISOString().slice(0, 10) !== tmrStr) {
+      var day = date.getDay();
+      if (day === 0 || calendar.length === 0) {
+        var x = calendar.length * 13;
+        calendar.push({
+          transform: 'translate(' + x + ',0)',
+          days: []
+        })
+      }
+
+      calendar[calendar.length - 1].days.push({
+        x: 14 - calendar.length,
+        y: day * 12,
+        date: date.toISOString().slice(0, 10),
+        posts: []
+      });
+
+      if (day === 0 && date.getDate() < 8) {
+        monthLabels.push({
+          x: 14 - calendar.length + x,
+          text: monthName[date.getMonth() - 1]
+        })
+      }
+
+      date.setDate(date.getDate() + 1);
+    }
+
+    // handle post info
+    posts.forEach(function(post) {
+      var x = getIndexByDate(post.date)[0];
+      var y = getIndexByDate(post.date)[1];
+
+      calendar[x].days[y].posts.push({
+        title: post.title,
+        url: post.url
+      });
+
+      var len = calendar[x].days[y].posts.length;
+      maxCount = Math.max(len, maxCount);
+    })
+
+    // handle fill color
+    calendar.forEach(function(week) {
+      week.days.forEach(function(day) {
+        day.fill = getColorByLength(day.posts.length, maxCount);
+      })
+    })
+
+    return calendar;
+  }
+
+  function getIndexByDate(date) {
+    date = moment(date);
+    var firstColumnLen = 7 - oneYearAgo.day();
+    var days = date.diff(oneYearAgo, 'days');
+
+    var x = days > firstColumnLen - 1 ? Math.ceil((days - firstColumnLen + 1) / 7) : 0;
+    var y = days > firstColumnLen - 1 ? date.day() : date.day() - oneYearAgo.day();
+    return [x, y];
+  }
+
+  function getColorByLength(len, max) {
+    var colors = ['#eee', '#d6e685', '#8cc665', '#44a340', '#1e6823'];
+    var colorsLen = colors.length - 1;
+    var color = len ? colors[0] : colors[1];
+    var interval = max / colorsLen;
+    if (max < colorsLen) {
+      color = colors[len];
+    } else {
+      color = colors[Math.ceil(len / interval)];
+    }
+    return color;
+  }
+
 </script>
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 Jay</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
     
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
+  </footer>
+</div>
 
 
 
 
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("SWULgkVHBjhFp99nBHCr8oHC-gzGzoHsz", "DQQN5XsGzlq3PIf1OSvGvoRR");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
+<script src="/js/main.js"></script>
 
 </body>
 </html>

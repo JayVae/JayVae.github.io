@@ -1,1473 +1,2052 @@
 <!DOCTYPE html>
+<html lang="zh-Hans">
 
 
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    JayVae&#39;s Blog
+  </title>
+  <meta name="description" content="Just in progress">
+  
+  <meta name="author" content="Jay">
 
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="Just in progress">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JayVae&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
-<meta property="og:site_name" content="JayVae&#39;s Blog">
-<meta property="og:description" content="Just in progress">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JayVae&#39;s Blog">
-<meta name="twitter:description" content="Just in progress">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+<script>
+  var _hmt = _hmt || [];
+  (function(){var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
+    var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
-
-
-
-
-
-  <title>归档 | JayVae's Blog</title>
-  
-
-
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body id="replica-app">
 
-  
-  
-    
-  
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
 
-  <div class="container sidebar-position-left page-archive">
-    <div class="headband"></div>
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">JayVae's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Hello, I'm  newbie</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+      <ul class="navbar-nav float-left">
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
+        <li><a href="/archives">Archives</a></li>
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
+        <li><a href="/categories">Categories</a></li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
+        <li><a href="/tags">Tags</a></li>
         
-        <li class="menu-item menu-item-guestbook">
-          <a href="/guestbook" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
-            
-            留言
-          </a>
-        </li>
-      
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
         </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://avatars2.githubusercontent.com/u/5300359?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
     </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
 
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
+<div class="main-container">
   
+
+<div class="container-lg">
   
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-          
-        很好! 目前共计 91 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/26/数据模型/" itemprop="url">
-              
-                <span itemprop="name">数据模型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-26T18:59:19+08:00"
-              content="2018-12-26" >
-          12-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/25/算法之一些未解决的问题/" itemprop="url">
-              
-                <span itemprop="name">算法之一些未解决的问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-25T15:52:21+08:00"
-              content="2018-12-25" >
-          12-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/25/算法之链表和数组思路/" itemprop="url">
-              
-                <span itemprop="name">算法之链表和数组思路</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-25T15:21:00+08:00"
-              content="2018-12-25" >
-          12-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/25/算法之双索引技术/" itemprop="url">
-              
-                <span itemprop="name">算法之双索引技术</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-25T15:17:50+08:00"
-              content="2018-12-25" >
-          12-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/24/REC：进展及计划记录/" itemprop="url">
-              
-                <span itemprop="name">REC：进展及计划记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-24T14:46:52+08:00"
-              content="2018-12-24" >
-          12-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/22/电力交易业务之新的查询资料/" itemprop="url">
-              
-                <span itemprop="name">电力交易业务之新的查询资料</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-22T21:10:10+08:00"
-              content="2018-12-22" >
-          12-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/22/集中出清规则/" itemprop="url">
-              
-                <span itemprop="name">集中出清规则</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-22T14:20:00+08:00"
-              content="2018-12-22" >
-          12-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/20/难点之电力市场业务/" itemprop="url">
-              
-                <span itemprop="name">难点之电力市场业务</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-20T13:24:52+08:00"
-              content="2018-12-20" >
-          12-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/19/智能代理算法/" itemprop="url">
-              
-                <span itemprop="name">智能代理算法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-19T09:47:26+08:00"
-              content="2018-12-19" >
-          12-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/13/电力市场业务/" itemprop="url">
-              
-                <span itemprop="name">电力市场业务</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-13T14:32:18+08:00"
-              content="2018-12-13" >
-          12-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
+<div class="blog-intro">
+  <div class="blog-intro-user">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/5300359?v=4&amp;s=460">
+    <div class="user-name">
+      <div class="blog-title">JayVae&#39;s Blog</div>
+      <div class="blog-author">Jay</div>
+        <ul class="user-detail mobile-only">
+    
+    <li>
+      <i class="fa fa-map-marker"></i>
+      XIan
+    </li>
+    
+    <li>
+      <i class="fa fa-envelope-o"></i>
+      <a href="mailto:919433524@qq.com">919433524@qq.com</a>
+    </li>
+    
+    <li>
+      <i class="fa fa-link"></i>
+      <a href="http://yoursite.com">http://yoursite.com</a>
+    </li>
+  </ul>
     </div>
-  </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/8/">8</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    <div class="blog-description">
+      Just in progress
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <ul class="user-detail desktop-only">
     
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.gif"
-                alt="Jay" />
-            
-              <p class="site-author-name" itemprop="name">Jay</p>
-              <p class="site-description motion-element" itemprop="description">Just in progress</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">91</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/JayVae" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/shi-hai-jie-35" target="_blank" title="Zhihu">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="wechat" target="_blank" title="Wechat">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Wechat</a>
-                  </span>
-                
-            </div>
-          
-
-		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=554191378&auto=1&height=66"></iframe>
-		  
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Jay</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
+    <li>
+      <i class="fa fa-map-marker"></i>
+      XIan
+    </li>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
+    <li>
+      <i class="fa fa-envelope-o"></i>
+      <a href="mailto:919433524@qq.com">919433524@qq.com</a>
+    </li>
     
-    <span title="Site words total count">37.3k</span>
-  
+    <li>
+      <i class="fa fa-link"></i>
+      <a href="http://yoursite.com">http://yoursite.com</a>
+    </li>
+  </ul>
+
+  <div class="social-media desktop-only">
+    <h4>Social Media</h4>
+    <ul>
+      
+    </ul>
+  </div>
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+  <div class="blog-detail">
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+<nav class="blog-detail-nav desktop-only">
+  <ul class="clearfix">
+    <li class="">
+      <a href="/">Overview</a></li>
+    <li class="selected">
+      <a href="/archives">Posts <span class="counter">91</span></a>
+    </li>
+    <li class="">
+      <a href="/categories">Categories <span
+                class="counter">10</span></a></li>
+    <li class="">
+      <a href="/tags">Tags <span class="counter">14</span></a></li>
+  </ul>
+</nav>
+
+    <div class="body-secondary">
+      <ul class="archive-list">
         
-      </div>
-    
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/26/数据模型/">数据模型</a></h2>
+          <p>
+             
+  集中交易时，有个总的市场电量 
+ 
+  交易结果怎么存 
+ 
+  交易流程 
+ 
+  成本模型:包括 固定成本和可变成本【见《电力市场经济学》黄书 P98】 
+           建设成本              维修成本              运行成本              薪...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545821959000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/25/算法之一些未解决的问题/">算法之一些未解决的问题</a></h2>
+          <p>
+             欧拉环 kmp manacher算法 约瑟夫环 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545724341000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/25/算法之链表和数组思路/">算法之链表和数组思路</a></h2>
+          <p>
+             链表的题目基本都是分三步走: 1.连过来。把想要的节点连到你需要的链表上 2.指针走。该节点处理完了,在原来的链表上要走一步. 3.断后路。当前链表不要和原来链表有连接 4.调状态。调整当前各指针的记录状态 
+ 其他部分仅仅是为了保存状态的。 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545722460000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/25/算法之双索引技术/">算法之双索引技术</a></h2>
+          <p>
+             
+ 对撞指针；（例如有序数组中两个数之和） 
+ 滑动窗口（leetcode209,3，438,76） 
+ 
+ 遇到数据和链表，先尝试用双指针方法来解决。 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545722270000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/24/REC：进展及计划记录/">REC：进展及计划记录</a></h2>
+          <p>
+               2018-12-24   当前的任务是  —将整个项目和论文的框架梳理下来，确定着重研究的方向和论文展示方向。 —在确定之后，需要将数据模型抽象出来（最主要的是报价、成本、利润模型需要的参数），本期需要用的数据库定义出来。 —展示的web界面初稿绘制出来。 
+ 
+ 其实来说，当前最需要的一步是...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545634012000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/22/电力交易业务之新的查询资料/">电力交易业务之新的查询资料</a></h2>
+          <p>
+               参考【用电侧市场放开下的电力市场多主体博弈】  
+  批发市场和零售市场 新电改下的电力市场结构 
+ 
+  市场博弈模型也可参考上文 但是发电商的投标函数并没有体现。 
+ 
+  既有自主协商交易又有集中竞价交易； 
+ 
+  这篇文章中也有强化学习 
+ 
+  但是总体来说这篇文章重点在于售电公司...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545484210000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/22/集中出清规则/">集中出清规则</a></h2>
+          <p>
+               输入：   电厂报价报量`arr1[][]`,
+用户报价报量`arr2[][]`。
+不应该是数组，而应该是一个抽象的数据类型，存有
+     输出：   出清价格：Price
+成交电量对（一个用户可以在多个成交对之中）ResultSet。
+     算法流程：  0-. 按地区分组 
+ 
+ 数...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545459600000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/20/难点之电力市场业务/">难点之电力市场业务</a></h2>
+          <p>
+             
+  长期的集中撮合的成本函数以及报价函数，利润函数的制定？ 不是与出力有关，而是与电量有关。 
+ 
+  电力用户的利润函数？ 
+ 
+  边际成本？ 边际运行成本和边际价格是不一样的，后者是出清时的概念。 
+ 
+  代理算法 
+ 
+  如果用集中竞价交易，流程参考陕西省文件 
+ 
+  定价不等于报...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545283492000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/19/智能代理算法/">智能代理算法</a></h2>
+          <p>
+             
+  “强化学习部分的理论”按照西瓜书的内容消化了再写。 
+ 
+  智能代理的流程 
+ 
+  策略空间是啥（策略集） 
+ 
+ 
+ 按容量报价？？？？【原理】 
+ 报价策略：按照成本报价、按照持留容量（《电力市场原理与实践》） 又可以分为保守型（用电侧市场放开下的电力市场多主体博弈） 
+ 智能代理迭...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1545184046000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/13/电力市场业务/">电力市场业务</a></h2>
+          <p>
+             
+  报价模型与成本模型 
+ 
+  不同电厂的成本模型 
+ 
+  出清算法 
+ 
+  具体的出清过程是怎样的？ 
+ 
+ 
+ 
+ 集中交易参考陕西省 《关于开展陕西省2018年下半年集中竞价模式电力直接交易的通知》  
+ 
+ 5.1 交易申报： 电力用户、售电公司和发电企业，申报内容包括购、售电量和...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1544682738000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/12/代码设计之类/">代码设计之类</a></h2>
+          <p>
+            ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1544598054000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/12/仿真器/">仿真器</a></h2>
+          <p>
+             
+  仿真容器，仿真时序的设置 盘数、轮数 
+ 
+  最后的界面是什么样的？ 2.1 前端页面包括的部分： 2.1.1 自定义节点 2.1.2 仿真参数设置 2.1.3 仿真阶段设置（几轮） 2.1.4 仿真结果展示 2.1.5 交易 2.2 各部分应该怎么展示： 
+ 
+  前后端的交互问题： 前...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1544585670000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/12/03/JADE使用的一些问题记录/">JADE使用的一些问题记录</a></h2>
+          <p>
+             
+  怎么不用-gui启动jade。 
+ 
+  仿真调度流程 
+ 
+  外部调用jade？ 
+ 
+  agent算法在这里怎么集成？也就是策略。 
+ 
+  一个完整的图书交易流程是怎样的？ 行为是怎么添加的？ 
+ 
+  jade能分段仿真吗？ 
+ 
+  buyer中缺少一个输入的包装类 
+ 
+  ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1543842499000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/11/29/接口与抽象类/">接口与抽象类</a></h2>
+          <p>
+               抽象类和接口的区别  
+ 语法层面上的区别 
+ 
+ 　　1）抽象类可以提供成员方法的实现细节，而接口中只能存在public abstract 方法； 
+ 　　2）抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是public static final类型的； 
+ 　　3）接口中不能含...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1543474122000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/11/15/与前端开发并行工作的两个工具/">与前端开发并行工作的两个工具</a></h2>
+          <p>
+             
+ 使用Swagger自动生成html文档 
+ 
+ 使用WireMock快速伪造RESTful服务 
+ 
+   Swagger  
+ maven：springfox-swagger2和springfox-swagger-ui 
+ 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1542283333000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/11/15/shell基础/">shell基础</a></h2>
+          <p>
+             
+ 命令行解释器（将用户的指令翻译成机器语言传给计算机内核[硬件] 以及反向）； 还是一个强大的编程语言。shell是解释执行的脚本语言，在shell中可以直接待用Linux系统指令。 
+ sh。Linux支持csh,bash等shell 
+ 脚本执行方式： 3.1 echo输出命令；  echo...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Linux/">Linux</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Linux/"><i class="fa fa-folder-open"></i> Linux</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1542274370000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/11/15/Docker/">Docker</a></h2>
+          <p>
+             
+ �ֲڵ����Ϊ�������������������������������� 
+ 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1542273456000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/11/15/Linux与Windows不同/">Linux与Windows不同</a></h2>
+          <p>
+             
+ Linux严格区分大小写； 
+ 一切内容皆文件，所有内容以文件形式保存，包括硬件； 
+ Linux没有扩展名，但会有一些约定俗成的写法   
+  windows中的程序不能直接在linux中安装和运行； 
+ 
+  Linux文件管理   
+ 
+ 
+   
+ 
+ Linux学习路径   
+ 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Linux/">Linux</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Linux/"><i class="fa fa-folder-open"></i> Linux</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1542272696000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/10/25/分布式事务/">分布式事务</a></h2>
+          <p>
+             
+ 引用自 https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html  
+ 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1540439925000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/10/25/分布式锁/">分布式锁</a></h2>
+          <p>
+             
+ 引用自 https://www.cnblogs.com/austinspark-jessylu/p/8043726.html  
+ 
+   分布式的CAP理论   任何一个分布式系统都无法同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partitio...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1540436325000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/09/26/智能代理机器人/">智能代理机器人</a></h2>
+          <p>
+             
+ 孤军奋战，加油~~ 
+ 
+ 
+ 方案可行性及实现：论证 
+ 确定开发流程 
+ 工作计划 
+ 第一步的任务 
+ 写论文的创新点在哪？？？ 
+ 
+ 
+ 画方案 设计数据模型 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/课题/">课题</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/课题/"><i class="fa fa-folder-open"></i> 课题</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1537951496000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/09/26/HEXO改进/">HEXO高级功能</a></h2>
+          <p>
+               如何改变皮肤？  步骤如下： 
+ 
+ 前往  hexo网站  选择皮肤，并点击进入github页面； 
+ 将git库clone到themes文件夹下； 
+ 修改conf配置文件，改为对应的名字； 
+ 有的图片需要配置按照github的readme来写。 
+ 
+   如何自定义博客结构？  
+ ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/博客/">博客</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/基本设置/"><i class="fa fa-folder-open"></i> 基本设置</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1537951496000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/09/23/offer情况/">offer情况</a></h2>
+          <p>
+             
+ 截止2018.09.23 按时间先后顺序 
+ 
+ 国家农业信息化工程技术研究中心 
+ 携程，上海 
+ 科华恒盛，厦门 
+ 华为，西安 
+ 顺丰科技，深圳 
+ 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/简历/">简历</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/工作/">工作</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/简历/"><i class="fa fa-folder-open"></i> 简历</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 2 </span>
+            <span>Published {{moment(1537698213000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/09/21/算术运算和位运算/">算术运算和位运算</a></h2>
+          <p>
+               位运算    布隆过滤器  
+ 场景  网页黑名单系统  垃圾邮件过滤系统  爬虫的网址判断重复系统  容忍一定程度的失误率  对空间要求较严格 
+ 优势：使用很少的空间做到正确率很高 
+ 原理：  引入了k(k&amp;gt;1)个相互独立的哈希函数，对输入进行取哈希值，然后将结果对m取余（m为bi...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1537538148000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/09/21/大数据算法/">大数据算法</a></h2>
+          <p>
+               先导 – 哈希算法  
+ 哈希函数，在于将输入映射到一定范围的输出，核心在于输出域的分布是否均匀。 
+ MD5,SHA都是经典的哈希函数算法实现 
+ 
+   Map-Reduce  
+ 过程 
+ Map阶段（hash）：把大任务划分为小任务 
+ Reduce阶段：把结果合并 
+ 
+ 
+ 注意点...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1537534240000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/26/树的基本概念和高度平衡的二叉树/">树的基本概念和高度平衡的二叉树</a></h2>
+          <p>
+               树结构中的常见用语:   节点的深度 - 从树的根节点到该节点的边数
+节点的高度 - 该节点和叶子之间最长路径上的边数
+树的高度 - 其根节点的高度 
+     什么是一个高度平衡的二叉搜索树?  一个高度平衡的二叉搜索树（平衡二叉搜索树）是在插入和删除任何节点之后，可以自动保持其高度最小。也...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1535286893000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/22/双指针/">双指针</a></h2>
+          <p>
+               两个常用场景（数组中）  
+ 前后同时，从不同位置出发  从两端向中间迭代数组。  一个指针从始端开始，而另一个指针从末端开始。 值得注意的是，这种技巧经常在排序数组中使用。 
+ 
+ 比如：反转字符串，数组拆分，两数和（有序数组） 
+ 
+ 两个不同步的指针（一个快指针一个慢指针），速度不同  ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1534924619000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/22/面试算法之大数问题/">面试算法之大数问题</a></h2>
+          <p>
+            ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1534923250000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/21/面试算法之递归与回溯/">面试算法之递归与回溯</a></h2>
+          <p>
+               树形问题  lc17 
+  递归调用的一个重要特征–要返回  
+   回溯法  回溯法 是依赖递归的 （要保证回去，递归本身会回去，但有些状态需要手动回去，比如全排列问题中使用辅助空间used） 
+ 回溯法是暴力解法的一个主要实现手段 动态规划就是在回溯法基础上实现的； 还可以通过某些剪枝不用...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1534853110000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/19/面试算法之回溯算法/">面试算法之回溯算法</a></h2>
+          <p>
+               简单概述   回溯法思路的简单描述是：把问题的解空间转化成了图或者树的结构表示，然后使用**深度优先搜索策略**进行遍历，遍历的过程中记录和寻找所有可行解或者最优解。
+   基本思想类同于：     • 图的深度优先搜索     • 二叉树的后序遍历       【          分支限界...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1534677464000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/11/Java待补充问题/">Java待补充问题</a></h2>
+          <p>
+             
+ TO BE CONTINUED 
+ 
+ 
+  单例的7种写法？double check？ 
+ 
+  多线程中几种锁？ 
+ 
+  可见性 
+ 
+  transient 类的有些属性需要序列化，而其他属性不需要被序列化，打个比方，如果一个用户有一些敏感信息（如密码，银行卡号等）， 为了安全起见，不...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1533954168000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/05/spring中的设计模式/">spring中的设计模式</a></h2>
+          <p>
+            ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1533462008000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/02/设计模式之生产者消费者模式/">设计模式之生产者消费者模式</a></h2>
+          <p>
+            ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1533218630000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/01/设计模式之观察者模式/">设计模式之观察者模式</a></h2>
+          <p>
+               定义  在对象之间定义了一对多的依赖，这样一来，当一个对象改变状态，依赖它的对象会收到通知并自动更新。 其实就是发布订阅模式，发布者发布信息，订阅者获取信息，订阅了就能收到信息，没订阅就收不到信息。 Subject-Observer，更新方法建议为update。 触发通知的时机是发布者状态改变...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/设计模式/">设计模式</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 2 </span>
+            <span>Published {{moment(1533113382000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/01/设计模式之策略模式/">设计模式之策略模式</a></h2>
+          <p>
+               定义  策略模式将可变的部分从程序中抽象分离成算法接口，在该接口下分别封装一系列算法实现并使它们可以相互替换，从而导致客户端程序独立于算法的改变。 
+   开发推荐的方式  复合优先于继承 多用组合，少用继承 
+   设计原则：  面向接口编程； 将共同的； 多用组合，少用继承。 
+   实现...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/设计模式/">设计模式</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 2 </span>
+            <span>Published {{moment(1533113340000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/01/‘设计模式之适配器模式/">‘设计模式之适配器模式</a></h2>
+          <p>
+             定义： 为解决不兼容而引入的 
+ 适配器分类： 
+ 
+ 组合 
+ 继承（由于java的单继承，重用性比较低） 
+ 
+ 作用： 透明；重用；低耦合 
+  https://www.cnblogs.com/V1haoge/p/6479118.html  
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/设计模式/">设计模式</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 2 </span>
+            <span>Published {{moment(1533111546000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/01/设计模式之工厂模式/">设计模式之工厂模式</a></h2>
+          <p>
+               概念：  实例化对象，用工厂方法代替new操作； 包括工厂方法模式和抽象工厂模式； 抽象工厂模式是工厂方法模式的扩展。 
+   意图：  定义一个接口来创建对象，但是让子类来决定哪些类需要被实例化； 工厂方法把实例化的工作推迟到子类中去实现。 
+   应用场景：  有一组类似的对象需要创建； ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/设计模式/">设计模式</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 2 </span>
+            <span>Published {{moment(1533108933000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/01/设计模式之代理模式/">设计模式之代理模式</a></h2>
+          <p>
+             定义： 为其他对象提供一种代理以控制对这个对象的访问； 
+ 静态代理实现： 
+ 
+ 继承实现； 
+ 聚合实现（更灵活）； 
+ 
+ 动态代理（如何体现动态，就是当接口中又添加新功能时，代理中不用改变）： 
+ 
+  实现步骤： 
+  使用被代理对象创建InvocationHandler对象实例  生成...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/设计模式/">设计模式</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 2 </span>
+            <span>Published {{moment(1533106212000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/08/01/设计模式之单例模式/">设计模式之单例模式</a></h2>
+          <p>
+             应用场合：有些对象只需要一个就足够了； 作用：保证某个实例只有一个 类型：懒汉模式和饿汉模式； 
+ 饿汉模式（加载的时候就已经创建实例了，加载类时比较慢，但运行时获取对象的速度比较快，线程安全）： 步骤： 
+ 
+ 将构造方法私有化，不允许外部直接创建对象； 
+ 创建类的唯一实例（私有静态）； 
+ ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/设计模式/">设计模式</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 2 </span>
+            <span>Published {{moment(1533105545000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/30/Java反射/">Java反射</a></h2>
+          <p>
+             Java反射机制是构建框架技术的基础所在。 Java反射机制是指在运行状态中，动态获取信息以及动态调用对象方法的功能。 
+ 动态性质： 
+ 
+ 运行时生成对象实例； 
+ 运行期间调用方法； 
+ 运行时更改属性。 
+ 
+ 使用Java反射技术常用的类如下： Class类等等 
+ 注意： 使用反射虽然...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1532933951000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/26/jdk各个版本比较/">jdk各个版本比较</a></h2>
+          <p>
+               JDK5  
+ 自动装箱与拆箱： 
+ 枚举 
+ 静态导入，如：import staticjava.lang.System.out 
+ 可变参数（Varargs） 
+ 内省（Introspector），主要用于操作JavaBean中的属性，通过getXxx/setXxx。一般的做法是通过类Int...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/java/">java</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/学习笔记/"><i class="fa fa-folder-open"></i> 学习笔记</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1532590532000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/26/有道云笔记汇总/">有道云笔记汇总</a></h2>
+          <p>
+               算法    机器学习与深度学习  
+  网易云课堂Andrew机器学习  
+  神经网络、keras、scikilearn、lstm  
+  机器学习中的基本概念  
+  深度学习  
+  数据处理   http://note.youdao.com/noteshare?id=2393e6055...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/java/">java</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/学习笔记/">学习笔记</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/算法/">算法</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/Python/">Python</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/机器学习/">机器学习</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/学习笔记/"><i class="fa fa-folder-open"></i> 学习笔记</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 5 </span>
+            <span>Published {{moment(1532587187000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/19/简历之软件开发工程师（Java）/">简历之软件开发工程师（Java）</a></h2>
+          <p>
+               岗位描述：  
+  京东 
+ 
+    1-2019年毕业，计算机软件、数学、物理等相关专业本科及以上学历 2-具有非常强的责任心，能够承担压力做事细心，参与独立系统的设计、开发、维护工作 3-了解web前端开发的基础知识，会面向对象程序设计（OOP）与基本的设计模式，了解linux及基本的操...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/简历/">简历</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/简历/"><i class="fa fa-folder-open"></i> 简历</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531989644000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/19/简历之算法工程师的岗位描述和职责要求/">简历之算法工程师的岗位描述和职责要求</a></h2>
+          <p>
+               岗位描述：  
+ 京东 
+    1-2019年毕业，本科及以上学历 2-研究及应用前沿互联网技术，如机器学习、深度学习、数据挖掘、推荐、搜索、自然语言处理、分布式并行算法、复杂网络、图像识别、计算机视觉、语音等 3-至少熟悉java, c++，python中的一种开发语言 4-良好的逻辑思维...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/简历/">简历</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/简历/"><i class="fa fa-folder-open"></i> 简历</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531989611000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/16/简历制作之简历基本构成/">简历制作之简历基本构成</a></h2>
+          <p>
+             一份简历按照 5号 和 小5字号 ，加上调整页边距后的空间，一页A4纸可以容纳 33到53 行。 
+   简历总体思维导图    
+  核心是经历。  从“岗位JD的分析”以及“经历撰写的句式与方法”两个角度，教会大家如何用职业人和职业化的口吻描述自己的经历。 
+   具体的经历写法对屏幕进行了截...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/简历/">简历</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/简历/"><i class="fa fa-folder-open"></i> 简历</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531745089000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/16/简历制作/">简历制作</a></h2>
+          <p>
+               以下的几篇都是 前辈学院-实习僧的简历课程    
+   简历制作前需要搞清楚的三个核心问题：  
+ 首先，同学们在什么情况下会使用简历？ 
+ 其次，简历在整个求职过程中有什么功能？或者说站在求职者和雇主的不同角度上，需要它实现什么功能？ 
+ 最后，hr们在筛选简历时候的标准是什么？基于这种标...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/简历/">简历</a></li>
+            
+            <li class="tag-list-item"><a href="/tags/工作/">工作</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/简历/"><i class="fa fa-folder-open"></i> 简历</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 2 </span>
+            <span>Published {{moment(1531735448000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/16/面试算法之贪心算法/">面试算法之贪心算法</a></h2>
+          <p>
+               
+  贪心算法的难点在于证明这个问题可以用贪心算法来解   很少单独考贪心算法  
+   简单贪心问题  lc455，392 
+   贪心算法与动态规划的关系  lc435 贪心是动态规划的特例 
+   如何证明贪心算法的正确性  
+ 数学归纳法； 
+ 反证法； 
+ 
+ 最小生成树和最短路径都...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531723925000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/15/面试算法之动态规划基础/">面试算法之动态规划基础</a></h2>
+          <p>
+               这是 H1    面试中对动态规划的考查难度不是很难    来源  以斐波那契数列为例，单纯方式的递归会造成指数级的时间复杂度，因为其中有大量重复的计算过程； 因此考虑将重复的数字用数组记录下来–记忆化搜索：自上向下的解决问题 动态规划：自下向上的解决问题 
+   关联  递归问题—重叠子问题...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531644103000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/14/面试算法之二叉树与递归/">面试算法之二叉树与递归</a></h2>
+          <p>
+               递归和二叉树的紧密关系  基本上二叉树的大部分操作都会用到递归，因为二叉树本质上就是一种递归的数据结构 
+  写递归函数时要注意 ： 先写递归终止条件； 递归过程。 
+  递归的返回值  129,257 
+  更复杂的递归逻辑  437， 
+   二分搜索树（二分查找树）  235，98，45...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531561182000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/14/面试算法之栈队列优先队列/">面试算法之栈队列优先队列</a></h2>
+          <p>
+             使用栈的原因是，需要在嵌套关系中获得最近的一个元素。 
+   递归和栈的紧密关系  递归算法： 二叉树144,94,145 
+  写递归函数时要注意 ： 先写递归终止条件； 递归过程。 
+ 使用栈模拟系统栈，写出非递归程序；（三种遍历方式的统一写法） 教科书上的经典非递归方法 
+   队列的基本应...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531533901000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/13/面试算法之在链表中穿针引线/">面试算法之在链表中穿针引线</a></h2>
+          <p>
+             206,83，86，328，2，445 
+ 一般来说对链表的操作，基本都要求不能改变node的值，但是有一个例外，237 
+  技术  预先创建几个节点，将每个变量所对应的节点明确出来，画图，进行穿针引线 
+  技术  设立链表的虚拟头结点：203，82，21，24，25（在需要对头结点需要额外操...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531486938000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/13/面试算法之查找表的问题/">面试算法之查找表的问题</a></h2>
+          <p>
+             有序数组的二分查找； set；（二分查找树[红黑树]实现和散列表[哈希]实现） map；（二分查找树[红黑树]实现和散列表[哈希]实现） 
+ 二分查找树实现查找用logN时间，保留了数据的顺序性，提供更多的功能，即java中的treemap，treeset； 散列表就是查找用常数时间，即java中...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531481137000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/12/面试算法之数组问题/">面试算法之数组问题</a></h2>
+          <p>
+               如何写出正确的程序？（参照二分查找的代码）  明确变量的含义； 循环不变量； 小数据量调试； 大数据量测试。 
+   leetcode 283 movezeros  定义：k，数组中，[0,k）的元素均为非0元素。 
+   leetcode 26 remove duplicated from ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531377433000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/12/面试算法之时间复杂度/">面试算法之时间复杂度</a></h2>
+          <p>
+             大O表示法：平均情况，是正比，与前面的常数关系不大； 
+   了解常用数据规模情况下的复杂度：   如果想在1s内解决问题：  O(N2)的算法可以处理大约10^4级别的数据； O(N)的算法可以处理大约10^8级别的数据； O(NlogN)的算法可以处理大约10^7级别的数据； 
+ 空间复杂度：...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531358009000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/11/算法面试/">算法面试</a></h2>
+          <p>
+               关键  算法面试并不是看你给出的是不是正确答案，而是思考路径，对于问题的细节和应用环境，不断深入。 关键在于解决问题的思路。 甚至通过分析解题方向，得到应该在哪个领域去找。 
+   算法面试的准备范围：  
+ 各种排序算法 
+ 基础数据结构和算法的实现：堆、二叉树、图 
+ 基础数据结构的使用：...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/面试算法/">面试算法</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/面试算法/"><i class="fa fa-folder-open"></i> 面试算法</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1531308161000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/10/拒绝无意义的事情，把时间浪费在美好事情上/">拒绝无意义的事情，把时间浪费在美好事情上</a></h2>
+          <p>
+             最近拖延症太严重了啊！！！！ 
+ 抓紧时间准备找工作吧，把时间用在刷题上面，不要做这些无意义的事情了： 
+ 
+ 游戏 
+ 看游戏视频 
+ 看综艺 
+ 看微博 
+ 
+  早睡早起，锻炼身体，早点躺下听听喜马拉雅也挺好啊  
+ 尤其是无意义的社交，拒绝自我麻木，自我高潮。 
+ 对自己狠一点吧，你的父母...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1531203271000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/07/03/简历项目整理/">简历项目整理</a></h2>
+          <p>
+              大概分为两个大方向  
+ 
+ 电气 
+ 编程  2.1 软件开发  2.2 算法 
+ 
+   电气方向的项目   先简要写（等到9月份再详细）  
+ 
+ 电力市场评价 
+ 机房温度控制 
+ 相位识别 
+  
+ 
+   编程方向   先把相关的项目都罗列出来，然后再在软件开发和算法中索引起来  
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/简历/">简历</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/简历/"><i class="fa fa-folder-open"></i> 简历</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1530582964000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/06/20/桶排序/">桶排序</a></h2>
+          <p>
+               基本思想  桶排序的基本思想是将一个数据表分割成许多buckets，然后每个bucket各自排序，或用不同的排序算法，或者递归的使用bucket sort算法。也是典型的divide-and-conquer分而治之的策略。它是一个分布式的排序，介于MSD基数排序和LSD基数排序之间。 
+   ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1529461479000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/06/12/近一周在忙中期/">近一周在忙中期</a></h2>
+          <p>
+             三四天没有看算法，写代码了、、、 做ppt做的头疼啊。。。 
+ 20180625更新，ppt做了两周多。。。。实在做不出来了啊啊啊啊啊啊 
+ 20180629中期终于结束，24小时完成PPT制作和中期报告（当然了PPT有基础，而且前期资料积累也很关键） 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1528810936000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/06/01/神器网站/">神器网站</a></h2>
+          <p>
+             
+ HiPPTER | PPT资源导航网站： www.hippter.com  
+ OK插件 www.oktools.xyz  
+ 口袋动画  www.papocket.com  
+ iSlide插件 www.islide.cc  
+ PS在线精简版 www.uupoop.com  
+ 稿定抠图 ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1527840265000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/26/JZOffer之解决面试题的思路/">JZOffer之解决面试题的思路</a></h2>
+          <p>
+               1. 画图   档设计链表、二叉树、栈等数据结构时   2. 具体化   自己举几个情况，一遍一遍走一下，发现规律   3. 分解   把大问题化为小问题，递归；分治法，动态规划 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1527341119000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/26/JZOffer之高质量的代码/">JZOffer之高质量的代码</a></h2>
+          <p>
+              规范性  合理的变量和函数命名，保证可读性，最好用完整的英文单词组合。  完整性  
+ 
+ 设计测试用例： 
+ 功能测试（除了常规输入之外，还有题目中的范围，比如大数问题，就需要用字符串或者数组来表示大的数字，以确保不会溢出） 边界测试（结束循环、递归的便捷条件是否正确） 负面测试（考虑错误输入...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1527320115000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/22/基础知识的刷题顺序/">基础知识的刷题顺序</a></h2>
+          <p>
+              初步按照如下步骤  
+ 
+ 算法，并实现书中的例子 
+ 剑指offer，着重看他怎么用画图和分解的方法来分析题目，以及代码编写规范； 
+ leetcode 
+ 程序员代码面试指南-IT名企算法与数据结构题目最优解 
+ 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1526998512000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/22/工作啊工作/">工作啊工作</a></h2>
+          <p>
+               需要确定一下工作意向的优先级  
+ 电网？ 
+ 公务员？ 
+ 互联网企业？ 
+ 银行？ 
+ 创业公司 vs 大公司？ 
+ 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/工作/">工作</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/简历/"><i class="fa fa-folder-open"></i> 简历</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1526996777000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/15/JZOffer之java编程语言/">java编程语言</a></h2>
+          <p>
+               详细参见《算法》1.1  
+ 一些补充的点 * 
+ 
+ 
+ 数据类型是一组数据和对其所能进行的操作的集合： 
+ java中除了原始数据类型(int double char boolean等)，其余是抽象数据类型。 抽象数据类型包括实例变量（包括可变，不可变）、实例方法（不同于静态方法，静态方法...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/剑指offer/">剑指offer</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1526390449000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/13/JZOffer之链表/">链表</a></h2>
+          <p>
+              链表概述  链表是一种数据结构，和数组同级。比如，Java中我们使用的ArrayList，其实现原理是数组。而LinkedList的实现原理就是链表了。链表在进行循环遍历时效率不高，但是插入和删除时优势明显。 
+ 但好像java中并不直接支持链表。 数组和链表都可以实现栈、队列、背包等复杂数据类...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1526202565000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/11/剑指offer笔记/">剑指offer第一天</a></h2>
+          <p>
+               了解面试流程和面试考察点    面试流程和环节  在经过网申或者在线笔试之后，面试：先电话面试，再现场面试。 
+  面试三个环节：  
+ 
+ 行为面试（自我介绍结合简历，简短，自己做了哪方面） 
+ 技术面试（） 
+ 应聘者提问 
+ 
+ 
+  行为面试补充：  
+ 
+ 准备简历时：应聘者的项目经...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1526017912734).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/04/25/CV规划/">CV规划</a></h2>
+          <p>
+              Key Words  
+ 
+ 体现项目阶段 体现技术成长经历 体现技术路线认知 体现职业发展方向 
+ 
+ 
+   2018-04-25   Java Web路线  
+ 
+ jsp+servlet+JavaBean： 
+ 
+ 在线考试：  在于认识软件开发流程，进行JavaWeb的开发，理解Ser...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/简历/">简历</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/简历/"><i class="fa fa-folder-open"></i> 简历</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1524642993000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/04/24/plan/">每日计划</a></h2>
+          <p>
+               做个计划    规律一些       1       $ hexo new  &#34;My New Post&#34;        
+ More info:  Writing  
+   Run server       1       $ hexo server       
+ More info:  S...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1524557994513).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/04/24/first/">mrakdown</a></h2>
+          <p>
+               This is Title   这是强调  
+  体验一下MarkDown语法  
+ 
+ 这是什么 
+ 原来是列表 
+ 
+   以下是html   
+ 这是一个普通段落。 
+                 Foo         
 
-    
-
+ 这是另一个普通段落。 
+ 
+ 什么是引用？ 
+ 
+ 还有...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1524551493949).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/04/23/hello-world/">第一次</a></h2>
+          <p>
+             Welcome to  Hexo ! This is your very first post. Check  documentation  for more info. If you get any problems when using Hexo, you can find the answe...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1524491577533).fromNow()}}</span>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
   </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
+</div>
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 Jay</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
     
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
+  </footer>
+</div>
 
 
 
 
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("SWULgkVHBjhFp99nBHCr8oHC-gzGzoHsz", "DQQN5XsGzlq3PIf1OSvGvoRR");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
+<script src="/js/main.js"></script>
 
 </body>
 </html>
