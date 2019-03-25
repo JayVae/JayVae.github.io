@@ -147,9 +147,13 @@
 <ol>
 <li><p>两种基本agent：</p>
 </li>
-<li><p>仿真系统类结构图</p>
+<li><p>仿真系统类结构图<br>PowerAgent:<br> ISOAgent：<br> GenCoAgent：<br>AbstractStrategy:<br> ISOStrategy:根据不同的电力市场模式，又会有不同的具体类，集成自jade的behaviour类<br> GenCoStrategy<br>AbstarctParameter:<br> ISOParameter:针对不同电力市场模式的仿真参数类<br> GenCoParameter:<br>Data:<br> DBBean:用于数据库连接操作的类<br> 以及用于和PowerAgent进行交互的竞标数据类，BidDataBean，抽象竞标数据类，针对不同的市场模式可派生出不同的类，封装了分段报价和分段电量等信息。</p>
 </li>
 </ol>
+<ol start="3">
+<li>数据库表：<br>实现ISOStrategy、GenCoStrategy等的配套设施，以及用于记录发电商按编剧及成本报价的价格、容量、各轮次仿真的市场清算价、各轮次仿真发电商的策略报价等各种数据。</li>
+</ol>
+<p>（1）公司和市场信息数据：<br>（2）机组信息数据：<br>（3）仿真案例数据：创建时间、仿真参数、参与竞标的机组信息等；<br>（4）仿真相关数据：各发带你上的报价、利润等</p>
 
   </article>
 </div>
