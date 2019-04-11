@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[论文框架]]></title>
+    <url>%2F2019%2F04%2F11%2F%E8%AE%BA%E6%96%87%E6%A1%86%E6%9E%B6%2F</url>
+    <content type="text"><![CDATA[总共分为几部分： 各部分内容：确定售电侧采用的规则和模型 仿真框架？？？仿真引擎？]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[大麦网抢票]]></title>
     <url>%2F2019%2F04%2F08%2F%E5%A4%A7%E9%BA%A6%E7%BD%91%E6%8A%A2%E7%A5%A8%2F</url>
     <content type="text"><![CDATA[https://github.com/JnuMxin/damaiAuto 使用了selenium+chromeDriver。 https://zhuanlan.zhihu.com/p/56697166 使用了selenium+geckodriver.exe。 都是在anaconda下运行的，需要在anaonda的一个环境中安装selenium包，然后将chromeDriver和geckodriver都放在环境下。]]></content>
@@ -8,7 +13,7 @@
   <entry>
     <title><![CDATA[售电公司]]></title>
     <url>%2F2019%2F04%2F04%2F%E5%94%AE%E7%94%B5%E5%85%AC%E5%8F%B8%2F</url>
-    <content type="text"><![CDATA[综述 属性 偏差考核 电价 需求预测]]></content>
+    <content type="text"><![CDATA[综述 属性 偏差考核 电价 需求预测 电力用户作为电力需求方，是电力市场的主体，根据耗电量及电压等级的不同，还可分为大工业用户、中小型工商业用户以及居民用户三大类。【改】]]></content>
   </entry>
   <entry>
     <title><![CDATA[安全校核与输电阻塞]]></title>
@@ -862,7 +867,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#x31;&#x39;&#x34;&#51;&#x33;&#x35;&#50;&#x34;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#49;&#x39;&#x34;&#x33;&#51;&#x35;&#x32;&#52;&#64;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
