@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[论文框架]]></title>
     <url>%2F2019%2F04%2F11%2F%E8%AE%BA%E6%96%87%E6%A1%86%E6%9E%B6%2F</url>
-    <content type="text"><![CDATA[总共分为几部分： 各部分内容：确定售电侧采用的规则和模型 仿真框架？？？仿真引擎？]]></content>
+    <content type="text"><![CDATA[总共分为几部分： 各部分内容：确定售电侧采用的规则和模型？？？ 看看所有相关论文（还有博士）的目录框架 仿真框架？？？仿真引擎？ 电力市场仿真： 强化学习建模： 软件设计： 软件实现：]]></content>
   </entry>
   <entry>
     <title><![CDATA[大麦网抢票]]></title>
@@ -867,7 +867,7 @@
   <entry>
     <title><![CDATA[mrakdown]]></title>
     <url>%2F2018%2F04%2F24%2Ffirst%2F</url>
-    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#x39;&#49;&#57;&#52;&#x33;&#x33;&#x35;&#x32;&#52;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;]]></content>
+    <content type="text"><![CDATA[This is Title这是强调 体验一下MarkDown语法 这是什么 原来是列表 以下是html 这是一个普通段落。 Foo 这是另一个普通段落。 什么是引用？ 还有嵌套引用？ Red 这是无序列表 有序列表 真是有序的吗 好像确实是有序的 这是一个普通段落： 这是一个代码区块。 原来只用Tab就能写代码啦 Use the printf() function.上面这个是行内代码 star 这个是什么 分割线 This is an example inline link. This link has no title attribute. &#57;&#x31;&#57;&#52;&#51;&#x33;&#x35;&#x32;&#52;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;]]></content>
   </entry>
   <entry>
     <title><![CDATA[第一次]]></title>
