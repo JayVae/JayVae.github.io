@@ -8,7 +8,7 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    java前后端跨域问题 | JayVae&#39;s Blog
+    绪论 | JayVae&#39;s Blog
   </title>
   <meta name="description" content="Just in progress">
   
@@ -134,43 +134,17 @@
     <i class="fa fa-user-o"></i>
     Jay
 
-    <span class="post-date float-right" title="{{moment(1550654280000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1555289609000).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1550654280000).fromNow()}}
+      {{moment(1555289609000).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>java前后端跨域问题</h1>
-    <h2 id="java使用cors解决跨域问题，服务器端开发为语言为java"><a href="#java使用cors解决跨域问题，服务器端开发为语言为java" class="headerlink" title="java使用cors解决跨域问题，服务器端开发为语言为java"></a>java使用cors解决跨域问题，服务器端开发为语言为java</h2><p>前后端分离开发，各司其职，分工明确，加上现在大前端的发展的火热，所以分离开发必定是一个趋势，分离开发就一定会遇到跨域的问题。</p>
-<p>还是之前的意见，个人认为最好的解决方案是通过服务器的反向代理来解决。</p>
-<p>当然根据项目的具体，有些时候也会采取不同的解决方案，</p>
-<p>今天这里介绍一下cors解决，这里是站在服务端的角度，讲解需要做的工作，服务端语言为java</p>
-<p><filter><br>        <filter-name>CORS</filter-name><br>        <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class><br>        <init-param><br>            <param-name>cors.allowOrigin</param-name><br>            <param-value><em></em></param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportedMethods</param-name><br>            <param-value>GET, POST, HEAD, PUT, DELETE</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportedHeaders</param-name><br>            <param-value>Accept, Origin, X-Requested-With, Content-Type, Last-Modified</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.exposedHeaders</param-name><br>            <param-value>Set-Cookie</param-value><br>        </init-param><br>        <init-param><br>            <param-name>cors.supportsCredentials</param-name><br>            <param-value>true</param-value><br>        </init-param><br></filter><br>    <filter-mapping><br>        <filter-name>CORS</filter-name><br>        <url-pattern>/</url-pattern><br>   </filter-mapping></p>
-<p>   参数讲解</p>
-<p>cors.allowOrigin指的可以通过的ip，<em>代表所有，可以使用指定的ip，多个的话可以用逗号分隔，默认为</em></p>
-<p>cors.supportedMethods指的是请求方式 默认为*</p>
-<p>cors.supportedHeaders请求支持的头信息，默认为*</p>
-<p>cors.exposedHeaders暴露的头信息，默认的empy list</p>
-<p>cors.supportsCredentials支持证书，默认为true</p>
-<p>cors.maxAge 最大过期时间，默认为-1</p>
-<p>cors.tagRequests 默认为false</p>
-<p>cors.allowSubdomains允许子域 默认为false</p>
-<p>回到web.xml里面配置的filter，使用的jar的依赖为：</p>
-<pre><code>&lt;!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;com.thetransactioncompany&lt;/groupId&gt;
-    &lt;artifactId&gt;cors-filter&lt;/artifactId&gt;
-    &lt;version&gt;2.5&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre><p>也可以使用ebay提供，这个只有一个过滤器，资料还ting</p>
-<pre><code>&lt;!-- https://mvnrepository.com/artifact/org.ebaysf.web/cors-filter --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;org.ebaysf.web&lt;/groupId&gt;
-    &lt;artifactId&gt;cors-filter&lt;/artifactId&gt;
-    &lt;version&gt;1.0.1&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre><h2 id="也有使用反向代理来解决的"><a href="#也有使用反向代理来解决的" class="headerlink" title="也有使用反向代理来解决的"></a>也有使用反向代理来解决的</h2><p>可以参考[<a href="https://www.cnblogs.com/gabrielchen/p/5066120.html]" target="_blank" rel="noopener">https://www.cnblogs.com/gabrielchen/p/5066120.html]</a></p>
+    <h1>绪论</h1>
+    <ol>
+<li>【电力市场仿真和培训系统的设计及实现】<br>对电力市场购电方与售电方进行仿真，但是其只是对人工对交易过程进行处理，只是对交易过程的简单再现，并不是智能代理，不能提供有效的参考和研究。</li>
+</ol>
 
   </article>
 </div>
@@ -183,8 +157,8 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/02/20/java前后端跨域问题/";
-    this.page.identifier = 1550654280;
+    this.page.url = "http://yoursite.com/2019/04/15/绪论/";
+    this.page.identifier = 1555289609;
   };
 
   (function() {
