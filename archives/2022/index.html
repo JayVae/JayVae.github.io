@@ -1,418 +1,62 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post-collapse.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
+{% block title %}{{ __('title.archive') }} | {{ config.title }}{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="author" content="史海杰">
+{% block page_class %}page-archive{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block content %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  {#####################}
+  {### ARCHIVE BLOCK ###}
+  {#####################}
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        {% set cheers %}
+        {% set posts_length = site.posts.length %}
+        {% if posts_length > 210 %} {% set cheers = 'excellent' %}
+          {% elif posts_length > 130 %} {% set cheers = 'great' %}
+          {% elif posts_length > 80 %} {% set cheers = 'good' %}
+          {% elif posts_length > 50 %} {% set cheers = 'nice' %}
+          {% elif posts_length > 30 %} {% set cheers = 'ok' %}
+        {% else %}
+          {% set cheers = 'um' %}
+        {% endif %}
+        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
+      </span>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+      {% for post in page.posts %}
 
-<body id="replica-app">
+        {# Show year #}
+        {% set year %}
+        {% set post.year = date(post.date, 'YYYY') %}
 
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
+        {% if post.year !== year %}
+          {% set year = post.year %}
+          <div class="collection-title">
+            <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
           </div>
-        </div>
-      </div>
+        {% endif %}
+        {# endshow #}
 
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
+        {{ post_template.render(post) }}
 
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+      {% endfor %}
+
     </div>
   </div>
-</nav>
+  {#########################}
+  {### END ARCHIVE BLOCK ###}
+  {#########################}
 
-<div class="main-container">
-  
+  {% include '_partials/pagination.swig' %}
 
-<div class="container-lg">
-  
+{% endblock %}
 
-<div class="blog-intro">
-  <div class="blog-intro-user">
-    <img class="avatar" src="https://octodex.github.com/images/baracktocat.jpg">
-    <div class="user-name">
-      <div class="blog-title"></div>
-      <div class="blog-author"></div>
-        <ul class="user-detail mobile-only">
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://yoursite.com">http://yoursite.com</a>
-    </li>
-  </ul>
-    </div>
-    <div class="blog-description">
-      
-    </div>
-  </div>
-
-  <ul class="user-detail desktop-only">
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://yoursite.com">http://yoursite.com</a>
-    </li>
-  </ul>
-
-  <div class="social-media desktop-only">
-    <h4>Social Media</h4>
-    <ul>
-      
-    </ul>
-  </div>
-</div>
-
-
-  <div class="blog-detail">
-    
-<nav class="blog-detail-nav desktop-only">
-  <ul class="clearfix">
-    <li class="">
-      <a href="/">Overview</a></li>
-    <li class="selected">
-      <a href="/">Posts <span class="counter">201</span></a>
-    </li>
-    <li class="">
-      <a href="/">Categories <span
-                class="counter">26</span></a></li>
-    <li class="">
-      <a href="/">Tags <span class="counter">28</span></a></li>
-  </ul>
-</nav>
-
-    <div class="body-secondary">
-      <ul class="archive-list">
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/12/28/spring-boot-auto-assembly-principles/">SpringBoot 自动装配原理详解</a></h2>
-          <p>
-             
- 作者： Miki-byte-1024  &amp;amp;  Snailclimb  
- 
- 每次问到 Spring Boot， 面试官非常喜欢问这个问题：“讲述一下 SpringBoot 自动装配原理？”。 
- 我觉得我们可以从以下几个方面回答： 
- 
- 什么是 SpringBoot 自动装配？ 
-...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/SpringBoot/">SpringBoot</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1672224488000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/12/17/cas/">CAS 详解</a></h2>
-          <p>
-             乐观锁和悲观锁的介绍以及乐观锁常见实现方式可以阅读笔者写的这篇文章： 乐观锁和悲观锁详解 。 
- 这篇文章主要介绍 ：Java 中 CAS 的实现以及 CAS 存在的一些问题。 
-   Java 中 CAS 是如何实现的？  在 Java 中，实现 CAS（Compare-And-Swap, 比较...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1671276369000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/11/10/atomic-classes/">Atomic 原子类总结</a></h2>
-          <p>
-               Atomic 原子类介绍   Atomic  翻译成中文是“原子”的意思。在化学上，原子是构成物质的最小单位，在化学反应中不可分割。在编程中， Atomic  指的是一个操作具有原子性，即该操作不可分割、不可中断。即使在多个线程同时执行时，该操作要么全部执行完成，要么不执行，不会被其他线程看到...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1668084735000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/11/02/unsafe/">Java Unsafe 详解</a></h2>
-          <p>
-             
- 本文整理完善自下面这两篇优秀的文章： 
- 
-  Java 魔法类：Unsafe 应用解析 - 美团技术团队 -2019  
-  Java 双刃剑之 Unsafe 类详解 - 码农参上 - 2021  
- 
- 
- 
-
- 阅读过 JUC 源码的同学，一定会发现很多并发工具类都调用了一个叫做  Un...
-          </p>
-          <ul class="tag-list clearfix">
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 0 </span>
-            <span>Published {{moment(1667373196000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/09/10/completablefuture-intro/">CompletableFuture 详解</a></h2>
-          <p>
-             实际项目中，一个接口可能需要同时获取多种不同的数据，然后再汇总返回，这种场景还是挺常见的。举个例子：用户请求获取订单信息，可能需要同时获取用户信息、商品详情、物流信息、商品推荐等数据。 
- 如果是串行（按顺序依次执行每个任务）执行的话，接口的响应速度会非常慢。考虑到这些任务之间有大部分都是  无前...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1662805212000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/08/29/jmm/">JMM（Java 内存模型）详解</a></h2>
-          <p>
-             JMM(Java 内存模型)主要定义了对于一个共享变量，当另一个线程对这个共享变量执行写操作后，这个线程对这个共享变量的可见性。 
- 要想理解透彻 JMM（Java 内存模型），我们先要从  CPU 缓存模型和指令重排序  说起！ 
-   从 CPU 缓存模型说起   为什么要弄一个 CPU 高速...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1661785502000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/08/26/mybatis-interview/">MyBatis常见面试题总结</a></h2>
-          <p>
-             
-
- 
- 本篇文章由 JavaGuide 收集自网络，原出处不明。 
- 比起这些枯燥的面试题，我更建议你看看文末推荐的 MyBatis 优质好文。 
- 
-   #{} 和 ${} 的区别是什么？  注：这道题是面试官面试我同事的。 
- 答： 
- 
-  $&amp;#123;&amp;#125; 是 Propert...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/MyBatis/">MyBatis</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1661518567000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/03/05/io-basis/">Java IO 基础知识总结</a></h2>
-          <p>
-             
-
-   IO 流简介  IO 即  Input/Output ，输入和输出。数据输入到计算机内存的过程即输入，反之输出到外部存储（比如数据库，文件，远程主机）的过程即输出。数据传输过程类似于水流，因此称为 IO 流。IO 流在 Java 中分为输入流和输出流，而根据数据的处理方式又分为字节流和字...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java-IO/">Java IO</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 2 </span>
-            <span>Published {{moment(1646492988000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/03/03/zookeeper-plus/">ZooKeeper相关概念总结(进阶)</a></h2>
-          <p>
-             
-  FrancisQ  投稿。 
- 
-   什么是 ZooKeeper   ZooKeeper  由  Yahoo  开发，后来捐赠给了  Apache  ，现已成为  Apache  顶级项目。 ZooKeeper  是一个开源的分布式应用程序协调服务器，其为分布式系统提供一致性服务。其一致性...
-          </p>
-          <ul class="tag-list clearfix">
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"><i class="fa fa-folder-open"></i> 分布式</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 0 </span>
-            <span>Published {{moment(1646309596000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2022/02/24/zookeeper-intro/">ZooKeeper相关概念总结(入门)</a></h2>
-          <p>
-             相信大家对 ZooKeeper 应该不算陌生。但是你真的了解 ZooKeeper 到底有啥用不？如果别人&amp;#x2F;面试官让你给他讲讲对于 ZooKeeper 的认识，你能回答到什么地步呢？ 
- 拿我自己来说吧！我本人在大学曾经使用 Dubbo 来做分布式项目的时候，使用了 ZooKeeper 作...
-          </p>
-          <ul class="tag-list clearfix">
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"><i class="fa fa-folder-open"></i> 分布式</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 0 </span>
-            <span>Published {{moment(1645706683000).fromNow()}}</span>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block sidebar %}
+  {{ sidebar_template.render(false) }}
+{% endblock %}

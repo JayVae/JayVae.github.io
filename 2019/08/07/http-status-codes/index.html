@@ -1,223 +1,37 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    HTTP 常见状态码总结（应用层） | Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="keywords" content="
-  计算机网络
-  ">
-  
-  <meta name="author" content="史海杰">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block page_class %}page-post-detail{% endblock %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
 
-  
+{% block content %}
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
-</nav>
 
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 201 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 28 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 26 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Jay&#39;s Blog</a>
-      
-      
-    </h2>
-  </div>
+{% endblock %}
 
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    史海杰
-
-    <span class="post-date float-right" title="{{moment(1565177177000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1565177177000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>HTTP 常见状态码总结（应用层）</h1>
-    <p>HTTP 状态码用于描述 HTTP 请求的结果，比如 2xx 就代表请求被成功处理。</p>
-<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/http-status-code.png" alt="常见 HTTP 状态码"></p>
-<h3 id="1xx-Informational（信息性状态码）"><a href="#1xx-Informational（信息性状态码）" class="headerlink" title="1xx Informational（信息性状态码）"></a>1xx Informational（信息性状态码）</h3><p>相比于其他类别状态码来说，1xx 你平时你大概率不会碰到，所以这里直接跳过。</p>
-<h3 id="2xx-Success（成功状态码）"><a href="#2xx-Success（成功状态码）" class="headerlink" title="2xx Success（成功状态码）"></a>2xx Success（成功状态码）</h3><ul>
-<li><strong>200 OK</strong>：请求被成功处理。例如，发送一个查询用户数据的 HTTP 请求到服务端，服务端正确返回了用户数据。这个是我们平时最常见的一个 HTTP 状态码。</li>
-<li><strong>201 Created</strong>：请求被成功处理并且在服务端创建了<del>一个新的资源</del>。例如，通过 POST 请求创建一个新的用户。</li>
-<li><strong>202 Accepted</strong>：服务端已经接收到了请求，但是还未处理。例如，发送一个需要服务端花费较长时间处理的请求（如报告生成、Excel 导出），服务端接收了请求但尚未处理完毕。</li>
-<li><strong>204 No Content</strong>：服务端已经成功处理了请求，但是没有返回任何内容。例如，发送请求删除一个用户，服务器成功处理了删除操作但没有返回任何内容。</li>
-</ul>
-<p>🐛 修正（参见：<a href="https://github.com/Snailclimb/JavaGuide/issues/2458">issue#2458</a>）：201 Created 状态码更准确点来说是创建一个或多个新的资源，可以参考：<a href="https://httpwg.org/specs/rfc9110.html#status.201">https://httpwg.org/specs/rfc9110.html#status.201</a>。</p>
-<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/rfc9110-201-created.png"></p>
-<p>这里格外提一下 204 状态码，平时学习&#x2F;工作中见到的次数并不多。</p>
-<p><a href="https://tools.ietf.org/html/rfc2616#section-10.2.5">HTTP RFC 2616 对 204 状态码的描述</a>如下：</p>
-<blockquote>
-<p>The server has fulfilled the request but does not need to return an<br>entity-body, and might want to return updated metainformation. The<br>response MAY include new or updated metainformation in the form of<br>entity-headers, which if present SHOULD be associated with the<br>requested variant.</p>
-<p>If the client is a user agent, it SHOULD NOT change its document view<br>from that which caused the request to be sent. This response is<br>primarily intended to allow input for actions to take place without<br>causing a change to the user agent’s active document view, although<br>any new or updated metainformation SHOULD be applied to the document<br>currently in the user agent’s active view.</p>
-<p>The 204 response MUST NOT include a message-body, and thus is always<br>terminated by the first empty line after the header fields.</p>
-</blockquote>
-<p>简单来说，204 状态码描述的是我们向服务端发送 HTTP 请求之后，只关注处理结果是否成功的场景。也就是说我们需要的就是一个结果：true&#x2F;false。</p>
-<p>举个例子：你要追一个女孩子，你问女孩子：“我能追你吗？”，女孩子回答：“好！”。我们把这个女孩子当做是服务端就很好理解 204 状态码了。</p>
-<h3 id="3xx-Redirection（重定向状态码）"><a href="#3xx-Redirection（重定向状态码）" class="headerlink" title="3xx Redirection（重定向状态码）"></a>3xx Redirection（重定向状态码）</h3><ul>
-<li><strong>301 Moved Permanently</strong>：资源被永久重定向了。比如你的网站的网址更换了。</li>
-<li><strong>302 Found</strong>：资源被临时重定向了。比如你的网站的某些资源被暂时转移到另外一个网址。</li>
-</ul>
-<h3 id="4xx-Client-Error（客户端错误状态码）"><a href="#4xx-Client-Error（客户端错误状态码）" class="headerlink" title="4xx Client Error（客户端错误状态码）"></a>4xx Client Error（客户端错误状态码）</h3><ul>
-<li><strong>400 Bad Request</strong>：发送的 HTTP 请求存在问题。比如请求参数不合法、请求方法错误。</li>
-<li><strong>401 Unauthorized</strong>：未认证却请求需要认证之后才能访问的资源。</li>
-<li><strong>403 Forbidden</strong>：直接拒绝 HTTP 请求，不处理。一般用来针对非法请求。</li>
-<li><strong>404 Not Found</strong>：你请求的资源未在服务端找到。比如你请求某个用户的信息，服务端并没有找到指定的用户。</li>
-<li><strong>409 Conflict</strong>：表示请求的资源与服务端当前的状态存在冲突，请求无法被处理。</li>
-</ul>
-<h3 id="5xx-Server-Error（服务端错误状态码）"><a href="#5xx-Server-Error（服务端错误状态码）" class="headerlink" title="5xx Server Error（服务端错误状态码）"></a>5xx Server Error（服务端错误状态码）</h3><ul>
-<li><strong>500 Internal Server Error</strong>：服务端出问题了（通常是服务端出 Bug 了）。比如你服务端处理请求的时候突然抛出异常，但是异常并未在服务端被正确处理。</li>
-<li><strong>502 Bad Gateway</strong>：我们的网关将请求转发到服务端，但是服务端返回的却是一个错误的响应。</li>
-</ul>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><a href="https://www.restapitutorial.com/httpstatuscodes.html">https://www.restapitutorial.com/httpstatuscodes.html</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status</a></li>
-<li><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">https://en.wikipedia.org/wiki/List_of_HTTP_status_codes</a></li>
-<li><a href="https://segmentfault.com/a/1190000018264501">https://segmentfault.com/a/1190000018264501</a></li>
-</ul>
-<!-- @include: @article-footer.snippet.md -->
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

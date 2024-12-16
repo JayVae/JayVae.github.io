@@ -1,199 +1,37 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    设计模式之工厂模式 | Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="keywords" content="
-  Java,设计模式
-  ">
-  
-  <meta name="author" content="史海杰">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block page_class %}page-post-detail{% endblock %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
 
-  
+{% block content %}
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
-</nav>
 
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 201 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 28 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 26 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Jay&#39;s Blog</a>
-      
-      
-    </h2>
-  </div>
+{% endblock %}
 
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    史海杰
-
-    <span class="post-date float-right" title="{{moment(1533108933000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1533108933000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>设计模式之工厂模式</h1>
-    <h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><p>实例化对象，用工厂方法代替new操作；<br>包括工厂方法模式和抽象工厂模式；<br>抽象工厂模式是工厂方法模式的扩展。</p>
-<h2 id="意图："><a href="#意图：" class="headerlink" title="意图："></a>意图：</h2><p>定义一个接口来创建对象，但是让子类来决定哪些类需要被实例化；<br>工厂方法把实例化的工作推迟到子类中去实现。</p>
-<h2 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h2><p>有一组类似的对象需要创建；<br>扩展性</p>
-<h2 id="常见应用："><a href="#常见应用：" class="headerlink" title="常见应用："></a>常见应用：</h2><ol>
-<li>JDBC：</li>
-<li>spring beanfactory：作为spring基础的IoC容器，是spring的一个bean工厂。</li>
-<li>解析xml</li>
-</ol>
-<p>工厂模式用来创建一个产品的等级结构，而抽象工厂模式用来创建多个产品的等级结构；<br>工厂模式只有一个抽象产品类，而抽象工厂模式有多个抽象产品类。</p>
-<h2 id="工厂方法模式和抽象工厂模式区别"><a href="#工厂方法模式和抽象工厂模式区别" class="headerlink" title="工厂方法模式和抽象工厂模式区别"></a>工厂方法模式和抽象工厂模式区别</h2><p>工厂模式在一些设计模式的书中分为简单工厂模式，工厂方法模式和抽象工厂模式三类。<br>也有把工厂方法模式划分到抽象工厂模式的，认为工厂方法是抽象工厂模式的特例的一种，就是只有一个要实现的产品接口。</p>
-<p>简单工厂：工厂类中，根据条件决定一个接口由哪个具体产品类来实现。</p>
-<p>工厂方法：创建多个工厂类。各个工厂类中，都对应一个获得接口A实例的方法。用户决定使用哪个工厂。</p>
-<p>抽象工厂：对工厂方法进行扩展。各个工厂类中，再增加一个获得接口B实例的方法。</p>
-<p>提一下，多个工厂类都继承自同一个接口。</p>
-<pre><code>   个人觉得这个区别在于产品，如果产品单一，最合适用工厂模式，但是如果有多个业务品种、业务分类时，通过抽象工厂模式产生需要的对象是一种非常好的解决方式。再通俗深化理解下：工厂模式针对的是一个产品等级结构 ，抽象工厂模式针对的是面向多个产品等级结构的。
-</code></pre>
-<p>再来看看工厂方法模式与抽象工厂模式对比：</p>
-<p>工厂方法模式				抽象工厂模式<br>针对的是一个产品等级结构 	针对的是面向多个产品等级结构<br>一个抽象产品类 	多个抽象产品类<br>可以派生出多个具体产品类 	每个抽象产品类可以派生出多个具体产品类<br>一个抽象工厂类，可以派生出多个具体工厂类 	一个抽象工厂类，可以派生出多个具体工厂类<br>每个具体工厂类只能创建一个具体产品类的实例 	每个具体工厂类可以创建多个具体产品类的实例</p>
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

@@ -1,232 +1,37 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    HEXO高级功能 | Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="keywords" content="
-  博客
-  ">
-  
-  <meta name="author" content="史海杰">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block page_class %}page-post-detail{% endblock %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
 
-  
+{% block content %}
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
-</nav>
 
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 201 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 28 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 26 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Jay&#39;s Blog</a>
-      
-      
-    </h2>
-  </div>
+{% endblock %}
 
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    史海杰
-
-    <span class="post-date float-right" title="{{moment(1537951496000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1537951496000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>HEXO高级功能</h1>
-    <h1 id="如何改变皮肤？"><a href="#如何改变皮肤？" class="headerlink" title="如何改变皮肤？"></a>如何改变皮肤？</h1><p>步骤如下：</p>
-<ol>
-<li>前往 <a href="https://hexo.io/themes/">hexo网站</a> 选择皮肤，并点击进入github页面；</li>
-<li>将git库clone到themes文件夹下；</li>
-<li>修改conf配置文件，改为对应的名字；</li>
-<li>有的图片需要配置按照github的readme来写。</li>
-</ol>
-<h1 id="如何自定义博客结构？"><a href="#如何自定义博客结构？" class="headerlink" title="如何自定义博客结构？"></a>如何自定义博客结构？</h1><ol>
-<li>进入使用的themes下，修改layout中的相关文件（比如js这些）</li>
-</ol>
-<h1 id="文章的分类与标签"><a href="#文章的分类与标签" class="headerlink" title="文章的分类与标签"></a>文章的分类与标签</h1><ol>
-<li>前往 <a href="https://hexo.io/zh-cn/docs/front-matter">hexo网站</a> 查看相应的语法</li>
-</ol>
-<h1 id="如何让代码更美观"><a href="#如何让代码更美观" class="headerlink" title="如何让代码更美观"></a>如何让代码更美观</h1><ol>
-<li>前往 <a href="https://hexo.io/zh-cn/docs/tag-plugins#%E4%BB%A3%E7%A0%81%E5%9D%97">hexo网站</a> 查看相应的语法<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure></li>
-</ol>
-<figure class="highlight plaintext"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#x27;&#x27;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>并在对应的themes中修改相应的高亮代码块方案。</li>
-</ol>
-<h1 id="本地写作时图床的写作方案"><a href="#本地写作时图床的写作方案" class="headerlink" title="本地写作时图床的写作方案"></a>本地写作时图床的写作方案</h1><ol>
-<li>图床<a href="https://www.qiniu.com/">七牛</a> ;</li>
-<li>配置方法:快捷键+建个脚本（注意图床的链接的修改）</li>
-<li>上传使用官方的上传组件即可，命令行辅助工具(qrsctl)</li>
-</ol>
-<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><ol>
-<li>前往 <a href="https://hexo.io/plugins">hexo网站</a> </li>
-<li>字数统计插件 ： 不算字<br> next的字数统计见<a href="https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&utm_medium=referral">https://blog.csdn.net/wangxw725/article/details/71602256?utm_source=itdadao&amp;utm_medium=referral</a>, <a href="https://blog.csdn.net/u012195214/article/details/79204088">https://blog.csdn.net/u012195214/article/details/79204088</a><br> 2.1 安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save<br> 2.2 在主题配置文件(Blog\themes\next\config.yml)中打开wordcount 统计功能</li>
-</ol>
-<h1 id="博客-接入评论系统"><a href="#博客-接入评论系统" class="headerlink" title="博客 接入评论系统"></a>博客 接入评论系统</h1><ol>
-<li>disquz</li>
-<li>来必力</li>
-<li>畅言</li>
-<li>gitment； <a href="https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/">https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</a></li>
-</ol>
-<h1 id="博客增加搜索功能"><a href="#博客增加搜索功能" class="headerlink" title="博客增加搜索功能"></a>博客增加搜索功能</h1><ol>
-<li>SwiftType</li>
-<li>自定义site语法进行跳转</li>
-<li>next方案在<a href="https://blog.csdn.net/u012195214/article/details/79204088">https://blog.csdn.net/u012195214/article/details/79204088</a></li>
-</ol>
-<h1 id="接入统计系统"><a href="#接入统计系统" class="headerlink" title="接入统计系统"></a>接入统计系统</h1><ol>
-<li>cnzz</li>
-<li>百度统计:<a href="https://blog.csdn.net/u013066244/article/details/71056745">https://blog.csdn.net/u013066244/article/details/71056745</a></li>
-</ol>
-<h1 id="阅读量统计"><a href="#阅读量统计" class="headerlink" title="阅读量统计"></a>阅读量统计</h1><ol>
-<li>注册<a href="https://leancloud.cn/">LeanCloud</a> .</li>
-<li>新建应用，并添加Counter数据（无限访问改写），然后再获得appid，appkey，并在next配置文件中leancloud_visitors进行改写<br>参考自<a href="https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">https://notes.doublemine.me/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud</a></li>
-</ol>
-<h1 id="百度收录"><a href="#百度收录" class="headerlink" title="百度收录"></a>百度收录</h1><ol>
-<li>参见<a href="https://albenw.github.io/posts/be8242cc/%EF%BC%88%E6%9C%AA%E6%88%90%E5%8A%9F%EF%BC%89">https://albenw.github.io/posts/be8242cc/（未成功）</a></li>
-</ol>
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

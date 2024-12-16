@@ -1,206 +1,37 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    一些待解决问题 | Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="keywords" content="
-  
-  ">
-  
-  <meta name="author" content="史海杰">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block page_class %}page-post-detail{% endblock %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
 
-  
+{% block content %}
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
-</nav>
 
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 201 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 28 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 26 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Jay&#39;s Blog</a>
-      
-      
-    </h2>
-  </div>
+{% endblock %}
 
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    史海杰
-
-    <span class="post-date float-right" title="{{moment(1546410168000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1546410168000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>一些待解决问题</h1>
-    <ol>
-<li><p>SOA和微服务：<br>如果一句话来谈SOA和微服务的区别，即微服务不再强调传统SOA架构里面比较重的ESB企业服务总线，同时SOA的思想进入到单个业务系统内部实现真正的组件化。</p>
-</li>
-<li><p>httpserver<br>HTTP服务器本质上也是一种应用程序——它通常运行在服务器之上，绑定服务器的IP地址并监听某一个tcp端口来接收并处理HTTP请求，这样客户端（一般来说是IE, Firefox，Chrome这样的浏览器）就能够通过HTTP协议来获取服务器上的网页（HTML格式）、文档（PDF格式）、音频（MP4格式）、视频（MOV格式）等等资源。<br>不仅仅是Apache HTTP Server和Nginx，绝大多数编程语言所包含的类库中也都实现了简单的HTTP服务器方便开发者使用</p>
-</li>
-<li><p>编译器</p>
-</li>
-<li><p>单元测试到底如何去做？</p>
-</li>
-<li><p>ant,maven,gradle<br>但是ant有一个很致命的缺陷，那就是没办法管理依赖。我们一个工程，要使用很多第三方工具，不同的工具，不同的版本。每次打包都要自己手动去把正确的版本拷到lib下面去，不用说，这个工作既枯燥还特别容易出错。为了解决这个问题，maven闪亮登场。maven最核心的改进就在于提出仓库这个概念。我可以把所有依赖的包，都放到仓库里去，在我的工程管理文件里，标明我需要什么什么包，什么什么版本。在构建的时候，maven就自动帮我把这些包打到我的包里来了。我们再也不用操心着自己去管理几十上百个jar文件了。<br>maven已经很好了，可以满足绝大多数工程的构建。那为什么我们还需要新的构建工具呢？第一，maven是使用xml进行配置的，语法不简洁。第二，最关键的，maven在约定优于配置这条路上走太远了。就是说，maven不鼓励你自己定义任务，它要求用户在maven的生命周期中使用插件的方式去工作。这有点像设计模式中的模板方法模式。说通俗一点，就是我使用maven的话，想灵活地定义自己的任务是不行的。基于这个原因，gradle做了很多改进。<br>作者：海纳<br>链接：<a href="https://zhuanlan.zhihu.com/p/24429133">https://zhuanlan.zhihu.com/p/24429133</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-</li>
-<li><p>计算机领域只要多分几层，没有解决不了的问题<br>6.1 在应用程序和数据库之间增加一个抽象层–缓存。<br>6.2 比如对于一门动态语言，直接做一个编译器讲这门语言和汇编链接到一起，难度太大（尤其是词法分析上），这个时候可以采取间接的定义一套中间码，讲源代码编译成为中间码，中间码通过另一个程序（执行引擎，一般是C&#x2F;C++写的）执行这个中间码，这样效率不会损失太多但大大加快了开发效率。<br>作者：DreamPiggy<br>链接：<a href="https://www.zhihu.com/question/31695794/answer/53797548">https://www.zhihu.com/question/31695794/answer/53797548</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>6.3 中间件，负责底层操作系统和上层应用程序都不愿意做的事，比如hibernate</p>
-</li>
-<li><p>编译型语言和解释型语言<br>编译型语言是做好了菜再吃，解释型语言是吃火锅。<br>一种高级编程语言，从源代码开始，一直到被执行生成相应的动作，大约经历了这几个步骤：                     编译                                                 执行<br>源代码&#x3D;&#x3D;&#x3D;&#x3D;&gt;（中间表示形式&#x3D;&#x3D;&#x3D;&#x3D;&gt;）基本操作序列&#x3D;&#x3D;&#x3D;&#x3D;&gt;生成最终动作<br>编译型和解释型语言的不同指出只是在于，这些过程发生的时机不一样。编译型语言的代表是C，源代码被编译之后生成中间文件（.o和.obj），然后用连接器和汇编器生成机器码，也就是一系列基本操作的序列，机器码最后被执行生成最终动作。解释型的语言以Ruby为例，也经历了这些步骤，不同的是，C语言会把那些从源代码“变”来的基本操作序列（保存）起来，而Ruby直接将这些生成的基本操作序列（Ruby虚拟机）指令丢给Ruby虚拟机执行然后产生动作了。<br>所以我们看到的现象是，编译型语言要先编译再运行，而解释性语言直接“运行”源代码。<br>除了BASIC这样特别早期的解释型语言，是直接解释执行，现在的解释型语言都采取将代码编译为某种特定的虚拟机代码或者机器码的形式，然后再执行那些编译好的代码。BASIC这种直接解释的，我们可以将他的基本操作序列理解为直接执行基本操作的那些函数。<br>作者：余天升<br>链接：<a href="https://www.zhihu.com/question/21486706/answer/18422107">https://www.zhihu.com/question/21486706/answer/18422107</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-</li>
-</ol>
-<p>比如对于一门动态语言，直接做一个编译器讲这门语言和汇编链接到一起，难度太大（尤其是词法分析上），这个时候可以采取间接的定义一套中间码，讲源代码编译成为中间码，中间码通过另一个程序（执行引擎，一般是C&#x2F;C++写的）执行这个中间码，这样效率不会损失太多但大大加快了开发效率。<br>其实虚拟机执行引擎怎么执行传来的中间码，这也是一个编译&#x2F;解释的区别，前者就是直接将中间码再次编译为更底层（汇编级别，机器码），并且保存到外存中，比如.NET的CLR；后者就是直接把这个中间码按照一条条的指令直接执行（执行也就是用C的等价代码来实现它），不会将新的代码保存在外存中。这也是一个最大的区别吧。</p>
-<p>作者：DreamPiggy<br>链接：<a href="https://www.zhihu.com/question/31695794/answer/53797548">https://www.zhihu.com/question/31695794/answer/53797548</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<ol start="8">
-<li><p>java动态代理与java是静态语言有什么关系？【码农翻身P321】</p>
-</li>
-<li><p>x86<br>一般说x86架构都是相对arm架构的.<br>x86、x64都是指CPU指令集<br>狭义的x86架构，指只支持32位的intel&#x2F;AMD&#x2F;VIA的CPU，并向下兼容16位（实模式）；<br>狭义的x64架构，指的是支持32位和64位的intel&#x2F;AMD CPU，指令集与x86兼容，并向下兼容16位（实模式），目前绝大多数民用CPU和服务器CPU都是这样的；</p>
-</li>
-<li></li>
-</ol>
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

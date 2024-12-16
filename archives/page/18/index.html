@@ -1,449 +1,62 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post-collapse.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
+{% block title %}{{ __('title.archive') }} | {{ config.title }}{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="author" content="史海杰">
+{% block page_class %}page-archive{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block content %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  {#####################}
+  {### ARCHIVE BLOCK ###}
+  {#####################}
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        {% set cheers %}
+        {% set posts_length = site.posts.length %}
+        {% if posts_length > 210 %} {% set cheers = 'excellent' %}
+          {% elif posts_length > 130 %} {% set cheers = 'great' %}
+          {% elif posts_length > 80 %} {% set cheers = 'good' %}
+          {% elif posts_length > 50 %} {% set cheers = 'nice' %}
+          {% elif posts_length > 30 %} {% set cheers = 'ok' %}
+        {% else %}
+          {% set cheers = 'um' %}
+        {% endif %}
+        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
+      </span>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+      {% for post in page.posts %}
 
-<body id="replica-app">
+        {# Show year #}
+        {% set year %}
+        {% set post.year = date(post.date, 'YYYY') %}
 
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
+        {% if post.year !== year %}
+          {% set year = post.year %}
+          <div class="collection-title">
+            <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
           </div>
-        </div>
-      </div>
+        {% endif %}
+        {# endshow #}
 
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
+        {{ post_template.render(post) }}
 
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+      {% endfor %}
+
     </div>
   </div>
-</nav>
+  {#########################}
+  {### END ARCHIVE BLOCK ###}
+  {#########################}
 
-<div class="main-container">
-  
+  {% include '_partials/pagination.swig' %}
 
-<div class="container-lg">
-  
+{% endblock %}
 
-<div class="blog-intro">
-  <div class="blog-intro-user">
-    <img class="avatar" src="https://octodex.github.com/images/baracktocat.jpg">
-    <div class="user-name">
-      <div class="blog-title"></div>
-      <div class="blog-author"></div>
-        <ul class="user-detail mobile-only">
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://yoursite.com">http://yoursite.com</a>
-    </li>
-  </ul>
-    </div>
-    <div class="blog-description">
-      
-    </div>
-  </div>
-
-  <ul class="user-detail desktop-only">
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://yoursite.com">http://yoursite.com</a>
-    </li>
-  </ul>
-
-  <div class="social-media desktop-only">
-    <h4>Social Media</h4>
-    <ul>
-      
-    </ul>
-  </div>
-</div>
-
-
-  <div class="blog-detail">
-    
-<nav class="blog-detail-nav desktop-only">
-  <ul class="clearfix">
-    <li class="">
-      <a href="/">Overview</a></li>
-    <li class="selected">
-      <a href="/">Posts <span class="counter">201</span></a>
-    </li>
-    <li class="">
-      <a href="/">Categories <span
-                class="counter">26</span></a></li>
-    <li class="">
-      <a href="/">Tags <span class="counter">28</span></a></li>
-  </ul>
-</nav>
-
-    <div class="body-secondary">
-      <ul class="archive-list">
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">设计模式之工厂模式</a></h2>
-          <p>
-               概念：  实例化对象，用工厂方法代替new操作； 包括工厂方法模式和抽象工厂模式； 抽象工厂模式是工厂方法模式的扩展。 
-   意图：  定义一个接口来创建对象，但是让子类来决定哪些类需要被实例化； 工厂方法把实例化的工作推迟到子类中去实现。 
-   应用场景：  有一组类似的对象需要创建； ...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 2 </span>
-            <span>Published {{moment(1533108933000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">设计模式之代理模式</a></h2>
-          <p>
-             定义： 为其他对象提供一种代理以控制对这个对象的访问； 
- 静态代理实现： 
- 
- 继承实现； 
- 聚合实现（更灵活）； 
- 
- 动态代理（如何体现动态，就是当接口中又添加新功能时，代理中不用改变）： 
- 
-  实现步骤： 
-  使用被代理对象创建InvocationHandler对象实例  生成...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 2 </span>
-            <span>Published {{moment(1533106212000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">设计模式之单例模式</a></h2>
-          <p>
-             应用场合：有些对象只需要一个就足够了； 作用：保证某个实例只有一个 类型：懒汉模式和饿汉模式； 
- 饿汉模式（加载的时候就已经创建实例了，加载类时比较慢，但运行时获取对象的速度比较快，线程安全）： 步骤： 
- 
- 将构造方法私有化，不允许外部直接创建对象； 
- 创建类的唯一实例（私有静态）； 
- ...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 2 </span>
-            <span>Published {{moment(1533105545000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/30/Java%E5%8F%8D%E5%B0%84/">Java反射</a></h2>
-          <p>
-             Java反射机制是构建框架技术的基础所在。 Java反射机制是指在运行状态中，动态获取信息以及动态调用对象方法的功能。 
- 动态性质： 
- 
- 运行时生成对象实例； 
- 运行期间调用方法； 
- 运行时更改属性。 
- 
- 使用Java反射技术常用的类如下： Class类等等 
- 注意： 使用反射虽然...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Java/">Java</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Java/"><i class="fa fa-folder-open"></i> Java</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1532933951000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/26/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%AF%94%E8%BE%83/">jdk各个版本比较</a></h2>
-          <p>
-               JDK5  
- 自动装箱与拆箱： 
- 枚举 
- 静态导入，如：import staticjava.lang.System.out 
- 可变参数（Varargs） 
- 内省（Introspector），主要用于操作JavaBean中的属性，通过getXxx&amp;#x2F;setXxx。一般的做法是通...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/java/">java</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa fa-folder-open"></i> 学习笔记</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1532590532000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/26/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E6%B1%87%E6%80%BB/">有道云笔记汇总</a></h2>
-          <p>
-               算法    机器学习与深度学习  
-  网易云课堂Andrew机器学习  
-  神经网络、keras、scikilearn、lstm  
-  机器学习中的基本概念  
-  深度学习  
-  数据处理   http://note.youdao.com/noteshare?id=2393e6055...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/java/">java</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/Python/">Python</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa fa-folder-open"></i> 学习笔记</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 5 </span>
-            <span>Published {{moment(1532587187000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/19/%E7%AE%80%E5%8E%86%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88Java%EF%BC%89/">简历之软件开发工程师（Java）</a></h2>
-          <p>
-               岗位描述：  
-     京东 
- 
- 1-2019年毕业，计算机软件、数学、物理等相关专业本科及以上学历    2-具有非常强的责任心，能够承担压力做事细心，参与独立系统的设计、开发、维护工作    3-了解web前端开发的基础知识，会面向对象程序设计（OOP）与基本的设计模式，了解linu...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E7%AE%80%E5%8E%86/">简历</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E7%AE%80%E5%8E%86/"><i class="fa fa-folder-open"></i> 简历</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531989644000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/19/%E7%AE%80%E5%8E%86%E4%B9%8B%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E5%B2%97%E4%BD%8D%E6%8F%8F%E8%BF%B0%E5%92%8C%E8%81%8C%E8%B4%A3%E8%A6%81%E6%B1%82/">简历之算法工程师的岗位描述和职责要求</a></h2>
-          <p>
-               岗位描述：  
-     京东 
- 
- 1-2019年毕业，本科及以上学历    2-研究及应用前沿互联网技术，如机器学习、深度学习、数据挖掘、推荐、搜索、自然语言处理、分布式并行算法、复杂网络、图像识别、计算机视觉、语音等    3-至少熟悉java, c++，python中的一种开发语言 ...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E7%AE%80%E5%8E%86/">简历</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E7%AE%80%E5%8E%86/"><i class="fa fa-folder-open"></i> 简历</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531989611000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/16/%E7%AE%80%E5%8E%86%E5%88%B6%E4%BD%9C%E4%B9%8B%E7%AE%80%E5%8E%86%E5%9F%BA%E6%9C%AC%E6%9E%84%E6%88%90/">简历制作之简历基本构成</a></h2>
-          <p>
-             一份简历按照 5号 和 小5字号 ，加上调整页边距后的空间，一页A4纸可以容纳 33到53 行。 
-   简历总体思维导图    
-  核心是经历。  从“岗位JD的分析”以及“经历撰写的句式与方法”两个角度，教会大家如何用职业人和职业化的口吻描述自己的经历。 
- ** 具体的经历写法对屏幕进行了...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E7%AE%80%E5%8E%86/">简历</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E7%AE%80%E5%8E%86/"><i class="fa fa-folder-open"></i> 简历</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531745089000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/16/%E7%AE%80%E5%8E%86%E5%88%B6%E4%BD%9C/">简历制作</a></h2>
-          <p>
-             __ 以下的几篇都是 前辈学院-实习僧的简历课程  __ 
-   简历制作前需要搞清楚的三个核心问题：  
- 首先，同学们在什么情况下会使用简历？ 
- 其次，简历在整个求职过程中有什么功能？或者说站在求职者和雇主的不同角度上，需要它实现什么功能？ 
- 最后，hr们在筛选简历时候的标准是什么？基于这...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E7%AE%80%E5%8E%86/">简历</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/%E5%B7%A5%E4%BD%9C/">工作</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E7%AE%80%E5%8E%86/"><i class="fa fa-folder-open"></i> 简历</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 2 </span>
-            <span>Published {{moment(1531735448000).fromNow()}}</span>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block sidebar %}
+  {{ sidebar_template.render(false) }}
+{% endblock %}

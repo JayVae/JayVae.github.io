@@ -1,207 +1,37 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    计算机网络自顶向下方法 | Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="keywords" content="
-  
-  ">
-  
-  <meta name="author" content="史海杰">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block page_class %}page-post-detail{% endblock %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
 
-  
+{% block content %}
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
-</nav>
 
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 201 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 28 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 26 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Jay&#39;s Blog</a>
-      
-      
-    </h2>
-  </div>
+{% endblock %}
 
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    史海杰
-
-    <span class="post-date float-right" title="{{moment(1546520010000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1546520010000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>计算机网络自顶向下方法</h1>
-    <ol>
-<li><p>在数据链路层，基础性问题是共享多路访问信道。</p>
-</li>
-<li><p>端系统（end systems）或主机（host）通过通信链路（communication link）【物理媒体】和分组交换机（packet switch）连接到一起。<br>传递的数据将数据分段，术语叫做分组（packet）。<br>分组交换机分为路由器和链路层交换机。<br>链路层交换机通常用于接入网（access network）中，而路由器通常用于网络核心中。<br>接入网是指将端系统连接到其边缘路由器（edge router）的物理链路，边缘路由器是端系统到任何其他远程端系统的路径上的第一台路由器。</p>
-</li>
-<li><p>IP协议定义了在路由器和端系统之间发送和接收的分组格式。</p>
-</li>
-<li><p>通信链路，物理媒体传播电磁波或光脉冲来发送比特。<br>双绞铜线和同轴电缆都是以传播电磁波来传递信息的。<br>个人理解–网线是通过传播电磁波来传播比特信息的。<br>现在我们买的网线基本是双绞线的，里面的材料是铜。<br>同轴电缆，双绞线本质上和电话线的材料是一样的，从这个角度来说，他们传输也是需要调制到某个频段，产生模拟型号，并不是直接传输数字信号的。<br>其实从本质上说，信号的传递是通过电磁波传递的（光纤是通过光信号），因此，数字信号的传输都需要经过调制和解调。<br>承载信息的是电磁波。<br>接收方需要使用一种结构来感应发射方的电磁波，这个结构叫接收天线（广义上的接收天线，实际中不一定是个天线，比如波导中的同轴探头）。接收天线将电磁波转换为方便电路处理的电压或电流，依据的规律是电磁互易性。<br>无线传输是自由空间的电磁波，有线传输是有导波结构束缚的电磁波，二者没有本质区别。</p>
-</li>
-</ol>
-<ul>
-<li><p>补充 * ：<br>数字信号是在模拟信号的基础上经过采样、量化和编码而形成的。具体地说，采样就是把输入的模拟信号按.适当的时间间隔得到各个时刻的样本值.量化是把经采样测得的各个时刻的值用二进码制来表示，编码则是把t化生成的二进制数排列在一起形成顺序脉冲序列 。<br><a href="https://baijiahao.baidu.com/s?id=1610283148787946994&wfr=spider&for=pc">为什么在一条电话线路上既能打电话，又能传输数字信号？</a></p>
-</li>
-<li><p>等等，好像有什么不对 *<br><a href="https://blog.csdn.net/qq_15037231/article/details/54988436">（模拟信号&#x2F;数字信号）分别以（模拟信号&#x2F;数字信号）中传输方式</a><br>这篇文章中，提出有四种传输方式，即模拟数据以模拟信号传输、数字数据以模拟信号传输（调制解调）、数字数据以数字信号传输（数字数据可以数字信号传输，但需对信号进行编码以提高数据传输的效率和实现通信双方的信号同步。）、模拟数据以数字信号传输（编码解码器）。</p>
-</li>
-</ul>
-<p>信号的基本传输方式有基带传输、频带传输、载波传输、异步传输模式ATM。（<a href="https://zhidao.baidu.com/question/590174212.html%EF%BC%89">https://zhidao.baidu.com/question/590174212.html）</a></p>
-<ol start="5">
-<li><p>应用层–网络层–传输层–链路层–物理层<br> |         |       |       |       |<br> |          ———————————————————————<br> |                 packet分组<br> 报文    报文段  数据报   帧<br>  message  segment  datagram frame</p>
-</li>
-<li><p>分组交换机分为路由器和链路层交换机。<br>链路层交换机实现了第一层和第二层协议；路由器实现了第一层到第三层。<br>链路层交换机不能识别IP地址，但能够识别第二层地址，如以太网地址。</p>
-</li>
-<li><p>五层协议<br>下一层为上一层提供服务，并且在节点的对等层次提供对等的服务。<br>网络设计者以分层的方式组织协议以及实现这些协议的网络 <em>硬件</em> 和 <em>软件</em> 。<br>一个协议层能够用软件、硬件或两者的结合来实现。诸如http，dns，smtp，ftp等应用层，以及运输层TCP、UDP协议用软件实现；因为物理层和数据链路层负责跨越特定链路的通信，它们总是实现在于给定链路相联系的网络接口卡（例如以太网或Wifi接口卡）中。网络层经常是硬件和软件实现的混合体。<br>第n层协议的不同部分常常位于这些网络组件的各部分。</p>
-</li>
-<li></li>
-</ol>
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

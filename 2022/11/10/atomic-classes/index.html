@@ -1,290 +1,37 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    Atomic 原子类总结 | Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="keywords" content="
-  Java并发
-  ">
-  
-  <meta name="author" content="史海杰">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block page_class %}page-post-detail{% endblock %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
 
-  
+{% block content %}
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
-</nav>
 
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 201 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 28 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 26 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Jay&#39;s Blog</a>
-      
-      
-    </h2>
-  </div>
+{% endblock %}
 
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    史海杰
-
-    <span class="post-date float-right" title="{{moment(1668084735000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1668084735000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>Atomic 原子类总结</h1>
-    <h2 id="Atomic-原子类介绍"><a href="#Atomic-原子类介绍" class="headerlink" title="Atomic 原子类介绍"></a>Atomic 原子类介绍</h2><p><code>Atomic</code> 翻译成中文是“原子”的意思。在化学上，原子是构成物质的最小单位，在化学反应中不可分割。在编程中，<code>Atomic</code> 指的是一个操作具有原子性，即该操作不可分割、不可中断。即使在多个线程同时执行时，该操作要么全部执行完成，要么不执行，不会被其他线程看到部分完成的状态。</p>
-<p>原子类简单来说就是具有原子性操作特征的类。</p>
-<p><code>java.util.concurrent.atomic</code> 包中的 <code>Atomic</code> 原子类提供了一种线程安全的方式来操作单个变量。</p>
-<p><code>Atomic</code> 类依赖于 CAS（Compare-And-Swap，比较并交换）乐观锁来保证其方法的原子性，而不需要使用传统的锁机制（如 <code>synchronized</code> 块或 <code>ReentrantLock</code>）。</p>
-<p>这篇文章我们只介绍 Atomic 原子类的概念，具体实现原理可以阅读笔者写的这篇文章：<a href="./cas.md">CAS 详解</a>。</p>
-<p><img src="https://oss.javaguide.cn/github/javaguide/java/JUC%E5%8E%9F%E5%AD%90%E7%B1%BB%E6%A6%82%E8%A7%88.png" alt="JUC原子类概览"></p>
-<p>根据操作的数据类型，可以将 JUC 包中的原子类分为 4 类：</p>
-<p><strong>1、基本类型</strong></p>
-<p>使用原子的方式更新基本类型</p>
-<ul>
-<li><code>AtomicInteger</code>：整型原子类</li>
-<li><code>AtomicLong</code>：长整型原子类</li>
-<li><code>AtomicBoolean</code>：布尔型原子类</li>
-</ul>
-<p><strong>2、数组类型</strong></p>
-<p>使用原子的方式更新数组里的某个元素</p>
-<ul>
-<li><code>AtomicIntegerArray</code>：整型数组原子类</li>
-<li><code>AtomicLongArray</code>：长整型数组原子类</li>
-<li><code>AtomicReferenceArray</code>：引用类型数组原子类</li>
-</ul>
-<p><strong>3、引用类型</strong></p>
-<ul>
-<li><code>AtomicReference</code>：引用类型原子类</li>
-<li><code>AtomicMarkableReference</code>：原子更新带有标记的引用类型。该类将 boolean 标记与引用关联起来，<del>也可以解决使用 CAS 进行原子更新时可能出现的 ABA 问题</del>。</li>
-<li><code>AtomicStampedReference</code>：原子更新带有版本号的引用类型。该类将整数值与引用关联起来，可用于解决原子的更新数据和数据的版本号，可以解决使用 CAS 进行原子更新时可能出现的 ABA 问题。</li>
-</ul>
-<p><strong>🐛 修正（参见：<a href="https://github.com/Snailclimb/JavaGuide/issues/626">issue#626</a>）</strong> : <code>AtomicMarkableReference</code> 不能解决 ABA 问题。</p>
-<p><strong>4、对象的属性修改类型</strong></p>
-<ul>
-<li><code>AtomicIntegerFieldUpdater</code>:原子更新整型字段的更新器</li>
-<li><code>AtomicLongFieldUpdater</code>：原子更新长整型字段的更新器</li>
-<li><code>AtomicReferenceFieldUpdater</code>：原子更新引用类型里的字段</li>
-</ul>
-<h2 id="基本类型原子类"><a href="#基本类型原子类" class="headerlink" title="基本类型原子类"></a>基本类型原子类</h2><p>使用原子的方式更新基本类型</p>
-<ul>
-<li><code>AtomicInteger</code>：整型原子类</li>
-<li><code>AtomicLong</code>：长整型原子类</li>
-<li><code>AtomicBoolean</code>：布尔型原子类</li>
-</ul>
-<p>上面三个类提供的方法几乎相同，所以我们这里以 <code>AtomicInteger</code> 为例子来介绍。</p>
-<p><strong><code>AtomicInteger</code> 类常用方法</strong> ：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">get</span><span class="params">()</span> <span class="comment">//获取当前的值</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndSet</span><span class="params">(<span class="type">int</span> newValue)</span><span class="comment">//获取当前的值，并设置新的值</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndIncrement</span><span class="params">()</span><span class="comment">//获取当前的值，并自增</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndDecrement</span><span class="params">()</span> <span class="comment">//获取当前的值，并自减</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndAdd</span><span class="params">(<span class="type">int</span> delta)</span> <span class="comment">//获取当前的值，并加上预期的值</span></span><br><span class="line"><span class="type">boolean</span> <span class="title function_">compareAndSet</span><span class="params">(<span class="type">int</span> expect, <span class="type">int</span> update)</span> <span class="comment">//如果输入的数值等于预期值，则以原子方式将该值设置为输入值（update）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">lazySet</span><span class="params">(<span class="type">int</span> newValue)</span><span class="comment">//最终设置为newValue, lazySet 提供了一种比 set 方法更弱的语义，可能导致其他线程在之后的一小段时间内还是可以读到旧的值，但可能更高效。</span></span><br></pre></td></tr></table></figure>
-
-<p><strong><code>AtomicInteger</code> 类使用示例</strong> :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化 AtomicInteger 对象，初始值为 0</span></span><br><span class="line"><span class="type">AtomicInteger</span> <span class="variable">atomicInt</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AtomicInteger</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 getAndSet 方法获取当前值，并设置新值为 3</span></span><br><span class="line"><span class="type">int</span> <span class="variable">tempValue</span> <span class="operator">=</span> atomicInt.getAndSet(<span class="number">3</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;tempValue: &quot;</span> + tempValue + <span class="string">&quot;; atomicInt: &quot;</span> + atomicInt);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 getAndIncrement 方法获取当前值，并自增 1</span></span><br><span class="line">tempValue = atomicInt.getAndIncrement();</span><br><span class="line">System.out.println(<span class="string">&quot;tempValue: &quot;</span> + tempValue + <span class="string">&quot;; atomicInt: &quot;</span> + atomicInt);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 getAndAdd 方法获取当前值，并增加指定值 5</span></span><br><span class="line">tempValue = atomicInt.getAndAdd(<span class="number">5</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;tempValue: &quot;</span> + tempValue + <span class="string">&quot;; atomicInt: &quot;</span> + atomicInt);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 compareAndSet 方法进行原子性条件更新，期望值为 9，更新值为 10</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">updateSuccess</span> <span class="operator">=</span> atomicInt.compareAndSet(<span class="number">9</span>, <span class="number">10</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Update Success: &quot;</span> + updateSuccess + <span class="string">&quot;; atomicInt: &quot;</span> + atomicInt);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前值</span></span><br><span class="line"><span class="type">int</span> <span class="variable">currentValue</span> <span class="operator">=</span> atomicInt.get();</span><br><span class="line">System.out.println(<span class="string">&quot;Current value: &quot;</span> + currentValue);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 lazySet 方法设置新值为 15</span></span><br><span class="line">atomicInt.lazySet(<span class="number">15</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;After lazySet, atomicInt: &quot;</span> + atomicInt);</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tempValue: <span class="number">0</span>; atomicInt: <span class="number">3</span></span><br><span class="line">tempValue: <span class="number">3</span>; atomicInt: <span class="number">4</span></span><br><span class="line">tempValue: <span class="number">4</span>; atomicInt: <span class="number">9</span></span><br><span class="line">Update Success: <span class="literal">true</span>; atomicInt: <span class="number">10</span></span><br><span class="line">Current value: <span class="number">10</span></span><br><span class="line">After lazySet, atomicInt: <span class="number">15</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="数组类型原子类"><a href="#数组类型原子类" class="headerlink" title="数组类型原子类"></a>数组类型原子类</h2><p>使用原子的方式更新数组里的某个元素</p>
-<ul>
-<li><code>AtomicIntegerArray</code>：整形数组原子类</li>
-<li><code>AtomicLongArray</code>：长整形数组原子类</li>
-<li><code>AtomicReferenceArray</code>：引用类型数组原子类</li>
-</ul>
-<p>上面三个类提供的方法几乎相同，所以我们这里以 <code>AtomicIntegerArray</code> 为例子来介绍。</p>
-<p><strong><code>AtomicIntegerArray</code> 类常用方法</strong>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">get</span><span class="params">(<span class="type">int</span> i)</span> <span class="comment">//获取 index=i 位置元素的值</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndSet</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> newValue)</span><span class="comment">//返回 index=i 位置的当前的值，并将其设置为新值：newValue</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndIncrement</span><span class="params">(<span class="type">int</span> i)</span><span class="comment">//获取 index=i 位置元素的值，并让该位置的元素自增</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndDecrement</span><span class="params">(<span class="type">int</span> i)</span> <span class="comment">//获取 index=i 位置元素的值，并让该位置的元素自减</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndAdd</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> delta)</span> <span class="comment">//获取 index=i 位置元素的值，并加上预期的值</span></span><br><span class="line"><span class="type">boolean</span> <span class="title function_">compareAndSet</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> expect, <span class="type">int</span> update)</span> <span class="comment">//如果输入的数值等于预期值，则以原子方式将 index=i 位置的元素值设置为输入值（update）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">lazySet</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> newValue)</span><span class="comment">//最终 将index=i 位置的元素设置为newValue,使用 lazySet 设置之后可能导致其他线程在之后的一小段时间内还是可以读到旧的值。</span></span><br></pre></td></tr></table></figure>
-
-<p><strong><code>AtomicIntegerArray</code> 类使用示例</strong> :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line"><span class="comment">// 创建 AtomicIntegerArray</span></span><br><span class="line"><span class="type">AtomicIntegerArray</span> <span class="variable">atomicArray</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AtomicIntegerArray</span>(nums);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印 AtomicIntegerArray 中的初始值</span></span><br><span class="line">System.out.println(<span class="string">&quot;Initial values in AtomicIntegerArray:&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;Index &quot;</span> + j + <span class="string">&quot;: &quot;</span> + atomicArray.get(j) + <span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 getAndSet 方法将索引 0 处的值设置为 2，并返回旧值</span></span><br><span class="line"><span class="type">int</span> <span class="variable">tempValue</span> <span class="operator">=</span> atomicArray.getAndSet(<span class="number">0</span>, <span class="number">2</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;\nAfter getAndSet(0, 2):&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Returned value: &quot;</span> + tempValue);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; atomicArray.length(); j++) &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;Index &quot;</span> + j + <span class="string">&quot;: &quot;</span> + atomicArray.get(j) + <span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 getAndIncrement 方法将索引 0 处的值加 1，并返回旧值</span></span><br><span class="line">tempValue = atomicArray.getAndIncrement(<span class="number">0</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;\nAfter getAndIncrement(0):&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Returned value: &quot;</span> + tempValue);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; atomicArray.length(); j++) &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;Index &quot;</span> + j + <span class="string">&quot;: &quot;</span> + atomicArray.get(j) + <span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 getAndAdd 方法将索引 0 处的值增加 5，并返回旧值</span></span><br><span class="line">tempValue = atomicArray.getAndAdd(<span class="number">0</span>, <span class="number">5</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;\nAfter getAndAdd(0, 5):&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Returned value: &quot;</span> + tempValue);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; atomicArray.length(); j++) &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;Index &quot;</span> + j + <span class="string">&quot;: &quot;</span> + atomicArray.get(j) + <span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Initial values in AtomicIntegerArray:</span><br><span class="line">Index 0: 1 Index 1: 2 Index 2: 3 Index 3: 4 Index 4: 5 Index 5: 6</span><br><span class="line">After getAndSet(0, 2):</span><br><span class="line">Returned value: 1</span><br><span class="line">Index 0: 2 Index 1: 2 Index 2: 3 Index 3: 4 Index 4: 5 Index 5: 6</span><br><span class="line">After getAndIncrement(0):</span><br><span class="line">Returned value: 2</span><br><span class="line">Index 0: 3 Index 1: 2 Index 2: 3 Index 3: 4 Index 4: 5 Index 5: 6</span><br><span class="line">After getAndAdd(0, 5):</span><br><span class="line">Returned value: 3</span><br><span class="line">Index 0: 8 Index 1: 2 Index 2: 3 Index 3: 4 Index 4: 5 Index 5: 6</span><br></pre></td></tr></table></figure>
-
-<h2 id="引用类型原子类"><a href="#引用类型原子类" class="headerlink" title="引用类型原子类"></a>引用类型原子类</h2><p>基本类型原子类只能更新一个变量，如果需要原子更新多个变量，需要使用 引用类型原子类。</p>
-<ul>
-<li><code>AtomicReference</code>：引用类型原子类</li>
-<li><code>AtomicStampedReference</code>：原子更新带有版本号的引用类型。该类将整数值与引用关联起来，可用于解决原子的更新数据和数据的版本号，可以解决使用 CAS 进行原子更新时可能出现的 ABA 问题。</li>
-<li><code>AtomicMarkableReference</code>：原子更新带有标记的引用类型。该类将 boolean 标记与引用关联起来，<del>也可以解决使用 CAS 进行原子更新时可能出现的 ABA 问题。</del></li>
-</ul>
-<p>上面三个类提供的方法几乎相同，所以我们这里以 <code>AtomicReference</code> 为例子来介绍。</p>
-<p><strong><code>AtomicReference</code> 类使用示例</strong> :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Person 类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="comment">//省略getter/setter和toString</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 AtomicReference 对象并设置初始值</span></span><br><span class="line">AtomicReference&lt;Person&gt; ar = <span class="keyword">new</span> <span class="title class_">AtomicReference</span>&lt;&gt;(<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;SnailClimb&quot;</span>, <span class="number">22</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印初始值</span></span><br><span class="line">System.out.println(<span class="string">&quot;Initial Person: &quot;</span> + ar.get().toString());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新值</span></span><br><span class="line"><span class="type">Person</span> <span class="variable">updatePerson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Daisy&quot;</span>, <span class="number">20</span>);</span><br><span class="line">ar.compareAndSet(ar.get(), updatePerson);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印更新后的值</span></span><br><span class="line">System.out.println(<span class="string">&quot;Updated Person: &quot;</span> + ar.get().toString());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试再次更新</span></span><br><span class="line"><span class="type">Person</span> <span class="variable">anotherUpdatePerson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;John&quot;</span>, <span class="number">30</span>);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">isUpdated</span> <span class="operator">=</span> ar.compareAndSet(updatePerson, anotherUpdatePerson);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印是否更新成功及最终值</span></span><br><span class="line">System.out.println(<span class="string">&quot;Second Update Success: &quot;</span> + isUpdated);</span><br><span class="line">System.out.println(<span class="string">&quot;Final Person: &quot;</span> + ar.get().toString());</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Initial Person: Person&#123;name=&#x27;SnailClimb&#x27;, age=22&#125;</span><br><span class="line">Updated Person: Person&#123;name=&#x27;Daisy&#x27;, age=20&#125;</span><br><span class="line">Second Update Success: true</span><br><span class="line">Final Person: Person&#123;name=&#x27;John&#x27;, age=30&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong><code>AtomicStampedReference</code> 类使用示例</strong> :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个 AtomicStampedReference 对象，初始值为 &quot;SnailClimb&quot;，初始版本号为 1</span></span><br><span class="line">AtomicStampedReference&lt;String&gt; asr = <span class="keyword">new</span> <span class="title class_">AtomicStampedReference</span>&lt;&gt;(<span class="string">&quot;SnailClimb&quot;</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印初始值和版本号</span></span><br><span class="line"><span class="type">int</span>[] initialStamp = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">1</span>];</span><br><span class="line"><span class="type">String</span> <span class="variable">initialRef</span> <span class="operator">=</span> asr.get(initialStamp);</span><br><span class="line">System.out.println(<span class="string">&quot;Initial Reference: &quot;</span> + initialRef + <span class="string">&quot;, Initial Stamp: &quot;</span> + initialStamp[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新值和版本号</span></span><br><span class="line"><span class="type">int</span> <span class="variable">oldStamp</span> <span class="operator">=</span> initialStamp[<span class="number">0</span>];</span><br><span class="line"><span class="type">String</span> <span class="variable">oldRef</span> <span class="operator">=</span> initialRef;</span><br><span class="line"><span class="type">String</span> <span class="variable">newRef</span> <span class="operator">=</span> <span class="string">&quot;Daisy&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">newStamp</span> <span class="operator">=</span> oldStamp + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isUpdated</span> <span class="operator">=</span> asr.compareAndSet(oldRef, newRef, oldStamp, newStamp);</span><br><span class="line">System.out.println(<span class="string">&quot;Update Success: &quot;</span> + isUpdated);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印更新后的值和版本号</span></span><br><span class="line"><span class="type">int</span>[] updatedStamp = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">1</span>];</span><br><span class="line"><span class="type">String</span> <span class="variable">updatedRef</span> <span class="operator">=</span> asr.get(updatedStamp);</span><br><span class="line">System.out.println(<span class="string">&quot;Updated Reference: &quot;</span> + updatedRef + <span class="string">&quot;, Updated Stamp: &quot;</span> + updatedStamp[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试用错误的版本号更新</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isUpdatedWithWrongStamp</span> <span class="operator">=</span> asr.compareAndSet(newRef, <span class="string">&quot;John&quot;</span>, oldStamp, newStamp + <span class="number">1</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Update with Wrong Stamp Success: &quot;</span> + isUpdatedWithWrongStamp);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印最终的值和版本号</span></span><br><span class="line"><span class="type">int</span>[] finalStamp = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">1</span>];</span><br><span class="line"><span class="type">String</span> <span class="variable">finalRef</span> <span class="operator">=</span> asr.get(finalStamp);</span><br><span class="line">System.out.println(<span class="string">&quot;Final Reference: &quot;</span> + finalRef + <span class="string">&quot;, Final Stamp: &quot;</span> + finalStamp[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Initial Reference: SnailClimb, Initial Stamp: 1</span><br><span class="line">Update Success: true</span><br><span class="line">Updated Reference: Daisy, Updated Stamp: 2</span><br><span class="line">Update with Wrong Stamp Success: false</span><br><span class="line">Final Reference: Daisy, Final Stamp: 2</span><br></pre></td></tr></table></figure>
-
-<p><strong><code>AtomicMarkableReference</code> 类使用示例</strong> :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个 AtomicMarkableReference 对象，初始值为 &quot;SnailClimb&quot;，初始标记为 false</span></span><br><span class="line">AtomicMarkableReference&lt;String&gt; amr = <span class="keyword">new</span> <span class="title class_">AtomicMarkableReference</span>&lt;&gt;(<span class="string">&quot;SnailClimb&quot;</span>, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印初始值和标记</span></span><br><span class="line"><span class="type">boolean</span>[] initialMark = <span class="keyword">new</span> <span class="title class_">boolean</span>[<span class="number">1</span>];</span><br><span class="line"><span class="type">String</span> <span class="variable">initialRef</span> <span class="operator">=</span> amr.get(initialMark);</span><br><span class="line">System.out.println(<span class="string">&quot;Initial Reference: &quot;</span> + initialRef + <span class="string">&quot;, Initial Mark: &quot;</span> + initialMark[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新值和标记</span></span><br><span class="line"><span class="type">String</span> <span class="variable">oldRef</span> <span class="operator">=</span> initialRef;</span><br><span class="line"><span class="type">String</span> <span class="variable">newRef</span> <span class="operator">=</span> <span class="string">&quot;Daisy&quot;</span>;</span><br><span class="line"><span class="type">boolean</span> <span class="variable">oldMark</span> <span class="operator">=</span> initialMark[<span class="number">0</span>];</span><br><span class="line"><span class="type">boolean</span> <span class="variable">newMark</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isUpdated</span> <span class="operator">=</span> amr.compareAndSet(oldRef, newRef, oldMark, newMark);</span><br><span class="line">System.out.println(<span class="string">&quot;Update Success: &quot;</span> + isUpdated);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印更新后的值和标记</span></span><br><span class="line"><span class="type">boolean</span>[] updatedMark = <span class="keyword">new</span> <span class="title class_">boolean</span>[<span class="number">1</span>];</span><br><span class="line"><span class="type">String</span> <span class="variable">updatedRef</span> <span class="operator">=</span> amr.get(updatedMark);</span><br><span class="line">System.out.println(<span class="string">&quot;Updated Reference: &quot;</span> + updatedRef + <span class="string">&quot;, Updated Mark: &quot;</span> + updatedMark[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试用错误的标记更新</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isUpdatedWithWrongMark</span> <span class="operator">=</span> amr.compareAndSet(newRef, <span class="string">&quot;John&quot;</span>, oldMark, !newMark);</span><br><span class="line">System.out.println(<span class="string">&quot;Update with Wrong Mark Success: &quot;</span> + isUpdatedWithWrongMark);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印最终的值和标记</span></span><br><span class="line"><span class="type">boolean</span>[] finalMark = <span class="keyword">new</span> <span class="title class_">boolean</span>[<span class="number">1</span>];</span><br><span class="line"><span class="type">String</span> <span class="variable">finalRef</span> <span class="operator">=</span> amr.get(finalMark);</span><br><span class="line">System.out.println(<span class="string">&quot;Final Reference: &quot;</span> + finalRef + <span class="string">&quot;, Final Mark: &quot;</span> + finalMark[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Initial Reference: SnailClimb, Initial Mark: false</span><br><span class="line">Update Success: true</span><br><span class="line">Updated Reference: Daisy, Updated Mark: true</span><br><span class="line">Update with Wrong Mark Success: false</span><br><span class="line">Final Reference: Daisy, Final Mark: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象的属性修改类型原子类"><a href="#对象的属性修改类型原子类" class="headerlink" title="对象的属性修改类型原子类"></a>对象的属性修改类型原子类</h2><p>如果需要原子更新某个类里的某个字段时，需要用到对象的属性修改类型原子类。</p>
-<ul>
-<li><code>AtomicIntegerFieldUpdater</code>:原子更新整形字段的更新器</li>
-<li><code>AtomicLongFieldUpdater</code>：原子更新长整形字段的更新器</li>
-<li><code>AtomicReferenceFieldUpdater</code>：原子更新引用类型里的字段的更新器</li>
-</ul>
-<p>要想原子地更新对象的属性需要两步。第一步，因为对象的属性修改类型原子类都是抽象类，所以每次使用都必须使用静态方法 newUpdater()创建一个更新器，并且需要设置想要更新的类和属性。第二步，更新的对象属性必须使用 public volatile 修饰符。</p>
-<p>上面三个类提供的方法几乎相同，所以我们这里以 <code>AtomicIntegerFieldUpdater</code>为例子来介绍。</p>
-<p><strong><code>AtomicIntegerFieldUpdater</code> 类使用示例</strong> :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Person 类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">// 要使用 AtomicIntegerFieldUpdater，字段必须是 public volatile</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="comment">//省略getter/setter和toString</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 AtomicIntegerFieldUpdater 对象</span></span><br><span class="line">AtomicIntegerFieldUpdater&lt;Person&gt; ageUpdater = AtomicIntegerFieldUpdater.newUpdater(Person.class, <span class="string">&quot;age&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 Person 对象</span></span><br><span class="line"><span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;SnailClimb&quot;</span>, <span class="number">22</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印初始值</span></span><br><span class="line">System.out.println(<span class="string">&quot;Initial Person: &quot;</span> + person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新 age 字段</span></span><br><span class="line">ageUpdater.incrementAndGet(person); <span class="comment">// 自增</span></span><br><span class="line">System.out.println(<span class="string">&quot;After Increment: &quot;</span> + person);</span><br><span class="line"></span><br><span class="line">ageUpdater.addAndGet(person, <span class="number">5</span>); <span class="comment">// 增加 5</span></span><br><span class="line">System.out.println(<span class="string">&quot;After Adding 5: &quot;</span> + person);</span><br><span class="line"></span><br><span class="line">ageUpdater.compareAndSet(person, <span class="number">28</span>, <span class="number">30</span>); <span class="comment">// 如果当前值是 28，则设置为 30</span></span><br><span class="line">System.out.println(<span class="string">&quot;After Compare and Set (28 to 30): &quot;</span> + person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试使用错误的比较值进行更新</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isUpdated</span> <span class="operator">=</span> ageUpdater.compareAndSet(person, <span class="number">28</span>, <span class="number">35</span>); <span class="comment">// 这次应该失败</span></span><br><span class="line">System.out.println(<span class="string">&quot;Compare and Set (28 to 35) Success: &quot;</span> + isUpdated);</span><br><span class="line">System.out.println(<span class="string">&quot;Final Person: &quot;</span> + person);</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Initial Person: Name: SnailClimb, Age: 22</span><br><span class="line">After Increment: Name: SnailClimb, Age: 23</span><br><span class="line">After Adding 5: Name: SnailClimb, Age: 28</span><br><span class="line">After Compare and Set (28 to 30): Name: SnailClimb, Age: 30</span><br><span class="line">Compare and Set (28 to 35) Success: false</span><br><span class="line">Final Person: Name: SnailClimb, Age: 30</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li>《Java 并发编程的艺术》</li>
-</ul>
-<!-- @include: @article-footer.snippet.md -->
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

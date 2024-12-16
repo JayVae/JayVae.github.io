@@ -1,423 +1,62 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+{% extends '_layout.swig' %}
+{% import '_macro/post-collapse.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
+{% block title %}{{ __('title.archive') }} | {{ config.title }}{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    Jay&#39;s Blog
-  </title>
-  <meta name="description" content="持续精进">
-  
-  <meta name="author" content="史海杰">
+{% block page_class %}page-archive{% endblock %}
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+{% block content %}
 
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  {#####################}
+  {### ARCHIVE BLOCK ###}
+  {#####################}
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        {% set cheers %}
+        {% set posts_length = site.posts.length %}
+        {% if posts_length > 210 %} {% set cheers = 'excellent' %}
+          {% elif posts_length > 130 %} {% set cheers = 'great' %}
+          {% elif posts_length > 80 %} {% set cheers = 'good' %}
+          {% elif posts_length > 50 %} {% set cheers = 'nice' %}
+          {% elif posts_length > 30 %} {% set cheers = 'ok' %}
+        {% else %}
+          {% set cheers = 'um' %}
+        {% endif %}
+        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
+      </span>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.3.0"></head>
+      {% for post in page.posts %}
 
-<body id="replica-app">
+        {# Show year #}
+        {% set year %}
+        {% set post.year = date(post.date, 'YYYY') %}
 
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
+        {% if post.year !== year %}
+          {% set year = post.year %}
+          <div class="collection-title">
+            <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
           </div>
-        </div>
-      </div>
+        {% endif %}
+        {# endshow #}
 
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
+        {{ post_template.render(post) }}
 
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
+      {% endfor %}
+
     </div>
   </div>
-</nav>
+  {#########################}
+  {### END ARCHIVE BLOCK ###}
+  {#########################}
 
-<div class="main-container">
-  
+  {% include '_partials/pagination.swig' %}
 
-<div class="container-lg">
-  
+{% endblock %}
 
-<div class="blog-intro">
-  <div class="blog-intro-user">
-    <img class="avatar" src="https://octodex.github.com/images/baracktocat.jpg">
-    <div class="user-name">
-      <div class="blog-title"></div>
-      <div class="blog-author"></div>
-        <ul class="user-detail mobile-only">
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://yoursite.com">http://yoursite.com</a>
-    </li>
-  </ul>
-    </div>
-    <div class="blog-description">
-      
-    </div>
-  </div>
-
-  <ul class="user-detail desktop-only">
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://yoursite.com">http://yoursite.com</a>
-    </li>
-  </ul>
-
-  <div class="social-media desktop-only">
-    <h4>Social Media</h4>
-    <ul>
-      
-    </ul>
-  </div>
-</div>
-
-
-  <div class="blog-detail">
-    
-<nav class="blog-detail-nav desktop-only">
-  <ul class="clearfix">
-    <li class="">
-      <a href="/">Overview</a></li>
-    <li class="selected">
-      <a href="/">Posts <span class="counter">201</span></a>
-    </li>
-    <li class="">
-      <a href="/">Categories <span
-                class="counter">26</span></a></li>
-    <li class="">
-      <a href="/">Tags <span class="counter">28</span></a></li>
-  </ul>
-</nav>
-
-    <div class="body-secondary">
-      <ul class="archive-list">
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/16/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">面试算法之贪心算法</a></h2>
-          <p>
-               
-  贪心算法的难点在于证明这个问题可以用贪心算法来解   很少单独考贪心算法  
-   简单贪心问题  lc455，392 
-   贪心算法与动态规划的关系  lc435 贪心是动态规划的特例 
-   如何证明贪心算法的正确性  
- 数学归纳法； 
- 反证法； 
- 
- 最小生成树和最短路径都...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/"><i class="fa fa-folder-open"></i> 面试算法</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531723925000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/15/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%9F%BA%E7%A1%80/">面试算法之动态规划基础</a></h2>
-          <p>
-               这是 H1    面试中对动态规划的考查难度不是很难    来源  以斐波那契数列为例，单纯方式的递归会造成指数级的时间复杂度，因为其中有大量重复的计算过程； 因此考虑将重复的数字用数组记录下来–记忆化搜索：自上向下的解决问题 动态规划：自下向上的解决问题 
-   关联  递归问题—重叠子问题...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/"><i class="fa fa-folder-open"></i> 面试算法</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531644103000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/14/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%8E%E9%80%92%E5%BD%92/">面试算法之二叉树与递归</a></h2>
-          <p>
-               递归和二叉树的紧密关系  基本上二叉树的大部分操作都会用到递归，因为二叉树本质上就是一种递归的数据结构 
-  写递归函数时要注意 ： 先写递归终止条件； 递归过程。 
-  递归的返回值  129,257 
-  更复杂的递归逻辑  437， 
-   二分搜索树（二分查找树）  235，98，45...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/"><i class="fa fa-folder-open"></i> 面试算法</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531561182000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/14/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%A0%88%E9%98%9F%E5%88%97%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">面试算法之栈队列优先队列</a></h2>
-          <p>
-             使用栈的原因是，需要在嵌套关系中获得最近的一个元素。 
-   递归和栈的紧密关系  递归算法： 二叉树144,94,145 
-  写递归函数时要注意 ： 先写递归终止条件； 递归过程。 
- 使用栈模拟系统栈，写出非递归程序；（三种遍历方式的统一写法） 教科书上的经典非递归方法 
-   队列的基本应...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/"><i class="fa fa-folder-open"></i> 面试算法</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531533901000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/13/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%9C%A8%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%A9%BF%E9%92%88%E5%BC%95%E7%BA%BF/">面试算法之在链表中穿针引线</a></h2>
-          <p>
-             206,83，86，328，2，445 
- 一般来说对链表的操作，基本都要求不能改变node的值，但是有一个例外，237 
-  技术  预先创建几个节点，将每个变量所对应的节点明确出来，画图，进行穿针引线 
-  技术  设立链表的虚拟头结点：203，82，21，24，25（在需要对头结点需要额外操...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/"><i class="fa fa-folder-open"></i> 面试算法</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531486938000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/13/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%9F%A5%E6%89%BE%E8%A1%A8%E7%9A%84%E9%97%AE%E9%A2%98/">面试算法之查找表的问题</a></h2>
-          <p>
-             有序数组的二分查找； set；（二分查找树[红黑树]实现和散列表[哈希]实现） map；（二分查找树[红黑树]实现和散列表[哈希]实现） 
- 二分查找树实现查找用logN时间，保留了数据的顺序性，提供更多的功能，即java中的treemap，treeset； 散列表就是查找用常数时间，即java中...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <i class="fa fa-folder-open"></i> Uncategorized
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531481137000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/12/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/">面试算法之数组问题</a></h2>
-          <p>
-               如何写出正确的程序？（参照二分查找的代码）  明确变量的含义； 循环不变量； 小数据量调试； 大数据量测试。 
-   leetcode 283 movezeros  定义：k，数组中，[0,k）的元素均为非0元素。 
-   leetcode 26 remove duplicated from ...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/"><i class="fa fa-folder-open"></i> 面试算法</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531377433000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/12/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">面试算法之时间复杂度</a></h2>
-          <p>
-             大O表示法：平均情况，是正比，与前面的常数关系不大； 
-   了解常用数据规模情况下的复杂度：   如果想在1s内解决问题：  O(N2)的算法可以处理大约10^4级别的数据； O(N)的算法可以处理大约10^8级别的数据； O(NlogN)的算法可以处理大约10^7级别的数据； 
- 空间复杂度：...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/"><i class="fa fa-folder-open"></i> 面试算法</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531358009000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/11/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/">算法面试</a></h2>
-          <p>
-               关键  算法面试并不是看你给出的是不是正确答案，而是思考路径，对于问题的细节和应用环境，不断深入。 关键在于解决问题的思路。 甚至通过分析解题方向，得到应该在哪个领域去找。 
-   算法面试的准备范围：  
- 各种排序算法 
- 基础数据结构和算法的实现：堆、二叉树、图 
- 基础数据结构的使用：...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/">面试算法</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/"><i class="fa fa-folder-open"></i> 面试算法</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1531308161000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/07/10/%E6%8B%92%E7%BB%9D%E6%97%A0%E6%84%8F%E4%B9%89%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%8C%E6%8A%8A%E6%97%B6%E9%97%B4%E6%B5%AA%E8%B4%B9%E5%9C%A8%E7%BE%8E%E5%A5%BD%E4%BA%8B%E6%83%85%E4%B8%8A/">拒绝无意义的事情，把时间浪费在美好事情上</a></h2>
-          <p>
-             最近拖延症太严重了啊！！！！ 
- 抓紧时间准备找工作吧，把时间用在刷题上面，不要做这些无意义的事情了： 
- 
- 游戏 
- 看游戏视频 
- 看综艺 
- 看微博 
- 
-  早睡早起，锻炼身体，早点躺下听听喜马拉雅也挺好啊  
- 尤其是无意义的社交，拒绝自我麻木，自我高潮。 
- 对自己狠一点吧，你的父母...
-          </p>
-          <ul class="tag-list clearfix">
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <i class="fa fa-folder-open"></i> Uncategorized
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 0 </span>
-            <span>Published {{moment(1531203271000).fromNow()}}</span>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://yoursite.com" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 史海杰</li>
-      <li><a href="http://yoursite.com">Home</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+{% block sidebar %}
+  {{ sidebar_template.render(false) }}
+{% endblock %}
