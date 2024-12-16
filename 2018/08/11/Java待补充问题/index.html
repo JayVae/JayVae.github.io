@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Java待补充问题 | Jay&#39;s Blog
+  </title>
+  <meta name="description" content="持续精进">
+  
+  <meta name="keywords" content="
+  Java
+  ">
+  
+  <meta name="author" content="史海杰">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 201 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 26 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Jay&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    史海杰
+
+    <span class="post-date float-right" title="{{moment(1533954168000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1533954168000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Java待补充问题</h1>
+    <hr>
+<p>TO BE CONTINUED</p>
+<hr>
+<ol>
+<li><p>单例的7种写法？double check？</p>
+</li>
+<li><p>多线程中几种锁？</p>
+</li>
+<li><p>可见性</p>
+</li>
+<li><p>transient<br>类的有些属性需要序列化，而其他属性不需要被序列化，打个比方，如果一个用户有一些敏感信息（如密码，银行卡号等），<br>为了安全起见，不希望在网络操作（主要涉及到序列化操作，本地序列化缓存也适用）中被传输，这些信息对应的变量就可以加上transient关键字。<br>换句话说，这个字段的生命周期仅存于调用者的内存中而不会写到磁盘里持久化。<br>1）一旦变量被transient修饰，变量将不再是对象持久化的一部分，该变量内容在序列化后无法获得访问。<br>2）transient关键字只能修饰变量，而不能修饰方法和类。注意，本地变量是不能被transient关键字修饰的。变量如果是用户自定义类变量，则该类需要实现Serializable接口。<br>3）被transient关键字修饰的变量不再能被序列化，一个静态变量不管是否被transient修饰，均不能被序列化。</p>
+</li>
+<li><p>volatile关键字<br>当使用volatile修饰某个变量时，它会保证对该变量的修改会立即被更新到内存中，<br>并且将其它缓存中对该变量的缓存设置成无效，因此其它线程需要读取该值时必须从主内存中读取，从而得到最新的值。<br>volatile适用于不需要保证原子性，但却需要保证可见性的场景。一种典型的使用场景是用它修饰用于停止线程的状态标记。<br>volatile在这里可以做到的作用是使得多个线程可以共享变量，但是问题在于使用volatile将使得VM优化失去作用，导致效率较低，所以要在必要的时候使用。</p>
+</li>
+</ol>
+<p>问：既然锁和synchronized即可保证原子性也可保证可见性，为何还需要volatile？<br>答：synchronized和锁需要通过操作系统来仲裁谁获得锁，开销比较高，而volatile开销小很多。因此在只需要保证可见性的条件下，<br>使用volatile的性能要比使用锁和synchronized高得多。<br>6. 类加载顺序<br>总的来说，初始化顺序依次是：（静态变量、静态初始化块）–&gt;（变量、初始化块）–&gt; 构造器；<br>如果有父类，则顺序是：父类static方法 –&gt; 子类static方法 –&gt; 父类构造方法- -&gt; 子类构造方法<br>虚拟机在首次加载Java类时，会对静态代码块、静态成员变量、静态方法进行一次初始化（静态间按声明顺序执行）。<br>只有在调用new方法时才会创建类的实例。<br>类实例创建过程：父子继承关系，先父类再子类。父类的静态-&gt;子类的静态-&gt;父类的初始化块-&gt;父类的构造方法-&gt;子类的初始化块-&gt;子类的构造方法<br>类实例销毁时候：首先销毁子类部分，再销毁父类部分。<br>7. 大数相加、大数相乘</p>
+<ol start="8">
+<li><p>static synchronized</p>
+</li>
+<li><p>timewait次数太多<br>通信双方建立TCP连接后，主动关闭连接的一方就会进入TIME_WAIT状态。<br>客户端主动关闭连接时，会发送最后一个ack后，然后会进入TIME_WAIT状态，再停留2个MSL时间(后有MSL的解释)，进入CLOSED状态。</p>
+</li>
+</ol>
+<p>大多数服务器端一般执行被动关闭，服务器不会进入TIME_WAIT状态。<br>高并发短连接的TCP服务器上，当服务器处理完请求后立刻按照主动正常关闭连接。。。这个场景下，会出现大量socket处于TIMEWAIT状态。<br>服务端为了解决这个TIME_WAIT问题，可选择的方式有三种：<br>    Ø  保证由客户端主动发起关闭（即做为B端）<br>    Ø  关闭的时候使用RST的方式<br>    Ø  对处于TIME_WAIT状态的TCP允许重用<br>    如发现系统存在大量TIME_WAIT状态的连接，通过调整内核参数解决：<br>10. hashmap9</p>
+<ol start="11">
+<li><p>atomicInteger<br>AtomicInteger是一个提供原子操作的Integer类，通过线程安全的方式操作加减。<br>问：既然锁和synchronized可以保证原子性，为什么还需要AtomicInteger这种的类来保证原子操作？<br>答：锁和synchronized需要通过操作系统来仲裁谁获得锁，开销比较高，而AtomicInteger是通过CPU级的CAS操作来保证原子性，开销比较小。<br>所以使用AtomicInteger的目的还是为了提高性能。<br>Volatile修饰的成员变量在每次被线程访问时，都强迫从共享内存重新读取该成员的值，而且，当成员变量值发生变化时，强迫将变化的值重新写入共享内存，<br>这样两个不同的线程在访问同一个共享变量的值时，始终看到的是同一个值。<br>而volatile这个值的作用就是告诉VM：对于这个成员变量不能保存它的副本，要直接与共享成员变量交互。<br>建议：当多个线程同时访问一个共享变量时，可以使用volatile，而当访问的变量已在synchronized代码块中时，不必使用。<br>缺点：使用volatile将使得VM优化失去作用，导致效率较低，所以要在必要的时候使用。</p>
+</li>
+<li><p>找中位数（2个有序数组数组中查找Top K的值（Top K的问题可以转换成求第k个元素的问题））<br>排序；快速排序思想；</p>
+</li>
+<li><p>不用随机数生成随机</p>
+</li>
+<li><p>UDP</p>
+</li>
+<li><p>可重入锁</p>
+</li>
+<li><p>如果TCP连接中没收到怎么办</p>
+</li>
+<li><p>进程间通信：<br>这种存在共享内存区的进程间的冲突问题，解决方法的思路是统一的：当某个进程正在操作共享内存区时，其他进程不得操作共享内存区。<br>这个思路实现的关键点就是：令其他进程知道“有一个进程在操作共享内存区”，因此这类问题就被称为进程通信问题，<br>通信的“内容”就是：有没有其他进程在操作共享内存区。（讲解到信号量机制时进程通信将广义化，但依然不是进程间的“实际通信”，而是某些信号的共享）<br>IPC的方式通常有管道（包括无名管道和命名管道）、消息队列、信号量、共享存储、Socket、Streams等。其中 Socket和Streams支持不同主机上的两个进程IPC。</p>
+</li>
+</ol>
+<p> 1.管道：速度慢，容量有限，只有父子进程能通讯<br>2.FIFO：任何进程间都能通讯，但速度慢<br>3.消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题<br>4.信号量：不能传递复杂消息，只能用来同步<br>5.共享内存区：能够很容易控制容量，速度快，但要保持同步，比如一个进程在写的时候，另一个进程要注意读写的问题，相当于线程中的线程安全，<br>当然，共享内存区同样可以用作线程间通讯，不过没这个必要，线程间本来就已经共享了同一进程内的一块内存</p>
+<ol start="18">
+<li><p>Mybatis（看）,事务实现</p>
+</li>
+<li><p>如何找出一列数中的两个重复元素</p>
+</li>
+<li><p>mysql中索引类型及实现</p>
+</li>
+<li><p>数据库中的锁</p>
+</li>
+<li><p>行锁</p>
+</li>
+<li><p>java锁的底层实现</p>
+</li>
+<li><p>数据库中mysql的事务<br>事务的隔离性是通过锁实现，而事务的原子性、一致性和持久性则是通过事务日志实现。说到事务日志，不得不说的就是redo和undo。<br>事务的实现是基于数据库的存储引擎。不同的存储引擎对事务的支持程度不一样。mysql中支持事务的存储引擎有innoDB和NDB。<br>innoDB是mysql默认的存储引擎，默认的隔离级别是RR，并且在RR的隔离级别下更进一步，<br>通过多版本并发控制（MVCC，Multiversion Concurrency Control ）解决不可重复读问题，<br>加上间隙锁（也就是并发控制）解决幻读问题。因此innoDB的RR隔离级别其实实现了串行化级别的效果，而且保留了比较好的并发性能。</p>
+</li>
+<li><p>mybatis事务管理机制</p>
+</li>
+<li><p>mysql中主键和唯一键的区别，唯一索引。<br>都是不允许重复,mysql中索引的数据结构是B+树</p>
+</li>
+<li><p>主键只有一个，唯一约束可以有多个；</p>
+</li>
+<li><p>主键不能为null，唯一约束可以有多个；</p>
+</li>
+<li><p>主键是不可能（或很难）更新，唯一约束只要唯一就可以更新．</p>
+</li>
+</ol>
+<p>（2）.在创建唯一性约束和主键约束时可以创建聚集索引和非聚集索引，但在 默认情况下主键约束产生聚集索引，而唯一性约束产生非聚集索引<br>约束和索引， 前者是用来检查数据的正确性，后者用来实现数据查询的优化，目的不同。</p>
+<p>唯一性约束与唯一索引有所不同：<br>（1）.创建唯一约束会在Oracle中创建一个Constraint，同时也会创建一个该约束对应的唯一索引。<br>（2）.创建唯一索引只会创建一个唯一索引，不会创建Constraint。<br>也就是说其实唯一约束是通过创建唯一索引来实现的。</p>
+<p>在删除时这两者也有一定的区别：<br>删除唯一约束时可以只删除约束而不删除对应的索引，所以对应的列还是必须唯一的，<br>而删除了唯一索引的话就可以插入不唯一的值。</p>
+<ol start="26">
+<li><p>tcp连接中间的数据丢失</p>
+</li>
+<li><p>约瑟夫环</p>
+</li>
+<li><p>线程间通信<br>wait，notify，notifyAll</p>
+</li>
+<li><p>equals与hashcode为什么需要一致</p>
+</li>
+<li><p>信号量<br>互斥量的加锁和解锁必须由同一线程分别对应使用，信号量可以由一个线程释放，另一个线程得到。<br>基于上面的特点，互斥锁一般用于控制一段临界代码，当然信号量也可以做到。但是如果释放和获取不在一个函数中甚至不在一个线程中时就必须使用信号量了</p>
+</li>
+<li><p>tcp为什么比udp可靠<br>[1] 确认和重传机制<br>建立连接时三次握手同步双方的“序列号 + 确认号 + 窗口大小信息”，是确认重传、流控的基础<br>传输过程中，如果Checksum校验失败、丢包或延时，发送端重传<br>[2] 数据排序<br>TCP有专门的序列号SN字段，可提供数据re-order<br>[3] 流量控制<br>窗口和计时器的使用。TCP窗口中会指明双方能够发送接收的最大数据量<br>[4] 拥塞控制<br>TCP的拥塞控制由4个核心算法组成。</p>
+<p>“慢启动”（Slow Start）</p>
+<p>“拥塞避免”（Congestion avoidance）</p>
+<p>“快速重传 ”（Fast Retransmit）</p>
+<p>“快速恢复”（Fast Recovery）</p>
+</li>
+<li><p>索引<br>只有在where语句出现，mysql才会去使用索引。<br>mysql中索引的数据结构是B+树。（通常B+树用于数据库索引，而B树则常用于文件索引。）<br>mysql中的primary key，unique，联合唯一也都是索引，这些索引除了加速查找以外，还有约束的功能<br>32.1 为什么用索引<br>数据库也是一样，但显然要复杂的多，因为不仅面临着等值查询，还有范围查询(&gt;、&lt;、between、in)、模糊查询(like)、并集查询(or)等等。数据库应该选择怎么样的方式来应对所有的问题呢？我们回想字典的例子，能不能把数据分成段，然后分段查询呢？最简单的如果1000条数据，1到100分成第一段，101到200分成第二段，201到300分成第三段……这样查第250条数据，只要找第三段就可以了，一下子去除了90%的无效数据。但如果是1千万的记录呢，分成几段比较好？稍有算法基础的同学会想到搜索树，其平均复杂度是lgN，具有不错的查询性能。但这里我们忽略了一个关键的问题，复杂度模型是基于每次相同的操作成本来考虑的。而数据库实现比较复杂，一方面数据是保存在磁盘上的，另外一方面为了提高性能，每次又可以把部分数据读入内存来计算，因为我们知道访问磁盘的成本大概是访问内存的十万倍左右，所以简单的搜索树难以满足复杂的应用场景。<br>32.1 聚簇索引<br>索引分为聚簇索引和非聚簇索引两种，聚簇索引是按照数据存放的物理位置为顺序的，而非聚簇索引就不一样了；<br>聚簇索引能提高多行检索的速度，而非聚簇索引对于单行的检索很快。<br>聚簇索引是顺序结构与数据存储物理结构一致的一种索引，并且一个表的聚簇索引只能有唯一的一条；<br>聚簇索引优点：<br>2.2.1、把相关数据保存在一起，因为mysql数据库读取数据是按照页读取的，当读取某一个用户数据时，相邻的数据也会加载到内存中。<br>根据用户读取一个id的数据时，相邻数据被读取的可能性会非常高，这种按页加载就减少了IO操作<br>2.2.2、数据访问更快<br>2.2.3、使用覆盖索引扫描的查询可以直接使用叶节点中的主键值 </p>
+</li>
+<li><p>object的方法</p>
+</li>
+<li><p>CAS（compare and swap）<br>基础类型变量自增（i++）是一种常被新手误以为是原子操作而实际不是的操作。<br>Java中提供了对应的原子操作类来实现该操作，并保证原子性，其本质是利用了CPU级别的CAS指令。<br>由于是CPU级别的指令，其开销比需要操作系统参与的锁的开销小。</p>
+</li>
+<li><p>阻塞队列<br>阻塞队列（BlockingQueue）是一个支持两个附加操作的队列。<br>这两个附加的操作是：在队列为空时，获取元素的线程会等待队列变为非空。当<br>队列满时，存储元素的线程会等待队列可用。<br>阻塞队列常用于生产者和消费者的场景，生产者是往队列里添加元素的线程，<br>消费者是从队列里拿元素的线程。阻塞队列就是生产者存放元素的容器，而消费者也只从容器里拿元素。<br>使用非阻塞队列的时候有一个很大问题就是：它不会对当前线程产生阻塞，那么在面对类似消费者-生产者的模型时，<br>就必须额外地实现同步策略以及线程间唤醒策略，这个实现起来就非常麻烦。但是有了阻塞队列就不一样了，<br>它会对当前线程产生阻塞，比如一个线程从一个空的阻塞队列中取元素，此时线程会被阻塞直到阻塞队列中有了元素。<br>当队列中有元素后，被阻塞的线程会自动被唤醒（不需要我们编写代码去唤醒）。这样提供了极大的方便性。</p>
+</li>
+<li><p>ThreadLocal<br>可以通过java.lang.ThreadLocal类来实现线程本地存储的功能。每一个线程的Thread对象中都有一个ThreadLocalMap对象，<br>这个对象存储了一组以ThreadLocal.threadLocalHashCode为键，以本地线程变量为值的K-V值对，ThreadLocal对象就是当前线程的ThreadLocalMap的访问入口，<br>每一个ThreadLocal对象都包含了一个独一无二的threadLocalHashCode值，使用这个值就可以在线程K-V值对中找回对应的本地线程变量。</p>
+</li>
+<li><p>拦截器和过滤器的区别：</p>
+</li>
+</ol>
+<p>　　①拦截器是基于java的反射机制的，而过滤器是基于函数回调。<br>　　②拦截器不依赖与servlet容器，过滤器依赖与servlet容器。<br>　　③拦截器只能对action请求起作用，而过滤器则可以对几乎所有的请求起作用。<br>　　④拦截器可以访问action上下文、值栈里的对象，而过滤器不能访问。<br>　　⑤在action的生命周期中，拦截器可以多次被调用，而过滤器只能在容器初始化时被调用一次。</p>
+<p>　　⑥拦截器可以获取IOC容器中的各个bean，而过滤器就不行，这点很重要，在拦截器里注入一个service，可以调用业务逻辑。</p>
+<ol start="38">
+<li>CAs</li>
+<li>孤儿进程，僵尸进程</li>
+<li>一致性hash</li>
+<li>数据库连接sleep</li>
+<li>内存溢出原因（不用调试工具）</li>
+<li>不可捕捉异常</li>
+<li>怎么检测锁消除</li>
+<li>多线程的优化</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 史海杰</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

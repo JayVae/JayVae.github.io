@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    树的基本概念和高度平衡的二叉树 | Jay&#39;s Blog
+  </title>
+  <meta name="description" content="持续精进">
+  
+  <meta name="keywords" content="
+  面试算法
+  ">
+  
+  <meta name="author" content="史海杰">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 201 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 26 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Jay&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    史海杰
+
+    <span class="post-date float-right" title="{{moment(1535286893000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1535286893000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>树的基本概念和高度平衡的二叉树</h1>
+    <h1 id="树结构中的常见用语"><a href="#树结构中的常见用语" class="headerlink" title="树结构中的常见用语:"></a>树结构中的常见用语:</h1><pre><code>节点的深度 - 从树的根节点到该节点的边数
+节点的高度 - 该节点和叶子之间最长路径上的边数
+树的高度 - 其根节点的高度 
+</code></pre>
+<h1 id="什么是一个高度平衡的二叉搜索树"><a href="#什么是一个高度平衡的二叉搜索树" class="headerlink" title="什么是一个高度平衡的二叉搜索树?"></a>什么是一个高度平衡的二叉搜索树?</h1><p>一个高度平衡的二叉搜索树（平衡二叉搜索树）是在插入和删除任何节点之后，可以自动保持其高度最小。也就是说，有N个节点的平衡二叉搜索树，它的高度是logN。并且，每个节点的两个子树的高度不会相差超过1。</p>
+<p>正如我们之前提到的, 一个有N个节点的平衡二搜索叉树的高度总是logN。因此，我们可以计算节点总数和树的高度，以确定这个二叉搜索树是否为高度平衡的。</p>
+<p>同样，在定义中， 我们提到了高度平衡的二叉树一个特性: 每个节点的两个子树的深度不会相差超过1。我们也可以根据这个性质，递归地验证树。</p>
+<h1 id="为什么需要用到高度平衡的二叉搜索树"><a href="#为什么需要用到高度平衡的二叉搜索树" class="headerlink" title="为什么需要用到高度平衡的二叉搜索树?"></a>为什么需要用到高度平衡的二叉搜索树?</h1><p>我们已经介绍过了二叉树及其相关操作, 包括搜索、插入、删除。<br>当分析这些操作的时间复杂度时，我们需要注意的是树的高度是十分重要的考量因素。<br>以搜索操作为例，如果二叉搜索树的高度为h，则时间复杂度为O(h)。二叉搜索树的高度的确很重要。</p>
+<p>所以，我们来讨论一下树的节点总数N和高度h之间的关系。 对于一个平衡二叉搜索树, 我们已经在前文中提过, h&gt;&#x3D;	logN 。但对于一个普通的二叉搜索树， 在最坏的情况下, 它可以退化成一个链。</p>
+<p>因此，具有N个节点的二叉搜索树的高度在logN到N区间变化。也就是说，搜索操作的时间复杂度可以从logN变化到N。这是一个巨大的性能差异。</p>
+<p>所以说，高度平衡的二叉搜索树对提高性能起着重要作用。</p>
+<h1 id="如何实现一个高度平衡的二叉搜索树"><a href="#如何实现一个高度平衡的二叉搜索树" class="headerlink" title="如何实现一个高度平衡的二叉搜索树?"></a>如何实现一个高度平衡的二叉搜索树?</h1><p>有许多不同的方法可以实现。尽管这些实现方法的细节有所不同，但他们有相同的目标:</p>
+<pre><code>采用的数据结构应该满足二分查找属性和高度平衡属性。
+采用的数据结构应该支持二叉搜索树的基本操作，包括在O(logN)时间内的搜索、插入和删除，即使在最坏的情况下也是如此。
+</code></pre>
+<h1 id="常见的的高度平衡二叉树列表供您参考："><a href="#常见的的高度平衡二叉树列表供您参考：" class="headerlink" title="常见的的高度平衡二叉树列表供您参考："></a>常见的的高度平衡二叉树列表供您参考：</h1><pre><code>红黑树
+AVL树
+伸展树
+树堆
+</code></pre>
+<h1 id="高度平衡的二叉搜索树的实际应用"><a href="#高度平衡的二叉搜索树的实际应用" class="headerlink" title="高度平衡的二叉搜索树的实际应用"></a>高度平衡的二叉搜索树的实际应用</h1><p>高度平衡的二叉搜索树在实际中被广泛使用，因为它可以在O(logN)时间复杂度内执行所有搜索、插入和删除操作。</p>
+<p>平衡二叉搜索树的概念经常运用在Set和Map中。 Set和Map的原理相似。 我们将在下文中重点讨论Set这个数据结构。</p>
+<pre><code>Set(集合)是另一种数据结构，它可以存储大量key(键)而不需要任何特定的顺序或任何重复的元素。 它应该支持的基本操作是将新元素插入到Set中，并检查元素是否存在于其中。
+</code></pre>
+<p>通常，有两种最广泛使用的集合：散列集合(Hash Set)和树集合(Tree Set)。</p>
+<p>树集合, Java中的Treeset或者C++中的set，是由高度平衡的二叉搜索树实现的。因此，搜索、插入和删除的时间复杂度都是O(logN)。</p>
+<p>散列集合, Java中的HashSet或者C++中的unordered_set，是由哈希实现的, 但是平衡二叉搜索树也起到了至关重要的作用。当存在具有相同哈希键的元素过多时，将花费O(N)时间复杂度来查找特定元素，其中N是具有相同哈希键的元素的数量。 通常情况下，使用高度平衡的二叉搜索树将把时间复杂度从 O(N) 改善到 O(logN)。</p>
+<p>哈希集和树集之间的本质区别在于树集中的键是有序的。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>高度平衡的二叉搜索树是二叉搜索树的特殊表示形式，旨在提高二叉搜索树的性能。但这个数据结构具体的实现方式，超出了我们这章的内容，也很少会在面试中被考察。但是了解高度平衡二叉搜索树的的基本概念，以及如何运用它帮助你进行算法设计是非常有用的。</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 史海杰</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    性能测试入门 | Jay&#39;s Blog
+  </title>
+  <meta name="description" content="持续精进">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="史海杰">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 201 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 26 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Jay&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    史海杰
+
+    <span class="post-date float-right" title="{{moment(1627390323000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1627390323000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>性能测试入门</h1>
+    <p>性能测试一般情况下都是由测试这个职位去做的，那还需要我们开发学这个干嘛呢？了解性能测试的指标、分类以及工具等知识有助于我们更好地去写出性能更好的程序，另外作为开发这个角色，如果你会性能测试的话，相信也会为你的履历加分不少。</p>
+<p>这篇文章是我会结合自己的实际经历以及在测试这里取的经所得，除此之外，我还借鉴了一些优秀书籍，希望对你有帮助。</p>
+<h2 id="不同角色看网站性能"><a href="#不同角色看网站性能" class="headerlink" title="不同角色看网站性能"></a>不同角色看网站性能</h2><h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><p>当用户打开一个网站的时候，最关注的是什么？当然是网站响应速度的快慢。比如我们点击了淘宝的主页，淘宝需要多久将首页的内容呈现在我的面前，我点击了提交订单按钮需要多久返回结果等等。</p>
+<p>所以，用户在体验我们系统的时候往往根据你的响应速度的快慢来评判你的网站的性能。</p>
+<h3 id="开发人员"><a href="#开发人员" class="headerlink" title="开发人员"></a>开发人员</h3><p>用户与开发人员都关注速度，这个速度实际上就是我们的系统<strong>处理用户请求的速度</strong>。</p>
+<p>开发人员一般情况下很难直观的去评判自己网站的性能，我们往往会根据网站当前的架构以及基础设施情况给一个大概的值,比如：</p>
+<ol>
+<li>项目架构是分布式的吗？</li>
+<li>用到了缓存和消息队列没有？</li>
+<li>高并发的业务有没有特殊处理？</li>
+<li>数据库设计是否合理？</li>
+<li>系统用到的算法是否还需要优化？</li>
+<li>系统是否存在内存泄露的问题？</li>
+<li>项目使用的 Redis 缓存多大？服务器性能如何？用的是机械硬盘还是固态硬盘？</li>
+<li>……</li>
+</ol>
+<h3 id="测试人员"><a href="#测试人员" class="headerlink" title="测试人员"></a>测试人员</h3><p>测试人员一般会根据性能测试工具来测试，然后一般会做出一个表格。这个表格可能会涵盖下面这些重要的内容：</p>
+<ol>
+<li>响应时间；</li>
+<li>请求成功率；</li>
+<li>吞吐量；</li>
+<li>……</li>
+</ol>
+<h3 id="运维人员"><a href="#运维人员" class="headerlink" title="运维人员"></a>运维人员</h3><p>运维人员会倾向于根据基础设施和资源的利用率来判断网站的性能，比如我们的服务器资源使用是否合理、数据库资源是否存在滥用的情况、当然，这是传统的运维人员，现在 Devops 火起来后，单纯干运维的很少了。我们这里暂且还保留有这个角色。</p>
+<h2 id="性能测试需要注意的点"><a href="#性能测试需要注意的点" class="headerlink" title="性能测试需要注意的点"></a>性能测试需要注意的点</h2><p>几乎没有文章在讲性能测试的时候提到这个问题，大家都会讲如何去性能测试，有哪些性能测试指标这些东西。</p>
+<h3 id="了解系统的业务场景"><a href="#了解系统的业务场景" class="headerlink" title="了解系统的业务场景"></a>了解系统的业务场景</h3><p><strong>性能测试之前更需要你了解当前的系统的业务场景。</strong> 对系统业务了解的不够深刻，我们很容易犯测试方向偏执的错误，从而导致我们忽略了对系统某些更需要性能测试的地方进行测试。比如我们的系统可以为用户提供发送邮件的功能，用户配置成功邮箱后只需输入相应的邮箱之后就能发送，系统每天大概能处理上万次发邮件的请求。很多人看到这个可能就直接开始使用相关工具测试邮箱发送接口，但是，发送邮件这个场景可能不是当前系统的性能瓶颈，这么多人用我们的系统发邮件， 还可能有很多人一起发邮件，单单这个场景就这么人用，那用户管理可能才是性能瓶颈吧！</p>
+<h3 id="历史数据非常有用"><a href="#历史数据非常有用" class="headerlink" title="历史数据非常有用"></a>历史数据非常有用</h3><p>当前系统所留下的历史数据非常重要，一般情况下，我们可以通过相应的些历史数据初步判定这个系统哪些接口调用的比较多、哪些服务承受的压力最大，这样的话，我们就可以针对这些地方进行更细致的性能测试与分析。</p>
+<p>另外，这些地方也就像这个系统的一个短板一样，优化好了这些地方会为我们的系统带来质的提升。</p>
+<h2 id="常见性能指标"><a href="#常见性能指标" class="headerlink" title="常见性能指标"></a>常见性能指标</h2><h3 id="响应时间"><a href="#响应时间" class="headerlink" title="响应时间"></a>响应时间</h3><p><strong>响应时间 RT(Response-time)就是用户发出请求到用户收到系统处理结果所需要的时间。</strong></p>
+<p>RT 是一个非常重要且直观的指标，RT 数值大小直接反应了系统处理用户请求速度的快慢。</p>
+<h3 id="并发数"><a href="#并发数" class="headerlink" title="并发数"></a>并发数</h3><p><strong>并发数可以简单理解为系统能够同时供多少人访问使用也就是说系统同时能处理的请求数量。</strong></p>
+<p>并发数反应了系统的负载能力。</p>
+<h3 id="QPS-和-TPS"><a href="#QPS-和-TPS" class="headerlink" title="QPS 和 TPS"></a>QPS 和 TPS</h3><ul>
+<li><strong>QPS（Query Per Second）</strong> ：服务器每秒可以执行的查询次数；</li>
+<li><strong>TPS（Transaction Per Second）</strong> ：服务器每秒处理的事务数（这里的一个事务可以理解为客户发出请求到收到服务器的过程）；</li>
+</ul>
+<p>书中是这样描述 QPS 和 TPS 的区别的。</p>
+<blockquote>
+<p>QPS vs TPS：QPS 基本类似于 TPS，但是不同的是，对于一个页面的一次访问，形成一个 TPS；但一次页面请求，可能产生多次对服务器的请求，服务器对这些请求，就可计入“QPS”之中。如，访问一个页面会请求服务器 2 次，一次访问，产生一个“T”，产生 2 个“Q”。</p>
+</blockquote>
+<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><p><strong>吞吐量指的是系统单位时间内系统处理的请求数量。</strong></p>
+<p>一个系统的吞吐量与请求对系统的资源消耗等紧密关联。请求对系统资源消耗越多，系统吞吐能力越低，反之则越高。</p>
+<p>TPS、QPS 都是吞吐量的常用量化指标。</p>
+<ul>
+<li><strong>QPS（TPS）</strong> &#x3D; 并发数&#x2F;平均响应时间(RT)</li>
+<li><strong>并发数</strong> &#x3D; QPS * 平均响应时间(RT)</li>
+</ul>
+<h2 id="系统活跃度指标"><a href="#系统活跃度指标" class="headerlink" title="系统活跃度指标"></a>系统活跃度指标</h2><h3 id="PV-Page-View"><a href="#PV-Page-View" class="headerlink" title="PV(Page View)"></a>PV(Page View)</h3><p>访问量, 即页面浏览量或点击量，衡量网站用户访问的网页数量；在一定统计周期内用户每打开或刷新一个页面就记录 1 次，多次打开或刷新同一页面则浏览量累计。UV 从网页打开的数量&#x2F;刷新的次数的角度来统计的。</p>
+<h3 id="UV-Unique-Visitor"><a href="#UV-Unique-Visitor" class="headerlink" title="UV(Unique Visitor)"></a>UV(Unique Visitor)</h3><p>独立访客，统计 1 天内访问某站点的用户数。1 天内相同访客多次访问网站，只计算为 1 个独立访客。UV 是从用户个体的角度来统计的。</p>
+<h3 id="DAU-Daily-Active-User"><a href="#DAU-Daily-Active-User" class="headerlink" title="DAU(Daily Active User)"></a>DAU(Daily Active User)</h3><p>日活跃用户数量。</p>
+<h3 id="MAU-monthly-active-users"><a href="#MAU-monthly-active-users" class="headerlink" title="MAU(monthly active users)"></a>MAU(monthly active users)</h3><p>月活跃用户人数。</p>
+<p>举例：某网站 DAU 为 1200w， 用户日均使用时长 1 小时，RT 为 0.5s，求并发量和 QPS。</p>
+<p>平均并发量 &#x3D; DAU（1200w）* 日均使用时长（1 小时，3600 秒） &#x2F;一天的秒数（86400）&#x3D;1200w&#x2F;24 &#x3D; 50w</p>
+<p>真实并发量（考虑到某些时间段使用人数比较少） &#x3D; DAU（1200w）* 日均使用时长（1 小时，3600 秒） &#x2F;一天的秒数-访问量比较小的时间段假设为 8 小时（57600）&#x3D;1200w&#x2F;16 &#x3D; 75w</p>
+<p>峰值并发量 &#x3D; 平均并发量 * 6 &#x3D; 300w</p>
+<p>QPS &#x3D; 真实并发量&#x2F;RT &#x3D; 75W&#x2F;0.5&#x3D;150w&#x2F;s</p>
+<h2 id="性能测试分类"><a href="#性能测试分类" class="headerlink" title="性能测试分类"></a>性能测试分类</h2><h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><p>性能测试方法是通过测试工具模拟用户请求系统，目的主要是为了测试系统的性能是否满足要求。通俗地说，这种方法就是要在特定的运行条件下验证系统的能力状态。</p>
+<p>性能测试是你在对系统性能已经有了解的前提之后进行的，并且有明确的性能指标。</p>
+<h3 id="负载测试"><a href="#负载测试" class="headerlink" title="负载测试"></a>负载测试</h3><p>对被测试的系统继续加大请求压力，直到服务器的某个资源已经达到饱和了，比如系统的缓存已经不够用了或者系统的响应时间已经不满足要求了。</p>
+<p>负载测试说白点就是测试系统的上限。</p>
+<h3 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h3><p>不去管系统资源的使用情况，对系统继续加大请求压力，直到服务器崩溃无法再继续提供服务。</p>
+<h3 id="稳定性测试"><a href="#稳定性测试" class="headerlink" title="稳定性测试"></a>稳定性测试</h3><p>模拟真实场景，给系统一定压力，看看业务是否能稳定运行。</p>
+<h2 id="常用性能测试工具"><a href="#常用性能测试工具" class="headerlink" title="常用性能测试工具"></a>常用性能测试工具</h2><h3 id="后端常用"><a href="#后端常用" class="headerlink" title="后端常用"></a>后端常用</h3><p>既然系统设计涉及到系统性能方面的问题，那在面试的时候，面试官就很可能会问：<strong>你是如何进行性能测试的？</strong></p>
+<p>推荐 4 个比较常用的性能测试工具：</p>
+<ol>
+<li><strong>Jmeter</strong> ：Apache JMeter 是 JAVA 开发的性能测试工具。</li>
+<li><strong>LoadRunner</strong>：一款商业的性能测试工具。</li>
+<li><strong>Galtling</strong> ：一款基于 Scala 开发的高性能服务器性能测试工具。</li>
+<li><strong>ab</strong> ：全称为 Apache Bench 。Apache 旗下的一款测试工具，非常实用。</li>
+</ol>
+<p>没记错的话，除了 <strong>LoadRunner</strong> 其他几款性能测试工具都是开源免费的。</p>
+<h3 id="前端常用"><a href="#前端常用" class="headerlink" title="前端常用"></a>前端常用</h3><ol>
+<li><strong>Fiddler</strong>：抓包工具，它可以修改请求的数据，甚至可以修改服务器返回的数据，功能非常强大，是 Web 调试的利器。</li>
+<li><strong>HttpWatch</strong>: 可用于录制 HTTP 请求信息的工具。</li>
+</ol>
+<h2 id="常见的性能优化策略"><a href="#常见的性能优化策略" class="headerlink" title="常见的性能优化策略"></a>常见的性能优化策略</h2><p>性能优化之前我们需要对请求经历的各个环节进行分析，排查出可能出现性能瓶颈的地方，定位问题。</p>
+<p>下面是一些性能优化时，我经常拿来自问的一些问题：</p>
+<ol>
+<li>系统是否需要缓存？</li>
+<li>系统架构本身是不是就有问题？</li>
+<li>系统是否存在死锁的地方？</li>
+<li>系统是否存在内存泄漏？（Java 的自动回收内存虽然很方便，但是，有时候代码写的不好真的会造成内存泄漏）</li>
+<li>数据库索引使用是否合理？</li>
+<li>……</li>
+</ol>
+<!-- @include: @article-footer.snippet.md -->
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 史海杰</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

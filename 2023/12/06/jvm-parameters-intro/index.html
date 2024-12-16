@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    最重要的JVM参数总结 | Jay&#39;s Blog
+  </title>
+  <meta name="description" content="持续精进">
+  
+  <meta name="keywords" content="
+  JVM
+  ">
+  
+  <meta name="author" content="史海杰">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 201 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 26 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Jay&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    史海杰
+
+    <span class="post-date float-right" title="{{moment(1701870536000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1701870536000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>最重要的JVM参数总结</h1>
+    <blockquote>
+<p>本文由 JavaGuide 翻译自 <a href="https://www.baeldung.com/jvm-parameters">https://www.baeldung.com/jvm-parameters</a>，并对文章进行了大量的完善补充。</p>
+<p>JDK 版本：1.8</p>
+</blockquote>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h2><p>在本篇文章中，你将掌握最常用的 JVM 参数配置。</p>
+<h2 id="2-堆内存相关"><a href="#2-堆内存相关" class="headerlink" title="2.堆内存相关"></a>2.堆内存相关</h2><blockquote>
+<p>Java 虚拟机所管理的内存中最大的一块，Java 堆是所有线程共享的一块内存区域，在虚拟机启动时创建。<strong>此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例以及数组都在这里分配内存。</strong></p>
+</blockquote>
+<p><img src="/./pictures/%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E5%B8%B8%E8%A7%81%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0.png" alt="内存区域常见配置参数"></p>
+<h3 id="2-1-显式指定堆内存–Xms和-Xmx"><a href="#2-1-显式指定堆内存–Xms和-Xmx" class="headerlink" title="2.1.显式指定堆内存–Xms和-Xmx"></a>2.1.显式指定堆内存<code>–Xms</code>和<code>-Xmx</code></h3><p>与性能有关的最常见实践之一是根据应用程序要求初始化堆内存。如果我们需要指定最小和最大堆大小（推荐显示指定大小），以下参数可以帮助你实现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-Xms&lt;heap size&gt;[unit]</span><br><span class="line">-Xmx&lt;heap size&gt;[unit]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>heap size</strong> 表示要初始化内存的具体大小。</li>
+<li><strong>unit</strong> 表示要初始化内存的单位。单位为 <strong><em>“ g”</em></strong> (GB)、**<em>“ m”</em><strong>（MB）、</strong><em>“ k”</em>**（KB）。</li>
+</ul>
+<p>举个栗子 🌰，如果我们要为 JVM 分配最小 2 GB 和最大 5 GB 的堆内存大小，我们的参数应该这样来写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Xms2G -Xmx5G</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-显式新生代内存-Young-Generation"><a href="#2-2-显式新生代内存-Young-Generation" class="headerlink" title="2.2.显式新生代内存(Young Generation)"></a>2.2.显式新生代内存(Young Generation)</h3><p>根据<a href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html">Oracle 官方文档</a>，在堆总可用内存配置完成之后，第二大影响因素是为 <code>Young Generation</code> 在堆内存所占的比例。默认情况下，YG 的最小大小为 1310 _MB_，最大大小为 _无限制_。</p>
+<p>一共有两种指定 新生代内存(Young Generation)大小的方法：</p>
+<p><strong>1.通过<code>-XX:NewSize</code>和<code>-XX:MaxNewSize</code>指定</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-XX:NewSize=&lt;young size&gt;[unit]</span><br><span class="line">-XX:MaxNewSize=&lt;young size&gt;[unit]</span><br></pre></td></tr></table></figure>
+
+<p>举个栗子 🌰，如果我们要为 新生代分配 最小 256m 的内存，最大 1024m 的内存我们的参数应该这样来写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-XX:NewSize=256m</span><br><span class="line">-XX:MaxNewSize=1024m</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.通过<code>-Xmn&lt;young size&gt;[unit]</code>指定</strong></p>
+<p>举个栗子 🌰，如果我们要为 新生代分配 256m 的内存（NewSize 与 MaxNewSize 设为一致），我们的参数应该这样来写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Xmn256m</span><br></pre></td></tr></table></figure>
+
+<p>GC 调优策略中很重要的一条经验总结是这样说的：</p>
+<blockquote>
+<p>将新对象预留在新生代，由于 Full GC 的成本远高于 Minor GC，因此尽可能将对象分配在新生代是明智的做法，实际项目中根据 GC 日志分析新生代空间大小分配是否合理，适当通过“-Xmn”命令调节新生代大小，最大限度降低新对象直接进入老年代的情况。</p>
+</blockquote>
+<p>另外，你还可以通过 <strong><code>-XX:NewRatio=&lt;int&gt;</code></strong> 来设置老年代与新生代内存的比值。</p>
+<p>比如下面的参数就是设置老年代与新生代内存的比值为 1。也就是说老年代和新生代所占比值为 1：1，新生代占整个堆栈的 1&#x2F;2。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:NewRatio=1</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-显式指定永久代-元空间的大小"><a href="#2-3-显式指定永久代-元空间的大小" class="headerlink" title="2.3.显式指定永久代&#x2F;元空间的大小"></a>2.3.显式指定永久代&#x2F;元空间的大小</h3><p><strong>从 Java 8 开始，如果我们没有指定 Metaspace 的大小，随着更多类的创建，虚拟机会耗尽所有可用的系统内存（永久代并不会出现这种情况）。</strong></p>
+<p>JDK 1.8 之前永久代还没被彻底移除的时候通常通过下面这些参数来调节方法区大小</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-XX:PermSize=N <span class="comment">#方法区 (永久代) 初始大小</span></span><br><span class="line">-XX:MaxPermSize=N <span class="comment">#方法区 (永久代) 最大大小,超过这个值将会抛出 OutOfMemoryError 异常:java.lang.OutOfMemoryError: PermGen</span></span><br></pre></td></tr></table></figure>
+
+<p>相对而言，垃圾收集行为在这个区域是比较少出现的，但并非数据进入方法区后就“永久存在”了。</p>
+<p><strong>JDK 1.8 的时候，方法区（HotSpot 的永久代）被彻底移除了（JDK1.7 就已经开始了），取而代之是元空间，元空间使用的是本地内存。</strong></p>
+<p>下面是一些常用参数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-XX:MetaspaceSize=N <span class="comment">#设置 Metaspace 的初始大小（是一个常见的误区，后面会解释）</span></span><br><span class="line">-XX:MaxMetaspaceSize=N <span class="comment">#设置 Metaspace 的最大大小</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>🐛 修正（参见：<a href="https://github.com/Snailclimb/JavaGuide/issues/1947">issue#1947</a>）</strong>：</p>
+<p>1、Metaspace 的初始容量并不是 <code>-XX:MetaspaceSize</code> 设置，无论 <code>-XX:MetaspaceSize</code> 配置什么值，对于 64 位 JVM 来说，Metaspace 的初始容量都是 21807104（约 20.8m）。</p>
+<p>可以参考 Oracle 官方文档 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/considerations.html">Other Considerations</a> 中提到的：</p>
+<blockquote>
+<p>Specify a higher value for the option MetaspaceSize to avoid early garbage collections induced for class metadata. The amount of class metadata allocated for an application is application-dependent and general guidelines do not exist for the selection of MetaspaceSize. The default size of MetaspaceSize is platform-dependent and ranges from 12 MB to about 20 MB.</p>
+<p>MetaspaceSize 的默认大小取决于平台，范围从 12 MB 到大约 20 MB。</p>
+</blockquote>
+<p>另外，还可以看一下这个试验：<a href="https://mp.weixin.qq.com/s/jqfppqqd98DfAJHZhFbmxA">JVM 参数 MetaspaceSize 的误解</a>。</p>
+<p>2、Metaspace 由于使用不断扩容到<code>-XX:MetaspaceSize</code>参数指定的量，就会发生 FGC，且之后每次 Metaspace 扩容都会发生 Full GC。</p>
+<p>也就是说，MetaspaceSize 表示 Metaspace 使用过程中触发 Full GC 的阈值，只对触发起作用。</p>
+<p>垃圾搜集器内部是根据变量 <code>_capacity_until_GC</code>来判断 Metaspace 区域是否达到阈值的，初始化代码如下所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">MetaspaceGC::initialize</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// Set the high-water mark to MaxMetapaceSize during VM initialization since</span></span><br><span class="line">  <span class="comment">// we can&#x27;t do a GC during initialization.</span></span><br><span class="line">  _capacity_until_GC = MaxMetaspaceSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相关阅读：<a href="https://github.com/Snailclimb/JavaGuide/issues/1204">issue 更正：MaxMetaspaceSize 如果不指定大小的话，不会耗尽内存 #1204</a> 。</p>
+<h2 id="3-垃圾收集相关"><a href="#3-垃圾收集相关" class="headerlink" title="3.垃圾收集相关"></a>3.垃圾收集相关</h2><h3 id="3-1-垃圾回收器"><a href="#3-1-垃圾回收器" class="headerlink" title="3.1.垃圾回收器"></a>3.1.垃圾回收器</h3><p>为了提高应用程序的稳定性，选择正确的<a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html">垃圾收集</a>算法至关重要。</p>
+<p>JVM 具有四种类型的 GC 实现：</p>
+<ul>
+<li>串行垃圾收集器</li>
+<li>并行垃圾收集器</li>
+<li>CMS 垃圾收集器</li>
+<li>G1 垃圾收集器</li>
+</ul>
+<p>可以使用以下参数声明这些实现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-XX:+UseSerialGC</span><br><span class="line">-XX:+UseParallelGC</span><br><span class="line">-XX:+UseConcMarkSweepGC</span><br><span class="line">-XX:+UseG1GC</span><br></pre></td></tr></table></figure>
+
+<p>有关 <em>垃圾回收</em> 实施的更多详细信息，请参见<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6.md">此处</a>。</p>
+<h3 id="3-2-GC-日志记录"><a href="#3-2-GC-日志记录" class="headerlink" title="3.2.GC 日志记录"></a>3.2.GC 日志记录</h3><p>生产环境上，或者其他要测试 GC 问题的环境上，一定会配置上打印 GC 日志的参数，便于分析 GC 相关的问题。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 必选</span></span><br><span class="line"><span class="comment"># 打印基本 GC 信息</span></span><br><span class="line">-XX:+PrintGCDetails</span><br><span class="line">-XX:+PrintGCDateStamps</span><br><span class="line"><span class="comment"># 打印对象分布</span></span><br><span class="line">-XX:+PrintTenuringDistribution</span><br><span class="line"><span class="comment"># 打印堆数据</span></span><br><span class="line">-XX:+PrintHeapAtGC</span><br><span class="line"><span class="comment"># 打印Reference处理信息</span></span><br><span class="line"><span class="comment"># 强引用/弱引用/软引用/虚引用/finalize 相关的方法</span></span><br><span class="line">-XX:+PrintReferenceGC</span><br><span class="line"><span class="comment"># 打印STW时间</span></span><br><span class="line">-XX:+PrintGCApplicationStoppedTime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选</span></span><br><span class="line"><span class="comment"># 打印safepoint信息，进入 STW 阶段之前，需要要找到一个合适的 safepoint</span></span><br><span class="line">-XX:+PrintSafepointStatistics</span><br><span class="line">-XX:PrintSafepointStatisticsCount=1</span><br><span class="line"></span><br><span class="line"><span class="comment"># GC日志输出的文件路径</span></span><br><span class="line">-Xloggc:/path/to/gc-%t.log</span><br><span class="line"><span class="comment"># 开启日志文件分割</span></span><br><span class="line">-XX:+UseGCLogFileRotation</span><br><span class="line"><span class="comment"># 最多分割几个文件，超过之后从头文件开始写</span></span><br><span class="line">-XX:NumberOfGCLogFiles=14</span><br><span class="line"><span class="comment"># 每个文件上限大小，超过就触发分割</span></span><br><span class="line">-XX:GCLogFileSize=50M</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-处理-OOM"><a href="#4-处理-OOM" class="headerlink" title="4.处理 OOM"></a>4.处理 OOM</h2><p>对于大型应用程序来说，面对内存不足错误是非常常见的，这反过来会导致应用程序崩溃。这是一个非常关键的场景，很难通过复制来解决这个问题。</p>
+<p>这就是为什么 JVM 提供了一些参数，这些参数将堆内存转储到一个物理文件中，以后可以用来查找泄漏:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-XX:+HeapDumpOnOutOfMemoryError</span><br><span class="line">-XX:HeapDumpPath=./java_pid&lt;pid&gt;.hprof</span><br><span class="line">-XX:OnOutOfMemoryError=<span class="string">&quot;&lt; cmd args &gt;;&lt; cmd args &gt;&quot;</span></span><br><span class="line">-XX:+UseGCOverheadLimit</span><br></pre></td></tr></table></figure>
+
+<p>这里有几点需要注意:</p>
+<ul>
+<li><strong>HeapDumpOnOutOfMemoryError</strong> 指示 JVM 在遇到 <strong>OutOfMemoryError</strong> 错误时将 heap 转储到物理文件中。</li>
+<li><strong>HeapDumpPath</strong> 表示要写入文件的路径; 可以给出任何文件名; 但是，如果 JVM 在名称中找到一个 <code>&lt;pid&gt;</code> 标记，则当前进程的进程 id 将附加到文件名中，并使用<code>.hprof</code>格式</li>
+<li><strong>OnOutOfMemoryError</strong> 用于发出紧急命令，以便在内存不足的情况下执行; 应该在 <code>cmd args</code> 空间中使用适当的命令。例如，如果我们想在内存不足时重启服务器，我们可以设置参数: <code>-XX:OnOutOfMemoryError=&quot;shutdown -r&quot;</code> 。</li>
+<li><strong>UseGCOverheadLimit</strong> 是一种策略，它限制在抛出 OutOfMemory 错误之前在 GC 中花费的 VM 时间的比例</li>
+</ul>
+<h2 id="5-其他"><a href="#5-其他" class="headerlink" title="5.其他"></a>5.其他</h2><ul>
+<li><code>-server</code> : 启用“ Server Hotspot VM”; 此参数默认用于 64 位 JVM</li>
+<li><code>-XX:+UseStringDeduplication</code> : <em>Java 8u20</em> 引入了这个 JVM 参数，通过创建太多相同 String 的实例来减少不必要的内存使用; 这通过将重复 String 值减少为单个全局 <code>char []</code> 数组来优化堆内存。</li>
+<li><code>-XX:+UseLWPSynchronization</code>: 设置基于 LWP (轻量级进程)的同步策略，而不是基于线程的同步。</li>
+<li><code>-XX:LargePageSizeInBytes</code>: 设置用于 Java 堆的较大页面大小; 它采用 GB&#x2F;MB&#x2F;KB 的参数; 页面大小越大，我们可以更好地利用虚拟内存硬件资源; 然而，这可能会导致 PermGen 的空间大小更大，这反过来又会迫使 Java 堆空间的大小减小。</li>
+<li><code>-XX:MaxHeapFreeRatio</code> : 设置 GC 后, 堆空闲的最大百分比，以避免收缩。</li>
+<li><code>-XX:SurvivorRatio</code> : eden&#x2F;survivor 空间的比例, 例如<code>-XX:SurvivorRatio=6</code> 设置每个 survivor 和 eden 之间的比例为 1:6。</li>
+<li><code>-XX:+UseLargePages</code> : 如果系统支持，则使用大页面内存; 请注意，如果使用这个 JVM 参数，OpenJDK 7 可能会崩溃。</li>
+<li><code>-XX:+UseStringCache</code> : 启用 String 池中可用的常用分配字符串的缓存。</li>
+<li><code>-XX:+UseCompressedStrings</code> : 对 String 对象使用 <code>byte []</code> 类型，该类型可以用纯 ASCII 格式表示。</li>
+<li><code>-XX:+OptimizeStringConcat</code> : 它尽可能优化字符串串联操作。</li>
+</ul>
+<h2 id="文章推荐"><a href="#文章推荐" class="headerlink" title="文章推荐"></a>文章推荐</h2><p>这里推荐了非常多优质的 JVM 实践相关的文章，推荐阅读，尤其是 JVM 性能优化和问题排查相关的文章。</p>
+<ul>
+<li><a href="https://help.aliyun.com/document_detail/148851.html">JVM 参数配置说明 - 阿里云官方文档 - 2022</a></li>
+<li><a href="https://help.aliyun.com/document_detail/383255.html">JVM 内存配置最佳实践 - 阿里云官方文档 - 2022</a></li>
+<li><a href="https://segmentfault.com/a/1190000039806436">求你了，GC 日志打印别再瞎配置了 - 思否 - 2022</a></li>
+<li><a href="https://juejin.cn/post/7078624931826794503">一次大量 JVM Native 内存泄露的排查分析（64M 问题） - 掘金 - 2022</a></li>
+<li><a href="https://heapdump.cn/article/1859160">一次线上 JVM 调优实践，FullGC40 次&#x2F;天到 10 天一次的优化过程 - HeapDump - 2021</a></li>
+<li><a href="https://shuyi.tech/archives/have-a-try-in-jvm-combat">听说 JVM 性能优化很难？今天我小试了一把！ - 陈树义 - 2021</a></li>
+<li><a href="https://mp.weixin.qq.com/s/df1uxHWUXzhErxW1sZ6OvQ">你们要的线上 GC 问题案例来啦 - 编了个程 - 2021</a></li>
+<li><a href="https://tech.meituan.com/2020/11/12/java-9-cms-gc.html">Java 中 9 种常见的 CMS GC 问题分析与解决 - 美团技术团队 - 2020</a></li>
+<li><a href="https://tech.meituan.com/2017/12/29/jvm-optimize.html">从实际案例聊聊 Java 应用的 GC 优化-美团技术团队 - 美团技术团队 - 2017</a></li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 史海杰</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

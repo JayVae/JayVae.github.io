@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    数据冷热分离详解 | Jay&#39;s Blog
+  </title>
+  <meta name="description" content="持续精进">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="史海杰">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 201 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 26 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Jay&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    史海杰
+
+    <span class="post-date float-right" title="{{moment(1624184148000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1624184148000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>数据冷热分离详解</h1>
+    <h2 id="什么是数据冷热分离？"><a href="#什么是数据冷热分离？" class="headerlink" title="什么是数据冷热分离？"></a>什么是数据冷热分离？</h2><p>数据冷热分离是指根据数据的访问频率和业务重要性，将数据分为冷数据和热数据，冷数据一般存储在存储在低成本、低性能的介质中，热数据高性能存储介质中。</p>
+<h3 id="冷数据和热数据"><a href="#冷数据和热数据" class="headerlink" title="冷数据和热数据"></a>冷数据和热数据</h3><p>热数据是指经常被访问和修改且需要快速访问的数据，冷数据是指不经常访问，对当前项目价值较低，但需要长期保存的数据。</p>
+<p>冷热数据到底如何区分呢？有两个常见的区分方法：</p>
+<ol>
+<li><strong>时间维度区分</strong>：按照数据的创建时间、更新时间、过期时间等，将一定时间段内的数据视为热数据，超过该时间段的数据视为冷数据。例如，订单系统可以将 1 年前的订单数据作为冷数据，1 年内的订单数据作为热数据。这种方法适用于数据的访问频率和时间有较强的相关性的场景。</li>
+<li><strong>访问频率区分</strong>：将高频访问的数据视为热数据，低频访问的数据视为冷数据。例如，内容系统可以将浏览量非常低的文章作为冷数据，浏览量较高的文章作为热数据。这种方法需要记录数据的访问频率，成本较高，适合访问频率和数据本身有较强的相关性的场景。</li>
+</ol>
+<p>几年前的数据并不一定都是冷数据，例如一些优质文章发表几年后依然有很多人访问，大部分普通用户新发表的文章却基本没什么人访问。</p>
+<p>这两种区分冷热数据的方法各有优劣，实际项目中，可以将两者结合使用。</p>
+<h3 id="冷热分离的思想"><a href="#冷热分离的思想" class="headerlink" title="冷热分离的思想"></a>冷热分离的思想</h3><p>冷热分离的思想非常简单，就是对数据进行分类，然后分开存储。冷热分离的思想可以应用到很多领域和场景中，而不仅仅是数据存储，例如：</p>
+<ul>
+<li>邮件系统中，可以将近期的比较重要的邮件放在收件箱，将比较久远的不太重要的邮件存入归档。</li>
+<li>日常生活中，可以将常用的物品放在显眼的位置，不常用的物品放入储藏室或者阁楼。</li>
+<li>图书馆中，可以将最受欢迎和最常借阅的图书单独放在一个显眼的区域，将较少借阅的书籍放在不起眼的位置。</li>
+<li>……</li>
+</ul>
+<h3 id="数据冷热分离的优缺点"><a href="#数据冷热分离的优缺点" class="headerlink" title="数据冷热分离的优缺点"></a>数据冷热分离的优缺点</h3><ul>
+<li>优点：热数据的查询性能得到优化（用户的绝大部分操作体验会更好）、节约成本（可以冷热数据的不同存储需求，选择对应的数据库类型和硬件配置，比如将热数据放在 SSD 上，将冷数据放在 HDD 上）</li>
+<li>缺点：系统复杂性和风险增加（需要分离冷热数据，数据错误的风险增加）、统计效率低（统计的时候可能需要用到冷库的数据）。</li>
+</ul>
+<h2 id="冷数据如何迁移？"><a href="#冷数据如何迁移？" class="headerlink" title="冷数据如何迁移？"></a>冷数据如何迁移？</h2><p>冷数据迁移方案：</p>
+<ol>
+<li>业务层代码实现：当有对数据进行写操作时，触发冷热分离的逻辑，判断数据是冷数据还是热数据，冷数据就入冷库，热数据就入热库。这种方案会影响性能且冷热数据的判断逻辑不太好确定，还需要修改业务层代码，因此一般不会使用。</li>
+<li>任务调度：可以利用 xxl-job 或者其他分布式任务调度平台定时去扫描数据库，找出满足冷数据条件的数据，然后批量地将其复制到冷库中，并从热库中删除。这种方法修改的代码非常少，非常适合按照时间区分冷热数据的场景。</li>
+<li>监听数据库的变更日志 binlog ：将满足冷数据条件的数据从 binlog 中提取出来，然后复制到冷库中，并从热库中删除。这种方法可以不用修改代码，但不适合按照时间维度区分冷热数据的场景。</li>
+</ol>
+<p>如果你的公司有 DBA 的话，也可以让 DBA 进行冷数据的人工迁移，一次迁移完成冷数据到冷库。然后，再搭配上面介绍的方案实现后续冷数据的迁移工作。</p>
+<h2 id="冷数据如何存储？"><a href="#冷数据如何存储？" class="headerlink" title="冷数据如何存储？"></a>冷数据如何存储？</h2><p>冷数据的存储要求主要是容量大，成本低，可靠性高，访问速度可以适当牺牲。</p>
+<p>冷数据存储方案：</p>
+<ul>
+<li>中小厂：直接使用 MySQL&#x2F;PostgreSQL 即可（不改变数据库选型和项目当前使用的数据库保持一致），比如新增一张表来存储某个业务的冷数据或者使用单独的冷库来存放冷数据（涉及跨库查询，增加了系统复杂性和维护难度）</li>
+<li>大厂：Hbase（常用）、RocksDB、Doris、Cassandra</li>
+</ul>
+<p>如果公司成本预算足的话，也可以直接上 TiDB 这种分布式关系型数据库，直接一步到位。TiDB 6.0 正式支持数据冷热存储分离，可以降低 SSD 使用成本。使用 TiDB 6.0 的数据放置功能，可以在同一个集群实现海量数据的冷热存储，将新的热数据存入 SSD，历史冷数据存入 HDD。</p>
+<h2 id="案例分享"><a href="#案例分享" class="headerlink" title="案例分享"></a>案例分享</h2><ul>
+<li><a href="https://www.cnblogs.com/fulongyuanjushi/p/17910420.html">如何快速优化几千万数据量的订单表 - 程序员济癫 - 2023</a></li>
+<li><a href="https://mp.weixin.qq.com/s/ZKRkZP6rLHuTE1wvnqmAPQ">海量数据冷热分离方案与实践 - 字节跳动技术团队 - 2022</a></li>
+</ul>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 史海杰</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

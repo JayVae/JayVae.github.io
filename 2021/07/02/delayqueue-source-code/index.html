@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    DelayQueue 源码分析 | Jay&#39;s Blog
+  </title>
+  <meta name="description" content="持续精进">
+  
+  <meta name="keywords" content="
+  Java集合
+  ">
+  
+  <meta name="author" content="史海杰">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 201 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 26 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Jay&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    史海杰
+
+    <span class="post-date float-right" title="{{moment(1625220128000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1625220128000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>DelayQueue 源码分析</h1>
+    <h2 id="DelayQueue-简介"><a href="#DelayQueue-简介" class="headerlink" title="DelayQueue 简介"></a>DelayQueue 简介</h2><p><code>DelayQueue</code> 是 JUC 包(<code>java.util.concurrent)</code>为我们提供的延迟队列，用于实现延时任务比如订单下单 15 分钟未支付直接取消。它是 <code>BlockingQueue</code> 的一种，底层是一个基于 <code>PriorityQueue</code> 实现的一个无界队列，是线程安全的。关于<code>PriorityQueue</code>可以参考笔者编写的这篇文章：<a href="./priorityqueue-source-code.md">PriorityQueue 源码分析</a> 。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/collection/blocking-queue-hierarchy.png" alt="BlockingQueue 的实现类"></p>
+<p><code>DelayQueue</code> 中存放的元素必须实现 <code>Delayed</code> 接口，并且需要重写 <code>getDelay()</code>方法（计算是否到期）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Delayed</span> <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;Delayed&gt; &#123;</span><br><span class="line">    <span class="type">long</span> <span class="title function_">getDelay</span><span class="params">(TimeUnit unit)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下, <code>DelayQueue</code> 会按照到期时间升序编排任务。只有当元素过期时（<code>getDelay()</code>方法返回值小于等于 0），才能从队列中取出。</p>
+<h2 id="DelayQueue-发展史"><a href="#DelayQueue-发展史" class="headerlink" title="DelayQueue 发展史"></a>DelayQueue 发展史</h2><ul>
+<li><code>DelayQueue</code> 最早是在 Java 5 中引入的，作为 <code>java.util.concurrent</code> 包中的一部分，用于支持基于时间的任务调度和缓存过期删除等场景，该版本仅仅支持延迟功能的实现，还未解决线程安全问题。</li>
+<li>在 Java 6 中，<code>DelayQueue</code> 的实现进行了优化，通过使用 <code>ReentrantLock</code> 和 <code>Condition</code> 解决线程安全及线程间交互的效率，提高了其性能和可靠性。</li>
+<li>在 Java 7 中，<code>DelayQueue</code> 的实现进行了进一步的优化，通过使用 CAS 操作实现元素的添加和移除操作，提高了其并发操作性能。</li>
+<li>在 Java 8 中，<code>DelayQueue</code> 的实现没有进行重大变化，但是在 <code>java.time</code> 包中引入了新的时间类，如 <code>Duration</code> 和 <code>Instant</code>，使得使用 <code>DelayQueue</code> 进行基于时间的调度更加方便和灵活。</li>
+<li>在 Java 9 中，<code>DelayQueue</code> 的实现进行了一些微小的改进，主要是对代码进行了一些优化和精简。</li>
+</ul>
+<p>总的来说，<code>DelayQueue</code> 的发展史主要是通过优化其实现方式和提高其性能和可靠性，使其更加适用于基于时间的调度和缓存过期删除等场景。</p>
+<h2 id="DelayQueue-常见使用场景示例"><a href="#DelayQueue-常见使用场景示例" class="headerlink" title="DelayQueue 常见使用场景示例"></a>DelayQueue 常见使用场景示例</h2><p>我们这里希望任务可以按照我们预期的时间执行，例如提交 3 个任务，分别要求 1s、2s、3s 后执行，即使是乱序添加，1s 后要求 1s 执行的任务会准时执行。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/collection/delayed-task.png" alt="延迟任务"></p>
+<p>对此我们可以使用 <code>DelayQueue</code> 来实现,所以我们首先需要继承 <code>Delayed</code> 实现 <code>DelayedTask</code>，实现 <code>getDelay</code> 方法以及优先级比较 <code>compareTo</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 延迟任务</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DelayedTask</span> <span class="keyword">implements</span> <span class="title class_">Delayed</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 任务到期时间</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> executeTime;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 任务</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Runnable task;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">DelayedTask</span><span class="params">(<span class="type">long</span> delay, Runnable task)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.executeTime = System.currentTimeMillis() + delay;</span><br><span class="line">        <span class="built_in">this</span>.task = task;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 查看当前任务还有多久到期</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> unit</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">long</span> <span class="title function_">getDelay</span><span class="params">(TimeUnit unit)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> unit.convert(executeTime - System.currentTimeMillis(), TimeUnit.MILLISECONDS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 延迟队列需要到期时间升序入队，所以我们需要实现compareTo进行到期时间比较</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> o</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Delayed o)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Long.compare(<span class="built_in">this</span>.executeTime, ((DelayedTask) o).executeTime);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">execute</span><span class="params">()</span> &#123;</span><br><span class="line">        task.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>完成任务的封装之后，使用就很简单了，设置好多久到期然后将任务提交到延迟队列中即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建延迟队列，并添加任务</span></span><br><span class="line">DelayQueue &lt; DelayedTask &gt; delayQueue = <span class="keyword">new</span> <span class="title class_">DelayQueue</span> &lt; &gt; ();</span><br><span class="line"></span><br><span class="line"><span class="comment">//分别添加1s、2s、3s到期的任务</span></span><br><span class="line">delayQueue.add(<span class="keyword">new</span> <span class="title class_">DelayedTask</span>(<span class="number">2000</span>, () -&gt; System.out.println(<span class="string">&quot;Task 2&quot;</span>)));</span><br><span class="line">delayQueue.add(<span class="keyword">new</span> <span class="title class_">DelayedTask</span>(<span class="number">1000</span>, () -&gt; System.out.println(<span class="string">&quot;Task 1&quot;</span>)));</span><br><span class="line">delayQueue.add(<span class="keyword">new</span> <span class="title class_">DelayedTask</span>(<span class="number">3000</span>, () -&gt; System.out.println(<span class="string">&quot;Task 3&quot;</span>)));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取出任务并执行</span></span><br><span class="line"><span class="keyword">while</span> (!delayQueue.isEmpty()) &#123;</span><br><span class="line">  <span class="comment">//阻塞获取最先到期的任务</span></span><br><span class="line">  <span class="type">DelayedTask</span> <span class="variable">task</span> <span class="operator">=</span> delayQueue.take();</span><br><span class="line">  <span class="keyword">if</span> (task != <span class="literal">null</span>) &#123;</span><br><span class="line">    task.execute();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从输出结果可以看出，即使笔者先提到 2s 到期的任务，1s 到期的任务 Task1 还是优先执行的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Task <span class="number">1</span></span><br><span class="line">Task <span class="number">2</span></span><br><span class="line">Task <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="DelayQueue-源码解析"><a href="#DelayQueue-源码解析" class="headerlink" title="DelayQueue 源码解析"></a>DelayQueue 源码解析</h2><p>这里以 JDK1.8 为例，分析一下 <code>DelayQueue</code> 的底层核心源码。</p>
+<p><code>DelayQueue</code> 的类定义如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DelayQueue</span>&lt;E <span class="keyword">extends</span> <span class="title class_">Delayed</span>&gt; <span class="keyword">extends</span> <span class="title class_">AbstractQueue</span>&lt;E&gt; <span class="keyword">implements</span> <span class="title class_">BlockingQueue</span>&lt;E&gt;</span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>DelayQueue</code> 继承了 <code>AbstractQueue</code> 类，实现了 <code>BlockingQueue</code> 接口。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/collection/delayqueue-class-diagram.png" alt="DelayQueue类图"></p>
+<h3 id="核心成员变量"><a href="#核心成员变量" class="headerlink" title="核心成员变量"></a>核心成员变量</h3><p><code>DelayQueue</code> 的 4 个核心成员变量如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可重入锁，实现线程安全的关键</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">transient</span> <span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ReentrantLock</span>();</span><br><span class="line"><span class="comment">//延迟队列底层存储数据的集合,确保元素按照到期时间升序排列</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> PriorityQueue&lt;E&gt; q = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;E&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//指向准备执行优先级最高的线程</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">Thread</span> <span class="variable">leader</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"><span class="comment">//实现多线程之间等待唤醒的交互</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="type">Condition</span> <span class="variable">available</span> <span class="operator">=</span> lock.newCondition();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>lock</code> : 我们都知道 <code>DelayQueue</code> 存取是线程安全的，所以为了保证存取元素时线程安全，我们就需要在存取时上锁，而 <code>DelayQueue</code> 就是基于 <code>ReentrantLock</code> 独占锁确保存取操作的线程安全。</li>
+<li><code>q</code> : 延迟队列要求元素按照到期时间进行升序排列，所以元素添加时势必需要进行优先级排序,所以 <code>DelayQueue</code> 底层元素的存取都是通过这个优先队列 <code>PriorityQueue</code> 的成员变量 <code>q</code> 来管理的。</li>
+<li><code>leader</code> : 延迟队列的任务只有到期之后才会执行,对于没有到期的任务只有等待,为了确保优先级最高的任务到期后可以即刻被执行,设计者就用 <code>leader</code> 来管理延迟任务，只有 <code>leader</code> 所指向的线程才具备定时等待任务到期执行的权限，而其他那些优先级低的任务只能无限期等待，直到 <code>leader</code> 线程执行完手头的延迟任务后唤醒它。</li>
+<li><code>available</code> : 上文讲述 <code>leader</code> 线程时提到的等待唤醒操作的交互就是通过 <code>available</code> 实现的，假如线程 1 尝试在空的 <code>DelayQueue</code> 获取任务时，<code>available</code> 就会将其放入等待队列中。直到有一个线程添加一个延迟任务后通过 <code>available</code> 的 <code>signal</code> 方法将其唤醒。</li>
+</ul>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>相较于其他的并发容器，延迟队列的构造方法比较简单，它只有两个构造方法，因为所有成员变量在类加载时都已经初始完成了，所以默认构造方法什么也没做。还有一个传入 <code>Collection</code> 对象的构造方法，它会将调用 <code>addAll()</code>方法将集合元素存到优先队列 <code>q</code> 中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">DelayQueue</span><span class="params">()</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">DelayQueue</span><span class="params">(Collection&lt;? extends E&gt; c)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.addAll(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p><code>DelayQueue</code> 添加元素的方法无论是 <code>add</code>、<code>put</code> 还是 <code>offer</code>,本质上就是调用一下 <code>offer</code> ,所以了解延迟队列的添加逻辑我们只需阅读 offer 方法即可。</p>
+<p><code>offer</code> 方法的整体逻辑为:</p>
+<ol>
+<li>尝试获取 <code>lock</code> 。</li>
+<li>如果上锁成功,则调 <code>q</code> 的 <code>offer</code> 方法将元素存放到优先队列中。</li>
+<li>调用 <code>peek</code> 方法看看当前队首元素是否就是本次入队的元素,如果是则说明当前这个元素是即将到期的任务(即优先级最高的元素)，于是将 <code>leader</code> 设置为空,通知因为队列为空时调用 <code>take</code> 等方法导致阻塞的线程来争抢元素。</li>
+<li>上述步骤执行完成，释放 <code>lock</code>。</li>
+<li>返回 true。</li>
+</ol>
+<p>源码如下，笔者已详细注释，读者可自行参阅:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">offer</span><span class="params">(E e)</span> &#123;</span><br><span class="line">    <span class="comment">//尝试获取lock</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="built_in">this</span>.lock;</span><br><span class="line">    lock.lock();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//如果上锁成功,则调q的offer方法将元素存放到优先队列中</span></span><br><span class="line">        q.offer(e);</span><br><span class="line">        <span class="comment">//调用peek方法看看当前队首元素是否就是本次入队的元素,如果是则说明当前这个元素是即将到期的任务(即优先级最高的元素)</span></span><br><span class="line">        <span class="keyword">if</span> (q.peek() == e) &#123;</span><br><span class="line">            <span class="comment">//将leader设置为空,通知调用取元素方法而阻塞的线程来争抢这个任务</span></span><br><span class="line">            leader = <span class="literal">null</span>;</span><br><span class="line">            available.signal();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="comment">//上述步骤执行完成，释放lock</span></span><br><span class="line">        lock.unlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><p><code>DelayQueue</code> 中获取元素的方式分为阻塞式和非阻塞式，先来看看逻辑比较复杂的阻塞式获取元素方法 <code>take</code>,为了让读者可以更直观的了解阻塞式获取元素的全流程，笔者将以 3 个线程并发获取元素为例讲述 <code>take</code> 的工作流程。</p>
+<blockquote>
+<p>想要理解下面的内容，需要用到 AQS 相关的知识，推荐阅读下面这两篇文章：</p>
+<ul>
+<li><a href="https://xie.infoq.cn/article/5a3cc0b709012d40cb9f41986">图文讲解 AQS ，一起看看 AQS 的源码……(图文较长)</a></li>
+<li><a href="https://xie.infoq.cn/article/0223d5e5f19726b36b084b10d">AQS 都看完了，Condition 原理可不能少！</a></li>
+</ul>
+</blockquote>
+<p>1、首先， 3 个线程会尝试获取可重入锁 <code>lock</code>,假设我们现在有 3 个线程分别是 t1、t2、t3,随后 t1 得到了锁，而 t2、t3 没有抢到锁，故将这两个线程存入等待队列中。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/collection/delayqueue-take-0.png"></p>
+<p>2、紧接着 t1 开始进行元素获取的逻辑。</p>
+<p>3、线程 t1 首先会查看 <code>DelayQueue</code> 队列首元素是否为空。</p>
+<p>4、如果元素为空，则说明当前队列没有任何元素，故 t1 就会被阻塞存到 <code>conditionWaiter</code> 这个队列中。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/collection/delayqueue-take-1.png"></p>
+<p>注意，调用 <code>await</code> 之后 t1 就会释放 <code>lcok</code> 锁，假如 <code>DelayQueue</code> 持续为空，那么 t2、t3 也会像 t1 一样执行相同的逻辑并进入 <code>conditionWaiter</code> 队列中。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/collection/delayqueue-take-2.png"></p>
+<p>如果元素不为空，则判断当前任务是否到期，如果元素到期，则直接返回出去。如果元素未到期，则判断当前 <code>leader</code> 线程(<code>DelayQueue</code> 中唯一一个可以等待并获取元素的线程引用)是否为空，若不为空，则说明当前 <code>leader</code> 正在等待执行一个优先级比当前元素还高的元素到期，故当前线程 t1 只能调用 <code>await</code> 进入无限期等待，等到 <code>leader</code> 取得元素后唤醒。反之，若 <code>leader</code> 线程为空，则将当前线程设置为 leader 并进入有限期等待,到期后取出元素并返回。</p>
+<p>自此我们阻塞式获取元素的逻辑都已完成后,源码如下，读者可自行参阅:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> E <span class="title function_">take</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">    <span class="comment">// 尝试获取可重入锁,将底层AQS的state设置为1,并设置为独占锁</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="built_in">this</span>.lock;</span><br><span class="line">    lock.lockInterruptibly();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (;;) &#123;</span><br><span class="line">            <span class="comment">//查看队列第一个元素</span></span><br><span class="line">            <span class="type">E</span> <span class="variable">first</span> <span class="operator">=</span> q.peek();</span><br><span class="line">            <span class="comment">//若为空,则将当前线程放入ConditionObject的等待队列中，并将底层AQS的state设置为0，表示释放锁并进入无限期等待</span></span><br><span class="line">            <span class="keyword">if</span> (first == <span class="literal">null</span>)</span><br><span class="line">                available.await();</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//若元素不为空，则查看当前元素多久到期</span></span><br><span class="line">                <span class="type">long</span> <span class="variable">delay</span> <span class="operator">=</span> first.getDelay(NANOSECONDS);</span><br><span class="line">                <span class="comment">//如果小于0则说明已到期直接返回出去</span></span><br><span class="line">                <span class="keyword">if</span> (delay &lt;= <span class="number">0</span>)</span><br><span class="line">                    <span class="keyword">return</span> q.poll();</span><br><span class="line">                <span class="comment">//如果大于0则说明任务还没到期，首先需要释放对这个元素的引用</span></span><br><span class="line">                first = <span class="literal">null</span>; <span class="comment">// don&#x27;t retain ref while waiting</span></span><br><span class="line">                <span class="comment">//判断leader是否为空，如果不为空，则说明正有线程作为leader并等待一个任务到期，则当前线程进入无限期等待</span></span><br><span class="line">                <span class="keyword">if</span> (leader != <span class="literal">null</span>)</span><br><span class="line">                    available.await();</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//反之将我们的线程成为leader</span></span><br><span class="line">                    <span class="type">Thread</span> <span class="variable">thisThread</span> <span class="operator">=</span> Thread.currentThread();</span><br><span class="line">                    leader = thisThread;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="comment">//并进入有限期等待</span></span><br><span class="line">                        available.awaitNanos(delay);</span><br><span class="line">                    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                        <span class="comment">//等待任务到期时，释放leader引用，进入下一次循环将任务return出去</span></span><br><span class="line">                        <span class="keyword">if</span> (leader == thisThread)</span><br><span class="line">                            leader = <span class="literal">null</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="comment">// 收尾逻辑:当leader为null，并且队列中有任务时，唤醒等待的获取元素的线程。</span></span><br><span class="line">        <span class="keyword">if</span> (leader == <span class="literal">null</span> &amp;&amp; q.peek() != <span class="literal">null</span>)</span><br><span class="line">            available.signal();</span><br><span class="line">        <span class="comment">//释放锁</span></span><br><span class="line">        lock.unlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们再来看看非阻塞的获取元素方法 <code>poll</code> ，逻辑比较简单，整体步骤如下:</p>
+<ol>
+<li>尝试获取可重入锁。</li>
+<li>查看队列第一个元素,判断元素是否为空。</li>
+<li>若元素为空，或者元素未到期，则直接返回空。</li>
+<li>若元素不为空且到期了，直接调用 <code>poll</code> 返回出去。</li>
+<li>释放可重入锁 <code>lock</code> 。</li>
+</ol>
+<p>源码如下,读者可自行参阅源码及注释:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> E <span class="title function_">poll</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//尝试获取可重入锁</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="built_in">this</span>.lock;</span><br><span class="line">    lock.lock();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//查看队列第一个元素,判断元素是否为空</span></span><br><span class="line">        <span class="type">E</span> <span class="variable">first</span> <span class="operator">=</span> q.peek();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//若元素为空，或者元素未到期，则直接返回空</span></span><br><span class="line">        <span class="keyword">if</span> (first == <span class="literal">null</span> || first.getDelay(NANOSECONDS) &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="comment">//若元素不为空且到期了，直接调用poll返回出去</span></span><br><span class="line">            <span class="keyword">return</span> q.poll();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="comment">//释放可重入锁lock</span></span><br><span class="line">        lock.unlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看元素"><a href="#查看元素" class="headerlink" title="查看元素"></a>查看元素</h3><p>上文获取元素时都会调用到 <code>peek</code> 方法，peek 顾名思义仅仅窥探一下队列中的元素，它的步骤就 4 步:</p>
+<ol>
+<li>上锁。</li>
+<li>调用优先队列 q 的 peek 方法查看索引 0 位置的元素。</li>
+<li>释放锁。</li>
+<li>将元素返回出去。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> E <span class="title function_">peek</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="built_in">this</span>.lock;</span><br><span class="line">    lock.lock();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> q.peek();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        lock.unlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="DelayQueue-常见面试题"><a href="#DelayQueue-常见面试题" class="headerlink" title="DelayQueue 常见面试题"></a>DelayQueue 常见面试题</h2><h3 id="DelayQueue-的实现原理是什么？"><a href="#DelayQueue-的实现原理是什么？" class="headerlink" title="DelayQueue 的实现原理是什么？"></a>DelayQueue 的实现原理是什么？</h3><p><code>DelayQueue</code> 底层是使用优先队列 <code>PriorityQueue</code> 来存储元素，而 <code>PriorityQueue</code> 采用二叉小顶堆的思想确保值小的元素排在最前面，这就使得 <code>DelayQueue</code> 对于延迟任务优先级的管理就变得十分方便了。同时 <code>DelayQueue</code> 为了保证线程安全还用到了可重入锁 <code>ReentrantLock</code>,确保单位时间内只有一个线程可以操作延迟队列。最后，为了实现多线程之间等待和唤醒的交互效率，<code>DelayQueue</code> 还用到了 <code>Condition</code>，通过 <code>Condition</code> 的 <code>await</code> 和 <code>signal</code> 方法完成多线程之间的等待唤醒。</p>
+<h3 id="DelayQueue-的实现是否线程安全？"><a href="#DelayQueue-的实现是否线程安全？" class="headerlink" title="DelayQueue 的实现是否线程安全？"></a>DelayQueue 的实现是否线程安全？</h3><p><code>DelayQueue</code> 的实现是线程安全的，它通过 <code>ReentrantLock</code> 实现了互斥访问和 <code>Condition</code> 实现了线程间的等待和唤醒操作，可以保证多线程环境下的安全性和可靠性。</p>
+<h3 id="DelayQueue-的使用场景有哪些？"><a href="#DelayQueue-的使用场景有哪些？" class="headerlink" title="DelayQueue 的使用场景有哪些？"></a>DelayQueue 的使用场景有哪些？</h3><p><code>DelayQueue</code> 通常用于实现定时任务调度和缓存过期删除等场景。在定时任务调度中，需要将需要执行的任务封装成延迟任务对象，并将其添加到 <code>DelayQueue</code> 中，<code>DelayQueue</code> 会自动按照剩余延迟时间进行升序排序(默认情况)，以保证任务能够按照时间先后顺序执行。对于缓存过期这个场景而言，在数据被缓存到内存之后，我们可以将缓存的 key 封装成一个延迟的删除任务，并将其添加到 <code>DelayQueue</code> 中，当数据过期时，拿到这个任务的 key，将这个 key 从内存中移除。</p>
+<h3 id="DelayQueue-中-Delayed-接口的作用是什么？"><a href="#DelayQueue-中-Delayed-接口的作用是什么？" class="headerlink" title="DelayQueue 中 Delayed 接口的作用是什么？"></a>DelayQueue 中 Delayed 接口的作用是什么？</h3><p><code>Delayed</code> 接口定义了元素的剩余延迟时间(<code>getDelay</code>)和元素之间的比较规则(该接口继承了 <code>Comparable</code> 接口)。若希望元素能够存放到 <code>DelayQueue</code> 中，就必须实现 <code>Delayed</code> 接口的 <code>getDelay()</code> 方法和 <code>compareTo()</code> 方法，否则 <code>DelayQueue</code> 无法得知当前任务剩余时长和任务优先级的比较。</p>
+<h3 id="DelayQueue-和-Timer-TimerTask-的区别是什么？"><a href="#DelayQueue-和-Timer-TimerTask-的区别是什么？" class="headerlink" title="DelayQueue 和 Timer&#x2F;TimerTask 的区别是什么？"></a>DelayQueue 和 Timer&#x2F;TimerTask 的区别是什么？</h3><p><code>DelayQueue</code> 和 <code>Timer/TimerTask</code> 都可以用于实现定时任务调度，但是它们的实现方式不同。<code>DelayQueue</code> 是基于优先级队列和堆排序算法实现的，可以实现多个任务按照时间先后顺序执行；而 <code>Timer/TimerTask</code> 是基于单线程实现的，只能按照任务的执行顺序依次执行，如果某个任务执行时间过长，会影响其他任务的执行。另外，<code>DelayQueue</code> 还支持动态添加和移除任务，而 <code>Timer/TimerTask</code> 只能在创建时指定任务。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li>《深入理解高并发编程：JDK 核心技术》:</li>
+<li>一口气说出 Java 6 种延时队列的实现方法(面试官也得服):<a href="https://www.jb51.net/article/186192.htm">https://www.jb51.net/article/186192.htm</a></li>
+<li>图解 DelayQueue 源码（java 8）——延时队列的小九九: <a href="https://blog.csdn.net/every__day/article/details/113810985">https://blog.csdn.net/every__day/article/details/113810985</a><!-- @include: @article-footer.snippet.md --></li>
+</ul>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 史海杰</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

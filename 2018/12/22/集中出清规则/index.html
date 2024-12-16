@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    集中出清规则 | Jay&#39;s Blog
+  </title>
+  <meta name="description" content="持续精进">
+  
+  <meta name="keywords" content="
+  课题
+  ">
+  
+  <meta name="author" content="史海杰">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 201 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 26 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Jay&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    史海杰
+
+    <span class="post-date float-right" title="{{moment(1545459600000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1545459600000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>集中出清规则</h1>
+    <h2 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h2><pre><code>电厂报价报量`arr1[][]`,
+用户报价报量`arr2[][]`。
+不应该是数组，而应该是一个抽象的数据类型，存有
+</code></pre>
+<h2 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h2><pre><code>出清价格：Price
+成交电量对（一个用户可以在多个成交对之中）ResultSet。
+</code></pre>
+<h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h2><p>0-. 按地区分组<br>0. 数据有效筛选（购方申报数据筛选和售方数据筛选不一样）</p>
+<ol>
+<li>按照报价排序，电厂升序p1，用户降序p2,相应的报量序列为q1,q2；【价格相同时，售方按照单机容量等级由大到小进行排列】</li>
+<li>得到成交电量对,其中成交电量为q_current &#x3D; <code>min&#123;q1[0],q2[0]&#125;</code>；</li>
+<li>更新p1,p2以及q1,q2.<blockquote>
+<p>从对应的报量序列中减去当前成交的电量q_current，如果报量为0，则将其与对应的报价排序中的元素移除；</p>
+</blockquote>
+</li>
+<li>对更新后的序列执行步骤1，直至q1,q2中有一个为空，结束。</li>
+</ol>
+<h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p>过程可视化？<br>结果可视化：<br>图片，表格</p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>其中，不同步骤的数据模型是不一样的，最起码在这里的模型是没有那些成本信息的。<br>问题在于如何返送回去？<br>数据进行封装，通过id进行索引。</p>
+<ol>
+<li>基本数据模型：<br>：<br>抽象父类—–发电商顶级类  —<br>  |<br>   —电力用户顶级类—</li>
+<li>代理类：</li>
+<li>封装类：</li>
+</ol>
+<p>最终保存的结果【比如一个用户成交了几笔，关联交易表】在entity怎么保存。<br>交易实体类</p>
+<h2 id="广东省的出清"><a href="#广东省的出清" class="headerlink" title="广东省的出清"></a>广东省的出清</h2><p>在广东的规则中，对日前市场如何出清是这样描述的：</p>
+<p>　　“电力调度机构综合考虑发电侧电力报价曲线、用户侧电力需求价格曲线、非市场用户负荷预测、外送受电曲线、A 类机组出力曲线、发电机组检修计划、输变电设备检修计划、发电机组运行约束条件、电网安全运行约束条件等因素，以社会福利最大为优化目标，采用安全约束机组组合(SCUC)、安全约束经济调度(SCED)算法进行集中优化计算，出清得到运行日的机组开机组合以及分时发电出力曲线、售电公司与批发用户分时分节点的中标用电曲线、分时节点电价。”</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 史海杰</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    智能代理算法 | Jay&#39;s Blog
+  </title>
+  <meta name="description" content="持续精进">
+  
+  <meta name="keywords" content="
+  课题
+  ">
+  
+  <meta name="author" content="史海杰">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 201 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 26 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Jay&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    史海杰
+
+    <span class="post-date float-right" title="{{moment(1545184046000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1545184046000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>智能代理算法</h1>
+    <ol>
+<li><p>智能代理的流程</p>
+</li>
+<li><p>策略空间是啥（策略集）</p>
+</li>
+</ol>
+<p>按容量报价？？？？【原理】</p>
+<p>报价策略：按照成本报价、按照持留容量（《电力市场原理与实践》）<br>又可以分为保守型（用电侧市场放开下的电力市场多主体博弈）</p>
+<p>智能代理迭代的是什么?系数？</p>
+<p>强化学习了解到什么程度？</p>
+<p>在于策略空间和奖励函数。</p>
+<ol start="3">
+<li>强化学习中的概念最起码得对应起来：<br>3.1 状态：（Q,P）状态空间，离散化【为什么要离散化】，在这里我觉得是对每个代理来说是每次的出清结果，电价和电量。<br>3.2 动作（策略）：策略集合？调（Q,P），在原来基础上增加减少？还有一种是在原来的报价函数基础上进行调节系数。</li>
+</ol>
+<ul>
+<li>存疑 *<br> 3.2.1 【发电商基于Q-Learning算法的日前市场竞价策略】<br> 注意这里的策略到状态是不确定的啊，状态如果是出清值的话，那么需要所有的进行出清才能得出。<br> 3.2.2 【基于复杂系统多Agent建模的电力市场仿真技术研究_王海宁】中：</li>
+<li>代理算法（RE算法、Q-learning算法、规则推理算法greedy、粒子群算法）和报价策略（中庸型）区别?</li>
+<li>其中策略空间中的Si是怎么计算的？</li>
+<li>可以说RE算法无关状态？</li>
+<li>其中的Q-learning环境：是选用竞价空间，代理收购约束情况与市场加权平均出清价格联合作为区分的标准。P44<br> 将这三个变量关联考虑，可将环境分为种状态。在程序中运用了多维矩阵来表示这些状态。</li>
+</ul>
+<p> 3.2.3 【电力市场仿真系统的开发及应用】<br>3.3 回报（奖赏）：成本？<br>3.4 值函数（评价函数），即Q值。值函数很大程度上由奖赏函数给出的奖赏值确定，因此奖赏函数是强化学习方法中的一个重要的问题。<br>3.5 环境模型 ：不需要<br>3.6 关于策略：RL是从环境状态到动作的映射的学习，我们把这个映射称为策略。<br>4. 用的强化学习算法：<br>TD算法<br>SARA<br>Q-LEARNING</p>
+<p>常见的强化学习算法中TD算法和Q一学习算法属于典型的模型无关法，而Sarsa和Dyna Q算法属于基于模型法（？？？这个是不对的，见下）。<br>5. 查一查强化学习在电力市场或其他领域的应用</p>
+<ol start="6">
+<li><p>强化学习的大体流程是什么样的？</p>
+</li>
+<li><p>基于价值（value-based）、基于策略（policy-based）以及基于模型（model-based）的方法<br>7.1 优化价值函数<br>一个状态下的函数值，是智能体可以预期的未来奖励积累总值，从当前状态开始算。智能体要用这个价值函数来决定，每一步要选择哪个行动。它会采取函数值 (就是Q值) 最大的那个行动。【不是概率？】<br>7.2 每种动作都可能被选中，根据概率来选</p>
+</li>
+<li><p>强化学习几种分类：（括号中的是具体的方法）<br>8.1 按照是否对环境进行建模可以分为：model-free（Q-learning、Sarsa、policy gradients）和model-based;<br>8.2 按照选择动作的依据可以分为基于概率（Policy-based，包括policy gradients）和基于价值（value-based，包括Q-learning、Sarsa）<br>8.3 按照更新可以分为回合更新（Monte-Carlo update，包括基础版policy gradients，monte-carlo learning）和单步更新（Temporal Difference,包括升级版的policy gradients，Q-learning，Sarsa）;<br>8.4 在线学习（on-policy）和离线学习（off-policy）：</p>
+</li>
+<li><p>关于Roth-Erev方法<br>在博士论文【王海宁】中有所提及<br>绿书中的？</p>
+</li>
+<li><p>需要了解马尔科夫决策过程、动态规划、蒙特卡洛、时间差分这些吗？</p>
+</li>
+<li><p>电力市场交易中的量纲：<br>申报电量原则上以 10兆瓦时的整数倍，电量的量纲为兆瓦时。<br>申报电价最小单位为0.1元&#x2F;兆瓦时，电价的量纲为元&#x2F;兆瓦时。电力用户和发电企业应理性报价，保障本次交易工作的顺利开展。</p>
+</li>
+<li><p>强化学习中的多代理体</p>
+</li>
+<li><p>R-learning:<br>The average-reward formulation has been described for dynamic programming<br>(e.g., Puterman, 1994) and from the point of view of reinforcement learning (Ma-<br>hadevan, 1996; Tadepalli and Ok, 1994; Bertsekas and Tsitiklis, 1996; Tsitsiklis<br>and Van Roy, 1999). The algorithm described here is the on-policy analog of the<br>“R-learning” algorithm introduced by Schwartz (1993). The name R-learning was<br>probably meant to be the alphabetic successor to Q-learning, but we prefer to<br>think of it as a reference to the learning of differential or<br>relative<br>values. The<br>access-control queuing example was suggested by the work of Carlstr ̈om and<br>Nordstr ̈om (1997</p>
+</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 史海杰</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
