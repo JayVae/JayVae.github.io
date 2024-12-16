@@ -1,37 +1,3131 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据库基础,SQL," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="题目来源于：牛客题霸 - SQL 进阶挑战  较难或者困难的题目可以根据自身实际情况和面试需要来决定是否要跳过。 专用窗口函数MySQL 8.0 版本引入了窗口函数的支持，下面是 MySQL 中常见的窗口函数及其用法：  ROW_NUMBER(): 为查询结果集中的每一行分配一个唯一的整数值。  12SELECT col1, col2, ROW_NUMBER() OVER (ORDER BY c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL常见面试题总结（4）">
+<meta property="og:url" content="http://yoursite.com/2024/09/23/sql-questions-04/index.html">
+<meta property="og:site_name" content="Jay&#39;s Blog">
+<meta property="og:description" content="题目来源于：牛客题霸 - SQL 进阶挑战  较难或者困难的题目可以根据自身实际情况和面试需要来决定是否要跳过。 专用窗口函数MySQL 8.0 版本引入了窗口函数的支持，下面是 MySQL 中常见的窗口函数及其用法：  ROW_NUMBER(): 为查询结果集中的每一行分配一个唯一的整数值。  12SELECT col1, col2, ROW_NUMBER() OVER (ORDER BY c">
+<meta property="og:locale">
+<meta property="og:image" content="https://oss.javaguide.cn/github/javaguide/database/sql/29A377601170AB822322431FCDF7EDFE.png">
+<meta property="article:published_time" content="2024-09-23T10:26:08.000Z">
+<meta property="article:modified_time" content="2024-12-16T10:25:12.125Z">
+<meta property="article:author" content="史海杰">
+<meta property="article:tag" content="数据库基础">
+<meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oss.javaguide.cn/github/javaguide/database/sql/29A377601170AB822322431FCDF7EDFE.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2024/09/23/sql-questions-04/"/>
+
+
+
+
+
+  <title>SQL常见面试题总结（4） | Jay's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jay's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知而不行为不知</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2024/09/23/sql-questions-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SQL常见面试题总结（4）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-09-23T18:26:08+08:00">
+                2024-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">面试问题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2024/09/23/sql-questions-04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2024/09/23/sql-questions-04/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2024/09/23/sql-questions-04/" class="leancloud_visitors" data-flag-title="SQL常见面试题总结（4）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  31 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>题目来源于：<a href="https://www.nowcoder.com/exam/oj?page=1&tab=SQL%E7%AF%87&topicId=240">牛客题霸 - SQL 进阶挑战</a></p>
+</blockquote>
+<p>较难或者困难的题目可以根据自身实际情况和面试需要来决定是否要跳过。</p>
+<h2 id="专用窗口函数"><a href="#专用窗口函数" class="headerlink" title="专用窗口函数"></a>专用窗口函数</h2><p>MySQL 8.0 版本引入了窗口函数的支持，下面是 MySQL 中常见的窗口函数及其用法：</p>
+<ol>
+<li><code>ROW_NUMBER()</code>: 为查询结果集中的每一行分配一个唯一的整数值。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> col1, col2, <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> col1) <span class="keyword">AS</span> row_num</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><code>RANK()</code>: 计算每一行在排序结果中的排名。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> col1, col2, <span class="built_in">RANK</span>() <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> col1 <span class="keyword">DESC</span>) <span class="keyword">AS</span> ranking</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><code>DENSE_RANK()</code>: 计算每一行在排序结果中的排名，保留相同的排名。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> col1, col2, <span class="built_in">DENSE_RANK</span>() <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> col1 <span class="keyword">DESC</span>) <span class="keyword">AS</span> ranking</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><code>NTILE(n)</code>: 将结果分成 n 个基本均匀的桶，并为每个桶分配一个标识号。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> col1, col2, <span class="built_in">NTILE</span>(<span class="number">4</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> col1) <span class="keyword">AS</span> bucket</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><code>SUM()</code>, <code>AVG()</code>,<code>COUNT()</code>, <code>MIN()</code>, <code>MAX()</code>: 这些聚合函数也可以与窗口函数结合使用，计算窗口内指定列的汇总、平均值、计数、最小值和最大值。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> col1, col2, <span class="built_in">SUM</span>(col1) <span class="keyword">OVER</span> () <span class="keyword">AS</span> sum_col</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><code>LEAD()</code> 和 <code>LAG()</code>: LEAD 函数用于获取当前行之后的某个偏移量的行的值，而 LAG 函数用于获取当前行之前的某个偏移量的行的值。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> col1, col2, <span class="built_in">LEAD</span>(col1, <span class="number">1</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> col1) <span class="keyword">AS</span> next_col1,</span><br><span class="line">                 <span class="built_in">LAG</span>(col1, <span class="number">1</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> col1) <span class="keyword">AS</span> prev_col1</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><code>FIRST_VALUE()</code> 和 <code>LAST_VALUE()</code>: FIRST_VALUE 函数用于获取窗口内指定列的第一个值，LAST_VALUE 函数用于获取窗口内指定列的最后一个值。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> col1, col2, <span class="built_in">FIRST_VALUE</span>(col2) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> col1 <span class="keyword">ORDER</span> <span class="keyword">BY</span> col2) <span class="keyword">AS</span> first_val,</span><br><span class="line">                 <span class="built_in">LAST_VALUE</span>(col2) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> col1 <span class="keyword">ORDER</span> <span class="keyword">BY</span> col2) <span class="keyword">AS</span> last_val</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+
+<p>窗口函数通常需要配合 OVER 子句一起使用，用于定义窗口的大小、排序规则和分组方式。</p>
+<h3 id="每类试卷得分前三名"><a href="#每类试卷得分前三名" class="headerlink" title="每类试卷得分前三名"></a>每类试卷得分前三名</h3><p><strong>描述</strong>：</p>
+<p>现有试卷信息表 <code>examination_info</code>（<code>exam_id</code> 试卷 ID, <code>tag</code> 试卷类别, <code>difficulty</code> 试卷难度, <code>duration</code> 考试时长, <code>release_time</code> 发布时间）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>exam_id</th>
+<th>tag</th>
+<th>difficulty</th>
+<th>duration</th>
+<th>release_time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>9001</td>
+<td>SQL</td>
+<td>hard</td>
+<td>60</td>
+<td>2021-09-01 06:00:00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9002</td>
+<td>SQL</td>
+<td>hard</td>
+<td>60</td>
+<td>2021-09-01 06:00:00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9003</td>
+<td>算法</td>
+<td>medium</td>
+<td>80</td>
+<td>2021-09-01 10:00:00</td>
+</tr>
+</tbody></table>
+<p>试卷作答记录表 <code>exam_record</code>（<code>uid</code> 用户 ID, <code>exam_id</code> 试卷 ID, <code>start_time</code> 开始作答时间, <code>submit_time</code> 交卷时间, score 得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>9001</td>
+<td>2021-09-01 09:01:01</td>
+<td>2021-09-01 09:31:00</td>
+<td>78</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1002</td>
+<td>9001</td>
+<td>2021-09-01 09:01:01</td>
+<td>2021-09-01 09:31:00</td>
+<td>81</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1002</td>
+<td>9002</td>
+<td>2021-09-01 12:01:01</td>
+<td>2021-09-01 12:31:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1003</td>
+<td>9001</td>
+<td>2021-09-01 19:01:01</td>
+<td>2021-09-01 19:40:01</td>
+<td>86</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1003</td>
+<td>9002</td>
+<td>2021-09-01 12:01:01</td>
+<td>2021-09-01 12:31:51</td>
+<td>89</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1004</td>
+<td>9001</td>
+<td>2021-09-01 19:01:01</td>
+<td>2021-09-01 19:30:01</td>
+<td>85</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1005</td>
+<td>9003</td>
+<td>2021-09-01 12:01:01</td>
+<td>2021-09-01 12:31:02</td>
+<td>85</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1006</td>
+<td>9003</td>
+<td>2021-09-07 10:01:01</td>
+<td>2021-09-07 10:21:01</td>
+<td>84</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1003</td>
+<td>9003</td>
+<td>2021-09-08 12:01:01</td>
+<td>2021-09-08 12:11:01</td>
+<td>40</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1003</td>
+<td>9002</td>
+<td>2021-09-01 14:01:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+</tbody></table>
+<p>找到每类试卷得分的前 3 名，如果两人最大分数相同，选择最小分数大者，如果还相同，选择 uid 大者。由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>tid</th>
+<th>uid</th>
+<th>ranking</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SQL</td>
+<td>1003</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>1004</td>
+<td>2</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>1002</td>
+<td>3</td>
+</tr>
+<tr>
+<td>算法</td>
+<td>1005</td>
+<td>1</td>
+</tr>
+<tr>
+<td>算法</td>
+<td>1006</td>
+<td>2</td>
+</tr>
+<tr>
+<td>算法</td>
+<td>1003</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p><strong>解释</strong>：有作答得分记录的试卷 tag 有 SQL 和算法，SQL 试卷用户 1001、1002、1003、1004 有作答得分，最高得分分别为 81、81、89、85，最低得分分别为 78、81、86、40，因此先按最高得分排名再按最低得分排名取前三为 1003、1004、1002。</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tag,</span><br><span class="line">       UID,</span><br><span class="line">       ranking</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  (<span class="keyword">SELECT</span> b.tag <span class="keyword">AS</span> tag,</span><br><span class="line">          a.uid <span class="keyword">AS</span> UID,</span><br><span class="line">          <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> b.tag</span><br><span class="line">                             <span class="keyword">ORDER</span> <span class="keyword">BY</span> b.tag,</span><br><span class="line">                                      <span class="built_in">max</span>(a.score) <span class="keyword">DESC</span>,</span><br><span class="line">                                      <span class="built_in">min</span>(a.score) <span class="keyword">DESC</span>,</span><br><span class="line">                                      a.uid <span class="keyword">DESC</span>) <span class="keyword">AS</span> ranking</span><br><span class="line">   <span class="keyword">FROM</span> exam_record a</span><br><span class="line">   <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> examination_info b <span class="keyword">ON</span> a.exam_id <span class="operator">=</span> b.exam_id</span><br><span class="line">   <span class="keyword">GROUP</span> <span class="keyword">BY</span> b.tag,</span><br><span class="line">            a.uid) t</span><br><span class="line"><span class="keyword">WHERE</span> ranking <span class="operator">&lt;=</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="第二快-慢用时之差大于试卷时长一半的试卷（较难）"><a href="#第二快-慢用时之差大于试卷时长一半的试卷（较难）" class="headerlink" title="第二快&#x2F;慢用时之差大于试卷时长一半的试卷（较难）"></a>第二快&#x2F;慢用时之差大于试卷时长一半的试卷（较难）</h3><p><strong>描述</strong>：</p>
+<p>现有试卷信息表 <code>examination_info</code>（<code>exam_id</code> 试卷 ID, <code>tag</code> 试卷类别, <code>difficulty</code> 试卷难度, <code>duration</code> 考试时长, <code>release_time</code> 发布时间）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>exam_id</th>
+<th>tag</th>
+<th>difficulty</th>
+<th>duration</th>
+<th>release_time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>9001</td>
+<td>SQL</td>
+<td>hard</td>
+<td>60</td>
+<td>2021-09-01 06:00:00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9002</td>
+<td>C++</td>
+<td>hard</td>
+<td>60</td>
+<td>2021-09-01 06:00:00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9003</td>
+<td>算法</td>
+<td>medium</td>
+<td>80</td>
+<td>2021-09-01 10:00:00</td>
+</tr>
+</tbody></table>
+<p>试卷作答记录表 <code>exam_record</code>（<code>uid</code> 用户 ID, <code>exam_id</code> 试卷 ID, <code>start_time</code> 开始作答时间, <code>submit_time</code> 交卷时间, <code>score</code> 得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>9001</td>
+<td>2021-09-01 09:01:01</td>
+<td>2021-09-01 09:51:01</td>
+<td>78</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1001</td>
+<td>9002</td>
+<td>2021-09-01 09:01:01</td>
+<td>2021-09-01 09:31:00</td>
+<td>81</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1002</td>
+<td>9002</td>
+<td>2021-09-01 12:01:01</td>
+<td>2021-09-01 12:31:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1003</td>
+<td>9001</td>
+<td>2021-09-01 19:01:01</td>
+<td>2021-09-01 19:59:01</td>
+<td>86</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1003</td>
+<td>9002</td>
+<td>2021-09-01 12:01:01</td>
+<td>2021-09-01 12:31:51</td>
+<td>89</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1004</td>
+<td>9002</td>
+<td>2021-09-01 19:01:01</td>
+<td>2021-09-01 19:30:01</td>
+<td>85</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1005</td>
+<td>9001</td>
+<td>2021-09-01 12:01:01</td>
+<td>2021-09-01 12:31:02</td>
+<td>85</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1006</td>
+<td>9001</td>
+<td>2021-09-07 10:02:01</td>
+<td>2021-09-07 10:21:01</td>
+<td>84</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1003</td>
+<td>9001</td>
+<td>2021-09-08 12:01:01</td>
+<td>2021-09-08 12:11:01</td>
+<td>40</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1003</td>
+<td>9002</td>
+<td>2021-09-01 14:01:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1005</td>
+<td>9001</td>
+<td>2021-09-01 14:01:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1003</td>
+<td>9003</td>
+<td>2021-09-08 15:01:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+</tbody></table>
+<p>找到第二快和第二慢用时之差大于试卷时长的一半的试卷信息，按试卷 ID 降序排序。由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>exam_id</th>
+<th>duration</th>
+<th>release_time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9001</td>
+<td>60</td>
+<td>2021-09-01 06:00:00</td>
+</tr>
+</tbody></table>
+<p><strong>解释</strong>：试卷 9001 被作答用时有 50 分钟、58 分钟、30 分 1 秒、19 分钟、10 分钟，第二快和第二慢用时之差为 50 分钟-19 分钟&#x3D;31 分钟，试卷时长为 60 分钟，因此满足大于试卷时长一半的条件，输出试卷 ID、时长、发布时间。</p>
+<p><strong>思路：</strong></p>
+<p>第一步，找到每张试卷完成时间的顺序排名和倒序排名 也就是表 a；</p>
+<p>第二步，与通过试卷信息表 b 建立内连接，并根据试卷 id 分组，利用<code>having</code>筛选排名为第二个数据，将秒转化为分钟并进行比较，最后再根据试卷 id 倒序排序就行</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.exam_id,</span><br><span class="line">       b.duration,</span><br><span class="line">       b.release_time</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  (<span class="keyword">SELECT</span> exam_id,</span><br><span class="line">          <span class="built_in">row_number</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> exam_id</span><br><span class="line">                             <span class="keyword">ORDER</span> <span class="keyword">BY</span> timestampdiff(<span class="keyword">SECOND</span>, start_time, submit_time) <span class="keyword">DESC</span>) rn1,</span><br><span class="line">          <span class="built_in">row_number</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> exam_id</span><br><span class="line">                            <span class="keyword">ORDER</span> <span class="keyword">BY</span> timestampdiff(<span class="keyword">SECOND</span>, start_time, submit_time) <span class="keyword">ASC</span>) rn2,</span><br><span class="line">                                              timestampdiff(<span class="keyword">SECOND</span>, start_time, submit_time) timex</span><br><span class="line">   <span class="keyword">FROM</span> exam_record</span><br><span class="line">   <span class="keyword">WHERE</span> score <span class="keyword">IS</span> <span class="keyword">NOT NULL</span> ) a</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> examination_info b <span class="keyword">ON</span> a.exam_id <span class="operator">=</span> b.exam_id</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.exam_id</span><br><span class="line"><span class="keyword">HAVING</span> (<span class="built_in">max</span>(IF (rn1 <span class="operator">=</span> <span class="number">2</span>, a.timex, <span class="number">0</span>))<span class="operator">-</span> <span class="built_in">max</span>(IF (rn2 <span class="operator">=</span> <span class="number">2</span>, a.timex, <span class="number">0</span>)))<span class="operator">/</span> <span class="number">60</span> <span class="operator">&gt;</span> b.duration <span class="operator">/</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> a.exam_id <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="连续两次作答试卷的最大时间窗（较难）"><a href="#连续两次作答试卷的最大时间窗（较难）" class="headerlink" title="连续两次作答试卷的最大时间窗（较难）"></a>连续两次作答试卷的最大时间窗（较难）</h3><p><strong>描述</strong></p>
+<p>现有试卷作答记录表 <code>exam_record</code>（<code>uid</code> 用户 ID, <code>exam_id</code> 试卷 ID, <code>start_time</code> 开始作答时间, <code>submit_time</code> 交卷时间, <code>score</code> 得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1006</td>
+<td>9003</td>
+<td>2021-09-07 10:01:01</td>
+<td>2021-09-07 10:21:02</td>
+<td>84</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1006</td>
+<td>9001</td>
+<td>2021-09-01 12:11:01</td>
+<td>2021-09-01 12:31:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1006</td>
+<td>9002</td>
+<td>2021-09-06 10:01:01</td>
+<td>2021-09-06 10:21:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1005</td>
+<td>9002</td>
+<td>2021-09-05 10:01:01</td>
+<td>2021-09-05 10:21:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1005</td>
+<td>9001</td>
+<td>2021-09-05 10:31:01</td>
+<td>2021-09-05 10:51:01</td>
+<td>81</td>
+</tr>
+</tbody></table>
+<p>请计算在 2021 年至少有两天作答过试卷的人中，计算该年连续两次作答试卷的最大时间窗 <code>days_window</code>，那么根据该年的历史规律他在 <code>days_window</code> 天里平均会做多少套试卷，按最大时间窗和平均做答试卷套数倒序排序。由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>days_window</th>
+<th>avg_exam_cnt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1006</td>
+<td>6</td>
+<td>2.57</td>
+</tr>
+</tbody></table>
+<p><strong>解释</strong>：用户 1006 分别在 20210901、20210906、20210907 作答过 3 次试卷，连续两次作答最大时间窗为 6 天（1 号到 6 号），他 1 号到 7 号这 7 天里共做了 3 张试卷，平均每天 3&#x2F;7&#x3D;0.428571 张，那么 6 天里平均会做 0.428571*6&#x3D;2.57 张试卷（保留两位小数）；用户 1005 在 20210905 做了两张试卷，但是只有一天的作答记录，过滤掉。</p>
+<p><strong>思路：</strong></p>
+<p>上面这个解释中提示要对作答记录去重，千万别被骗了，不要去重！去重就通不过测试用例。注意限制时间是 2021 年；</p>
+<p>而且要注意时间差要+1 天；还要注意&#x3D;&#x3D;没交卷也算在内&#x3D;&#x3D;！！！！ （反正感觉这题描述不清，出的不是很好）</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> UID,</span><br><span class="line">       <span class="built_in">max</span>(datediff(next_time, start_time)) <span class="operator">+</span> <span class="number">1</span> <span class="keyword">AS</span> days_window,</span><br><span class="line">       round(<span class="built_in">count</span>(start_time)<span class="operator">/</span>(datediff(<span class="built_in">max</span>(start_time), <span class="built_in">min</span>(start_time))<span class="operator">+</span> <span class="number">1</span>) <span class="operator">*</span> (<span class="built_in">max</span>(datediff(next_time, start_time))<span class="operator">+</span> <span class="number">1</span>), <span class="number">2</span>) <span class="keyword">AS</span> avg_exam_cnt</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  (<span class="keyword">SELECT</span> UID,</span><br><span class="line">          start_time,</span><br><span class="line">          <span class="built_in">lead</span>(start_time, <span class="number">1</span>) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> UID</span><br><span class="line">                                    <span class="keyword">ORDER</span> <span class="keyword">BY</span> start_time) <span class="keyword">AS</span> next_time</span><br><span class="line">   <span class="keyword">FROM</span> exam_record</span><br><span class="line">   <span class="keyword">WHERE</span> <span class="keyword">YEAR</span> (start_time) <span class="operator">=</span> <span class="string">&#x27;2021&#x27;</span> ) a</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> UID</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(<span class="keyword">DISTINCT</span> <span class="type">date</span>(start_time)) <span class="operator">&gt;</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> days_window <span class="keyword">DESC</span>,</span><br><span class="line">         avg_exam_cnt <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="近三个月未完成为-0-的用户完成情况"><a href="#近三个月未完成为-0-的用户完成情况" class="headerlink" title="近三个月未完成为 0 的用户完成情况"></a>近三个月未完成为 0 的用户完成情况</h3><p><strong>描述</strong>：</p>
+<p>现有试卷作答记录表 <code>exam_record</code>（<code>uid</code>:用户 ID, <code>exam_id</code>:试卷 ID, <code>start_time</code>:开始作答时间, <code>submit_time</code>:交卷时间，为空的话则代表未完成, <code>score</code>:得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1006</td>
+<td>9003</td>
+<td>2021-09-06 10:01:01</td>
+<td>2021-09-06 10:21:02</td>
+<td>84</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1006</td>
+<td>9001</td>
+<td>2021-08-02 12:11:01</td>
+<td>2021-08-02 12:31:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1006</td>
+<td>9002</td>
+<td>2021-06-06 10:01:01</td>
+<td>2021-06-06 10:21:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1006</td>
+<td>9002</td>
+<td>2021-05-06 10:01:01</td>
+<td>2021-05-06 10:21:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1006</td>
+<td>9001</td>
+<td>2021-05-01 12:01:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1001</td>
+<td>9001</td>
+<td>2021-09-05 10:31:01</td>
+<td>2021-09-05 10:51:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1001</td>
+<td>9003</td>
+<td>2021-08-01 09:01:01</td>
+<td>2021-08-01 09:51:11</td>
+<td>78</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1001</td>
+<td>9002</td>
+<td>2021-07-01 09:01:01</td>
+<td>2021-07-01 09:31:00</td>
+<td>81</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1001</td>
+<td>9002</td>
+<td>2021-07-01 12:01:01</td>
+<td>2021-07-01 12:31:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1001</td>
+<td>9002</td>
+<td>2021-07-01 12:01:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+</tbody></table>
+<p>找到每个人近三个有试卷作答记录的月份中没有试卷是未完成状态的用户的试卷作答完成数，按试卷完成数和用户 ID 降序排名。由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>exam_complete_cnt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1006</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p><strong>解释</strong>：用户 1006 近三个有作答试卷的月份为 202109、202108、202106，作答试卷数为 3，全部完成；用户 1001 近三个有作答试卷的月份为 202109、202108、202107，作答试卷数为 5，完成试卷数为 4，因为有未完成试卷，故过滤掉。</p>
+<p><strong>思路:</strong></p>
+<ol>
+<li><code>找到每个人近三个有试卷作答记录的月份中没有试卷是未完成状态的用户的试卷作答完成数</code>首先看这句话，肯定要先根据人进行分组</li>
+<li>最近三个月，可以采用连续重复排名，倒序排列，排名&lt;&#x3D;3</li>
+<li>统计作答数</li>
+<li>拼装剩余条件</li>
+<li>排序</li>
+</ol>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> UID,</span><br><span class="line">       <span class="built_in">count</span>(score) exam_complete_cnt</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  (<span class="keyword">SELECT</span> <span class="operator">*</span>, <span class="built_in">DENSE_RANK</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> UID</span><br><span class="line">                             <span class="keyword">ORDER</span> <span class="keyword">BY</span> date_format(start_time, <span class="string">&#x27;%Y%m&#x27;</span>) <span class="keyword">DESC</span>) dr</span><br><span class="line">   <span class="keyword">FROM</span> exam_record) t1</span><br><span class="line"><span class="keyword">WHERE</span> dr <span class="operator">&lt;=</span> <span class="number">3</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> UID</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(dr)<span class="operator">=</span> <span class="built_in">count</span>(score)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> exam_complete_cnt <span class="keyword">DESC</span>,</span><br><span class="line">         UID <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="未完成率较高的-50-用户近三个月答卷情况（困难）"><a href="#未完成率较高的-50-用户近三个月答卷情况（困难）" class="headerlink" title="未完成率较高的 50%用户近三个月答卷情况（困难）"></a>未完成率较高的 50%用户近三个月答卷情况（困难）</h3><p><strong>描述</strong>：</p>
+<p>现有用户信息表 <code>user_info</code>（<code>uid</code> 用户 ID，<code>nick_name</code> 昵称, <code>achievement</code> 成就值, <code>level</code> 等级, <code>job</code> 职业方向, <code>register_time</code> 注册时间）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>nick_name</th>
+<th>achievement</th>
+<th>level</th>
+<th>job</th>
+<th>register_time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>牛客 1 号</td>
+<td>3200</td>
+<td>7</td>
+<td>算法</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1002</td>
+<td>牛客 2 号</td>
+<td>2500</td>
+<td>6</td>
+<td>算法</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1003</td>
+<td>牛客 3 号 ♂</td>
+<td>2200</td>
+<td>5</td>
+<td>算法</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+</tbody></table>
+<p>试卷信息表 <code>examination_info</code>（<code>exam_id</code> 试卷 ID, <code>tag</code> 试卷类别, <code>difficulty</code> 试卷难度, <code>duration</code> 考试时长, <code>release_time</code> 发布时间）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>exam_id</th>
+<th>tag</th>
+<th>difficulty</th>
+<th>duration</th>
+<th>release_time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>9001</td>
+<td>SQL</td>
+<td>hard</td>
+<td>60</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9002</td>
+<td>SQL</td>
+<td>hard</td>
+<td>80</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9003</td>
+<td>算法</td>
+<td>hard</td>
+<td>80</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>9004</td>
+<td>PYTHON</td>
+<td>medium</td>
+<td>70</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+</tbody></table>
+<p>试卷作答记录表 <code>exam_record</code>（<code>uid</code> 用户 ID, <code>exam_id</code> 试卷 ID, <code>start_time</code> 开始作答时间, <code>submit_time</code> 交卷时间, <code>score</code> 得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-01-01 09:01:01</td>
+<td>2020-01-01 09:21:59</td>
+<td>90</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-01-01 18:01:01</td>
+<td>2020-01-01 18:59:02</td>
+<td>90</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-01-02 10:01:01</td>
+<td>2020-01-02 10:31:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-01-20 10:01:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-02-01 12:11:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-03-01 12:01:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-03-01 12:01:01</td>
+<td>2020-03-01 12:41:01</td>
+<td>90</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1003</td>
+<td>9001</td>
+<td>2020-03-01 19:01:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-05-02 19:01:01</td>
+<td>2020-05-02 19:32:00</td>
+<td>90</td>
+</tr>
+<tr>
+<td>14</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-01-01 12:11:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-01-02 19:01:01</td>
+<td>2020-01-02 19:59:01</td>
+<td>69</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td>2020-02-02 12:20:01</td>
+<td>99</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1002</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>1002</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td>2020-02-02 12:43:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1002</td>
+<td>9002</td>
+<td>2020-03-02 12:11:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-05-05 18:01:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>1002</td>
+<td>9003</td>
+<td>2020-05-06 12:01:01</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请统计 SQL 试卷上未完成率较高的 50%用户中，6 级和 7 级用户在有试卷作答记录的近三个月中，每个月的答卷数目和完成数目。按用户 ID、月份升序排序。</p>
+<p>由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>start_month</th>
+<th>total_cnt</th>
+<th>complete_cnt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1002</td>
+<td>202002</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>202003</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>202005</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>解释：各个用户对 SQL 试卷的未完成数、作答总数、未完成率如下：</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>incomplete_cnt</th>
+<th>total_cnt</th>
+<th>incomplete_rate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1001</td>
+<td>3</td>
+<td>7</td>
+<td>0.4286</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>4</td>
+<td>8</td>
+<td>0.5000</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>1</td>
+<td>1</td>
+<td>1.0000</td>
+</tr>
+</tbody></table>
+<p>1001、1002、1003 分别排在 1.0、0.5、0.0 的位置，因此较高的 50%用户（排位&lt;&#x3D;0.5）为 1002、1003；</p>
+<p>1003 不是 6 级或 7 级；</p>
+<p>有试卷作答记录的近三个月为 202005、202003、202002；</p>
+<p>这三个月里 1002 的作答题数分别为 3、2、2，完成数目分别为 1、1、1。</p>
+<p><strong>思路：</strong></p>
+<p>注意点：这题注意求的是所有的答题次数和完成次数，而 sql 类别的试卷是限制未完成率排名，6, 7 级用户限制的是做题记录。</p>
+<p>先求出未完成率的排名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> UID,</span><br><span class="line">       <span class="built_in">count</span>(submit_time <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line">             <span class="keyword">OR</span> <span class="keyword">NULL</span>)<span class="operator">/</span> <span class="built_in">count</span>(start_time) <span class="keyword">AS</span> num,</span><br><span class="line">       <span class="built_in">PERCENT_RANK</span>() <span class="keyword">OVER</span> (</span><br><span class="line">                            <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">count</span>(submit_time <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line">                                           <span class="keyword">OR</span> <span class="keyword">NULL</span>)<span class="operator">/</span> <span class="built_in">count</span>(start_time)) <span class="keyword">AS</span> ranking</span><br><span class="line"><span class="keyword">FROM</span> exam_record</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> examination_info <span class="keyword">USING</span> (exam_id)</span><br><span class="line"><span class="keyword">WHERE</span> tag <span class="operator">=</span> <span class="string">&#x27;SQL&#x27;</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> UID</span><br></pre></td></tr></table></figure>
+
+<p>再求出最近三个月的练习记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> UID,</span><br><span class="line">       date_format(start_time, <span class="string">&#x27;%Y%m&#x27;</span>) <span class="keyword">AS</span> month_d,</span><br><span class="line">       submit_time,</span><br><span class="line">       exam_id,</span><br><span class="line">       <span class="built_in">dense_rank</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> UID</span><br><span class="line">                          <span class="keyword">ORDER</span> <span class="keyword">BY</span> date_format(start_time, <span class="string">&#x27;%Y%m&#x27;</span>) <span class="keyword">DESC</span>) <span class="keyword">AS</span> ranking</span><br><span class="line"><span class="keyword">FROM</span> exam_record</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> user_info <span class="keyword">USING</span> (UID)</span><br><span class="line"><span class="keyword">WHERE</span> LEVEL <span class="keyword">IN</span> (<span class="number">6</span>,<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> t1.uid,</span><br><span class="line">       t1.month_d,</span><br><span class="line">       <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">AS</span> total_cnt,</span><br><span class="line">       <span class="built_in">count</span>(t1.submit_time) <span class="keyword">AS</span> complete_cnt</span><br><span class="line"><span class="keyword">FROM</span><span class="comment">-- 先求出未完成率的排名</span></span><br><span class="line"></span><br><span class="line">  (<span class="keyword">SELECT</span> UID,</span><br><span class="line">          <span class="built_in">count</span>(submit_time <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">OR</span> <span class="keyword">NULL</span>)<span class="operator">/</span> <span class="built_in">count</span>(start_time) <span class="keyword">AS</span> num,</span><br><span class="line">          <span class="built_in">PERCENT_RANK</span>() <span class="keyword">OVER</span> (</span><br><span class="line">                               <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">count</span>(submit_time <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">OR</span> <span class="keyword">NULL</span>)<span class="operator">/</span> <span class="built_in">count</span>(start_time)) <span class="keyword">AS</span> ranking</span><br><span class="line">   <span class="keyword">FROM</span> exam_record</span><br><span class="line">   <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> examination_info <span class="keyword">USING</span> (exam_id)</span><br><span class="line">   <span class="keyword">WHERE</span> tag <span class="operator">=</span> <span class="string">&#x27;SQL&#x27;</span></span><br><span class="line">   <span class="keyword">GROUP</span> <span class="keyword">BY</span> UID) t</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span></span><br><span class="line">  (<span class="comment">-- 再求出近三个月的练习记录</span></span><br><span class="line"> <span class="keyword">SELECT</span> UID,</span><br><span class="line">        date_format(start_time, <span class="string">&#x27;%Y%m&#x27;</span>) <span class="keyword">AS</span> month_d,</span><br><span class="line">        submit_time,</span><br><span class="line">        exam_id,</span><br><span class="line">        <span class="built_in">dense_rank</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> UID</span><br><span class="line">                           <span class="keyword">ORDER</span> <span class="keyword">BY</span> date_format(start_time, <span class="string">&#x27;%Y%m&#x27;</span>) <span class="keyword">DESC</span>) <span class="keyword">AS</span> ranking</span><br><span class="line">   <span class="keyword">FROM</span> exam_record</span><br><span class="line">   <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> user_info <span class="keyword">USING</span> (UID)</span><br><span class="line">   <span class="keyword">WHERE</span> LEVEL <span class="keyword">IN</span> (<span class="number">6</span>,<span class="number">7</span>) ) t1 <span class="keyword">USING</span> (UID)</span><br><span class="line"><span class="keyword">WHERE</span> t1.ranking <span class="operator">&lt;=</span> <span class="number">3</span> <span class="keyword">AND</span> t.ranking <span class="operator">&gt;=</span> <span class="number">0.5</span> <span class="comment">-- 使用限制找到符合条件的记录</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> t1.uid,</span><br><span class="line">         t1.month_d</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> t1.uid,</span><br><span class="line">         t1.month_d</span><br></pre></td></tr></table></figure>
+
+<h3 id="试卷完成数同比-2020-年的增长率及排名变化（困难）"><a href="#试卷完成数同比-2020-年的增长率及排名变化（困难）" class="headerlink" title="试卷完成数同比 2020 年的增长率及排名变化（困难）"></a>试卷完成数同比 2020 年的增长率及排名变化（困难）</h3><p><strong>描述</strong>：</p>
+<p>现有试卷信息表 <code>examination_info</code>（<code>exam_id</code> 试卷 ID, <code>tag</code> 试卷类别, <code>difficulty</code> 试卷难度, <code>duration</code> 考试时长, <code>release_time</code> 发布时间）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>exam_id</th>
+<th>tag</th>
+<th>difficulty</th>
+<th>duration</th>
+<th>release_time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>9001</td>
+<td>SQL</td>
+<td>hard</td>
+<td>60</td>
+<td>2021-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9002</td>
+<td>C++</td>
+<td>hard</td>
+<td>80</td>
+<td>2021-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9003</td>
+<td>算法</td>
+<td>hard</td>
+<td>80</td>
+<td>2021-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>9004</td>
+<td>PYTHON</td>
+<td>medium</td>
+<td>70</td>
+<td>2021-01-01 10:00:00</td>
+</tr>
+</tbody></table>
+<p>试卷作答记录表 <code>exam_record</code>（<code>uid</code> 用户 ID, <code>exam_id</code> 试卷 ID, <code>start_time</code> 开始作答时间, <code>submit_time</code> 交卷时间, <code>score</code> 得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-08-02 10:01:01</td>
+<td>2020-08-02 10:31:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-04-01 18:01:01</td>
+<td>2020-04-01 18:59:02</td>
+<td>90</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-04-01 09:01:01</td>
+<td>2020-04-01 09:21:59</td>
+<td>80</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1002</td>
+<td>9001</td>
+<td>2021-03-02 19:01:01</td>
+<td>2021-03-02 19:32:00</td>
+<td>20</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1003</td>
+<td>9001</td>
+<td>2021-05-02 12:01:01</td>
+<td>2021-05-02 12:31:01</td>
+<td>98</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1003</td>
+<td>9001</td>
+<td>2020-01-02 10:01:01</td>
+<td>2020-01-02 10:31:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td>2020-02-02 12:20:01</td>
+<td>99</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1002</td>
+<td>9002</td>
+<td>2021-02-02 12:01:01</td>
+<td>2020-02-02 12:43:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-01-02 19:01:01</td>
+<td>2020-01-02 19:59:01</td>
+<td>69</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1002</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>1002</td>
+<td>9002</td>
+<td>2020-03-02 12:11:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>1001</td>
+<td>9002</td>
+<td>2021-05-05 18:01:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>1002</td>
+<td>9003</td>
+<td>2021-01-20 10:01:01</td>
+<td>2021-01-20 10:10:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1001</td>
+<td>9003</td>
+<td>2021-04-02 19:01:01</td>
+<td>2021-04-02 19:40:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1002</td>
+<td>9003</td>
+<td>2021-01-01 18:01:01</td>
+<td>2021-01-01 18:59:02</td>
+<td>90</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1004</td>
+<td>9004</td>
+<td>2020-05-02 12:01:01</td>
+<td>2020-05-02 12:20:01</td>
+<td>99</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1001</td>
+<td>9004</td>
+<td>2021-09-02 12:11:01</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>1002</td>
+<td>9004</td>
+<td>2020-01-01 12:11:01</td>
+<td>2020-01-01 12:31:01</td>
+<td>83</td>
+</tr>
+</tbody></table>
+<p>请计算 2021 年上半年各类试卷的做完次数相比 2020 年上半年同期的增长率（百分比格式，保留 1 位小数），以及做完次数排名变化，按增长率和 21 年排名降序输出。</p>
+<p>由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>exam_cnt_20</th>
+<th>exam_cnt_21</th>
+<th>growth_rate</th>
+<th>exam_cnt_rank_20</th>
+<th>exam_cnt_rank_21</th>
+<th>rank_delta</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SQL</td>
+<td>3</td>
+<td>2</td>
+<td>-33.3%</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>解释：2020 年上半年有 3 个 tag 有作答完成的记录，分别是 C++、SQL、PYTHON，它们被做完的次数分别是 3、3、2，做完次数排名为 1、1（并列）、3；</p>
+<p>2021 年上半年有 2 个 tag 有作答完成的记录，分别是算法、SQL，它们被做完的次数分别是 3、2，做完次数排名为 1、2；具体如下：</p>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>start_year</th>
+<th>exam_cnt</th>
+<th>exam_cnt_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C++</td>
+<td>2020</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>2020</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>PYTHON</td>
+<td>2020</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>算法</td>
+<td>2021</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>2021</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<p>因此能输出同比结果的 tag 只有 SQL，从 2020 到 2021 年，做完次数 3&#x3D;&gt;2，减少 33.3%（保留 1 位小数）；排名 1&#x3D;&gt;2，后退 1 名。</p>
+<p><strong>思路：</strong></p>
+<p>本题难点在于长整型的数据类型要求不能有负号产生，用 cast 函数转换数据类型为 signed。</p>
+<p>以及用到的<code>增长率计算公式：(exam_cnt_21-exam_cnt_20)/exam_cnt_20</code></p>
+<p>做完次数排名变化（2021 年和 2020 年比排名升了或者降了多少）</p>
+<p>计算公式：<code>exam_cnt_rank_21 - exam_cnt_rank_20</code></p>
+<p>在 MySQL 中，<code>CAST()</code> 函数用于将一个表达式的数据类型转换为另一个数据类型。它的基本语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CAST</span>(expression <span class="keyword">AS</span> data_type)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 将一个字符串转换成整数</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">CAST</span>(<span class="string">&#x27;123&#x27;</span> <span class="keyword">AS</span> <span class="type">INT</span>);</span><br></pre></td></tr></table></figure>
+
+<p>示例就不一一举例了，这个函数很简单</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  tag,</span><br><span class="line">  exam_cnt_20,</span><br><span class="line">  exam_cnt_21,</span><br><span class="line">  concat(</span><br><span class="line">    round(</span><br><span class="line">      <span class="number">100</span> <span class="operator">*</span> (exam_cnt_21 <span class="operator">-</span> exam_cnt_20) <span class="operator">/</span> exam_cnt_20,</span><br><span class="line">      <span class="number">1</span></span><br><span class="line">    ),</span><br><span class="line">    <span class="string">&#x27;%&#x27;</span></span><br><span class="line">  ) <span class="keyword">AS</span> growth_rate,</span><br><span class="line">  exam_cnt_rank_20,</span><br><span class="line">  exam_cnt_rank_21,</span><br><span class="line">  <span class="built_in">cast</span>(exam_cnt_rank_21 <span class="keyword">AS</span> signed) <span class="operator">-</span> <span class="built_in">cast</span>(exam_cnt_rank_20 <span class="keyword">AS</span> signed) <span class="keyword">AS</span> rank_delta</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  (</span><br><span class="line">    #<span class="number">2020</span>年、<span class="number">2021</span>年上半年各类试卷的做完次数和做完次数排名</span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">      tag,</span><br><span class="line">      <span class="built_in">count</span>(</span><br><span class="line">        IF (</span><br><span class="line">          date_format(start_time, <span class="string">&#x27;%Y%m%d&#x27;</span>) <span class="keyword">BETWEEN</span> <span class="string">&#x27;20200101&#x27;</span></span><br><span class="line">          <span class="keyword">AND</span> <span class="string">&#x27;20200630&#x27;</span>,</span><br><span class="line">          start_time,</span><br><span class="line">          <span class="keyword">NULL</span></span><br><span class="line">        )</span><br><span class="line">      ) <span class="keyword">AS</span> exam_cnt_20,</span><br><span class="line">      <span class="built_in">count</span>(</span><br><span class="line">        IF (</span><br><span class="line">          <span class="built_in">substring</span>(start_time, <span class="number">1</span>, <span class="number">10</span>) <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-01-01&#x27;</span></span><br><span class="line">          <span class="keyword">AND</span> <span class="string">&#x27;2021-06-30&#x27;</span>,</span><br><span class="line">          start_time,</span><br><span class="line">          <span class="keyword">NULL</span></span><br><span class="line">        )</span><br><span class="line">      ) <span class="keyword">AS</span> exam_cnt_21,</span><br><span class="line">      <span class="built_in">rank</span>() <span class="keyword">over</span> (</span><br><span class="line">        <span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">          <span class="built_in">count</span>(</span><br><span class="line">            IF (</span><br><span class="line">              date_format(start_time, <span class="string">&#x27;%Y%m%d&#x27;</span>) <span class="keyword">BETWEEN</span> <span class="string">&#x27;20200101&#x27;</span></span><br><span class="line">              <span class="keyword">AND</span> <span class="string">&#x27;20200630&#x27;</span>,</span><br><span class="line">              start_time,</span><br><span class="line">              <span class="keyword">NULL</span></span><br><span class="line">            )</span><br><span class="line">          ) <span class="keyword">DESC</span></span><br><span class="line">      ) <span class="keyword">AS</span> exam_cnt_rank_20,</span><br><span class="line">      <span class="built_in">rank</span>() <span class="keyword">over</span> (</span><br><span class="line">        <span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">          <span class="built_in">count</span>(</span><br><span class="line">            IF (</span><br><span class="line">              <span class="built_in">substring</span>(start_time, <span class="number">1</span>, <span class="number">10</span>) <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-01-01&#x27;</span></span><br><span class="line">              <span class="keyword">AND</span> <span class="string">&#x27;2021-06-30&#x27;</span>,</span><br><span class="line">              start_time,</span><br><span class="line">              <span class="keyword">NULL</span></span><br><span class="line">            )</span><br><span class="line">          ) <span class="keyword">DESC</span></span><br><span class="line">      ) <span class="keyword">AS</span> exam_cnt_rank_21</span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">      examination_info</span><br><span class="line">      <span class="keyword">JOIN</span> exam_record <span class="keyword">USING</span> (exam_id)</span><br><span class="line">    <span class="keyword">WHERE</span></span><br><span class="line">      submit_time <span class="keyword">IS</span> <span class="keyword">NOT NULL</span></span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">      tag</span><br><span class="line">  ) main</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">  exam_cnt_21 <span class="operator">*</span> exam_cnt_20 <span class="operator">&lt;&gt;</span> <span class="number">0</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">  growth_rate <span class="keyword">DESC</span>,</span><br><span class="line">  exam_cnt_rank_21 <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="聚合窗口函数"><a href="#聚合窗口函数" class="headerlink" title="聚合窗口函数"></a>聚合窗口函数</h2><h3 id="对试卷得分做-min-max-归一化"><a href="#对试卷得分做-min-max-归一化" class="headerlink" title="对试卷得分做 min-max 归一化"></a>对试卷得分做 min-max 归一化</h3><p><strong>描述</strong>：</p>
+<p>现有试卷信息表 <code>examination_info</code>（<code>exam_id</code> 试卷 ID, <code>tag</code> 试卷类别, <code>difficulty</code> 试卷难度, <code>duration</code> 考试时长, <code>release_time</code> 发布时间）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>exam_id</th>
+<th>tag</th>
+<th>difficulty</th>
+<th>duration</th>
+<th>release_time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>9001</td>
+<td>SQL</td>
+<td>hard</td>
+<td>60</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9002</td>
+<td>C++</td>
+<td>hard</td>
+<td>80</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9003</td>
+<td>算法</td>
+<td>hard</td>
+<td>80</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>9004</td>
+<td>PYTHON</td>
+<td>medium</td>
+<td>70</td>
+<td>2020-01-01 10:00:00</td>
+</tr>
+</tbody></table>
+<p>试卷作答记录表 <code>exam_record</code>（<code>uid</code> 用户 ID, <code>exam_id</code> 试卷 ID, <code>start_time</code> 开始作答时间, <code>submit_time</code> 交卷时间, <code>score</code> 得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6</td>
+<td>1003</td>
+<td>9001</td>
+<td>2020-01-02 12:01:01</td>
+<td>2020-01-02 12:31:01</td>
+<td>68</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-01-02 10:01:01</td>
+<td>2020-01-02 10:31:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-01-01 09:01:01</td>
+<td>2020-01-01 09:21:59</td>
+<td>90</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1002</td>
+<td>9002</td>
+<td>2021-05-05 18:01:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1004</td>
+<td>9002</td>
+<td>2020-01-01 12:01:01</td>
+<td>2020-01-01 12:11:01</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1003</td>
+<td>9002</td>
+<td>2020-01-01 19:01:01</td>
+<td>2020-01-01 19:30:01</td>
+<td>75</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-01-02 12:01:01</td>
+<td>2020-01-02 12:43:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1002</td>
+<td>9002</td>
+<td>2020-01-01 12:11:01</td>
+<td>2020-01-01 12:31:01</td>
+<td>83</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1003</td>
+<td>9002</td>
+<td>2020-01-01 12:01:01</td>
+<td>2020-01-01 12:41:01</td>
+<td>90</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1002</td>
+<td>9002</td>
+<td>2020-01-02 19:01:01</td>
+<td>2020-01-02 19:32:00</td>
+<td>90</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1002</td>
+<td>9004</td>
+<td>2021-09-06 12:01:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1001</td>
+<td>9005</td>
+<td>2020-01-02 12:11:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+</tbody></table>
+<p>在物理学及统计学数据计算时，有个概念叫 min-max 标准化，也被称为离差标准化，是对原始数据的线性变换，使结果值映射到[0 - 1]之间。</p>
+<p>转换函数为：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/database/sql/29A377601170AB822322431FCDF7EDFE.png"></p>
+<p>请你将用户作答高难度试卷的得分在每份试卷作答记录内执行 min-max 归一化后缩放到[0,100]区间，并输出用户 ID、试卷 ID、归一化后分数平均值；最后按照试卷 ID 升序、归一化分数降序输出。（注：得分区间默认为[0,100]，如果某个试卷作答记录中只有一个得分，那么无需使用公式，归一化并缩放后分数仍为原分数）。</p>
+<p>由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>exam_id</th>
+<th>avg_new_score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1001</td>
+<td>9001</td>
+<td>98</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>9001</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>9002</td>
+<td>88</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>9002</td>
+<td>75</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>9002</td>
+<td>70</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>9002</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>解释：高难度试卷有 9001、9002、9003；</p>
+<p>作答了 9001 的记录有 3 条，分数分别为 68、89、90，按给定公式归一化后分数为：0、95、100，而后两个得分都是用户 1001 作答的，因此用户 1001 对试卷 9001 的新得分为(95+100)&#x2F;2≈98（只保留整数部分），用户 1003 对于试卷 9001 的新得分为 0。最后结果按照试卷 ID 升序、归一化分数降序输出。</p>
+<p><strong>思路：</strong></p>
+<p>注意点：</p>
+<ol>
+<li>将高难度的试卷，按每类试卷的得分，利用 max&#x2F;min (col) over()窗口函数求得各组内最大最小值，然后进行归一化公式计算，缩放区间为[0,100]，即 min_max*100</li>
+<li>若某类试卷只有一个得分，则无需使用归一化公式，因只有一个分 max_score&#x3D;min_score,score，公式后结果可能会变成 0。</li>
+<li>最后结果按 uid、exam_id 分组求归一化后均值，score 为 NULL 的要过滤掉。</li>
+</ol>
+<p>最后就是仔细看上面公式 （说实话，这题看起来就很绕）</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  uid,</span><br><span class="line">  exam_id,</span><br><span class="line">  round(<span class="built_in">sum</span>(min_max) <span class="operator">/</span> <span class="built_in">count</span>(score), <span class="number">0</span>) <span class="keyword">AS</span> avg_new_score</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  (</span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">      <span class="operator">*</span>,</span><br><span class="line">      IF (</span><br><span class="line">        max_score <span class="operator">=</span> min_score,</span><br><span class="line">        score,</span><br><span class="line">        (score <span class="operator">-</span> min_score) <span class="operator">/</span> (max_score <span class="operator">-</span> min_score) <span class="operator">*</span> <span class="number">100</span></span><br><span class="line">      ) <span class="keyword">AS</span> min_max</span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">      (</span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">          uid,</span><br><span class="line">          a.exam_id,</span><br><span class="line">          score,</span><br><span class="line">          <span class="built_in">max</span>(score) <span class="keyword">over</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> a.exam_id) <span class="keyword">AS</span> max_score,</span><br><span class="line">          <span class="built_in">min</span>(score) <span class="keyword">over</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> a.exam_id) <span class="keyword">AS</span> min_score</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">          exam_record a</span><br><span class="line">          <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> examination_info b <span class="keyword">USING</span> (exam_id)</span><br><span class="line">        <span class="keyword">WHERE</span></span><br><span class="line">          difficulty <span class="operator">=</span> <span class="string">&#x27;hard&#x27;</span></span><br><span class="line">      ) t</span><br><span class="line">    <span class="keyword">WHERE</span></span><br><span class="line">      score <span class="keyword">IS</span> <span class="keyword">NOT NULL</span></span><br><span class="line">  ) t1</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">  uid,</span><br><span class="line">  exam_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">  exam_id <span class="keyword">ASC</span>,</span><br><span class="line">  avg_new_score <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="每份试卷每月作答数和截止当月的作答总数"><a href="#每份试卷每月作答数和截止当月的作答总数" class="headerlink" title="每份试卷每月作答数和截止当月的作答总数"></a>每份试卷每月作答数和截止当月的作答总数</h3><p><strong>描述:</strong></p>
+<p>现有试卷作答记录表 exam_record（uid 用户 ID, exam_id 试卷 ID, start_time 开始作答时间, submit_time 交卷时间, score 得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-01-01 09:01:01</td>
+<td>2020-01-01 09:21:59</td>
+<td>90</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-01-20 10:01:01</td>
+<td>2020-01-20 10:10:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-02-01 12:11:01</td>
+<td>2020-02-01 12:31:01</td>
+<td>83</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1003</td>
+<td>9001</td>
+<td>2020-03-01 19:01:01</td>
+<td>2020-03-01 19:30:01</td>
+<td>75</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1004</td>
+<td>9001</td>
+<td>2020-03-01 12:01:01</td>
+<td>2020-03-01 12:11:01</td>
+<td>60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1003</td>
+<td>9001</td>
+<td>2020-03-01 12:01:01</td>
+<td>2020-03-01 12:41:01</td>
+<td>90</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-05-02 19:01:01</td>
+<td>2020-05-02 19:32:00</td>
+<td>90</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-01-02 19:01:01</td>
+<td>2020-01-02 19:59:01</td>
+<td>69</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1004</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td>2020-02-02 12:20:01</td>
+<td>99</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1003</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td>2020-02-02 12:31:01</td>
+<td>68</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td>2020-02-02 12:43:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-03-02 12:11:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+</tbody></table>
+<p>请输出每份试卷每月作答数和截止当月的作答总数。<br>由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>exam_id</th>
+<th>start_month</th>
+<th>month_cnt</th>
+<th>cum_exam_cnt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9001</td>
+<td>202001</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>9001</td>
+<td>202002</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>9001</td>
+<td>202003</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>9001</td>
+<td>202005</td>
+<td>1</td>
+<td>7</td>
+</tr>
+<tr>
+<td>9002</td>
+<td>202001</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>9002</td>
+<td>202002</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9002</td>
+<td>202003</td>
+<td>1</td>
+<td>5</td>
+</tr>
+</tbody></table>
+<p>解释：试卷 9001 在 202001、202002、202003、202005 共 4 个月有被作答记录，每个月被作答数分别为 2、1、3、1，截止当月累积作答总数为 2、3、6、7。</p>
+<p><strong>思路：</strong></p>
+<p>这题就两个关键点：统计截止当月的作答总数、输出每份试卷每月作答数和截止当月的作答总数</p>
+<p>这个是关键<code>**sum(count(*)) over(partition by exam_id order by date_format(start_time,&#39;%Y%m&#39;))**</code></p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> exam_id,</span><br><span class="line">       date_format(start_time, <span class="string">&#x27;%Y%m&#x27;</span>) <span class="keyword">AS</span> start_month,</span><br><span class="line">       <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">AS</span> month_cnt,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="built_in">count</span>(<span class="operator">*</span>)) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> exam_id</span><br><span class="line">                           <span class="keyword">ORDER</span> <span class="keyword">BY</span> date_format(start_time, <span class="string">&#x27;%Y%m&#x27;</span>)) <span class="keyword">AS</span> cum_exam_cnt</span><br><span class="line"><span class="keyword">FROM</span> exam_record</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> exam_id,</span><br><span class="line">         start_month</span><br></pre></td></tr></table></figure>
+
+<h3 id="每月及截止当月的答题情况（较难）"><a href="#每月及截止当月的答题情况（较难）" class="headerlink" title="每月及截止当月的答题情况（较难）"></a>每月及截止当月的答题情况（较难）</h3><p><strong>描述</strong>：现有试卷作答记录表 <code>exam_record</code>（<code>uid</code> 用户 ID, <code>exam_id</code> 试卷 ID, <code>start_time</code> 开始作答时间, <code>submit_time</code> 交卷时间, <code>score</code> 得分）：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>uid</th>
+<th>exam_id</th>
+<th>start_time</th>
+<th>submit_time</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>9001</td>
+<td>2020-01-01 09:01:01</td>
+<td>2020-01-01 09:21:59</td>
+<td>90</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-01-20 10:01:01</td>
+<td>2020-01-20 10:10:01</td>
+<td>89</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-02-01 12:11:01</td>
+<td>2020-02-01 12:31:01</td>
+<td>83</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1003</td>
+<td>9001</td>
+<td>2020-03-01 19:01:01</td>
+<td>2020-03-01 19:30:01</td>
+<td>75</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1004</td>
+<td>9001</td>
+<td>2020-03-01 12:01:01</td>
+<td>2020-03-01 12:11:01</td>
+<td>60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1003</td>
+<td>9001</td>
+<td>2020-03-01 12:01:01</td>
+<td>2020-03-01 12:41:01</td>
+<td>90</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>9001</td>
+<td>2020-05-02 19:01:01</td>
+<td>2020-05-02 19:32:00</td>
+<td>90</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-01-02 19:01:01</td>
+<td>2020-01-02 19:59:01</td>
+<td>69</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1004</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td>2020-02-02 12:20:01</td>
+<td>99</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1003</td>
+<td>9002</td>
+<td>2020-02-02 12:01:01</td>
+<td>2020-02-02 12:31:01</td>
+<td>68</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-01-02 19:01:01</td>
+<td>2020-02-02 12:43:01</td>
+<td>81</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1001</td>
+<td>9002</td>
+<td>2020-03-02 12:11:01</td>
+<td>(NULL)</td>
+<td>(NULL)</td>
+</tr>
+</tbody></table>
+<p>请输出自从有用户作答记录以来，每月的试卷作答记录中月活用户数、新增用户数、截止当月的单月最大新增用户数、截止当月的累积用户数。结果按月份升序输出。</p>
+<p>由示例数据结果输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>start_month</th>
+<th>mau</th>
+<th>month_add_uv</th>
+<th>max_month_add_uv</th>
+<th>cum_sum_uv</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>202001</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>202002</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>202003</td>
+<td>3</td>
+<td>0</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>202005</td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>month</th>
+<th>1001</th>
+<th>1002</th>
+<th>1003</th>
+<th>1004</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>202001</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>202002</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>202003</td>
+<td>1</td>
+<td></td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>202005</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>由上述矩阵可以看出，2020 年 1 月有 2 个用户活跃（mau&#x3D;2），当月新增用户数为 2；</p>
+<p>2020 年 2 月有 4 个用户活跃，当月新增用户数为 2，最大单月新增用户数为 2，当前累积用户数为 4。</p>
+<p><strong>思路：</strong></p>
+<p>难点：</p>
+<p>1.如何求每月新增用户</p>
+<p>2.截至当月的答题情况</p>
+<p>大致流程：</p>
+<p>（1）统计每个人的首次登陆月份 <code>min()</code></p>
+<p>（2）统计每月的月活和新增用户数：先得到每个人的首次登陆月份，再对首次登陆月份分组求和是该月份的新增人数</p>
+<p>（3）统计截止当月的单月最大新增用户数、截止当月的累积用户数 ，最终按照按月份升序输出</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 截止当月的单月最大新增用户数、截止当月的累积用户数，按月份升序输出</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	start_month,</span><br><span class="line">	mau,</span><br><span class="line">	month_add_uv,</span><br><span class="line">	<span class="built_in">max</span>( month_add_uv ) <span class="keyword">over</span> ( <span class="keyword">ORDER</span> <span class="keyword">BY</span> start_month ),</span><br><span class="line">	<span class="built_in">sum</span>( month_add_uv ) <span class="keyword">over</span> ( <span class="keyword">ORDER</span> <span class="keyword">BY</span> start_month )</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">	<span class="comment">-- 统计每月的月活和新增用户数</span></span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		date_format( a.start_time, <span class="string">&#x27;%Y%m&#x27;</span> ) <span class="keyword">AS</span> start_month,</span><br><span class="line">		<span class="built_in">count</span>( <span class="keyword">DISTINCT</span> a.uid ) <span class="keyword">AS</span> mau,</span><br><span class="line">		<span class="built_in">count</span>( <span class="keyword">DISTINCT</span> b.uid ) <span class="keyword">AS</span> month_add_uv</span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		exam_record a</span><br><span class="line">		<span class="keyword">LEFT</span> <span class="keyword">JOIN</span> (</span><br><span class="line">         <span class="comment">-- 统计每个人的首次登陆月份</span></span><br><span class="line">		<span class="keyword">SELECT</span> uid, <span class="built_in">min</span>( date_format( start_time, <span class="string">&#x27;%Y%m&#x27;</span> )) <span class="keyword">AS</span> first_month <span class="keyword">FROM</span> exam_record <span class="keyword">GROUP</span> <span class="keyword">BY</span> uid ) b <span class="keyword">ON</span> date_format( a.start_time, <span class="string">&#x27;%Y%m&#x27;</span> ) <span class="operator">=</span> b.first_month</span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">		start_month</span><br><span class="line">	) main</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	start_month</span><br></pre></td></tr></table></figure>
+
+<!-- @include: @article-footer.snippet.md -->
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" rel="tag"># 数据库基础</a>
+          
+            <a href="/tags/SQL/" rel="tag"># SQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2024/09/21/string-algorithm-problems/" rel="next" title="几道常见的字符串算法题">
+                <i class="fa fa-chevron-left"></i> 几道常见的字符串算法题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2024/09/25/sso-intro/" rel="prev" title="SSO 单点登录详解">
+                SSO 单点登录详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">240</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JayVae" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/shi-hai-jie-35" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wechat" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                  </span>
+                
+            </div>
+          
+
+		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=554191378&auto=1&height=66"></iframe>
+		  
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%93%E7%94%A8%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">专用窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%8F%E7%B1%BB%E8%AF%95%E5%8D%B7%E5%BE%97%E5%88%86%E5%89%8D%E4%B8%89%E5%90%8D"><span class="nav-number">1.1.</span> <span class="nav-text">每类试卷得分前三名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%BF%AB-%E6%85%A2%E7%94%A8%E6%97%B6%E4%B9%8B%E5%B7%AE%E5%A4%A7%E4%BA%8E%E8%AF%95%E5%8D%B7%E6%97%B6%E9%95%BF%E4%B8%80%E5%8D%8A%E7%9A%84%E8%AF%95%E5%8D%B7%EF%BC%88%E8%BE%83%E9%9A%BE%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">第二快&#x2F;慢用时之差大于试卷时长一半的试卷（较难）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E4%B8%A4%E6%AC%A1%E4%BD%9C%E7%AD%94%E8%AF%95%E5%8D%B7%E7%9A%84%E6%9C%80%E5%A4%A7%E6%97%B6%E9%97%B4%E7%AA%97%EF%BC%88%E8%BE%83%E9%9A%BE%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">连续两次作答试卷的最大时间窗（较难）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%91%E4%B8%89%E4%B8%AA%E6%9C%88%E6%9C%AA%E5%AE%8C%E6%88%90%E4%B8%BA-0-%E7%9A%84%E7%94%A8%E6%88%B7%E5%AE%8C%E6%88%90%E6%83%85%E5%86%B5"><span class="nav-number">1.4.</span> <span class="nav-text">近三个月未完成为 0 的用户完成情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90%E7%8E%87%E8%BE%83%E9%AB%98%E7%9A%84-50-%E7%94%A8%E6%88%B7%E8%BF%91%E4%B8%89%E4%B8%AA%E6%9C%88%E7%AD%94%E5%8D%B7%E6%83%85%E5%86%B5%EF%BC%88%E5%9B%B0%E9%9A%BE%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">未完成率较高的 50%用户近三个月答卷情况（困难）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%95%E5%8D%B7%E5%AE%8C%E6%88%90%E6%95%B0%E5%90%8C%E6%AF%94-2020-%E5%B9%B4%E7%9A%84%E5%A2%9E%E9%95%BF%E7%8E%87%E5%8F%8A%E6%8E%92%E5%90%8D%E5%8F%98%E5%8C%96%EF%BC%88%E5%9B%B0%E9%9A%BE%EF%BC%89"><span class="nav-number">1.6.</span> <span class="nav-text">试卷完成数同比 2020 年的增长率及排名变化（困难）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">聚合窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%AF%95%E5%8D%B7%E5%BE%97%E5%88%86%E5%81%9A-min-max-%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">2.1.</span> <span class="nav-text">对试卷得分做 min-max 归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%8F%E4%BB%BD%E8%AF%95%E5%8D%B7%E6%AF%8F%E6%9C%88%E4%BD%9C%E7%AD%94%E6%95%B0%E5%92%8C%E6%88%AA%E6%AD%A2%E5%BD%93%E6%9C%88%E7%9A%84%E4%BD%9C%E7%AD%94%E6%80%BB%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">每份试卷每月作答数和截止当月的作答总数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%8F%E6%9C%88%E5%8F%8A%E6%88%AA%E6%AD%A2%E5%BD%93%E6%9C%88%E7%9A%84%E7%AD%94%E9%A2%98%E6%83%85%E5%86%B5%EF%BC%88%E8%BE%83%E9%9A%BE%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">每月及截止当月的答题情况（较难）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">史海杰</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">712.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'JayVae',
+            repo: 'https://github.com/JayVae/gitment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '77dd90a675af1d70e71a63f31351268ddde641e0',
+            
+                client_id: '18c4c1a4b757582f350b'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("SWULgkVHBjhFp99nBHCr8oHC-gzGzoHsz", "DQQN5XsGzlq3PIf1OSvGvoRR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

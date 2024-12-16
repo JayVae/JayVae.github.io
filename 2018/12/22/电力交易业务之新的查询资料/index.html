@@ -1,37 +1,1408 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="课题," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="参考【用电侧市场放开下的电力市场多主体博弈】 批发市场和零售市场新电改下的电力市场结构  市场博弈模型也可参考上文但是发电商的投标函数并没有体现。  既有自主协商交易又有集中竞价交易；  这篇文章中也有强化学习  但是总体来说这篇文章重点在于售电公司，而且不够细致   参考【月度电量集中竞价市场规则的仿真实验分析】 智能代理算法RE  JADE是怎么用的？  利润函数是怎样的？  其中的边际出清电">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电力交易业务之新的查询资料">
+<meta property="og:url" content="http://yoursite.com/2018/12/22/%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E4%B8%9A%E5%8A%A1%E4%B9%8B%E6%96%B0%E7%9A%84%E6%9F%A5%E8%AF%A2%E8%B5%84%E6%96%99/index.html">
+<meta property="og:site_name" content="Jay&#39;s Blog">
+<meta property="og:description" content="参考【用电侧市场放开下的电力市场多主体博弈】 批发市场和零售市场新电改下的电力市场结构  市场博弈模型也可参考上文但是发电商的投标函数并没有体现。  既有自主协商交易又有集中竞价交易；  这篇文章中也有强化学习  但是总体来说这篇文章重点在于售电公司，而且不够细致   参考【月度电量集中竞价市场规则的仿真实验分析】 智能代理算法RE  JADE是怎么用的？  利润函数是怎样的？  其中的边际出清电">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-12-22T13:10:10.000Z">
+<meta property="article:modified_time" content="2019-01-23T12:58:56.157Z">
+<meta property="article:author" content="史海杰">
+<meta property="article:tag" content="课题">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/22/电力交易业务之新的查询资料/"/>
+
+
+
+
+
+  <title>电力交易业务之新的查询资料 | Jay's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jay's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知而不行为不知</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/22/%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E4%B8%9A%E5%8A%A1%E4%B9%8B%E6%96%B0%E7%9A%84%E6%9F%A5%E8%AF%A2%E8%B5%84%E6%96%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">电力交易业务之新的查询资料</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-22T21:10:10+08:00">
+                2018-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">课题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/22/%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E4%B8%9A%E5%8A%A1%E4%B9%8B%E6%96%B0%E7%9A%84%E6%9F%A5%E8%AF%A2%E8%B5%84%E6%96%99/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/12/22/%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E4%B8%9A%E5%8A%A1%E4%B9%8B%E6%96%B0%E7%9A%84%E6%9F%A5%E8%AF%A2%E8%B5%84%E6%96%99/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/12/22/%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E4%B8%9A%E5%8A%A1%E4%B9%8B%E6%96%B0%E7%9A%84%E6%9F%A5%E8%AF%A2%E8%B5%84%E6%96%99/" class="leancloud_visitors" data-flag-title="电力交易业务之新的查询资料">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="参考【用电侧市场放开下的电力市场多主体博弈】"><a href="#参考【用电侧市场放开下的电力市场多主体博弈】" class="headerlink" title="参考【用电侧市场放开下的电力市场多主体博弈】"></a>参考【用电侧市场放开下的电力市场多主体博弈】</h2><ol>
+<li><p>批发市场和零售市场<br>新电改下的电力市场结构</p>
+</li>
+<li><p>市场博弈模型也可参考上文<br>但是发电商的投标函数并没有体现。</p>
+</li>
+<li><p>既有自主协商交易又有集中竞价交易；</p>
+</li>
+<li><p>这篇文章中也有强化学习</p>
+</li>
+<li><p>但是总体来说这篇文章重点在于售电公司，而且不够细致</p>
+</li>
+</ol>
+<h2 id="参考【月度电量集中竞价市场规则的仿真实验分析】"><a href="#参考【月度电量集中竞价市场规则的仿真实验分析】" class="headerlink" title="参考【月度电量集中竞价市场规则的仿真实验分析】"></a>参考【月度电量集中竞价市场规则的仿真实验分析】</h2><ol>
+<li><p>智能代理算法RE</p>
+</li>
+<li><p>JADE是怎么用的？</p>
+</li>
+<li><p>利润函数是怎样的？</p>
+</li>
+<li><p>其中的边际出清电价是什么？</p>
+</li>
+<li><p>找数据源</p>
+</li>
+<li><p>邮件交流：<br>6.1 功能类代理是在原有agent上开发的。月度市场中代理的行为比较简单，就是一个重复报价出清的过程，代码编写的工作量不大。强化学习策略代理的实现与普通代理的实现是相同的，不同之处在于这个代理的决策是按照算法进行决策输出，具体的算法可以参考常见的强化学习算法。jade是一个比较适合于学术研究的工具，它的demo中有很多经典的case。实际应用要比那些复杂，但是基本的组成比如行为、通信等是一样的<br>6.2 代理的目标比较简单，一般市场中的经济目标都是差不多的。目标有不同的表述，比如社会福利最大、发电成本最小、获利最大等。发电侧的利润是其收益与成本的差，用户侧的利润是其效益与成本的差。但是实际中用户侧的效益是由具体生产的产品来决定的，因此没有精准的模型计算。常见的处理方式是将用户侧的获利描述为市场降价空间的大小，降得越多，用户侧获利越多。</p>
+</li>
+<li><p>因此电力市场用户侧的报价策略是什么可以在论文中专门提出来，因为目前的大部分研究集中在研究发电侧的竞争。具体模型可以参考上6.2，以及自己定义利润函数，对于电力用户，按照满意度（偏差），售电公司按照满意度和服务费。<br>也因此可以在论文中提出售电公司参与的。</p>
+</li>
+</ol>
+<h2 id="参考【售电放开政策下电力交易多方主体利益分析模型研究】"><a href="#参考【售电放开政策下电力交易多方主体利益分析模型研究】" class="headerlink" title="参考【售电放开政策下电力交易多方主体利益分析模型研究】"></a>参考【售电放开政策下电力交易多方主体利益分析模型研究】</h2><ol>
+<li><p>电力交易模式：双边、集中</p>
+</li>
+<li><p>不同交易情景下发电商利益分析模型【ch6】</p>
+</li>
+<li><p>电商售电利益分析模型研究【ch8】</p>
+</li>
+<li><p>可以查一下这篇文章的两个作者的其他文章<br>也可以通过邮件联系一下这篇文章的作者。<br>暂无进展</p>
+</li>
+</ol>
+<h2 id="参考【基于售电侧放开的电力市场交易研究】"><a href="#参考【基于售电侧放开的电力市场交易研究】" class="headerlink" title="参考【基于售电侧放开的电力市场交易研究】"></a>参考【基于售电侧放开的电力市场交易研究】</h2><p>电力交易机构的定位</p>
+<h2 id="参考【电力市场售电侧开放环境下售电公司购电策略研究】"><a href="#参考【电力市场售电侧开放环境下售电公司购电策略研究】" class="headerlink" title="参考【电力市场售电侧开放环境下售电公司购电策略研究】"></a>参考【电力市场售电侧开放环境下售电公司购电策略研究】</h2><p>售电公司的利润</p>
+<h2 id="参考【电力市场原理与实践】书"><a href="#参考【电力市场原理与实践】书" class="headerlink" title="参考【电力市场原理与实践】书"></a>参考【电力市场原理与实践】书</h2><p>ch2<br>ch10</p>
+<h2 id="参考【基于代理的电力市场仿真的实验设计方法探讨】"><a href="#参考【基于代理的电力市场仿真的实验设计方法探讨】" class="headerlink" title="参考【基于代理的电力市场仿真的实验设计方法探讨】"></a>参考【基于代理的电力市场仿真的实验设计方法探讨】</h2><p>倾向系数与竞价策略的关系？<br>报价段数？<br>算例？？？<br>方法是Roth-Erev法</p>
+<h2 id="参考【考虑风储参与的电力市场联动博弈分析】"><a href="#参考【考虑风储参与的电力市场联动博弈分析】" class="headerlink" title="参考【考虑风储参与的电力市场联动博弈分析】"></a>参考【考虑风储参与的电力市场联动博弈分析】</h2><p>算例？？？</p>
+<h2 id="参考【强化学习算法在电力市场中的应用】"><a href="#参考【强化学习算法在电力市场中的应用】" class="headerlink" title="参考【强化学习算法在电力市场中的应用】"></a>参考【强化学习算法在电力市场中的应用】</h2><p>主要讲考虑发电厂商的强化学习竞价策略，其思想是发电厂商在考虑了市场中的各种因素后采取一个策略，在获得实际利润之前会有一个预期的期望利润，在第一时间段得到实际利润，然后比较实际利润和期望利润， 以得到强化信号。若得到正的强化信号就加强此次所选策略的概率值，反之，就减弱此次所选策略的概率值。 在演化过程中不断用此方法来逐步修改策略，以获得最大利润。<br>多部分报价<br>分段报价函数与线性报价函数</p>
+<h2 id="参考【发电商基于Q-Learning算法的日前市场竞价策略】"><a href="#参考【发电商基于Q-Learning算法的日前市场竞价策略】" class="headerlink" title="参考【发电商基于Q-Learning算法的日前市场竞价策略】"></a>参考【发电商基于Q-Learning算法的日前市场竞价策略】</h2><p>日前市场为发电侧市场，而且将每个机组按不同容量区间进行报价，同时假定输电网络不存在阻塞现象， 整个输电网络相当于一个单节点， 即网络结构不影响出清结果。<br>阶梯形报价曲线，容量价格对<br>定义系统状态、 策略和立即收益：<br>（1） 系统状态： 系统状态$由市场的出清价格表示。<br>（2） 策略： 由式(8)得到各个发电商机组的报价策略集。 各个机组的策略集组合就得到发电商的报价策略集。 例如某发电商有 2 台机组， 每台机组有 5种策略， 则发电商一共有 5×5 &#x3D; 25 种报价策略。<br>（3） 立即收益： 本文中各个代理的立即收益取该轮交易发电商得到的利润， 即收入减去成本， 可由式(3)得出。<br>程序的具体算法如下：<br>第 1 步： 随机初始化各个发电商的最优策略，进行一次交易。得到的市场出清价格作为初始状态。<br>第 2 步： 在新一轮市场交易开始时， 发电商用上一轮次交易的 24 时段市场出清价格作为当前的状态。在得到各个时段的当前状态后， 发电商应用改进的!－greedy 策略选出一个策略作为本轮次的报价策略。<br>第 3 步： 更新”值， 计算本轮次的立即收益#$。并且由本轮次出清价格得到下一交易轮次的系统状态， 根据式 （11） 更新 lookup表中的”值。<br>第 4 步： 判断是否达到规定的轮次， 否则返回第 2 步。</p>
+<h2 id="参考【考虑风储参与的电力市场联动博弈分析】-1"><a href="#参考【考虑风储参与的电力市场联动博弈分析】-1" class="headerlink" title="参考【考虑风储参与的电力市场联动博弈分析】"></a>参考【考虑风储参与的电力市场联动博弈分析】</h2><p>发电商和供电商策略集合由一定范围内的上网电价和销售电价组成，对应策略利润为中标发电和销售电能产生的利润。</p>
+<h2 id="参考【基于改进Q学习算法的发电商竞价策略】"><a href="#参考【基于改进Q学习算法的发电商竞价策略】" class="headerlink" title="参考【基于改进Q学习算法的发电商竞价策略】"></a>参考【基于改进Q学习算法的发电商竞价策略】</h2><p>未看</p>
+<h2 id="参考【电力批发市场中基于强化学习的参与者行为特性研究】"><a href="#参考【电力批发市场中基于强化学习的参与者行为特性研究】" class="headerlink" title="参考【电力批发市场中基于强化学习的参与者行为特性研究】"></a>参考【电力批发市场中基于强化学习的参与者行为特性研究】</h2><p>未看，英文</p>
+<h2 id="参考【多Agent系统中强化学习的研究现状和发展趋势】"><a href="#参考【多Agent系统中强化学习的研究现状和发展趋势】" class="headerlink" title="参考【多Agent系统中强化学习的研究现状和发展趋势】"></a>参考【多Agent系统中强化学习的研究现状和发展趋势】</h2><p>强化学习作为多agent系统中更新行为策略</p>
+<h2 id="参考-【电力市场仿真系统的开发及应用】"><a href="#参考-【电力市场仿真系统的开发及应用】" class="headerlink" title="参考 【电力市场仿真系统的开发及应用】"></a>参考 【电力市场仿真系统的开发及应用】</h2><p>算例</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%AF%BE%E9%A2%98/" rel="tag"># 课题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/22/%E9%9B%86%E4%B8%AD%E5%87%BA%E6%B8%85%E8%A7%84%E5%88%99/" rel="next" title="集中出清规则">
+                <i class="fa fa-chevron-left"></i> 集中出清规则
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/24/REC%EF%BC%9A%E8%BF%9B%E5%B1%95%E5%8F%8A%E8%AE%A1%E5%88%92%E8%AE%B0%E5%BD%95/" rel="prev" title="REC：进展及计划记录">
+                REC：进展及计划记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">240</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JayVae" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/shi-hai-jie-35" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wechat" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                  </span>
+                
+            </div>
+          
+
+		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=554191378&auto=1&height=66"></iframe>
+		  
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E7%94%A8%E7%94%B5%E4%BE%A7%E5%B8%82%E5%9C%BA%E6%94%BE%E5%BC%80%E4%B8%8B%E7%9A%84%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E5%A4%9A%E4%B8%BB%E4%BD%93%E5%8D%9A%E5%BC%88%E3%80%91"><span class="nav-number">1.</span> <span class="nav-text">参考【用电侧市场放开下的电力市场多主体博弈】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E6%9C%88%E5%BA%A6%E7%94%B5%E9%87%8F%E9%9B%86%E4%B8%AD%E7%AB%9E%E4%BB%B7%E5%B8%82%E5%9C%BA%E8%A7%84%E5%88%99%E7%9A%84%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C%E5%88%86%E6%9E%90%E3%80%91"><span class="nav-number">2.</span> <span class="nav-text">参考【月度电量集中竞价市场规则的仿真实验分析】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E5%94%AE%E7%94%B5%E6%94%BE%E5%BC%80%E6%94%BF%E7%AD%96%E4%B8%8B%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E5%A4%9A%E6%96%B9%E4%B8%BB%E4%BD%93%E5%88%A9%E7%9B%8A%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B%E7%A0%94%E7%A9%B6%E3%80%91"><span class="nav-number">3.</span> <span class="nav-text">参考【售电放开政策下电力交易多方主体利益分析模型研究】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E5%9F%BA%E4%BA%8E%E5%94%AE%E7%94%B5%E4%BE%A7%E6%94%BE%E5%BC%80%E7%9A%84%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E4%BA%A4%E6%98%93%E7%A0%94%E7%A9%B6%E3%80%91"><span class="nav-number">4.</span> <span class="nav-text">参考【基于售电侧放开的电力市场交易研究】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E5%94%AE%E7%94%B5%E4%BE%A7%E5%BC%80%E6%94%BE%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%94%AE%E7%94%B5%E5%85%AC%E5%8F%B8%E8%B4%AD%E7%94%B5%E7%AD%96%E7%95%A5%E7%A0%94%E7%A9%B6%E3%80%91"><span class="nav-number">5.</span> <span class="nav-text">参考【电力市场售电侧开放环境下售电公司购电策略研究】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E3%80%91%E4%B9%A6"><span class="nav-number">6.</span> <span class="nav-text">参考【电力市场原理与实践】书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E5%9F%BA%E4%BA%8E%E4%BB%A3%E7%90%86%E7%9A%84%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E4%BB%BF%E7%9C%9F%E7%9A%84%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E6%8E%A2%E8%AE%A8%E3%80%91"><span class="nav-number">7.</span> <span class="nav-text">参考【基于代理的电力市场仿真的实验设计方法探讨】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E8%80%83%E8%99%91%E9%A3%8E%E5%82%A8%E5%8F%82%E4%B8%8E%E7%9A%84%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E8%81%94%E5%8A%A8%E5%8D%9A%E5%BC%88%E5%88%86%E6%9E%90%E3%80%91"><span class="nav-number">8.</span> <span class="nav-text">参考【考虑风储参与的电力市场联动博弈分析】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E5%9C%A8%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">9.</span> <span class="nav-text">参考【强化学习算法在电力市场中的应用】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E5%8F%91%E7%94%B5%E5%95%86%E5%9F%BA%E4%BA%8EQ-Learning%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%A5%E5%89%8D%E5%B8%82%E5%9C%BA%E7%AB%9E%E4%BB%B7%E7%AD%96%E7%95%A5%E3%80%91"><span class="nav-number">10.</span> <span class="nav-text">参考【发电商基于Q-Learning算法的日前市场竞价策略】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E8%80%83%E8%99%91%E9%A3%8E%E5%82%A8%E5%8F%82%E4%B8%8E%E7%9A%84%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E8%81%94%E5%8A%A8%E5%8D%9A%E5%BC%88%E5%88%86%E6%9E%90%E3%80%91-1"><span class="nav-number">11.</span> <span class="nav-text">参考【考虑风储参与的电力市场联动博弈分析】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E5%9F%BA%E4%BA%8E%E6%94%B9%E8%BF%9BQ%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%9A%84%E5%8F%91%E7%94%B5%E5%95%86%E7%AB%9E%E4%BB%B7%E7%AD%96%E7%95%A5%E3%80%91"><span class="nav-number">12.</span> <span class="nav-text">参考【基于改进Q学习算法的发电商竞价策略】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E7%94%B5%E5%8A%9B%E6%89%B9%E5%8F%91%E5%B8%82%E5%9C%BA%E4%B8%AD%E5%9F%BA%E4%BA%8E%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8F%82%E4%B8%8E%E8%80%85%E8%A1%8C%E4%B8%BA%E7%89%B9%E6%80%A7%E7%A0%94%E7%A9%B6%E3%80%91"><span class="nav-number">13.</span> <span class="nav-text">参考【电力批发市场中基于强化学习的参与者行为特性研究】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E3%80%90%E5%A4%9AAgent%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6%E5%92%8C%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF%E3%80%91"><span class="nav-number">14.</span> <span class="nav-text">参考【多Agent系统中强化学习的研究现状和发展趋势】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83-%E3%80%90%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E5%8F%8A%E5%BA%94%E7%94%A8%E3%80%91"><span class="nav-number">15.</span> <span class="nav-text">参考 【电力市场仿真系统的开发及应用】</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">史海杰</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">712.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'JayVae',
+            repo: 'https://github.com/JayVae/gitment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '77dd90a675af1d70e71a63f31351268ddde641e0',
+            
+                client_id: '18c4c1a4b757582f350b'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("SWULgkVHBjhFp99nBHCr8oHC-gzGzoHsz", "DQQN5XsGzlq3PIf1OSvGvoRR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

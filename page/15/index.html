@@ -1,23 +1,3781 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="持续精进">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jay&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/page/15/index.html">
+<meta property="og:site_name" content="Jay&#39;s Blog">
+<meta property="og:description" content="持续精进">
+<meta property="og:locale">
+<meta property="article:author" content="史海杰">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/15/"/>
+
+
+
+
+
+  <title>Jay's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jay's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知而不行为不知</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/25/Java%E5%9F%BA%E7%A1%80_%E5%BA%8F%E5%88%97%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/25/Java%E5%9F%BA%E7%A1%80_%E5%BA%8F%E5%88%97%E5%8C%96/" itemprop="url">Java基础 序列化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-25T18:59:52+08:00">
+                2020-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/25/Java%E5%9F%BA%E7%A1%80_%E5%BA%8F%E5%88%97%E5%8C%96/" class="leancloud_visitors" data-flag-title="Java基础 序列化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是序列化和反序列化"><a href="#什么是序列化和反序列化" class="headerlink" title="什么是序列化和反序列化?"></a>什么是序列化和反序列化?</h2><p>如果我们需要持久化 Java 对象比如将 Java 对象保存在文件中，或者在网络传输 Java 对象，这些场景都需要用到序列化。</p>
+<p>简单来说：</p>
+<ul>
+<li><strong>序列化</strong>：将数据结构或对象转换成可以存储或传输的形式，通常是二进制字节流，也可以是 JSON, XML 等文本格式</li>
+<li><strong>反序列化</strong>：将在序列化过程中所生成的数据转换为原始数据结构或者对象的过程</li>
+</ul>
+<p>对于 Java 这种面向对象编程语言来说，我们序列化的都是对象（Object）也就是实例化后的类(Class)，但是在 C++这种半面向对象的语言中，struct(结构体)定义的是数据结构类型，而 class 对应的是对象类型。</p>
+<p>下面是序列化和反序列化常见应用场景：</p>
+<ul>
+<li>对象在进行网络传输（比如远程方法调用 RPC 的时候）之前需要先被序列化，接收到序列化的对象之后需要再进行反序列化；</li>
+<li>将对象存储到文件之前需要进行序列化，将对象从文件中读取出来需要进行反序列化；</li>
+<li>将对象存储到数据库（如 Redis）之前需要用到序列化，将对象从缓存数据库中读取出来需要反序列化；</li>
+<li>将对象存储到内存之前需要进行序列化，从内存中读取出来之后需要进行反序列化。</li>
+</ul>
+<p>维基百科是如是介绍序列化的：</p>
+<blockquote>
+<p><strong>序列化</strong>（serialization）在计算机科学的数据处理中，是指将数据结构或对象状态转换成可取用格式（例如存成文件，存于缓冲，或经由网络中发送），以留待后续在相同或另一台计算机环境中，能恢复原先状态的过程。依照序列化格式重新获取字节的结果时，可以利用它来产生与原始对象相同语义的副本。对于许多对象，像是使用大量引用的复杂对象，这种序列化重建的过程并不容易。面向对象中的对象序列化，并不概括之前原始对象所关系的函数。这种过程也称为对象编组（marshalling）。从一系列字节提取数据结构的反向操作，是反序列化（也称为解编组、deserialization、unmarshalling）。</p>
+</blockquote>
+<p>综上：<strong>序列化的主要目的是通过网络传输对象或者说是将对象存储到文件系统、数据库、内存中。</strong></p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/a478c74d-2c48-40ae-9374-87aacf05188c.png"></p>
+<p style="text-align:right;font-size:13px;color:gray">https://www.corejavaguru.com/java/serialization/interview-questions-1</p>
+
+<p><strong>序列化协议对应于 TCP&#x2F;IP 4 层模型的哪一层？</strong></p>
+<p>我们知道网络通信的双方必须要采用和遵守相同的协议。TCP&#x2F;IP 四层模型是下面这样的，序列化协议属于哪一层呢？</p>
+<ol>
+<li>应用层</li>
+<li>传输层</li>
+<li>网络层</li>
+<li>网络接口层</li>
+</ol>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-ip-4-model.png" alt="TCP/IP 四层模型"></p>
+<p>如上图所示，OSI 七层协议模型中，表示层做的事情主要就是对应用层的用户数据进行处理转换为二进制流。反过来的话，就是将二进制流转换成应用层的用户数据。这不就对应的是序列化和反序列化么？</p>
+<p>因为，OSI 七层协议模型中的应用层、表示层和会话层对应的都是 TCP&#x2F;IP 四层模型中的应用层，所以序列化协议属于 TCP&#x2F;IP 协议应用层的一部分。</p>
+<h2 id="常见序列化协议有哪些？"><a href="#常见序列化协议有哪些？" class="headerlink" title="常见序列化协议有哪些？"></a>常见序列化协议有哪些？</h2><p>JDK 自带的序列化方式一般不会用 ，因为序列化效率低并且存在安全问题。比较常用的序列化协议有 Hessian、Kryo、Protobuf、ProtoStuff，这些都是基于二进制的序列化协议。</p>
+<p>像 JSON 和 XML 这种属于文本类序列化方式。虽然可读性比较好，但是性能较差，一般不会选择。</p>
+<h3 id="JDK-自带的序列化方式"><a href="#JDK-自带的序列化方式" class="headerlink" title="JDK 自带的序列化方式"></a>JDK 自带的序列化方式</h3><p>JDK 自带的序列化，只需实现 <code>java.io.Serializable</code>接口即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RpcRequest</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1905122041950251207L</span>;</span><br><span class="line">    <span class="keyword">private</span> String requestId;</span><br><span class="line">    <span class="keyword">private</span> String interfaceName;</span><br><span class="line">    <span class="keyword">private</span> String methodName;</span><br><span class="line">    <span class="keyword">private</span> Object[] parameters;</span><br><span class="line">    <span class="keyword">private</span> Class&lt;?&gt;[] paramTypes;</span><br><span class="line">    <span class="keyword">private</span> RpcMessageTypeEnum rpcMessageTypeEnum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>serialVersionUID 有什么作用？</strong></p>
+<p>序列化号 <code>serialVersionUID</code> 属于版本控制的作用。反序列化时，会检查 <code>serialVersionUID</code> 是否和当前类的 <code>serialVersionUID</code> 一致。如果 <code>serialVersionUID</code> 不一致则会抛出 <code>InvalidClassException</code> 异常。强烈推荐每个序列化类都手动指定其 <code>serialVersionUID</code>，如果不手动指定，那么编译器会动态生成默认的 <code>serialVersionUID</code>。</p>
+<p><strong>serialVersionUID 不是被 static 变量修饰了吗？为什么还会被“序列化”？</strong></p>
+<p><del><code>static</code> 修饰的变量是静态变量，位于方法区，本身是不会被序列化的。 <code>static</code> 变量是属于类的而不是对象。你反序列之后，<code>static</code> 变量的值就像是默认赋予给了对象一样，看着就像是 <code>static</code> 变量被序列化，实际只是假象罢了。</del></p>
+<p><strong>🐛 修正（参见：<a href="https://github.com/Snailclimb/JavaGuide/issues/2174">issue#2174</a>）</strong>：<code>static</code> 修饰的变量是静态变量，属于类而非类的实例，本身是不会被序列化的。然而，<code>serialVersionUID</code> 是一个特例，<code>serialVersionUID</code> 的序列化做了特殊处理。当一个对象被序列化时，<code>serialVersionUID</code> 会被写入到序列化的二进制流中；在反序列化时，也会解析它并做一致性判断，以此来验证序列化对象的版本一致性。如果两者不匹配，反序列化过程将抛出 <code>InvalidClassException</code>，因为这通常意味着序列化的类的定义已经发生了更改，可能不再兼容。</p>
+<p>官方说明如下：</p>
+<blockquote>
+<p>A serializable class can declare its own serialVersionUID explicitly by declaring a field named <code>&quot;serialVersionUID&quot;</code> that must be <code>static</code>, <code>final</code>, and of type <code>long</code>;</p>
+<p>如果想显式指定 <code>serialVersionUID</code> ，则需要在类中使用 <code>static</code> 和 <code>final</code> 关键字来修饰一个 <code>long</code> 类型的变量，变量名字必须为 <code>&quot;serialVersionUID&quot;</code> 。</p>
+</blockquote>
+<p>也就是说，<code>serialVersionUID</code> 只是用来被 JVM 识别，实际并没有被序列化。</p>
+<p><strong>如果有些字段不想进行序列化怎么办？</strong></p>
+<p>对于不想进行序列化的变量，可以使用 <code>transient</code> 关键字修饰。</p>
+<p><code>transient</code> 关键字的作用是：阻止实例中那些用此关键字修饰的的变量序列化；当对象被反序列化时，被 <code>transient</code> 修饰的变量值不会被持久化和恢复。</p>
+<p>关于 <code>transient</code> 还有几点注意：</p>
+<ul>
+<li><code>transient</code> 只能修饰变量，不能修饰类和方法。</li>
+<li><code>transient</code> 修饰的变量，在反序列化后变量值将会被置成类型的默认值。例如，如果是修饰 <code>int</code> 类型，那么反序列后结果就是 <code>0</code>。</li>
+<li><code>static</code> 变量因为不属于任何对象(Object)，所以无论有没有 <code>transient</code> 关键字修饰，均不会被序列化。</li>
+</ul>
+<p><strong>为什么不推荐使用 JDK 自带的序列化？</strong></p>
+<p>我们很少或者说几乎不会直接使用 JDK 自带的序列化方式，主要原因有下面这些原因：</p>
+<ul>
+<li><strong>不支持跨语言调用</strong> : 如果调用的是其他语言开发的服务的时候就不支持了。</li>
+<li><strong>性能差</strong>：相比于其他序列化框架性能更低，主要原因是序列化之后的字节数组体积较大，导致传输成本加大。</li>
+<li><strong>存在安全问题</strong>：序列化和反序列化本身并不存在问题。但当输入的反序列化的数据可被用户控制，那么攻击者即可通过构造恶意输入，让反序列化产生非预期的对象，在此过程中执行构造的任意代码。相关阅读：<a href="https://cryin.github.io/blog/secure-development-java-deserialization-vulnerability/">应用安全:JAVA 反序列化漏洞之殇 - Cryin</a>、<a href="https://www.zhihu.com/question/37562657/answer/1916596031">Java 反序列化安全漏洞怎么回事? - Monica</a>。</li>
+</ul>
+<h3 id="Kryo"><a href="#Kryo" class="headerlink" title="Kryo"></a>Kryo</h3><p>Kryo 是一个高性能的序列化&#x2F;反序列化工具，由于其变长存储特性并使用了字节码生成机制，拥有较高的运行速度和较小的字节码体积。</p>
+<p>另外，Kryo 已经是一种非常成熟的序列化实现了，已经在 Twitter、Groupon、Yahoo 以及多个著名开源项目（如 Hive、Storm）中广泛的使用。</p>
+<p><a href="https://github.com/Snailclimb/guide-rpc-framework">guide-rpc-framework</a> 就是使用的 kryo 进行序列化，序列化和反序列化相关的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Kryo serialization class, Kryo serialization efficiency is very high, but only compatible with Java language</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shuang.kou</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@createTime</span> 2020年05月13日 19:29:00</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KryoSerializer</span> <span class="keyword">implements</span> <span class="title class_">Serializer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Because Kryo is not thread safe. So, use ThreadLocal to store Kryo objects</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> ThreadLocal&lt;Kryo&gt; kryoThreadLocal = ThreadLocal.withInitial(() -&gt; &#123;</span><br><span class="line">        <span class="type">Kryo</span> <span class="variable">kryo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Kryo</span>();</span><br><span class="line">        kryo.register(RpcResponse.class);</span><br><span class="line">        kryo.register(RpcRequest.class);</span><br><span class="line">        <span class="keyword">return</span> kryo;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">byte</span>[] serialize(Object obj) &#123;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">ByteArrayOutputStream</span> <span class="variable">byteArrayOutputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayOutputStream</span>();</span><br><span class="line">             <span class="type">Output</span> <span class="variable">output</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Output</span>(byteArrayOutputStream)) &#123;</span><br><span class="line">            <span class="type">Kryo</span> <span class="variable">kryo</span> <span class="operator">=</span> kryoThreadLocal.get();</span><br><span class="line">            <span class="comment">// Object-&gt;byte:将对象序列化为byte数组</span></span><br><span class="line">            kryo.writeObject(output, obj);</span><br><span class="line">            kryoThreadLocal.remove();</span><br><span class="line">            <span class="keyword">return</span> output.toBytes();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">SerializeException</span>(<span class="string">&quot;Serialization failed&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T&gt; T <span class="title function_">deserialize</span><span class="params">(<span class="type">byte</span>[] bytes, Class&lt;T&gt; clazz)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">ByteArrayInputStream</span> <span class="variable">byteArrayInputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayInputStream</span>(bytes);</span><br><span class="line">             <span class="type">Input</span> <span class="variable">input</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Input</span>(byteArrayInputStream)) &#123;</span><br><span class="line">            <span class="type">Kryo</span> <span class="variable">kryo</span> <span class="operator">=</span> kryoThreadLocal.get();</span><br><span class="line">            <span class="comment">// byte-&gt;Object:从byte数组中反序列化出对象</span></span><br><span class="line">            <span class="type">Object</span> <span class="variable">o</span> <span class="operator">=</span> kryo.readObject(input, clazz);</span><br><span class="line">            kryoThreadLocal.remove();</span><br><span class="line">            <span class="keyword">return</span> clazz.cast(o);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">SerializeException</span>(<span class="string">&quot;Deserialization failed&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>GitHub 地址：<a href="https://github.com/EsotericSoftware/kryo">https://github.com/EsotericSoftware/kryo</a> 。</p>
+<h3 id="Protobuf"><a href="#Protobuf" class="headerlink" title="Protobuf"></a>Protobuf</h3><p>Protobuf 出自于 Google，性能还比较优秀，也支持多种语言，同时还是跨平台的。就是在使用中过于繁琐，因为你需要自己定义 IDL 文件和生成对应的序列化代码。这样虽然不灵活，但是，另一方面导致 protobuf 没有序列化漏洞的风险。</p>
+<blockquote>
+<p>Protobuf 包含序列化格式的定义、各种语言的库以及一个 IDL 编译器。正常情况下你需要定义 proto 文件，然后使用 IDL 编译器编译成你需要的语言</p>
+</blockquote>
+<p>一个简单的 proto 文件如下：</p>
+<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// protobuf的版本</span></span><br><span class="line">syntax = <span class="string">&quot;proto3&quot;</span>;</span><br><span class="line"><span class="comment">// SearchRequest会被编译成不同的编程语言的相应对象，比如Java中的class、Go中的struct</span></span><br><span class="line"><span class="keyword">message </span><span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="comment">//string类型字段</span></span><br><span class="line">  <span class="type">string</span> name = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// int 类型字段</span></span><br><span class="line">  <span class="type">int32</span> age = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>GitHub 地址：<a href="https://github.com/protocolbuffers/protobuf">https://github.com/protocolbuffers/protobuf</a>。</p>
+<h3 id="ProtoStuff"><a href="#ProtoStuff" class="headerlink" title="ProtoStuff"></a>ProtoStuff</h3><p>由于 Protobuf 的易用性较差，它的哥哥 Protostuff 诞生了。</p>
+<p>protostuff 基于 Google protobuf，但是提供了更多的功能和更简易的用法。虽然更加易用，但是不代表 ProtoStuff 性能更差。</p>
+<p>GitHub 地址：<a href="https://github.com/protostuff/protostuff">https://github.com/protostuff/protostuff</a>。</p>
+<h3 id="Hessian"><a href="#Hessian" class="headerlink" title="Hessian"></a>Hessian</h3><p>Hessian 是一个轻量级的，自定义描述的二进制 RPC 协议。Hessian 是一个比较老的序列化实现了，并且同样也是跨语言的。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/8613ec4c-bde5-47bf-897e-99e0f90b9fa3.png"></p>
+<p>Dubbo2.x 默认启用的序列化方式是 Hessian2 ,但是，Dubbo 对 Hessian2 进行了修改，不过大体结构还是差不多。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Kryo 是专门针对 Java 语言序列化方式并且性能非常好，如果你的应用是专门针对 Java 语言的话可以考虑使用，并且 Dubbo 官网的一篇文章中提到说推荐使用 Kryo 作为生产环境的序列化方式。(文章地址：<a href="https://cn.dubbo.apache.org/zh-cn/docsv2.7/user/serialization/">https://cn.dubbo.apache.org/zh-cn/docsv2.7/user/serialization/</a>）。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/569e541a-22b2-4846-aa07-0ad479f07440-20230814090158124.png"></p>
+<p>像 Protobuf、 ProtoStuff、hessian 这类都是跨语言的序列化方式，如果有跨语言需求的话可以考虑使用。</p>
+<p>除了我上面介绍到的序列化方式的话，还有像 Thrift，Avro 这些。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/http-vs-https/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/21/http-vs-https/" itemprop="url">HTTP vs HTTPS（应用层）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-21T19:19:39+08:00">
+                2020-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/21/http-vs-https/" class="leancloud_visitors" data-flag-title="HTTP vs HTTPS（应用层）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h2><h3 id="HTTP-协议介绍"><a href="#HTTP-协议介绍" class="headerlink" title="HTTP 协议介绍"></a>HTTP 协议介绍</h3><p>HTTP 协议，全称超文本传输协议（Hypertext Transfer Protocol）。顾名思义，HTTP 协议就是用来规范超文本的传输，超文本，也就是网络上的包括文本在内的各式各样的消息，具体来说，主要是来规范浏览器和服务器端的行为的。</p>
+<p>并且，HTTP 是一个无状态（stateless）协议，也就是说服务器不维护任何有关客户端过去所发请求的消息。这其实是一种懒政，有状态协议会更加复杂，需要维护状态（历史信息），而且如果客户或服务器失效，会产生状态的不一致，解决这种不一致的代价更高。</p>
+<h3 id="HTTP-协议通信过程"><a href="#HTTP-协议通信过程" class="headerlink" title="HTTP 协议通信过程"></a>HTTP 协议通信过程</h3><p>HTTP 是应用层协议，它以 TCP（传输层）作为底层协议，默认端口为 80. 通信过程主要如下：</p>
+<ol>
+<li>服务器在 80 端口等待客户的请求。</li>
+<li>浏览器发起到服务器的 TCP 连接（创建套接字 Socket）。</li>
+<li>服务器接收来自浏览器的 TCP 连接。</li>
+<li>浏览器（HTTP 客户端）与 Web 服务器（HTTP 服务器）交换 HTTP 消息。</li>
+<li>关闭 TCP 连接。</li>
+</ol>
+<h3 id="HTTP-协议优点"><a href="#HTTP-协议优点" class="headerlink" title="HTTP 协议优点"></a>HTTP 协议优点</h3><p>扩展性强、速度快、跨平台支持性好。</p>
+<h2 id="HTTPS-协议"><a href="#HTTPS-协议" class="headerlink" title="HTTPS 协议"></a>HTTPS 协议</h2><h3 id="HTTPS-协议介绍"><a href="#HTTPS-协议介绍" class="headerlink" title="HTTPS 协议介绍"></a>HTTPS 协议介绍</h3><p>HTTPS 协议（Hyper Text Transfer Protocol Secure），是 HTTP 的加强安全版本。HTTPS 是基于 HTTP 的，也是用 TCP 作为底层协议，并额外使用 SSL&#x2F;TLS 协议用作加密和安全认证。默认端口号是 443.</p>
+<p>HTTPS 协议中，SSL 通道通常使用基于密钥的加密算法，密钥长度通常是 40 比特或 128 比特。</p>
+<h3 id="HTTPS-协议优点"><a href="#HTTPS-协议优点" class="headerlink" title="HTTPS 协议优点"></a>HTTPS 协议优点</h3><p>保密性好、信任度高。</p>
+<h2 id="HTTPS-的核心—SSL-TLS-协议"><a href="#HTTPS-的核心—SSL-TLS-协议" class="headerlink" title="HTTPS 的核心—SSL&#x2F;TLS 协议"></a>HTTPS 的核心—SSL&#x2F;TLS 协议</h2><p>HTTPS 之所以能达到较高的安全性要求，就是结合了 SSL&#x2F;TLS 和 TCP 协议，对通信数据进行加密，解决了 HTTP 数据透明的问题。接下来重点介绍一下 SSL&#x2F;TLS 的工作原理。</p>
+<h3 id="SSL-和-TLS-的区别？"><a href="#SSL-和-TLS-的区别？" class="headerlink" title="SSL 和 TLS 的区别？"></a>SSL 和 TLS 的区别？</h3><p><strong>SSL 和 TLS 没有太大的区别。</strong></p>
+<p>SSL 指安全套接字协议（Secure Sockets Layer），首次发布与 1996 年。SSL 的首次发布其实已经是他的 3.0 版本，SSL 1.0 从未面世，SSL 2.0 则具有较大的缺陷（DROWN 缺陷——Decrypting RSA with Obsolete and Weakened eNcryption）。很快，在 1999 年，SSL 3.0 进一步升级，<strong>新版本被命名为 TLS 1.0</strong>。因此，TLS 是基于 SSL 之上的，但由于习惯叫法，通常把 HTTPS 中的核心加密协议混称为 SSL&#x2F;TLS。</p>
+<h3 id="SSL-TLS-的工作原理"><a href="#SSL-TLS-的工作原理" class="headerlink" title="SSL&#x2F;TLS 的工作原理"></a>SSL&#x2F;TLS 的工作原理</h3><h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><p>SSL&#x2F;TLS 的核心要素是<strong>非对称加密</strong>。非对称加密采用两个密钥——一个公钥，一个私钥。在通信时，私钥仅由解密者保存，公钥由任何一个想与解密者通信的发送者（加密者）所知。可以设想一个场景，</p>
+<blockquote>
+<p>在某个自助邮局，每个通信信道都是一个邮箱，每一个邮箱所有者都在旁边立了一个牌子，上面挂着一把钥匙：这是我的公钥，发送者请将信件放入我的邮箱，并用公钥锁好。</p>
+<p>但是公钥只能加锁，并不能解锁。解锁只能由邮箱的所有者——因为只有他保存着私钥。</p>
+<p>这样，通信信息就不会被其他人截获了，这依赖于私钥的保密性。</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/public-key-cryptography.png"></p>
+<p>非对称加密的公钥和私钥需要采用一种复杂的数学机制生成（密码学认为，为了较高的安全性，尽量不要自己创造加密方案）。公私钥对的生成算法依赖于单向陷门函数。</p>
+<blockquote>
+<p>单向函数：已知单向函数 f，给定任意一个输入 x，易计算输出 y&#x3D;f(x)；而给定一个输出 y，假设存在 f(x)&#x3D;y，很难根据 f 来计算出 x。</p>
+<p>单向陷门函数：一个较弱的单向函数。已知单向陷门函数 f，陷门 h，给定任意一个输入 x，易计算出输出 y&#x3D;f(x;h)；而给定一个输出 y，假设存在 f(x;h)&#x3D;y，很难根据 f 来计算出 x，但可以根据 f 和 h 来推导出 x。</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/OWF.png" alt="单向函数"></p>
+<p>上图就是一个单向函数（不是单项陷门函数），假设有一个绝世秘籍，任何知道了这个秘籍的人都可以把苹果汁榨成苹果，那么这个秘籍就是“陷门”了吧。</p>
+<p>在这里，函数 f 的计算方法相当于公钥，陷门 h 相当于私钥。公钥 f 是公开的，任何人对已有输入，都可以用 f 加密，而要想根据加密信息还原出原信息，必须要有私钥才行。</p>
+<h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><p>使用 SSL&#x2F;TLS 进行通信的双方需要使用非对称加密方案来通信，但是非对称加密设计了较为复杂的数学算法，在实际通信过程中，计算的代价较高，效率太低，因此，SSL&#x2F;TLS 实际对消息的加密使用的是对称加密。</p>
+<blockquote>
+<p>对称加密：通信双方共享唯一密钥 k，加解密算法已知，加密方利用密钥 k 加密，解密方利用密钥 k 解密，保密性依赖于密钥 k 的保密性。</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/symmetric-encryption.png"></p>
+<p>对称加密的密钥生成代价比公私钥对的生成代价低得多，那么有的人会问了，为什么 SSL&#x2F;TLS 还需要使用非对称加密呢？因为对称加密的保密性完全依赖于密钥的保密性。在双方通信之前，需要商量一个用于对称加密的密钥。我们知道网络通信的信道是不安全的，传输报文对任何人是可见的，密钥的交换肯定不能直接在网络信道中传输。因此，使用非对称加密，对对称加密的密钥进行加密，保护该密钥不在网络信道中被窃听。这样，通信双方只需要一次非对称加密，交换对称加密的密钥，在之后的信息通信中，使用绝对安全的密钥，对信息进行对称加密，即可保证传输消息的保密性。</p>
+<h4 id="公钥传输的信赖性"><a href="#公钥传输的信赖性" class="headerlink" title="公钥传输的信赖性"></a>公钥传输的信赖性</h4><p>SSL&#x2F;TLS 介绍到这里，了解信息安全的朋友又会想到一个安全隐患，设想一个下面的场景：</p>
+<blockquote>
+<p>客户端 C 和服务器 S 想要使用 SSL&#x2F;TLS 通信，由上述 SSL&#x2F;TLS 通信原理，C 需要先知道 S 的公钥，而 S 公钥的唯一获取途径，就是把 S 公钥在网络信道中传输。要注意网络信道通信中有几个前提：</p>
+<ol>
+<li>任何人都可以捕获通信包</li>
+<li>通信包的保密性由发送者设计</li>
+<li>保密算法设计方案默认为公开，而（解密）密钥默认是安全的</li>
+</ol>
+<p>因此，假设 S 公钥不做加密，在信道中传输，那么很有可能存在一个攻击者 A，发送给 C 一个诈包，假装是 S 公钥，其实是诱饵服务器 AS 的公钥。当 C 收获了 AS 的公钥（却以为是 S 的公钥），C 后续就会使用 AS 公钥对数据进行加密，并在公开信道传输，那么 A 将捕获这些加密包，用 AS 的私钥解密，就截获了 C 本要给 S 发送的内容，而 C 和 S 二人全然不知。</p>
+<p>同样的，S 公钥即使做加密，也难以避免这种信任性问题，C 被 AS 拐跑了！</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/attack1.png"></p>
+<p>为了公钥传输的信赖性问题，第三方机构应运而生——证书颁发机构（CA，Certificate Authority）。CA 默认是受信任的第三方。CA 会给各个服务器颁发证书，证书存储在服务器上，并附有 CA 的<strong>电子签名</strong>（见下节）。</p>
+<p>当客户端（浏览器）向服务器发送 HTTPS 请求时，一定要先获取目标服务器的证书，并根据证书上的信息，检验证书的合法性。一旦客户端检测到证书非法，就会发生错误。客户端获取了服务器的证书后，由于证书的信任性是由第三方信赖机构认证的，而证书上又包含着服务器的公钥信息，客户端就可以放心的信任证书上的公钥就是目标服务器的公钥。</p>
+<h4 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h4><p>好，到这一小节，已经是 SSL&#x2F;TLS 的尾声了。上一小节提到了数字签名，数字签名要解决的问题，是防止证书被伪造。第三方信赖机构 CA 之所以能被信赖，就是 <strong>靠数字签名技术</strong> 。</p>
+<p>数字签名，是 CA 在给服务器颁发证书时，使用散列+加密的组合技术，在证书上盖个章，以此来提供验伪的功能。具体行为如下：</p>
+<blockquote>
+<p>CA 知道服务器的公钥，对证书采用散列技术生成一个摘要。CA 使用 CA 私钥对该摘要进行加密，并附在证书下方，发送给服务器。</p>
+<p>现在服务器将该证书发送给客户端，客户端需要验证该证书的身份。客户端找到第三方机构 CA，获知 CA 的公钥，并用 CA 公钥对证书的签名进行解密，获得了 CA 生成的摘要。</p>
+<p>客户端对证书数据（包含服务器的公钥）做相同的散列处理，得到摘要，并将该摘要与之前从签名中解码出的摘要做对比，如果相同，则身份验证成功；否则验证失败。</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/digital-signature.png"></p>
+<p>总结来说，带有证书的公钥传输机制如下：</p>
+<ol>
+<li>设有服务器 S，客户端 C，和第三方信赖机构 CA。</li>
+<li>S 信任 CA，CA 是知道 S 公钥的，CA 向 S 颁发证书。并附上 CA 私钥对消息摘要的加密签名。</li>
+<li>S 获得 CA 颁发的证书，将该证书传递给 C。</li>
+<li>C 获得 S 的证书，信任 CA 并知晓 CA 公钥，使用 CA 公钥对 S 证书上的签名解密，同时对消息进行散列处理，得到摘要。比较摘要，验证 S 证书的真实性。</li>
+<li>如果 C 验证 S 证书是真实的，则信任 S 的公钥（在 S 证书中）。</li>
+</ol>
+<p><img src="/./images/http-vs-https/public-key-transmission.png"></p>
+<p>对于数字签名，我这里讲的比较简单，如果你没有搞清楚的话，强烈推荐你看看<a href="https://www.bilibili.com/video/BV18N411X7ty/">数字签名及数字证书原理</a>这个视频，这是我看过最清晰的讲解。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/image-20220321121814946.png"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><strong>端口号</strong>：HTTP 默认是 80，HTTPS 默认是 443。</li>
+<li><strong>URL 前缀</strong>：HTTP 的 URL 前缀是 <code>http://</code>，HTTPS 的 URL 前缀是 <code>https://</code>。</li>
+<li><strong>安全性和资源消耗</strong>：HTTP 协议运行在 TCP 之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。HTTPS 是运行在 SSL&#x2F;TLS 之上的 HTTP 协议，SSL&#x2F;TLS 运行在 TCP 之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。所以说，HTTP 安全性没有 HTTPS 高，但是 HTTPS 比 HTTP 耗费更多服务器资源。</li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/17/application-layer-protocol/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/17/application-layer-protocol/" itemprop="url">应用层常见协议总结（应用层）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-17T18:35:39+08:00">
+                2020-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/17/application-layer-protocol/" class="leancloud_visitors" data-flag-title="应用层常见协议总结（应用层）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTTP-超文本传输协议"><a href="#HTTP-超文本传输协议" class="headerlink" title="HTTP:超文本传输协议"></a>HTTP:超文本传输协议</h2><p><strong>超文本传输协议（HTTP，HyperText Transfer Protocol)</strong> 是一种用于传输超文本和多媒体内容的协议，主要是为 Web 浏览器与 Web 服务器之间的通信而设计的。当我们使用浏览器浏览网页的时候，我们网页就是通过 HTTP 请求进行加载的。</p>
+<p>HTTP 使用客户端-服务器模型，客户端向服务器发送 HTTP Request（请求），服务器响应请求并返回 HTTP Response（响应），整个过程如下图所示。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/450px-HTTP-Header.png"></p>
+<p>HTTP 协议基于 TCP 协议，发送 HTTP 请求之前首先要建立 TCP 连接也就是要经历 3 次握手。目前使用的 HTTP 协议大部分都是 1.1。在 1.1 的协议里面，默认是开启了 Keep-Alive 的，这样的话建立的连接就可以在多次请求中被复用了。</p>
+<p>另外， HTTP 协议是”无状态”的协议，它无法记录客户端用户的状态，一般我们都是通过 Session 来记录客户端用户的状态。</p>
+<h2 id="Websocket：全双工通信协议"><a href="#Websocket：全双工通信协议" class="headerlink" title="Websocket：全双工通信协议"></a>Websocket：全双工通信协议</h2><p>WebSocket 是一种基于 TCP 连接的全双工通信协议，即客户端和服务器可以同时发送和接收数据。</p>
+<p>WebSocket 协议在 2008 年诞生，2011 年成为国际标准，几乎所有主流较新版本的浏览器都支持该协议。不过，WebSocket 不只能在基于浏览器的应用程序中使用，很多编程语言、框架和服务器都提供了 WebSocket 支持。</p>
+<p>WebSocket 协议本质上是应用层的协议，用于弥补 HTTP 协议在持久通信能力上的不足。客户端和服务器仅需一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/system-design/web-real-time-message-push/1460000042192394.png" alt="Websocket 示意图"></p>
+<p>下面是 WebSocket 的常见应用场景：</p>
+<ul>
+<li>视频弹幕</li>
+<li>实时消息推送，详见<a href="https://javaguide.cn/system-design/web-real-time-message-push.html">Web 实时消息推送详解</a>这篇文章</li>
+<li>实时游戏对战</li>
+<li>多用户协同编辑</li>
+<li>社交聊天</li>
+<li>……</li>
+</ul>
+<p>WebSocket 的工作过程可以分为以下几个步骤：</p>
+<ol>
+<li>客户端向服务器发送一个 HTTP 请求，请求头中包含 <code>Upgrade: websocket</code> 和 <code>Sec-WebSocket-Key</code> 等字段，表示要求升级协议为 WebSocket；</li>
+<li>服务器收到这个请求后，会进行升级协议的操作，如果支持 WebSocket，它将回复一个 HTTP 101 状态码，响应头中包含 ，<code>Connection: Upgrade</code>和 <code>Sec-WebSocket-Accept: xxx</code> 等字段、表示成功升级到 WebSocket 协议。</li>
+<li>客户端和服务器之间建立了一个 WebSocket 连接，可以进行双向的数据传输。数据以帧（frames）的形式进行传送，WebSocket 的每条消息可能会被切分成多个数据帧（最小单位）。发送端会将消息切割成多个帧发送给接收端，接收端接收消息帧，并将关联的帧重新组装成完整的消息。</li>
+<li>客户端或服务器可以主动发送一个关闭帧，表示要断开连接。另一方收到后，也会回复一个关闭帧，然后双方关闭 TCP 连接。</li>
+</ol>
+<p>另外，建立 WebSocket 连接之后，通过心跳机制来保持 WebSocket 连接的稳定性和活跃性。</p>
+<h2 id="SMTP-简单邮件传输-发送-协议"><a href="#SMTP-简单邮件传输-发送-协议" class="headerlink" title="SMTP:简单邮件传输(发送)协议"></a>SMTP:简单邮件传输(发送)协议</h2><p><strong>简单邮件传输(发送)协议（SMTP，Simple Mail Transfer Protocol）</strong> 基于 TCP 协议，是一种用于发送电子邮件的协议</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/what-is-smtp.png" alt="SMTP 协议"></p>
+<p>注意 ⚠️：<strong>接受邮件的协议不是 SMTP 而是 POP3 协议。</strong></p>
+<p>SMTP 协议这块涉及的内容比较多，下面这两个问题比较重要：</p>
+<ol>
+<li>电子邮件的发送过程</li>
+<li>如何判断邮箱是真正存在的？</li>
+</ol>
+<p><strong>电子邮件的发送过程？</strong></p>
+<p>比如我的邮箱是“<a href="mailto:&#x64;&#97;&#98;&#x61;&#x69;&#64;&#99;&#x73;&#122;&#x68;&#x69;&#x6e;&#x61;&#x6e;&#x2e;&#99;&#x6f;&#109;">&#x64;&#97;&#98;&#x61;&#x69;&#64;&#99;&#x73;&#122;&#x68;&#x69;&#x6e;&#x61;&#x6e;&#x2e;&#99;&#x6f;&#109;</a>”，我要向“<a href="mailto:&#120;&#x69;&#x61;&#x6f;&#109;&#x61;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;">&#120;&#x69;&#x61;&#x6f;&#109;&#x61;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;</a>”发送邮件，整个过程可以简单分为下面几步：</p>
+<ol>
+<li>通过 <strong>SMTP</strong> 协议，我将我写好的邮件交给 163 邮箱服务器（邮局）。</li>
+<li>163 邮箱服务器发现我发送的邮箱是 qq 邮箱，然后它使用 SMTP 协议将我的邮件转发到 qq 邮箱服务器。</li>
+<li>qq 邮箱服务器接收邮件之后就通知邮箱为“<a href="mailto:&#120;&#105;&#97;&#111;&#x6d;&#x61;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;">&#120;&#105;&#97;&#111;&#x6d;&#x61;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;</a>”的用户来收邮件，然后用户就通过 <strong>POP3&#x2F;IMAP</strong> 协议将邮件取出。</li>
+</ol>
+<p><strong>如何判断邮箱是真正存在的？</strong></p>
+<p>很多场景(比如邮件营销)下面我们需要判断我们要发送的邮箱地址是否真的存在，这个时候我们可以利用 SMTP 协议来检测：</p>
+<ol>
+<li>查找邮箱域名对应的 SMTP 服务器地址</li>
+<li>尝试与服务器建立连接</li>
+<li>连接成功后尝试向需要验证的邮箱发送邮件</li>
+<li>根据返回结果判定邮箱地址的真实性</li>
+</ol>
+<p>推荐几个在线邮箱是否有效检测工具：</p>
+<ol>
+<li><a href="https://verify-email.org/">https://verify-email.org/</a></li>
+<li><a href="http://tool.chacuo.net/mailverify">http://tool.chacuo.net/mailverify</a></li>
+<li><a href="https://www.emailcamel.com/">https://www.emailcamel.com/</a></li>
+</ol>
+<h2 id="POP3-IMAP-邮件接收的协议"><a href="#POP3-IMAP-邮件接收的协议" class="headerlink" title="POP3&#x2F;IMAP:邮件接收的协议"></a>POP3&#x2F;IMAP:邮件接收的协议</h2><p>这两个协议没必要多做阐述，只需要了解 <strong>POP3 和 IMAP 两者都是负责邮件接收的协议</strong> 即可（二者也是基于 TCP 协议）。另外，需要注意不要将这两者和 SMTP 协议搞混淆了。<strong>SMTP 协议只负责邮件的发送，真正负责接收的协议是 POP3&#x2F;IMAP。</strong></p>
+<p>IMAP 协议是比 POP3 更新的协议，它在功能和性能上都更加强大。IMAP 支持邮件搜索、标记、分类、归档等高级功能，而且可以在多个设备之间同步邮件状态。几乎所有现代电子邮件客户端和服务器都支持 IMAP。</p>
+<h2 id="FTP-文件传输协议"><a href="#FTP-文件传输协议" class="headerlink" title="FTP:文件传输协议"></a>FTP:文件传输协议</h2><p><strong>FTP 协议</strong> 基于 TCP 协议，是一种用于在计算机之间传输文件的协议，可以屏蔽操作系统和文件存储方式。</p>
+<p>FTP 是基于客户—服务器（C&#x2F;S）模型而设计的，在客户端与 FTP 服务器之间建立两个连接。如果我们要基于 FTP 协议开发一个文件传输的软件的话，首先需要搞清楚 FTP 的原理。关于 FTP 的原理，很多书籍上已经描述的非常详细了：</p>
+<blockquote>
+<p>FTP 的独特的优势同时也是与其它客户服务器程序最大的不同点就在于它在两台通信的主机之间使用了两条 TCP 连接（其它客户服务器应用程序一般只有一条 TCP 连接）：</p>
+<ol>
+<li>控制连接：用于传送控制信息（命令和响应）</li>
+<li>数据连接：用于数据传送；</li>
+</ol>
+<p>这种将命令和数据分开传送的思想大大提高了 FTP 的效率。</p>
+</blockquote>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/ftp.png" alt="FTP工作过程"></p>
+<p>注意 ⚠️：FTP 是一种不安全的协议，因为它在传输过程中不会对数据进行加密。因此，FTP 传输的文件可能会被窃听或篡改。建议在传输敏感数据时使用更安全的协议，如 SFTP（SSH File Transfer Protocol，一种基于 SSH 协议的安全文件传输协议，用于在网络上安全地传输文件）。</p>
+<h2 id="Telnet-远程登陆协议"><a href="#Telnet-远程登陆协议" class="headerlink" title="Telnet:远程登陆协议"></a>Telnet:远程登陆协议</h2><p><strong>Telnet 协议</strong> 基于 TCP 协议，用于通过一个终端登陆到其他服务器。Telnet 协议的最大缺点之一是所有数据（包括用户名和密码）均以明文形式发送，这有潜在的安全风险。这就是为什么如今很少使用 Telnet，而是使用一种称为 SSH 的非常安全的网络传输协议的主要原因。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/Telnet_is_vulnerable_to_eavesdropping-2.png" alt="Telnet:远程登陆协议"></p>
+<h2 id="SSH-安全的网络传输协议"><a href="#SSH-安全的网络传输协议" class="headerlink" title="SSH:安全的网络传输协议"></a>SSH:安全的网络传输协议</h2><p><strong>SSH（Secure Shell）</strong> 基于 TCP 协议，通过加密和认证机制实现安全的访问和文件传输等业务。</p>
+<p>SSH 的经典用途是登录到远程电脑中执行命令。除此之外，SSH 也支持隧道协议、端口映射和 X11 连接（允许用户在本地运行远程服务器上的图形应用程序）。借助 SFTP（SSH File Transfer Protocol） 或 SCP（Secure Copy Protocol） 协议，SSH 还可以安全传输文件。</p>
+<p>SSH 使用客户端-服务器模型，默认端口是 22。SSH 是一个守护进程，负责实时监听客户端请求，并进行处理。大多数现代操作系统都提供了 SSH。</p>
+<p>如下图所示，SSH Client（SSH 客户端）和 SSH Server（SSH 服务器）通过公钥交换生成共享的对称加密密钥，用于后续的加密通信。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/ssh-client-server.png" alt="SSH:安全的网络传输协议"></p>
+<h2 id="RTP-实时传输协议"><a href="#RTP-实时传输协议" class="headerlink" title="RTP:实时传输协议"></a>RTP:实时传输协议</h2><p>RTP（Real-time Transport Protocol，实时传输协议）通常基于 UDP 协议，但也支持 TCP 协议。它提供了端到端的实时传输数据的功能，但不包含资源预留存、不保证实时传输质量，这些功能由 WebRTC 实现。</p>
+<p>RTP 协议分为两种子协议：</p>
+<ul>
+<li><strong>RTP（Real-time Transport Protocol，实时传输协议）</strong>：传输具有实时特性的数据。</li>
+<li><strong>RTCP（RTP Control Protocol，RTP 控制协议）</strong>：提供实时传输过程中的统计信息（如网络延迟、丢包率等），WebRTC 正是根据这些信息处理丢包</li>
+</ul>
+<h2 id="DNS-域名系统"><a href="#DNS-域名系统" class="headerlink" title="DNS:域名系统"></a>DNS:域名系统</h2><p>DNS（Domain Name System，域名管理系统）基于 UDP 协议，用于解决域名和 IP 地址的映射问题。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/dns-overview.png" alt="DNS:域名系统"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《计算机网络自顶向下方法》（第七版）</li>
+<li>RTP 协议介绍:<a href="https://mthli.xyz/rtp-introduction/">https://mthli.xyz/rtp-introduction/</a></li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/tcp-connection-and-disconnection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/26/tcp-connection-and-disconnection/" itemprop="url">TCP 三次握手和四次挥手（传输层）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-26T19:39:18+08:00">
+                2020-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/26/tcp-connection-and-disconnection/" class="leancloud_visitors" data-flag-title="TCP 三次握手和四次挥手（传输层）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>为了准确无误地把数据送达目标处，TCP 协议采用了三次握手策略。</p>
+<h2 id="建立连接-TCP-三次握手"><a href="#建立连接-TCP-三次握手" class="headerlink" title="建立连接-TCP 三次握手"></a>建立连接-TCP 三次握手</h2><p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-shakes-hands-three-times.png" alt="TCP 三次握手图解"></p>
+<p>建立一个 TCP 连接需要“三次握手”，缺一不可：</p>
+<ul>
+<li><strong>一次握手</strong>:客户端发送带有 SYN（SEQ&#x3D;x） 标志的数据包 -&gt; 服务端，然后客户端进入 <strong>SYN_SEND</strong> 状态，等待服务端的确认；</li>
+<li><strong>二次握手</strong>:服务端发送带有 SYN+ACK(SEQ&#x3D;y,ACK&#x3D;x+1) 标志的数据包 –&gt; 客户端,然后服务端进入 <strong>SYN_RECV</strong> 状态；</li>
+<li><strong>三次握手</strong>:客户端发送带有 ACK(ACK&#x3D;y+1) 标志的数据包 –&gt; 服务端，然后客户端和服务端都进入<strong>ESTABLISHED</strong> 状态，完成 TCP 三次握手。</li>
+</ul>
+<p>当建立了 3 次握手之后，客户端和服务端就可以传输数据啦！</p>
+<h3 id="什么是半连接队列和全连接队列？"><a href="#什么是半连接队列和全连接队列？" class="headerlink" title="什么是半连接队列和全连接队列？"></a>什么是半连接队列和全连接队列？</h3><p>在 TCP 三次握手过程中，Linux 内核会维护两个队列来管理连接请求：</p>
+<ol>
+<li><strong>半连接队列</strong>（也称 SYN Queue）：当服务端收到客户端的 SYN 请求时，此时双方还没有完全建立连接，它会把半连接状态的连接放在半连接队列。</li>
+<li><strong>全连接队列</strong>（也称 Accept Queue）：当服务端收到客户端对 ACK 响应时，意味着三次握手成功完成，服务端会将该连接从半连接队列移动到全连接队列。如果未收到客户端的 ACK 响应，会进行重传，重传的等待时间通常是指数增长的。如果重传次数超过系统规定的最大重传次数，系统将从半连接队列中删除该连接信息。</li>
+</ol>
+<p>这两个队列的存在是为了处理并发连接请求，确保服务端能够有效地管理新的连接请求。另外，新的连接请求被拒绝或忽略除了和每个队列的大小限制有关系之外，还和很多其他因素有关系，这里就不详细介绍了，整体逻辑比较复杂。</p>
+<h3 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手?"></a>为什么要三次握手?</h3><p>三次握手的目的是建立可靠的通信信道，说到通讯，简单来说就是数据的发送与接收，而三次握手最主要的目的就是双方确认自己与对方的发送与接收是正常的。</p>
+<ol>
+<li><strong>第一次握手</strong>：Client 什么都不能确认；Server 确认了对方发送正常，自己接收正常</li>
+<li><strong>第二次握手</strong>：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：对方发送正常，自己接收正常</li>
+<li><strong>第三次握手</strong>：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：自己发送、接收正常，对方发送、接收正常</li>
+</ol>
+<p>三次握手就能确认双方收发功能都正常，缺一不可。</p>
+<p>更详细的解答可以看这个：<a href="https://www.zhihu.com/question/24853633/answer/115173386">TCP 为什么是三次握手，而不是两次或四次？ - 车小胖的回答 - 知乎</a> 。</p>
+<h3 id="第-2-次握手传回了-ACK，为什么还要传回-SYN？"><a href="#第-2-次握手传回了-ACK，为什么还要传回-SYN？" class="headerlink" title="第 2 次握手传回了 ACK，为什么还要传回 SYN？"></a>第 2 次握手传回了 ACK，为什么还要传回 SYN？</h3><p>服务端传回发送端所发送的 ACK 是为了告诉客户端：“我接收到的信息确实就是你所发送的信号了”，这表明从客户端到服务端的通信是正常的。回传 SYN 则是为了建立并确认从服务端到客户端的通信。</p>
+<blockquote>
+<p>SYN 同步序列编号(Synchronize Sequence Numbers) 是 TCP&#x2F;IP 建立连接时使用的握手信号。在客户机和服务端之间建立正常的 TCP 网络连接时，客户机首先发出一个 SYN 消息，服务端使用 SYN-ACK 应答表示接收到了这个消息，最后客户机再以 ACK(Acknowledgement）消息响应。这样在客户机和服务端之间才能建立起可靠的 TCP 连接，数据才可以在客户机和服务端之间传递。</p>
+</blockquote>
+<h3 id="三次握手过程中可以携带数据吗？"><a href="#三次握手过程中可以携带数据吗？" class="headerlink" title="三次握手过程中可以携带数据吗？"></a>三次握手过程中可以携带数据吗？</h3><p>在 TCP 三次握手过程中，第三次握手是可以携带数据的(客户端发送完 ACK 确认包之后就进入 ESTABLISHED 状态了)，这一点在 RFC 793 文档中有提到。也就是说，一旦完成了前两次握手，TCP 协议允许数据在第三次握手时开始传输。</p>
+<p>如果第三次握手的 ACK 确认包丢失，但是客户端已经开始发送携带数据的包，那么服务端在收到这个携带数据的包时，如果该包中包含了 ACK 标记，服务端会将其视为有效的第三次握手确认。这样，连接就被认为是建立的，服务端会处理该数据包，并继续正常的数据传输流程。</p>
+<h2 id="断开连接-TCP-四次挥手"><a href="#断开连接-TCP-四次挥手" class="headerlink" title="断开连接-TCP 四次挥手"></a>断开连接-TCP 四次挥手</h2><p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-waves-four-times.png" alt="TCP 四次挥手图解"></p>
+<p>断开一个 TCP 连接则需要“四次挥手”，缺一不可：</p>
+<ol>
+<li><strong>第一次挥手</strong>：客户端发送一个 FIN（SEQ&#x3D;x） 标志的数据包-&gt;服务端，用来关闭客户端到服务端的数据传送。然后客户端进入 <strong>FIN-WAIT-1</strong> 状态。</li>
+<li><strong>第二次挥手</strong>：服务端收到这个 FIN（SEQ&#x3D;X） 标志的数据包，它发送一个 ACK （ACK&#x3D;x+1）标志的数据包-&gt;客户端 。然后服务端进入 <strong>CLOSE-WAIT</strong> 状态，客户端进入 <strong>FIN-WAIT-2</strong> 状态。</li>
+<li><strong>第三次挥手</strong>：服务端发送一个 FIN (SEQ&#x3D;y)标志的数据包-&gt;客户端，请求关闭连接，然后服务端进入 <strong>LAST-ACK</strong> 状态。</li>
+<li><strong>第四次挥手</strong>：客户端发送 ACK (ACK&#x3D;y+1)标志的数据包-&gt;服务端，然后客户端进入<strong>TIME-WAIT</strong>状态，服务端在收到 ACK (ACK&#x3D;y+1)标志的数据包后进入 CLOSE 状态。此时如果客户端等待 <strong>2MSL</strong> 后依然没有收到回复，就证明服务端已正常关闭，随后客户端也可以关闭连接了。</li>
+</ol>
+<p><strong>只要四次挥手没有结束，客户端和服务端就可以继续传输数据！</strong></p>
+<h3 id="为什么要四次挥手？"><a href="#为什么要四次挥手？" class="headerlink" title="为什么要四次挥手？"></a>为什么要四次挥手？</h3><p>TCP 是全双工通信，可以双向传输数据。任何一方都可以在数据传送结束后发出连接释放的通知，待对方确认后进入半关闭状态。当另一方也没有数据再发送的时候，则发出连接释放通知，对方确认后就完全关闭了 TCP 连接。</p>
+<p>举个例子：A 和 B 打电话，通话即将结束后。</p>
+<ol>
+<li><strong>第一次挥手</strong>：A 说“我没啥要说的了”</li>
+<li><strong>第二次挥手</strong>：B 回答“我知道了”，但是 B 可能还会有要说的话，A 不能要求 B 跟着自己的节奏结束通话</li>
+<li><strong>第三次挥手</strong>：于是 B 可能又巴拉巴拉说了一通，最后 B 说“我说完了”</li>
+<li><strong>第四次挥手</strong>：A 回答“知道了”，这样通话才算结束。</li>
+</ol>
+<h3 id="为什么不能把服务端发送的-ACK-和-FIN-合并起来，变成三次挥手？"><a href="#为什么不能把服务端发送的-ACK-和-FIN-合并起来，变成三次挥手？" class="headerlink" title="为什么不能把服务端发送的 ACK 和 FIN 合并起来，变成三次挥手？"></a>为什么不能把服务端发送的 ACK 和 FIN 合并起来，变成三次挥手？</h3><p>因为服务端收到客户端断开连接的请求时，可能还有一些数据没有发完，这时先回复 ACK，表示接收到了断开连接的请求。等到数据发完之后再发 FIN，断开服务端到客户端的数据传送。</p>
+<h3 id="如果第二次挥手时服务端的-ACK-没有送达客户端，会怎样？"><a href="#如果第二次挥手时服务端的-ACK-没有送达客户端，会怎样？" class="headerlink" title="如果第二次挥手时服务端的 ACK 没有送达客户端，会怎样？"></a>如果第二次挥手时服务端的 ACK 没有送达客户端，会怎样？</h3><p>客户端没有收到 ACK 确认，会重新发送 FIN 请求。</p>
+<h3 id="为什么第四次挥手客户端需要等待-2-MSL（报文段最长寿命）时间后才进入-CLOSED-状态？"><a href="#为什么第四次挥手客户端需要等待-2-MSL（报文段最长寿命）时间后才进入-CLOSED-状态？" class="headerlink" title="为什么第四次挥手客户端需要等待 2*MSL（报文段最长寿命）时间后才进入 CLOSED 状态？"></a>为什么第四次挥手客户端需要等待 2*MSL（报文段最长寿命）时间后才进入 CLOSED 状态？</h3><p>第四次挥手时，客户端发送给服务端的 ACK 有可能丢失，如果服务端因为某些原因而没有收到 ACK 的话，服务端就会重发 FIN，如果客户端在 2*MSL 的时间内收到了 FIN，就会重新发送 ACK 并再次等待 2MSL，防止 Server 没有收到 ACK 而不断重发 FIN。</p>
+<blockquote>
+<p><strong>MSL(Maximum Segment Lifetime)</strong> : 一个片段在网络中最大的存活时间，2MSL 就是一个发送和一个回复所需的最大时间。如果直到 2MSL，Client 都没有再次收到 FIN，那么 Client 推断 ACK 已经被成功接收，则结束 TCP 连接。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p>《计算机网络（第 7 版）》</p>
+</li>
+<li><p>《图解 HTTP》</p>
+</li>
+<li><p>TCP and UDP Tutorial：<a href="https://www.9tut.com/tcp-and-udp-tutorial">https://www.9tut.com/tcp-and-udp-tutorial</a></p>
+</li>
+<li><p>从一次线上问题说起，详解 TCP 半连接队列、全连接队列：<a href="https://mp.weixin.qq.com/s/YpSlU1yaowTs-pF6R43hMw">https://mp.weixin.qq.com/s/YpSlU1yaowTs-pF6R43hMw</a></p>
+</li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/http&rpc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/12/http&rpc/" itemprop="url">有了 HTTP 协议，为什么还要有 RPC ？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T22:33:16+08:00">
+                2020-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">分布式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/12/http&rpc/" class="leancloud_visitors" data-flag-title="有了 HTTP 协议，为什么还要有 RPC ？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>本文来自<a href="https://juejin.cn/user/4001878057422087">小白 debug</a>投稿，原文：<a href="https://juejin.cn/post/7121882245605883934">https://juejin.cn/post/7121882245605883934</a> 。</p>
+</blockquote>
+<p>我想起了我刚工作的时候，第一次接触 RPC 协议，当时就很懵，我 HTTP 协议用的好好的，为什么还要用 RPC 协议？</p>
+<p>于是就到网上去搜。</p>
+<p>不少解释显得非常官方，我相信大家在各种平台上也都看到过，解释了又好像没解释，都在<strong>用一个我们不认识的概念去解释另外一个我们不认识的概念</strong>，懂的人不需要看，不懂的人看了还是不懂。</p>
+<p>这种看了，又好像没看的感觉，云里雾里的很难受，<strong>我懂</strong>。</p>
+<p>为了避免大家有强烈的<strong>审丑疲劳</strong>，今天我们来尝试重新换个方式讲一讲。</p>
+<h2 id="从-TCP-聊起"><a href="#从-TCP-聊起" class="headerlink" title="从 TCP 聊起"></a>从 TCP 聊起</h2><p>作为一个程序员，假设我们需要在 A 电脑的进程发一段数据到 B 电脑的进程，我们一般会在代码里使用 socket 进行编程。</p>
+<p>这时候，我们可选项一般也就<strong>TCP 和 UDP 二选一。TCP 可靠，UDP 不可靠。</strong> 除非是马总这种神级程序员（早期 QQ 大量使用 UDP），否则，只要稍微对可靠性有些要求，普通人一般无脑选 TCP 就对了。</p>
+<p>类似下面这样。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">fd</span> = socket(AF_INET,SOCK_STREAM,<span class="number">0</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中<code>SOCK_STREAM</code>，是指使用<strong>字节流</strong>传输数据，说白了就是<strong>TCP 协议</strong>。</p>
+<p>在定义了 socket 之后，我们就可以愉快的对这个 socket 进行操作，比如用<code>bind()</code>绑定 IP 端口，用<code>connect()</code>发起建连。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/f410977cda814d32b0eff3645c385a8a~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="握手建立连接流程"></p>
+<p>在连接建立之后，我们就可以使用<code>send()</code>发送数据，<code>recv()</code>接收数据。</p>
+<p>光这样一个纯裸的 TCP 连接，就可以做到收发数据了，那是不是就够了？</p>
+<p>不行，这么用会有问题。</p>
+<h2 id="使用纯裸-TCP-会有什么问题"><a href="#使用纯裸-TCP-会有什么问题" class="headerlink" title="使用纯裸 TCP 会有什么问题"></a>使用纯裸 TCP 会有什么问题</h2><p>八股文常背，TCP 是有三个特点，<strong>面向连接</strong>、<strong>可靠</strong>、基于<strong>字节流</strong>。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/acb4508111cb47d8a3df6734d04818bc~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="TCP是什么"></p>
+<p>这三个特点真的概括的 <strong>非常精辟</strong> ，这个八股文我们没白背。</p>
+<p>每个特点展开都能聊一篇文章，而今天我们需要关注的是 <strong>基于字节流</strong> 这一点。</p>
+<p>字节流可以理解为一个双向的通道里流淌的二进制数据，也就是 <strong>01 串</strong> 。纯裸 TCP 收发的这些 01 串之间是 <strong>没有任何边界</strong> 的，你根本不知道到哪个地方才算一条完整消息。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/b82d4fcdd0c4491e979856c93c1750d7~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="01二进制字节流"></p>
+<p>正因为这个没有任何边界的特点，所以当我们选择使用 TCP 发送 <strong>“夏洛”和”特烦恼”</strong> 的时候，接收端收到的就是 <strong>“夏洛特烦恼”</strong> ，这时候接收端没发区分你是想要表达 <strong>“夏洛”+”特烦恼”</strong> 还是 <strong>“夏洛特”+”烦恼”</strong> 。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/4e120d0f1152419585565f693e744a3a~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="消息对比"></p>
+<p>这就是所谓的 <strong>粘包问题</strong>，之前也写过一篇专门的<a href="https://mp.weixin.qq.com/s/0-YBxU1cSbDdzcZEZjmQYA">文章</a>聊过这个问题。</p>
+<p>说这个的目的是为了告诉大家，纯裸 TCP 是不能直接拿来用的，你需要在这个基础上加入一些 <strong>自定义的规则</strong> ，用于区分 <strong>消息边界</strong> 。</p>
+<p>于是我们会把每条要发送的数据都包装一下，比如加入 <strong>消息头</strong> ，消息头里写清楚一个完整的包长度是多少，根据这个长度可以继续接收数据，截取出来后它们就是我们真正要传输的 <strong>消息体</strong> 。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/cb29659d4907446e9f70551c44c6369f~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="消息边界长度标志"></p>
+<p>而这里头提到的 <strong>消息头</strong> ，还可以放各种东西，比如消息体是否被压缩过和消息体格式之类的，只要上下游都约定好了，互相都认就可以了，这就是所谓的 <strong>协议。</strong></p>
+<p>每个使用 TCP 的项目都可能会定义一套类似这样的协议解析标准，他们可能 <strong>有区别，但原理都类似</strong>。</p>
+<p><strong>于是基于 TCP，就衍生了非常多的协议，比如 HTTP 和 RPC。</strong></p>
+<h2 id="HTTP-和-RPC"><a href="#HTTP-和-RPC" class="headerlink" title="HTTP 和 RPC"></a>HTTP 和 RPC</h2><h3 id="RPC-其实是一种调用方式"><a href="#RPC-其实是一种调用方式" class="headerlink" title="RPC 其实是一种调用方式"></a>RPC 其实是一种调用方式</h3><p>我们回过头来看网络的分层图。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/04b603b5bd2443209233deea87816161~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="四层网络协议"></p>
+<p><strong>TCP 是传输层的协议</strong> ，而基于 TCP 造出来的 HTTP 和各类 RPC 协议，它们都只是定义了不同消息格式的 <strong>应用层协议</strong> 而已。</p>
+<p><strong>HTTP</strong>（<strong>H</strong>yper <strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol）协议又叫做 <strong>超文本传输协议</strong> 。我们用的比较多，平时上网在浏览器上敲个网址就能访问网页，这里用到的就是 HTTP 协议。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/8f07a5d1c72a4c4fa811c6c3b5aadd3d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="HTTP调用"></p>
+<p>而 <strong>RPC</strong>（<strong>R</strong>emote <strong>P</strong>rocedure <strong>C</strong>all）又叫做 <strong>远程过程调用</strong>，它本身并不是一个具体的协议，而是一种 <strong>调用方式</strong> 。</p>
+<p>举个例子，我们平时调用一个 <strong>本地方法</strong> 就像下面这样。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">res</span> = localFunc(req)</span><br></pre></td></tr></table></figure>
+
+<p>如果现在这不是个本地方法，而是个<strong>远端服务器</strong>暴露出来的一个方法<code>remoteFunc</code>，如果我们还能像调用本地方法那样去调用它，这样就可以<strong>屏蔽掉一些网络细节</strong>，用起来更方便，岂不美哉？</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">res</span> = remoteFunc(req)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/761da6c30af244e19b1c44075d8b4254~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="RPC可以像调用本地方法那样调用远端方法"></p>
+<p>基于这个思路，大佬们造出了非常多款式的 RPC 协议，比如比较有名的<code>gRPC</code>，<code>thrift</code>。</p>
+<p>值得注意的是，虽然大部分 RPC 协议底层使用 TCP，但实际上 <strong>它们不一定非得使用 TCP，改用 UDP 或者 HTTP，其实也可以做到类似的功能。</strong></p>
+<p>到这里，我们回到文章标题的问题。</p>
+<h3 id="那既然有-RPC-了，为什么还要有-HTTP-呢？"><a href="#那既然有-RPC-了，为什么还要有-HTTP-呢？" class="headerlink" title="那既然有 RPC 了，为什么还要有 HTTP 呢？"></a>那既然有 RPC 了，为什么还要有 HTTP 呢？</h3><p>其实，TCP 是 <strong>70 年</strong> 代出来的协议，而 HTTP 是 <strong>90 年代</strong> 才开始流行的。而直接使用裸 TCP 会有问题，可想而知，这中间这么多年有多少自定义的协议，而这里面就有 <strong>80 年代</strong> 出来的<code>RPC</code>。</p>
+<p>所以我们该问的不是 <strong>既然有 HTTP 协议为什么要有 RPC</strong> ，而是 <strong>为什么有 RPC 还要有 HTTP 协议?</strong></p>
+<p>现在电脑上装的各种联网软件，比如 xx 管家，xx 卫士，它们都作为客户端（Client） 需要跟服务端（Server） 建立连接收发消息，此时都会用到应用层协议，在这种 Client&#x2F;Server (C&#x2F;S) 架构下，它们可以使用自家造的 RPC 协议，因为它只管连自己公司的服务器就 ok 了。</p>
+<p>但有个软件不同，浏览器（Browser） ，不管是 Chrome 还是 IE，它们不仅要能访问自家公司的<strong>服务器（Server）</strong> ，还需要访问其他公司的网站服务器，因此它们需要有个统一的标准，不然大家没法交流。于是，HTTP 就是那个时代用于统一 <strong>Browser&#x2F;Server (B&#x2F;S)</strong> 的协议。</p>
+<p>也就是说在多年以前，<strong>HTTP 主要用于 B&#x2F;S 架构，而 RPC 更多用于 C&#x2F;S 架构。但现在其实已经没分那么清了，B&#x2F;S 和 C&#x2F;S 在慢慢融合。</strong> 很多软件同时支持多端，比如某度云盘，既要支持<strong>网页版</strong>，还要支持<strong>手机端和 PC 端</strong>，如果通信协议都用 HTTP 的话，那服务器只用同一套就够了。而 RPC 就开始退居幕后，一般用于公司内部集群里，各个微服务之间的通讯。</p>
+<p>那这么说的话，<strong>都用 HTTP 得了，还用什么 RPC？</strong></p>
+<p>仿佛又回到了文章开头的样子，那这就要从它们之间的区别开始说起。</p>
+<h3 id="HTTP-和-RPC-有什么区别"><a href="#HTTP-和-RPC-有什么区别" class="headerlink" title="HTTP 和 RPC 有什么区别"></a>HTTP 和 RPC 有什么区别</h3><p>我们来看看 RPC 和 HTTP 区别比较明显的几个点。</p>
+<h4 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h4><p>首先要向某个服务器发起请求，你得先建立连接，而建立连接的前提是，你得知道 <strong>IP 地址和端口</strong> 。这个找到服务对应的 IP 端口的过程，其实就是 <strong>服务发现</strong>。</p>
+<p>在 <strong>HTTP</strong> 中，你知道服务的域名，就可以通过 <strong>DNS 服务</strong> 去解析得到它背后的 IP 地址，默认 <strong>80 端口</strong>。</p>
+<p>而 <strong>RPC</strong> 的话，就有些区别，一般会有专门的中间服务去保存服务名和 IP 信息，比如 <strong>Consul、Etcd、Nacos、ZooKeeper，甚至是 Redis</strong>。想要访问某个服务，就去这些中间服务去获得 IP 和端口信息。由于 DNS 也是服务发现的一种，所以也有基于 DNS 去做服务发现的组件，比如 <strong>CoreDNS</strong>。</p>
+<p>可以看出服务发现这一块，两者是有些区别，但不太能分高低。</p>
+<h4 id="底层连接形式"><a href="#底层连接形式" class="headerlink" title="底层连接形式"></a>底层连接形式</h4><p>以主流的 <strong>HTTP1.1</strong> 协议为例，其默认在建立底层 TCP 连接之后会一直保持这个连接（<strong>keep alive</strong>），之后的请求和响应都会复用这条连接。</p>
+<p>而 <strong>RPC</strong> 协议，也跟 HTTP 类似，也是通过建立 TCP 长链接进行数据交互，但不同的地方在于，RPC 协议一般还会再建个 <strong>连接池</strong>，在请求量大的时候，建立多条连接放在池内，要发数据的时候就从池里取一条连接出来，用完放回去，下次再复用，可以说非常环保。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/72fcad064c9e4103a11f1a2d579f79b2~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="connection_pool"></p>
+<p>由于连接池有利于提升网络请求性能，所以不少编程语言的网络库里都会给 HTTP 加个连接池，比如 Go 就是这么干的。</p>
+<p>可以看出这一块两者也没太大区别，所以也不是关键。</p>
+<h4 id="传输的内容"><a href="#传输的内容" class="headerlink" title="传输的内容"></a>传输的内容</h4><p>基于 TCP 传输的消息，说到底，无非都是 <strong>消息头 Header 和消息体 Body。</strong></p>
+<p><strong>Header</strong> 是用于标记一些特殊信息，其中最重要的是 <strong>消息体长度</strong>。</p>
+<p><strong>Body</strong> 则是放我们真正需要传输的内容，而这些内容只能是二进制 01 串，毕竟计算机只认识这玩意。所以 TCP 传字符串和数字都问题不大，因为字符串可以转成编码再变成 01 串，而数字本身也能直接转为二进制。但结构体呢，我们得想个办法将它也转为二进制 01 串，这样的方案现在也有很多现成的，比如 <strong>JSON，Protocol Buffers (Protobuf)</strong> 。</p>
+<p>这个将结构体转为二进制数组的过程就叫 <strong>序列化</strong> ，反过来将二进制数组复原成结构体的过程叫 <strong>反序列化</strong>。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/d501dfc6f764430188ce61fda0f3e5d9~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="序列化和反序列化"></p>
+<p>对于主流的 HTTP1.1，虽然它现在叫超文本协议，支持音频视频，但 HTTP 设计 初是用于做网页文本展示的，所以它传的内容以字符串为主。Header 和 Body 都是如此。在 Body 这块，它使用 <strong>JSON</strong> 来 <strong>序列化</strong> 结构体数据。</p>
+<p>我们可以随便截个图直观看下。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/04e8a79ddb7247759df23f1132c01655~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="HTTP报文"></p>
+<p>可以看到这里面的内容非常多的冗余，显得非常啰嗦。最明显的，像 Header 里的那些信息，其实如果我们约定好头部的第几位是 <code>Content-Type</code>，就不需要每次都真的把 <code>Content-Type</code> 这个字段都传过来，类似的情况其实在 Body 的 JSON 结构里也特别明显。</p>
+<p>而 RPC，因为它定制化程度更高，可以采用体积更小的 Protobuf 或其他序列化协议去保存结构体数据，同时也不需要像 HTTP 那样考虑各种浏览器行为，比如 302 重定向跳转啥的。<strong>因此性能也会更好一些，这也是在公司内部微服务中抛弃 HTTP，选择使用 RPC 的最主要原因。</strong></p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/284c26bb7f2848889d1d9b95cf49decb~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="HTTP原理"></p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/edb050d383c644e895e505253f1c4d90~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="RPC原理"></p>
+<p>当然上面说的 HTTP，其实 <strong>特指的是现在主流使用的 HTTP1.1</strong>，<code>HTTP2</code>在前者的基础上做了很多改进，所以 <strong>性能可能比很多 RPC 协议还要好</strong>，甚至连<code>gRPC</code>底层都直接用的<code>HTTP2</code>。</p>
+<p>那么问题又来了。</p>
+<h3 id="为什么既然有了-HTTP2，还要有-RPC-协议？"><a href="#为什么既然有了-HTTP2，还要有-RPC-协议？" class="headerlink" title="为什么既然有了 HTTP2，还要有 RPC 协议？"></a>为什么既然有了 HTTP2，还要有 RPC 协议？</h3><p>这个是由于 HTTP2 是 2015 年出来的。那时候很多公司内部的 RPC 协议都已经跑了好些年了，基于历史原因，一般也没必要去换了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>纯裸 TCP 是能收发数据，但它是个无边界的数据流，上层需要定义消息格式用于定义 <strong>消息边界</strong> 。于是就有了各种协议，HTTP 和各类 RPC 协议就是在 TCP 之上定义的应用层协议。</li>
+<li><strong>RPC 本质上不算是协议，而是一种调用方式</strong>，而像 gRPC 和 Thrift 这样的具体实现，才是协议，它们是实现了 RPC 调用的协议。目的是希望程序员能像调用本地方法那样去调用远端的服务方法。同时 RPC 有很多种实现方式，<strong>不一定非得基于 TCP 协议</strong>。</li>
+<li>从发展历史来说，<strong>HTTP 主要用于 B&#x2F;S 架构，而 RPC 更多用于 C&#x2F;S 架构。但现在其实已经没分那么清了，B&#x2F;S 和 C&#x2F;S 在慢慢融合。</strong> 很多软件同时支持多端，所以对外一般用 HTTP 协议，而内部集群的微服务之间则采用 RPC 协议进行通讯。</li>
+<li>RPC 其实比 HTTP 出现的要早，且比目前主流的 HTTP1.1 性能要更好，所以大部分公司内部都还在使用 RPC。</li>
+<li><strong>HTTP2.0</strong> 在 <strong>HTTP1.1</strong> 的基础上做了优化，性能可能比很多 RPC 协议都要好，但由于是这几年才出来的，所以也不太可能取代掉 RPC。</li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/Java%E5%9F%BA%E7%A1%80_%E6%B3%A8%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/03/Java%E5%9F%BA%E7%A1%80_%E6%B3%A8%E8%A7%A3/" itemprop="url">Java基础 注解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-03T19:13:16+08:00">
+                2020-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/03/Java%E5%9F%BA%E7%A1%80_%E6%B3%A8%E8%A7%A3/" class="leancloud_visitors" data-flag-title="Java基础 注解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  173 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>注解的本质是接口，其执行是动态代理来实现的。</p>
+<blockquote>
+<p>最终总结：<br> 注解@interface 是一个实现了Annotation接口的 接口， 然后在调用getDeclaredAnnotations()方法的时候，返回一个代理$Proxy对象，这个是使用jdk动态代理创建，使用Proxy的newProxyInstance方法时候，传入接口 和InvocationHandler的一个实例(也就是 AnotationInvocationHandler ) ，最后返回一个代理实例。</p>
+<p><a href="https://blog.csdn.net/qq_20009015/article/details/106038023">java注解的本质以及注解的底层实现原理-CSDN博客</a></p>
+</blockquote>
+<p>注解当然是通过注解处理器来实现的。需要自己写注解处理器并注册。</p>
+<p><a href="https://blog.csdn.net/caoshen2014/article/details/100642435">Java 注解与注解处理器_java 注册注解处理器-CSDN博客</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/Java%E5%9F%BA%E7%A1%80_%E5%8F%8D%E5%B0%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/11/Java%E5%9F%BA%E7%A1%80_%E5%8F%8D%E5%B0%84/" itemprop="url">Java基础 深入探讨反射</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-11T19:16:49+08:00">
+                2020-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/02/11/Java%E5%9F%BA%E7%A1%80_%E5%8F%8D%E5%B0%84/" class="leancloud_visitors" data-flag-title="Java基础 深入探讨反射">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="何为反射？"><a href="#何为反射？" class="headerlink" title="何为反射？"></a>何为反射？</h2><p>如果说大家研究过框架的底层原理或者咱们自己写过框架的话，一定对反射这个概念不陌生。</p>
+<p>反射之所以被称为框架的灵魂，主要是因为它赋予了我们在运行时分析类以及执行类中方法的能力。</p>
+<p>通过反射你可以获取任意一个类的所有属性和方法，你还可以调用这些方法和属性。</p>
+<h2 id="反射的应用场景了解么？"><a href="#反射的应用场景了解么？" class="headerlink" title="反射的应用场景了解么？"></a>反射的应用场景了解么？</h2><p>像咱们平时大部分时候都是在写业务代码，很少会接触到直接使用反射机制的场景。</p>
+<p>但是，这并不代表反射没有用。相反，正是因为反射，你才能这么轻松地使用各种框架。像 Spring&#x2F;Spring Boot、MyBatis 等等框架中都大量使用了反射机制。</p>
+<p><strong>这些框架中也大量使用了动态代理，而动态代理的实现也依赖反射。</strong></p>
+<p>比如下面是通过 JDK 实现动态代理的示例代码，其中就使用了反射类 <code>Method</code> 来调用指定的方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DebugInvocationHandler</span> <span class="keyword">implements</span> <span class="title class_">InvocationHandler</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代理类中的真实对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Object target;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">DebugInvocationHandler</span><span class="params">(Object target)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> InvocationTargetException, IllegalAccessException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;before method &quot;</span> + method.getName());</span><br><span class="line">        <span class="type">Object</span> <span class="variable">result</span> <span class="operator">=</span> method.invoke(target, args);</span><br><span class="line">        System.out.println(<span class="string">&quot;after method &quot;</span> + method.getName());</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>另外，像 Java 中的一大利器 <strong>注解</strong> 的实现也用到了反射。</p>
+<p>为什么你使用 Spring 的时候 ，一个<code>@Component</code>注解就声明了一个类为 Spring Bean 呢？为什么你通过一个 <code>@Value</code>注解就读取到配置文件中的值呢？究竟是怎么起作用的呢？</p>
+<p>这些都是因为你可以基于反射分析类，然后获取到类&#x2F;属性&#x2F;方法&#x2F;方法的参数上的注解。你获取到注解之后，就可以做进一步的处理。</p>
+<h2 id="谈谈反射机制的优缺点"><a href="#谈谈反射机制的优缺点" class="headerlink" title="谈谈反射机制的优缺点"></a>谈谈反射机制的优缺点</h2><p><strong>优点</strong>：可以让咱们的代码更加灵活、为各种框架提供开箱即用的功能提供了便利</p>
+<p><strong>缺点</strong>：让我们在运行时有了分析操作类的能力，这同样也增加了安全问题。比如可以无视泛型参数的安全检查（泛型参数的安全检查发生在编译时）。另外，反射的性能也要稍差点，不过，对于框架来说实际是影响不大的。相关阅读：<a href="https://stackoverflow.com/questions/1392351/java-reflection-why-is-it-so-slow">Java Reflection: Why is it so slow?</a></p>
+<h2 id="反射实战"><a href="#反射实战" class="headerlink" title="反射实战"></a>反射实战</h2><h3 id="获取-Class-对象的四种方式"><a href="#获取-Class-对象的四种方式" class="headerlink" title="获取 Class 对象的四种方式"></a>获取 Class 对象的四种方式</h3><p>如果我们动态获取到这些信息，我们需要依靠 Class 对象。Class 类对象将一个类的方法、变量等信息告诉运行的程序。Java 提供了四种方式获取 Class 对象:</p>
+<p><strong>1. 知道具体类的情况下可以使用：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Class</span> <span class="variable">alunbarClass</span> <span class="operator">=</span> TargetObject.class;</span><br></pre></td></tr></table></figure>
+
+<p>但是我们一般是不知道具体类的，基本都是通过遍历包下面的类来获取 Class 对象，通过此方式获取 Class 对象不会进行初始化</p>
+<p><strong>2. 通过 <code>Class.forName()</code>传入类的全路径获取：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Class</span> <span class="variable">alunbarClass1</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.javaguide.TargetObject&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 通过对象实例<code>instance.getClass()</code>获取：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">TargetObject</span> <span class="variable">o</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TargetObject</span>();</span><br><span class="line"><span class="type">Class</span> <span class="variable">alunbarClass2</span> <span class="operator">=</span> o.getClass();</span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 通过类加载器<code>xxxClassLoader.loadClass()</code>传入类路径获取:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ClassLoader.getSystemClassLoader().loadClass(<span class="string">&quot;cn.javaguide.TargetObject&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>通过类加载器获取 Class 对象不会进行初始化，意味着不进行包括初始化等一系列步骤，静态代码块和静态对象不会得到执行</p>
+<h3 id="反射的一些基本操作"><a href="#反射的一些基本操作" class="headerlink" title="反射的一些基本操作"></a>反射的一些基本操作</h3><ol>
+<li>创建一个我们要使用反射操作的类 <code>TargetObject</code>。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.javaguide;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TargetObject</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String value;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">TargetObject</span><span class="params">()</span> &#123;</span><br><span class="line">        value = <span class="string">&quot;JavaGuide&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">publicMethod</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;I love &quot;</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">privateMethod</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;value is &quot;</span> + value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用反射操作这个类的方法以及属性</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.javaguide;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchFieldException &#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取 TargetObject 类的 Class 对象并且创建 TargetObject 类实例</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        Class&lt;?&gt; targetClass = Class.forName(<span class="string">&quot;cn.javaguide.TargetObject&quot;</span>);</span><br><span class="line">        <span class="type">TargetObject</span> <span class="variable">targetObject</span> <span class="operator">=</span> (TargetObject) targetClass.newInstance();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取 TargetObject 类中定义的所有方法</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        Method[] methods = targetClass.getDeclaredMethods();</span><br><span class="line">        <span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line">            System.out.println(method.getName());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取指定方法并调用</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">publicMethod</span> <span class="operator">=</span> targetClass.getDeclaredMethod(<span class="string">&quot;publicMethod&quot;</span>,</span><br><span class="line">                String.class);</span><br><span class="line"></span><br><span class="line">        publicMethod.invoke(targetObject, <span class="string">&quot;JavaGuide&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 获取指定参数并对参数进行修改</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">Field</span> <span class="variable">field</span> <span class="operator">=</span> targetClass.getDeclaredField(<span class="string">&quot;value&quot;</span>);</span><br><span class="line">        <span class="comment">//为了对类中的参数进行修改我们取消安全检查</span></span><br><span class="line">        field.setAccessible(<span class="literal">true</span>);</span><br><span class="line">        field.set(targetObject, <span class="string">&quot;JavaGuide&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 调用 private 方法</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">privateMethod</span> <span class="operator">=</span> targetClass.getDeclaredMethod(<span class="string">&quot;privateMethod&quot;</span>);</span><br><span class="line">        <span class="comment">//为了调用private方法我们取消安全检查</span></span><br><span class="line">        privateMethod.setAccessible(<span class="literal">true</span>);</span><br><span class="line">        privateMethod.invoke(targetObject);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">publicMethod</span><br><span class="line">privateMethod</span><br><span class="line">I love JavaGuide</span><br><span class="line">value is JavaGuide</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/09/Java%E5%9F%BA%E7%A1%80_%E6%B7%B1%E5%85%A5%E6%8E%A2%E8%AE%A8%E4%BB%A3%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/09/Java%E5%9F%BA%E7%A1%80_%E6%B7%B1%E5%85%A5%E6%8E%A2%E8%AE%A8%E4%BB%A3%E7%90%86/" itemprop="url">Java基础 代理模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-09T18:17:11+08:00">
+                2020-02-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/02/09/Java%E5%9F%BA%E7%A1%80_%E6%B7%B1%E5%85%A5%E6%8E%A2%E8%AE%A8%E4%BB%A3%E7%90%86/" class="leancloud_visitors" data-flag-title="Java基础 代理模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-代理模式"><a href="#1-代理模式" class="headerlink" title="1. 代理模式"></a>1. 代理模式</h2><p>代理模式是一种比较好理解的设计模式。简单来说就是 <strong>我们使用代理对象来代替对真实对象(real object)的访问，这样就可以在不修改原目标对象的前提下，提供额外的功能操作，扩展目标对象的功能。</strong></p>
+<p><strong>代理模式的主要作用是扩展目标对象的功能，比如说在目标对象的某个方法执行前后你可以增加一些自定义的操作。</strong></p>
+<p>举个例子：新娘找来了自己的姨妈来代替自己处理新郎的提问，新娘收到的提问都是经过姨妈处理过滤之后的。姨妈在这里就可以看作是代理你的代理对象，代理的行为（方法）是接收和回复新郎的提问。</p>
+<p><img src="https://oss.javaguide.cn/2020-8/1*DjWCgTFm-xqbhbNQVsaWQw.png" alt="Understanding the Proxy Design Pattern | by Mithun Sasidharan | Medium"></p>
+<p style="text-align:right;font-size:13px;color:gray">https://medium.com/@mithunsasidharan/understanding-the-proxy-design-pattern-5e63fe38052a</p>
+
+<p>代理模式有静态代理和动态代理两种实现方式，我们 先来看一下静态代理模式的实现。</p>
+<h2 id="2-静态代理"><a href="#2-静态代理" class="headerlink" title="2. 静态代理"></a>2. 静态代理</h2><p><strong>静态代理中，我们对目标对象的每个方法的增强都是手动完成的（_后面会具体演示代码_），非常不灵活（_比如接口一旦新增加方法，目标对象和代理对象都要进行修改_）且麻烦(_需要对每个目标类都单独写一个代理类_）。</strong> 实际应用场景非常非常少，日常开发几乎看不到使用静态代理的场景。</p>
+<p>上面我们是从实现和应用角度来说的静态代理，从 JVM 层面来说， <strong>静态代理在编译时就将接口、实现类、代理类这些都变成了一个个实际的 class 文件。</strong></p>
+<p>静态代理实现步骤:</p>
+<ol>
+<li>定义一个接口及其实现类；</li>
+<li>创建一个代理类同样实现这个接口</li>
+<li>将目标对象注入进代理类，然后在代理类的对应方法调用目标类中的对应方法。这样的话，我们就可以通过代理类屏蔽对目标对象的访问，并且可以在目标方法执行前后做一些自己想做的事情。</li>
+</ol>
+<p>下面通过代码展示！</p>
+<p><strong>1.定义发送短信的接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">SmsService</span> &#123;</span><br><span class="line">    String <span class="title function_">send</span><span class="params">(String message)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.实现发送短信的接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SmsServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">SmsService</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">send</span><span class="params">(String message)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;send message:&quot;</span> + message);</span><br><span class="line">        <span class="keyword">return</span> message;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.创建代理类并同样实现发送短信的接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SmsProxy</span> <span class="keyword">implements</span> <span class="title class_">SmsService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> SmsService smsService;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">SmsProxy</span><span class="params">(SmsService smsService)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.smsService = smsService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">send</span><span class="params">(String message)</span> &#123;</span><br><span class="line">        <span class="comment">//调用方法之前，我们可以添加自己的操作</span></span><br><span class="line">        System.out.println(<span class="string">&quot;before method send()&quot;</span>);</span><br><span class="line">        smsService.send(message);</span><br><span class="line">        <span class="comment">//调用方法之后，我们同样可以添加自己的操作</span></span><br><span class="line">        System.out.println(<span class="string">&quot;after method send()&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.实际使用</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">SmsService</span> <span class="variable">smsService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SmsServiceImpl</span>();</span><br><span class="line">        <span class="type">SmsProxy</span> <span class="variable">smsProxy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SmsProxy</span>(smsService);</span><br><span class="line">        smsProxy.send(<span class="string">&quot;java&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行上述代码之后，控制台打印出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">before method send()</span><br><span class="line">send message:java</span><br><span class="line">after method send()</span><br></pre></td></tr></table></figure>
+
+<p>可以输出结果看出，我们已经增加了 <code>SmsServiceImpl</code> 的<code>send()</code>方法。</p>
+<h2 id="3-动态代理"><a href="#3-动态代理" class="headerlink" title="3. 动态代理"></a>3. 动态代理</h2><p>相比于静态代理来说，动态代理更加灵活。我们不需要针对每个目标类都单独创建一个代理类，并且也不需要我们必须实现接口，我们可以直接代理实现类( <em>CGLIB 动态代理机制</em>)。</p>
+<p><strong>从 JVM 角度来说，动态代理是在运行时动态生成类字节码，并加载到 JVM 中的。</strong></p>
+<p>说到动态代理，Spring AOP、RPC 框架应该是两个不得不提的，它们的实现都依赖了动态代理。</p>
+<p><strong>动态代理在我们日常开发中使用的相对较少，但是在框架中的几乎是必用的一门技术。学会了动态代理之后，对于我们理解和学习各种框架的原理也非常有帮助。</strong></p>
+<p>就 Java 来说，动态代理的实现方式有很多种，比如 <strong>JDK 动态代理</strong>、<strong>CGLIB 动态代理</strong>等等。</p>
+<p><a href="https://github.com/Snailclimb/guide-rpc-framework">guide-rpc-framework</a> 使用的是 JDK 动态代理，我们先来看看 JDK 动态代理的使用。</p>
+<p>另外，虽然 <a href="https://github.com/Snailclimb/guide-rpc-framework">guide-rpc-framework</a> 没有用到 <strong>CGLIB 动态代理</strong> ，我们这里还是简单介绍一下其使用以及和<strong>JDK 动态代理</strong>的对比。</p>
+<h3 id="3-1-JDK-动态代理机制"><a href="#3-1-JDK-动态代理机制" class="headerlink" title="3.1. JDK 动态代理机制"></a>3.1. JDK 动态代理机制</h3><h4 id="3-1-1-介绍"><a href="#3-1-1-介绍" class="headerlink" title="3.1.1. 介绍"></a>3.1.1. 介绍</h4><p><strong>在 Java 动态代理机制中 <code>InvocationHandler</code> 接口和 <code>Proxy</code> 类是核心。</strong></p>
+<p><code>Proxy</code> 类中使用频率最高的方法是：<code>newProxyInstance()</code> ，这个方法主要用来生成一个代理对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">newProxyInstance</span><span class="params">(ClassLoader loader,</span></span><br><span class="line"><span class="params">                                      Class&lt;?&gt;[] interfaces,</span></span><br><span class="line"><span class="params">                                      InvocationHandler h)</span></span><br><span class="line">    <span class="keyword">throws</span> IllegalArgumentException</span><br><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个方法一共有 3 个参数：</p>
+<ol>
+<li><strong>loader</strong> :类加载器，用于加载代理对象。</li>
+<li><strong>interfaces</strong> : 被代理类实现的一些接口；</li>
+<li><strong>h</strong> : 实现了 <code>InvocationHandler</code> 接口的对象；</li>
+</ol>
+<p>要实现动态代理的话，还必须需要实现<code>InvocationHandler</code> 来自定义处理逻辑。 当我们的动态代理对象调用一个方法时，这个方法的调用就会被转发到实现<code>InvocationHandler</code> 接口类的 <code>invoke</code> 方法来调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">InvocationHandler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 当你使用代理对象调用方法的时候实际会调用到这个方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span><br><span class="line">        <span class="keyword">throws</span> Throwable;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>invoke()</code> 方法有下面三个参数：</p>
+<ol>
+<li><strong>proxy</strong> :动态生成的代理类</li>
+<li><strong>method</strong> : 与代理类对象调用的方法相对应</li>
+<li><strong>args</strong> : 当前 method 方法的参数</li>
+</ol>
+<p>也就是说：<strong>你通过<code>Proxy</code> 类的 <code>newProxyInstance()</code> 创建的代理对象在调用方法的时候，实际会调用到实现<code>InvocationHandler</code> 接口的类的 <code>invoke()</code>方法。</strong> 你可以在 <code>invoke()</code> 方法中自定义处理逻辑，比如在方法执行前后做什么事情。</p>
+<h4 id="3-1-2-JDK-动态代理类使用步骤"><a href="#3-1-2-JDK-动态代理类使用步骤" class="headerlink" title="3.1.2. JDK 动态代理类使用步骤"></a>3.1.2. JDK 动态代理类使用步骤</h4><ol>
+<li>定义一个接口及其实现类；</li>
+<li>自定义 <code>InvocationHandler</code> 并重写<code>invoke</code>方法，在 <code>invoke</code> 方法中我们会调用原生方法（被代理类的方法）并自定义一些处理逻辑；</li>
+<li>通过 <code>Proxy.newProxyInstance(ClassLoader loader,Class&lt;?&gt;[] interfaces,InvocationHandler h)</code> 方法创建代理对象；</li>
+</ol>
+<h4 id="3-1-3-代码示例"><a href="#3-1-3-代码示例" class="headerlink" title="3.1.3. 代码示例"></a>3.1.3. 代码示例</h4><p>这样说可能会有点空洞和难以理解，我上个例子，大家感受一下吧！</p>
+<p><strong>1.定义发送短信的接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">SmsService</span> &#123;</span><br><span class="line">    String <span class="title function_">send</span><span class="params">(String message)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.实现发送短信的接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SmsServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">SmsService</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">send</span><span class="params">(String message)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;send message:&quot;</span> + message);</span><br><span class="line">        <span class="keyword">return</span> message;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.定义一个 JDK 动态代理类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationHandler;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shuang.kou</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@createTime</span> 2020年05月11日 11:23:00</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DebugInvocationHandler</span> <span class="keyword">implements</span> <span class="title class_">InvocationHandler</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代理类中的真实对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Object target;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">DebugInvocationHandler</span><span class="params">(Object target)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> InvocationTargetException, IllegalAccessException &#123;</span><br><span class="line">        <span class="comment">//调用方法之前，我们可以添加自己的操作</span></span><br><span class="line">        System.out.println(<span class="string">&quot;before method &quot;</span> + method.getName());</span><br><span class="line">        <span class="type">Object</span> <span class="variable">result</span> <span class="operator">=</span> method.invoke(target, args);</span><br><span class="line">        <span class="comment">//调用方法之后，我们同样可以添加自己的操作</span></span><br><span class="line">        System.out.println(<span class="string">&quot;after method &quot;</span> + method.getName());</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>invoke()</code> 方法: 当我们的动态代理对象调用原生方法的时候，最终实际上调用到的是 <code>invoke()</code> 方法，然后 <code>invoke()</code> 方法代替我们去调用了被代理对象的原生方法。</p>
+<p><strong>4.获取代理对象的工厂类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JdkProxyFactory</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">getProxy</span><span class="params">(Object target)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Proxy.newProxyInstance(</span><br><span class="line">                target.getClass().getClassLoader(), <span class="comment">// 目标类的类加载器</span></span><br><span class="line">                target.getClass().getInterfaces(),  <span class="comment">// 代理需要实现的接口，可指定多个</span></span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">DebugInvocationHandler</span>(target)   <span class="comment">// 代理对象对应的自定义 InvocationHandler</span></span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>getProxy()</code>：主要通过<code>Proxy.newProxyInstance（）</code>方法获取某个类的代理对象</p>
+<p><strong>5.实际使用</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">SmsService</span> <span class="variable">smsService</span> <span class="operator">=</span> (SmsService) JdkProxyFactory.getProxy(<span class="keyword">new</span> <span class="title class_">SmsServiceImpl</span>());</span><br><span class="line">smsService.send(<span class="string">&quot;java&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>运行上述代码之后，控制台打印出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">before method send</span><br><span class="line">send message:java</span><br><span class="line">after method send</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-CGLIB-动态代理机制"><a href="#3-2-CGLIB-动态代理机制" class="headerlink" title="3.2. CGLIB 动态代理机制"></a>3.2. CGLIB 动态代理机制</h3><h4 id="3-2-1-介绍"><a href="#3-2-1-介绍" class="headerlink" title="3.2.1. 介绍"></a>3.2.1. 介绍</h4><p><strong>JDK 动态代理有一个最致命的问题是其只能代理实现了接口的类。</strong></p>
+<p><strong>为了解决这个问题，我们可以用 CGLIB 动态代理机制来避免。</strong></p>
+<p><a href="https://github.com/cglib/cglib">CGLIB</a>(<em>Code Generation Library</em>)是一个基于<a href="http://www.baeldung.com/java-asm">ASM</a>的字节码生成库，它允许我们在运行时对字节码进行修改和动态生成。CGLIB 通过继承方式实现代理。很多知名的开源框架都使用到了<a href="https://github.com/cglib/cglib">CGLIB</a>， 例如 Spring 中的 AOP 模块中：如果目标对象实现了接口，则默认采用 JDK 动态代理，否则采用 CGLIB 动态代理。</p>
+<p><strong>在 CGLIB 动态代理机制中 <code>MethodInterceptor</code> 接口和 <code>Enhancer</code> 类是核心。</strong></p>
+<p>你需要自定义 <code>MethodInterceptor</code> 并重写 <code>intercept</code> 方法，<code>intercept</code> 用于拦截增强被代理类的方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">MethodInterceptor</span></span><br><span class="line"><span class="keyword">extends</span> <span class="title class_">Callback</span>&#123;</span><br><span class="line">    <span class="comment">// 拦截被代理类中的方法</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">intercept</span><span class="params">(Object obj, java.lang.reflect.Method method, Object[] args,MethodProxy proxy)</span> <span class="keyword">throws</span> Throwable;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>obj</strong> : 被代理的对象（需要增强的对象）</li>
+<li><strong>method</strong> : 被拦截的方法（需要增强的方法）</li>
+<li><strong>args</strong> : 方法入参</li>
+<li><strong>proxy</strong> : 用于调用原始方法</li>
+</ol>
+<p>你可以通过 <code>Enhancer</code>类来动态获取被代理类，当代理类调用方法的时候，实际调用的是 <code>MethodInterceptor</code> 中的 <code>intercept</code> 方法。</p>
+<h4 id="3-2-2-CGLIB-动态代理类使用步骤"><a href="#3-2-2-CGLIB-动态代理类使用步骤" class="headerlink" title="3.2.2. CGLIB 动态代理类使用步骤"></a>3.2.2. CGLIB 动态代理类使用步骤</h4><ol>
+<li>定义一个类；</li>
+<li>自定义 <code>MethodInterceptor</code> 并重写 <code>intercept</code> 方法，<code>intercept</code> 用于拦截增强被代理类的方法，和 JDK 动态代理中的 <code>invoke</code> 方法类似；</li>
+<li>通过 <code>Enhancer</code> 类的 <code>create()</code>创建代理类；</li>
+</ol>
+<h4 id="3-2-3-代码示例"><a href="#3-2-3-代码示例" class="headerlink" title="3.2.3. 代码示例"></a>3.2.3. 代码示例</h4><p>不同于 JDK 动态代理不需要额外的依赖。<a href="https://github.com/cglib/cglib">CGLIB</a>(<em>Code Generation Library</em>) 实际是属于一个开源项目，如果你要使用它的话，需要手动添加相关依赖。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cglib<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cglib<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>1.实现一个使用阿里云发送短信的类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> github.javaguide.dynamicProxy.cglibDynamicProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AliSmsService</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">send</span><span class="params">(String message)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;send message:&quot;</span> + message);</span><br><span class="line">        <span class="keyword">return</span> message;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.自定义 <code>MethodInterceptor</code>（方法拦截器）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> net.sf.cglib.proxy.MethodInterceptor;</span><br><span class="line"><span class="keyword">import</span> net.sf.cglib.proxy.MethodProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自定义MethodInterceptor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DebugMethodInterceptor</span> <span class="keyword">implements</span> <span class="title class_">MethodInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> o           被代理的对象（需要增强的对象）</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method      被拦截的方法（需要增强的方法）</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args        方法入参</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> methodProxy 用于调用原始方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">intercept</span><span class="params">(Object o, Method method, Object[] args, MethodProxy methodProxy)</span> <span class="keyword">throws</span> Throwable &#123;</span><br><span class="line">        <span class="comment">//调用方法之前，我们可以添加自己的操作</span></span><br><span class="line">        System.out.println(<span class="string">&quot;before method &quot;</span> + method.getName());</span><br><span class="line">        <span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> methodProxy.invokeSuper(o, args);</span><br><span class="line">        <span class="comment">//调用方法之后，我们同样可以添加自己的操作</span></span><br><span class="line">        System.out.println(<span class="string">&quot;after method &quot;</span> + method.getName());</span><br><span class="line">        <span class="keyword">return</span> object;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.获取代理类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> net.sf.cglib.proxy.Enhancer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CglibProxyFactory</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">getProxy</span><span class="params">(Class&lt;?&gt; clazz)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建动态代理增强类</span></span><br><span class="line">        <span class="type">Enhancer</span> <span class="variable">enhancer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Enhancer</span>();</span><br><span class="line">        <span class="comment">// 设置类加载器</span></span><br><span class="line">        enhancer.setClassLoader(clazz.getClassLoader());</span><br><span class="line">        <span class="comment">// 设置被代理类</span></span><br><span class="line">        enhancer.setSuperclass(clazz);</span><br><span class="line">        <span class="comment">// 设置方法拦截器</span></span><br><span class="line">        enhancer.setCallback(<span class="keyword">new</span> <span class="title class_">DebugMethodInterceptor</span>());</span><br><span class="line">        <span class="comment">// 创建代理类</span></span><br><span class="line">        <span class="keyword">return</span> enhancer.create();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.实际使用</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">AliSmsService</span> <span class="variable">aliSmsService</span> <span class="operator">=</span> (AliSmsService) CglibProxyFactory.getProxy(AliSmsService.class);</span><br><span class="line">aliSmsService.send(<span class="string">&quot;java&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>运行上述代码之后，控制台打印出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">before method send</span><br><span class="line">send message:java</span><br><span class="line">after method send</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-JDK-动态代理和-CGLIB-动态代理对比"><a href="#3-3-JDK-动态代理和-CGLIB-动态代理对比" class="headerlink" title="3.3. JDK 动态代理和 CGLIB 动态代理对比"></a>3.3. JDK 动态代理和 CGLIB 动态代理对比</h3><ol>
+<li><strong>JDK 动态代理只能代理实现了接口的类或者直接代理接口，而 CGLIB 可以代理未实现任何接口的类。</strong> 另外， CGLIB 动态代理是通过生成一个被代理类的子类来拦截被代理类的方法调用，因此不能代理声明为 final 类型的类和方法。</li>
+<li>就二者的效率来说，大部分情况都是 JDK 动态代理更优秀，随着 JDK 版本的升级，这个优势更加明显。</li>
+</ol>
+<h2 id="4-静态代理和动态代理的对比"><a href="#4-静态代理和动态代理的对比" class="headerlink" title="4. 静态代理和动态代理的对比"></a>4. 静态代理和动态代理的对比</h2><ol>
+<li><strong>灵活性</strong>：动态代理更加灵活，不需要必须实现接口，可以直接代理实现类，并且可以不需要针对每个目标类都创建一个代理类。另外，静态代理中，接口一旦新增加方法，目标对象和代理对象都要进行修改，这是非常麻烦的！</li>
+<li><strong>JVM 层面</strong>：静态代理在编译时就将接口、实现类、代理类这些都变成了一个个实际的 class 文件。而动态代理是在运行时动态生成类字节码，并加载到 JVM 中的。</li>
+</ol>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h2><p>这篇文章中主要介绍了代理模式的两种实现：静态代理以及动态代理。涵盖了静态代理和动态代理实战、静态代理和动态代理的区别、JDK 动态代理和 Cglib 动态代理区别等内容。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/17/other-network-questions2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/17/other-network-questions2/" itemprop="url">计算机网络常见面试题总结(下)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-17T21:20:48+08:00">
+                2020-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/01/17/other-network-questions2/" class="leancloud_visitors" data-flag-title="计算机网络常见面试题总结(下)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>下篇主要是传输层和网络层相关的内容。</p>
+<h2 id="TCP-与-UDP"><a href="#TCP-与-UDP" class="headerlink" title="TCP 与 UDP"></a>TCP 与 UDP</h2><h3 id="TCP-与-UDP-的区别（重要）"><a href="#TCP-与-UDP-的区别（重要）" class="headerlink" title="TCP 与 UDP 的区别（重要）"></a>TCP 与 UDP 的区别（重要）</h3><ol>
+<li><strong>是否面向连接</strong>：UDP 在传送数据之前不需要先建立连接。而 TCP 提供面向连接的服务，在传送数据之前必须先建立连接，数据传送结束后要释放连接。</li>
+<li><strong>是否是可靠传输</strong>：远地主机在收到 UDP 报文后，不需要给出任何确认，并且不保证数据不丢失，不保证是否顺序到达。TCP 提供可靠的传输服务，TCP 在传递数据之前，会有三次握手来建立连接，而且在数据传递时，有确认、窗口、重传、拥塞控制机制。通过 TCP 连接传输的数据，无差错、不丢失、不重复、并且按序到达。</li>
+<li><strong>是否有状态</strong>：这个和上面的“是否可靠传输”相对应。TCP 传输是有状态的，这个有状态说的是 TCP 会去记录自己发送消息的状态比如消息是否发送了、是否被接收了等等。为此 ，TCP 需要维持复杂的连接状态表。而 UDP 是无状态服务，简单来说就是不管发出去之后的事情了（<strong>这很渣男！</strong>）。</li>
+<li><strong>传输效率</strong>：由于使用 TCP 进行传输的时候多了连接、确认、重传等机制，所以 TCP 的传输效率要比 UDP 低很多。</li>
+<li><strong>传输形式</strong>：TCP 是面向字节流的，UDP 是面向报文的。</li>
+<li><strong>首部开销</strong>：TCP 首部开销（20 ～ 60 字节）比 UDP 首部开销（8 字节）要大。</li>
+<li><strong>是否提供广播或多播服务</strong>：TCP 只支持点对点通信，UDP 支持一对一、一对多、多对一、多对多；</li>
+<li>……</li>
+</ol>
+<p>我把上面总结的内容通过表格形式展示出来了！确定不点个赞嘛？</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>是否面向连接</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否可靠</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否有状态</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>传输效率</td>
+<td>较慢</td>
+<td>较快</td>
+</tr>
+<tr>
+<td>传输形式</td>
+<td>字节流</td>
+<td>数据报文段</td>
+</tr>
+<tr>
+<td>首部开销</td>
+<td>20 ～ 60 bytes</td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td>是否提供广播或多播服务</td>
+<td>否</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h3 id="什么时候选择-TCP，什么时候选-UDP"><a href="#什么时候选择-TCP，什么时候选-UDP" class="headerlink" title="什么时候选择 TCP，什么时候选 UDP?"></a>什么时候选择 TCP，什么时候选 UDP?</h3><ul>
+<li><strong>UDP 一般用于即时通信</strong>，比如：语音、 视频、直播等等。这些场景对传输数据的准确性要求不是特别高，比如你看视频即使少个一两帧，实际给人的感觉区别也不大。</li>
+<li><strong>TCP 用于对传输准确性要求特别高的场景</strong>，比如文件传输、发送和接收邮件、远程登录等等。</li>
+</ul>
+<h3 id="HTTP-基于-TCP-还是-UDP？"><a href="#HTTP-基于-TCP-还是-UDP？" class="headerlink" title="HTTP 基于 TCP 还是 UDP？"></a>HTTP 基于 TCP 还是 UDP？</h3><p><del><strong>HTTP 协议是基于 TCP 协议的</strong>，所以发送 HTTP 请求之前首先要建立 TCP 连接也就是要经历 3 次握手。</del></p>
+<p>🐛 修正（参见 <a href="https://github.com/Snailclimb/JavaGuide/issues/1915">issue#1915</a>）：</p>
+<p>HTTP&#x2F;3.0 之前是基于 TCP 协议的，而 HTTP&#x2F;3.0 将弃用 TCP，改用 <strong>基于 UDP 的 QUIC 协议</strong> 。</p>
+<p>此变化解决了 HTTP&#x2F;2 中存在的队头阻塞问题。队头阻塞是指在 HTTP&#x2F;2.0 中，多个 HTTP 请求和响应共享一个 TCP 连接，如果其中一个请求或响应因为网络拥塞或丢包而被阻塞，那么后续的请求或响应也无法发送，导致整个连接的效率降低。这是由于 HTTP&#x2F;2.0 在单个 TCP 连接上使用了多路复用，受到 TCP 拥塞控制的影响，少量的丢包就可能导致整个 TCP 连接上的所有流被阻塞。HTTP&#x2F;3.0 在一定程度上解决了队头阻塞问题，一个连接建立多个不同的数据流，这些数据流之间独立互不影响，某个数据流发生丢包了，其数据流不受影响（本质上是多路复用+轮询）。</p>
+<p>除了解决队头阻塞问题，HTTP&#x2F;3.0 还可以减少握手过程的延迟。在 HTTP&#x2F;2.0 中，如果要建立一个安全的 HTTPS 连接，需要经过 TCP 三次握手和 TLS 握手：</p>
+<ol>
+<li>TCP 三次握手：客户端和服务器交换 SYN 和 ACK 包，建立一个 TCP 连接。这个过程需要 1.5 个 RTT（round-trip time），即一个数据包从发送到接收的时间。</li>
+<li>TLS 握手：客户端和服务器交换密钥和证书，建立一个 TLS 加密层。这个过程需要至少 1 个 RTT（TLS 1.3）或者 2 个 RTT（TLS 1.2）。</li>
+</ol>
+<p>所以，HTTP&#x2F;2.0 的连接建立就至少需要 2.5 个 RTT（TLS 1.3）或者 3.5 个 RTT（TLS 1.2）。而在 HTTP&#x2F;3.0 中，使用的 QUIC 协议（TLS 1.3，TLS 1.3 除了支持 1 个 RTT 的握手，还支持 0 个 RTT 的握手）连接建立仅需 0-RTT 或者 1-RTT。这意味着 QUIC 在最佳情况下不需要任何的额外往返时间就可以建立新连接。</p>
+<p>相关证明可以参考下面这两个链接：</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/zh/HTTP/3">https://zh.wikipedia.org/zh/HTTP/3</a></li>
+<li><a href="https://datatracker.ietf.org/doc/rfc9114/">https://datatracker.ietf.org/doc/rfc9114/</a></li>
+</ul>
+<h3 id="使用-TCP-的协议有哪些-使用-UDP-的协议有哪些"><a href="#使用-TCP-的协议有哪些-使用-UDP-的协议有哪些" class="headerlink" title="使用 TCP 的协议有哪些?使用 UDP 的协议有哪些?"></a>使用 TCP 的协议有哪些?使用 UDP 的协议有哪些?</h3><p><strong>运行于 TCP 协议之上的协议</strong>：</p>
+<ol>
+<li><strong>HTTP 协议（HTTP&#x2F;3.0 之前）</strong>：超文本传输协议（HTTP，HyperText Transfer Protocol)是一种用于传输超文本和多媒体内容的协议，主要是为 Web 浏览器与 Web 服务器之间的通信而设计的。当我们使用浏览器浏览网页的时候，我们网页就是通过 HTTP 请求进行加载的。</li>
+<li><strong>HTTPS 协议</strong>：更安全的超文本传输协议(HTTPS,Hypertext Transfer Protocol Secure)，身披 SSL 外衣的 HTTP 协议</li>
+<li><strong>FTP 协议</strong>：文件传输协议 FTP（File Transfer Protocol）是一种用于在计算机之间传输文件的协议，可以屏蔽操作系统和文件存储方式。注意 ⚠️：FTP 是一种不安全的协议，因为它在传输过程中不会对数据进行加密。建议在传输敏感数据时使用更安全的协议，如 SFTP。</li>
+<li><strong>SMTP 协议</strong>：简单邮件传输协议（SMTP，Simple Mail Transfer Protocol）的缩写，是一种用于发送电子邮件的协议。注意 ⚠️：SMTP 协议只负责邮件的发送，而不是接收。要从邮件服务器接收邮件，需要使用 POP3 或 IMAP 协议。</li>
+<li><strong>POP3&#x2F;IMAP 协议</strong>：两者都是负责邮件接收的协议。IMAP 协议是比 POP3 更新的协议，它在功能和性能上都更加强大。IMAP 支持邮件搜索、标记、分类、归档等高级功能，而且可以在多个设备之间同步邮件状态。几乎所有现代电子邮件客户端和服务器都支持 IMAP。</li>
+<li><strong>Telnet 协议</strong>：用于通过一个终端登陆到其他服务器。Telnet 协议的最大缺点之一是所有数据（包括用户名和密码）均以明文形式发送，这有潜在的安全风险。这就是为什么如今很少使用 Telnet，而是使用一种称为 SSH 的非常安全的网络传输协议的主要原因。</li>
+<li><strong>SSH 协议</strong> : SSH（ Secure Shell）是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。SSH 建立在可靠的传输协议 TCP 之上。</li>
+<li>……</li>
+</ol>
+<p><strong>运行于 UDP 协议之上的协议</strong>：</p>
+<ol>
+<li><strong>HTTP 协议（HTTP&#x2F;3.0 ）</strong>： HTTP&#x2F;3.0 弃用 TCP，改用基于 UDP 的 QUIC 协议 。</li>
+<li><strong>DHCP 协议</strong>：动态主机配置协议，动态配置 IP 地址</li>
+<li><strong>DNS</strong>：域名系统（DNS，Domain Name System）将人类可读的域名 (例如，<a href="http://www.baidu.com/">www.baidu.com</a>) 转换为机器可读的 IP 地址 (例如，220.181.38.148)。 我们可以将其理解为专为互联网设计的电话薄。实际上，DNS 同时支持 UDP 和 TCP 协议。</li>
+<li>……</li>
+</ol>
+<h3 id="TCP-三次握手和四次挥手（非常重要）"><a href="#TCP-三次握手和四次挥手（非常重要）" class="headerlink" title="TCP 三次握手和四次挥手（非常重要）"></a>TCP 三次握手和四次挥手（非常重要）</h3><p><strong>相关面试题</strong>：</p>
+<ul>
+<li>为什么要三次握手?</li>
+<li>第 2 次握手传回了 ACK，为什么还要传回 SYN？</li>
+<li>为什么要四次挥手？</li>
+<li>为什么不能把服务器发送的 ACK 和 FIN 合并起来，变成三次挥手？</li>
+<li>如果第二次挥手时服务器的 ACK 没有送达客户端，会怎样？</li>
+<li>为什么第四次挥手客户端需要等待 2*MSL（报文段最长寿命）时间后才进入 CLOSED 状态？</li>
+</ul>
+<p><strong>参考答案</strong>：<a href="./tcp-connection-and-disconnection.md">TCP 三次握手和四次挥手（传输层）</a> 。</p>
+<h3 id="TCP-如何保证传输的可靠性？（重要）"><a href="#TCP-如何保证传输的可靠性？（重要）" class="headerlink" title="TCP 如何保证传输的可靠性？（重要）"></a>TCP 如何保证传输的可靠性？（重要）</h3><p><a href="./tcp-reliability-guarantee.md">TCP 传输可靠性保障（传输层）</a></p>
+<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><h3 id="IP-协议的作用是什么？"><a href="#IP-协议的作用是什么？" class="headerlink" title="IP 协议的作用是什么？"></a>IP 协议的作用是什么？</h3><p><strong>IP（Internet Protocol，网际协议）</strong> 是 TCP&#x2F;IP 协议中最重要的协议之一，属于网络层的协议，主要作用是定义数据包的格式、对数据包进行路由和寻址，以便它们可以跨网络传播并到达正确的目的地。</p>
+<p>目前 IP 协议主要分为两种，一种是过去的 IPv4，另一种是较新的 IPv6，目前这两种协议都在使用，但后者已经被提议来取代前者。</p>
+<h3 id="什么是-IP-地址？IP-寻址如何工作？"><a href="#什么是-IP-地址？IP-寻址如何工作？" class="headerlink" title="什么是 IP 地址？IP 寻址如何工作？"></a>什么是 IP 地址？IP 寻址如何工作？</h3><p>每个连入互联网的设备或域（如计算机、服务器、路由器等）都被分配一个 <strong>IP 地址（Internet Protocol address）</strong>，作为唯一标识符。每个 IP 地址都是一个字符序列，如 192.168.1.1（IPv4）、2001:0db8:85a3:0000:0000:8a2e:0370:7334（IPv6） 。</p>
+<p>当网络设备发送 IP 数据包时，数据包中包含了 <strong>源 IP 地址</strong> 和 <strong>目的 IP 地址</strong> 。源 IP 地址用于标识数据包的发送方设备或域，而目的 IP 地址则用于标识数据包的接收方设备或域。这类似于一封邮件中同时包含了目的地地址和回邮地址。</p>
+<p>网络设备根据目的 IP 地址来判断数据包的目的地，并将数据包转发到正确的目的地网络或子网络，从而实现了设备间的通信。</p>
+<p>这种基于 IP 地址的寻址方式是互联网通信的基础，它允许数据包在不同的网络之间传递，从而实现了全球范围内的网络互联互通。IP 地址的唯一性和全局性保证了网络中的每个设备都可以通过其独特的 IP 地址进行标识和寻址。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/internet_protocol_ip_address_diagram.png" alt="IP 地址使数据包到达其目的地"></p>
+<h3 id="什么是-IP-地址过滤？"><a href="#什么是-IP-地址过滤？" class="headerlink" title="什么是 IP 地址过滤？"></a>什么是 IP 地址过滤？</h3><p><strong>IP 地址过滤（IP Address Filtering）</strong> 简单来说就是限制或阻止特定 IP 地址或 IP 地址范围的访问。例如，你有一个图片服务突然被某一个 IP 地址攻击，那我们就可以禁止这个 IP 地址访问图片服务。</p>
+<p>IP 地址过滤是一种简单的网络安全措施，实际应用中一般会结合其他网络安全措施，如认证、授权、加密等一起使用。单独使用 IP 地址过滤并不能完全保证网络的安全。</p>
+<h3 id="IPv4-和-IPv6-有什么区别？"><a href="#IPv4-和-IPv6-有什么区别？" class="headerlink" title="IPv4 和 IPv6 有什么区别？"></a>IPv4 和 IPv6 有什么区别？</h3><p><strong>IPv4（Internet Protocol version 4）</strong> 是目前广泛使用的 IP 地址版本，其格式是四组由点分隔的数字，例如：123.89.46.72。IPv4 使用 32 位地址作为其 Internet 地址，这意味着共有约 42 亿（ 2^32）个可用 IP 地址。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/Figure-1-IPv4Addressformatwithdotteddecimalnotation-29c824f6a451d48d8c27759799f0c995.png" alt="IPv4"></p>
+<p>这么少当然不够用啦！为了解决 IP 地址耗尽的问题，最根本的办法是采用具有更大地址空间的新版本 IP 协议 - <strong>IPv6（Internet Protocol version 6）</strong>。IPv6 地址使用更复杂的格式，该格式使用由单或双冒号分隔的一组数字和字母，例如：2001:0db8:85a3:0000:0000:8a2e:0370:7334 。IPv6 使用 128 位互联网地址，这意味着越有 2^128（3 开头的 39 位数字，恐怖如斯） 个可用 IP 地址。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/Figure-2-IPv6Addressformatwithhexadecimalnotation-7da3a419bd81627a9b2cef3b0efb4940.png" alt="IPv6"></p>
+<p>除了更大的地址空间之外，IPv6 的优势还包括：</p>
+<ul>
+<li><strong>无状态地址自动配置（Stateless Address Autoconfiguration，简称 SLAAC）</strong>：主机可以直接通过根据接口标识和网络前缀生成全局唯一的 IPv6 地址，而无需依赖 DHCP（Dynamic Host Configuration Protocol）服务器，简化了网络配置和管理。</li>
+<li><strong>NAT（Network Address Translation，网络地址转换） 成为可选项</strong>：IPv6 地址资源充足，可以给全球每个设备一个独立的地址。</li>
+<li><strong>对标头结构进行了改进</strong>：IPv6 标头结构相较于 IPv4 更加简化和高效，减少了处理开销，提高了网络性能。</li>
+<li><strong>可选的扩展头</strong>：允许在 IPv6 标头中添加不同的扩展头（Extension Headers），用于实现不同类型的功能和选项。</li>
+<li><strong>ICMPv6（Internet Control Message Protocol for IPv6）</strong>：IPv6 中的 ICMPv6 相较于 IPv4 中的 ICMP 有了一些改进，如邻居发现、路径 MTU 发现等功能的改进，从而提升了网络的可靠性和性能。</li>
+<li>……</li>
+</ul>
+<h3 id="如何获取客户端真实-IP？"><a href="#如何获取客户端真实-IP？" class="headerlink" title="如何获取客户端真实 IP？"></a>如何获取客户端真实 IP？</h3><p>获取客户端真实 IP 的方法有多种，主要分为应用层方法、传输层方法和网络层方法。</p>
+<p><strong>应用层方法</strong> ：</p>
+<p>通过 <a href="https://en.wikipedia.org/wiki/X-Forwarded-For">X-Forwarded-For</a> 请求头获取，简单方便。不过，这种方法无法保证获取到的是真实 IP，这是因为 X-Forwarded-For 字段可能会被伪造。如果经过多个代理服务器，X-Forwarded-For 字段可能会有多个值（附带了整个请求链中的所有代理服务器 IP 地址）。并且，这种方法只适用于 HTTP 和 SMTP 协议。</p>
+<p><strong>传输层方法</strong>：</p>
+<p>利用 TCP Options 字段承载真实源 IP 信息。这种方法适用于任何基于 TCP 的协议，不受应用层的限制。不过，这并非是 TCP 标准所支持的，所以需要通信双方都进行改造。也就是：对于发送方来说，需要有能力把真实源 IP 插入到 TCP Options 里面。对于接收方来说，需要有能力把 TCP Options 里面的 IP 地址读取出来。</p>
+<p>也可以通过 Proxy Protocol 协议来传递客户端 IP 和 Port 信息。这种方法可以利用 Nginx 或者其他支持该协议的反向代理服务器来获取真实 IP 或者在业务服务器解析真实 IP。</p>
+<p><strong>网络层方法</strong>：</p>
+<p>隧道 +DSR 模式。这种方法可以适用于任何协议，就是实施起来会比较麻烦，也存在一定限制，实际应用中一般不会使用这种方法。</p>
+<h3 id="NAT-的作用是什么？"><a href="#NAT-的作用是什么？" class="headerlink" title="NAT 的作用是什么？"></a>NAT 的作用是什么？</h3><p><strong>NAT（Network Address Translation，网络地址转换）</strong> 主要用于在不同网络之间转换 IP 地址。它允许将私有 IP 地址（如在局域网中使用的 IP 地址）映射为公有 IP 地址（在互联网中使用的 IP 地址）或者反向映射，从而实现局域网内的多个设备通过单一公有 IP 地址访问互联网。</p>
+<p>NAT 不光可以缓解 IPv4 地址资源短缺的问题，还可以隐藏内部网络的实际拓扑结构，使得外部网络无法直接访问内部网络中的设备，从而提高了内部网络的安全性。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/network-address-translation.png" alt="NAT 实现 IP地址转换"></p>
+<p>相关阅读：<a href="./nat.md">NAT 协议详解（网络层）</a>。</p>
+<h2 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h2><h3 id="什么是-Mac-地址？"><a href="#什么是-Mac-地址？" class="headerlink" title="什么是 Mac 地址？"></a>什么是 Mac 地址？</h3><p>MAC 地址的全称是 <strong>媒体访问控制地址（Media Access Control Address）</strong>。如果说，互联网中每一个资源都由 IP 地址唯一标识（IP 协议内容），那么一切网络设备都由 MAC 地址唯一标识。</p>
+<p><img src="/./images/arp/2008410143049281.png" alt="路由器的背面就会注明 MAC 位址"></p>
+<p>可以理解为，MAC 地址是一个网络设备真正的身份证号，IP 地址只是一种不重复的定位方式（比如说住在某省某市某街道的张三，这种逻辑定位是 IP 地址，他的身份证号才是他的 MAC 地址），也可以理解为 MAC 地址是身份证号，IP 地址是邮政地址。MAC 地址也有一些别称，如 LAN 地址、物理地址、以太网地址等。</p>
+<blockquote>
+<p>还有一点要知道的是，不仅仅是网络资源才有 IP 地址，网络设备也有 IP 地址，比如路由器。但从结构上说，路由器等网络设备的作用是组成一个网络，而且通常是内网，所以它们使用的 IP 地址通常是内网 IP，内网的设备在与内网以外的设备进行通信时，需要用到 NAT 协议。</p>
+</blockquote>
+<p>MAC 地址的长度为 6 字节（48 比特），地址空间大小有 280 万亿之多（ $2^{48}$ ），MAC 地址由 IEEE 统一管理与分配，理论上，一个网络设备中的网卡上的 MAC 地址是永久的。不同的网卡生产商从 IEEE 那里购买自己的 MAC 地址空间（MAC 的前 24 比特），也就是前 24 比特由 IEEE 统一管理，保证不会重复。而后 24 比特，由各家生产商自己管理，同样保证生产的两块网卡的 MAC 地址不会重复。</p>
+<p>MAC 地址具有可携带性、永久性，身份证号永久地标识一个人的身份，不论他到哪里都不会改变。而 IP 地址不具有这些性质，当一台设备更换了网络，它的 IP 地址也就可能发生改变，也就是它在互联网中的定位发生了变化。</p>
+<p>最后，记住，MAC 地址有一个特殊地址：FF-FF-FF-FF-FF-FF（全 1 地址），该地址表示广播地址。</p>
+<h3 id="ARP-协议解决了什么问题？"><a href="#ARP-协议解决了什么问题？" class="headerlink" title="ARP 协议解决了什么问题？"></a>ARP 协议解决了什么问题？</h3><p>ARP 协议，全称 <strong>地址解析协议（Address Resolution Protocol）</strong>，它解决的是网络层地址和链路层地址之间的转换问题。因为一个 IP 数据报在物理上传输的过程中，总是需要知道下一跳（物理上的下一个目的地）该去往何处，但 IP 地址属于逻辑地址，而 MAC 地址才是物理地址，ARP 协议解决了 IP 地址转 MAC 地址的一些问题。</p>
+<h3 id="ARP-协议的工作原理？"><a href="#ARP-协议的工作原理？" class="headerlink" title="ARP 协议的工作原理？"></a>ARP 协议的工作原理？</h3><p><a href="./arp.md">ARP 协议详解(网络层)</a></p>
+<h2 id="复习建议"><a href="#复习建议" class="headerlink" title="复习建议"></a>复习建议</h2><p>非常推荐大家看一下 《图解 HTTP》 这本书，这本书页数不多，但是内容很是充实，不管是用来系统的掌握网络方面的一些知识还是说纯粹为了应付面试都有很大帮助。下面的一些文章只是参考。大二学习这门课程的时候，我们使用的教材是 《计算机网络第七版》（谢希仁编著），不推荐大家看这本教材，书非常厚而且知识偏理论，不确定大家能不能心平气和的读完。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《图解 HTTP》</li>
+<li>《计算机网络自顶向下方法》（第七版）</li>
+<li>什么是 Internet 协议（IP）？：<a href="https://www.cloudflare.com/zh-cn/learning/network-layer/internet-protocol/">https://www.cloudflare.com/zh-cn/learning/network-layer/internet-protocol/</a></li>
+<li>透传真实源 IP 的各种方法 - 极客时间：<a href="https://time.geekbang.org/column/article/497864">https://time.geekbang.org/column/article/497864</a></li>
+<li>What Is NAT and What Are the Benefits of NAT Firewalls?：<a href="https://community.fs.com/blog/what-is-nat-and-what-are-the-benefits-of-nat-firewalls.html">https://community.fs.com/blog/what-is-nat-and-what-are-the-benefits-of-nat-firewalls.html</a></li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/23/tcp-reliability-guarantee/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/23/tcp-reliability-guarantee/" itemprop="url">TCP 传输可靠性保障（传输层）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-23T21:22:30+08:00">
+                2019-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/12/23/tcp-reliability-guarantee/" class="leancloud_visitors" data-flag-title="TCP 传输可靠性保障（传输层）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="TCP-如何保证传输的可靠性？"><a href="#TCP-如何保证传输的可靠性？" class="headerlink" title="TCP 如何保证传输的可靠性？"></a>TCP 如何保证传输的可靠性？</h2><ol>
+<li><strong>基于数据块传输</strong>：应用数据被分割成 TCP 认为最适合发送的数据块，再传输给网络层，数据块被称为报文段或段。</li>
+<li><strong>对失序数据包重新排序以及去重</strong>：TCP 为了保证不发生丢包，就给每个包一个序列号，有了序列号能够将接收到的数据根据序列号排序，并且去掉重复序列号的数据就可以实现数据包去重。</li>
+<li><strong>校验和</strong> : TCP 将保持它首部和数据的检验和。这是一个端到端的检验和，目的是检测数据在传输过程中的任何变化。如果收到段的检验和有差错，TCP 将丢弃这个报文段和不确认收到此报文段。</li>
+<li><strong>重传机制</strong> : 在数据包丢失或延迟的情况下，重新发送数据包，直到收到对方的确认应答（ACK）。TCP 重传机制主要有：基于计时器的重传（也就是超时重传）、快速重传（基于接收端的反馈信息来引发重传）、SACK（在快速重传的基础上，返回最近收到的报文段的序列号范围，这样客户端就知道，哪些数据包已经到达服务器了）、D-SACK（重复 SACK，在 SACK 的基础上，额外携带信息，告知发送方有哪些数据包自己重复接收了）。关于重传机制的详细介绍，可以查看<a href="https://zhuanlan.zhihu.com/p/101702312">详解 TCP 超时与重传机制</a>这篇文章。</li>
+<li><strong>流量控制</strong> : TCP 连接的每一方都有固定大小的缓冲空间，TCP 的接收端只允许发送端发送接收端缓冲区能接纳的数据。当接收方来不及处理发送方的数据，能提示发送方降低发送的速率，防止包丢失。TCP 使用的流量控制协议是可变大小的滑动窗口协议（TCP 利用滑动窗口实现流量控制）。</li>
+<li><strong>拥塞控制</strong> : 当网络拥塞时，减少数据的发送。TCP 在发送数据的时候，需要考虑两个因素：一是接收方的接收能力，二是网络的拥塞程度。接收方的接收能力由滑动窗口表示，表示接收方还有多少缓冲区可以用来接收数据。网络的拥塞程度由拥塞窗口表示，它是发送方根据网络状况自己维护的一个值，表示发送方认为可以在网络中传输的数据量。发送方发送数据的大小是滑动窗口和拥塞窗口的最小值，这样可以保证发送方既不会超过接收方的接收能力，也不会造成网络的过度拥塞。</li>
+</ol>
+<h2 id="TCP-如何实现流量控制？"><a href="#TCP-如何实现流量控制？" class="headerlink" title="TCP 如何实现流量控制？"></a>TCP 如何实现流量控制？</h2><p><strong>TCP 利用滑动窗口实现流量控制。流量控制是为了控制发送方发送速率，保证接收方来得及接收。</strong> 接收方发送的确认报文中的窗口字段可以用来控制发送方窗口大小，从而影响发送方的发送速率。将窗口字段设置为 0，则发送方不能发送数据。</p>
+<p><strong>为什么需要流量控制?</strong> 这是因为双方在通信的时候，发送方的速率与接收方的速率是不一定相等，如果发送方的发送速率太快，会导致接收方处理不过来。如果接收方处理不过来的话，就只能把处理不过来的数据存在 <strong>接收缓冲区(Receiving Buffers)</strong> 里（失序的数据包也会被存放在缓存区里）。如果缓存区满了发送方还在狂发数据的话，接收方只能把收到的数据包丢掉。出现丢包问题的同时又疯狂浪费着珍贵的网络资源。因此，我们需要控制发送方的发送速率，让接收方与发送方处于一种动态平衡才好。</p>
+<p>这里需要注意的是（常见误区）：</p>
+<ul>
+<li>发送端不等同于客户端</li>
+<li>接收端不等同于服务端</li>
+</ul>
+<p>TCP 为全双工(Full-Duplex, FDX)通信，双方可以进行双向通信，客户端和服务端既可能是发送端又可能是服务端。因此，两端各有一个发送缓冲区与接收缓冲区，两端都各自维护一个发送窗口和一个接收窗口。接收窗口大小取决于应用、系统、硬件的限制（TCP 传输速率不能大于应用的数据处理速率）。通信双方的发送窗口和接收窗口的要求相同</p>
+<p><strong>TCP 发送窗口可以划分成四个部分</strong>：</p>
+<ol>
+<li>已经发送并且确认的 TCP 段（已经发送并确认）；</li>
+<li>已经发送但是没有确认的 TCP 段（已经发送未确认）；</li>
+<li>未发送但是接收方准备接收的 TCP 段（可以发送）；</li>
+<li>未发送并且接收方也并未准备接受的 TCP 段（不可发送）。</li>
+</ol>
+<p><strong>TCP 发送窗口结构图示</strong>：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-send-window.png" alt="TCP发送窗口结构"></p>
+<ul>
+<li><strong>SND.WND</strong>：发送窗口。</li>
+<li><strong>SND.UNA</strong>：Send Unacknowledged 指针，指向发送窗口的第一个字节。</li>
+<li><strong>SND.NXT</strong>：Send Next 指针，指向可用窗口的第一个字节。</li>
+</ul>
+<p><strong>可用窗口大小</strong> &#x3D; <code>SND.UNA + SND.WND - SND.NXT</code> 。</p>
+<p><strong>TCP 接收窗口可以划分成三个部分</strong>：</p>
+<ol>
+<li>已经接收并且已经确认的 TCP 段（已经接收并确认）；</li>
+<li>等待接收且允许发送方发送 TCP 段（可以接收未确认）；</li>
+<li>不可接收且不允许发送方发送 TCP 段（不可接收）。</li>
+</ol>
+<p><strong>TCP 接收窗口结构图示</strong>：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-receive-window.png" alt="TCP接收窗口结构"></p>
+<p><strong>接收窗口的大小是根据接收端处理数据的速度动态调整的。</strong> 如果接收端读取数据快，接收窗口可能会扩大。 否则，它可能会缩小。</p>
+<p>另外，这里的滑动窗口大小只是为了演示使用，实际窗口大小通常会远远大于这个值。</p>
+<h2 id="TCP-的拥塞控制是怎么实现的？"><a href="#TCP-的拥塞控制是怎么实现的？" class="headerlink" title="TCP 的拥塞控制是怎么实现的？"></a>TCP 的拥塞控制是怎么实现的？</h2><p>在某段时间，若对网络中某一资源的需求超过了该资源所能提供的可用部分，网络的性能就要变坏。这种情况就叫拥塞。拥塞控制就是为了防止过多的数据注入到网络中，这样就可以使网络中的路由器或链路不致过载。拥塞控制所要做的都有一个前提，就是网络能够承受现有的网络负荷。拥塞控制是一个全局性的过程，涉及到所有的主机，所有的路由器，以及与降低网络传输性能有关的所有因素。相反，流量控制往往是点对点通信量的控制，是个端到端的问题。流量控制所要做到的就是抑制发送端发送数据的速率，以便使接收端来得及接收。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-congestion-control.png" alt="TCP的拥塞控制"></p>
+<p>为了进行拥塞控制，TCP 发送方要维持一个 <strong>拥塞窗口(cwnd)</strong> 的状态变量。拥塞控制窗口的大小取决于网络的拥塞程度，并且动态变化。发送方让自己的发送窗口取为拥塞窗口和接收方的接受窗口中较小的一个。</p>
+<p>TCP 的拥塞控制采用了四种算法，即 <strong>慢开始</strong>、 <strong>拥塞避免</strong>、<strong>快重传</strong> 和 <strong>快恢复</strong>。在网络层也可以使路由器采用适当的分组丢弃策略（如主动队列管理 AQM），以减少网络拥塞的发生。</p>
+<ul>
+<li><strong>慢开始：</strong> 慢开始算法的思路是当主机开始发送数据时，如果立即把大量数据字节注入到网络，那么可能会引起网络阻塞，因为现在还不知道网络的符合情况。经验表明，较好的方法是先探测一下，即由小到大逐渐增大发送窗口，也就是由小到大逐渐增大拥塞窗口数值。cwnd 初始值为 1，每经过一个传播轮次，cwnd 加倍。</li>
+<li><strong>拥塞避免：</strong> 拥塞避免算法的思路是让拥塞窗口 cwnd 缓慢增大，即每经过一个往返时间 RTT 就把发送方的 cwnd 加 1.</li>
+<li><strong>快重传与快恢复：</strong> 在 TCP&#x2F;IP 中，快速重传和恢复（fast retransmit and recovery，FRR）是一种拥塞控制算法，它能快速恢复丢失的数据包。没有 FRR，如果数据包丢失了，TCP 将会使用定时器来要求传输暂停。在暂停的这段时间内，没有新的或复制的数据包被发送。有了 FRR，如果接收机接收到一个不按顺序的数据段，它会立即给发送机发送一个重复确认。如果发送机接收到三个重复确认，它会假定确认件指出的数据段丢失了，并立即重传这些丢失的数据段。有了 FRR，就不会因为重传时要求的暂停被耽误。 　当有单独的数据包丢失时，快速重传和恢复（FRR）能最有效地工作。当有多个数据信息包在某一段很短的时间内丢失时，它则不能很有效地工作。</li>
+</ul>
+<h2 id="ARQ-协议了解吗"><a href="#ARQ-协议了解吗" class="headerlink" title="ARQ 协议了解吗?"></a>ARQ 协议了解吗?</h2><p><strong>自动重传请求</strong>（Automatic Repeat-reQuest，ARQ）是 OSI 模型中数据链路层和传输层的错误纠正协议之一。它通过使用确认和超时这两个机制，在不可靠服务的基础上实现可靠的信息传输。如果发送方在发送后一段时间之内没有收到确认信息（Acknowledgements，就是我们常说的 ACK），它通常会重新发送，直到收到确认或者重试超过一定的次数。</p>
+<p>ARQ 包括停止等待 ARQ 协议和连续 ARQ 协议。</p>
+<h3 id="停止等待-ARQ-协议"><a href="#停止等待-ARQ-协议" class="headerlink" title="停止等待 ARQ 协议"></a>停止等待 ARQ 协议</h3><p>停止等待协议是为了实现可靠传输的，它的基本原理就是每发完一个分组就停止发送，等待对方确认（回复 ACK）。如果过了一段时间（超时时间后），还是没有收到 ACK 确认，说明没有发送成功，需要重新发送，直到收到确认后再发下一个分组；</p>
+<p>在停止等待协议中，若接收方收到重复分组，就丢弃该分组，但同时还要发送确认。</p>
+<p><strong>1) 无差错情况:</strong></p>
+<p>发送方发送分组,接收方在规定时间内收到,并且回复确认.发送方再次发送。</p>
+<p><strong>2) 出现差错情况（超时重传）:</strong></p>
+<p>停止等待协议中超时重传是指只要超过一段时间仍然没有收到确认，就重传前面发送过的分组（认为刚才发送过的分组丢失了）。因此每发送完一个分组需要设置一个超时计时器，其重传时间应比数据在分组传输的平均往返时间更长一些。这种自动重传方式常称为 <strong>自动重传请求 ARQ</strong> 。另外在停止等待协议中若收到重复分组，就丢弃该分组，但同时还要发送确认。</p>
+<p><strong>3) 确认丢失和确认迟到</strong></p>
+<ul>
+<li><strong>确认丢失</strong>：确认消息在传输过程丢失。当 A 发送 M1 消息，B 收到后，B 向 A 发送了一个 M1 确认消息，但却在传输过程中丢失。而 A 并不知道，在超时计时过后，A 重传 M1 消息，B 再次收到该消息后采取以下两点措施：1. 丢弃这个重复的 M1 消息，不向上层交付。 2. 向 A 发送确认消息。（不会认为已经发送过了，就不再发送。A 能重传，就证明 B 的确认消息丢失）。</li>
+<li><strong>确认迟到</strong>：确认消息在传输过程中迟到。A 发送 M1 消息，B 收到并发送确认。在超时时间内没有收到确认消息，A 重传 M1 消息，B 仍然收到并继续发送确认消息（B 收到了 2 份 M1）。此时 A 收到了 B 第二次发送的确认消息。接着发送其他数据。过了一会，A 收到了 B 第一次发送的对 M1 的确认消息（A 也收到了 2 份确认消息）。处理如下：1. A 收到重复的确认后，直接丢弃。2. B 收到重复的 M1 后，也直接丢弃重复的 M1。</li>
+</ul>
+<h3 id="连续-ARQ-协议"><a href="#连续-ARQ-协议" class="headerlink" title="连续 ARQ 协议"></a>连续 ARQ 协议</h3><p>连续 ARQ 协议可提高信道利用率。发送方维持一个发送窗口，凡位于发送窗口内的分组可以连续发送出去，而不需要等待对方确认。接收方一般采用累计确认，对按序到达的最后一个分组发送确认，表明到这个分组为止的所有分组都已经正确收到了。</p>
+<ul>
+<li><strong>优点：</strong> 信道利用率高，容易实现，即使确认丢失，也不必重传。</li>
+<li><strong>缺点：</strong> 不能向发送方反映出接收方已经正确收到的所有分组的信息。 比如：发送方发送了 5 条 消息，中间第三条丢失（3 号），这时接收方只能对前两个发送确认。发送方无法知道后三个分组的下落，而只好把后三个全部重传一次。这也叫 Go-Back-N（回退 N），表示需要退回来重传已经发送过的 N 个消息。</li>
+</ul>
+<h2 id="超时重传如何实现？超时重传时间怎么确定？"><a href="#超时重传如何实现？超时重传时间怎么确定？" class="headerlink" title="超时重传如何实现？超时重传时间怎么确定？"></a>超时重传如何实现？超时重传时间怎么确定？</h2><p>当发送方发送数据之后，它启动一个定时器，等待目的端确认收到这个报文段。接收端实体对已成功收到的包发回一个相应的确认信息（ACK）。如果发送端实体在合理的往返时延（RTT）内未收到确认消息，那么对应的数据包就被假设为<a href="https://zh.wikipedia.org/wiki/%E4%B8%A2%E5%8C%85">已丢失</a>并进行重传。</p>
+<ul>
+<li>RTT（Round Trip Time）：往返时间，也就是数据包从发出去到收到对应 ACK 的时间。</li>
+<li>RTO（Retransmission Time Out）：重传超时时间，即从数据发送时刻算起，超过这个时间便执行重传。</li>
+</ul>
+<p>RTO 的确定是一个关键问题，因为它直接影响到 TCP 的性能和效率。如果 RTO 设置得太小，会导致不必要的重传，增加网络负担；如果 RTO 设置得太大，会导致数据传输的延迟，降低吞吐量。因此，RTO 应该根据网络的实际状况，动态地进行调整。</p>
+<p>RTT 的值会随着网络的波动而变化，所以 TCP 不能直接使用 RTT 作为 RTO。为了动态地调整 RTO，TCP 协议采用了一些算法，如加权移动平均（EWMA）算法，Karn 算法，Jacobson 算法等，这些算法都是根据往返时延（RTT）的测量和变化来估计 RTO 的值。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li>《计算机网络（第 7 版）》</li>
+<li>《图解 HTTP》</li>
+<li><a href="https://www.9tut.com/tcp-and-udp-tutorial">https://www.9tut.com/tcp-and-udp-tutorial</a></li>
+<li><a href="https://github.com/wolverinn/Waking-Up/blob/master/Computer%20Network.md">https://github.com/wolverinn/Waking-Up/blob/master/Computer%20Network.md</a></li>
+<li>TCP Flow Control—<a href="https://www.brianstorti.com/tcp-flow-control/">https://www.brianstorti.com/tcp-flow-control/</a></li>
+<li>TCP 流量控制(Flow Control)：<a href="https://notfalse.net/24/tcp-flow-control">https://notfalse.net/24/tcp-flow-control</a></li>
+<li>TCP 之滑动窗口原理 : <a href="https://cloud.tencent.com/developer/article/1857363">https://cloud.tencent.com/developer/article/1857363</a></li>
+</ol>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/14/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/16/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">240</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JayVae" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/shi-hai-jie-35" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wechat" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                  </span>
+                
+            </div>
+          
+
+		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=554191378&auto=1&height=66"></iframe>
+		  
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">史海杰</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">712.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("SWULgkVHBjhFp99nBHCr8oHC-gzGzoHsz", "DQQN5XsGzlq3PIf1OSvGvoRR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

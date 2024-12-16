@@ -1,37 +1,1506 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据库基础," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="MySQL 字符编码集中有两套 UTF-8 编码实现：**utf8** 和 **utf8mb4**。 如果使用 utf8 的话，存储 emoji 符号和一些比较复杂的汉字、繁体字就会出错。 为什么会这样呢？这篇文章可以从源头给你解答。 字符集是什么？字符是各种文字和符号的统称，包括各个国家文字、标点符号、表情、数字等等。 字符集 就是一系列字符的集合。字符集的种类较多，每个字符集可以表示的字符范围">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符集详解">
+<meta property="og:url" content="http://yoursite.com/2022/12/16/character-set/index.html">
+<meta property="og:site_name" content="Jay&#39;s Blog">
+<meta property="og:description" content="MySQL 字符编码集中有两套 UTF-8 编码实现：**utf8** 和 **utf8mb4**。 如果使用 utf8 的话，存储 emoji 符号和一些比较复杂的汉字、繁体字就会出错。 为什么会这样呢？这篇文章可以从源头给你解答。 字符集是什么？字符是各种文字和符号的统称，包括各个国家文字、标点符号、表情、数字等等。 字符集 就是一系列字符的集合。字符集的种类较多，每个字符集可以表示的字符范围">
+<meta property="og:locale">
+<meta property="og:image" content="https://oss.javaguide.cn/github/javaguide/csdn/c1c6375d08ca268690cef2b13591a5b4.png">
+<meta property="og:image" content="https://oss.javaguide.cn/github/javaguide/csdn/836c49b117ee4408871b0020b74c991d.png">
+<meta property="og:image" content="https://oss.javaguide.cn/javaguide/a8808cbabeea49caa3af27d314fa3c02-1.jpg">
+<meta property="og:image" content="https://oss.javaguide.cn/javaguide/1280px-Utf8webgrowth.svg.png">
+<meta property="og:image" content="https://oss.javaguide.cn/javaguide/image-20211008164229671.png">
+<meta property="og:image" content="https://oss.javaguide.cn/javaguide/image-20211008164542347.png">
+<meta property="article:published_time" content="2022-12-16T14:01:14.000Z">
+<meta property="article:modified_time" content="2024-12-16T10:21:06.955Z">
+<meta property="article:author" content="史海杰">
+<meta property="article:tag" content="数据库基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oss.javaguide.cn/github/javaguide/csdn/c1c6375d08ca268690cef2b13591a5b4.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2022/12/16/character-set/"/>
+
+
+
+
+
+  <title>字符集详解 | Jay's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1dc984dfc86062a60470cc7297fb0653";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jay's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知而不行为不知</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/12/16/character-set/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">字符集详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-12-16T22:01:14+08:00">
+                2022-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/12/16/character-set/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2022/12/16/character-set/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2022/12/16/character-set/" class="leancloud_visitors" data-flag-title="字符集详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>MySQL 字符编码集中有两套 UTF-8 编码实现：**<code>utf8</code>** 和 **<code>utf8mb4</code>**。</p>
+<p>如果使用 <strong><code>utf8</code></strong> 的话，存储 emoji 符号和一些比较复杂的汉字、繁体字就会出错。</p>
+<p>为什么会这样呢？这篇文章可以从源头给你解答。</p>
+<h2 id="字符集是什么？"><a href="#字符集是什么？" class="headerlink" title="字符集是什么？"></a>字符集是什么？</h2><p>字符是各种文字和符号的统称，包括各个国家文字、标点符号、表情、数字等等。 <strong>字符集</strong> 就是一系列字符的集合。字符集的种类较多，每个字符集可以表示的字符范围通常不同，就比如说有些字符集是无法表示汉字的。</p>
+<p><strong>计算机只能存储二进制的数据，那英文、汉字、表情等字符应该如何存储呢？</strong></p>
+<p>我们要将这些字符和二进制的数据一一对应起来，比如说字符“a”对应“01100001”，反之，“01100001”对应 “a”。我们将字符对应二进制数据的过程称为”<strong>字符编码</strong>“，反之，二进制数据解析成字符的过程称为“<strong>字符解码</strong>”。</p>
+<h2 id="字符编码是什么？"><a href="#字符编码是什么？" class="headerlink" title="字符编码是什么？"></a>字符编码是什么？</h2><p>字符编码是一种将字符集中的字符与计算机中的二进制数据相互转换的方法，可以看作是一种映射规则。也就是说，字符编码的目的是为了让计算机能够存储和传输各种文字信息。</p>
+<p>每种字符集都有自己的字符编码规则，常用的字符集编码规则有 ASCII 编码、 GB2312 编码、GBK 编码、GB18030 编码、Big5 编码、UTF-8 编码、UTF-16 编码等。</p>
+<h2 id="有哪些常见的字符集？"><a href="#有哪些常见的字符集？" class="headerlink" title="有哪些常见的字符集？"></a>有哪些常见的字符集？</h2><p>常见的字符集有：ASCII、GB2312、GB18030、GBK、Unicode……。</p>
+<p>不同的字符集的主要区别在于：</p>
+<ul>
+<li>可以表示的字符范围</li>
+<li>编码方式</li>
+</ul>
+<h3 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h3><p><strong>ASCII</strong> (<strong>A</strong>merican <strong>S</strong>tandard <strong>C</strong>ode for <strong>I</strong>nformation <strong>I</strong>nterchange，美国信息交换标准代码) 是一套主要用于现代美国英语的字符集（这也是 ASCII 字符集的局限性所在）。</p>
+<p><strong>为什么 ASCII 字符集没有考虑到中文等其他字符呢？</strong> 因为计算机是美国人发明的，当时，计算机的发展还处于比较雏形的时代，还未在其他国家大规模使用。因此，美国发布 ASCII 字符集的时候没有考虑兼容其他国家的语言。</p>
+<p>ASCII 字符集至今为止共定义了 128 个字符，其中有 33 个控制字符（比如回车、删除）无法显示。</p>
+<p>一个 ASCII 码长度是一个字节也就是 8 个 bit，比如“a”对应的 ASCII 码是“01100001”。不过，最高位是 0 仅仅作为校验位，其余 7 位使用 0 和 1 进行组合，所以，ASCII 字符集可以定义 128（2^7）个字符。</p>
+<p>由于，ASCII 码可以表示的字符实在是太少了。后来，人们对其进行了扩展得到了 <strong>ASCII 扩展字符集</strong> 。ASCII 扩展字符集使用 8 位（bits）表示一个字符，所以，ASCII 扩展字符集可以定义 256（2^8）个字符。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/csdn/c1c6375d08ca268690cef2b13591a5b4.png" alt="ASCII字符编码"></p>
+<h3 id="GB2312"><a href="#GB2312" class="headerlink" title="GB2312"></a>GB2312</h3><p>我们上面说了，ASCII 字符集是一种现代美国英语适用的字符集。因此，很多国家都捣鼓了一个适合自己国家语言的字符集。</p>
+<p>GB2312 字符集是一种对汉字比较友好的字符集，共收录 6700 多个汉字，基本涵盖了绝大部分常用汉字。不过，GB2312 字符集不支持绝大部分的生僻字和繁体字。</p>
+<p>对于英语字符，GB2312 编码和 ASCII 码是相同的，1 字节编码即可。对于非英字符，需要 2 字节编码。</p>
+<h3 id="GBK"><a href="#GBK" class="headerlink" title="GBK"></a>GBK</h3><p>GBK 字符集可以看作是 GB2312 字符集的扩展，兼容 GB2312 字符集，共收录了 20000 多个汉字。</p>
+<p>GBK 中 K 是汉语拼音 Kuo Zhan（扩展）中的“Kuo”的首字母。</p>
+<h3 id="GB18030"><a href="#GB18030" class="headerlink" title="GB18030"></a>GB18030</h3><p>GB18030 完全兼容 GB2312 和 GBK 字符集，纳入中国国内少数民族的文字，且收录了日韩汉字，是目前为止最全面的汉字字符集，共收录汉字 70000 多个。</p>
+<h3 id="BIG5"><a href="#BIG5" class="headerlink" title="BIG5"></a>BIG5</h3><p>BIG5 主要针对的是繁体中文，收录了 13000 多个汉字。</p>
+<h3 id="Unicode-UTF-8"><a href="#Unicode-UTF-8" class="headerlink" title="Unicode &amp; UTF-8"></a>Unicode &amp; UTF-8</h3><p>为了更加适合本国语言，诞生了很多种字符集。</p>
+<p>我们上面也说了不同的字符集可以表示的字符范围以及编码规则存在差异。这就导致了一个非常严重的问题：<strong>使用错误的编码方式查看一个包含字符的文件就会产生乱码现象。</strong></p>
+<p>就比如说你使用 UTF-8 编码方式打开 GB2312 编码格式的文件就会出现乱码。示例：“牛”这个汉字 GB2312 编码后的十六进制数值为 “C5A3”，而 “C5A3” 用 UTF-8 解码之后得到的却是 “ţ”。</p>
+<p>你可以通过这个网站在线进行编码和解码：<a href="https://www.haomeili.net/HanZi/ZiFuBianMaZhuanHuan">https://www.haomeili.net/HanZi/ZiFuBianMaZhuanHuan</a></p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/csdn/836c49b117ee4408871b0020b74c991d.png"></p>
+<p>这样我们就搞懂了乱码的本质：<strong>编码和解码时用了不同或者不兼容的字符集</strong> 。</p>
+<p><img src="https://oss.javaguide.cn/javaguide/a8808cbabeea49caa3af27d314fa3c02-1.jpg"></p>
+<p>为了解决这个问题，人们就想：“如果我们能够有一种字符集将世界上所有的字符都纳入其中就好了！”。</p>
+<p>然后，<strong>Unicode</strong> 带着这个使命诞生了。</p>
+<p>Unicode 字符集中包含了世界上几乎所有已知的字符。不过，Unicode 字符集并没有规定如何存储这些字符（也就是如何使用二进制数据表示这些字符）。</p>
+<p>然后，就有了 <strong>UTF-8</strong>（<strong>8</strong>-bit <strong>U</strong>nicode <strong>T</strong>ransformation <strong>F</strong>ormat）。类似的还有 UTF-16、 UTF-32。</p>
+<p>UTF-8 使用 1 到 4 个字节为每个字符编码， UTF-16 使用 2 或 4 个字节为每个字符编码，UTF-32 固定位 4 个字节为每个字符编码。</p>
+<p>UTF-8 可以根据不同的符号自动选择编码的长短，像英文字符只需要 1 个字节就够了，这一点 ASCII 字符集一样 。因此，对于英语字符，UTF-8 编码和 ASCII 码是相同的。</p>
+<p>UTF-32 的规则最简单，不过缺陷也比较明显，对于英文字母这类字符消耗的空间是 UTF-8 的 4 倍之多。</p>
+<p><strong>UTF-8</strong> 是目前使用最广的一种字符编码。</p>
+<p><img src="https://oss.javaguide.cn/javaguide/1280px-Utf8webgrowth.svg.png"></p>
+<h2 id="MySQL-字符集"><a href="#MySQL-字符集" class="headerlink" title="MySQL 字符集"></a>MySQL 字符集</h2><p>MySQL 支持很多种字符集的方式，比如 GB2312、GBK、BIG5、多种 Unicode 字符集（UTF-8 编码、UTF-16 编码、UCS-2 编码、UTF-32 编码等等）。</p>
+<h3 id="查看支持的字符集"><a href="#查看支持的字符集" class="headerlink" title="查看支持的字符集"></a>查看支持的字符集</h3><p>你可以通过 <code>SHOW CHARSET</code> 命令来查看，支持 like 和 where 子句。</p>
+<p><img src="https://oss.javaguide.cn/javaguide/image-20211008164229671.png"></p>
+<h3 id="默认字符集"><a href="#默认字符集" class="headerlink" title="默认字符集"></a>默认字符集</h3><p>在 MySQL5.7 中，默认字符集是 <code>latin1</code> ；在 MySQL8.0 中，默认字符集是 <code>utf8mb4</code></p>
+<h3 id="字符集的层次级别"><a href="#字符集的层次级别" class="headerlink" title="字符集的层次级别"></a>字符集的层次级别</h3><p>MySQL 中的字符集有以下的层次级别：</p>
+<ul>
+<li><code>server</code>（MySQL 实例级别）</li>
+<li><code>database</code>（库级别）</li>
+<li><code>table</code>（表级别）</li>
+<li><code>column</code>（字段级别）</li>
+</ul>
+<p>它们的优先级可以简单的认为是从上往下依次增大，也即 <code>column</code> 的优先级会大于 <code>table</code> 等其余层次的。如指定 MySQL 实例级别字符集是<code>utf8mb4</code>，指定某个表字符集是<code>latin1</code>，那么这个表的所有字段如果不指定的话，编码就是<code>latin1</code>。</p>
+<h4 id="server"><a href="#server" class="headerlink" title="server"></a>server</h4><p>不同版本的 MySQL 其 <code>server</code> 级别的字符集默认值不同，在 MySQL5.7 中，其默认值是 <code>latin1</code> ；在 MySQL8.0 中，其默认值是 <code>utf8mb4</code> 。</p>
+<p>当然也可以通过在启动 <code>mysqld</code> 时指定 <code>--character-set-server</code> 来设置 <code>server</code> 级别的字符集。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysqld</span><br><span class="line">mysqld --character-set-server=utf8mb4</span><br><span class="line">mysqld --character-set-server=utf8mb4 \</span><br><span class="line">  --collation-server=utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+
+<p>或者如果你是通过源码构建的方式启动的 MySQL，你可以在 <code>cmake</code> 命令中指定选项：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cmake . -DDEFAULT_CHARSET=latin1</span><br><span class="line">或者</span><br><span class="line">cmake . -DDEFAULT_CHARSET=latin1 \</span><br><span class="line">  -DDEFAULT_COLLATION=latin1_german1_ci</span><br></pre></td></tr></table></figure>
+
+<p>此外，你也可以在运行时改变 <code>character_set_server</code> 的值，从而达到修改 <code>server</code> 级别的字符集的目的。</p>
+<p><code>server</code> 级别的字符集是 MySQL 服务器的全局设置，它不仅会作为创建或修改数据库时的默认字符集（如果没有指定其他字符集），还会影响到客户端和服务器之间的连接字符集，具体可以查看 <a href="https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-charsets.html">MySQL Connector&#x2F;J 8.0 - 6.7 Using Character Sets and Unicode</a>。</p>
+<h4 id="database"><a href="#database" class="headerlink" title="database"></a>database</h4><p><code>database</code> 级别的字符集是我们在创建数据库和修改数据库时指定的：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE db_name</span><br><span class="line">    [[<span class="keyword">DEFAULT</span>] <span class="keyword">CHARACTER SET</span> charset_name]</span><br><span class="line">    [[<span class="keyword">DEFAULT</span>] <span class="keyword">COLLATE</span> collation_name]</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE db_name</span><br><span class="line">    [[<span class="keyword">DEFAULT</span>] <span class="keyword">CHARACTER SET</span> charset_name]</span><br><span class="line">    [[<span class="keyword">DEFAULT</span>] <span class="keyword">COLLATE</span> collation_name]</span><br></pre></td></tr></table></figure>
+
+<p>如前面所说，如果在执行上述语句时未指定字符集，那么 MySQL 将会使用 <code>server</code> 级别的字符集。</p>
+<p>可以通过下面的方式查看某个数据库的字符集：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">USE db_name;</span><br><span class="line"><span class="keyword">SELECT</span> @<span class="variable">@character_set_database</span>, @<span class="variable">@collation_database</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME</span><br><span class="line"><span class="keyword">FROM</span> INFORMATION_SCHEMA.SCHEMATA <span class="keyword">WHERE</span> SCHEMA_NAME <span class="operator">=</span> <span class="string">&#x27;db_name&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><p><code>table</code> 级别的字符集是在创建表和修改表时指定的：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> tbl_name (column_list)</span><br><span class="line">    [[<span class="keyword">DEFAULT</span>] <span class="keyword">CHARACTER SET</span> charset_name]</span><br><span class="line">    [<span class="keyword">COLLATE</span> collation_name]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER TABLE</span> tbl_name</span><br><span class="line">    [[<span class="keyword">DEFAULT</span>] <span class="keyword">CHARACTER SET</span> charset_name]</span><br><span class="line">    [<span class="keyword">COLLATE</span> collation_name]</span><br></pre></td></tr></table></figure>
+
+<p>如果在创建表和修改表时未指定字符集，那么将会使用 <code>database</code> 级别的字符集。</p>
+<h4 id="column"><a href="#column" class="headerlink" title="column"></a>column</h4><p><code>column</code> 级别的字符集同样是在创建表和修改表时指定的，只不过它是定义在列中。下面是个例子：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> t1</span><br><span class="line">(</span><br><span class="line">    col1 <span class="type">VARCHAR</span>(<span class="number">5</span>)</span><br><span class="line">      <span class="keyword">CHARACTER SET</span> latin1</span><br><span class="line">      <span class="keyword">COLLATE</span> latin1_german1_ci</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>如果未指定列级别的字符集，那么将会使用表级别的字符集。</p>
+<h3 id="连接字符集"><a href="#连接字符集" class="headerlink" title="连接字符集"></a>连接字符集</h3><p>前面说到了字符集的层次级别，它们是和存储相关的。而连接字符集涉及的是和 MySQL 服务器的通信。</p>
+<p>连接字符集与下面这几个变量息息相关：</p>
+<ul>
+<li><code>character_set_client</code> ：描述了客户端发送给服务器的 SQL 语句使用的是什么字符集。</li>
+<li><code>character_set_connection</code> ：描述了服务器接收到 SQL 语句时使用什么字符集进行翻译。</li>
+<li><code>character_set_results</code> ：描述了服务器返回给客户端的结果使用的是什么字符集。</li>
+</ul>
+<p>它们的值可以通过下面的 SQL 语句查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> performance_schema.session_variables</span><br><span class="line"><span class="keyword">WHERE</span> VARIABLE_NAME <span class="keyword">IN</span> (</span><br><span class="line"><span class="string">&#x27;character_set_client&#x27;</span>, <span class="string">&#x27;character_set_connection&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;character_set_results&#x27;</span>, <span class="string">&#x27;collation_connection&#x27;</span></span><br><span class="line">) <span class="keyword">ORDER</span> <span class="keyword">BY</span> VARIABLE_NAME;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> SESSION VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;character\_set\_%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>如果要想修改前面提到的几个变量的值，有以下方式：</p>
+<p>1、修改配置文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">[mysql]</span></span><br><span class="line"><span class="comment"># 只针对MySQL客户端程序</span></span><br><span class="line"><span class="attr">default-character-set</span>=<span class="string">utf8mb4</span></span><br></pre></td></tr></table></figure>
+
+<p>2、使用 SQL 语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> names utf8mb4</span><br><span class="line"># 或者一个个进行修改</span><br><span class="line"># <span class="keyword">SET</span> character_set_client <span class="operator">=</span> utf8mb4;</span><br><span class="line"># <span class="keyword">SET</span> character_set_results <span class="operator">=</span> utf8mb4;</span><br><span class="line"># <span class="keyword">SET</span> collation_connection <span class="operator">=</span> utf8mb4;</span><br></pre></td></tr></table></figure>
+
+<h3 id="JDBC-对连接字符集的影响"><a href="#JDBC-对连接字符集的影响" class="headerlink" title="JDBC 对连接字符集的影响"></a>JDBC 对连接字符集的影响</h3><p>不知道你们有没有碰到过存储 emoji 表情正常，但是使用类似 Navicat 之类的软件的进行查询的时候，发现 emoji 表情变成了问号的情况。这个问题很有可能就是 JDBC 驱动引起的。</p>
+<p>根据前面的内容，我们知道连接字符集也是会影响我们存储的数据的，而 JDBC 驱动会影响连接字符集。</p>
+<p><code>mysql-connector-java</code> （JDBC 驱动）主要通过这几个属性影响连接字符集：</p>
+<ul>
+<li><code>characterEncoding</code></li>
+<li><code>characterSetResults</code></li>
+</ul>
+<p>以 <code>DataGrip 2023.1.2</code> 来说，在它配置数据源的高级对话框中，可以看到 <code>characterSetResults</code> 的默认值是 <code>utf8</code> ，在使用 <code>mysql-connector-java 8.0.25</code> 时，连接字符集最后会被设置成 <code>utf8mb3</code> 。那么这种情况下 emoji 表情就会被显示为问号，并且当前版本驱动还不支持把 <code>characterSetResults</code> 设置为 <code>utf8mb4</code> ，不过换成 <code>mysql-connector-java driver 8.0.29</code> 却是允许的。</p>
+<p>具体可以看一下 StackOverflow 的 <a href="https://stackoverflow.com/questions/54815419/datagrip-mysql-stores-emojis-correctly-but-displays-them-as">DataGrip MySQL stores emojis correctly but displays them as?</a>这个回答。</p>
+<h3 id="UTF-8-使用"><a href="#UTF-8-使用" class="headerlink" title="UTF-8 使用"></a>UTF-8 使用</h3><p>通常情况下，我们建议使用 UTF-8 作为默认的字符编码方式。</p>
+<p>不过，这里有一个小坑。</p>
+<p>MySQL 字符编码集中有两套 UTF-8 编码实现：</p>
+<ul>
+<li>**<code>utf8</code>**：<code>utf8</code>编码只支持<code>1-3</code>个字节 。 在 <code>utf8</code> 编码中，中文是占 3 个字节，其他数字、英文、符号占一个字节。但 emoji 符号占 4 个字节，一些较复杂的文字、繁体字也是 4 个字节。</li>
+<li>**<code>utf8mb4</code>**：UTF-8 的完整实现，正版！最多支持使用 4 个字节表示字符，因此，可以用来存储 emoji 符号。</li>
+</ul>
+<p><strong>为什么有两套 UTF-8 编码实现呢？</strong> 原因如下：</p>
+<p><img src="https://oss.javaguide.cn/javaguide/image-20211008164542347.png"></p>
+<p>因此，如果你需要存储<code>emoji</code>类型的数据或者一些比较复杂的文字、繁体字到 MySQL 数据库的话，数据库的编码一定要指定为<code>utf8mb4</code> 而不是<code>utf8</code> ，要不然存储的时候就会报错了。</p>
+<p>演示一下吧！（环境：MySQL 5.7+）</p>
+<p>建表语句如下，我们指定数据库 CHARSET 为 <code>utf8</code> 。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> `<span class="keyword">user</span>` (</span><br><span class="line">  `id` <span class="type">varchar</span>(<span class="number">66</span>) <span class="keyword">CHARACTER SET</span> utf8mb3 <span class="keyword">NOT NULL</span>,</span><br><span class="line">  `name` <span class="type">varchar</span>(<span class="number">33</span>) <span class="keyword">CHARACTER SET</span> utf8mb3 <span class="keyword">NOT NULL</span>,</span><br><span class="line">  `phone` <span class="type">varchar</span>(<span class="number">33</span>) <span class="keyword">CHARACTER SET</span> utf8mb3 <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `password` <span class="type">varchar</span>(<span class="number">100</span>) <span class="keyword">CHARACTER SET</span> utf8mb3 <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span></span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8;</span><br></pre></td></tr></table></figure>
+
+<p>当我们执行下面的 insert 语句插入数据到数据库时，果然报错！</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> `<span class="keyword">user</span>` (`id`, `name`, `phone`, `password`)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line"> (<span class="string">&#x27;A00003&#x27;</span>, <span class="string">&#x27;guide哥😘😘😘&#x27;</span>, <span class="string">&#x27;181631312312&#x27;</span>, <span class="string">&#x27;123456&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>报错信息如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Incorrect string value: &#x27;\xF0\x9F\x98\x98\xF0\x9F...&#x27; for column &#x27;name&#x27; at row 1</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>字符集和字符编码（Charset &amp; Encoding）：<a href="https://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html">https://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html</a></li>
+<li>十分钟搞清字符集和字符编码：<a href="http://cenalulu.github.io/linux/character-encoding/">http://cenalulu.github.io/linux/character-encoding/</a></li>
+<li>Unicode-维基百科：<a href="https://zh.wikipedia.org/wiki/Unicode">https://zh.wikipedia.org/wiki/Unicode</a></li>
+<li>GB2312-维基百科：<a href="https://zh.wikipedia.org/wiki/GB_2312">https://zh.wikipedia.org/wiki/GB_2312</a></li>
+<li>UTF-8-维基百科：<a href="https://zh.wikipedia.org/wiki/UTF-8">https://zh.wikipedia.org/wiki/UTF-8</a></li>
+<li>GB18030-维基百科: <a href="https://zh.wikipedia.org/wiki/GB_18030">https://zh.wikipedia.org/wiki/GB_18030</a></li>
+<li>MySQL8 文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/charset.html">https://dev.mysql.com/doc/refman/8.0/en/charset.html</a></li>
+<li>MySQL5.7 文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/charset.html">https://dev.mysql.com/doc/refman/5.7/en/charset.html</a></li>
+<li>MySQL Connector&#x2F;J 文档：<a href="https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-charsets.html">https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-charsets.html</a></li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" rel="tag"># 数据库基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/11/14/basis/" rel="next" title="数据库基础知识总结">
+                <i class="fa fa-chevron-left"></i> 数据库基础知识总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/12/17/cas/" rel="prev" title="CAS 详解">
+                CAS 详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">240</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JayVae" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/shi-hai-jie-35" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="wechat" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                  </span>
+                
+            </div>
+          
+
+		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=554191378&auto=1&height=66"></iframe>
+		  
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">字符集是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">字符编码是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AD%97%E7%AC%A6%E9%9B%86%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">有哪些常见的字符集？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCII"><span class="nav-number">3.1.</span> <span class="nav-text">ASCII</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GB2312"><span class="nav-number">3.2.</span> <span class="nav-text">GB2312</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBK"><span class="nav-number">3.3.</span> <span class="nav-text">GBK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GB18030"><span class="nav-number">3.4.</span> <span class="nav-text">GB18030</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BIG5"><span class="nav-number">3.5.</span> <span class="nav-text">BIG5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode-UTF-8"><span class="nav-number">3.6.</span> <span class="nav-text">Unicode &amp; UTF-8</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">4.</span> <span class="nav-text">MySQL 字符集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%94%AF%E6%8C%81%E7%9A%84%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">4.1.</span> <span class="nav-text">查看支持的字符集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">4.2.</span> <span class="nav-text">默认字符集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BA%A7%E5%88%AB"><span class="nav-number">4.3.</span> <span class="nav-text">字符集的层次级别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#server"><span class="nav-number">4.3.1.</span> <span class="nav-text">server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#database"><span class="nav-number">4.3.2.</span> <span class="nav-text">database</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#table"><span class="nav-number">4.3.3.</span> <span class="nav-text">table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#column"><span class="nav-number">4.3.4.</span> <span class="nav-text">column</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">4.4.</span> <span class="nav-text">连接字符集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC-%E5%AF%B9%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6%E9%9B%86%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-number">4.5.</span> <span class="nav-text">JDBC 对连接字符集的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UTF-8-%E4%BD%BF%E7%94%A8"><span class="nav-number">4.6.</span> <span class="nav-text">UTF-8 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">史海杰</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">712.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'JayVae',
+            repo: 'https://github.com/JayVae/gitment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '77dd90a675af1d70e71a63f31351268ddde641e0',
+            
+                client_id: '18c4c1a4b757582f350b'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("SWULgkVHBjhFp99nBHCr8oHC-gzGzoHsz", "DQQN5XsGzlq3PIf1OSvGvoRR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
