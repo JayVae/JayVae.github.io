@@ -315,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/15/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E5%92%8C%E4%BD%8D%E8%BF%90%E7%AE%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -334,7 +334,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/15/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%9F%BA%E7%A1%80/" itemprop="url">面试算法之动态规划基础</a></h1>
+                <a class="post-title-link" href="/2018/09/21/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E5%92%8C%E4%BD%8D%E8%BF%90%E7%AE%97/" itemprop="url">算术运算和位运算</a></h1>
         
 
         <div class="post-meta">
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T16:41:43+08:00">
-                2018-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-21T21:55:48+08:00">
+                2018-09-21
               </time>
             
 
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2018/07/15/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%9F%BA%E7%A1%80/" class="leancloud_visitors" data-flag-title="面试算法之动态规划基础">
+             <span id="/2018/09/21/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E5%92%8C%E4%BD%8D%E8%BF%90%E7%AE%97/" class="leancloud_visitors" data-flag-title="算术运算和位运算">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  761 字
+                  270 字
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -450,30 +450,17 @@
       
         
           
-            <h1 id="这是-H1"><a href="#这是-H1" class="headerlink" title="这是 H1"></a>这是 H1</h1><h1 id="面试中对动态规划的考查难度不是很难"><a href="#面试中对动态规划的考查难度不是很难" class="headerlink" title="面试中对动态规划的考查难度不是很难"></a>面试中对动态规划的考查难度不是很难</h1><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><p>以斐波那契数列为例，单纯方式的递归会造成指数级的时间复杂度，因为其中有大量重复的计算过程；<br>因此考虑将重复的数字用数组记录下来–记忆化搜索：自上向下的解决问题<br>动态规划：自下向上的解决问题</p>
-<h1 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h1><p>递归问题—重叠子问题+最优子结构（针对最优解问题）—记忆化搜索：自上向下的解决问题<br>                    |                     |<br>                    |—动态规划：自下向上的解决问题（可以没有递归过程）</p>
-<p><strong>用自上向下的方式去思考，用自下而上的方式去实现。</strong><br><strong>最优子结构：通过子问题的最优解，可以得到这个问题的最优解</strong></p>
-<p>许多实际问题是斐波那契问题：<br>如爬楼梯，120,64</p>
-<p>以343为例：<br>首先这个问题用暴力搜索方法去思考，由于分割成多少是不知道的，因此不能用循环方式（O（n2）），因此使用递归的方式;<br>通过画图分析，发现有大量的重叠子问题，因此可以用记忆化搜索来实现。<br>lc343分别用记忆化搜索和动态规划的思路来实现了。（可以看出，记忆化搜索的方法比较容易想到）<br>【实际上，这个问题用暴力解法的话：回溯遍历将一个数做分割的所有可能性O(2^N)】</p>
-<p>279，91，62</p>
-<h1 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h1><ol>
-<li>注意对状态的定义（函数的定义）；【做什么】状态定义不同，则解决方式不同</li>
-<li>根据对状态的定义，决定状态的转移，状态转移方程。【怎么做】</li>
+            <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h2><ol>
+<li>场景<br> 网页黑名单系统<br> 垃圾邮件过滤系统<br> 爬虫的网址判断重复系统<br> 容忍一定程度的失误率<br> 对空间要求较严格</li>
+<li>优势：使用很少的空间做到正确率很高</li>
+<li>原理：<br> 引入了k(k&gt;1)个相互独立的哈希函数，对输入进行取哈希值，然后将结果对m取余（m为bitarray的长度），bitarray对应位置上的结果涂黑。<br> x,y,z经由哈希函数映射将各自在Bitmap中的3个位置置为1，当w出现时，仅当3个标志位都为1时，才表示w在集合中。</li>
+<li>关键：<br> m如何确定大小？<br> 由样本数量n和失误率p决定。</li>
 </ol>
-<p>198，309这两个问题除了动态规划也可以用其他方法来做</p>
-<h1 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h1><p>时间复杂度：O（N<em>C）<br>空间复杂度：O（N</em>C）–O(C*2)–O(C)</p>
-<ol>
-<li>完全背包问题：每个物品可以无限使用；</li>
-<li>多重背包问题：每个物品不止一个，有num（i）个</li>
-<li>多维费用：考虑物品的体积和重量两个维度，变成三维数组</li>
-</ol>
-<p>背包例子：416，322，377，474，139，494</p>
-<h1 id="最长上升子序列问题LIS"><a href="#最长上升子序列问题LIS" class="headerlink" title="最长上升子序列问题LIS"></a>最长上升子序列问题LIS</h1><p><strong>注意状态的定义</strong><br>lc300的两种实现<br>LIS(i)表示以第i个数字为结尾的最长上升子序列的长度；<br>LIS(i)表示[0…i]的范围内，选择数字nums[i]可以获得的最长上升子序列的长度。【注意是选择，不是考虑】<br>lc300的O（n^2）解法；<br>O(NlogN)解法。<a href="https://blog.csdn.net/u013178472/article/details/54926531">链接</a>（新开了数组进行存储有序的序列，并进行二分查找）</p>
-<h1 id="更多动态规划问题"><a href="#更多动态规划问题" class="headerlink" title="更多动态规划问题"></a>更多动态规划问题</h1><ol>
-<li>LCS:</li>
-</ol>
-<h1 id="动态规划给出具体解"><a href="#动态规划给出具体解" class="headerlink" title="动态规划给出具体解"></a>动态规划给出具体解</h1><p>以300LIS为例，给出具体的最长递增子序列，倒着查找<br>\0-1背包问题,反向重构，需要指出的是，<strong>由于反向重构时，需要利用原来的信息，因此对空间优化的方法就不行了</strong></p>
-
+<h2 id="交换两个数的值"><a href="#交换两个数的值" class="headerlink" title="交换两个数的值"></a>交换两个数的值</h2><pre><code>a = a^b;
+b = a^b;
+a = a^b;
+</code></pre>
+<h2 id="给定两个32位整数a和b，返回a和b中较大的"><a href="#给定两个32位整数a和b，返回a和b中较大的" class="headerlink" title="给定两个32位整数a和b，返回a和b中较大的"></a>给定两个32位整数a和b，返回a和b中较大的</h2><h2 id="一串数中找出只出现奇数次的数（其余数均出现偶数次）"><a href="#一串数中找出只出现奇数次的数（其余数均出现偶数次）" class="headerlink" title="一串数中找出只出现奇数次的数（其余数均出现偶数次）"></a>一串数中找出只出现奇数次的数（其余数均出现偶数次）</h2><h2 id="两个数出现奇数次"><a href="#两个数出现奇数次" class="headerlink" title="两个数出现奇数次"></a>两个数出现奇数次</h2><h2 id="异或运算可完成简单的加密或解密过程"><a href="#异或运算可完成简单的加密或解密过程" class="headerlink" title="异或运算可完成简单的加密或解密过程"></a>异或运算可完成简单的加密或解密过程</h2>
           
         
       
@@ -521,7 +508,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/14/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%8E%E9%80%92%E5%BD%92/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -540,7 +527,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/14/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%8E%E9%80%92%E5%BD%92/" itemprop="url">面试算法之二叉树与递归</a></h1>
+                <a class="post-title-link" href="/2018/09/21/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95/" itemprop="url">大数据算法</a></h1>
         
 
         <div class="post-meta">
@@ -552,8 +539,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-14T17:39:42+08:00">
-                2018-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-21T20:50:40+08:00">
+                2018-09-21
               </time>
             
 
@@ -592,7 +579,7 @@
 
           
           
-             <span id="/2018/07/14/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%8E%E9%80%92%E5%BD%92/" class="leancloud_visitors" data-flag-title="面试算法之二叉树与递归">
+             <span id="/2018/09/21/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95/" class="leancloud_visitors" data-flag-title="大数据算法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -617,7 +604,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  101 字
+                  562 字
                 </span>
               
 
@@ -656,1158 +643,33 @@
       
         
           
-            <h1 id="递归和二叉树的紧密关系"><a href="#递归和二叉树的紧密关系" class="headerlink" title="递归和二叉树的紧密关系"></a>递归和二叉树的紧密关系</h1><p>基本上二叉树的大部分操作都会用到递归，因为二叉树本质上就是一种递归的数据结构</p>
-<p><strong>写递归函数时要注意</strong>：<br>先写递归终止条件；<br>递归过程。</p>
-<p><strong>递归的返回值</strong><br>129,257</p>
-<p><strong>更复杂的递归逻辑</strong><br>437，</p>
-<h1 id="二分搜索树（二分查找树）"><a href="#二分搜索树（二分查找树）" class="headerlink" title="二分搜索树（二分查找树）"></a>二分搜索树（二分查找树）</h1><p>235，98，450，230，236</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/14/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%A0%88%E9%98%9F%E5%88%97%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/14/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%A0%88%E9%98%9F%E5%88%97%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" itemprop="url">面试算法之栈队列优先队列</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-14T10:05:01+08:00">
-                2018-07-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/14/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%A0%88%E9%98%9F%E5%88%97%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" class="leancloud_visitors" data-flag-title="面试算法之栈队列优先队列">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  163 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>使用栈的原因是，需要在嵌套关系中获得最近的一个元素。</p>
-<h1 id="递归和栈的紧密关系"><a href="#递归和栈的紧密关系" class="headerlink" title="递归和栈的紧密关系"></a>递归和栈的紧密关系</h1><p>递归算法：<br>二叉树144,94,145</p>
-<p><strong>写递归函数时要注意</strong>：<br>先写递归终止条件；<br>递归过程。</p>
-<p>使用栈模拟系统栈，写出非递归程序；（三种遍历方式的统一写法）<br>教科书上的经典非递归方法</p>
-<h1 id="队列的基本应用–广度优先遍历（对于树，层序遍历；对于图，无权图的最短路径）"><a href="#队列的基本应用–广度优先遍历（对于树，层序遍历；对于图，无权图的最短路径）" class="headerlink" title="队列的基本应用–广度优先遍历（对于树，层序遍历；对于图，无权图的最短路径）"></a>队列的基本应用–广度优先遍历（对于树，层序遍历；对于图，无权图的最短路径）</h1><p>103,107，199</p>
-<p>BFS与图<br>279，127，126</p>
-<h1 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h1><p>leetcode347，23<br>k分的归并排序（我们一般的是二分归并）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%9C%A8%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%A9%BF%E9%92%88%E5%BC%95%E7%BA%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/13/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%9C%A8%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%A9%BF%E9%92%88%E5%BC%95%E7%BA%BF/" itemprop="url">面试算法之在链表中穿针引线</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T21:02:18+08:00">
-                2018-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/13/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%9C%A8%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%A9%BF%E9%92%88%E5%BC%95%E7%BA%BF/" class="leancloud_visitors" data-flag-title="面试算法之在链表中穿针引线">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  141 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>206,83，86，328，2，445</p>
-<p>一般来说对链表的操作，基本都要求不能改变node的值，但是有一个例外，237</p>
-<p><strong>技术</strong><br>预先创建几个节点，将每个变量所对应的节点明确出来，画图，进行穿针引线</p>
-<p><strong>技术</strong><br>设立链表的虚拟头结点：203，82，21，24，25（在需要对头结点需要额外操作时），尤其是在删除链表中的某个节点时</p>
-<p><strong>双指针技术</strong><br>删除倒数第n个节点：19，61，143<br>判断有没有环<br>回文链234</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%9F%A5%E6%89%BE%E8%A1%A8%E7%9A%84%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/13/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%9F%A5%E6%89%BE%E8%A1%A8%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">面试算法之查找表的问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T19:25:37+08:00">
-                2018-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/13/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%9F%A5%E6%89%BE%E8%A1%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="面试算法之查找表的问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  145 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>有序数组的二分查找；<br>set；（二分查找树[红黑树]实现和散列表[哈希]实现）<br>map；（二分查找树[红黑树]实现和散列表[哈希]实现）</p>
-<p>二分查找树实现查找用logN时间，保留了数据的顺序性，提供更多的功能，即java中的treemap，treeset；<br>散列表就是查找用常数时间，即java中的hashset。</p>
-<p>当键都是长字符串时，</p>
-<p>leetcode 1,15,18，16【16并不是查找表】，454，49，447，149</p>
-<h1 id="最关键的是："><a href="#最关键的是：" class="headerlink" title="最关键的是："></a>最关键的是：</h1><p><strong>到底应该查找什么？</strong></p>
-<p>滑动窗口+查找表<br>lc219，217，219</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/12/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/" itemprop="url">面试算法之数组问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T14:37:13+08:00">
-                2018-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/12/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="面试算法之数组问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  217 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="如何写出正确的程序？（参照二分查找的代码）"><a href="#如何写出正确的程序？（参照二分查找的代码）" class="headerlink" title="如何写出正确的程序？（参照二分查找的代码）"></a>如何写出正确的程序？（参照二分查找的代码）</h1><p>明确变量的含义；<br>循环不变量；<br>小数据量调试；<br>大数据量测试。</p>
-<h2 id="leetcode-283-movezeros"><a href="#leetcode-283-movezeros" class="headerlink" title="leetcode 283 movezeros"></a>leetcode 283 movezeros</h2><p>定义：k，数组中，[0,k）的元素均为非0元素。</p>
-<h2 id="leetcode-26-remove-duplicated-from-sorted-array"><a href="#leetcode-26-remove-duplicated-from-sorted-array" class="headerlink" title="leetcode 26 remove duplicated from sorted array"></a>leetcode 26 remove duplicated from sorted array</h2><h2 id="leetcode-75-sort-colors"><a href="#leetcode-75-sort-colors" class="headerlink" title="leetcode 75 sort colors"></a>leetcode 75 sort colors</h2><p>没有思路时，可以先使用任意一种排序算法，以先解决问题为目的<br>计数排序：分别统计0.1.2的个数（适用于类别特别少的）<br>三向快速排序：定义清楚索引的意义</p>
-<h2 id="215-Kth-largest-element-in-an-array"><a href="#215-Kth-largest-element-in-an-array" class="headerlink" title="215 Kth largest element in an array"></a>215 Kth largest element in an array</h2><p>这个问题用快速排序解决很经典</p>
-<h2 id="167-two-sum-II"><a href="#167-two-sum-II" class="headerlink" title="167 two sum II"></a>167 two sum II</h2><p>利用有序：二分查找<br>对撞指针：一前一后直至对撞</p>
-<h2 id="双索引技术："><a href="#双索引技术：" class="headerlink" title="双索引技术："></a>双索引技术：</h2><p>对撞指针<br>滑动窗口（参考leetcode209，3，438,76）</p>
-<p>** 子数组需要明确是连续的还是不连续</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/12/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" itemprop="url">面试算法之时间复杂度</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T09:13:29+08:00">
-                2018-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/12/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="leancloud_visitors" data-flag-title="面试算法之时间复杂度">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  262 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>大O表示法：平均情况，是正比，与前面的常数关系不大；</p>
-<h1 id="了解常用数据规模情况下的复杂度："><a href="#了解常用数据规模情况下的复杂度：" class="headerlink" title="了解常用数据规模情况下的复杂度："></a>了解常用数据规模情况下的复杂度：</h1><p><strong>如果想在1s内解决问题：</strong><br>O(N2)的算法可以处理大约10^4级别的数据；<br>O(N)的算法可以处理大约10^8级别的数据；<br>O(NlogN)的算法可以处理大约10^7级别的数据；</p>
-<p>空间复杂度：递归调用是有空间代价的，递归的深度是多少，空间复杂度就是多少</p>
-<p>复杂度试验：实验，观察趋势</p>
-<p>递归的时间复杂度并不一定是O(NlogN)，与调用次数（递归深度）有关，画出递归树来分析。<br>通常，分治的复杂度是logN.</p>
-<p>主定理</p>
-<p>均摊复杂度分析:以动态数组的生成为例，当元素个数大于当前数组容量，容量增大一倍；当元素个数小于当前容量的1&#x2F;4，容量变为1&#x2F;2【这样是为了防止复杂度震荡】</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/11/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/" itemprop="url">算法面试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T19:22:41+08:00">
-                2018-07-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/11/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/" class="leancloud_visitors" data-flag-title="算法面试">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  461 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h1><p>算法面试并不是看你给出的是不是正确答案，而是思考路径，对于问题的细节和应用环境，不断深入。<br>关键在于解决问题的思路。<br>甚至通过分析解题方向，得到应该在哪个领域去找。</p>
-<h2 id="算法面试的准备范围："><a href="#算法面试的准备范围：" class="headerlink" title="算法面试的准备范围："></a>算法面试的准备范围：</h2><ol>
-<li>各种排序算法</li>
-<li>基础数据结构和算法的实现：堆、二叉树、图</li>
-<li>基础数据结构的使用：链表、栈、队列、哈希表、图、并查集</li>
-<li>基础算法：深度优先、广度优先、二分查找、递归</li>
-<li>基本算法思想：递归、分治、回溯搜索、贪心、动态规划</li>
-</ol>
-<h2 id="技术面试的问题"><a href="#技术面试的问题" class="headerlink" title="技术面试的问题"></a>技术面试的问题</h2><ul>
-<li>   梳理项目中遇到的问题？</li>
-<li>   遇到印象最深的bug</li>
-<li>   面向对象</li>
-<li>   设计模式</li>
-<li>   网络相关；安全相关；内存相关；并发相关；</li>
-<li>   系统设计；</li>
+            <h1 id="先导-–-哈希算法"><a href="#先导-–-哈希算法" class="headerlink" title="先导 – 哈希算法"></a>先导 – 哈希算法</h1><ul>
+<li>哈希函数，在于将输入映射到一定范围的输出，核心在于输出域的分布是否均匀。</li>
+<li>MD5,SHA都是经典的哈希函数算法实现</li>
 </ul>
-<h2 id="关于项目："><a href="#关于项目：" class="headerlink" title="关于项目："></a>关于项目：</h2><p><strong>项目来源：</strong></p>
-<ol>
-<li>实战课程学习</li>
-<li>创建自己的项目<br>2.1 自己做小应用：<br>2.2 自己解决的实际问题：爬虫；数据分析；词频统计；自动充值；自动邮箱通知。<br>2.3 不是项目的项目：总结<br>2.4 分享：自己的技术博客；github</li>
+<h1 id="Map-Reduce"><a href="#Map-Reduce" class="headerlink" title="Map-Reduce"></a>Map-Reduce</h1><ul>
+<li>过程<ol>
+<li>Map阶段（hash）：把大任务划分为小任务</li>
+<li>Reduce阶段：把结果合并</li>
 </ol>
-<h2 id="通过过去了解你的思考行为方式"><a href="#通过过去了解你的思考行为方式" class="headerlink" title="通过过去了解你的思考行为方式"></a>通过过去了解你的思考行为方式</h2><ul>
-<li>   遇到的最大的挑战</li>
-<li>   最享受的工作内容</li>
+</li>
+<li>注意点：<ol>
+<li>备份的考虑</li>
+<li>任务分配策略与任务进度跟踪</li>
+<li>多用户权限的控制</li>
+</ol>
+</li>
 </ul>
-<h2 id="准备好合适的问题问面试官"><a href="#准备好合适的问题问面试官" class="headerlink" title="准备好合适的问题问面试官"></a>准备好合适的问题问面试官</h2><ul>
-<li>   整个小组的大概运行模式是怎样的？</li>
-<li>   整个项目的后续规划是如何的？</li>
-<li>   这个产品中的某个问题是如何解决的？</li>
-<li>   为什么项目中会选择某些技术？标准？</li>
-<li>   我对某个技术很感兴趣，在小组中我会有怎样的机会深入？</li>
-</ul>
-<h2 id="高级数据结构和算法面试提及的概率很低："><a href="#高级数据结构和算法面试提及的概率很低：" class="headerlink" title="高级数据结构和算法面试提及的概率很低："></a>高级数据结构和算法面试提及的概率很低：</h2><ul>
-<li>   红黑树</li>
-<li>   计算几何</li>
-<li>   B-Tree</li>
-<li>   数论</li>
-<li>   斐波那契堆</li>
-</ul>
+<h1 id="常见海量处理题目解题关键"><a href="#常见海量处理题目解题关键" class="headerlink" title="常见海量处理题目解题关键"></a>常见海量处理题目解题关键</h1><ol>
+<li>分而治之：通过哈希函数将大任务分流到及其，或分流成小文件。</li>
+<li>常用的hashMap或bitMap<br>难点：通讯、时间和空间的估算</li>
+</ol>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol>
+<li>对10亿个IPV4的ip地址进行排序，每个ip只会出现一次。<br> IPV4的ip数量约为42亿<br> 申请长度为2^32的bit类型的数组，bitmap。<br> 如果整数1出现，就把bitmap对应的位置从0变到1，这个数组可以表示任意一个（注意是一个）32位无符号整数是否出现过，然后把10亿个ip地址全部转换成整数，相应的在bitmap中相应的位置描黑即可，最后只要从bitmap的零位一直遍历到最后，然后提取出对应为1的下标整数k，再转换成ip地址，就完成了从小到大的排序。空间复杂度很小，时间复杂度O（n）</li>
+<li>10亿个年龄进行排序—-桶排序<br> 建立0到200个桶表示年龄从0到200，然后将10亿数据入桶，再依次倒出</li>
+<li>有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数，内存限制为2g<br> 通过哈希函数不断分流，分流到16个文件中，对每个小文件用哈希表来进行处理，全部处理完成后，得到16个文件中各自的第一名，再选出16个中的第一名</li>
+</ol>
+<h1 id="一致性哈希算法"><a href="#一致性哈希算法" class="headerlink" title="一致性哈希算法"></a>一致性哈希算法</h1><p>通过哈希函数后的值首尾相连成一个圆，数据hash之后对应在圆上的一个位置，机器也处在这个圆上（根据机器id计算出哈希值），数据hash之后顺时针找离它的哈希值最近的机器</p>
 
           
         
@@ -1856,7 +718,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/10/%E6%8B%92%E7%BB%9D%E6%97%A0%E6%84%8F%E4%B9%89%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%8C%E6%8A%8A%E6%97%B6%E9%97%B4%E6%B5%AA%E8%B4%B9%E5%9C%A8%E7%BE%8E%E5%A5%BD%E4%BA%8B%E6%83%85%E4%B8%8A/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E9%AB%98%E5%BA%A6%E5%B9%B3%E8%A1%A1%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -1875,7 +737,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/10/%E6%8B%92%E7%BB%9D%E6%97%A0%E6%84%8F%E4%B9%89%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%8C%E6%8A%8A%E6%97%B6%E9%97%B4%E6%B5%AA%E8%B4%B9%E5%9C%A8%E7%BE%8E%E5%A5%BD%E4%BA%8B%E6%83%85%E4%B8%8A/" itemprop="url">拒绝无意义的事情，把时间浪费在美好事情上</a></h1>
+                <a class="post-title-link" href="/2018/08/26/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E9%AB%98%E5%BA%A6%E5%B9%B3%E8%A1%A1%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url">树的基本概念和高度平衡的二叉树</a></h1>
         
 
         <div class="post-meta">
@@ -1887,180 +749,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T14:14:31+08:00">
-                2018-07-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/10/%E6%8B%92%E7%BB%9D%E6%97%A0%E6%84%8F%E4%B9%89%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%8C%E6%8A%8A%E6%97%B6%E9%97%B4%E6%B5%AA%E8%B4%B9%E5%9C%A8%E7%BE%8E%E5%A5%BD%E4%BA%8B%E6%83%85%E4%B8%8A/" class="leancloud_visitors" data-flag-title="拒绝无意义的事情，把时间浪费在美好事情上">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  122 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近拖延症太严重了啊！！！！</p>
-<p>抓紧时间准备找工作吧，把时间用在刷题上面，不要做这些无意义的事情了：</p>
-<ul>
-<li>游戏</li>
-<li>看游戏视频</li>
-<li>看综艺</li>
-<li>看微博</li>
-</ul>
-<p><strong>早睡早起，锻炼身体，早点躺下听听喜马拉雅也挺好啊</strong></p>
-<p>尤其是无意义的社交，拒绝自我麻木，自我高潮。</p>
-<p>对自己狠一点吧，你的父母尚在苟且之中，你却在谈什么诗和远方。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/%E7%AE%80%E5%8E%86%E9%A1%B9%E7%9B%AE%E6%95%B4%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/03/%E7%AE%80%E5%8E%86%E9%A1%B9%E7%9B%AE%E6%95%B4%E7%90%86/" itemprop="url">简历项目整理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-03T09:56:04+08:00">
-                2018-07-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-26T20:34:53+08:00">
+                2018-08-26
               </time>
             
 
@@ -2082,8 +772,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%80%E5%8E%86/" itemprop="url" rel="index">
-                    <span itemprop="name">简历</span>
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
                   </a>
                 </span>
 
@@ -2099,7 +789,7 @@
 
           
           
-             <span id="/2018/07/03/%E7%AE%80%E5%8E%86%E9%A1%B9%E7%9B%AE%E6%95%B4%E7%90%86/" class="leancloud_visitors" data-flag-title="简历项目整理">
+             <span id="/2018/08/26/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E9%AB%98%E5%BA%A6%E5%B9%B3%E8%A1%A1%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/" class="leancloud_visitors" data-flag-title="树的基本概念和高度平衡的二叉树">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2124,7 +814,219 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  168 字
+                  1.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="树结构中的常见用语"><a href="#树结构中的常见用语" class="headerlink" title="树结构中的常见用语:"></a>树结构中的常见用语:</h1><pre><code>节点的深度 - 从树的根节点到该节点的边数
+节点的高度 - 该节点和叶子之间最长路径上的边数
+树的高度 - 其根节点的高度 
+</code></pre>
+<h1 id="什么是一个高度平衡的二叉搜索树"><a href="#什么是一个高度平衡的二叉搜索树" class="headerlink" title="什么是一个高度平衡的二叉搜索树?"></a>什么是一个高度平衡的二叉搜索树?</h1><p>一个高度平衡的二叉搜索树（平衡二叉搜索树）是在插入和删除任何节点之后，可以自动保持其高度最小。也就是说，有N个节点的平衡二叉搜索树，它的高度是logN。并且，每个节点的两个子树的高度不会相差超过1。</p>
+<p>正如我们之前提到的, 一个有N个节点的平衡二搜索叉树的高度总是logN。因此，我们可以计算节点总数和树的高度，以确定这个二叉搜索树是否为高度平衡的。</p>
+<p>同样，在定义中， 我们提到了高度平衡的二叉树一个特性: 每个节点的两个子树的深度不会相差超过1。我们也可以根据这个性质，递归地验证树。</p>
+<h1 id="为什么需要用到高度平衡的二叉搜索树"><a href="#为什么需要用到高度平衡的二叉搜索树" class="headerlink" title="为什么需要用到高度平衡的二叉搜索树?"></a>为什么需要用到高度平衡的二叉搜索树?</h1><p>我们已经介绍过了二叉树及其相关操作, 包括搜索、插入、删除。<br>当分析这些操作的时间复杂度时，我们需要注意的是树的高度是十分重要的考量因素。<br>以搜索操作为例，如果二叉搜索树的高度为h，则时间复杂度为O(h)。二叉搜索树的高度的确很重要。</p>
+<p>所以，我们来讨论一下树的节点总数N和高度h之间的关系。 对于一个平衡二叉搜索树, 我们已经在前文中提过, h&gt;&#x3D;	logN 。但对于一个普通的二叉搜索树， 在最坏的情况下, 它可以退化成一个链。</p>
+<p>因此，具有N个节点的二叉搜索树的高度在logN到N区间变化。也就是说，搜索操作的时间复杂度可以从logN变化到N。这是一个巨大的性能差异。</p>
+<p>所以说，高度平衡的二叉搜索树对提高性能起着重要作用。</p>
+<h1 id="如何实现一个高度平衡的二叉搜索树"><a href="#如何实现一个高度平衡的二叉搜索树" class="headerlink" title="如何实现一个高度平衡的二叉搜索树?"></a>如何实现一个高度平衡的二叉搜索树?</h1><p>有许多不同的方法可以实现。尽管这些实现方法的细节有所不同，但他们有相同的目标:</p>
+<pre><code>采用的数据结构应该满足二分查找属性和高度平衡属性。
+采用的数据结构应该支持二叉搜索树的基本操作，包括在O(logN)时间内的搜索、插入和删除，即使在最坏的情况下也是如此。
+</code></pre>
+<h1 id="常见的的高度平衡二叉树列表供您参考："><a href="#常见的的高度平衡二叉树列表供您参考：" class="headerlink" title="常见的的高度平衡二叉树列表供您参考："></a>常见的的高度平衡二叉树列表供您参考：</h1><pre><code>红黑树
+AVL树
+伸展树
+树堆
+</code></pre>
+<h1 id="高度平衡的二叉搜索树的实际应用"><a href="#高度平衡的二叉搜索树的实际应用" class="headerlink" title="高度平衡的二叉搜索树的实际应用"></a>高度平衡的二叉搜索树的实际应用</h1><p>高度平衡的二叉搜索树在实际中被广泛使用，因为它可以在O(logN)时间复杂度内执行所有搜索、插入和删除操作。</p>
+<p>平衡二叉搜索树的概念经常运用在Set和Map中。 Set和Map的原理相似。 我们将在下文中重点讨论Set这个数据结构。</p>
+<pre><code>Set(集合)是另一种数据结构，它可以存储大量key(键)而不需要任何特定的顺序或任何重复的元素。 它应该支持的基本操作是将新元素插入到Set中，并检查元素是否存在于其中。
+</code></pre>
+<p>通常，有两种最广泛使用的集合：散列集合(Hash Set)和树集合(Tree Set)。</p>
+<p>树集合, Java中的Treeset或者C++中的set，是由高度平衡的二叉搜索树实现的。因此，搜索、插入和删除的时间复杂度都是O(logN)。</p>
+<p>散列集合, Java中的HashSet或者C++中的unordered_set，是由哈希实现的, 但是平衡二叉搜索树也起到了至关重要的作用。当存在具有相同哈希键的元素过多时，将花费O(N)时间复杂度来查找特定元素，其中N是具有相同哈希键的元素的数量。 通常情况下，使用高度平衡的二叉搜索树将把时间复杂度从 O(N) 改善到 O(logN)。</p>
+<p>哈希集和树集之间的本质区别在于树集中的键是有序的。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>高度平衡的二叉搜索树是二叉搜索树的特殊表示形式，旨在提高二叉搜索树的性能。但这个数据结构具体的实现方式，超出了我们这章的内容，也很少会在面试中被考察。但是了解高度平衡二叉搜索树的的基本概念，以及如何运用它帮助你进行算法设计是非常有用的。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/%E5%8F%8C%E6%8C%87%E9%92%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/22/%E5%8F%8C%E6%8C%87%E9%92%88/" itemprop="url">双指针</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T15:56:59+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/22/%E5%8F%8C%E6%8C%87%E9%92%88/" class="leancloud_visitors" data-flag-title="双指针">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  336 字
                 </span>
               
 
@@ -2163,30 +1065,1233 @@
       
         
           
-            <p><strong>大概分为两个大方向</strong></p>
-<ol>
-<li>电气</li>
-<li>编程<br> 2.1 软件开发<br> 2.2 算法</li>
+            <h1 id="两个常用场景（数组中）"><a href="#两个常用场景（数组中）" class="headerlink" title="两个常用场景（数组中）"></a>两个常用场景（数组中）</h1><ol>
+<li>前后同时，从不同位置出发<br> 从两端向中间迭代数组。<br> 一个指针从始端开始，而另一个指针从末端开始。<br>值得注意的是，这种技巧经常在排序数组中使用。</li>
 </ol>
-<h1 id="电气方向的项目"><a href="#电气方向的项目" class="headerlink" title="电气方向的项目"></a>电气方向的项目</h1><p><em>先简要写（等到9月份再详细）</em></p>
-<ol>
-<li>电力市场评价</li>
-<li>机房温度控制</li>
-<li>相位识别</li>
-<li></li>
+<p>比如：反转字符串，数组拆分，两数和（有序数组）</p>
+<ol start="2">
+<li>两个不同步的指针（一个快指针一个慢指针），速度不同<br> 解决这类问题的关键是确定两个指针的移动策略。</li>
 </ol>
-<h1 id="编程方向"><a href="#编程方向" class="headerlink" title="编程方向"></a>编程方向</h1><p><em>先把相关的项目都罗列出来，然后再在软件开发和算法中索引起来</em></p>
+<p>比如： 原地移除元素。最大连续1的个数，长度最小的子数组</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>你有时可能需要在使用双指针技巧之前对数组进行<strong>排序</strong>，也可能需要运用<strong>贪心想法</strong>来决定你的<strong>运动策略</strong>。</p>
+<h1 id="双指针在链表中的应用"><a href="#双指针在链表中的应用" class="headerlink" title="双指针在链表中的应用"></a>双指针在链表中的应用</h1><p><strong>双指针技术</strong><br>删除倒数第n个节点：19，61，143<br>判断有没有环lc141，lc142<br>回文链234</p>
+<h2 id="链表中双指针模板"><a href="#链表中双指针模板" class="headerlink" title="链表中双指针模板"></a>链表中双指针模板</h2><pre><code>// Initialize slow &amp; fast pointers
+ListNode slow = head;
+ListNode fast = head;
+/**
+ * Change this condition to fit specific problem.
+ * Attention: remember to avoid null-pointer error
+ **/
+while (slow != null &amp;&amp; fast != null &amp;&amp; fast.next != null) &#123;
+    slow = slow.next;           // move slow pointer one step each time
+    fast = fast.next.next;      // move fast pointer two steps each time
+    if (slow == fast) &#123;         // change this condition to fit specific problem
+        return true;
+    &#125;
+&#125;
+return false;   // change return value to fit specific problem
+</code></pre>
+<h1 id="双指针在滑动窗口"><a href="#双指针在滑动窗口" class="headerlink" title="双指针在滑动窗口"></a>双指针在滑动窗口</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%A4%A7%E6%95%B0%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/22/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%A4%A7%E6%95%B0%E9%97%AE%E9%A2%98/" itemprop="url">面试算法之大数问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T15:34:10+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/22/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%A4%A7%E6%95%B0%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="面试算法之大数问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  0 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E9%80%92%E5%BD%92%E4%B8%8E%E5%9B%9E%E6%BA%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/21/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E9%80%92%E5%BD%92%E4%B8%8E%E5%9B%9E%E6%BA%AF/" itemprop="url">面试算法之递归与回溯</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T20:05:10+08:00">
+                2018-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/21/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E9%80%92%E5%BD%92%E4%B8%8E%E5%9B%9E%E6%BA%AF/" class="leancloud_visitors" data-flag-title="面试算法之递归与回溯">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  226 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="树形问题"><a href="#树形问题" class="headerlink" title="树形问题"></a>树形问题</h1><p>lc17</p>
+<p><strong>递归调用的一个重要特征–要返回</strong></p>
+<h1 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h1><p>回溯法 是依赖递归的<br>（要保证回去，递归本身会回去，但有些状态需要手动回去，比如全排列问题中使用辅助空间used）</p>
+<p>回溯法是暴力解法的一个主要实现手段<br>动态规划就是在回溯法基础上实现的；<br>还可以通过某些剪枝不用遍历完所有情况。</p>
+<p>lc93，131</p>
+<h2 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h2><p>lc77</p>
+<h2 id="二维平面"><a href="#二维平面" class="headerlink" title="二维平面"></a>二维平面</h2><p>lc79</p>
+<h2 id="floodfill问题，一类经典问题"><a href="#floodfill问题，一类经典问题" class="headerlink" title="floodfill问题，一类经典问题"></a>floodfill问题，一类经典问题</h2><p>本质是深度优先的遍历</p>
+<p>回溯法是经典人工智能的基础</p>
+<p>lc51</p>
+<p>N皇后问题：<br>    可以定义一个Try(x,y)函数判断棋盘(x,y)处是否可以放皇后：</p>
+<p>(1)不在同一列</p>
+<p>(2)不在对角线上，即有两棋子坐标分别为(X1,Y1),(X2,Y2)，则|X1-X2|!&#x3D;|Y1-Y2|</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/19/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" itemprop="url">面试算法之回溯算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T19:17:44+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">面试算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/19/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E4%B9%8B%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" class="leancloud_visitors" data-flag-title="面试算法之回溯算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  540 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="简单概述"><a href="#简单概述" class="headerlink" title="简单概述"></a>简单概述</h1><p>       回溯法思路的简单描述是：把问题的解空间转化成了图或者树的结构表示，然后使用<strong>深度优先搜索策略</strong>进行遍历，遍历的过程中记录和寻找所有可行解或者最优解。<br>基本思想类同于：<br>    • 图的深度优先搜索<br>    • 二叉树的后序遍历<br>      【<br>         分支限界法：广度优先搜索<br>         思想类同于：图的广度优先遍历<br>                                二叉树的层序遍历<br>      】</p>
+<h1 id="详细描述"><a href="#详细描述" class="headerlink" title="详细描述"></a>详细描述</h1><p>        详细的描述则为：<br>        回溯法按深度优先策略搜索问题的解空间树。首先从根节点出发搜索解空间树，当算法搜索至解空间树的某一节点时，先利用剪枝函数判断该节点是否可行（即能得到问题的解）。如果不可行，则跳过对该节点为根的子树的搜索，逐层向其祖先节点回溯；否则，进入该子树，继续按深度优先策略搜索。<br>        回溯法的基本行为是搜索，搜索过程使用剪枝函数来为了避免无效的搜索。剪枝函数包括两类：1. 使用约束函数，剪去不满足约束条件的路径；2.使用限界函数，剪去不能得到最优解的路径。<br>        问题的关键在于如何定义问题的解空间，转化成树（即解空间树）。</p>
+<pre><code>    解空间树分为两种：
+        **子集树和排列树**。两种在算法结构和思路上大体相同。
+</code></pre>
+<h1 id="回溯法应用"><a href="#回溯法应用" class="headerlink" title="回溯法应用"></a>回溯法应用</h1><p>       当问题是要求满足某种性质（约束条件）的所有解或最优解时，往往使用回溯法。<br>       它有“通用解题法”之美誉。</p>
 <ol>
-<li>自动化成绩分析系统</li>
-<li>在线考试系统</li>
-<li>空工大（有没有相应的文档和代码）</li>
-<li>停车项目（有问题）</li>
-<li>自己练习项目：<blockquote>
-<p>权限管理<br>商城<br>OA平台<br>springboot整合shiro<br>网站架构，linux<br>爬虫，有助于理解浏览器请求原理：技术方案<br>python django</p>
-</blockquote>
+<li>子集问题lc78，lc90</li>
+<li>排列问题lc46，lc47</li>
+<li>组合求和问题lc39，40，216</li>
+<li>分割回文串lc131</li>
+<li>阿里快递最短路alibaba（DFS）</li>
+<li>组合问题lc77【lc77中有对回溯法的优化，即剪枝】，lc401</li>
+<li>二维平面上使用回溯法 lc79</li>
+<li>floodfill lc200（岛屿的个数），130，417</li>
+<li>N皇后问题lc51</li>
+<li>数独问题lc37</li>
+</ol>
+<h1 id="回溯法实现"><a href="#回溯法实现" class="headerlink" title="回溯法实现 -"></a>回溯法实现 -</h1><ol>
+<li>递归</li>
+<li>迭代（这个问题怎么做？）</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Java%E5%BE%85%E8%A1%A5%E5%85%85%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/11/Java%E5%BE%85%E8%A1%A5%E5%85%85%E9%97%AE%E9%A2%98/" itemprop="url">Java待补充问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T10:22:48+08:00">
+                2018-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/11/Java%E5%BE%85%E8%A1%A5%E5%85%85%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="Java待补充问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>TO BE CONTINUED</p>
+<hr>
+<ol>
+<li><p>单例的7种写法？double check？</p>
+</li>
+<li><p>多线程中几种锁？</p>
+</li>
+<li><p>可见性</p>
+</li>
+<li><p>transient<br>类的有些属性需要序列化，而其他属性不需要被序列化，打个比方，如果一个用户有一些敏感信息（如密码，银行卡号等），<br>为了安全起见，不希望在网络操作（主要涉及到序列化操作，本地序列化缓存也适用）中被传输，这些信息对应的变量就可以加上transient关键字。<br>换句话说，这个字段的生命周期仅存于调用者的内存中而不会写到磁盘里持久化。<br>1）一旦变量被transient修饰，变量将不再是对象持久化的一部分，该变量内容在序列化后无法获得访问。<br>2）transient关键字只能修饰变量，而不能修饰方法和类。注意，本地变量是不能被transient关键字修饰的。变量如果是用户自定义类变量，则该类需要实现Serializable接口。<br>3）被transient关键字修饰的变量不再能被序列化，一个静态变量不管是否被transient修饰，均不能被序列化。</p>
+</li>
+<li><p>volatile关键字<br>当使用volatile修饰某个变量时，它会保证对该变量的修改会立即被更新到内存中，<br>并且将其它缓存中对该变量的缓存设置成无效，因此其它线程需要读取该值时必须从主内存中读取，从而得到最新的值。<br>volatile适用于不需要保证原子性，但却需要保证可见性的场景。一种典型的使用场景是用它修饰用于停止线程的状态标记。<br>volatile在这里可以做到的作用是使得多个线程可以共享变量，但是问题在于使用volatile将使得VM优化失去作用，导致效率较低，所以要在必要的时候使用。</p>
 </li>
 </ol>
+<p>问：既然锁和synchronized即可保证原子性也可保证可见性，为何还需要volatile？<br>答：synchronized和锁需要通过操作系统来仲裁谁获得锁，开销比较高，而volatile开销小很多。因此在只需要保证可见性的条件下，<br>使用volatile的性能要比使用锁和synchronized高得多。<br>6. 类加载顺序<br>总的来说，初始化顺序依次是：（静态变量、静态初始化块）–&gt;（变量、初始化块）–&gt; 构造器；<br>如果有父类，则顺序是：父类static方法 –&gt; 子类static方法 –&gt; 父类构造方法- -&gt; 子类构造方法<br>虚拟机在首次加载Java类时，会对静态代码块、静态成员变量、静态方法进行一次初始化（静态间按声明顺序执行）。<br>只有在调用new方法时才会创建类的实例。<br>类实例创建过程：父子继承关系，先父类再子类。父类的静态-&gt;子类的静态-&gt;父类的初始化块-&gt;父类的构造方法-&gt;子类的初始化块-&gt;子类的构造方法<br>类实例销毁时候：首先销毁子类部分，再销毁父类部分。<br>7. 大数相加、大数相乘</p>
+<ol start="8">
+<li><p>static synchronized</p>
+</li>
+<li><p>timewait次数太多<br>通信双方建立TCP连接后，主动关闭连接的一方就会进入TIME_WAIT状态。<br>客户端主动关闭连接时，会发送最后一个ack后，然后会进入TIME_WAIT状态，再停留2个MSL时间(后有MSL的解释)，进入CLOSED状态。</p>
+</li>
+</ol>
+<p>大多数服务器端一般执行被动关闭，服务器不会进入TIME_WAIT状态。<br>高并发短连接的TCP服务器上，当服务器处理完请求后立刻按照主动正常关闭连接。。。这个场景下，会出现大量socket处于TIMEWAIT状态。<br>服务端为了解决这个TIME_WAIT问题，可选择的方式有三种：<br>    Ø  保证由客户端主动发起关闭（即做为B端）<br>    Ø  关闭的时候使用RST的方式<br>    Ø  对处于TIME_WAIT状态的TCP允许重用<br>    如发现系统存在大量TIME_WAIT状态的连接，通过调整内核参数解决：<br>10. hashmap9</p>
+<ol start="11">
+<li><p>atomicInteger<br>AtomicInteger是一个提供原子操作的Integer类，通过线程安全的方式操作加减。<br>问：既然锁和synchronized可以保证原子性，为什么还需要AtomicInteger这种的类来保证原子操作？<br>答：锁和synchronized需要通过操作系统来仲裁谁获得锁，开销比较高，而AtomicInteger是通过CPU级的CAS操作来保证原子性，开销比较小。<br>所以使用AtomicInteger的目的还是为了提高性能。<br>Volatile修饰的成员变量在每次被线程访问时，都强迫从共享内存重新读取该成员的值，而且，当成员变量值发生变化时，强迫将变化的值重新写入共享内存，<br>这样两个不同的线程在访问同一个共享变量的值时，始终看到的是同一个值。<br>而volatile这个值的作用就是告诉VM：对于这个成员变量不能保存它的副本，要直接与共享成员变量交互。<br>建议：当多个线程同时访问一个共享变量时，可以使用volatile，而当访问的变量已在synchronized代码块中时，不必使用。<br>缺点：使用volatile将使得VM优化失去作用，导致效率较低，所以要在必要的时候使用。</p>
+</li>
+<li><p>找中位数（2个有序数组数组中查找Top K的值（Top K的问题可以转换成求第k个元素的问题））<br>排序；快速排序思想；</p>
+</li>
+<li><p>不用随机数生成随机</p>
+</li>
+<li><p>UDP</p>
+</li>
+<li><p>可重入锁</p>
+</li>
+<li><p>如果TCP连接中没收到怎么办</p>
+</li>
+<li><p>进程间通信：<br>这种存在共享内存区的进程间的冲突问题，解决方法的思路是统一的：当某个进程正在操作共享内存区时，其他进程不得操作共享内存区。<br>这个思路实现的关键点就是：令其他进程知道“有一个进程在操作共享内存区”，因此这类问题就被称为进程通信问题，<br>通信的“内容”就是：有没有其他进程在操作共享内存区。（讲解到信号量机制时进程通信将广义化，但依然不是进程间的“实际通信”，而是某些信号的共享）<br>IPC的方式通常有管道（包括无名管道和命名管道）、消息队列、信号量、共享存储、Socket、Streams等。其中 Socket和Streams支持不同主机上的两个进程IPC。</p>
+</li>
+</ol>
+<p> 1.管道：速度慢，容量有限，只有父子进程能通讯<br>2.FIFO：任何进程间都能通讯，但速度慢<br>3.消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题<br>4.信号量：不能传递复杂消息，只能用来同步<br>5.共享内存区：能够很容易控制容量，速度快，但要保持同步，比如一个进程在写的时候，另一个进程要注意读写的问题，相当于线程中的线程安全，<br>当然，共享内存区同样可以用作线程间通讯，不过没这个必要，线程间本来就已经共享了同一进程内的一块内存</p>
+<ol start="18">
+<li><p>Mybatis（看）,事务实现</p>
+</li>
+<li><p>如何找出一列数中的两个重复元素</p>
+</li>
+<li><p>mysql中索引类型及实现</p>
+</li>
+<li><p>数据库中的锁</p>
+</li>
+<li><p>行锁</p>
+</li>
+<li><p>java锁的底层实现</p>
+</li>
+<li><p>数据库中mysql的事务<br>事务的隔离性是通过锁实现，而事务的原子性、一致性和持久性则是通过事务日志实现。说到事务日志，不得不说的就是redo和undo。<br>事务的实现是基于数据库的存储引擎。不同的存储引擎对事务的支持程度不一样。mysql中支持事务的存储引擎有innoDB和NDB。<br>innoDB是mysql默认的存储引擎，默认的隔离级别是RR，并且在RR的隔离级别下更进一步，<br>通过多版本并发控制（MVCC，Multiversion Concurrency Control ）解决不可重复读问题，<br>加上间隙锁（也就是并发控制）解决幻读问题。因此innoDB的RR隔离级别其实实现了串行化级别的效果，而且保留了比较好的并发性能。</p>
+</li>
+<li><p>mybatis事务管理机制</p>
+</li>
+<li><p>mysql中主键和唯一键的区别，唯一索引。<br>都是不允许重复,mysql中索引的数据结构是B+树</p>
+</li>
+<li><p>主键只有一个，唯一约束可以有多个；</p>
+</li>
+<li><p>主键不能为null，唯一约束可以有多个；</p>
+</li>
+<li><p>主键是不可能（或很难）更新，唯一约束只要唯一就可以更新．</p>
+</li>
+</ol>
+<p>（2）.在创建唯一性约束和主键约束时可以创建聚集索引和非聚集索引，但在 默认情况下主键约束产生聚集索引，而唯一性约束产生非聚集索引<br>约束和索引， 前者是用来检查数据的正确性，后者用来实现数据查询的优化，目的不同。</p>
+<p>唯一性约束与唯一索引有所不同：<br>（1）.创建唯一约束会在Oracle中创建一个Constraint，同时也会创建一个该约束对应的唯一索引。<br>（2）.创建唯一索引只会创建一个唯一索引，不会创建Constraint。<br>也就是说其实唯一约束是通过创建唯一索引来实现的。</p>
+<p>在删除时这两者也有一定的区别：<br>删除唯一约束时可以只删除约束而不删除对应的索引，所以对应的列还是必须唯一的，<br>而删除了唯一索引的话就可以插入不唯一的值。</p>
+<ol start="26">
+<li><p>tcp连接中间的数据丢失</p>
+</li>
+<li><p>约瑟夫环</p>
+</li>
+<li><p>线程间通信<br>wait，notify，notifyAll</p>
+</li>
+<li><p>equals与hashcode为什么需要一致</p>
+</li>
+<li><p>信号量<br>互斥量的加锁和解锁必须由同一线程分别对应使用，信号量可以由一个线程释放，另一个线程得到。<br>基于上面的特点，互斥锁一般用于控制一段临界代码，当然信号量也可以做到。但是如果释放和获取不在一个函数中甚至不在一个线程中时就必须使用信号量了</p>
+</li>
+<li><p>tcp为什么比udp可靠<br>[1] 确认和重传机制<br>建立连接时三次握手同步双方的“序列号 + 确认号 + 窗口大小信息”，是确认重传、流控的基础<br>传输过程中，如果Checksum校验失败、丢包或延时，发送端重传<br>[2] 数据排序<br>TCP有专门的序列号SN字段，可提供数据re-order<br>[3] 流量控制<br>窗口和计时器的使用。TCP窗口中会指明双方能够发送接收的最大数据量<br>[4] 拥塞控制<br>TCP的拥塞控制由4个核心算法组成。</p>
+<p>“慢启动”（Slow Start）</p>
+<p>“拥塞避免”（Congestion avoidance）</p>
+<p>“快速重传 ”（Fast Retransmit）</p>
+<p>“快速恢复”（Fast Recovery）</p>
+</li>
+<li><p>索引<br>只有在where语句出现，mysql才会去使用索引。<br>mysql中索引的数据结构是B+树。（通常B+树用于数据库索引，而B树则常用于文件索引。）<br>mysql中的primary key，unique，联合唯一也都是索引，这些索引除了加速查找以外，还有约束的功能<br>32.1 为什么用索引<br>数据库也是一样，但显然要复杂的多，因为不仅面临着等值查询，还有范围查询(&gt;、&lt;、between、in)、模糊查询(like)、并集查询(or)等等。数据库应该选择怎么样的方式来应对所有的问题呢？我们回想字典的例子，能不能把数据分成段，然后分段查询呢？最简单的如果1000条数据，1到100分成第一段，101到200分成第二段，201到300分成第三段……这样查第250条数据，只要找第三段就可以了，一下子去除了90%的无效数据。但如果是1千万的记录呢，分成几段比较好？稍有算法基础的同学会想到搜索树，其平均复杂度是lgN，具有不错的查询性能。但这里我们忽略了一个关键的问题，复杂度模型是基于每次相同的操作成本来考虑的。而数据库实现比较复杂，一方面数据是保存在磁盘上的，另外一方面为了提高性能，每次又可以把部分数据读入内存来计算，因为我们知道访问磁盘的成本大概是访问内存的十万倍左右，所以简单的搜索树难以满足复杂的应用场景。<br>32.1 聚簇索引<br>索引分为聚簇索引和非聚簇索引两种，聚簇索引是按照数据存放的物理位置为顺序的，而非聚簇索引就不一样了；<br>聚簇索引能提高多行检索的速度，而非聚簇索引对于单行的检索很快。<br>聚簇索引是顺序结构与数据存储物理结构一致的一种索引，并且一个表的聚簇索引只能有唯一的一条；<br>聚簇索引优点：<br>2.2.1、把相关数据保存在一起，因为mysql数据库读取数据是按照页读取的，当读取某一个用户数据时，相邻的数据也会加载到内存中。<br>根据用户读取一个id的数据时，相邻数据被读取的可能性会非常高，这种按页加载就减少了IO操作<br>2.2.2、数据访问更快<br>2.2.3、使用覆盖索引扫描的查询可以直接使用叶节点中的主键值 </p>
+</li>
+<li><p>object的方法</p>
+</li>
+<li><p>CAS（compare and swap）<br>基础类型变量自增（i++）是一种常被新手误以为是原子操作而实际不是的操作。<br>Java中提供了对应的原子操作类来实现该操作，并保证原子性，其本质是利用了CPU级别的CAS指令。<br>由于是CPU级别的指令，其开销比需要操作系统参与的锁的开销小。</p>
+</li>
+<li><p>阻塞队列<br>阻塞队列（BlockingQueue）是一个支持两个附加操作的队列。<br>这两个附加的操作是：在队列为空时，获取元素的线程会等待队列变为非空。当<br>队列满时，存储元素的线程会等待队列可用。<br>阻塞队列常用于生产者和消费者的场景，生产者是往队列里添加元素的线程，<br>消费者是从队列里拿元素的线程。阻塞队列就是生产者存放元素的容器，而消费者也只从容器里拿元素。<br>使用非阻塞队列的时候有一个很大问题就是：它不会对当前线程产生阻塞，那么在面对类似消费者-生产者的模型时，<br>就必须额外地实现同步策略以及线程间唤醒策略，这个实现起来就非常麻烦。但是有了阻塞队列就不一样了，<br>它会对当前线程产生阻塞，比如一个线程从一个空的阻塞队列中取元素，此时线程会被阻塞直到阻塞队列中有了元素。<br>当队列中有元素后，被阻塞的线程会自动被唤醒（不需要我们编写代码去唤醒）。这样提供了极大的方便性。</p>
+</li>
+<li><p>ThreadLocal<br>可以通过java.lang.ThreadLocal类来实现线程本地存储的功能。每一个线程的Thread对象中都有一个ThreadLocalMap对象，<br>这个对象存储了一组以ThreadLocal.threadLocalHashCode为键，以本地线程变量为值的K-V值对，ThreadLocal对象就是当前线程的ThreadLocalMap的访问入口，<br>每一个ThreadLocal对象都包含了一个独一无二的threadLocalHashCode值，使用这个值就可以在线程K-V值对中找回对应的本地线程变量。</p>
+</li>
+<li><p>拦截器和过滤器的区别：</p>
+</li>
+</ol>
+<p>　　①拦截器是基于java的反射机制的，而过滤器是基于函数回调。<br>　　②拦截器不依赖与servlet容器，过滤器依赖与servlet容器。<br>　　③拦截器只能对action请求起作用，而过滤器则可以对几乎所有的请求起作用。<br>　　④拦截器可以访问action上下文、值栈里的对象，而过滤器不能访问。<br>　　⑤在action的生命周期中，拦截器可以多次被调用，而过滤器只能在容器初始化时被调用一次。</p>
+<p>　　⑥拦截器可以获取IOC容器中的各个bean，而过滤器就不行，这点很重要，在拦截器里注入一个service，可以调用业务逻辑。</p>
+<ol start="38">
+<li>CAs</li>
+<li>孤儿进程，僵尸进程</li>
+<li>一致性hash</li>
+<li>数据库连接sleep</li>
+<li>内存溢出原因（不用调试工具）</li>
+<li>不可捕捉异常</li>
+<li>怎么检测锁消除</li>
+<li>多线程的优化</li>
+</ol>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/05/spring%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/05/spring%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url">spring中的设计模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T17:40:08+08:00">
+                2018-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/05/spring%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="spring中的设计模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  0 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式之生产者消费者模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-02T22:03:50+08:00">
+                2018-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式之生产者消费者模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  0 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
           
         
       
@@ -2225,7 +2330,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/22/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/24/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/22/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/24/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -2275,7 +2380,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">240</span>
+                  <span class="site-state-item-count">264</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2286,7 +2391,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2372,7 +2477,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">712.5k</span>
+    <span title="Site words total count">722k</span>
   
 </div>
 

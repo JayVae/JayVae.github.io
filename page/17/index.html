@@ -315,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/%E9%99%95%E8%A5%BF%E7%9C%81%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/13/the-whole-process-of-accessing-web-pages/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -334,7 +334,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/16/%E9%99%95%E8%A5%BF%E7%9C%81%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E6%A8%A1%E5%BC%8F/" itemprop="url">陕西省电力交易模式</a></h1>
+                <a class="post-title-link" href="/2020/07/13/the-whole-process-of-accessing-web-pages/" itemprop="url">访问网页的全过程（知识串联）</a></h1>
         
 
         <div class="post-meta">
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T10:22:05+08:00">
-                2019-01-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-13T18:06:01+08:00">
+                2020-07-13
               </time>
             
 
@@ -369,8 +369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BE%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2019/01/16/%E9%99%95%E8%A5%BF%E7%9C%81%E7%94%B5%E5%8A%9B%E4%BA%A4%E6%98%93%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="陕西省电力交易模式">
+             <span id="/2020/07/13/the-whole-process-of-accessing-web-pages/" class="leancloud_visitors" data-flag-title="访问网页的全过程（知识串联）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  12 字
+                  1.6k 字
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -450,1317 +450,380 @@
       
         
           
-            <ol>
-<li>自主协商模式电力直接交易</li>
+            <p>开发岗中总是会考很多计算机网络的知识点，但如果让面试官只考一道题，便涵盖最多的计网知识点，那可能就是 <strong>网页浏览的全过程</strong> 了。本篇文章将带大家从头到尾过一遍这道被考烂的面试题，必会！！！</p>
+<p>总的来说，网络通信模型可以用下图来表示，也就是大家只要熟记网络结构五层模型，按照这个体系，很多知识点都能顺出来了。访问网页的过程也是如此。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/five-layers.png"></p>
+<p>开始之前，我们先简单过一遍完整流程：</p>
+<ol>
+<li>在浏览器中输入指定网页的 URL。</li>
+<li>浏览器通过 DNS 协议，获取域名对应的 IP 地址。</li>
+<li>浏览器根据 IP 地址和端口号，向目标服务器发起一个 TCP 连接请求。</li>
+<li>浏览器在 TCP 连接上，向服务器发送一个 HTTP 请求报文，请求获取网页的内容。</li>
+<li>服务器收到 HTTP 请求报文后，处理请求，并返回 HTTP 响应报文给浏览器。</li>
+<li>浏览器收到 HTTP 响应报文后，解析响应体中的 HTML 代码，渲染网页的结构和样式，同时根据 HTML 中的其他资源的 URL（如图片、CSS、JS 等），再次发起 HTTP 请求，获取这些资源的内容，直到网页完全加载显示。</li>
+<li>浏览器在不需要和服务器通信时，可以主动关闭 TCP 连接，或者等待服务器的关闭请求。</li>
 </ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/15/%E8%AE%BA%E6%96%87%E5%90%8E%E7%BB%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/15/%E8%AE%BA%E6%96%87%E5%90%8E%E7%BB%AD/" itemprop="url">论文后续</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-15T16:52:38+08:00">
-                2019-01-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BE%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/15/%E8%AE%BA%E6%96%87%E5%90%8E%E7%BB%AD/" class="leancloud_visitors" data-flag-title="论文后续">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  256 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="进一步地"><a href="#进一步地" class="headerlink" title="进一步地"></a>进一步地</h2><ol>
-<li>考虑主市场、辅助服务市场</li>
-<li>考虑电网约束和阻塞管理的电力市场出清模型</li>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><p>一切的开始——打开浏览器，在地址栏输入 URL，回车确认。那么，什么是 URL？访问 URL 有什么用？</p>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><p>URL（Uniform Resource Locators），即统一资源定位器。网络上的所有资源都靠 URL 来定位，每一个文件就对应着一个 URL，就像是路径地址。理论上，文件资源和 URL 一一对应。实际上也有例外，比如某些 URL 指向的文件已经被重定位到另一个位置，这样就有多个 URL 指向同一个文件。</p>
+<h3 id="URL-的组成结构"><a href="#URL-的组成结构" class="headerlink" title="URL 的组成结构"></a>URL 的组成结构</h3><p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/URL-parts.png" alt="URL的组成结构"></p>
+<ol>
+<li>协议。URL 的前缀通常表示了该网址采用了何种应用层协议，通常有两种——HTTP 和 HTTPS。当然也有一些不太常见的前缀头，比如文件传输时用到的<code>ftp:</code>。</li>
+<li>域名。域名便是访问网址的通用名，这里也有可能是网址的 IP 地址，域名可以理解为 IP 地址的可读版本，毕竟绝大部分人都不会选择记住一个网址的 IP 地址。</li>
+<li>端口。如果指明了访问网址的端口的话，端口会紧跟在域名后面，并用一个冒号隔开。</li>
+<li>资源路径。域名（端口）后紧跟的就是资源路径，从第一个<code>/</code>开始，表示从服务器上根目录开始进行索引到的文件路径，上图中要访问的文件就是服务器根目录下<code>/path/to/myfile.html</code>。早先的设计是该文件通常物理存储于服务器主机上，但现在随着网络技术的进步，该文件不一定会物理存储在服务器主机上，有可能存放在云上，而文件路径也有可能是虚拟的（遵循某种规则）。</li>
+<li>参数。参数是浏览器在向服务器提交请求时，在 URL 中附带的参数。服务器解析请求时，会提取这些参数。参数采用键值对的形式<code>key=value</code>，每一个键值对使用<code>&amp;</code>隔开。参数的具体含义和请求操作的具体方法有关。</li>
+<li>锚点。锚点顾名思义，是在要访问的页面上的一个锚。要访问的页面大部分都多于一页，如果指定了锚点，那么在客户端显示该网页是就会定位到锚点处，相当于一个小书签。值得一提的是，在 URL 中，锚点以<code>#</code>开头，并且<strong>不会</strong>作为请求的一部分发送给服务端。</li>
 </ol>
-<h2 id="for-what"><a href="#for-what" class="headerlink" title="for what"></a>for what</h2><ol>
-<li>偏差考核</li>
-<li>多个市场主体之间串谋的研究</li>
-<li>市场规则探究</li>
-</ol>
-<h2 id="业务选型和方法选型"><a href="#业务选型和方法选型" class="headerlink" title="业务选型和方法选型"></a>业务选型和方法选型</h2><p>开发多agent系统，采用强化学习作为其更新行为策略的一类重要方法。</p>
-<h2 id="参考的一些资料"><a href="#参考的一些资料" class="headerlink" title="参考的一些资料"></a>参考的一些资料</h2><p>【新电改背景下的电力市场交易模式综述与研究】<br>【基于多智能代理的供应链分布式仿真平台体系结构】<br>【Agent-based modeling of electric power markets】<br>important【电力市场仿真系统的开发及应用】<br>【电力市场只能模拟中代理决策模块的实现】</p>
-<h2 id="软件设计参考的一些文章"><a href="#软件设计参考的一些文章" class="headerlink" title="软件设计参考的一些文章"></a>软件设计参考的一些文章</h2><p>博士文章；<br>硕士文章：基于MAS的发电侧电力市场竞价交易系统仿真研究<br>写论文时候可以参考：电力市场与电力系统的动态交互仿真平台（一）（二）（三）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/todo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/12/todo/" itemprop="url">todo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-12T19:45:26+08:00">
-                2019-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/12/todo/" class="leancloud_visitors" data-flag-title="todo">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  15 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>��¼��һЩ���⣺��������δ�����¼�ģ���Ȩ�ޣ�</li>
-<li>Swagger</li>
-<li>DruidFilter��������</li>
-<li>spring aop��־</li>
-<li><a href="mvc:interceptors">mvc:interceptors</a></li>
-<li>��������������Լ�swaggerҳ��������������⣨δ�����<br>���ս����ԭ���ǹ��̵ı��������⡣<br>�´���������ʱ��Ҫ����Ų飬���ҵ�����ĳ����������Ǻ�̨����ǰ�˵����������⣬�������ں�˽��в��ԣ�����jsp�����⡣</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/ellen%E6%83%85%E5%86%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/12/ellen%E6%83%85%E5%86%B5/" itemprop="url">ellen情况</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-12T15:37:37+08:00">
-                2019-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BE%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/12/ellen%E6%83%85%E5%86%B5/" class="leancloud_visitors" data-flag-title="ellen情况">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  64 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>两阶段优化各自的目标？两阶段的联系？变量名称解释<br>两个阶段的联系没有阐述清，第一阶段和第二阶段的变量定义不统一，变量没有解释清，</li>
-<li>两方的多agent。<br>case</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/10/2019%E8%A6%81%E7%9C%8B%E7%9A%84%E4%B9%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/10/2019%E8%A6%81%E7%9C%8B%E7%9A%84%E4%B9%A6/" itemprop="url">2019要看的书</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-10T10:12:45+08:00">
-                2019-01-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/10/2019%E8%A6%81%E7%9C%8B%E7%9A%84%E4%B9%A6/" class="leancloud_visitors" data-flag-title="2019要看的书">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  20 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>计算机程序的构造和解释<br>深入理解计算机系统</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BAweb%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/08/%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BAweb%E5%BC%80%E5%8F%91/" itemprop="url">智能代理机器人web开发</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-08T11:34:55+08:00">
-                2019-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/08/%E6%99%BA%E8%83%BD%E4%BB%A3%E7%90%86%E6%9C%BA%E5%99%A8%E4%BA%BAweb%E5%BC%80%E5%8F%91/" class="leancloud_visitors" data-flag-title="智能代理机器人web开发">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  270 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>前端</p>
-</li>
-<li><p>后台：<br>2.1 前端接口<br>2.2 功能：<br>2.2.1 业务功能</p>
-</li>
-</ol>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>键入了 URL 之后，第一个重头戏登场——DNS 服务器解析。DNS（Domain Name System）域名系统，要解决的是 <strong>域名和 IP 地址的映射问题</strong> 。毕竟，域名只是一个网址便于记住的名字，而网址真正存在的地址其实是 IP 地址。</p>
+<p>传送门：<a href="https://javaguide.cn/cs-basics/network/dns.html">DNS 域名系统详解（应用层）</a></p>
+<h3 id="HTTP-HTTPS"><a href="#HTTP-HTTPS" class="headerlink" title="HTTP&#x2F;HTTPS"></a>HTTP&#x2F;HTTPS</h3><p>利用 DNS 拿到了目标主机的 IP 地址之后，浏览器便可以向目标 IP 地址发送 HTTP 报文，请求需要的资源了。在这里，根据目标网站的不同，请求报文可能是 HTTP 协议或安全性增强的 HTTPS 协议。</p>
+<p>传送门：</p>
 <ul>
-<li>仿真实验环境：仿真目的（包括检验市场以及其他因素影响）、仿真市场、周期、参与者（列举常用的，可以定义新的）、</li>
-<li>仿真参数：实验盘、实验轮、终止条件、仿真时间跨度（与交易周期不一样）</li>
-<li>仿真代理设置：根据仿真实验环境设置的参与者联动，其中仿真成员中有各自的常用属性以及各自的模型，可以定义，代理选择和定义；</li>
-<li>市场规则：出清方式、报价格式、分段分时、</li>
-<li>结果展示：出清最终结果表、市场收敛曲线、单个用户的一个收敛过程体现出来</li>
-<li>安全校核？？？存疑【画电力传输线，用webgis】独立阻塞管理、电力市场物理系统？（传输线？）</li>
-<li>可以通过导入文件来做<br>2.2.2 管理功能<br>登录<br>权限</li>
+<li><a href="https://javaguide.cn/cs-basics/network/http-vs-https.html">HTTP vs HTTPS（应用层）</a></li>
+<li><a href="https://javaguide.cn/cs-basics/network/http1.0-vs-http1.1.html">HTTP 1.0 vs HTTP 1.1（应用层）</a></li>
+<li><a href="https://javaguide.cn/cs-basics/network/http-status-codes.html">HTTP 常见状态码总结（应用层）</a></li>
 </ul>
-<ol start="3">
-<li>结果需要体现在更改参数情况下能呈现不同的结果</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/07/JADE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95%20(2)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/07/JADE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95%20(2)/" itemprop="url">JADE使用的一些问题记录（二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-07T16:43:22+08:00">
-                2019-01-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BE%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">课题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/07/JADE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95%20(2)/" class="leancloud_visitors" data-flag-title="JADE使用的一些问题记录（二）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  578 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>agent的start方法<br>这里的agent是外部程序调用的agentController启动，实际的agent启动时是setup；</p>
-</li>
-<li><p>与外界的类是如何通信的myAgent.getO2AObject()<br>怎么向外系统传递消息？直接在里面修改后外面的也修改了。<br>但是要注意，seller启动需要 延时，不然的话写不进去</p>
-</li>
-<li><p>dfagent注册的是什么</p>
-</li>
-<li><p>通信<br>消息代表行为或者说通信行为CA；最常用的一些行为有通知、请求、统一、不理解和拒绝等。<br>传递的信息！！！【重点】<br>通信原语？<br>ContractNet协议 P69<br>在对话中扮演一个角色，无论是发起者或响应者的角色，都意味着执行某种任务，因此所有协议类（包括发起者和响应者）都是jade行为类。</p>
-</li>
-<li><p>agent的重点在于行为<br>5.1 行为的停止<br>TickerBehaviour行为通过stop停止；<br>一般的是done函数；</p>
-</li>
-<li><p>kill以后怎么办</p>
-</li>
-<li><p>代理 应该有个出清代理CA，所有的卖方和买方将价和量（包括初次的和每次迭代后的）发送给CA，CA在收到所有之后，进行出清，然后将结果发送给各自的agent。各自的agent收到后再次迭代。<br>在达到迭代次数或者结果不再改变时，停止。（需不需要一个控制agent?）–问题在于论文中停止条件是每个各自的还是总体利润？？？<br>对于各自代理，代理的行为就是强化学习？</p>
-</li>
-<li><p>Subscribe协议P72</p>
-</li>
-<li><p>本体到底是个啥吗。。。<br>现在有一些已经存在的language来描述ontologies，如DAML+OIL和OWL，JADE并不直接支持这些ontologies，而是将ontologies编码为java类（比如protégé可以将本体直接导出为java类）。<br>本体提供了Agent交互的语义支持，但必须与内容语言结合使用，后者是Agent交互的语法支持。JADE支持的三种内容语言包括：FIPA-SL类似lisp的语言族；Leap-encoding应用于嵌入式开发；JavaCodec，JADE特定的内容语言。<br>ContentElementList和ACtion有啥区别<br>agentaction和action</p>
-</li>
-<li><p>DFAgent中注册的是？<br>如何注册单个服务</p>
-</li>
-<li><p>消息处理中接收时如何接收的？<br>在使用cotractNet之后和本体之后，content是怎么放进去的？fillContent中应该就是把内容封装成action，然后send。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/" itemprop="url">计算机网络自顶向下方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T20:53:30+08:00">
-                2019-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B9%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">书</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/" class="leancloud_visitors" data-flag-title="计算机网络自顶向下方法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>在数据链路层，基础性问题是共享多路访问信道。</p>
-</li>
-<li><p>端系统（end systems）或主机（host）通过通信链路（communication link）【物理媒体】和分组交换机（packet switch）连接到一起。<br>传递的数据将数据分段，术语叫做分组（packet）。<br>分组交换机分为路由器和链路层交换机。<br>链路层交换机通常用于接入网（access network）中，而路由器通常用于网络核心中。<br>接入网是指将端系统连接到其边缘路由器（edge router）的物理链路，边缘路由器是端系统到任何其他远程端系统的路径上的第一台路由器。</p>
-</li>
-<li><p>IP协议定义了在路由器和端系统之间发送和接收的分组格式。</p>
-</li>
-<li><p>通信链路，物理媒体传播电磁波或光脉冲来发送比特。<br>双绞铜线和同轴电缆都是以传播电磁波来传递信息的。<br>个人理解–网线是通过传播电磁波来传播比特信息的。<br>现在我们买的网线基本是双绞线的，里面的材料是铜。<br>同轴电缆，双绞线本质上和电话线的材料是一样的，从这个角度来说，他们传输也是需要调制到某个频段，产生模拟型号，并不是直接传输数字信号的。<br>其实从本质上说，信号的传递是通过电磁波传递的（光纤是通过光信号），因此，数字信号的传输都需要经过调制和解调。<br>承载信息的是电磁波。<br>接收方需要使用一种结构来感应发射方的电磁波，这个结构叫接收天线（广义上的接收天线，实际中不一定是个天线，比如波导中的同轴探头）。接收天线将电磁波转换为方便电路处理的电压或电流，依据的规律是电磁互易性。<br>无线传输是自由空间的电磁波，有线传输是有导波结构束缚的电磁波，二者没有本质区别。</p>
-</li>
-</ol>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><p>由于 HTTP 协议是基于 TCP 协议的，在应用层的数据封装好以后，要交给传输层，经 TCP 协议继续封装。</p>
+<p>TCP 协议保证了数据传输的可靠性，是数据包传输的主力协议。</p>
+<p>传送门：</p>
 <ul>
-<li><p>补充 * ：<br>数字信号是在模拟信号的基础上经过采样、量化和编码而形成的。具体地说，采样就是把输入的模拟信号按.适当的时间间隔得到各个时刻的样本值.量化是把经采样测得的各个时刻的值用二进码制来表示，编码则是把t化生成的二进制数排列在一起形成顺序脉冲序列 。<br><a href="https://baijiahao.baidu.com/s?id=1610283148787946994&wfr=spider&for=pc">为什么在一条电话线路上既能打电话，又能传输数字信号？</a></p>
+<li><a href="https://javaguide.cn/cs-basics/network/tcp-connection-and-disconnection.html">TCP 三次握手和四次挥手（传输层）</a></li>
+<li><a href="https://javaguide.cn/cs-basics/network/tcp-reliability-guarantee.html">TCP 传输可靠性保障（传输层）</a></li>
+</ul>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>终于，来到网络层，此时我们的主机不再是和另一台主机进行交互了，而是在和中间系统进行交互。也就是说，应用层和传输层都是端到端的协议，而网络层及以下都是中间件的协议了。</p>
+<p><strong>网络层的的核心功能——转发与路由</strong>，必会！！！如果面试官问到了网络层，而你恰好又什么都不会的话，最最起码要说出这五个字——<strong>转发与路由</strong>。</p>
+<ul>
+<li>转发：将分组从路由器的输入端口转移到合适的输出端口。</li>
+<li>路由：确定分组从源到目的经过的路径。</li>
+</ul>
+<p>所以到目前为止，我们的数据包经过了应用层、传输层的封装，来到了网络层，终于开始准备在物理层面传输了，第一个要解决的问题就是——<strong>往哪里传输？或者说，要把数据包发到哪个路由器上？</strong> 这便是 BGP 协议要解决的问题。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/14/osi-and-tcp-ip-model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/14/osi-and-tcp-ip-model/" itemprop="url">OSI 和 TCP/IP 网络分层模型详解（基础）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-14T23:58:30+08:00">
+                2020-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/06/14/osi-and-tcp-ip-model/" class="leancloud_visitors" data-flag-title="OSI 和 TCP/IP 网络分层模型详解（基础）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="OSI-七层模型"><a href="#OSI-七层模型" class="headerlink" title="OSI 七层模型"></a>OSI 七层模型</h2><p><strong>OSI 七层模型</strong> 是国际标准化组织提出一个网络分层模型，其大体结构以及每一层提供的功能如下图所示：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/osi-7-model.png" alt="OSI 七层模型"></p>
+<p>每一层都专注做一件事情，并且每一层都需要使用下一层提供的功能比如传输层需要使用网络层提供的路由和寻址功能，这样传输层才知道把数据传输到哪里去。</p>
+<p><strong>OSI 的七层体系结构概念清楚，理论也很完整，但是它比较复杂而且不实用，而且有些功能在多个层中重复出现。</strong></p>
+<p>上面这种图可能比较抽象，再来一个比较生动的图片。下面这个图片是我在国外的一个网站上看到的，非常赞！</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/osi%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B2.png" alt="osi七层模型2"></p>
+<p><strong>既然 OSI 七层模型这么厉害，为什么干不过 TCP&#x2F;IP 四 层模型呢？</strong></p>
+<p>的确，OSI 七层模型当时一直被一些大公司甚至一些国家政府支持。这样的背景下，为什么会失败呢？我觉得主要有下面几方面原因：</p>
+<ol>
+<li>OSI 的专家缺乏实际经验，他们在完成 OSI 标准时缺乏商业驱动力</li>
+<li>OSI 的协议实现起来过分复杂，而且运行效率很低</li>
+<li>OSI 制定标准的周期太长，因而使得按 OSI 标准生产的设备无法及时进入市场（20 世纪 90 年代初期，虽然整套的 OSI 国际标准都已经制定出来，但基于 TCP&#x2F;IP 的互联网已经抢先在全球相当大的范围成功运行了）</li>
+<li>OSI 的层次划分不太合理，有些功能在多个层次中重复出现。</li>
+</ol>
+<p>OSI 七层模型虽然失败了，但是却提供了很多不错的理论基础。为了更好地去了解网络分层，OSI 七层模型还是非常有必要学习的。</p>
+<p>最后再分享一个关于 OSI 七层模型非常不错的总结图片！</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/osi-model-detail.png"></p>
+<h2 id="TCP-IP-四层模型"><a href="#TCP-IP-四层模型" class="headerlink" title="TCP&#x2F;IP 四层模型"></a>TCP&#x2F;IP 四层模型</h2><p><strong>TCP&#x2F;IP 四层模型</strong> 是目前被广泛采用的一种模型,我们可以将 TCP &#x2F; IP 模型看作是 OSI 七层模型的精简版本，由以下 4 层组成：</p>
+<ol>
+<li>应用层</li>
+<li>传输层</li>
+<li>网络层</li>
+<li>网络接口层</li>
+</ol>
+<p>需要注意的是，我们并不能将 TCP&#x2F;IP 四层模型 和 OSI 七层模型完全精确地匹配起来，不过可以简单将两者对应起来，如下图所示：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-ip-4-model.png" alt="TCP/IP 四层模型"></p>
+<h3 id="应用层（Application-layer）"><a href="#应用层（Application-layer）" class="headerlink" title="应用层（Application layer）"></a>应用层（Application layer）</h3><p><strong>应用层位于传输层之上，主要提供两个终端设备上的应用程序之间信息交换的服务，它定义了信息交换的格式，消息会交给下一层传输层来传输。</strong> 我们把应用层交互的数据单元称为报文。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/network-five-layer-sample-diagram.png"></p>
+<p>应用层协议定义了网络通信规则，对于不同的网络应用需要不同的应用层协议。在互联网中应用层协议很多，如支持 Web 应用的 HTTP 协议，支持电子邮件的 SMTP 协议等等。</p>
+<p><strong>应用层常见协议</strong>：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/application-layer-protocol.png" alt="应用层常见协议"></p>
+<ul>
+<li><strong>HTTP（Hypertext Transfer Protocol，超文本传输协议）</strong>：基于 TCP 协议，是一种用于传输超文本和多媒体内容的协议，主要是为 Web 浏览器与 Web 服务器之间的通信而设计的。当我们使用浏览器浏览网页的时候，我们网页就是通过 HTTP 请求进行加载的。</li>
+<li><strong>SMTP（Simple Mail Transfer Protocol，简单邮件发送协议）</strong>：基于 TCP 协议，是一种用于发送电子邮件的协议。注意 ⚠️：SMTP 协议只负责邮件的发送，而不是接收。要从邮件服务器接收邮件，需要使用 POP3 或 IMAP 协议。</li>
+<li><strong>POP3&#x2F;IMAP（邮件接收协议）</strong>：基于 TCP 协议，两者都是负责邮件接收的协议。IMAP 协议是比 POP3 更新的协议，它在功能和性能上都更加强大。IMAP 支持邮件搜索、标记、分类、归档等高级功能，而且可以在多个设备之间同步邮件状态。几乎所有现代电子邮件客户端和服务器都支持 IMAP。</li>
+<li><strong>FTP（File Transfer Protocol，文件传输协议）</strong> : 基于 TCP 协议，是一种用于在计算机之间传输文件的协议，可以屏蔽操作系统和文件存储方式。注意 ⚠️：FTP 是一种不安全的协议，因为它在传输过程中不会对数据进行加密。建议在传输敏感数据时使用更安全的协议，如 SFTP。</li>
+<li><strong>Telnet（远程登陆协议）</strong>：基于 TCP 协议，用于通过一个终端登陆到其他服务器。Telnet 协议的最大缺点之一是所有数据（包括用户名和密码）均以明文形式发送，这有潜在的安全风险。这就是为什么如今很少使用 Telnet，而是使用一种称为 SSH 的非常安全的网络传输协议的主要原因。</li>
+<li><strong>SSH（Secure Shell Protocol，安全的网络传输协议）</strong>：基于 TCP 协议，通过加密和认证机制实现安全的访问和文件传输等业务</li>
+<li><strong>RTP（Real-time Transport Protocol，实时传输协议）</strong>：通常基于 UDP 协议，但也支持 TCP 协议。它提供了端到端的实时传输数据的功能，但不包含资源预留存、不保证实时传输质量，这些功能由 WebRTC 实现。</li>
+<li><strong>DNS（Domain Name System，域名管理系统）</strong>: 基于 UDP 协议，用于解决域名和 IP 地址的映射问题。</li>
+</ul>
+<p>关于这些协议的详细介绍请看 <a href="./application-layer-protocol.md">应用层常见协议总结（应用层）</a> 这篇文章。</p>
+<h3 id="传输层（Transport-layer）"><a href="#传输层（Transport-layer）" class="headerlink" title="传输层（Transport layer）"></a>传输层（Transport layer）</h3><p><strong>传输层的主要任务就是负责向两台终端设备进程之间的通信提供通用的数据传输服务。</strong> 应用进程利用该服务传送应用层报文。“通用的”是指并不针对某一个特定的网络应用，而是多种应用可以使用同一个运输层服务。</p>
+<p><strong>传输层常见协议</strong>：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/transport-layer-protocol.png" alt="传输层常见协议"></p>
+<ul>
+<li><strong>TCP（Transmission Control Protocol，传输控制协议 ）</strong>：提供 <strong>面向连接</strong> 的，<strong>可靠</strong> 的数据传输服务。</li>
+<li><strong>UDP（User Datagram Protocol，用户数据协议）</strong>：提供 <strong>无连接</strong> 的，<strong>尽最大努力</strong> 的数据传输服务（不保证数据传输的可靠性），简单高效。</li>
+</ul>
+<h3 id="网络层（Network-layer）"><a href="#网络层（Network-layer）" class="headerlink" title="网络层（Network layer）"></a>网络层（Network layer）</h3><p><strong>网络层负责为分组交换网上的不同主机提供通信服务。</strong> 在发送数据时，网络层把运输层产生的报文段或用户数据报封装成分组和包进行传送。在 TCP&#x2F;IP 体系结构中，由于网络层使用 IP 协议，因此分组也叫 IP 数据报，简称数据报。</p>
+<p>⚠️ 注意：<strong>不要把运输层的“用户数据报 UDP”和网络层的“IP 数据报”弄混</strong>。</p>
+<p><strong>网络层的还有一个任务就是选择合适的路由，使源主机运输层所传下来的分组，能通过网络层中的路由器找到目的主机。</strong></p>
+<p>这里强调指出，网络层中的“网络”二字已经不是我们通常谈到的具体网络，而是指计算机网络体系结构模型中第三层的名称。</p>
+<p>互联网是由大量的异构（heterogeneous）网络通过路由器（router）相互连接起来的。互联网使用的网络层协议是无连接的网际协议（Internet Protocol）和许多路由选择协议，因此互联网的网络层也叫做 <strong>网际层</strong> 或 <strong>IP 层</strong>。</p>
+<p><strong>网络层常见协议</strong>：</p>
+<p><img src="/images/network-model/nerwork-layer-protocol.png" alt="网络层常见协议"></p>
+<ul>
+<li><strong>IP（Internet Protocol，网际协议）</strong>：TCP&#x2F;IP 协议中最重要的协议之一，主要作用是定义数据包的格式、对数据包进行路由和寻址，以便它们可以跨网络传播并到达正确的目的地。目前 IP 协议主要分为两种，一种是过去的 IPv4，另一种是较新的 IPv6，目前这两种协议都在使用，但后者已经被提议来取代前者。</li>
+<li><strong>ARP（Address Resolution Protocol，地址解析协议）</strong>：ARP 协议解决的是网络层地址和链路层地址之间的转换问题。因为一个 IP 数据报在物理上传输的过程中，总是需要知道下一跳（物理上的下一个目的地）该去往何处，但 IP 地址属于逻辑地址，而 MAC 地址才是物理地址，ARP 协议解决了 IP 地址转 MAC 地址的一些问题。</li>
+<li><strong>ICMP（Internet Control Message Protocol，互联网控制报文协议）</strong>：一种用于传输网络状态和错误消息的协议，常用于网络诊断和故障排除。例如，Ping 工具就使用了 ICMP 协议来测试网络连通性。</li>
+<li><strong>NAT（Network Address Translation，网络地址转换协议）</strong>：NAT 协议的应用场景如同它的名称——网络地址转换，应用于内部网到外部网的地址转换过程中。具体地说，在一个小的子网（局域网，LAN）内，各主机使用的是同一个 LAN 下的 IP 地址，但在该 LAN 以外，在广域网（WAN）中，需要一个统一的 IP 地址来标识该 LAN 在整个 Internet 上的位置。</li>
+<li><strong>OSPF（Open Shortest Path First，开放式最短路径优先）</strong> ）：一种内部网关协议（Interior Gateway Protocol，IGP），也是广泛使用的一种动态路由协议，基于链路状态算法，考虑了链路的带宽、延迟等因素来选择最佳路径。</li>
+<li><strong>RIP(Routing Information Protocol，路由信息协议）</strong>：一种内部网关协议（Interior Gateway Protocol，IGP），也是一种动态路由协议，基于距离向量算法，使用固定的跳数作为度量标准，选择跳数最少的路径作为最佳路径。</li>
+<li><strong>BGP（Border Gateway Protocol，边界网关协议）</strong>：一种用来在路由选择域之间交换网络层可达性信息（Network Layer Reachability Information，NLRI）的路由选择协议，具有高度的灵活性和可扩展性。</li>
+</ul>
+<h3 id="网络接口层（Network-interface-layer）"><a href="#网络接口层（Network-interface-layer）" class="headerlink" title="网络接口层（Network interface layer）"></a>网络接口层（Network interface layer）</h3><p>我们可以把网络接口层看作是数据链路层和物理层的合体。</p>
+<ol>
+<li>数据链路层(data link layer)通常简称为链路层（ 两台主机之间的数据传输，总是在一段一段的链路上传送的）。<strong>数据链路层的作用是将网络层交下来的 IP 数据报组装成帧，在两个相邻节点间的链路上传送帧。每一帧包括数据和必要的控制信息（如同步信息，地址信息，差错控制等）。</strong></li>
+<li><strong>物理层的作用是实现相邻计算机节点之间比特流的透明传送，尽可能屏蔽掉具体传输介质和物理设备的差异</strong></li>
+</ol>
+<p>网络接口层重要功能和协议如下图所示：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/network-interface-layer-protocol.png" alt="网络接口层重要功能和协议"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>简单总结一下每一层包含的协议和核心技术:</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/network-protocol-overview.png" alt="TCP/IP 各层协议概览"></p>
+<p><strong>应用层协议</strong> :</p>
+<ul>
+<li>HTTP（Hypertext Transfer Protocol，超文本传输协议）</li>
+<li>SMTP（Simple Mail Transfer Protocol，简单邮件发送协议）</li>
+<li>POP3&#x2F;IMAP（邮件接收协议）</li>
+<li>FTP（File Transfer Protocol，文件传输协议）</li>
+<li>Telnet（远程登陆协议）</li>
+<li>SSH（Secure Shell Protocol，安全的网络传输协议）</li>
+<li>RTP（Real-time Transport Protocol，实时传输协议）</li>
+<li>DNS（Domain Name System，域名管理系统）</li>
+<li>……</li>
+</ul>
+<p><strong>传输层协议</strong> :</p>
+<ul>
+<li>TCP 协议<ul>
+<li>报文段结构</li>
+<li>可靠数据传输</li>
+<li>流量控制</li>
+<li>拥塞控制</li>
+</ul>
 </li>
-<li><p>等等，好像有什么不对 *<br><a href="https://blog.csdn.net/qq_15037231/article/details/54988436">（模拟信号&#x2F;数字信号）分别以（模拟信号&#x2F;数字信号）中传输方式</a><br>这篇文章中，提出有四种传输方式，即模拟数据以模拟信号传输、数字数据以模拟信号传输（调制解调）、数字数据以数字信号传输（数字数据可以数字信号传输，但需对信号进行编码以提高数据传输的效率和实现通信双方的信号同步。）、模拟数据以数字信号传输（编码解码器）。</p>
+<li>UDP 协议<ul>
+<li>报文段结构</li>
+<li>RDT（可靠数据传输协议）</li>
+</ul>
 </li>
 </ul>
-<p>信号的基本传输方式有基带传输、频带传输、载波传输、异步传输模式ATM。（<a href="https://zhidao.baidu.com/question/590174212.html%EF%BC%89">https://zhidao.baidu.com/question/590174212.html）</a></p>
-<ol start="5">
-<li><p>应用层–网络层–传输层–链路层–物理层<br> |         |       |       |       |<br> |          ———————————————————————<br> |                 packet分组<br> 报文    报文段  数据报   帧<br>  message  segment  datagram frame</p>
-</li>
-<li><p>分组交换机分为路由器和链路层交换机。<br>链路层交换机实现了第一层和第二层协议；路由器实现了第一层到第三层。<br>链路层交换机不能识别IP地址，但能够识别第二层地址，如以太网地址。</p>
-</li>
-<li><p>五层协议<br>下一层为上一层提供服务，并且在节点的对等层次提供对等的服务。<br>网络设计者以分层的方式组织协议以及实现这些协议的网络 <em>硬件</em> 和 <em>软件</em> 。<br>一个协议层能够用软件、硬件或两者的结合来实现。诸如http，dns，smtp，ftp等应用层，以及运输层TCP、UDP协议用软件实现；因为物理层和数据链路层负责跨越特定链路的通信，它们总是实现在于给定链路相联系的网络接口卡（例如以太网或Wifi接口卡）中。网络层经常是硬件和软件实现的混合体。<br>第n层协议的不同部分常常位于这些网络组件的各部分。</p>
-</li>
-<li></li>
+<p><strong>网络层协议</strong> :</p>
+<ul>
+<li>IP（Internet Protocol，网际协议）</li>
+<li>ARP（Address Resolution Protocol，地址解析协议）</li>
+<li>ICMP 协议（控制报文协议，用于发送控制消息）</li>
+<li>NAT（Network Address Translation，网络地址转换协议）</li>
+<li>OSPF（Open Shortest Path First，开放式最短路径优先）</li>
+<li>RIP(Routing Information Protocol，路由信息协议）</li>
+<li>BGP（Border Gateway Protocol，边界网关协议）</li>
+<li>……</li>
+</ul>
+<p><strong>网络接口层</strong> :</p>
+<ul>
+<li>差错检测技术</li>
+<li>多路访问协议（信道复用技术）</li>
+<li>CSMA&#x2F;CD 协议</li>
+<li>MAC 协议</li>
+<li>以太网技术</li>
+<li>……</li>
+</ul>
+<h2 id="网络分层的原因"><a href="#网络分层的原因" class="headerlink" title="网络分层的原因"></a>网络分层的原因</h2><p>在这篇文章的最后，我想聊聊：“为什么网络要分层？”。</p>
+<p>说到分层，我们先从我们平时使用框架开发一个后台程序来说，我们往往会按照每一层做不同的事情的原则将系统分为三层（复杂的系统分层会更多）:</p>
+<ol>
+<li>Repository（数据库操作）</li>
+<li>Service（业务操作）</li>
+<li>Controller（前后端数据交互）</li>
 </ol>
+<p><strong>复杂的系统需要分层，因为每一层都需要专注于一类事情。网络分层的原因也是一样，每一层只专注于做一类事情。</strong></p>
+<p>好了，再来说回：“为什么网络要分层？”。我觉得主要有 3 方面的原因：</p>
+<ol>
+<li><strong>各层之间相互独立</strong>：各层之间相互独立，各层之间不需要关心其他层是如何实现的，只需要知道自己如何调用下层提供好的功能就可以了（可以简单理解为接口调用）<strong>。这个和我们对开发时系统进行分层是一个道理。</strong></li>
+<li><strong>提高了整体灵活性</strong>：每一层都可以使用最适合的技术来实现，你只需要保证你提供的功能以及暴露的接口的规则没有改变就行了。<strong>这个和我们平时开发系统的时候要求的高内聚、低耦合的原则也是可以对应上的。</strong></li>
+<li><strong>大问题化小</strong>：分层可以将复杂的网络问题分解为许多比较小的、界线比较清晰简单的小问题来处理和解决。这样使得复杂的计算机网络系统变得易于设计，实现和标准化。 <strong>这个和我们平时开发的时候，一般会将系统功能分解，然后将复杂的问题分解为容易理解的更小的问题是相对应的，这些较小的问题具有更好的边界（目标和接口）定义。</strong></li>
+</ol>
+<p>我想到了计算机世界非常非常有名的一句话，这里分享一下：</p>
+<blockquote>
+<p>计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决，计算机整个体系从上到下都是按照严格的层次结构设计的。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>TCP&#x2F;IP model vs OSI model：<a href="https://fiberbit.com.tw/tcpip-model-vs-osi-model/">https://fiberbit.com.tw/tcpip-model-vs-osi-model/</a></li>
+<li>Data Encapsulation and the TCP&#x2F;IP Protocol Stack：<a href="https://docs.oracle.com/cd/E19683-01/806-4075/ipov-32/index.html">https://docs.oracle.com/cd/E19683-01/806-4075/ipov-32/index.html</a></li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
 
           
         
@@ -1809,7 +872,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/%E6%97%B6%E9%97%B4%E7%9A%84%E6%9C%8B%E5%8F%8B2019/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/why-there-only-value-passing-in-java/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -1828,7 +891,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/03/%E6%97%B6%E9%97%B4%E7%9A%84%E6%9C%8B%E5%8F%8B2019/" itemprop="url">时间的朋友2019</a></h1>
+                <a class="post-title-link" href="/2020/06/03/why-there-only-value-passing-in-java/" itemprop="url">Java 值传递详解</a></h1>
         
 
         <div class="post-meta">
@@ -1840,185 +903,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T12:58:39+08:00">
-                2019-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/03/%E6%97%B6%E9%97%B4%E7%9A%84%E6%9C%8B%E5%8F%8B2019/" class="leancloud_visitors" data-flag-title="时间的朋友2019">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  304 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>宏观是我们必须接受的，微观才是我们有所作为的。</p>
-<p>世界上只有一种英雄主义，就是认清了现实，依然面对它。</p>
-<p>世界不是大河模型，而是多米诺骨牌模型。</p>
-<p>小趋势–影响趋势的趋势，带来改变的改变。 </p>
-<p>小趋势不会停止。<br>没有一劳永逸，没有直通车，只有不断准备，不断努力。</p>
-<p>等号，等于有些东西不重要？</p>
-<p>不抽象，就无法深入思考；不还原，就无法认识世界本来面目。</p>
-<p>还原这个世界–多元思维模型</p>
-<p>能同时抱有全然相反的两种观念还能正常行事是第一流智慧的标志。</p>
-<h2 id="扪心五问："><a href="#扪心五问：" class="headerlink" title="扪心五问："></a>扪心五问：</h2><ol>
-<li>我能看到事实吗？–还原</li>
-<li>你能感知到非共识吗–创新的本质就是非共识</li>
-<li>你觉得时间够用吗？–没有看</li>
-<li>力量从哪来？<br>–除了人工智能，用人的体验丈量世界。推动信用飞轮，才能快速成长。不是用算法，而是用人的力量。</li>
-<li>时间愿意和我做朋友吗？<br>–长期主义。一旦中断，前功尽弃。<br>长期主义是微弱信号的放大器。</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/%E7%A0%81%E5%86%9C%E7%BF%BB%E8%BA%AB%E6%9D%82%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/02/%E7%A0%81%E5%86%9C%E7%BF%BB%E8%BA%AB%E6%9D%82%E8%AE%B0/" itemprop="url">码农翻身杂记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T20:52:11+08:00">
-                2019-01-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-03T23:51:16+08:00">
+                2020-06-03
               </time>
             
 
@@ -2051,8 +937,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/%E4%B9%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">书</span>
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
                   </a>
                 </span>
 
@@ -2068,7 +954,7 @@
 
           
           
-             <span id="/2019/01/02/%E7%A0%81%E5%86%9C%E7%BF%BB%E8%BA%AB%E6%9D%82%E8%AE%B0/" class="leancloud_visitors" data-flag-title="码农翻身杂记">
+             <span id="/2020/06/03/why-there-only-value-passing-in-java/" class="leancloud_visitors" data-flag-title="Java 值传递详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2093,7 +979,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  694 字
+                  1.6k 字
                 </span>
               
 
@@ -2109,7 +995,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -2132,45 +1018,2037 @@
       
         
           
-            <ol>
-<li><p>JDBC的介绍一节体现了：面向接口、工厂方法、反射等；</p>
-</li>
-<li><p>分布式事务：<br>2.1 两阶段提交（需要一个全局的事务管理器，第一阶段准备，第二阶段提交或放弃）；<br>2.2 Base模型，即降低实时一致性，而考虑最终一致性，将操作写在消息队列中</p>
-</li>
-<li><p>消息队列<br>应用系统间做异步<br>生产者-消息队列-消费者<br>订阅-发布<br>配置和代码分开</p>
-</li>
-<li><p>Java 动态代理：<br>声明式编程，在运行期对类进行“修改”–在运行时动态得创建新的类。<br>jdk代理是对接口进行代理。<br>在调用方看来，是调用接口，并不会意识到是动态创建的代理类。需要添加的行为需要实现InvocationHandler接口，相当于在运行时进行拦截，从而创建新的类。<br>Proxy.newProxyInstance,就是动态生成一个类。<br>应用：Spring AOP</p>
-</li>
-<li><p>注解，也可以说meatdata就是描述数据的数据；元注解，就是注解的注解。<br>基于注解和XML各有千秋，灵活应用。<br>需要集中配置的用xml</p>
-</li>
-<li><p>泛型和继承<br>ArrayList&lt;? extends Fruit&gt;</p>
-</li>
-<li><p>日志系统，现在一般用slf4j（抽象层，其下层可以用各种日志系统）+logback。<br>logger<br>appender<br>formatter</p>
-</li>
-<li><p>ComapareandSwap是一条硬件指令，操作系统和硬件能保证院子执行。<br>Atomatic类<br>AtomaticReference可能会有什么ABA问题</p>
-</li>
-<li><p>在使用AtomaticXXXX类实现非阻塞算法之前，先看看有没有提供现成的Concurrentxxx类。</p>
-</li>
-<li><p>Spring 装饰者模式，动态代理</p>
-</li>
-<li><p>多个资源加锁要牢记，一定要从最大的开始加锁。</p>
-</li>
-<li><p>虚拟地址，物理地址</p>
-</li>
-<li><p>中断的方式其实是一种异步的、事件驱动的处理思想</p>
-</li>
-<li><p>DMA进行IO设备和内存之间的直接数据传输</p>
-</li>
-<li><p>内存只是一个个可以读写的格子，CPU简单到只能做4件事情–对寄存器读取数据，写入数据，数学运算和逻辑运算，根据条件进行跳转</p>
-</li>
-<li><p>检测和设置锁的操作是一个不可分割的原子操作</p>
-</li>
-<li><p>自旋锁虽然能实现互斥的访问，但是不能通信进入同一个函数（递归），简称不可重入。<br>增加计数器</p>
-</li>
-<li><p>信号量用来解决互斥锁在消费者生产者同步问题的互相等待问题<br>信号量就是一个整数，基于这个证书有两个操作，wait和signal。</p>
-</li>
+            <p>开始之前，我们先来搞懂下面这两个概念：</p>
+<ul>
+<li>形参&amp;实参</li>
+<li>值传递&amp;引用传递</li>
+</ul>
+<h2 id="形参-实参"><a href="#形参-实参" class="headerlink" title="形参&amp;实参"></a>形参&amp;实参</h2><p>方法的定义可能会用到 <strong>参数</strong>（有参的方法），参数在程序语言中分为：</p>
+<ul>
+<li><strong>实参（实际参数，Arguments）</strong>：用于传递给函数&#x2F;方法的参数，必须有确定的值。</li>
+<li><strong>形参（形式参数，Parameters）</strong>：用于定义函数&#x2F;方法，接收实参，不需要有确定的值。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;Hello!&quot;</span>;</span><br><span class="line"><span class="comment">// hello 为实参</span></span><br><span class="line">sayHello(hello);</span><br><span class="line"><span class="comment">// str 为形参</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">sayHello</span><span class="params">(String str)</span> &#123;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="值传递-引用传递"><a href="#值传递-引用传递" class="headerlink" title="值传递&amp;引用传递"></a>值传递&amp;引用传递</h2><p>程序设计语言将实参传递给方法（或函数）的方式分为两种：</p>
+<ul>
+<li><strong>值传递</strong>：方法接收的是实参值的拷贝，会创建副本。</li>
+<li><strong>引用传递</strong>：方法接收的直接是实参所引用的对象在堆中的地址，不会创建副本，对形参的修改将影响到实参。</li>
+</ul>
+<p>很多程序设计语言（比如 C++、 Pascal )提供了两种参数传递的方式，不过，在 Java 中只有值传递。</p>
+<h2 id="为什么-Java-只有值传递？"><a href="#为什么-Java-只有值传递？" class="headerlink" title="为什么 Java 只有值传递？"></a>为什么 Java 只有值传递？</h2><p><strong>为什么说 Java 只有值传递呢？</strong> 不需要太多废话，我通过 3 个例子来给大家证明。</p>
+<h3 id="案例-1：传递基本类型参数"><a href="#案例-1：传递基本类型参数" class="headerlink" title="案例 1：传递基本类型参数"></a>案例 1：传递基本类型参数</h3><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">    swap(num1, num2);</span><br><span class="line">    System.out.println(<span class="string">&quot;num1 = &quot;</span> + num1);</span><br><span class="line">    System.out.println(<span class="string">&quot;num2 = &quot;</span> + num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">    System.out.println(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">    System.out.println(<span class="string">&quot;b = &quot;</span> + b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 20</span><br><span class="line">b = 10</span><br><span class="line">num1 = 10</span><br><span class="line">num2 = 20</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<p>在 <code>swap()</code> 方法中，<code>a</code>、<code>b</code> 的值进行交换，并不会影响到 <code>num1</code>、<code>num2</code>。因为，<code>a</code>、<code>b</code> 的值，只是从 <code>num1</code>、<code>num2</code> 的复制过来的。也就是说，a、b 相当于 <code>num1</code>、<code>num2</code> 的副本，副本的内容无论怎么修改，都不会影响到原件本身。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/basis/java-value-passing-01.png"></p>
+<p>通过上面例子，我们已经知道了一个方法不能修改一个基本数据类型的参数，而对象引用作为参数就不一样，请看案例 2。</p>
+<h3 id="案例-2：传递引用类型参数-1"><a href="#案例-2：传递引用类型参数-1" class="headerlink" title="案例 2：传递引用类型参数 1"></a>案例 2：传递引用类型参数 1</h3><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">    change(arr);</span><br><span class="line">    System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">change</span><span class="params">(<span class="type">int</span>[] array)</span> &#123;</span><br><span class="line">    <span class="comment">// 将数组的第一个元素变为0</span></span><br><span class="line">    array[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/basis/java-value-passing-02.png"></p>
+<p>看了这个案例很多人肯定觉得 Java 对引用类型的参数采用的是引用传递。</p>
+<p>实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！</p>
+<p>也就是说 <code>change</code> 方法的参数拷贝的是 <code>arr</code> （实参）的地址，因此，它和 <code>arr</code> 指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。</p>
+<p>为了更强有力地反驳 Java 对引用类型的参数采用的不是引用传递，我们再来看下面这个案例！</p>
+<h3 id="案例-3：传递引用类型参数-2"><a href="#案例-3：传递引用类型参数-2" class="headerlink" title="案例 3：传递引用类型参数 2"></a>案例 3：传递引用类型参数 2</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">   <span class="comment">// 省略构造函数、Getter&amp;Setter方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">Person</span> <span class="variable">xiaoZhang</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;小张&quot;</span>);</span><br><span class="line">    <span class="type">Person</span> <span class="variable">xiaoLi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;小李&quot;</span>);</span><br><span class="line">    swap(xiaoZhang, xiaoLi);</span><br><span class="line">    System.out.println(<span class="string">&quot;xiaoZhang:&quot;</span> + xiaoZhang.getName());</span><br><span class="line">    System.out.println(<span class="string">&quot;xiaoLi:&quot;</span> + xiaoLi.getName());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(Person person1, Person person2)</span> &#123;</span><br><span class="line">    <span class="type">Person</span> <span class="variable">temp</span> <span class="operator">=</span> person1;</span><br><span class="line">    person1 = person2;</span><br><span class="line">    person2 = temp;</span><br><span class="line">    System.out.println(<span class="string">&quot;person1:&quot;</span> + person1.getName());</span><br><span class="line">    System.out.println(<span class="string">&quot;person2:&quot;</span> + person2.getName());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person1:小李</span><br><span class="line">person2:小张</span><br><span class="line">xiaoZhang:小张</span><br><span class="line">xiaoLi:小李</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<p>怎么回事？？？两个引用类型的形参互换并没有影响实参啊！</p>
+<p><code>swap</code> 方法的参数 <code>person1</code> 和 <code>person2</code> 只是拷贝的实参 <code>xiaoZhang</code> 和 <code>xiaoLi</code> 的地址。因此， <code>person1</code> 和 <code>person2</code> 的互换只是拷贝的两个地址的互换罢了，并不会影响到实参 <code>xiaoZhang</code> 和 <code>xiaoLi</code> 。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/basis/java-value-passing-03.png"></p>
+<h2 id="引用传递是怎么样的？"><a href="#引用传递是怎么样的？" class="headerlink" title="引用传递是怎么样的？"></a>引用传递是怎么样的？</h2><p>看到这里，相信你已经知道了 Java 中只有值传递，是没有引用传递的。<br>但是，引用传递到底长什么样呢？下面以 <code>C++</code> 的代码为例，让你看一下引用传递的庐山真面目。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">incr</span><span class="params">(<span class="type">int</span>&amp; num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;incr before: &quot;</span> &lt;&lt; num &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    num++;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;incr after: &quot;</span> &lt;&lt; num &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> age = <span class="number">10</span>;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;invoke before: &quot;</span> &lt;&lt; age &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="built_in">incr</span>(age);</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;invoke after: &quot;</span> &lt;&lt; age &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">invoke before: 10</span><br><span class="line">incr before: 10</span><br><span class="line">incr after: 11</span><br><span class="line">invoke after: 11</span><br></pre></td></tr></table></figure>
+
+<p>分析：可以看到，在 <code>incr</code> 函数中对形参的修改，可以影响到实参的值。要注意：这里的 <code>incr</code> 形参的数据类型用的是 <code>int&amp;</code> 才为引用传递，如果是用 <code>int</code> 的话还是值传递哦！</p>
+<h2 id="为什么-Java-不引入引用传递呢？"><a href="#为什么-Java-不引入引用传递呢？" class="headerlink" title="为什么 Java 不引入引用传递呢？"></a>为什么 Java 不引入引用传递呢？</h2><p>引用传递看似很好，能在方法内就直接把实参的值修改了，但是，为什么 Java 不引入引用传递呢？</p>
+<p><strong>注意：以下为个人观点看法，并非来自于 Java 官方：</strong></p>
+<ol>
+<li>出于安全考虑，方法内部对值进行的操作，对于调用者都是未知的（把方法定义为接口，调用方不关心具体实现）。你也想象一下，如果拿着银行卡去取钱，取的是 100，扣的是 200，是不是很可怕。</li>
+<li>Java 之父 James Gosling 在设计之初就看到了 C、C++ 的许多弊端，所以才想着去设计一门新的语言 Java。在他设计 Java 的时候就遵循了简单易用的原则，摒弃了许多开发者一不留意就会造成问题的“特性”，语言本身的东西少了，开发者要学习的东西也少了。</li>
 </ol>
-<p>对于生产者-消费者问题，可以直接使用BlockingQueue<br>19. 尾递归：<br>当递归调用时函数体重最后执行的语句，并且它的返回值不属于表达式的一部分时，叫做尾递归。不会存在栈溢出的问题。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Java 中将实参传递给方法（或函数）的方式是 <strong>值传递</strong>：</p>
+<ul>
+<li>如果参数是基本类型的话，很简单，传递的就是基本类型的字面量值的拷贝，会创建副本。</li>
+<li>如果参数是引用类型，传递的就是实参所引用的对象在堆中地址值的拷贝，同样也会创建副本。</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《Java 核心技术卷 Ⅰ》基础知识第十版第四章 4.5 小节</li>
+<li><a href="https://www.zhihu.com/question/31203609/answer/576030121">Java 到底是值传递还是引用传递？ - Hollis 的回答 - 知乎</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Oracle Java Tutorials - Passing Information to a Method or a Constructor</a></li>
+<li><a href="https://mappingthejourney.com/single-post/2017/06/29/episode-3-interview-with-james-gosling-father-of-java/">Interview with James Gosling, Father of Java</a></li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/network-attack-means/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/03/network-attack-means/" itemprop="url">网络攻击常见手段总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-03T21:04:32+08:00">
+                2020-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/06/03/network-attack-means/" class="leancloud_visitors" data-flag-title="网络攻击常见手段总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  11k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  38 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>本文整理完善自<a href="https://mp.weixin.qq.com/s/AZwWrOlLxRSSi-ywBgZ0fA">TCP&#x2F;IP 常见攻击手段 - 暖蓝笔记 - 2021</a>这篇文章。</p>
+</blockquote>
+<p>这篇文章的内容主要是介绍 TCP&#x2F;IP 常见攻击手段，尤其是 DDoS 攻击，也会补充一些其他的常见网络攻击手段。</p>
+<h2 id="IP-欺骗"><a href="#IP-欺骗" class="headerlink" title="IP 欺骗"></a>IP 欺骗</h2><h3 id="IP-是什么"><a href="#IP-是什么" class="headerlink" title="IP 是什么?"></a>IP 是什么?</h3><p>在网络中，所有的设备都会分配一个地址。这个地址就仿佛小蓝的家地址「<strong>多少号多少室</strong>」，这个号就是分配给整个子网的，「<strong>室</strong>」对应的号码即分配给子网中计算机的，这就是网络中的地址。「号」对应的号码为网络号，「<strong>室</strong>」对应的号码为主机号，这个地址的整体就是 <strong>IP 地址</strong>。</p>
+<h3 id="通过-IP-地址我们能知道什么？"><a href="#通过-IP-地址我们能知道什么？" class="headerlink" title="通过 IP 地址我们能知道什么？"></a>通过 IP 地址我们能知道什么？</h3><p>通过 IP 地址，我们就可以知道判断访问对象服务器的位置，从而将消息发送到服务器。一般发送者发出的消息首先经过子网的集线器，转发到最近的路由器，然后根据路由位置访问下一个路由器的位置，直到终点</p>
+<p><strong>IP 头部格式</strong> :</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/843fd07074874ee0b695eca659411b42~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<h3 id="IP-欺骗技术是什么？"><a href="#IP-欺骗技术是什么？" class="headerlink" title="IP 欺骗技术是什么？"></a>IP 欺骗技术是什么？</h3><p>骗呗，拐骗，诱骗！</p>
+<p>IP 欺骗技术就是<strong>伪造</strong>某台主机的 IP 地址的技术。通过 IP 地址的伪装使得某台主机能够<strong>伪装</strong>另外的一台主机，而这台主机往往具有某种特权或者被另外的主机所信任。</p>
+<p>假设现在有一个合法用户 <strong>(1.1.1.1)</strong> 已经同服务器建立正常的连接，攻击者构造攻击的 TCP 数据，伪装自己的 IP 为 <strong>1.1.1.1</strong>，并向服务器发送一个带有 RST 位的 TCP 数据段。服务器接收到这样的数据后，认为从 <strong>1.1.1.1</strong> 发送的连接有错误，就会清空缓冲区中建立好的连接。</p>
+<p>这时，如果合法用户 <strong>1.1.1.1</strong> 再发送合法数据，服务器就已经没有这样的连接了，该用户就必须从新开始建立连接。攻击时，伪造大量的 IP 地址，向目标发送 RST 数据，使服务器不对合法用户服务。虽然 IP 地址欺骗攻击有着相当难度，但我们应该清醒地意识到，这种攻击非常广泛，入侵往往从这种攻击开始。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/7547a145adf9404aa3a05f01f5ca2e32~tplv-k3u1fbpfcp-zoom-1.png" alt="IP 欺骗 DDoS 攻击"></p>
+<h3 id="如何缓解-IP-欺骗？"><a href="#如何缓解-IP-欺骗？" class="headerlink" title="如何缓解 IP 欺骗？"></a>如何缓解 IP 欺骗？</h3><p>虽然无法预防 IP 欺骗，但可以采取措施来阻止伪造数据包渗透网络。<strong>入口过滤</strong> 是防范欺骗的一种极为常见的防御措施，如 BCP38（通用最佳实践文档）所示。入口过滤是一种数据包过滤形式，通常在<a href="https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/">网络边缘</a>设备上实施，用于检查传入的 IP 数据包并确定其源标头。如果这些数据包的源标头与其来源不匹配或者看上去很可疑，则拒绝这些数据包。一些网络还实施出口过滤，检查退出网络的 IP 数据包，确保这些数据包具有合法源标头，以防止网络内部用户使用 IP 欺骗技术发起出站恶意攻击。</p>
+<h2 id="SYN-Flood-洪水"><a href="#SYN-Flood-洪水" class="headerlink" title="SYN Flood(洪水)"></a>SYN Flood(洪水)</h2><h3 id="SYN-Flood-是什么？"><a href="#SYN-Flood-是什么？" class="headerlink" title="SYN Flood 是什么？"></a>SYN Flood 是什么？</h3><p>SYN Flood 是互联网上最原始、最经典的 DDoS（Distributed Denial of Service，分布式拒绝服务）攻击之一，旨在耗尽可用服务器资源，致使服务器无法传输合法流量</p>
+<p>SYN Flood 利用了 TCP 协议的三次握手机制，攻击者通常利用工具或者控制僵尸主机向服务器发送海量的变源 IP 地址或变源端口的 TCP SYN 报文，服务器响应了这些报文后就会生成大量的半连接，当系统资源被耗尽后，服务器将无法提供正常的服务。<br>增加服务器性能，提供更多的连接能力对于 SYN Flood 的海量报文来说杯水车薪，防御 SYN Flood 的关键在于判断哪些连接请求来自于真实源，屏蔽非真实源的请求以保障正常的业务请求能得到服务。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/2b3d2d4dc8f24890b5957df1c7d6feb8~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<h3 id="TCP-SYN-Flood-攻击原理是什么？"><a href="#TCP-SYN-Flood-攻击原理是什么？" class="headerlink" title="TCP SYN Flood 攻击原理是什么？"></a>TCP SYN Flood 攻击原理是什么？</h3><p><strong>TCP SYN Flood</strong> 攻击利用的是 <strong>TCP</strong> 的三次握手（<strong>SYN -&gt; SYN&#x2F;ACK -&gt; ACK</strong>），假设连接发起方是 A，连接接受方是 B，即 B 在某个端口（<strong>Port</strong>）上监听 A 发出的连接请求，过程如下图所示，左边是 A，右边是 B。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/a39355a1ea404323a11ca6644e009183~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<p>A 首先发送 <strong>SYN</strong>（Synchronization）消息给 B，要求 B 做好接收数据的准备；B 收到后反馈 <strong>SYN-ACK</strong>（Synchronization-Acknowledgement） 消息给 A，这个消息的目的有两个：</p>
+<ul>
+<li>向 A 确认已做好接收数据的准备，</li>
+<li>同时要求 A 也做好接收数据的准备，此时 B 已向 A 确认好接收状态，并等待 A 的确认，连接处于<strong>半开状态（Half-Open）</strong>，顾名思义只开了一半；A 收到后再次发送 <strong>ACK</strong> (Acknowledgement) 消息给 B，向 B 确认也做好了接收数据的准备，至此三次握手完成，「<strong>连接</strong>」就建立了，</li>
+</ul>
+<p>大家注意到没有，最关键的一点在于双方是否都按对方的要求进入了<strong>可以接收消息</strong>的状态。而这个状态的确认主要是双方将要使用的<strong>消息序号(<strong>SequenceNum)，</strong>TCP</strong> 为保证消息按发送顺序抵达接收方的上层应用，需要用<strong>消息序号</strong>来标记消息的发送先后顺序的。</p>
+<p><strong>TCP</strong>是「<strong>双工</strong>」(Duplex)连接，同时支持双向通信，也就是双方同时可向对方发送消息，其中 <strong>SYN</strong> 和 <strong>SYN-ACK</strong> 消息开启了 A→B 的单向通信通道（B 获知了 A 的消息序号）；<strong>SYN-ACK</strong> 和 <strong>ACK</strong> 消息开启了 B→A 单向通信通道（A 获知了 B 的消息序号）。</p>
+<p>上面讨论的是双方在诚实守信，正常情况下的通信。</p>
+<p>但实际情况是，网络可能不稳定会丢包，使握手消息不能抵达对方，也可能是对方故意不按规矩来，故意延迟或不发送握手确认消息。</p>
+<p>假设 B 通过某 <strong>TCP</strong> 端口提供服务，B 在收到 A 的 <strong>SYN</strong> 消息时，积极的反馈了 <strong>SYN-ACK</strong> 消息，使连接进入<strong>半开状态</strong>，因为 B 不确定自己发给 A 的 <strong>SYN-ACK</strong> 消息或 A 反馈的 ACK 消息是否会丢在半路，所以会给每个待完成的半开连接都设一个<strong>Timer</strong>，如果超过时间还没有收到 A 的 <strong>ACK</strong> 消息，则重新发送一次 <strong>SYN-ACK</strong> 消息给 A，直到重试超过一定次数时才会放弃。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/7ff1daddcec44d61994f254e664987b4~tplv-k3u1fbpfcp-zoom-1.png" alt="图片"></p>
+<p>B 为帮助 A 能顺利连接，需要<strong>分配内核资源</strong>维护半开连接，那么当 B 面临海量的连接 A 时，如上图所示，<strong>SYN Flood</strong> 攻击就形成了。攻击方 A 可以控制肉鸡向 B 发送大量 SYN 消息但不响应 ACK 消息，或者干脆伪造 SYN 消息中的 <strong>Source IP</strong>，使 B 反馈的 <strong>SYN-ACK</strong> 消息石沉大海，导致 B 被大量注定不能完成的半开连接占据，直到资源耗尽，停止响应正常的连接请求。</p>
+<h3 id="SYN-Flood-的常见形式有哪些？"><a href="#SYN-Flood-的常见形式有哪些？" class="headerlink" title="SYN Flood 的常见形式有哪些？"></a>SYN Flood 的常见形式有哪些？</h3><p><strong>恶意用户可通过三种不同方式发起 SYN Flood 攻击</strong>：</p>
+<ol>
+<li><strong>直接攻击：</strong> 不伪造 IP 地址的 SYN 洪水攻击称为直接攻击。在此类攻击中，攻击者完全不屏蔽其 IP 地址。由于攻击者使用具有真实 IP 地址的单一源设备发起攻击，因此很容易发现并清理攻击者。为使目标机器呈现半开状态，黑客将阻止个人机器对服务器的 SYN-ACK 数据包做出响应。为此，通常采用以下两种方式实现：部署防火墙规则，阻止除 SYN 数据包以外的各类传出数据包；或者，对传入的所有 SYN-ACK 数据包进行过滤，防止其到达恶意用户机器。实际上，这种方法很少使用（即便使用过也不多见），因为此类攻击相当容易缓解 – 只需阻止每个恶意系统的 IP 地址。哪怕攻击者使用僵尸网络（如 <a href="https://www.cloudflare.com/learning/ddos/glossary/mirai-botnet/">Mirai 僵尸网络</a>），通常也不会刻意屏蔽受感染设备的 IP。</li>
+<li><strong>欺骗攻击：</strong> 恶意用户还可以伪造其发送的各个 SYN 数据包的 IP 地址，以便阻止缓解措施并加大身份暴露难度。虽然数据包可能经过伪装，但还是可以通过这些数据包追根溯源。此类检测工作很难开展，但并非不可实现；特别是，如果 Internet 服务提供商 (ISP) 愿意提供帮助，则更容易实现。</li>
+<li><strong>分布式攻击（DDoS）：</strong> 如果使用僵尸网络发起攻击，则追溯攻击源头的可能性很低。随着混淆级别的攀升，攻击者可能还会命令每台分布式设备伪造其发送数据包的 IP 地址。哪怕攻击者使用僵尸网络（如 Mirai 僵尸网络），通常也不会刻意屏蔽受感染设备的 IP。</li>
+</ol>
+<h3 id="如何缓解-SYN-Flood？"><a href="#如何缓解-SYN-Flood？" class="headerlink" title="如何缓解 SYN Flood？"></a>如何缓解 SYN Flood？</h3><h4 id="扩展积压工作队列"><a href="#扩展积压工作队列" class="headerlink" title="扩展积压工作队列"></a>扩展积压工作队列</h4><p>目标设备安装的每个操作系统都允许具有一定数量的半开连接。若要响应大量 SYN 数据包，一种方法是增加操作系统允许的最大半开连接数目。为成功扩展最大积压工作，系统必须额外预留内存资源以处理各类新请求。如果系统没有足够的内存，无法应对增加的积压工作队列规模，将对系统性能产生负面影响，但仍然好过拒绝服务。</p>
+<h4 id="回收最先创建的-TCP-半开连接"><a href="#回收最先创建的-TCP-半开连接" class="headerlink" title="回收最先创建的 TCP 半开连接"></a>回收最先创建的 TCP 半开连接</h4><p>另一种缓解策略是在填充积压工作后覆盖最先创建的半开连接。这项策略要求完全建立合法连接的时间低于恶意 SYN 数据包填充积压工作的时间。当攻击量增加或积压工作规模小于实际需求时，这项特定的防御措施将不奏效。</p>
+<h4 id="SYN-Cookie"><a href="#SYN-Cookie" class="headerlink" title="SYN Cookie"></a>SYN Cookie</h4><p>此策略要求服务器创建 Cookie。为避免在填充积压工作时断开连接，服务器使用 SYN-ACK 数据包响应每一项连接请求，而后从积压工作中删除 SYN 请求，同时从内存中删除请求，保证端口保持打开状态并做好重新建立连接的准备。如果连接是合法请求并且已将最后一个 ACK 数据包从客户端机器发回服务器，服务器将重建（存在一些限制）SYN 积压工作队列条目。虽然这项缓解措施势必会丢失一些 TCP 连接信息，但好过因此导致对合法用户发起拒绝服务攻击。</p>
+<h2 id="UDP-Flood-洪水"><a href="#UDP-Flood-洪水" class="headerlink" title="UDP Flood(洪水)"></a>UDP Flood(洪水)</h2><h3 id="UDP-Flood-是什么？"><a href="#UDP-Flood-是什么？" class="headerlink" title="UDP Flood 是什么？"></a>UDP Flood 是什么？</h3><p><strong>UDP Flood</strong> 也是一种拒绝服务攻击，将大量的用户数据报协议（<strong>UDP</strong>）数据包发送到目标服务器，目的是压倒该设备的处理和响应能力。防火墙保护目标服务器也可能因 <strong>UDP</strong> 泛滥而耗尽，从而导致对合法流量的拒绝服务。</p>
+<h3 id="UDP-Flood-攻击原理是什么？"><a href="#UDP-Flood-攻击原理是什么？" class="headerlink" title="UDP Flood 攻击原理是什么？"></a>UDP Flood 攻击原理是什么？</h3><p><strong>UDP Flood</strong> 主要通过利用服务器响应发送到其中一个端口的 <strong>UDP</strong> 数据包所采取的步骤。在正常情况下，当服务器在特定端口接收到 <strong>UDP</strong> 数据包时，会经过两个步骤：</p>
+<ul>
+<li>服务器首先检查是否正在运行正在侦听指定端口的请求的程序。</li>
+<li>如果没有程序在该端口接收数据包，则服务器使用 <strong>ICMP</strong>（ping）数据包进行响应，以通知发送方目的地不可达。</li>
+</ul>
+<p>举个例子。假设今天要联系酒店的小蓝，酒店客服接到电话后先查看房间的列表来确保小蓝在客房内，随后转接给小蓝。</p>
+<p>首先，接待员接收到呼叫者要求连接到特定房间的电话。接待员然后需要查看所有房间的清单，以确保客人在房间中可用，并愿意接听电话。碰巧的是，此时如果突然间所有的电话线同时亮起来，那么他们就会很快就变得不堪重负了。</p>
+<p>当服务器接收到每个新的 <strong>UDP</strong> 数据包时，它将通过步骤来处理请求，并利用该过程中的服务器资源。发送 <strong>UDP</strong> 报文时，每个报文将包含源设备的 <strong>IP</strong> 地址。在这种类型的 <strong>DDoS</strong> 攻击期间，攻击者通常不会使用自己的真实 <strong>IP</strong> 地址，而是会欺骗 <strong>UDP</strong> 数据包的源 <strong>IP</strong> 地址，从而阻止攻击者的真实位置被暴露并潜在地饱和来自目标的响应数据包服务器。</p>
+<p>由于目标服务器利用资源检查并响应每个接收到的 <strong>UDP</strong> 数据包的结果，当接收到大量 <strong>UDP</strong> 数据包时，目标的资源可能会迅速耗尽，导致对正常流量的拒绝服务。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/23dbbc8243a84ed181e088e38bffb37a~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<h3 id="如何缓解-UDP-Flooding？"><a href="#如何缓解-UDP-Flooding？" class="headerlink" title="如何缓解 UDP Flooding？"></a>如何缓解 UDP Flooding？</h3><p>大多数操作系统部分限制了 <strong>ICMP</strong> 报文的响应速率，以中断需要 ICMP 响应的 <strong>DDoS</strong> 攻击。这种缓解的一个缺点是在攻击过程中，合法的数据包也可能被过滤。如果 <strong>UDP Flood</strong> 的容量足够高以使目标服务器的防火墙的状态表饱和，则在服务器级别发生的任何缓解都将不足以应对目标设备上游的瓶颈。</p>
+<h2 id="HTTP-Flood-洪水"><a href="#HTTP-Flood-洪水" class="headerlink" title="HTTP Flood(洪水)"></a>HTTP Flood(洪水)</h2><h3 id="HTTP-Flood-是什么？"><a href="#HTTP-Flood-是什么？" class="headerlink" title="HTTP Flood 是什么？"></a>HTTP Flood 是什么？</h3><p>HTTP Flood 是一种大规模的 DDoS（Distributed Denial of Service，分布式拒绝服务）攻击，旨在利用 HTTP 请求使目标服务器不堪重负。目标因请求而达到饱和，且无法响应正常流量后，将出现拒绝服务，拒绝来自实际用户的其他请求。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/aa64869551d94c8d89fa80eaf4395bfa~tplv-k3u1fbpfcp-zoom-1.png" alt="HTTP 洪水攻击"></p>
+<h3 id="HTTP-Flood-的攻击原理是什么？"><a href="#HTTP-Flood-的攻击原理是什么？" class="headerlink" title="HTTP Flood 的攻击原理是什么？"></a>HTTP Flood 的攻击原理是什么？</h3><p>HTTP 洪水攻击是“第 7 层”DDoS 攻击的一种。第 7 层是 OSI 模型的应用程序层，指的是 HTTP 等互联网协议。HTTP 是基于浏览器的互联网请求的基础，通常用于加载网页或通过互联网发送表单内容。缓解应用程序层攻击特别复杂，因为恶意流量和正常流量很难区分。</p>
+<p>为了获得最大效率，恶意行为者通常会利用或创建僵尸网络，以最大程度地扩大攻击的影响。通过利用感染了恶意软件的多台设备，攻击者可以发起大量攻击流量来进行攻击。</p>
+<p>HTTP 洪水攻击有两种：</p>
+<ul>
+<li><strong>HTTP GET 攻击</strong>：在这种攻击形式下，多台计算机或其他设备相互协调，向目标服务器发送对图像、文件或其他资产的多个请求。当目标被传入的请求和响应所淹没时，来自正常流量源的其他请求将被拒绝服务。</li>
+<li><strong>HTTP POST 攻击</strong>：一般而言，在网站上提交表单时，服务器必须处理传入的请求并将数据推送到持久层（通常是数据库）。与发送 POST 请求所需的处理能力和带宽相比，处理表单数据和运行必要数据库命令的过程相对密集。这种攻击利用相对资源消耗的差异，直接向目标服务器发送许多 POST 请求，直到目标服务器的容量饱和并拒绝服务为止。</li>
+</ul>
+<h3 id="如何防护-HTTP-Flood？"><a href="#如何防护-HTTP-Flood？" class="headerlink" title="如何防护 HTTP Flood？"></a>如何防护 HTTP Flood？</h3><p>如前所述，缓解第 7 层攻击非常复杂，而且通常要从多方面进行。一种方法是对发出请求的设备实施质询，以测试它是否是机器人，这与在线创建帐户时常用的 CAPTCHA 测试非常相似。通过提出 JavaScript 计算挑战之类的要求，可以缓解许多攻击。</p>
+<p>其他阻止 HTTP 洪水攻击的途径包括使用 Web 应用程序防火墙 (WAF)、管理 IP 信誉数据库以跟踪和有选择地阻止恶意流量，以及由工程师进行动态分析。Cloudflare 具有超过 2000 万个互联网设备的规模优势，能够分析来自各种来源的流量并通过快速更新的 WAF 规则和其他防护策略来缓解潜在的攻击，从而消除应用程序层 DDoS 流量。</p>
+<h2 id="DNS-Flood-洪水"><a href="#DNS-Flood-洪水" class="headerlink" title="DNS Flood(洪水)"></a>DNS Flood(洪水)</h2><h3 id="DNS-Flood-是什么？"><a href="#DNS-Flood-是什么？" class="headerlink" title="DNS Flood 是什么？"></a>DNS Flood 是什么？</h3><p>域名系统（DNS）服务器是互联网的“电话簿“；互联网设备通过这些服务器来查找特定 Web 服务器以便访问互联网内容。DNS Flood 攻击是一种分布式拒绝服务（DDoS）攻击，攻击者用大量流量淹没某个域的 DNS 服务器，以尝试中断该域的 DNS 解析。如果用户无法找到电话簿，就无法查找到用于调用特定资源的地址。通过中断 DNS 解析，DNS Flood 攻击将破坏网站、API 或 Web 应用程序响应合法流量的能力。很难将 DNS Flood 攻击与正常的大流量区分开来，因为这些大规模流量往往来自多个唯一地址，查询该域的真实记录，模仿合法流量。</p>
+<h3 id="DNS-Flood-的攻击原理是什么？"><a href="#DNS-Flood-的攻击原理是什么？" class="headerlink" title="DNS Flood 的攻击原理是什么？"></a>DNS Flood 的攻击原理是什么？</h3><p><img src="https://oss.javaguide.cn/p3-juejin/97ea11a212924900b10d159226783887~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<p>域名系统的功能是将易于记忆的名称（例如 example.com）转换成难以记住的网站服务器地址（例如 192.168.0.1），因此成功攻击 DNS 基础设施将导致大多数人无法使用互联网。DNS Flood 攻击是一种相对较新的基于 DNS 的攻击，这种攻击是在高带宽<a href="https://www.cloudflare.com/learning/ddos/glossary/internet-of-things-iot/">物联网（IoT）</a><a href="https://www.cloudflare.com/learning/ddos/what-is-a-ddos-botnet/">僵尸网络</a>（如 <a href="https://www.cloudflare.com/learning/ddos/glossary/mirai-botnet/">Mirai</a>）兴起后激增的。DNS Flood 攻击使用 IP 摄像头、DVR 盒和其他 IoT 设备的高带宽连接直接淹没主要提供商的 DNS 服务器。来自 IoT 设备的大量请求淹没 DNS 提供商的服务，阻止合法用户访问提供商的 DNS 服务器。</p>
+<p>DNS Flood 攻击不同于 <a href="https://www.cloudflare.com/zh-cn/learning/ddos/dns-amplification-ddos-attack/">DNS 放大攻击</a>。与 DNS Flood 攻击不同，DNS 放大攻击反射并放大不安全 DNS 服务器的流量，以便隐藏攻击的源头并提高攻击的有效性。DNS 放大攻击使用连接带宽较小的设备向不安全的 DNS 服务器发送无数请求。这些设备对非常大的 DNS 记录发出小型请求，但在发出请求时，攻击者伪造返回地址为目标受害者。这种放大效果让攻击者能借助有限的攻击资源来破坏较大的目标。</p>
+<h3 id="如何防护-DNS-Flood"><a href="#如何防护-DNS-Flood" class="headerlink" title="如何防护 DNS Flood?"></a>如何防护 DNS Flood?</h3><p>DNS Flood 对传统上基于放大的攻击方法做出了改变。借助轻易获得的高带宽僵尸网络，攻击者现能针对大型组织发动攻击。除非被破坏的 IoT 设备得以更新或替换，否则抵御这些攻击的唯一方法是使用一个超大型、高度分布式的 DNS 系统，以便实时监测、吸收和阻止攻击流量。</p>
+<h2 id="TCP-重置攻击"><a href="#TCP-重置攻击" class="headerlink" title="TCP 重置攻击"></a>TCP 重置攻击</h2><p>在 <strong>TCP</strong> 重置攻击中，攻击者通过向通信的一方或双方发送伪造的消息，告诉它们立即断开连接，从而使通信双方连接中断。正常情况下，如果客户端收发现到达的报文段对于相关连接而言是不正确的，<strong>TCP</strong> 就会发送一个重置报文段，从而导致 <strong>TCP</strong> 连接的快速拆卸。</p>
+<p><strong>TCP</strong> 重置攻击利用这一机制，通过向通信方发送伪造的重置报文段，欺骗通信双方提前关闭 TCP 连接。如果伪造的重置报文段完全逼真，接收者就会认为它有效，并关闭 <strong>TCP</strong> 连接，防止连接被用来进一步交换信息。服务端可以创建一个新的 <strong>TCP</strong> 连接来恢复通信，但仍然可能会被攻击者重置连接。万幸的是，攻击者需要一定的时间来组装和发送伪造的报文，所以一般情况下这种攻击只对长连接有杀伤力，对于短连接而言，你还没攻击呢，人家已经完成了信息交换。</p>
+<p>从某种意义上来说，伪造 <strong>TCP</strong> 报文段是很容易的，因为 <strong>TCP&#x2F;IP</strong> 都没有任何内置的方法来验证服务端的身份。有些特殊的 IP 扩展协议（例如 <code>IPSec</code>）确实可以验证身份，但并没有被广泛使用。客户端只能接收报文段，并在可能的情况下使用更高级别的协议（如 <code>TLS</code>）来验证服务端的身份。但这个方法对 <strong>TCP</strong> 重置包并不适用，因为 <strong>TCP</strong> 重置包是 <strong>TCP</strong> 协议本身的一部分，无法使用更高级别的协议进行验证。</p>
+<h2 id="模拟攻击"><a href="#模拟攻击" class="headerlink" title="模拟攻击"></a>模拟攻击</h2><blockquote>
+<p>以下实验是在 <code>OSX</code> 系统中完成的，其他系统请自行测试。</p>
+</blockquote>
+<p>现在来总结一下伪造一个 <strong>TCP</strong> 重置报文要做哪些事情：</p>
+<ul>
+<li>嗅探通信双方的交换信息。</li>
+<li>截获一个 <code>ACK</code> 标志位置位 1 的报文段，并读取其 <code>ACK</code> 号。</li>
+<li>伪造一个 TCP 重置报文段（<code>RST</code> 标志位置为 1），其序列号等于上面截获的报文的 <code>ACK</code> 号。这只是理想情况下的方案，假设信息交换的速度不是很快。大多数情况下为了增加成功率，可以连续发送序列号不同的重置报文。</li>
+<li>将伪造的重置报文发送给通信的一方或双方，时其中断连接。</li>
+</ul>
+<p>为了实验简单，我们可以使用本地计算机通过 <code>localhost</code> 与自己通信，然后对自己进行 TCP 重置攻击。需要以下几个步骤：</p>
+<ul>
+<li>在两个终端之间建立一个 TCP 连接。</li>
+<li>编写一个能嗅探通信双方数据的攻击程序。</li>
+<li>修改攻击程序，伪造并发送重置报文。</li>
+</ul>
+<p>下面正式开始实验。</p>
+<blockquote>
+<p>建立 TCP 连接</p>
+</blockquote>
+<p>可以使用 netcat 工具来建立 TCP 连接，这个工具很多操作系统都预装了。打开第一个终端窗口，运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nvl 8000</span><br></pre></td></tr></table></figure>
+
+<p>这个命令会启动一个 TCP 服务，监听端口为 <code>8000</code>。接着再打开第二个终端窗口，运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 127.0.0.1 8000</span><br></pre></td></tr></table></figure>
+
+<p>该命令会尝试与上面的服务建立连接，在其中一个窗口输入一些字符，就会通过 TCP 连接发送给另一个窗口并打印出来。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/df0508cbf26446708cf98f8ad514dbea~tplv-k3u1fbpfcp-zoom-1.gif"></p>
+<blockquote>
+<p>嗅探流量</p>
+</blockquote>
+<p>编写一个攻击程序，使用 Python 网络库 <code>scapy</code> 来读取两个终端窗口之间交换的数据，并将其打印到终端上。代码比较长，下面为一部份，完整代码后台回复 TCP 攻击，代码的核心是调用 <code>scapy</code> 的嗅探方法：</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/27feb834aa9d4b629fd938611ac9972e~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<p>这段代码告诉 <code>scapy</code> 在 <code>lo0</code> 网络接口上嗅探数据包，并记录所有 TCP 连接的详细信息。</p>
+<ul>
+<li><strong>iface</strong> : 告诉 scapy 在 <code>lo0</code>（localhost）网络接口上进行监听。</li>
+<li><strong>lfilter</strong> : 这是个过滤器，告诉 scapy 忽略所有不属于指定的 TCP 连接（通信双方皆为 <code>localhost</code>，且端口号为 <code>8000</code>）的数据包。</li>
+<li><strong>prn</strong> : scapy 通过这个函数来操作所有符合 <code>lfilter</code> 规则的数据包。上面的例子只是将数据包打印到终端，下文将会修改函数来伪造重置报文。</li>
+<li><strong>count</strong> : scapy 函数返回之前需要嗅探的数据包数量。</li>
+</ul>
+<blockquote>
+<p>发送伪造的重置报文</p>
+</blockquote>
+<p>下面开始修改程序，发送伪造的 TCP 重置报文来进行 TCP 重置攻击。根据上面的解读，只需要修改 prn 函数就行了，让其检查数据包，提取必要参数，并利用这些参数来伪造 TCP 重置报文并发送。</p>
+<p>例如，假设该程序截获了一个从（<code>src_ip</code>, <code>src_port</code>）发往 （<code>dst_ip</code>, <code>dst_port</code>）的报文段，该报文段的 ACK 标志位已置为 1，ACK 号为 <code>100,000</code>。攻击程序接下来要做的是：</p>
+<ul>
+<li>由于伪造的数据包是对截获的数据包的响应，所以伪造数据包的源 <code>IP/Port</code> 应该是截获数据包的目的 <code>IP/Port</code>，反之亦然。</li>
+<li>将伪造数据包的 <code>RST</code> 标志位置为 1，以表示这是一个重置报文。</li>
+<li>将伪造数据包的序列号设置为截获数据包的 ACK 号，因为这是发送方期望收到的下一个序列号。</li>
+<li>调用 <code>scapy</code> 的 <code>send</code> 方法，将伪造的数据包发送给截获数据包的发送方。</li>
+</ul>
+<p>对于我的程序而言，只需将这一行取消注释，并注释这一行的上面一行，就可以全面攻击了。按照步骤 1 的方法设置 TCP 连接，打开第三个窗口运行攻击程序，然后在 TCP 连接的其中一个终端输入一些字符串，你会发现 TCP 连接被中断了！</p>
+<blockquote>
+<p>进一步实验</p>
+</blockquote>
+<ol>
+<li>可以继续使用攻击程序进行实验，将伪造数据包的序列号加减 1 看看会发生什么，是不是确实需要和截获数据包的 <code>ACK</code> 号完全相同。</li>
+<li>打开 <code>Wireshark</code>，监听 lo0 网络接口，并使用过滤器 <code>ip.src == 127.0.0.1 &amp;&amp; ip.dst == 127.0.0.1 &amp;&amp; tcp.port == 8000</code> 来过滤无关数据。你可以看到 TCP 连接的所有细节。</li>
+<li>在连接上更快速地发送数据流，使攻击更难执行。</li>
+</ol>
+<h2 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h2><p>猪八戒要向小蓝表白，于是写了一封信给小蓝，结果第三者小黑拦截到了这封信，把这封信进行了篡改，于是乎在他们之间进行搞破坏行动。这个马文才就是中间人，实施的就是中间人攻击。好我们继续聊聊什么是中间人攻击。</p>
+<h3 id="什么是中间人"><a href="#什么是中间人" class="headerlink" title="什么是中间人?"></a>什么是中间人?</h3><p>攻击中间人攻击英文名叫 Man-in-the-MiddleAttack，简称「MITM 攻击」。指攻击者与通讯的两端分别创建独立的联系，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方 直接对话，但事实上整个会话都被攻击者完全控制。我们画一张图：</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/d69b74e63981472b852797f2fa08976f~tplv-k3u1fbpfcp-zoom-1.png" alt="图片"></p>
+<p>从这张图可以看到，中间人其实就是攻击者。通过这种原理，有很多实现的用途，比如说，你在手机上浏览不健康网站的时候，手机就会提示你，此网站可能含有病毒，是否继续访问还是做其他的操作等等。</p>
+<h3 id="中间人攻击的原理是什么？"><a href="#中间人攻击的原理是什么？" class="headerlink" title="中间人攻击的原理是什么？"></a>中间人攻击的原理是什么？</h3><p>举个例子，我和公司签了一个一份劳动合同，一人一份合同。不晓得哪个可能改了合同内容，不知道真假了，怎么搞？只好找专业的机构来鉴定，自然就要花钱。</p>
+<p>在安全领域有句话：<strong>我们没有办法杜绝网络犯罪，只好想办法提高网络犯罪的成本</strong>。既然没法杜绝这种情况，那我们就想办法提高作案的成本，今天我们就简单了解下基本的网络安全知识，也是面试中的高频面试题了。</p>
+<p>为了避免双方说活不算数的情况，双方引入第三家机构，将合同原文给可信任的第三方机构，只要这个机构不监守自盗，合同就相对安全。</p>
+<p><strong>如果第三方机构内部不严格或容易出现纰漏？</strong></p>
+<p>虽然我们将合同原文给第三方机构了，为了防止内部人员的更改，需要采取什么措施呢</p>
+<p>一种可行的办法是引入 <strong>摘要算法</strong> 。即合同和摘要一起，为了简单的理解摘要。大家可以想象这个摘要为一个函数，这个函数对原文进行了加密，会产生一个唯一的散列值，一旦原文发生一点点变化，那么这个散列值将会变化。</p>
+<h4 id="有哪些常用的摘要算法呢？"><a href="#有哪些常用的摘要算法呢？" class="headerlink" title="有哪些常用的摘要算法呢？"></a>有哪些常用的摘要算法呢？</h4><p>目前比较常用的加密算法有消息摘要算法和安全散列算法(<strong>SHA</strong>)。<strong>MD5</strong> 是将任意长度的文章转化为一个 128 位的散列值，可是在 2004 年，<strong>MD5</strong> 被证实了容易发生碰撞，即两篇原文产生相同的摘要。这样的话相当于直接给黑客一个后门，轻松伪造摘要。</p>
+<p>所以在大部分的情况下都会选择 <strong>SHA 算法</strong> 。</p>
+<p><strong>出现内鬼了怎么办？</strong></p>
+<p>看似很安全的场面了，理论上来说杜绝了篡改合同的做法。主要某个员工同时具有修改合同和摘要的权利，那搞事儿就是时间的问题了，毕竟没哪个系统可以完全的杜绝员工接触敏感信息，除非敏感信息都不存在。所以能不能考虑将合同和摘要分开存储呢</p>
+<p><strong>那如何确保员工不会修改合同呢？</strong></p>
+<p>这确实蛮难的，不过办法总比困难多。我们将合同放在双方手中，摘要放在第三方机构，篡改难度进一步加大</p>
+<p><strong>那么员工万一和某个用户串通好了呢？</strong></p>
+<p>看来放在第三方的机构还是不好使，同样存在不小风险。所以还需要寻找新的方案，这就出现了 <strong>数字签名和证书</strong>。</p>
+<h4 id="数字证书和签名有什么用？"><a href="#数字证书和签名有什么用？" class="headerlink" title="数字证书和签名有什么用？"></a>数字证书和签名有什么用？</h4><p>同样的，举个例子。Sum 和 Mike 两个人签合同。Sum 首先用 <strong>SHA</strong> 算法计算合同的摘要，然后用自己私钥将摘要加密，得到数字签名。Sum 将合同原文、签名，以及公钥三者都交给 Mike</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/e4b7d6fca78b45c8840c12411b717f2f~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<p>如果 Sum 想要证明合同是 Mike 的，那么就要使用 Mike 的公钥，将这个签名解密得到摘要 x，然后 Mike 计算原文的 sha 摘要 Y，随后对比 x 和 y，如果两者相等，就认为数据没有被篡改</p>
+<p>在这样的过程中，Mike 是不能更改 Sum 的合同，因为要修改合同不仅仅要修改原文还要修改摘要，修改摘要需要提供 Mike 的私钥，私钥即 Sum 独有的密码，公钥即 Sum 公布给他人使用的密码</p>
+<p>总之，公钥加密的数据只能私钥可以解密。私钥加密的数据只有公钥可以解密，这就是 <strong>非对称加密</strong> 。</p>
+<p>隐私保护？不是吓唬大家，信息是透明的兄 die，不过尽量去维护个人的隐私吧，今天学习对称加密和非对称加密。</p>
+<p>大家先读读这个字”钥”,是读”yao”，我以前也是，其实读”yue”</p>
+<h4 id="什么是对称加密？"><a href="#什么是对称加密？" class="headerlink" title="什么是对称加密？"></a>什么是对称加密？</h4><p>对称加密，顾名思义，加密方与解密方使用同一钥匙(秘钥)。具体一些就是，发送方通过使用相应的加密算法和秘钥，对将要发送的信息进行加密；对于接收方而言，使用解密算法和相同的秘钥解锁信息，从而有能力阅读信息。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/ef81cb5e2f0a4d3d9ac5a44ecf97e3cc~tplv-k3u1fbpfcp-zoom-1.png" alt="图片"></p>
+<h4 id="常见的对称加密算法有哪些？"><a href="#常见的对称加密算法有哪些？" class="headerlink" title="常见的对称加密算法有哪些？"></a>常见的对称加密算法有哪些？</h4><p><strong>DES</strong></p>
+<p>DES 使用的密钥表面上是 64 位的，然而只有其中的 56 位被实际用于算法，其余 8 位可以被用于奇偶校验，并在算法中被丢弃。因此，<strong>DES</strong> 的有效密钥长度为 56 位，通常称 <strong>DES</strong> 的密钥长度为 56 位。假设秘钥为 56 位，采用暴力破 Jie 的方式，其秘钥个数为 2 的 56 次方，那么每纳秒执行一次解密所需要的时间差不多 1 年的样子。当然，没人这么干。<strong>DES</strong> 现在已经不是一种安全的加密方法，主要因为它使用的 56 位密钥过短。</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/9eb3a2bf6cf14132a890bc3447480eeb~tplv-k3u1fbpfcp-zoom-1.jpeg"></p>
+<p><strong>IDEA</strong></p>
+<p>国际数据加密算法(International Data Encryption Algorithm)。秘钥长度 128 位，优点没有专利的限制。</p>
+<p><strong>AES</strong></p>
+<p>当 DES 被破解以后，没过多久推出了 <strong>AES</strong> 算法，提供了三种长度供选择，128 位、192 位和 256，为了保证性能不受太大的影响，选择 128 即可。</p>
+<p><strong>SM1 和 SM4</strong></p>
+<p>之前几种都是国外的，我们国内自行研究了国密 <strong>SM1</strong>和 <strong>SM4</strong>。其中 S 都属于国家标准，算法公开。优点就是国家的大力支持和认可</p>
+<p><strong>总结</strong>：</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/578961e3175540e081e1432c409b075a~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<h4 id="常见的非对称加密算法有哪些？"><a href="#常见的非对称加密算法有哪些？" class="headerlink" title="常见的非对称加密算法有哪些？"></a>常见的非对称加密算法有哪些？</h4><p>在对称加密中，发送方与接收方使用相同的秘钥。那么在非对称加密中则是发送方与接收方使用的不同的秘钥。其主要解决的问题是防止在秘钥协商的过程中发生泄漏。比如在对称加密中，小蓝将需要发送的消息加密，然后告诉你密码是 123balala,ok,对于其他人而言，很容易就能劫持到密码是 123balala。那么在非对称的情况下，小蓝告诉所有人密码是 123balala,对于中间人而言，拿到也没用，因为没有私钥。所以，非对称密钥其实主要解决了密钥分发的难题。如下图</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/153cf04a0ecc43c38003f3a1ab198cc0~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<p>其实我们经常都在使用非对称加密，比如使用多台服务器搭建大数据平台 hadoop，为了方便多台机器设置免密登录，是不是就会涉及到秘钥分发。再比如搭建 docker 集群也会使用相关非对称加密算法。</p>
+<p>常见的非对称加密算法：</p>
+<ul>
+<li><p>RSA（RSA 加密算法，RSA Algorithm）：优势是性能比较快，如果想要较高的加密难度，需要很长的秘钥。</p>
+</li>
+<li><p>ECC：基于椭圆曲线提出。是目前加密强度最高的非对称加密算法</p>
+</li>
+<li><p>SM2：同样基于椭圆曲线问题设计。最大优势就是国家认可和大力支持。</p>
+</li>
+</ul>
+<p>总结：</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/28b96fb797904d4b818ee237cdc7614c~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<h4 id="常见的散列算法有哪些？"><a href="#常见的散列算法有哪些？" class="headerlink" title="常见的散列算法有哪些？"></a>常见的散列算法有哪些？</h4><p>这个大家应该更加熟悉了，比如我们平常使用的 MD5 校验，在很多时候，我并不是拿来进行加密，而是用来获得唯一性 ID。在做系统的过程中，存储用户的各种密码信息，通常都会通过散列算法，最终存储其散列值。</p>
+<p><strong>MD5</strong>（不推荐）</p>
+<p>MD5 可以用来生成一个 128 位的消息摘要，它是目前应用比较普遍的散列算法，具体的应用场景你可以自行  参阅。虽然，因为算法的缺陷，它的唯一性已经被破解了，但是大部分场景下，这并不会构成安全问题。但是，如果不是长度受限（32 个字符），我还是不推荐你继续使用 <strong>MD5</strong> 的。</p>
+<p><strong>SHA</strong></p>
+<p>安全散列算法。<strong>SHA</strong> 分为 <strong>SHA1</strong> 和 <strong>SH2</strong> 两个版本。该算法的思想是接收一段明文，然后以一种不可逆的方式将它转换成一段（通常更小）密文，也可以简单的理解为取一串输入码（称为预映射或信息），并把它们转化为长度较短、位数固定的输出序列即散列值（也称为信息摘要或信息认证代码）的过程。</p>
+<p><strong>SM3</strong></p>
+<p>国密算法<strong>SM3</strong>。加密强度和 SHA-256 算法 相差不多。主要是受到了国家的支持。</p>
+<p><strong>总结</strong>：</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/79c3c2f72d2f44c7abf2d73a49024495~tplv-k3u1fbpfcp-zoom-1.png" alt="图片"></p>
+<p><strong>大部分情况下使用对称加密，具有比较不错的安全性。如果需要分布式进行秘钥分发，考虑非对称。如果不需要可逆计算则散列算法。</strong> 因为这段时间有这方面需求，就看了一些这方面的资料，入坑信息安全，就怕以后洗发水都不用买。谢谢大家查看！</p>
+<h4 id="第三方机构和证书机制有什么用？"><a href="#第三方机构和证书机制有什么用？" class="headerlink" title="第三方机构和证书机制有什么用？"></a>第三方机构和证书机制有什么用？</h4><p>问题还有，此时如果 Sum 否认给过 Mike 的公钥和合同，不久 gg 了</p>
+<p>所以需要 Sum 过的话做过的事儿需要足够的信誉，这就引入了 <strong>第三方机构和证书机制</strong> 。</p>
+<p>证书之所以会有信用，是因为证书的签发方拥有信用。所以如果 Sum 想让 Mike 承认自己的公钥，Sum 不会直接将公钥给 Mike ，而是提供由第三方机构，含有公钥的证书。如果 Mike 也信任这个机构，法律都认可，那 ik，信任关系成立</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/b1a3dbf87e3e41ff894f39512a10f66d~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<p>如上图所示，Sum 将自己的申请提交给机构，产生证书的原文。机构用自己的私钥签名 Sum 的申请原文（先根据原文内容计算摘要，再用私钥加密），得到带有签名信息的证书。Mike 拿到带签名信息的证书，通过第三方机构的公钥进行解密，获得 Sum 证书的摘要、证书的原文。有了 Sum 证书的摘要和原文，Mike 就可以进行验签。验签通过，Mike 就可以确认 Sum 的证书的确是第三方机构签发的。</p>
+<p>用上面这样一个机制，合同的双方都无法否认合同。这个解决方案的核心在于需要第三方信用服务机构提供信用背书。这里产生了一个最基础的信任链，如果第三方机构的信任崩溃，比如被黑客攻破，那整条信任链条也就断裂了</p>
+<p>为了让这个信任条更加稳固，就需要环环相扣，打造更长的信任链，避免单点信任风险</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/1481f0409da94ba6bb0fee69bf0996f8~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<p>上图中，由信誉最好的根证书机构提供根证书，然后根证书机构去签发二级机构的证书；二级机构去签发三级机构的证书；最后有由三级机构去签发 Sum 证书。</p>
+<p>如果要验证 Sum 证书的合法性，就需要用三级机构证书中的公钥去解密 Sum 证书的数字签名。</p>
+<p>如果要验证三级机构证书的合法性，就需要用二级机构的证书去解密三级机构证书的数字签名。</p>
+<p>如果要验证二级结构证书的合法性，就需要用根证书去解密。</p>
+<p>以上，就构成了一个相对长一些的信任链。如果其中一方想要作弊是非常困难的，除非链条中的所有机构同时联合起来，进行欺诈。</p>
+<h3 id="中间人攻击如何避免"><a href="#中间人攻击如何避免" class="headerlink" title="中间人攻击如何避免?"></a>中间人攻击如何避免?</h3><p>既然知道了中间人攻击的原理也知道了他的危险，现在我们看看如何避免。相信我们都遇到过下面这种状况：</p>
+<p><img src="https://oss.javaguide.cn/p3-juejin/0dde4b76be6240699312d822a3fe1ed3~tplv-k3u1fbpfcp-zoom-1.png"></p>
+<p>出现这个界面的很多情况下，都是遇到了中间人攻击的现象，需要对安全证书进行及时地监测。而且大名鼎鼎的 github 网站，也曾遭遇过中间人攻击：</p>
+<p>想要避免中间人攻击的方法目前主要有两个：</p>
+<ul>
+<li>客户端不要轻易相信证书：因为这些证书极有可能是中间人。</li>
+<li>App 可以提前预埋证书在本地：意思是我们本地提前有一些证书，这样其他证书就不能再起作用了。</li>
+</ul>
+<h2 id="DDOS"><a href="#DDOS" class="headerlink" title="DDOS"></a>DDOS</h2><p>通过上面的描述，总之即好多种攻击都是 <strong>DDOS</strong> 攻击，所以简单总结下这个攻击相关内容。</p>
+<p>其实，像全球互联网各大公司，均遭受过大量的 <strong>DDoS</strong>。</p>
+<p>2018 年，GitHub 在一瞬间遭到高达 1.35Tbps 的带宽攻击。这次 DDoS 攻击几乎可以堪称是互联网有史以来规模最大、威力最大的 DDoS 攻击了。在 GitHub 遭到攻击后，仅仅一周后，DDoS 攻击又开始对 Google、亚马逊甚至 Pornhub 等网站进行了 DDoS 攻击。后续的 DDoS 攻击带宽最高也达到了 1Tbps。</p>
+<h3 id="DDoS-攻击究竟是什么？"><a href="#DDoS-攻击究竟是什么？" class="headerlink" title="DDoS 攻击究竟是什么？"></a>DDoS 攻击究竟是什么？</h3><p>DDos 全名 Distributed Denial of Service，翻译成中文就是<strong>分布式拒绝服务</strong>。指的是处于不同位置的多个攻击者同时向一个或数个目标发动攻击，是一种分布的、协同的大规模攻击方式。单一的 DoS 攻击一般是采用一对一方式的，它利用网络协议和操作系统的一些缺陷，采用<strong>欺骗和伪装</strong>的策略来进行网络攻击，使网站服务器充斥大量要求回复的信息，消耗网络带宽或系统资源，导致网络或系统不胜负荷以至于瘫痪而停止提供正常的网络服务。</p>
+<blockquote>
+<p>举个例子</p>
+</blockquote>
+<p>我开了一家有五十个座位的重庆火锅店，由于用料上等，童叟无欺。平时门庭若市，生意特别红火，而对面二狗家的火锅店却无人问津。二狗为了对付我，想了一个办法，叫了五十个人来我的火锅店坐着却不点菜，让别的客人无法吃饭。</p>
+<p>上面这个例子讲的就是典型的 DDoS 攻击，一般来说是指攻击者利用“肉鸡”对目标网站在较短的时间内发起大量请求，大规模消耗目标网站的主机资源，让它无法正常服务。在线游戏、互联网金融等领域是 DDoS 攻击的高发行业。</p>
+<p>攻击方式很多，比如 <strong>ICMP Flood</strong>、<strong>UDP Flood</strong>、<strong>NTP Flood</strong>、<strong>SYN Flood</strong>、<strong>CC 攻击</strong>、<strong>DNS Query Flood</strong>等等。</p>
+<h3 id="如何应对-DDoS-攻击？"><a href="#如何应对-DDoS-攻击？" class="headerlink" title="如何应对 DDoS 攻击？"></a>如何应对 DDoS 攻击？</h3><h4 id="高防服务器"><a href="#高防服务器" class="headerlink" title="高防服务器"></a>高防服务器</h4><p>还是拿开的重庆火锅店举例，高防服务器就是我给重庆火锅店增加了两名保安，这两名保安可以让保护店铺不受流氓骚扰，并且还会定期在店铺周围巡逻防止流氓骚扰。</p>
+<p>高防服务器主要是指能独立硬防御 50Gbps 以上的服务器，能够帮助网站拒绝服务攻击，定期扫描网络主节点等，这东西是不错，就是贵~</p>
+<h4 id="黑名单"><a href="#黑名单" class="headerlink" title="黑名单"></a>黑名单</h4><p>面对火锅店里面的流氓，我一怒之下将他们拍照入档，并禁止他们踏入店铺，但是有的时候遇到长得像的人也会禁止他进入店铺。这个就是设置黑名单，此方法秉承的就是“错杀一千，也不放一百”的原则，会封锁正常流量，影响到正常业务。</p>
+<h4 id="DDoS-清洗"><a href="#DDoS-清洗" class="headerlink" title="DDoS 清洗"></a>DDoS 清洗</h4><p><strong>DDos</strong> 清洗，就是我发现客人进店几分钟以后，但是一直不点餐，我就把他踢出店里。</p>
+<p><strong>DDoS</strong> 清洗会对用户请求数据进行实时监控，及时发现 <strong>DOS</strong> 攻击等异常流量，在不影响正常业务开展的情况下清洗掉这些异常流量。</p>
+<h4 id="CDN-加速"><a href="#CDN-加速" class="headerlink" title="CDN 加速"></a>CDN 加速</h4><p>CDN 加速，我们可以这么理解：为了减少流氓骚扰，我干脆将火锅店开到了线上，承接外卖服务，这样流氓找不到店在哪里，也耍不来流氓了。</p>
+<p>在现实中，CDN 服务将网站访问流量分配到了各个节点中，这样一方面隐藏网站的真实 IP，另一方面即使遭遇 <strong>DDoS</strong> 攻击，也可以将流量分散到各个节点中，防止源站崩溃。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>HTTP 洪水攻击 - CloudFlare：<a href="https://www.cloudflare.com/zh-cn/learning/ddos/http-flood-ddos-attack/">https://www.cloudflare.com/zh-cn/learning/ddos/http-flood-ddos-attack/</a></li>
+<li>SYN 洪水攻击：<a href="https://www.cloudflare.com/zh-cn/learning/ddos/syn-flood-ddos-attack/">https://www.cloudflare.com/zh-cn/learning/ddos/syn-flood-ddos-attack/</a></li>
+<li>什么是 IP 欺骗？：<a href="https://www.cloudflare.com/zh-cn/learning/ddos/glossary/ip-spoofing/">https://www.cloudflare.com/zh-cn/learning/ddos/glossary/ip-spoofing/</a></li>
+<li>什么是 DNS 洪水？| DNS 洪水 DDoS 攻击：<a href="https://www.cloudflare.com/zh-cn/learning/ddos/dns-flood-ddos-attack/">https://www.cloudflare.com/zh-cn/learning/ddos/dns-flood-ddos-attack/</a></li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/25/Java%E5%9F%BA%E7%A1%80_%E5%BA%8F%E5%88%97%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/25/Java%E5%9F%BA%E7%A1%80_%E5%BA%8F%E5%88%97%E5%8C%96/" itemprop="url">Java基础 序列化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-25T18:59:52+08:00">
+                2020-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/25/Java%E5%9F%BA%E7%A1%80_%E5%BA%8F%E5%88%97%E5%8C%96/" class="leancloud_visitors" data-flag-title="Java基础 序列化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是序列化和反序列化"><a href="#什么是序列化和反序列化" class="headerlink" title="什么是序列化和反序列化?"></a>什么是序列化和反序列化?</h2><p>如果我们需要持久化 Java 对象比如将 Java 对象保存在文件中，或者在网络传输 Java 对象，这些场景都需要用到序列化。</p>
+<p>简单来说：</p>
+<ul>
+<li><strong>序列化</strong>：将数据结构或对象转换成可以存储或传输的形式，通常是二进制字节流，也可以是 JSON, XML 等文本格式</li>
+<li><strong>反序列化</strong>：将在序列化过程中所生成的数据转换为原始数据结构或者对象的过程</li>
+</ul>
+<p>对于 Java 这种面向对象编程语言来说，我们序列化的都是对象（Object）也就是实例化后的类(Class)，但是在 C++这种半面向对象的语言中，struct(结构体)定义的是数据结构类型，而 class 对应的是对象类型。</p>
+<p>下面是序列化和反序列化常见应用场景：</p>
+<ul>
+<li>对象在进行网络传输（比如远程方法调用 RPC 的时候）之前需要先被序列化，接收到序列化的对象之后需要再进行反序列化；</li>
+<li>将对象存储到文件之前需要进行序列化，将对象从文件中读取出来需要进行反序列化；</li>
+<li>将对象存储到数据库（如 Redis）之前需要用到序列化，将对象从缓存数据库中读取出来需要反序列化；</li>
+<li>将对象存储到内存之前需要进行序列化，从内存中读取出来之后需要进行反序列化。</li>
+</ul>
+<p>维基百科是如是介绍序列化的：</p>
+<blockquote>
+<p><strong>序列化</strong>（serialization）在计算机科学的数据处理中，是指将数据结构或对象状态转换成可取用格式（例如存成文件，存于缓冲，或经由网络中发送），以留待后续在相同或另一台计算机环境中，能恢复原先状态的过程。依照序列化格式重新获取字节的结果时，可以利用它来产生与原始对象相同语义的副本。对于许多对象，像是使用大量引用的复杂对象，这种序列化重建的过程并不容易。面向对象中的对象序列化，并不概括之前原始对象所关系的函数。这种过程也称为对象编组（marshalling）。从一系列字节提取数据结构的反向操作，是反序列化（也称为解编组、deserialization、unmarshalling）。</p>
+</blockquote>
+<p>综上：<strong>序列化的主要目的是通过网络传输对象或者说是将对象存储到文件系统、数据库、内存中。</strong></p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/a478c74d-2c48-40ae-9374-87aacf05188c.png"></p>
+<p style="text-align:right;font-size:13px;color:gray">https://www.corejavaguru.com/java/serialization/interview-questions-1</p>
+
+<p><strong>序列化协议对应于 TCP&#x2F;IP 4 层模型的哪一层？</strong></p>
+<p>我们知道网络通信的双方必须要采用和遵守相同的协议。TCP&#x2F;IP 四层模型是下面这样的，序列化协议属于哪一层呢？</p>
+<ol>
+<li>应用层</li>
+<li>传输层</li>
+<li>网络层</li>
+<li>网络接口层</li>
+</ol>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-ip-4-model.png" alt="TCP/IP 四层模型"></p>
+<p>如上图所示，OSI 七层协议模型中，表示层做的事情主要就是对应用层的用户数据进行处理转换为二进制流。反过来的话，就是将二进制流转换成应用层的用户数据。这不就对应的是序列化和反序列化么？</p>
+<p>因为，OSI 七层协议模型中的应用层、表示层和会话层对应的都是 TCP&#x2F;IP 四层模型中的应用层，所以序列化协议属于 TCP&#x2F;IP 协议应用层的一部分。</p>
+<h2 id="常见序列化协议有哪些？"><a href="#常见序列化协议有哪些？" class="headerlink" title="常见序列化协议有哪些？"></a>常见序列化协议有哪些？</h2><p>JDK 自带的序列化方式一般不会用 ，因为序列化效率低并且存在安全问题。比较常用的序列化协议有 Hessian、Kryo、Protobuf、ProtoStuff，这些都是基于二进制的序列化协议。</p>
+<p>像 JSON 和 XML 这种属于文本类序列化方式。虽然可读性比较好，但是性能较差，一般不会选择。</p>
+<h3 id="JDK-自带的序列化方式"><a href="#JDK-自带的序列化方式" class="headerlink" title="JDK 自带的序列化方式"></a>JDK 自带的序列化方式</h3><p>JDK 自带的序列化，只需实现 <code>java.io.Serializable</code>接口即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RpcRequest</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1905122041950251207L</span>;</span><br><span class="line">    <span class="keyword">private</span> String requestId;</span><br><span class="line">    <span class="keyword">private</span> String interfaceName;</span><br><span class="line">    <span class="keyword">private</span> String methodName;</span><br><span class="line">    <span class="keyword">private</span> Object[] parameters;</span><br><span class="line">    <span class="keyword">private</span> Class&lt;?&gt;[] paramTypes;</span><br><span class="line">    <span class="keyword">private</span> RpcMessageTypeEnum rpcMessageTypeEnum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>serialVersionUID 有什么作用？</strong></p>
+<p>序列化号 <code>serialVersionUID</code> 属于版本控制的作用。反序列化时，会检查 <code>serialVersionUID</code> 是否和当前类的 <code>serialVersionUID</code> 一致。如果 <code>serialVersionUID</code> 不一致则会抛出 <code>InvalidClassException</code> 异常。强烈推荐每个序列化类都手动指定其 <code>serialVersionUID</code>，如果不手动指定，那么编译器会动态生成默认的 <code>serialVersionUID</code>。</p>
+<p><strong>serialVersionUID 不是被 static 变量修饰了吗？为什么还会被“序列化”？</strong></p>
+<p><del><code>static</code> 修饰的变量是静态变量，位于方法区，本身是不会被序列化的。 <code>static</code> 变量是属于类的而不是对象。你反序列之后，<code>static</code> 变量的值就像是默认赋予给了对象一样，看着就像是 <code>static</code> 变量被序列化，实际只是假象罢了。</del></p>
+<p><strong>🐛 修正（参见：<a href="https://github.com/Snailclimb/JavaGuide/issues/2174">issue#2174</a>）</strong>：<code>static</code> 修饰的变量是静态变量，属于类而非类的实例，本身是不会被序列化的。然而，<code>serialVersionUID</code> 是一个特例，<code>serialVersionUID</code> 的序列化做了特殊处理。当一个对象被序列化时，<code>serialVersionUID</code> 会被写入到序列化的二进制流中；在反序列化时，也会解析它并做一致性判断，以此来验证序列化对象的版本一致性。如果两者不匹配，反序列化过程将抛出 <code>InvalidClassException</code>，因为这通常意味着序列化的类的定义已经发生了更改，可能不再兼容。</p>
+<p>官方说明如下：</p>
+<blockquote>
+<p>A serializable class can declare its own serialVersionUID explicitly by declaring a field named <code>&quot;serialVersionUID&quot;</code> that must be <code>static</code>, <code>final</code>, and of type <code>long</code>;</p>
+<p>如果想显式指定 <code>serialVersionUID</code> ，则需要在类中使用 <code>static</code> 和 <code>final</code> 关键字来修饰一个 <code>long</code> 类型的变量，变量名字必须为 <code>&quot;serialVersionUID&quot;</code> 。</p>
+</blockquote>
+<p>也就是说，<code>serialVersionUID</code> 只是用来被 JVM 识别，实际并没有被序列化。</p>
+<p><strong>如果有些字段不想进行序列化怎么办？</strong></p>
+<p>对于不想进行序列化的变量，可以使用 <code>transient</code> 关键字修饰。</p>
+<p><code>transient</code> 关键字的作用是：阻止实例中那些用此关键字修饰的的变量序列化；当对象被反序列化时，被 <code>transient</code> 修饰的变量值不会被持久化和恢复。</p>
+<p>关于 <code>transient</code> 还有几点注意：</p>
+<ul>
+<li><code>transient</code> 只能修饰变量，不能修饰类和方法。</li>
+<li><code>transient</code> 修饰的变量，在反序列化后变量值将会被置成类型的默认值。例如，如果是修饰 <code>int</code> 类型，那么反序列后结果就是 <code>0</code>。</li>
+<li><code>static</code> 变量因为不属于任何对象(Object)，所以无论有没有 <code>transient</code> 关键字修饰，均不会被序列化。</li>
+</ul>
+<p><strong>为什么不推荐使用 JDK 自带的序列化？</strong></p>
+<p>我们很少或者说几乎不会直接使用 JDK 自带的序列化方式，主要原因有下面这些原因：</p>
+<ul>
+<li><strong>不支持跨语言调用</strong> : 如果调用的是其他语言开发的服务的时候就不支持了。</li>
+<li><strong>性能差</strong>：相比于其他序列化框架性能更低，主要原因是序列化之后的字节数组体积较大，导致传输成本加大。</li>
+<li><strong>存在安全问题</strong>：序列化和反序列化本身并不存在问题。但当输入的反序列化的数据可被用户控制，那么攻击者即可通过构造恶意输入，让反序列化产生非预期的对象，在此过程中执行构造的任意代码。相关阅读：<a href="https://cryin.github.io/blog/secure-development-java-deserialization-vulnerability/">应用安全:JAVA 反序列化漏洞之殇 - Cryin</a>、<a href="https://www.zhihu.com/question/37562657/answer/1916596031">Java 反序列化安全漏洞怎么回事? - Monica</a>。</li>
+</ul>
+<h3 id="Kryo"><a href="#Kryo" class="headerlink" title="Kryo"></a>Kryo</h3><p>Kryo 是一个高性能的序列化&#x2F;反序列化工具，由于其变长存储特性并使用了字节码生成机制，拥有较高的运行速度和较小的字节码体积。</p>
+<p>另外，Kryo 已经是一种非常成熟的序列化实现了，已经在 Twitter、Groupon、Yahoo 以及多个著名开源项目（如 Hive、Storm）中广泛的使用。</p>
+<p><a href="https://github.com/Snailclimb/guide-rpc-framework">guide-rpc-framework</a> 就是使用的 kryo 进行序列化，序列化和反序列化相关的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Kryo serialization class, Kryo serialization efficiency is very high, but only compatible with Java language</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shuang.kou</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@createTime</span> 2020年05月13日 19:29:00</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KryoSerializer</span> <span class="keyword">implements</span> <span class="title class_">Serializer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Because Kryo is not thread safe. So, use ThreadLocal to store Kryo objects</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> ThreadLocal&lt;Kryo&gt; kryoThreadLocal = ThreadLocal.withInitial(() -&gt; &#123;</span><br><span class="line">        <span class="type">Kryo</span> <span class="variable">kryo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Kryo</span>();</span><br><span class="line">        kryo.register(RpcResponse.class);</span><br><span class="line">        kryo.register(RpcRequest.class);</span><br><span class="line">        <span class="keyword">return</span> kryo;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">byte</span>[] serialize(Object obj) &#123;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">ByteArrayOutputStream</span> <span class="variable">byteArrayOutputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayOutputStream</span>();</span><br><span class="line">             <span class="type">Output</span> <span class="variable">output</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Output</span>(byteArrayOutputStream)) &#123;</span><br><span class="line">            <span class="type">Kryo</span> <span class="variable">kryo</span> <span class="operator">=</span> kryoThreadLocal.get();</span><br><span class="line">            <span class="comment">// Object-&gt;byte:将对象序列化为byte数组</span></span><br><span class="line">            kryo.writeObject(output, obj);</span><br><span class="line">            kryoThreadLocal.remove();</span><br><span class="line">            <span class="keyword">return</span> output.toBytes();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">SerializeException</span>(<span class="string">&quot;Serialization failed&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T&gt; T <span class="title function_">deserialize</span><span class="params">(<span class="type">byte</span>[] bytes, Class&lt;T&gt; clazz)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">ByteArrayInputStream</span> <span class="variable">byteArrayInputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayInputStream</span>(bytes);</span><br><span class="line">             <span class="type">Input</span> <span class="variable">input</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Input</span>(byteArrayInputStream)) &#123;</span><br><span class="line">            <span class="type">Kryo</span> <span class="variable">kryo</span> <span class="operator">=</span> kryoThreadLocal.get();</span><br><span class="line">            <span class="comment">// byte-&gt;Object:从byte数组中反序列化出对象</span></span><br><span class="line">            <span class="type">Object</span> <span class="variable">o</span> <span class="operator">=</span> kryo.readObject(input, clazz);</span><br><span class="line">            kryoThreadLocal.remove();</span><br><span class="line">            <span class="keyword">return</span> clazz.cast(o);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">SerializeException</span>(<span class="string">&quot;Deserialization failed&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>GitHub 地址：<a href="https://github.com/EsotericSoftware/kryo">https://github.com/EsotericSoftware/kryo</a> 。</p>
+<h3 id="Protobuf"><a href="#Protobuf" class="headerlink" title="Protobuf"></a>Protobuf</h3><p>Protobuf 出自于 Google，性能还比较优秀，也支持多种语言，同时还是跨平台的。就是在使用中过于繁琐，因为你需要自己定义 IDL 文件和生成对应的序列化代码。这样虽然不灵活，但是，另一方面导致 protobuf 没有序列化漏洞的风险。</p>
+<blockquote>
+<p>Protobuf 包含序列化格式的定义、各种语言的库以及一个 IDL 编译器。正常情况下你需要定义 proto 文件，然后使用 IDL 编译器编译成你需要的语言</p>
+</blockquote>
+<p>一个简单的 proto 文件如下：</p>
+<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// protobuf的版本</span></span><br><span class="line">syntax = <span class="string">&quot;proto3&quot;</span>;</span><br><span class="line"><span class="comment">// SearchRequest会被编译成不同的编程语言的相应对象，比如Java中的class、Go中的struct</span></span><br><span class="line"><span class="keyword">message </span><span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="comment">//string类型字段</span></span><br><span class="line">  <span class="type">string</span> name = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// int 类型字段</span></span><br><span class="line">  <span class="type">int32</span> age = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>GitHub 地址：<a href="https://github.com/protocolbuffers/protobuf">https://github.com/protocolbuffers/protobuf</a>。</p>
+<h3 id="ProtoStuff"><a href="#ProtoStuff" class="headerlink" title="ProtoStuff"></a>ProtoStuff</h3><p>由于 Protobuf 的易用性较差，它的哥哥 Protostuff 诞生了。</p>
+<p>protostuff 基于 Google protobuf，但是提供了更多的功能和更简易的用法。虽然更加易用，但是不代表 ProtoStuff 性能更差。</p>
+<p>GitHub 地址：<a href="https://github.com/protostuff/protostuff">https://github.com/protostuff/protostuff</a>。</p>
+<h3 id="Hessian"><a href="#Hessian" class="headerlink" title="Hessian"></a>Hessian</h3><p>Hessian 是一个轻量级的，自定义描述的二进制 RPC 协议。Hessian 是一个比较老的序列化实现了，并且同样也是跨语言的。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/8613ec4c-bde5-47bf-897e-99e0f90b9fa3.png"></p>
+<p>Dubbo2.x 默认启用的序列化方式是 Hessian2 ,但是，Dubbo 对 Hessian2 进行了修改，不过大体结构还是差不多。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Kryo 是专门针对 Java 语言序列化方式并且性能非常好，如果你的应用是专门针对 Java 语言的话可以考虑使用，并且 Dubbo 官网的一篇文章中提到说推荐使用 Kryo 作为生产环境的序列化方式。(文章地址：<a href="https://cn.dubbo.apache.org/zh-cn/docsv2.7/user/serialization/">https://cn.dubbo.apache.org/zh-cn/docsv2.7/user/serialization/</a>）。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/java/569e541a-22b2-4846-aa07-0ad479f07440-20230814090158124.png"></p>
+<p>像 Protobuf、 ProtoStuff、hessian 这类都是跨语言的序列化方式，如果有跨语言需求的话可以考虑使用。</p>
+<p>除了我上面介绍到的序列化方式的话，还有像 Thrift，Avro 这些。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/http-vs-https/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/21/http-vs-https/" itemprop="url">HTTP vs HTTPS（应用层）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-21T19:19:39+08:00">
+                2020-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/21/http-vs-https/" class="leancloud_visitors" data-flag-title="HTTP vs HTTPS（应用层）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h2><h3 id="HTTP-协议介绍"><a href="#HTTP-协议介绍" class="headerlink" title="HTTP 协议介绍"></a>HTTP 协议介绍</h3><p>HTTP 协议，全称超文本传输协议（Hypertext Transfer Protocol）。顾名思义，HTTP 协议就是用来规范超文本的传输，超文本，也就是网络上的包括文本在内的各式各样的消息，具体来说，主要是来规范浏览器和服务器端的行为的。</p>
+<p>并且，HTTP 是一个无状态（stateless）协议，也就是说服务器不维护任何有关客户端过去所发请求的消息。这其实是一种懒政，有状态协议会更加复杂，需要维护状态（历史信息），而且如果客户或服务器失效，会产生状态的不一致，解决这种不一致的代价更高。</p>
+<h3 id="HTTP-协议通信过程"><a href="#HTTP-协议通信过程" class="headerlink" title="HTTP 协议通信过程"></a>HTTP 协议通信过程</h3><p>HTTP 是应用层协议，它以 TCP（传输层）作为底层协议，默认端口为 80. 通信过程主要如下：</p>
+<ol>
+<li>服务器在 80 端口等待客户的请求。</li>
+<li>浏览器发起到服务器的 TCP 连接（创建套接字 Socket）。</li>
+<li>服务器接收来自浏览器的 TCP 连接。</li>
+<li>浏览器（HTTP 客户端）与 Web 服务器（HTTP 服务器）交换 HTTP 消息。</li>
+<li>关闭 TCP 连接。</li>
+</ol>
+<h3 id="HTTP-协议优点"><a href="#HTTP-协议优点" class="headerlink" title="HTTP 协议优点"></a>HTTP 协议优点</h3><p>扩展性强、速度快、跨平台支持性好。</p>
+<h2 id="HTTPS-协议"><a href="#HTTPS-协议" class="headerlink" title="HTTPS 协议"></a>HTTPS 协议</h2><h3 id="HTTPS-协议介绍"><a href="#HTTPS-协议介绍" class="headerlink" title="HTTPS 协议介绍"></a>HTTPS 协议介绍</h3><p>HTTPS 协议（Hyper Text Transfer Protocol Secure），是 HTTP 的加强安全版本。HTTPS 是基于 HTTP 的，也是用 TCP 作为底层协议，并额外使用 SSL&#x2F;TLS 协议用作加密和安全认证。默认端口号是 443.</p>
+<p>HTTPS 协议中，SSL 通道通常使用基于密钥的加密算法，密钥长度通常是 40 比特或 128 比特。</p>
+<h3 id="HTTPS-协议优点"><a href="#HTTPS-协议优点" class="headerlink" title="HTTPS 协议优点"></a>HTTPS 协议优点</h3><p>保密性好、信任度高。</p>
+<h2 id="HTTPS-的核心—SSL-TLS-协议"><a href="#HTTPS-的核心—SSL-TLS-协议" class="headerlink" title="HTTPS 的核心—SSL&#x2F;TLS 协议"></a>HTTPS 的核心—SSL&#x2F;TLS 协议</h2><p>HTTPS 之所以能达到较高的安全性要求，就是结合了 SSL&#x2F;TLS 和 TCP 协议，对通信数据进行加密，解决了 HTTP 数据透明的问题。接下来重点介绍一下 SSL&#x2F;TLS 的工作原理。</p>
+<h3 id="SSL-和-TLS-的区别？"><a href="#SSL-和-TLS-的区别？" class="headerlink" title="SSL 和 TLS 的区别？"></a>SSL 和 TLS 的区别？</h3><p><strong>SSL 和 TLS 没有太大的区别。</strong></p>
+<p>SSL 指安全套接字协议（Secure Sockets Layer），首次发布与 1996 年。SSL 的首次发布其实已经是他的 3.0 版本，SSL 1.0 从未面世，SSL 2.0 则具有较大的缺陷（DROWN 缺陷——Decrypting RSA with Obsolete and Weakened eNcryption）。很快，在 1999 年，SSL 3.0 进一步升级，<strong>新版本被命名为 TLS 1.0</strong>。因此，TLS 是基于 SSL 之上的，但由于习惯叫法，通常把 HTTPS 中的核心加密协议混称为 SSL&#x2F;TLS。</p>
+<h3 id="SSL-TLS-的工作原理"><a href="#SSL-TLS-的工作原理" class="headerlink" title="SSL&#x2F;TLS 的工作原理"></a>SSL&#x2F;TLS 的工作原理</h3><h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><p>SSL&#x2F;TLS 的核心要素是<strong>非对称加密</strong>。非对称加密采用两个密钥——一个公钥，一个私钥。在通信时，私钥仅由解密者保存，公钥由任何一个想与解密者通信的发送者（加密者）所知。可以设想一个场景，</p>
+<blockquote>
+<p>在某个自助邮局，每个通信信道都是一个邮箱，每一个邮箱所有者都在旁边立了一个牌子，上面挂着一把钥匙：这是我的公钥，发送者请将信件放入我的邮箱，并用公钥锁好。</p>
+<p>但是公钥只能加锁，并不能解锁。解锁只能由邮箱的所有者——因为只有他保存着私钥。</p>
+<p>这样，通信信息就不会被其他人截获了，这依赖于私钥的保密性。</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/public-key-cryptography.png"></p>
+<p>非对称加密的公钥和私钥需要采用一种复杂的数学机制生成（密码学认为，为了较高的安全性，尽量不要自己创造加密方案）。公私钥对的生成算法依赖于单向陷门函数。</p>
+<blockquote>
+<p>单向函数：已知单向函数 f，给定任意一个输入 x，易计算输出 y&#x3D;f(x)；而给定一个输出 y，假设存在 f(x)&#x3D;y，很难根据 f 来计算出 x。</p>
+<p>单向陷门函数：一个较弱的单向函数。已知单向陷门函数 f，陷门 h，给定任意一个输入 x，易计算出输出 y&#x3D;f(x;h)；而给定一个输出 y，假设存在 f(x;h)&#x3D;y，很难根据 f 来计算出 x，但可以根据 f 和 h 来推导出 x。</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/OWF.png" alt="单向函数"></p>
+<p>上图就是一个单向函数（不是单项陷门函数），假设有一个绝世秘籍，任何知道了这个秘籍的人都可以把苹果汁榨成苹果，那么这个秘籍就是“陷门”了吧。</p>
+<p>在这里，函数 f 的计算方法相当于公钥，陷门 h 相当于私钥。公钥 f 是公开的，任何人对已有输入，都可以用 f 加密，而要想根据加密信息还原出原信息，必须要有私钥才行。</p>
+<h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><p>使用 SSL&#x2F;TLS 进行通信的双方需要使用非对称加密方案来通信，但是非对称加密设计了较为复杂的数学算法，在实际通信过程中，计算的代价较高，效率太低，因此，SSL&#x2F;TLS 实际对消息的加密使用的是对称加密。</p>
+<blockquote>
+<p>对称加密：通信双方共享唯一密钥 k，加解密算法已知，加密方利用密钥 k 加密，解密方利用密钥 k 解密，保密性依赖于密钥 k 的保密性。</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/symmetric-encryption.png"></p>
+<p>对称加密的密钥生成代价比公私钥对的生成代价低得多，那么有的人会问了，为什么 SSL&#x2F;TLS 还需要使用非对称加密呢？因为对称加密的保密性完全依赖于密钥的保密性。在双方通信之前，需要商量一个用于对称加密的密钥。我们知道网络通信的信道是不安全的，传输报文对任何人是可见的，密钥的交换肯定不能直接在网络信道中传输。因此，使用非对称加密，对对称加密的密钥进行加密，保护该密钥不在网络信道中被窃听。这样，通信双方只需要一次非对称加密，交换对称加密的密钥，在之后的信息通信中，使用绝对安全的密钥，对信息进行对称加密，即可保证传输消息的保密性。</p>
+<h4 id="公钥传输的信赖性"><a href="#公钥传输的信赖性" class="headerlink" title="公钥传输的信赖性"></a>公钥传输的信赖性</h4><p>SSL&#x2F;TLS 介绍到这里，了解信息安全的朋友又会想到一个安全隐患，设想一个下面的场景：</p>
+<blockquote>
+<p>客户端 C 和服务器 S 想要使用 SSL&#x2F;TLS 通信，由上述 SSL&#x2F;TLS 通信原理，C 需要先知道 S 的公钥，而 S 公钥的唯一获取途径，就是把 S 公钥在网络信道中传输。要注意网络信道通信中有几个前提：</p>
+<ol>
+<li>任何人都可以捕获通信包</li>
+<li>通信包的保密性由发送者设计</li>
+<li>保密算法设计方案默认为公开，而（解密）密钥默认是安全的</li>
+</ol>
+<p>因此，假设 S 公钥不做加密，在信道中传输，那么很有可能存在一个攻击者 A，发送给 C 一个诈包，假装是 S 公钥，其实是诱饵服务器 AS 的公钥。当 C 收获了 AS 的公钥（却以为是 S 的公钥），C 后续就会使用 AS 公钥对数据进行加密，并在公开信道传输，那么 A 将捕获这些加密包，用 AS 的私钥解密，就截获了 C 本要给 S 发送的内容，而 C 和 S 二人全然不知。</p>
+<p>同样的，S 公钥即使做加密，也难以避免这种信任性问题，C 被 AS 拐跑了！</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/attack1.png"></p>
+<p>为了公钥传输的信赖性问题，第三方机构应运而生——证书颁发机构（CA，Certificate Authority）。CA 默认是受信任的第三方。CA 会给各个服务器颁发证书，证书存储在服务器上，并附有 CA 的<strong>电子签名</strong>（见下节）。</p>
+<p>当客户端（浏览器）向服务器发送 HTTPS 请求时，一定要先获取目标服务器的证书，并根据证书上的信息，检验证书的合法性。一旦客户端检测到证书非法，就会发生错误。客户端获取了服务器的证书后，由于证书的信任性是由第三方信赖机构认证的，而证书上又包含着服务器的公钥信息，客户端就可以放心的信任证书上的公钥就是目标服务器的公钥。</p>
+<h4 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h4><p>好，到这一小节，已经是 SSL&#x2F;TLS 的尾声了。上一小节提到了数字签名，数字签名要解决的问题，是防止证书被伪造。第三方信赖机构 CA 之所以能被信赖，就是 <strong>靠数字签名技术</strong> 。</p>
+<p>数字签名，是 CA 在给服务器颁发证书时，使用散列+加密的组合技术，在证书上盖个章，以此来提供验伪的功能。具体行为如下：</p>
+<blockquote>
+<p>CA 知道服务器的公钥，对证书采用散列技术生成一个摘要。CA 使用 CA 私钥对该摘要进行加密，并附在证书下方，发送给服务器。</p>
+<p>现在服务器将该证书发送给客户端，客户端需要验证该证书的身份。客户端找到第三方机构 CA，获知 CA 的公钥，并用 CA 公钥对证书的签名进行解密，获得了 CA 生成的摘要。</p>
+<p>客户端对证书数据（包含服务器的公钥）做相同的散列处理，得到摘要，并将该摘要与之前从签名中解码出的摘要做对比，如果相同，则身份验证成功；否则验证失败。</p>
+</blockquote>
+<p><img src="/./images/http-vs-https/digital-signature.png"></p>
+<p>总结来说，带有证书的公钥传输机制如下：</p>
+<ol>
+<li>设有服务器 S，客户端 C，和第三方信赖机构 CA。</li>
+<li>S 信任 CA，CA 是知道 S 公钥的，CA 向 S 颁发证书。并附上 CA 私钥对消息摘要的加密签名。</li>
+<li>S 获得 CA 颁发的证书，将该证书传递给 C。</li>
+<li>C 获得 S 的证书，信任 CA 并知晓 CA 公钥，使用 CA 公钥对 S 证书上的签名解密，同时对消息进行散列处理，得到摘要。比较摘要，验证 S 证书的真实性。</li>
+<li>如果 C 验证 S 证书是真实的，则信任 S 的公钥（在 S 证书中）。</li>
+</ol>
+<p><img src="/./images/http-vs-https/public-key-transmission.png"></p>
+<p>对于数字签名，我这里讲的比较简单，如果你没有搞清楚的话，强烈推荐你看看<a href="https://www.bilibili.com/video/BV18N411X7ty/">数字签名及数字证书原理</a>这个视频，这是我看过最清晰的讲解。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/image-20220321121814946.png"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><strong>端口号</strong>：HTTP 默认是 80，HTTPS 默认是 443。</li>
+<li><strong>URL 前缀</strong>：HTTP 的 URL 前缀是 <code>http://</code>，HTTPS 的 URL 前缀是 <code>https://</code>。</li>
+<li><strong>安全性和资源消耗</strong>：HTTP 协议运行在 TCP 之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。HTTPS 是运行在 SSL&#x2F;TLS 之上的 HTTP 协议，SSL&#x2F;TLS 运行在 TCP 之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。所以说，HTTP 安全性没有 HTTPS 高，但是 HTTPS 比 HTTP 耗费更多服务器资源。</li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/17/application-layer-protocol/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/17/application-layer-protocol/" itemprop="url">应用层常见协议总结（应用层）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-17T18:35:39+08:00">
+                2020-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/17/application-layer-protocol/" class="leancloud_visitors" data-flag-title="应用层常见协议总结（应用层）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTTP-超文本传输协议"><a href="#HTTP-超文本传输协议" class="headerlink" title="HTTP:超文本传输协议"></a>HTTP:超文本传输协议</h2><p><strong>超文本传输协议（HTTP，HyperText Transfer Protocol)</strong> 是一种用于传输超文本和多媒体内容的协议，主要是为 Web 浏览器与 Web 服务器之间的通信而设计的。当我们使用浏览器浏览网页的时候，我们网页就是通过 HTTP 请求进行加载的。</p>
+<p>HTTP 使用客户端-服务器模型，客户端向服务器发送 HTTP Request（请求），服务器响应请求并返回 HTTP Response（响应），整个过程如下图所示。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/450px-HTTP-Header.png"></p>
+<p>HTTP 协议基于 TCP 协议，发送 HTTP 请求之前首先要建立 TCP 连接也就是要经历 3 次握手。目前使用的 HTTP 协议大部分都是 1.1。在 1.1 的协议里面，默认是开启了 Keep-Alive 的，这样的话建立的连接就可以在多次请求中被复用了。</p>
+<p>另外， HTTP 协议是”无状态”的协议，它无法记录客户端用户的状态，一般我们都是通过 Session 来记录客户端用户的状态。</p>
+<h2 id="Websocket：全双工通信协议"><a href="#Websocket：全双工通信协议" class="headerlink" title="Websocket：全双工通信协议"></a>Websocket：全双工通信协议</h2><p>WebSocket 是一种基于 TCP 连接的全双工通信协议，即客户端和服务器可以同时发送和接收数据。</p>
+<p>WebSocket 协议在 2008 年诞生，2011 年成为国际标准，几乎所有主流较新版本的浏览器都支持该协议。不过，WebSocket 不只能在基于浏览器的应用程序中使用，很多编程语言、框架和服务器都提供了 WebSocket 支持。</p>
+<p>WebSocket 协议本质上是应用层的协议，用于弥补 HTTP 协议在持久通信能力上的不足。客户端和服务器仅需一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/system-design/web-real-time-message-push/1460000042192394.png" alt="Websocket 示意图"></p>
+<p>下面是 WebSocket 的常见应用场景：</p>
+<ul>
+<li>视频弹幕</li>
+<li>实时消息推送，详见<a href="https://javaguide.cn/system-design/web-real-time-message-push.html">Web 实时消息推送详解</a>这篇文章</li>
+<li>实时游戏对战</li>
+<li>多用户协同编辑</li>
+<li>社交聊天</li>
+<li>……</li>
+</ul>
+<p>WebSocket 的工作过程可以分为以下几个步骤：</p>
+<ol>
+<li>客户端向服务器发送一个 HTTP 请求，请求头中包含 <code>Upgrade: websocket</code> 和 <code>Sec-WebSocket-Key</code> 等字段，表示要求升级协议为 WebSocket；</li>
+<li>服务器收到这个请求后，会进行升级协议的操作，如果支持 WebSocket，它将回复一个 HTTP 101 状态码，响应头中包含 ，<code>Connection: Upgrade</code>和 <code>Sec-WebSocket-Accept: xxx</code> 等字段、表示成功升级到 WebSocket 协议。</li>
+<li>客户端和服务器之间建立了一个 WebSocket 连接，可以进行双向的数据传输。数据以帧（frames）的形式进行传送，WebSocket 的每条消息可能会被切分成多个数据帧（最小单位）。发送端会将消息切割成多个帧发送给接收端，接收端接收消息帧，并将关联的帧重新组装成完整的消息。</li>
+<li>客户端或服务器可以主动发送一个关闭帧，表示要断开连接。另一方收到后，也会回复一个关闭帧，然后双方关闭 TCP 连接。</li>
+</ol>
+<p>另外，建立 WebSocket 连接之后，通过心跳机制来保持 WebSocket 连接的稳定性和活跃性。</p>
+<h2 id="SMTP-简单邮件传输-发送-协议"><a href="#SMTP-简单邮件传输-发送-协议" class="headerlink" title="SMTP:简单邮件传输(发送)协议"></a>SMTP:简单邮件传输(发送)协议</h2><p><strong>简单邮件传输(发送)协议（SMTP，Simple Mail Transfer Protocol）</strong> 基于 TCP 协议，是一种用于发送电子邮件的协议</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/what-is-smtp.png" alt="SMTP 协议"></p>
+<p>注意 ⚠️：<strong>接受邮件的协议不是 SMTP 而是 POP3 协议。</strong></p>
+<p>SMTP 协议这块涉及的内容比较多，下面这两个问题比较重要：</p>
+<ol>
+<li>电子邮件的发送过程</li>
+<li>如何判断邮箱是真正存在的？</li>
+</ol>
+<p><strong>电子邮件的发送过程？</strong></p>
+<p>比如我的邮箱是“<a href="mailto:&#x64;&#97;&#98;&#x61;&#x69;&#64;&#99;&#x73;&#122;&#x68;&#x69;&#x6e;&#x61;&#x6e;&#x2e;&#99;&#x6f;&#109;">&#x64;&#97;&#98;&#x61;&#x69;&#64;&#99;&#x73;&#122;&#x68;&#x69;&#x6e;&#x61;&#x6e;&#x2e;&#99;&#x6f;&#109;</a>”，我要向“<a href="mailto:&#120;&#x69;&#x61;&#x6f;&#109;&#x61;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;">&#120;&#x69;&#x61;&#x6f;&#109;&#x61;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;</a>”发送邮件，整个过程可以简单分为下面几步：</p>
+<ol>
+<li>通过 <strong>SMTP</strong> 协议，我将我写好的邮件交给 163 邮箱服务器（邮局）。</li>
+<li>163 邮箱服务器发现我发送的邮箱是 qq 邮箱，然后它使用 SMTP 协议将我的邮件转发到 qq 邮箱服务器。</li>
+<li>qq 邮箱服务器接收邮件之后就通知邮箱为“<a href="mailto:&#120;&#105;&#97;&#111;&#x6d;&#x61;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;">&#120;&#105;&#97;&#111;&#x6d;&#x61;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;</a>”的用户来收邮件，然后用户就通过 <strong>POP3&#x2F;IMAP</strong> 协议将邮件取出。</li>
+</ol>
+<p><strong>如何判断邮箱是真正存在的？</strong></p>
+<p>很多场景(比如邮件营销)下面我们需要判断我们要发送的邮箱地址是否真的存在，这个时候我们可以利用 SMTP 协议来检测：</p>
+<ol>
+<li>查找邮箱域名对应的 SMTP 服务器地址</li>
+<li>尝试与服务器建立连接</li>
+<li>连接成功后尝试向需要验证的邮箱发送邮件</li>
+<li>根据返回结果判定邮箱地址的真实性</li>
+</ol>
+<p>推荐几个在线邮箱是否有效检测工具：</p>
+<ol>
+<li><a href="https://verify-email.org/">https://verify-email.org/</a></li>
+<li><a href="http://tool.chacuo.net/mailverify">http://tool.chacuo.net/mailverify</a></li>
+<li><a href="https://www.emailcamel.com/">https://www.emailcamel.com/</a></li>
+</ol>
+<h2 id="POP3-IMAP-邮件接收的协议"><a href="#POP3-IMAP-邮件接收的协议" class="headerlink" title="POP3&#x2F;IMAP:邮件接收的协议"></a>POP3&#x2F;IMAP:邮件接收的协议</h2><p>这两个协议没必要多做阐述，只需要了解 <strong>POP3 和 IMAP 两者都是负责邮件接收的协议</strong> 即可（二者也是基于 TCP 协议）。另外，需要注意不要将这两者和 SMTP 协议搞混淆了。<strong>SMTP 协议只负责邮件的发送，真正负责接收的协议是 POP3&#x2F;IMAP。</strong></p>
+<p>IMAP 协议是比 POP3 更新的协议，它在功能和性能上都更加强大。IMAP 支持邮件搜索、标记、分类、归档等高级功能，而且可以在多个设备之间同步邮件状态。几乎所有现代电子邮件客户端和服务器都支持 IMAP。</p>
+<h2 id="FTP-文件传输协议"><a href="#FTP-文件传输协议" class="headerlink" title="FTP:文件传输协议"></a>FTP:文件传输协议</h2><p><strong>FTP 协议</strong> 基于 TCP 协议，是一种用于在计算机之间传输文件的协议，可以屏蔽操作系统和文件存储方式。</p>
+<p>FTP 是基于客户—服务器（C&#x2F;S）模型而设计的，在客户端与 FTP 服务器之间建立两个连接。如果我们要基于 FTP 协议开发一个文件传输的软件的话，首先需要搞清楚 FTP 的原理。关于 FTP 的原理，很多书籍上已经描述的非常详细了：</p>
+<blockquote>
+<p>FTP 的独特的优势同时也是与其它客户服务器程序最大的不同点就在于它在两台通信的主机之间使用了两条 TCP 连接（其它客户服务器应用程序一般只有一条 TCP 连接）：</p>
+<ol>
+<li>控制连接：用于传送控制信息（命令和响应）</li>
+<li>数据连接：用于数据传送；</li>
+</ol>
+<p>这种将命令和数据分开传送的思想大大提高了 FTP 的效率。</p>
+</blockquote>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/ftp.png" alt="FTP工作过程"></p>
+<p>注意 ⚠️：FTP 是一种不安全的协议，因为它在传输过程中不会对数据进行加密。因此，FTP 传输的文件可能会被窃听或篡改。建议在传输敏感数据时使用更安全的协议，如 SFTP（SSH File Transfer Protocol，一种基于 SSH 协议的安全文件传输协议，用于在网络上安全地传输文件）。</p>
+<h2 id="Telnet-远程登陆协议"><a href="#Telnet-远程登陆协议" class="headerlink" title="Telnet:远程登陆协议"></a>Telnet:远程登陆协议</h2><p><strong>Telnet 协议</strong> 基于 TCP 协议，用于通过一个终端登陆到其他服务器。Telnet 协议的最大缺点之一是所有数据（包括用户名和密码）均以明文形式发送，这有潜在的安全风险。这就是为什么如今很少使用 Telnet，而是使用一种称为 SSH 的非常安全的网络传输协议的主要原因。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/Telnet_is_vulnerable_to_eavesdropping-2.png" alt="Telnet:远程登陆协议"></p>
+<h2 id="SSH-安全的网络传输协议"><a href="#SSH-安全的网络传输协议" class="headerlink" title="SSH:安全的网络传输协议"></a>SSH:安全的网络传输协议</h2><p><strong>SSH（Secure Shell）</strong> 基于 TCP 协议，通过加密和认证机制实现安全的访问和文件传输等业务。</p>
+<p>SSH 的经典用途是登录到远程电脑中执行命令。除此之外，SSH 也支持隧道协议、端口映射和 X11 连接（允许用户在本地运行远程服务器上的图形应用程序）。借助 SFTP（SSH File Transfer Protocol） 或 SCP（Secure Copy Protocol） 协议，SSH 还可以安全传输文件。</p>
+<p>SSH 使用客户端-服务器模型，默认端口是 22。SSH 是一个守护进程，负责实时监听客户端请求，并进行处理。大多数现代操作系统都提供了 SSH。</p>
+<p>如下图所示，SSH Client（SSH 客户端）和 SSH Server（SSH 服务器）通过公钥交换生成共享的对称加密密钥，用于后续的加密通信。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/ssh-client-server.png" alt="SSH:安全的网络传输协议"></p>
+<h2 id="RTP-实时传输协议"><a href="#RTP-实时传输协议" class="headerlink" title="RTP:实时传输协议"></a>RTP:实时传输协议</h2><p>RTP（Real-time Transport Protocol，实时传输协议）通常基于 UDP 协议，但也支持 TCP 协议。它提供了端到端的实时传输数据的功能，但不包含资源预留存、不保证实时传输质量，这些功能由 WebRTC 实现。</p>
+<p>RTP 协议分为两种子协议：</p>
+<ul>
+<li><strong>RTP（Real-time Transport Protocol，实时传输协议）</strong>：传输具有实时特性的数据。</li>
+<li><strong>RTCP（RTP Control Protocol，RTP 控制协议）</strong>：提供实时传输过程中的统计信息（如网络延迟、丢包率等），WebRTC 正是根据这些信息处理丢包</li>
+</ul>
+<h2 id="DNS-域名系统"><a href="#DNS-域名系统" class="headerlink" title="DNS:域名系统"></a>DNS:域名系统</h2><p>DNS（Domain Name System，域名管理系统）基于 UDP 协议，用于解决域名和 IP 地址的映射问题。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/dns-overview.png" alt="DNS:域名系统"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《计算机网络自顶向下方法》（第七版）</li>
+<li>RTP 协议介绍:<a href="https://mthli.xyz/rtp-introduction/">https://mthli.xyz/rtp-introduction/</a></li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/tcp-connection-and-disconnection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/26/tcp-connection-and-disconnection/" itemprop="url">TCP 三次握手和四次挥手（传输层）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-26T19:39:18+08:00">
+                2020-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/26/tcp-connection-and-disconnection/" class="leancloud_visitors" data-flag-title="TCP 三次握手和四次挥手（传输层）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>为了准确无误地把数据送达目标处，TCP 协议采用了三次握手策略。</p>
+<h2 id="建立连接-TCP-三次握手"><a href="#建立连接-TCP-三次握手" class="headerlink" title="建立连接-TCP 三次握手"></a>建立连接-TCP 三次握手</h2><p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-shakes-hands-three-times.png" alt="TCP 三次握手图解"></p>
+<p>建立一个 TCP 连接需要“三次握手”，缺一不可：</p>
+<ul>
+<li><strong>一次握手</strong>:客户端发送带有 SYN（SEQ&#x3D;x） 标志的数据包 -&gt; 服务端，然后客户端进入 <strong>SYN_SEND</strong> 状态，等待服务端的确认；</li>
+<li><strong>二次握手</strong>:服务端发送带有 SYN+ACK(SEQ&#x3D;y,ACK&#x3D;x+1) 标志的数据包 –&gt; 客户端,然后服务端进入 <strong>SYN_RECV</strong> 状态；</li>
+<li><strong>三次握手</strong>:客户端发送带有 ACK(ACK&#x3D;y+1) 标志的数据包 –&gt; 服务端，然后客户端和服务端都进入<strong>ESTABLISHED</strong> 状态，完成 TCP 三次握手。</li>
+</ul>
+<p>当建立了 3 次握手之后，客户端和服务端就可以传输数据啦！</p>
+<h3 id="什么是半连接队列和全连接队列？"><a href="#什么是半连接队列和全连接队列？" class="headerlink" title="什么是半连接队列和全连接队列？"></a>什么是半连接队列和全连接队列？</h3><p>在 TCP 三次握手过程中，Linux 内核会维护两个队列来管理连接请求：</p>
+<ol>
+<li><strong>半连接队列</strong>（也称 SYN Queue）：当服务端收到客户端的 SYN 请求时，此时双方还没有完全建立连接，它会把半连接状态的连接放在半连接队列。</li>
+<li><strong>全连接队列</strong>（也称 Accept Queue）：当服务端收到客户端对 ACK 响应时，意味着三次握手成功完成，服务端会将该连接从半连接队列移动到全连接队列。如果未收到客户端的 ACK 响应，会进行重传，重传的等待时间通常是指数增长的。如果重传次数超过系统规定的最大重传次数，系统将从半连接队列中删除该连接信息。</li>
+</ol>
+<p>这两个队列的存在是为了处理并发连接请求，确保服务端能够有效地管理新的连接请求。另外，新的连接请求被拒绝或忽略除了和每个队列的大小限制有关系之外，还和很多其他因素有关系，这里就不详细介绍了，整体逻辑比较复杂。</p>
+<h3 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手?"></a>为什么要三次握手?</h3><p>三次握手的目的是建立可靠的通信信道，说到通讯，简单来说就是数据的发送与接收，而三次握手最主要的目的就是双方确认自己与对方的发送与接收是正常的。</p>
+<ol>
+<li><strong>第一次握手</strong>：Client 什么都不能确认；Server 确认了对方发送正常，自己接收正常</li>
+<li><strong>第二次握手</strong>：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：对方发送正常，自己接收正常</li>
+<li><strong>第三次握手</strong>：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：自己发送、接收正常，对方发送、接收正常</li>
+</ol>
+<p>三次握手就能确认双方收发功能都正常，缺一不可。</p>
+<p>更详细的解答可以看这个：<a href="https://www.zhihu.com/question/24853633/answer/115173386">TCP 为什么是三次握手，而不是两次或四次？ - 车小胖的回答 - 知乎</a> 。</p>
+<h3 id="第-2-次握手传回了-ACK，为什么还要传回-SYN？"><a href="#第-2-次握手传回了-ACK，为什么还要传回-SYN？" class="headerlink" title="第 2 次握手传回了 ACK，为什么还要传回 SYN？"></a>第 2 次握手传回了 ACK，为什么还要传回 SYN？</h3><p>服务端传回发送端所发送的 ACK 是为了告诉客户端：“我接收到的信息确实就是你所发送的信号了”，这表明从客户端到服务端的通信是正常的。回传 SYN 则是为了建立并确认从服务端到客户端的通信。</p>
+<blockquote>
+<p>SYN 同步序列编号(Synchronize Sequence Numbers) 是 TCP&#x2F;IP 建立连接时使用的握手信号。在客户机和服务端之间建立正常的 TCP 网络连接时，客户机首先发出一个 SYN 消息，服务端使用 SYN-ACK 应答表示接收到了这个消息，最后客户机再以 ACK(Acknowledgement）消息响应。这样在客户机和服务端之间才能建立起可靠的 TCP 连接，数据才可以在客户机和服务端之间传递。</p>
+</blockquote>
+<h3 id="三次握手过程中可以携带数据吗？"><a href="#三次握手过程中可以携带数据吗？" class="headerlink" title="三次握手过程中可以携带数据吗？"></a>三次握手过程中可以携带数据吗？</h3><p>在 TCP 三次握手过程中，第三次握手是可以携带数据的(客户端发送完 ACK 确认包之后就进入 ESTABLISHED 状态了)，这一点在 RFC 793 文档中有提到。也就是说，一旦完成了前两次握手，TCP 协议允许数据在第三次握手时开始传输。</p>
+<p>如果第三次握手的 ACK 确认包丢失，但是客户端已经开始发送携带数据的包，那么服务端在收到这个携带数据的包时，如果该包中包含了 ACK 标记，服务端会将其视为有效的第三次握手确认。这样，连接就被认为是建立的，服务端会处理该数据包，并继续正常的数据传输流程。</p>
+<h2 id="断开连接-TCP-四次挥手"><a href="#断开连接-TCP-四次挥手" class="headerlink" title="断开连接-TCP 四次挥手"></a>断开连接-TCP 四次挥手</h2><p><img src="https://oss.javaguide.cn/github/javaguide/cs-basics/network/tcp-waves-four-times.png" alt="TCP 四次挥手图解"></p>
+<p>断开一个 TCP 连接则需要“四次挥手”，缺一不可：</p>
+<ol>
+<li><strong>第一次挥手</strong>：客户端发送一个 FIN（SEQ&#x3D;x） 标志的数据包-&gt;服务端，用来关闭客户端到服务端的数据传送。然后客户端进入 <strong>FIN-WAIT-1</strong> 状态。</li>
+<li><strong>第二次挥手</strong>：服务端收到这个 FIN（SEQ&#x3D;X） 标志的数据包，它发送一个 ACK （ACK&#x3D;x+1）标志的数据包-&gt;客户端 。然后服务端进入 <strong>CLOSE-WAIT</strong> 状态，客户端进入 <strong>FIN-WAIT-2</strong> 状态。</li>
+<li><strong>第三次挥手</strong>：服务端发送一个 FIN (SEQ&#x3D;y)标志的数据包-&gt;客户端，请求关闭连接，然后服务端进入 <strong>LAST-ACK</strong> 状态。</li>
+<li><strong>第四次挥手</strong>：客户端发送 ACK (ACK&#x3D;y+1)标志的数据包-&gt;服务端，然后客户端进入<strong>TIME-WAIT</strong>状态，服务端在收到 ACK (ACK&#x3D;y+1)标志的数据包后进入 CLOSE 状态。此时如果客户端等待 <strong>2MSL</strong> 后依然没有收到回复，就证明服务端已正常关闭，随后客户端也可以关闭连接了。</li>
+</ol>
+<p><strong>只要四次挥手没有结束，客户端和服务端就可以继续传输数据！</strong></p>
+<h3 id="为什么要四次挥手？"><a href="#为什么要四次挥手？" class="headerlink" title="为什么要四次挥手？"></a>为什么要四次挥手？</h3><p>TCP 是全双工通信，可以双向传输数据。任何一方都可以在数据传送结束后发出连接释放的通知，待对方确认后进入半关闭状态。当另一方也没有数据再发送的时候，则发出连接释放通知，对方确认后就完全关闭了 TCP 连接。</p>
+<p>举个例子：A 和 B 打电话，通话即将结束后。</p>
+<ol>
+<li><strong>第一次挥手</strong>：A 说“我没啥要说的了”</li>
+<li><strong>第二次挥手</strong>：B 回答“我知道了”，但是 B 可能还会有要说的话，A 不能要求 B 跟着自己的节奏结束通话</li>
+<li><strong>第三次挥手</strong>：于是 B 可能又巴拉巴拉说了一通，最后 B 说“我说完了”</li>
+<li><strong>第四次挥手</strong>：A 回答“知道了”，这样通话才算结束。</li>
+</ol>
+<h3 id="为什么不能把服务端发送的-ACK-和-FIN-合并起来，变成三次挥手？"><a href="#为什么不能把服务端发送的-ACK-和-FIN-合并起来，变成三次挥手？" class="headerlink" title="为什么不能把服务端发送的 ACK 和 FIN 合并起来，变成三次挥手？"></a>为什么不能把服务端发送的 ACK 和 FIN 合并起来，变成三次挥手？</h3><p>因为服务端收到客户端断开连接的请求时，可能还有一些数据没有发完，这时先回复 ACK，表示接收到了断开连接的请求。等到数据发完之后再发 FIN，断开服务端到客户端的数据传送。</p>
+<h3 id="如果第二次挥手时服务端的-ACK-没有送达客户端，会怎样？"><a href="#如果第二次挥手时服务端的-ACK-没有送达客户端，会怎样？" class="headerlink" title="如果第二次挥手时服务端的 ACK 没有送达客户端，会怎样？"></a>如果第二次挥手时服务端的 ACK 没有送达客户端，会怎样？</h3><p>客户端没有收到 ACK 确认，会重新发送 FIN 请求。</p>
+<h3 id="为什么第四次挥手客户端需要等待-2-MSL（报文段最长寿命）时间后才进入-CLOSED-状态？"><a href="#为什么第四次挥手客户端需要等待-2-MSL（报文段最长寿命）时间后才进入-CLOSED-状态？" class="headerlink" title="为什么第四次挥手客户端需要等待 2*MSL（报文段最长寿命）时间后才进入 CLOSED 状态？"></a>为什么第四次挥手客户端需要等待 2*MSL（报文段最长寿命）时间后才进入 CLOSED 状态？</h3><p>第四次挥手时，客户端发送给服务端的 ACK 有可能丢失，如果服务端因为某些原因而没有收到 ACK 的话，服务端就会重发 FIN，如果客户端在 2*MSL 的时间内收到了 FIN，就会重新发送 ACK 并再次等待 2MSL，防止 Server 没有收到 ACK 而不断重发 FIN。</p>
+<blockquote>
+<p><strong>MSL(Maximum Segment Lifetime)</strong> : 一个片段在网络中最大的存活时间，2MSL 就是一个发送和一个回复所需的最大时间。如果直到 2MSL，Client 都没有再次收到 FIN，那么 Client 推断 ACK 已经被成功接收，则结束 TCP 连接。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p>《计算机网络（第 7 版）》</p>
+</li>
+<li><p>《图解 HTTP》</p>
+</li>
+<li><p>TCP and UDP Tutorial：<a href="https://www.9tut.com/tcp-and-udp-tutorial">https://www.9tut.com/tcp-and-udp-tutorial</a></p>
+</li>
+<li><p>从一次线上问题说起，详解 TCP 半连接队列、全连接队列：<a href="https://mp.weixin.qq.com/s/YpSlU1yaowTs-pF6R43hMw">https://mp.weixin.qq.com/s/YpSlU1yaowTs-pF6R43hMw</a></p>
+</li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/http&rpc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/12/http&rpc/" itemprop="url">有了 HTTP 协议，为什么还要有 RPC ？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T22:33:16+08:00">
+                2020-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">分布式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/12/http&rpc/" class="leancloud_visitors" data-flag-title="有了 HTTP 协议，为什么还要有 RPC ？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>本文来自<a href="https://juejin.cn/user/4001878057422087">小白 debug</a>投稿，原文：<a href="https://juejin.cn/post/7121882245605883934">https://juejin.cn/post/7121882245605883934</a> 。</p>
+</blockquote>
+<p>我想起了我刚工作的时候，第一次接触 RPC 协议，当时就很懵，我 HTTP 协议用的好好的，为什么还要用 RPC 协议？</p>
+<p>于是就到网上去搜。</p>
+<p>不少解释显得非常官方，我相信大家在各种平台上也都看到过，解释了又好像没解释，都在<strong>用一个我们不认识的概念去解释另外一个我们不认识的概念</strong>，懂的人不需要看，不懂的人看了还是不懂。</p>
+<p>这种看了，又好像没看的感觉，云里雾里的很难受，<strong>我懂</strong>。</p>
+<p>为了避免大家有强烈的<strong>审丑疲劳</strong>，今天我们来尝试重新换个方式讲一讲。</p>
+<h2 id="从-TCP-聊起"><a href="#从-TCP-聊起" class="headerlink" title="从 TCP 聊起"></a>从 TCP 聊起</h2><p>作为一个程序员，假设我们需要在 A 电脑的进程发一段数据到 B 电脑的进程，我们一般会在代码里使用 socket 进行编程。</p>
+<p>这时候，我们可选项一般也就<strong>TCP 和 UDP 二选一。TCP 可靠，UDP 不可靠。</strong> 除非是马总这种神级程序员（早期 QQ 大量使用 UDP），否则，只要稍微对可靠性有些要求，普通人一般无脑选 TCP 就对了。</p>
+<p>类似下面这样。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">fd</span> = socket(AF_INET,SOCK_STREAM,<span class="number">0</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中<code>SOCK_STREAM</code>，是指使用<strong>字节流</strong>传输数据，说白了就是<strong>TCP 协议</strong>。</p>
+<p>在定义了 socket 之后，我们就可以愉快的对这个 socket 进行操作，比如用<code>bind()</code>绑定 IP 端口，用<code>connect()</code>发起建连。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/f410977cda814d32b0eff3645c385a8a~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="握手建立连接流程"></p>
+<p>在连接建立之后，我们就可以使用<code>send()</code>发送数据，<code>recv()</code>接收数据。</p>
+<p>光这样一个纯裸的 TCP 连接，就可以做到收发数据了，那是不是就够了？</p>
+<p>不行，这么用会有问题。</p>
+<h2 id="使用纯裸-TCP-会有什么问题"><a href="#使用纯裸-TCP-会有什么问题" class="headerlink" title="使用纯裸 TCP 会有什么问题"></a>使用纯裸 TCP 会有什么问题</h2><p>八股文常背，TCP 是有三个特点，<strong>面向连接</strong>、<strong>可靠</strong>、基于<strong>字节流</strong>。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/acb4508111cb47d8a3df6734d04818bc~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="TCP是什么"></p>
+<p>这三个特点真的概括的 <strong>非常精辟</strong> ，这个八股文我们没白背。</p>
+<p>每个特点展开都能聊一篇文章，而今天我们需要关注的是 <strong>基于字节流</strong> 这一点。</p>
+<p>字节流可以理解为一个双向的通道里流淌的二进制数据，也就是 <strong>01 串</strong> 。纯裸 TCP 收发的这些 01 串之间是 <strong>没有任何边界</strong> 的，你根本不知道到哪个地方才算一条完整消息。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/b82d4fcdd0c4491e979856c93c1750d7~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="01二进制字节流"></p>
+<p>正因为这个没有任何边界的特点，所以当我们选择使用 TCP 发送 <strong>“夏洛”和”特烦恼”</strong> 的时候，接收端收到的就是 <strong>“夏洛特烦恼”</strong> ，这时候接收端没发区分你是想要表达 <strong>“夏洛”+”特烦恼”</strong> 还是 <strong>“夏洛特”+”烦恼”</strong> 。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/4e120d0f1152419585565f693e744a3a~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="消息对比"></p>
+<p>这就是所谓的 <strong>粘包问题</strong>，之前也写过一篇专门的<a href="https://mp.weixin.qq.com/s/0-YBxU1cSbDdzcZEZjmQYA">文章</a>聊过这个问题。</p>
+<p>说这个的目的是为了告诉大家，纯裸 TCP 是不能直接拿来用的，你需要在这个基础上加入一些 <strong>自定义的规则</strong> ，用于区分 <strong>消息边界</strong> 。</p>
+<p>于是我们会把每条要发送的数据都包装一下，比如加入 <strong>消息头</strong> ，消息头里写清楚一个完整的包长度是多少，根据这个长度可以继续接收数据，截取出来后它们就是我们真正要传输的 <strong>消息体</strong> 。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/cb29659d4907446e9f70551c44c6369f~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="消息边界长度标志"></p>
+<p>而这里头提到的 <strong>消息头</strong> ，还可以放各种东西，比如消息体是否被压缩过和消息体格式之类的，只要上下游都约定好了，互相都认就可以了，这就是所谓的 <strong>协议。</strong></p>
+<p>每个使用 TCP 的项目都可能会定义一套类似这样的协议解析标准，他们可能 <strong>有区别，但原理都类似</strong>。</p>
+<p><strong>于是基于 TCP，就衍生了非常多的协议，比如 HTTP 和 RPC。</strong></p>
+<h2 id="HTTP-和-RPC"><a href="#HTTP-和-RPC" class="headerlink" title="HTTP 和 RPC"></a>HTTP 和 RPC</h2><h3 id="RPC-其实是一种调用方式"><a href="#RPC-其实是一种调用方式" class="headerlink" title="RPC 其实是一种调用方式"></a>RPC 其实是一种调用方式</h3><p>我们回过头来看网络的分层图。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/04b603b5bd2443209233deea87816161~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="四层网络协议"></p>
+<p><strong>TCP 是传输层的协议</strong> ，而基于 TCP 造出来的 HTTP 和各类 RPC 协议，它们都只是定义了不同消息格式的 <strong>应用层协议</strong> 而已。</p>
+<p><strong>HTTP</strong>（<strong>H</strong>yper <strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol）协议又叫做 <strong>超文本传输协议</strong> 。我们用的比较多，平时上网在浏览器上敲个网址就能访问网页，这里用到的就是 HTTP 协议。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/8f07a5d1c72a4c4fa811c6c3b5aadd3d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="HTTP调用"></p>
+<p>而 <strong>RPC</strong>（<strong>R</strong>emote <strong>P</strong>rocedure <strong>C</strong>all）又叫做 <strong>远程过程调用</strong>，它本身并不是一个具体的协议，而是一种 <strong>调用方式</strong> 。</p>
+<p>举个例子，我们平时调用一个 <strong>本地方法</strong> 就像下面这样。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">res</span> = localFunc(req)</span><br></pre></td></tr></table></figure>
+
+<p>如果现在这不是个本地方法，而是个<strong>远端服务器</strong>暴露出来的一个方法<code>remoteFunc</code>，如果我们还能像调用本地方法那样去调用它，这样就可以<strong>屏蔽掉一些网络细节</strong>，用起来更方便，岂不美哉？</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">res</span> = remoteFunc(req)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/761da6c30af244e19b1c44075d8b4254~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="RPC可以像调用本地方法那样调用远端方法"></p>
+<p>基于这个思路，大佬们造出了非常多款式的 RPC 协议，比如比较有名的<code>gRPC</code>，<code>thrift</code>。</p>
+<p>值得注意的是，虽然大部分 RPC 协议底层使用 TCP，但实际上 <strong>它们不一定非得使用 TCP，改用 UDP 或者 HTTP，其实也可以做到类似的功能。</strong></p>
+<p>到这里，我们回到文章标题的问题。</p>
+<h3 id="那既然有-RPC-了，为什么还要有-HTTP-呢？"><a href="#那既然有-RPC-了，为什么还要有-HTTP-呢？" class="headerlink" title="那既然有 RPC 了，为什么还要有 HTTP 呢？"></a>那既然有 RPC 了，为什么还要有 HTTP 呢？</h3><p>其实，TCP 是 <strong>70 年</strong> 代出来的协议，而 HTTP 是 <strong>90 年代</strong> 才开始流行的。而直接使用裸 TCP 会有问题，可想而知，这中间这么多年有多少自定义的协议，而这里面就有 <strong>80 年代</strong> 出来的<code>RPC</code>。</p>
+<p>所以我们该问的不是 <strong>既然有 HTTP 协议为什么要有 RPC</strong> ，而是 <strong>为什么有 RPC 还要有 HTTP 协议?</strong></p>
+<p>现在电脑上装的各种联网软件，比如 xx 管家，xx 卫士，它们都作为客户端（Client） 需要跟服务端（Server） 建立连接收发消息，此时都会用到应用层协议，在这种 Client&#x2F;Server (C&#x2F;S) 架构下，它们可以使用自家造的 RPC 协议，因为它只管连自己公司的服务器就 ok 了。</p>
+<p>但有个软件不同，浏览器（Browser） ，不管是 Chrome 还是 IE，它们不仅要能访问自家公司的<strong>服务器（Server）</strong> ，还需要访问其他公司的网站服务器，因此它们需要有个统一的标准，不然大家没法交流。于是，HTTP 就是那个时代用于统一 <strong>Browser&#x2F;Server (B&#x2F;S)</strong> 的协议。</p>
+<p>也就是说在多年以前，<strong>HTTP 主要用于 B&#x2F;S 架构，而 RPC 更多用于 C&#x2F;S 架构。但现在其实已经没分那么清了，B&#x2F;S 和 C&#x2F;S 在慢慢融合。</strong> 很多软件同时支持多端，比如某度云盘，既要支持<strong>网页版</strong>，还要支持<strong>手机端和 PC 端</strong>，如果通信协议都用 HTTP 的话，那服务器只用同一套就够了。而 RPC 就开始退居幕后，一般用于公司内部集群里，各个微服务之间的通讯。</p>
+<p>那这么说的话，<strong>都用 HTTP 得了，还用什么 RPC？</strong></p>
+<p>仿佛又回到了文章开头的样子，那这就要从它们之间的区别开始说起。</p>
+<h3 id="HTTP-和-RPC-有什么区别"><a href="#HTTP-和-RPC-有什么区别" class="headerlink" title="HTTP 和 RPC 有什么区别"></a>HTTP 和 RPC 有什么区别</h3><p>我们来看看 RPC 和 HTTP 区别比较明显的几个点。</p>
+<h4 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h4><p>首先要向某个服务器发起请求，你得先建立连接，而建立连接的前提是，你得知道 <strong>IP 地址和端口</strong> 。这个找到服务对应的 IP 端口的过程，其实就是 <strong>服务发现</strong>。</p>
+<p>在 <strong>HTTP</strong> 中，你知道服务的域名，就可以通过 <strong>DNS 服务</strong> 去解析得到它背后的 IP 地址，默认 <strong>80 端口</strong>。</p>
+<p>而 <strong>RPC</strong> 的话，就有些区别，一般会有专门的中间服务去保存服务名和 IP 信息，比如 <strong>Consul、Etcd、Nacos、ZooKeeper，甚至是 Redis</strong>。想要访问某个服务，就去这些中间服务去获得 IP 和端口信息。由于 DNS 也是服务发现的一种，所以也有基于 DNS 去做服务发现的组件，比如 <strong>CoreDNS</strong>。</p>
+<p>可以看出服务发现这一块，两者是有些区别，但不太能分高低。</p>
+<h4 id="底层连接形式"><a href="#底层连接形式" class="headerlink" title="底层连接形式"></a>底层连接形式</h4><p>以主流的 <strong>HTTP1.1</strong> 协议为例，其默认在建立底层 TCP 连接之后会一直保持这个连接（<strong>keep alive</strong>），之后的请求和响应都会复用这条连接。</p>
+<p>而 <strong>RPC</strong> 协议，也跟 HTTP 类似，也是通过建立 TCP 长链接进行数据交互，但不同的地方在于，RPC 协议一般还会再建个 <strong>连接池</strong>，在请求量大的时候，建立多条连接放在池内，要发数据的时候就从池里取一条连接出来，用完放回去，下次再复用，可以说非常环保。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/72fcad064c9e4103a11f1a2d579f79b2~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="connection_pool"></p>
+<p>由于连接池有利于提升网络请求性能，所以不少编程语言的网络库里都会给 HTTP 加个连接池，比如 Go 就是这么干的。</p>
+<p>可以看出这一块两者也没太大区别，所以也不是关键。</p>
+<h4 id="传输的内容"><a href="#传输的内容" class="headerlink" title="传输的内容"></a>传输的内容</h4><p>基于 TCP 传输的消息，说到底，无非都是 <strong>消息头 Header 和消息体 Body。</strong></p>
+<p><strong>Header</strong> 是用于标记一些特殊信息，其中最重要的是 <strong>消息体长度</strong>。</p>
+<p><strong>Body</strong> 则是放我们真正需要传输的内容，而这些内容只能是二进制 01 串，毕竟计算机只认识这玩意。所以 TCP 传字符串和数字都问题不大，因为字符串可以转成编码再变成 01 串，而数字本身也能直接转为二进制。但结构体呢，我们得想个办法将它也转为二进制 01 串，这样的方案现在也有很多现成的，比如 <strong>JSON，Protocol Buffers (Protobuf)</strong> 。</p>
+<p>这个将结构体转为二进制数组的过程就叫 <strong>序列化</strong> ，反过来将二进制数组复原成结构体的过程叫 <strong>反序列化</strong>。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/d501dfc6f764430188ce61fda0f3e5d9~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="序列化和反序列化"></p>
+<p>对于主流的 HTTP1.1，虽然它现在叫超文本协议，支持音频视频，但 HTTP 设计 初是用于做网页文本展示的，所以它传的内容以字符串为主。Header 和 Body 都是如此。在 Body 这块，它使用 <strong>JSON</strong> 来 <strong>序列化</strong> 结构体数据。</p>
+<p>我们可以随便截个图直观看下。</p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/04e8a79ddb7247759df23f1132c01655~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="HTTP报文"></p>
+<p>可以看到这里面的内容非常多的冗余，显得非常啰嗦。最明显的，像 Header 里的那些信息，其实如果我们约定好头部的第几位是 <code>Content-Type</code>，就不需要每次都真的把 <code>Content-Type</code> 这个字段都传过来，类似的情况其实在 Body 的 JSON 结构里也特别明显。</p>
+<p>而 RPC，因为它定制化程度更高，可以采用体积更小的 Protobuf 或其他序列化协议去保存结构体数据，同时也不需要像 HTTP 那样考虑各种浏览器行为，比如 302 重定向跳转啥的。<strong>因此性能也会更好一些，这也是在公司内部微服务中抛弃 HTTP，选择使用 RPC 的最主要原因。</strong></p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/284c26bb7f2848889d1d9b95cf49decb~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="HTTP原理"></p>
+<p><img src="https://oss.javaguide.cn/github/javaguide/distributed-system/rpc/edb050d383c644e895e505253f1c4d90~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp.png" alt="RPC原理"></p>
+<p>当然上面说的 HTTP，其实 <strong>特指的是现在主流使用的 HTTP1.1</strong>，<code>HTTP2</code>在前者的基础上做了很多改进，所以 <strong>性能可能比很多 RPC 协议还要好</strong>，甚至连<code>gRPC</code>底层都直接用的<code>HTTP2</code>。</p>
+<p>那么问题又来了。</p>
+<h3 id="为什么既然有了-HTTP2，还要有-RPC-协议？"><a href="#为什么既然有了-HTTP2，还要有-RPC-协议？" class="headerlink" title="为什么既然有了 HTTP2，还要有 RPC 协议？"></a>为什么既然有了 HTTP2，还要有 RPC 协议？</h3><p>这个是由于 HTTP2 是 2015 年出来的。那时候很多公司内部的 RPC 协议都已经跑了好些年了，基于历史原因，一般也没必要去换了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>纯裸 TCP 是能收发数据，但它是个无边界的数据流，上层需要定义消息格式用于定义 <strong>消息边界</strong> 。于是就有了各种协议，HTTP 和各类 RPC 协议就是在 TCP 之上定义的应用层协议。</li>
+<li><strong>RPC 本质上不算是协议，而是一种调用方式</strong>，而像 gRPC 和 Thrift 这样的具体实现，才是协议，它们是实现了 RPC 调用的协议。目的是希望程序员能像调用本地方法那样去调用远端的服务方法。同时 RPC 有很多种实现方式，<strong>不一定非得基于 TCP 协议</strong>。</li>
+<li>从发展历史来说，<strong>HTTP 主要用于 B&#x2F;S 架构，而 RPC 更多用于 C&#x2F;S 架构。但现在其实已经没分那么清了，B&#x2F;S 和 C&#x2F;S 在慢慢融合。</strong> 很多软件同时支持多端，所以对外一般用 HTTP 协议，而内部集群的微服务之间则采用 RPC 协议进行通讯。</li>
+<li>RPC 其实比 HTTP 出现的要早，且比目前主流的 HTTP1.1 性能要更好，所以大部分公司内部都还在使用 RPC。</li>
+<li><strong>HTTP2.0</strong> 在 <strong>HTTP1.1</strong> 的基础上做了优化，性能可能比很多 RPC 协议都要好，但由于是这几年才出来的，所以也不太可能取代掉 RPC。</li>
+</ul>
+<!-- @include: @article-footer.snippet.md -->
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/Java%E5%9F%BA%E7%A1%80_%E6%B3%A8%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/03/Java%E5%9F%BA%E7%A1%80_%E6%B3%A8%E8%A7%A3/" itemprop="url">Java基础 注解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-03T19:13:16+08:00">
+                2020-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/03/Java%E5%9F%BA%E7%A1%80_%E6%B3%A8%E8%A7%A3/" class="leancloud_visitors" data-flag-title="Java基础 注解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  173 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>注解的本质是接口，其执行是动态代理来实现的。</p>
+<blockquote>
+<p>最终总结：<br> 注解@interface 是一个实现了Annotation接口的 接口， 然后在调用getDeclaredAnnotations()方法的时候，返回一个代理$Proxy对象，这个是使用jdk动态代理创建，使用Proxy的newProxyInstance方法时候，传入接口 和InvocationHandler的一个实例(也就是 AnotationInvocationHandler ) ，最后返回一个代理实例。</p>
+<p><a href="https://blog.csdn.net/qq_20009015/article/details/106038023">java注解的本质以及注解的底层实现原理-CSDN博客</a></p>
+</blockquote>
+<p>注解当然是通过注解处理器来实现的。需要自己写注解处理器并注册。</p>
+<p><a href="https://blog.csdn.net/caoshen2014/article/details/100642435">Java 注解与注解处理器_java 注册注解处理器-CSDN博客</a></p>
 
           
         
@@ -2210,7 +3088,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/16/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/18/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/16/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/18/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -2260,7 +3138,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">240</span>
+                  <span class="site-state-item-count">264</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2271,7 +3149,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2357,7 +3235,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">712.5k</span>
+    <span title="Site words total count">722k</span>
   
 </div>
 
